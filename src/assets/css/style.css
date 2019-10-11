@@ -64,21 +64,16 @@ a{cursor:pointer;outline:none}
 .ptb-77.mat-card{padding-top:57px!important;padding-bottom:73px!important;box-shadow:none!important}
 .ptb-35.mat-card{padding-top:35px;padding-bottom:35px;box-shadow:none!important}
 .btnblueround{display:inline-block;background:#00c0ff;font-size:18px;color:#fff!important;text-transform:uppercase;font-family:'HelveticaBold';text-decoration:none!important;line-height:normal;text-align:center;margin:0;margin-top:20px;margin-bottom:20px;border-radius:50px;padding:2px 25px}
-.btnblue{display:inline-block;background:#00c0ff;font-size:18px;color:#fff!important;text-transform:uppercase;font-family:'HelveticaBold';text-decoration:none!important;line-height:normal;text-align:center;margin:0;margin-top:0;margin-bottom:0;border-radius:5px;padding:2px 25px}
-.btnyellow{display:inline-block!important;background:#fcd503!important;font-size:18px!important;color:#fff!important;text-transform:uppercase!important;font-family:'HelveticaBold'!important;text-decoration:none!important;line-height:normal!important;text-align:center!important;margin:0!important;border-radius:5px!important;padding:18px 36px!important;text-shadow:0 1px 1px #9c9c9c!important}
+.btnblue{display: inline-block !important; background: #00c0ff !important; font-size: 16px !important; color: #fff!important; text-transform: uppercase; font-family: 'HelveticaBold' !important; text-decoration: none!important; line-height: normal !important; text-align: center !important;
+margin: 0; margin-top: 0; margin-bottom: 0; border-radius: 5px; padding: 14px 18px 10px !important; margin-top: 10px !important;text-decoration:none!important;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);}
+.btnyellow{display: inline-block !important; background: #fcd503 !important; font-size: 16px !important; color: #fff!important; text-transform: uppercase; font-family: 'HelveticaBold' !important; text-decoration: none!important; line-height: normal !important; text-align: center !important;
+	text-decoration:none!important;	margin: 0; margin-top: 0; margin-bottom: 0; border-radius: 5px; padding: 14px 18px 10px !important; margin-top: 10px !important;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);}
+
 .overlaybg{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.7);z-index:9}
 .overlaybg1{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.7);z-index:9}
 .btnformgray{display:inline-block;background:-moz-linear-gradient(270deg,rgba(195,198,205,1) 0%,rgba(106,114,134,1) 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(195,198,205,1)),color-stop(100%,rgba(106,114,134,1)));background:-webkit-linear-gradient(270deg,rgba(195,198,205,1) 0%,rgba(106,114,134,1) 100%);background:-o-linear-gradient(270deg,rgba(195,198,205,1) 0%,rgba(106,114,134,1) 100%);background:-ms-linear-gradient(270deg,rgba(195,198,205,1) 0%,rgba(106,114,134,1) 100%);background:linear-gradient(180deg,rgba(195,198,205,1) 0%,rgba(106,114,134,1) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c3c6cd',endColorstr='#6a7286',GradientType=0);font-size:24px;color:#222!important;text-transform:capitalize;font-family:'HelveticaBold';text-decoration:none!important;line-height:51px;text-align:center;margin:0;border-radius:0}
 .socialmediaicons .fa{color:#f9fafb;opacity:.8}
 .socialmediaicons2{margin-top:15px}
-
-.fa-facebook i{display: none;}
-.fa-twitter i{display: none;}
-.fa-pinterest i{display: none;}
-.fa-linkedin i{display: none;}
-.fa-envelope i{display: none;}
-
-
 .socialmediaicons2 .fa{padding:10px;font-size:15px;width:36px;border-radius:50%;text-decoration:none;margin:5px 7px;height:36px;background:#708694}
 .socialmediaicons .fa-facebook:hover{background:#3B5998;color:#f9fafb}
 .socialmediaicons .fa-twitter:hover{background:#55ACEE;color:#f9fafb}
@@ -141,7 +136,7 @@ a{cursor:pointer;outline:none}
 .innerpagebanner.mat-card{padding:0!important}
 
 .innerpagebanner.mat-card{overflow-x:hidden;background:url(../images/contactusbg.jpg) no-repeat center center;top:0;left:0;min-width:100%;min-height:250px;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;position:relative}
-.innerpagebanner.mat-card h1{text-align:center;text-transform:uppercase;background:-webkit-linear-gradient(#d0d6dd,#7d8a92);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-transform:uppercase;font-size:72px;font-family:"OrbitronBold";position:absolute;top:50%;right:0;transform:translateY(-50%); width: 65%; text-align: right;}
+.innerpagebanner.mat-card h1{text-align:center;text-transform:uppercase;background:-webkit-linear-gradient(#d0d6dd,#7d8a92);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-transform:uppercase;font-size:66px;font-family:"OrbitronBold";position:absolute;top:50%;right:0;transform:translateY(-50%); width: 60%; text-align: right;}
 .innerpagebanner.mat-card .mainwrappercontent{position:relative}
 .innerpagebanner.mat-card .mat-card-content{height:250px;position:relative; margin-bottom: 0;}
 
@@ -564,7 +559,8 @@ width: 100%;
 
 .probidhomeblock1.mat-card .mat-tab-header{width: 1340px; margin: 0 auto; display: block;}
 .probidhomeblock1.mat-card {padding: 0 !important;}
-.probidhomeblock1.mat-card .mat-tab-body-wrapper {background: #fff;padding-bottom: 40px;}
+.probidhomeblock1.mat-card .mat-tab-body-wrapper {background: #fff;padding-bottom: 0px;}
+.probidhomeblock1 .tabwrapper .mat-tab-body .mainwrappercontent .btnblue {margin-bottom:40px !important;}
 
 .tabwrapper .mat-tab-label{background-color: #12c3e3;border-left: 1px solid #fff;padding: 0 37px;}
 .tabwrapper .mat-tab-label:nth-child(1){border-left: 0px solid #fff;}
@@ -613,9 +609,29 @@ width: 100%;
 
 
 .probidhomeblock6.mat-card {background: #e2ecee !important;}
+.sociallink fa{padding: 6px 6px; color: #fff; font-size: 24px;}
+.blogsociallists{margin-top: 20px; display: inline-block;}
+
+.fa-facebook i{display: none;}
+.fa-twitter i{display: none;}
+.fa-pinterest i{display: none;}
+.fa-linkedin i{display: none;}
+.fa-envelope i{display: none;}
+.fa-share i{display: none;}
+
+.sociallink.fb fa{background-color: #5170b1; }
+.sociallink.twi fa{background-color: #1bbef7; }
+.sociallink.pin fa{background-color: #c64348; }
+.sociallink.lin fa{background-color: #1786b1; }
+.sociallink.env fa{background-color: #70787a; }
+.sociallink.share fa{background-color: #97ce32; }
+
+
+
+.searchlistblock.mat-card{padding: 0 !important;}
 
 
 
 
 
-
+.mat-dialog-container{height: auto !important;}

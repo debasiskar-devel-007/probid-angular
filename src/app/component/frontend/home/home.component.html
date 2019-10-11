@@ -1,5 +1,5 @@
 <app-header></app-header>
-
+<!-- 
 <mat-card class="innerpagebanner homebanner">    
         <mat-card-content>
           <mat-list id="slides">
@@ -25,12 +25,12 @@
           <button class="controls" id="previous"><mat-icon aria-hidden="false">arrow_back_ios</mat-icon></button>
           <button class="controls" id="next"><mat-icon aria-hidden="false">arrow_forward_ios</mat-icon></button>          
         </mat-card-content>    
-</mat-card>
-<!-- <mat-card class="innerpagebanner homebanner" style="padding: 0">    
+</mat-card> -->
+<mat-card class="innerpagebanner homebanner" style="padding: 0">    
     <mat-card-content>
       <img src="../../../../assets/images/pro-home-block1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
     </mat-card-content>
-</mat-card> -->
+</mat-card>
 <mat-card class="innerpagetitle">
         <span class="mainwrappercontent">
             <mat-card-content >
@@ -197,7 +197,7 @@
                                   </span> 
                   </mat-list-item>
                </mat-list>
-              <button mat-button class="btnblue sim-button" [routerLink]="['/pre-owned']">View all</button>
+              <button mat-button class="btnblue sim-button" [routerLink]="['/pre-owned-list']">View all >></button>
             </span>
           </ng-template>
         </mat-tab>
@@ -207,7 +207,7 @@
             </ng-template>           
             <ng-template matTabContent>
                 <span class="mainwrappercontent"> 
-                  <h2 class="innertitle2"><img src="../../assets/images/onlineinventoryicon.png"> Online Inventory</h2>
+                  <h2 class="innertitle2"><img src="../../assets/images/preownedcarsicon.png"> Online Inventory</h2>
                   <mat-list class="lists">
                       <mat-list-item> 
                         <span class="listsimgwrap"><img src="../../assets/images/carsimg1.jpg"></span>
@@ -354,7 +354,7 @@
                                       </span> 
                       </mat-list-item>
                    </mat-list>
-                   <button mat-button class="btnblue sim-button" [routerLink]="['/online-inventory']">View all</button>
+                   <button mat-button class="btnblue sim-button" [routerLink]="['/online-inventory-list']">View all >></button>
                    
                 </span>
             </ng-template>
@@ -364,159 +364,17 @@
               <h2>Search Inventory</h2>
           </ng-template>
           <ng-template matTabContent>
-              <span class="mainwrappercontent">     
-                  <h2 class="innertitle2"><img src="../../assets/images/searchinventoryicon.png"> Search Inventory</h2>
-                  <mat-list class="lists">
-                      <mat-list-item> 
-                        <span class="listsimgwrap"><img src="../../assets/images/carsimg1.jpg"></span>
-                        <span class="listsinfo">
-                          <span class="listsinfoprice">
-                              $ 45,000
-                          </span>
-                          <span class="listsinfoaddress">
-                            BMW 535I, NAVI, LEATHER, ABS
-                          </span>
-                        </span> 
-                        <span class="listsbottominfo">
-                            <mat-list class="listsbottom">
-                                <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
-                                <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
-                                <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
-                             </mat-list>
-                        </span> 
-                      </mat-list-item>
-                      <mat-list-item> 
-                          <span class="listsimgwrap"><img src="../../assets/images/carsimg2.jpg"></span>
-                          <span class="listsinfo">
-                            <span class="listsinfoprice">
-                                $ 45,000
-                            </span>
-                            <span class="listsinfoaddress">
-                              BMW 535I, NAVI, LEATHER, ABS
-                            </span>
-                          </span> 
-                          <span class="listsbottominfo">
-                              <mat-list class="listsbottom">
-                                  <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
-                                  <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
-                                  <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
-                               </mat-list>
-                          </span> 
-                      </mat-list-item>
-                      <mat-list-item> 
-                            <span class="listsimgwrap"><img src="../../assets/images/carsimg3.jpg"></span>
-                            <span class="listsinfo">
-                              <span class="listsinfoprice">
-                                  $ 45,000
-                              </span>
-                              <span class="listsinfoaddress">
-                                BMW 535I, NAVI, LEATHER, ABS
-                              </span>
-                            </span> 
-                            <span class="listsbottominfo">
-                                <mat-list class="listsbottom">
-                                    <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
-                                    <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
-                                    <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
-                                 </mat-list>
-                            </span> 
-                      </mat-list-item>
-                      <mat-list-item> 
-                              <span class="listsimgwrap"><img src="../../assets/images/carsimg4.jpg"></span>
-                              <span class="listsinfo">
-                                <span class="listsinfoprice">
-                                    $ 45,000
-                                </span>
-                                <span class="listsinfoaddress">
-                                  BMW 535I, NAVI, LEATHER, ABS
-                                </span>
-                              </span> 
-                              <span class="listsbottominfo">
-                                  <mat-list class="listsbottom">
-                                      <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
-                                      <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
-                                      <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
-                                   </mat-list>
-                              </span> 
-                      </mat-list-item>
-                      <mat-list-item> 
-                                <span class="listsimgwrap"><img src="../../assets/images/carsimg5.jpg"></span>
-                                <span class="listsinfo">
-                                  <span class="listsinfoprice">
-                                      $ 45,000
-                                  </span>
-                                  <span class="listsinfoaddress">
-                                    BMW 535I, NAVI, LEATHER, ABS
-                                  </span>
-                                </span> 
-                                <span class="listsbottominfo">
-                                    <mat-list class="listsbottom">
-                                        <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
-                                        <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
-                                        <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
-                                     </mat-list>
-                                </span> 
-                      </mat-list-item>
-                      <mat-list-item> 
-                                  <span class="listsimgwrap"><img src="../../assets/images/carsimg6.jpg"></span>
-                                  <span class="listsinfo">
-                                    <span class="listsinfoprice">
-                                        $ 45,000
-                                    </span>
-                                    <span class="listsinfoaddress">
-                                      BMW 535I, NAVI, LEATHER, ABS
-                                    </span>
-                                  </span> 
-                                  <span class="listsbottominfo">
-                                      <mat-list class="listsbottom">
-                                          <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
-                                          <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
-                                          <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
-                                       </mat-list>
-                                  </span> 
-                      </mat-list-item>
-                      <mat-list-item> 
-                                    <span class="listsimgwrap"><img src="../../assets/images/carsimg7.jpg"></span>
-                                    <span class="listsinfo">
-                                      <span class="listsinfoprice">
-                                          $ 45,000
-                                      </span>
-                                      <span class="listsinfoaddress">
-                                        BMW 535I, NAVI, LEATHER, ABS
-                                      </span>
-                                    </span> 
-                                    <span class="listsbottominfo">
-                                        <mat-list class="listsbottom">
-                                            <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
-                                            <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
-                                            <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
-                                         </mat-list>
-                                    </span> 
-                      </mat-list-item>
-                      <mat-list-item> 
-                                      <span class="listsimgwrap"><img src="../../assets/images/carsimg8.jpg"></span>
-                                      <span class="listsinfo">
-                                        <span class="listsinfoprice">
-                                            $ 45,000
-                                        </span>
-                                        <span class="listsinfoaddress">
-                                          BMW 535I, NAVI, LEATHER, ABS
-                                        </span>
-                                      </span> 
-                                      <span class="listsbottominfo">
-                                          <mat-list class="listsbottom">
-                                              <mat-list-item> <img src="../../assets/images/listsbottomicon1.png"> 80 </mat-list-item>
-                                              <mat-list-item> <img src="../../assets/images/listsbottomicon2.png"> 67/56 </mat-list-item>
-                                              <mat-list-item> <img src="../../assets/images/listsbottomicon3.png"> Automatic </mat-list-item>
-                                           </mat-list>
-                                      </span> 
-                      </mat-list-item>
-                   </mat-list>
-                   <span class="float-right"><button mat-button class="btnblue sim-button" [routerLink]="['/search-inventory']">View all >></button></span>
-                  
-              </span>
+            <span class="basicsearchinventorybg">
+                <span class="mainwrappercontent">     
+                  <h2 class="innertitle2"><img src="../../assets/images/preownedcarsicon.png"> Search Inventory</h2>
+                  <img src="../../../../assets/images/basic-inventory-search-home.png" style="width: 100%; display: block; margin: 0; padding: 0;">
+                  <span class="float-right">
+                    <button mat-button class="btnblue sim-button" [routerLink]="['/search-inventory-list']">Search >></button>
+                  </span>
+                </span>
+            </span>              
           </ng-template>
-        </mat-tab>         
+        </mat-tab>          
      </mat-tab-group> 
 </mat-card>
 
@@ -531,11 +389,13 @@
           <mat-list-item role="listitem" class="bluebg">
             <h2>Are you looking for a car?</h2>
             <p>Our cars are delivered fully-registered with all requirements completed. We’ll deliver your car wherever you are.</p>
+            <button mat-button class="btnblue sim-button" [routerLink]="['/advance-inventory-search']">Learn More >></button>
             <img src="../../assets/images/searchcarcion.png">
           </mat-list-item>
           <mat-list-item role="listitem" class="orangebg">
               <h2>Do You want to sell a car?</h2>
               <p>What’s your car worth? Receive the absolute best value for your trade-in vehicle. We even handle all paperwork. Schedule your appointment today!</p>
+              <button mat-button class="btnblue sim-button" [routerLink]="['/advance-inventory-search']">Learn More >></button>
               <img src="../../assets/images/sellcarcion.png">
           </mat-list-item>
         </mat-list>
@@ -610,6 +470,7 @@
                   <span class="listsimgwholewrap"><img src="../../assets/images/probidhomeblock3adv.jpg"></span>                      
               </mat-list-item>
            </mat-list>
+           <button mat-button class="btnblue sim-button" [routerLink]="['/specials-list']">Learn More >></button>
       </mat-card-content>
   </span>
 </mat-card>
@@ -644,8 +505,8 @@
                     <p>Our service department maintain your car to stay safe on the road for many more years.</p>             
                 </mat-list-item>
             </mat-list>
-            <button mat-button class="btnblue sim-button" [routerLink]="['/pre-owned']">Learn More >></button>
-        </mat-card-content>
+            <button mat-button class="btnblue sim-button" [routerLink]="['/service']">Learn More >></button>
+        </mat-card-content>        
     </span>
   </mat-card>
 
@@ -653,13 +514,17 @@
       <img src="../../../../assets/images/pro-home-block5.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
   </mat-card> -->
 
-  <mat-card class="probidhomeblock5 generalcls ptb-40">
+  <!-- <mat-card class="probidhomeblock5 generalcls ptb-40">
+    <span class="mainwrappercontent">
+    <h2 class="innertitle2"><img src="../../assets/images/testimonialsicon.png"> Testimonials</h2>
     <app-tesimonial></app-tesimonial>
-  </mat-card>
-
-  <!-- <mat-card class="generalcls blog" style="padding: 0 !important;">  
-      <img src="../../../../assets/images/pro-home-block6.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+    </span>
   </mat-card> -->
+
+  <mat-card class="generalcls testimonial" style="padding: 0 !important; text-align: center; padding-bottom: 40px !important;">  
+      <img src="../../../../assets/images/pro-home-block6.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+      <button mat-button class="btnblue sim-button" [routerLink]="['/testimonial']">Learn More >></button>
+  </mat-card>
 
   <mat-card class="probidhomeblock6 generalcls blog ptb-40">
       <span class="mainwrappercontent">
@@ -667,15 +532,11 @@
           <app-blog></app-blog>
       </span>    
   </mat-card>
-
+<!-- 
   <mat-card class="generalcls blog" style="padding: 0 !important;">  
       <img src="../../../../assets/images/pro-home-block7.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
-  </mat-card>
+  </mat-card> -->
 
-<mat-card class="generalcls blog" style="padding: 0 !important;">  
-   <!-- <app-tesimonial></app-tesimonial> -->  
-   <!-- <app-blog></app-blog>  -->
-</mat-card> 
 <!-- 
  <app-service></app-service>      // service page
 

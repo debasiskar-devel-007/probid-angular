@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-footer',
@@ -10,10 +11,26 @@ export class FooterComponent implements OnInit {
   
   windowScrolled: boolean;
 
-  constructor(public router: Router, public route: ActivatedRoute,) {
+  constructor(public router: Router, public route: ActivatedRoute, public dialog: MatDialog) {
     // console.log(router.url);
     
    }
+
+   termscondition() {
+    const dialogRef = this.dialog.open(DialogTermsDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  privacypolicy() {
+    const dialogRef = this.dialog.open(DialogPrivacyDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
    @HostListener("window:scroll", [])
 
@@ -50,3 +67,18 @@ export class FooterComponent implements OnInit {
   }
 
 }
+
+
+@Component({
+    selector: 'terms-dialog',
+    templateUrl: 'terms-dialog.html',
+  })
+  export class DialogTermsDialog {}
+
+
+  
+@Component({
+    selector: 'privacy-dialog',
+    templateUrl: 'privacy-dialog.html',
+  })
+  export class DialogPrivacyDialog {}

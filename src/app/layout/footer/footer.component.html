@@ -1,4 +1,4 @@
-<mat-card style="padding: 0" class="footerwrapper"  *ngIf="router.url ==='/' || router.url =='/home' || router.url =='/forget-password' || router.url =='/reset-password' || router.url =='/sign-up' || router.url == '/contactus' || router.url == '/service' || router.url == '/servicelist' || router.url == '/testimonial' || router.url == '/testimoniallist' || router.url == '/contactus' || router.url == '/blog' || router.url == '/bloglist' || router.url == '/blogdetail' || router.url == '/basic-inventory-search' || router.url == '/advance-inventory-search' || router.url == '/pre-owned' || router.url == '/aboutus'">
+<mat-card style="padding: 0" class="footerwrapper"  *ngIf="router.url ==='/' || router.url =='/home' || router.url =='/forget-password' || router.url =='/reset-password' || router.url =='/sign-up' || router.url == '/contactus' || router.url == '/service' || router.url == '/servicelist' || router.url == '/testimonial' || router.url == '/testimoniallist' || router.url == '/contactus' || router.url == '/blog' || router.url == '/bloglist' || router.url == '/blogdetail' || router.url == '/basic-inventory-search' || router.url == '/advance-inventory-search' || router.url == '/pre-owned' || router.url == '/aboutus' || router.url == '/pre-owned-list' || router.url == '/online-inventory-list' || router.url == '/search-inventory-list' || router.url == '/specials-list'">
   <span class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
     <a (click)="scrollToTop()">
       <!-- <i class="fa fa-chevron-up"></i> -->
@@ -7,6 +7,10 @@
   
   </span>
   <img src="../../../assets/images/pro-home-block8-ft.jpg" style="padding: 0; margin: 0; display: block; width: 100%;">
+  <span class="footerbottom">
+    <h3><a mat-raised-button (click)="termscondition()">terms of service</a> | <a mat-raised-button (click)="privacypolicy()">privacy policy</a> </h3>
+  </span>
+
 
   <!-- <span class="mainwrappercontent">
      <mat-card-content>
@@ -66,3 +70,8 @@
     <app-bk-footer></app-bk-footer>
   </mat-card-content>
 </mat-card>
+
+
+
+
+

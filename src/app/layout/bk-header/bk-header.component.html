@@ -18,13 +18,19 @@
                                 <div class="triangle"></div>
                             </mat-list-item>
                     <mat-list-item  class="nav-item" routerLinkActive="activemenu" (click)="open(1)">
-                        <a class="nav-item-hold">
+                        <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/admin-dashboard']">
                             <span class="nav-text">Dashboard</span>
                         </a>
                         <div class="triangle"></div>
                     </mat-list-item>
                     <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
-                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/inventory-search']">Inventory Search</a>
+                            <a [matMenuTriggerFor]="menu3">Inventory Search</a>
+                            <mat-menu #menu3="matMenu" class="activedropmenu">
+                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/inventory-search-by-category']">Inventory Search by Category</a>
+                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/create-new-inventory']">Create new Inventory</a>
+                            </mat-menu>
+                            <div class="triangle"></div>
+                        <!-- <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/inventory-search']">Inventory Search</a> -->
                         <!-- <mat-menu #menu1="matMenu" class="activedropmenu">
                             <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/by-category']">by category</a>
                             <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/create-new']">create new</a>
@@ -56,29 +62,44 @@
                         <a [matMenuTriggerFor]="menu1">User Management</a>
                         <mat-menu #menu1="matMenu" class="activedropmenu">
                             <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/customer-list']">Customers</a>
-                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/salesreplists']">SalesRep</a>
+                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/salesrep-list']">SalesRep</a>
                             <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/birddog-list']">Birddogs</a>
                         </mat-menu>
                         <div class="triangle"></div>
                     </mat-list-item>  
                     <mat-list-item class="nav-item" routerLinkActive="activemenu">
-                        <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-training']">
+                            <a [matMenuTriggerFor]="menu4">Training Manager</a>
+                            <mat-menu #menu4="matMenu" class="activedropmenu">
+                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-training']">Manage Training</a>
+                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-lessons']">Manage Lessons</a>
+                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/training-center']">Training Center</a>
+                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/training-report']">Training Report</a>
+                            </mat-menu>
+                            <div class="triangle"></div>
+
+                        <!-- <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-training']">
                             <span class="nav-text">Manage Training</span>
                         </a>
-                        <div class="triangle"></div>
+                        <div class="triangle"></div> -->
                     </mat-list-item>
                     <mat-list-item class="nav-item" routerLinkActive="activemenu">
-                        <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-availability']">
+                            <a [matMenuTriggerFor]="menu5">Calendar Manager</a>
+                            <mat-menu #menu5="matMenu" class="activedropmenu">
+                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-availability']">Manage Availability</a>
+                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/my-appointment']">My Appointment</a>
+                            </mat-menu>
+                            <div class="triangle"></div>
+                        <!-- <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-availability']">
                             <span class="nav-text">Manage Availability</span>
                         </a>
-                        <div class="triangle"></div>
+                        <div class="triangle"></div> -->
                     </mat-list-item>
                     <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
                         <a [matMenuTriggerFor]="menu3">Manage Website</a>
                         <mat-menu #menu3="matMenu" class="activedropmenu">
                             <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/blog-management']">Blog Management</a> 
                             <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/testimonial-lists-admin']">testimonial lists</a>
-                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/newsletterlists']">newsletter</a>
+                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/newsletter-lists']">newsletter</a>
                         </mat-menu>
                         <div class="triangle"></div>
                     </mat-list-item>  

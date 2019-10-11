@@ -32,8 +32,7 @@
   .demo-border {
     padding: 10px 10px 10px 10px;
     box-sizing: border-box;
-    border: 1px solid;
-    border-color: #CFCFCF;
+    border: none !important;
     margin-bottom: 20px;
   }
   

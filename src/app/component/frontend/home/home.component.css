@@ -4,11 +4,18 @@
     position: relative;
 }
 
-
 .probidhomeblock1.mat-card{background-color: #e2ecee !important;}
 
+.basicsearchinventorybg{
+    overflow-x:hidden;background:url(../../../../assets/images/basicsearchinventorybg.jpg) no-repeat center center !important;top:0;left:0;min-width:100%;min-height:457px;-webkit-background-size:cover !important;-moz-background-size:cover !important;-o-background-size:cover !important;background-size:cover !important;position:relative; padding: 0;display: flex; flex-wrap: wrap;
+}
 
 .probidhomeblock2 {overflow-x:hidden;background:url(../../../../assets/images/probidhomeblock2bg.jpg) no-repeat center center !important;top:0;left:0;min-width:100%;min-height:457px;-webkit-background-size:cover !important;-moz-background-size:cover !important;-o-background-size:cover !important;background-size:cover !important;position:relative; padding: 0;display: flex; align-items: center;}
+
+
+
+
+
 .probidhomeblock2inner .mat-list {display: flex;align-items: stretch; justify-content: space-between;}
 .probidhomeblock2inner .mat-list .mat-list-item{height: auto; position: relative;     width: 40%;
     padding: 48px;}

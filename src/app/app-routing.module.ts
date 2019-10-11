@@ -20,6 +20,7 @@ import { AdvanceInventorySearchComponent } from './component/frontend/advance-in
 import { BasicInventorySearchComponent } from './component/frontend/basic-inventory-search/basic-inventory-search.component';
 import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.component';
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
+import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
 /**End Frontend Routing**/
 
 /**Backend Routing**/
@@ -73,23 +74,27 @@ const routes: Routes = [
       endpoint: "datalist"
     }
   },
+  { path: 'pre-owned-list', component: SearchListViewComponent },
+  { path: 'online-inventory-list', component: SearchListViewComponent },
+  { path: 'search-inventory-list', component: SearchListViewComponent },
+  { path: 'specials-list', component: SearchListViewComponent },
 
-  {
-    path: "testimonial",
-    component: TesimoniallistComponent,
-    resolve: { testimonialListData: ResolveService },
-    data: {
-      requestcondition: { source: "testimonals", condition: {} },
-      endpoint: "datalist"
-    }
-  },
+  // {
+  //   path: "testimonial",
+  //   component: TesimoniallistComponent,
+  //   resolve: { testimonialListData: ResolveService },
+  //   data: {
+  //     requestcondition: { source: "testimonals", condition: {} },
+  //     endpoint: "datalist"
+  //   }
+  // },
 
 
   //  static path
-  // {
-  //   path: "testimonial",
-  //   component: TesimoniallistComponent
-  // },
+  {
+    path: "testimonial",
+    component: TesimoniallistComponent
+  },
 
 
 
@@ -100,19 +105,19 @@ const routes: Routes = [
     resolve: { serviceListData: ResolveService },
     data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
   },
-  {
-    path: 'service',
-    component: ServicelistComponent,
-    resolve: { serviceListData: ResolveService },
-    data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
-  },
+  // {
+  //   path: 'service',
+  //   component: ServicelistComponent,
+  //   resolve: { serviceListData: ResolveService },
+  //   data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
+  // },
 
   //  static path
 
-  // {
-  //   path: 'service',
-  //   component: ServicelistComponent
-  // },
+  {
+    path: 'service',
+    component: ServicelistComponent
+  },
 
 
   { path: 'bloghome', component: BlogComponent, resolve: { serviceListData: ResolveService }, data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalist' } },
@@ -159,9 +164,9 @@ const routes: Routes = [
   { path: 'commission-list', component: CommissionListComponent },
   { path: 'customer-list', component: CustomerListComponent },
   { path: 'manage-commission', component: ManageCommissionComponent },
-  { path: 'newsletterlists', component: NewsletterlistsComponent },
+  { path: 'newsletter-list', component: NewsletterlistsComponent },
   { path: 'sales-report', component: SalesReportComponent },
-  { path: 'salesreplists', component: SalesreplistsComponent },
+  { path: 'salesrep-list', component: SalesreplistsComponent },
   { path: 'rsvp', component: RsvplistsComponent },
   { path: 'manage-training', component: ManageTrainingComponent },
 

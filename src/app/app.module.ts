@@ -28,7 +28,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 /**Frontend Component**/
 
 import { HeaderComponent, comingSoonDialog } from './layout/header/header.component';
-import { FooterComponent } from './layout/footer/footer.component';
+import { FooterComponent, DialogTermsDialog, DialogPrivacyDialog } from './layout/footer/footer.component';
 import { HomeComponent } from './component/frontend/home/home.component';
 import { ContactusComponent } from './component/frontend/contactus/contactus.component';
 import { ForgetPasswordComponent } from './component/frontend/forget-password/forget-password.component';
@@ -86,6 +86,7 @@ import { SalesReportComponent } from './component/backend/sales-report/sales-rep
 import { SalesreplistsComponent } from './component/backend/salesreplists/salesreplists.component';
 import { RsvplistsComponent } from './component/backend/rsvplists/rsvplists.component';
 import { ManageTrainingComponent } from './component/backend/manage-training/manage-training.component';
+import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
 /**End Backend Component** */
 
 
@@ -101,6 +102,8 @@ import { ManageTrainingComponent } from './component/backend/manage-training/man
     HeaderComponent,
     comingSoonDialog,
     FooterComponent,
+    DialogPrivacyDialog,
+    DialogTermsDialog,
     HomeComponent,
     BkHeaderComponent,
     BkFooterComponent,
@@ -136,7 +139,8 @@ import { ManageTrainingComponent } from './component/backend/manage-training/man
     SalesReportComponent,
     SalesreplistsComponent,
     RsvplistsComponent,
-    ManageTrainingComponent
+    ManageTrainingComponent,
+    SearchListViewComponent
   ],
   imports: [
     AngularFontAwesomeModule,
@@ -161,6 +165,6 @@ import { ManageTrainingComponent } from './component/backend/manage-training/man
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
-  entryComponents: [comingSoonDialog]
+  entryComponents: [comingSoonDialog, DialogPrivacyDialog, DialogTermsDialog,]
 })
 export class AppModule { }

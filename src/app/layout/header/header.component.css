@@ -141,7 +141,7 @@
     .mat-drawer-container {display: none !important;}
     .homemain {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;justify-content: space-between;}
     .homemain .smlmenudiv {width: 1246px;margin: 0 auto;}
-    .homemain .mat-list-item {float: right;text-align: center;height: 64px;width: auto;position: relative;}
+    .homemain .mat-list-item {float: right;text-align: center;height: 100%;width: auto;position: relative;}
     /* .homemain .mat-list-item:before {content: "";position: absolute;left: 0;-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;width: 4px;height: 4px;border: none;text-align: center;-o-text-overflow: ellipsis;text-overflow: ellipsis;background: #b623ff;top: 50%;transform: translateY(-50%);} */
     .homemain .mat-list-item:first-child:before {display: none;}
     .homemain .mat-list-item .mat-list-item-content {padding: 0 4px;}
