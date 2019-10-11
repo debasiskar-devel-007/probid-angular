@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-reset-password',
@@ -10,13 +11,14 @@ export class ResetPasswordComponent implements OnInit {
 
   public logo: any = '../../assets/images/logo.png';
   public fromTitleName: any = 'Reset Password';
-  public serverUrl: any = 'https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/';
+  // public serverUrl: any = 'https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/';
+  public serverUrl: any = this.apiService.serverUrlDemo;
   public addEndpoint: any = {
     endpoint:'addorupdatedata',
     source:'usermanagement'
   };
   
-  constructor(private readonly meta: MetaService) {
+  constructor(private readonly meta: MetaService, public apiService: ApiService) {
     
     this.meta.setTitle('Reset Password dynamic');
     this.meta.setTag('og:description', 'This is dynamic description');

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
+import { ApiService } from '../../../api.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +10,8 @@ import { MetaService } from '@ngx-meta/core';
 export class DashboardComponent implements OnInit {
 
   public formTitle: any = "Contact Us Listing Page";
-  public serverUrl: any = 'https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/';
+  // public serverUrl: any = 'https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/';
+  
   public getDataUrl: any = {
     endpoint: 'datalist',
     source: 'contactusForm'
@@ -23,7 +25,10 @@ export class DashboardComponent implements OnInit {
   // public getDataUrl: any = 'datalist';
   public contactUsAllDataHeaderSkip: any = ['_id'];
   public contactUsAllDataModifyHeader: any = { addresses: 'Addresses', emails: 'Emails', locationname: 'Location Name', phones: 'Phones' };
-  constructor(private readonly meta: MetaService) {
+
+  public serverUrl: any = this.ApiService.serverUrlDemo;
+  constructor(private readonly meta: MetaService, public ApiService: ApiService) {
+   
     
     this.meta.setTitle('About us dynamic');
     this.meta.setTag('og:description', 'This is dynamic decription ');

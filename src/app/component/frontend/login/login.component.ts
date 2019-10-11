@@ -22,7 +22,8 @@ export class LoginComponent implements OnInit {
   
   public logo: any = '../../assets/images/logo.png';      // logo url 
   public fromTitle: any = "Login";    // This is a From Title 
-  public fullUrl: any = "https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/";  // server url
+  // public fullUrl: any = "https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/";  // server url
+  public fullUrl: any = this.apiService.serverUrlDemo;
   public endpoint: any = "login";  // login endpoint
   // public signUpRouteingUrl: any = 'sign-up';      // navigate the sign up page
   // public forgetRouteingUrl: any = 'forget-password';      // navigate the Forget password page

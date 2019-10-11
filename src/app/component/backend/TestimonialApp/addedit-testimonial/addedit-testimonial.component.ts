@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router , ActivatedRoute } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-addedit-testimonial',
@@ -11,7 +12,8 @@ export class AddeditTestimonialComponent implements OnInit {
 /* Config for add and edit start */
 public configAddEdit: any = {
   action: "add",
-  endpoint: "https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/addorupdatedata",
+  // endpoint: "https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/addorupdatedata",
+  endpoint: this.ApiService.serverUrlDemo + 'addorupdatedata',
   source: "testimonial",
   condition: {},
   defaultData: null,
@@ -21,7 +23,7 @@ public configAddEdit: any = {
 }
 /* Config for add and edit end */
 
-  constructor( private router : Router , private activatedRoute : ActivatedRoute ,private cookieService : CookieService) { }
+  constructor( private router : Router , private activatedRoute : ActivatedRoute ,private cookieService : CookieService, public ApiService: ApiService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
