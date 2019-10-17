@@ -71,11 +71,14 @@ import { CommunicationComponent } from './component/backend/communication/commun
 const routes: Routes = [
 
   /**Frontend Routing**/
-  { path: '', component: LoginComponent },
+  { path: 'admin-login', component: LoginComponent },
+  { path: 'salesrep-login', component: LoginComponent },
+  { path: 'customer-login', component: LoginComponent },
+  
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'contactus', component: ContactusComponent },
   {
     path: "testimonialhome",

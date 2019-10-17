@@ -26,9 +26,19 @@
                   <mat-list-item role="listitem">
                     <img src="../../assets/images/clockicon.png"> MON - SAT 0.00 - 00.00
                   </mat-list-item>
-                  <mat-list-item role="listitem"><span><a [routerLink]="['']"><img src="../../assets/images/loginicon.png"> login</a></span>
-                    <span><a [routerLink]="['/sign-up']">Register</a></span></mat-list-item>
-        
+                  <mat-list-item role="listitem" routerLinkActive="activemenu">
+                    <span>
+                      <a [matMenuTriggerFor]="loginmenu1"><img src="../../assets/images/loginicon.png"> login</a>
+                      <mat-menu #loginmenu1="matMenu" class="activedropmenu">
+                          <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/admin-login']">admin login</a>
+                          <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/salesrep-login']">SalesRep login</a>
+                          <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/customer-login']">Customer login</a>
+                        </mat-menu>
+                    </span>
+                   </mat-list-item>
+                    <mat-list-item role="listitem" class="activedropmenu">
+                        <span><a [routerLink]="['/sign-up']">Register</a></span>
+                    </mat-list-item>
                 </mat-list>
               </span>
             </mat-card-content>

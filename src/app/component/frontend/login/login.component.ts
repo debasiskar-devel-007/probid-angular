@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
 import { ApiService } from '../../../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -41,7 +42,7 @@ export class LoginComponent implements OnInit {
     "customURl":""
   };
   public routerStatus: any;
-    constructor(private readonly meta: MetaService, public apiService:ApiService) { 
+    constructor(private readonly meta: MetaService, public apiService:ApiService, public router:Router) { 
 
     this.meta.setTitle('Login Form dynamic');
     this.meta.setTag('og:description', 'This is dynamic decription');
@@ -70,6 +71,22 @@ export class LoginComponent implements OnInit {
   
     ngOnInit() {
       console.log(this.apiService.serverUrlDemo)
+    }
+
+
+    goto(){
+      console.log('sadfdff');
+      if (this.router.url =='/admin-login') {
+        this.router.navigateByUrl('/admin-dashboard');
+
+      } else if (this.router.url =='/salesrep-login') {
+
+        this.router.navigateByUrl('/rep-dashboard');
+
+      } else if(this.router.url =='/customer-login') {
+
+        this.router.navigateByUrl('/customer-dashboard');
+      }
     }
   
   }
