@@ -292,7 +292,8 @@ a{cursor:pointer;outline:none}
  .mat-menu-panel.activedropmenu{margin-left:0;margin-top:16px;background-color:#cdd4da !important;}
  .mat-menu-panel{min-width: 140px;}
 .mat-menu-panel.activedropmenu .mat-menu-content{background-color:#222222 !important;}
-.mat-menu-panel.activedropmenu .mat-menu-content .activemenu{background-color:#12c3e3;}
+.activemenu{background-color:#12c3e3;}
+.activemenu a{color:#fff!important;}
 .mat-menu-content a.mat-menu-item{color:#fdfdfd!important;text-transform:uppercase;padding: 4px 10px; border-top: 1px solid #333;}
 .mat-menu-content a.mat-menu-item:hover{color:#fff!important;text-transform:uppercase;padding: 4px 10px; border-top: 1px solid #333;}
 .logomodalwrapper{width:480px;margin:0 auto;display:block;background:#ddd4d4;padding:10px;}

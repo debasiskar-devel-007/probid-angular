@@ -79,6 +79,7 @@ const routes: Routes = [
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'contactus', component: ContactusComponent },
   {
     path: "testimonialhome",
