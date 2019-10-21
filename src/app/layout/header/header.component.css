@@ -1,3 +1,133 @@
+/*---right side links css---*/
+
+.rightsidelinks .mat-card-content{position: relative;}
+
+
+
+
+.rightsidelinks{
+  /* position: fixed;
+  top: 22%;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 115px;
+  height: auto;
+  overflow: hidden;
+  white-space: normal;
+  word-break: break-word;  
+  transition: width 0.5s;
+  -webkit-transition: width 0.5s;
+  padding: 0;
+  background:none !important; */
+    position: fixed;
+    top: 22%;
+    right: 0;
+    z-index: 9999;
+    width: 45px;
+    height: auto;
+    /* overflow: hidden; */
+    white-space: normal;
+    word-break: break-word;
+    transition: width 0.5s;
+    -webkit-transition: width 0.5s;
+    padding: 0;
+    background: none !important;
+}
+
+.rightsidelinks span:nth-child(1){
+  background-color: #30393e;
+}
+.rightsidelinks span:nth-child(2){
+  background-color: #30393e;
+}
+.rightsidelinks span:nth-child(3){
+  background-color: #30393e;
+}
+
+.rightsidelinks span.content{
+  /* width: auto!important;
+    margin: 0;
+    padding:5px 0px 5px;
+    text-transform: capitalize;
+    font-size: 12px;
+    height: auto;
+    border-bottom: 1px solid #000;
+    color:#f5f5f5; */
+    width: 70px!important;
+    margin: 0;
+    padding: 4px 0px 4px;
+    text-transform: capitalize;
+    font-size: 12px;
+    height: auto;
+    border-bottom: 1px solid #000;
+    color: #f5f5f5;
+    position: absolute;
+    transition: 1s;
+    top: 3px;
+    right: -45px;
+    z-index:-1;
+}
+
+.rightsidelinks span{
+  /* padding: 0;
+  border-radius: 0;
+  width:115px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 2px; */
+  padding: 0;
+  border-radius: 0;
+  width: 45px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 2px;
+}
+.rightsidelinks .iconimg{
+  /* width:45px; height: 40px;display: block;
+  border: 1px solid rgba(255, 255, 255, 0.2); */
+  width: 45px;
+  height: 40px;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.rightsidelinks .iconimg img{
+  width: 68%;
+  padding: 5px;
+}
+
+.rightsidelinks a:hover + .content{transition: 2s;right: 0px; z-index:9;}
+
+.rightsidelinks span a{display: flex; align-items: center; justify-content: space-between; z-index:99;}
+
+.content {
+  display: none;
+  margin: 15px;
+  background-color: #f54336!important;
+}
+.rightsidelinks span:nth-child(1):hover .content {
+  display: block;
+}
+.rightsidelinks span:nth-child(2):hover .content {
+  display: block;
+}
+.rightsidelinks span:nth-child(3):hover .content {
+  display: block;
+}
+
+.rightsidelinks span:hover .img {
+  float: left;
+}
+
+/*---end right side links css---*/
+
+
 /*Header top block css*/
 
 .langblock select.mat-input-element:not(:disabled) {
@@ -12,6 +142,9 @@
     width: inherit;
     color: #a7a6a6;
     text-transform: uppercase;
+  }
+  .infoblock .mat-list .mat-list-item a, .infoblock .mat-list .mat-list-item a:hover{
+    color: #a7a6a6;
   }
   .infoblock .mat-list .mat-list-item span {
     border-right: 1px solid #333;
@@ -219,30 +352,14 @@
 }
 
 
-@media screen and (max-width:540px) {
-    
-    .infoblock{
-        margin-bottom: 10px !important;
-    }
-    .langblock select {
-        color: #fff;
-        margin-bottom: 0px;
-        display: inline-block;
-        margin-top: 10px;
-    }
+@media only screen and (max-width: 600px) {
+  .rightsidelinks .iconimg {width: 45px; height: auto;}
+  .rightsidelinks {width: 45px;}
+}
 
-.headertopwrapper.mat-card-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0;
-    flex-wrap: wrap;
-}
-.topcontactinfoblock .mat-list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 0;
-    flex-wrap: wrap;
-}
+@media screen and (max-width:540px) {  
+  .infoblock{margin-bottom: 10px !important}
+  .langblock select{color: #fff;margin-bottom: 0px;display: inline-block;margin-top: 10px}
+  .headertopwrapper.mat-card-content{display: flex;align-items: center;justify-content: center;margin-bottom: 0;flex-wrap: wrap}
+  .topcontactinfoblock .mat-list{display: flex;justify-content: center;align-items: center;padding-top: 0;flex-wrap: wrap}
 }

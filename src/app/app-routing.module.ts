@@ -53,6 +53,13 @@ import { SalesReportComponent } from './component/backend/sales-report/sales-rep
 import { SalesreplistsComponent } from './component/backend/salesreplists/salesreplists.component';
 import { RsvplistsComponent } from './component/backend/rsvplists/rsvplists.component';
 import { ManageTrainingComponent } from './component/backend/manage-training/manage-training.component';
+import { ManageLessonsComponent } from './component/backend/manage-lessons/manage-lessons.component';
+import { TrainingCenterComponent } from './component/backend/training-center/training-center.component';
+import { TrainingReportComponent } from './component/backend/training-report/training-report.component';
+import { MyAppointmentComponent } from './component/backend/my-appointment/my-appointment.component';
+import { CreateNewInventoryComponent } from './component/backend/create-new-inventory/create-new-inventory.component';
+import { JobTicketComponent } from './component/backend/job-ticket/job-ticket.component';
+import { SocialAdvoComponent } from './component/backend/social-advo/social-advo.component';
 import { from } from 'rxjs';
 import { TranningcategorymanagementComponent } from './training/tranningcategorymanagement/tranningcategorymanagement.component';
 import { AddEditComponent } from './training/tranningcategorymanagement/add-edit/add-edit.component';
@@ -60,15 +67,24 @@ import { TrainingsectionlistComponent } from './training/trainingsectionlist/tra
 import { TrainingsectionComponent } from './training/trainingsection/trainingsection.component';
 import { RepTraingcenterComponent } from './training/rep-traingcenter/rep-traingcenter.component';
 import { ManageleadsComponent } from './training/manageleads/manageleads.component';
+import { BookAnAppointmentComponent } from './component/backend/book-an-appointment/book-an-appointment.component';
+import { AdvanceInventorySearchBackendComponent } from './component/backend/advance-inventory-search-backend/advance-inventory-search-backend.component';
+import { BasicInventorySearchBackendComponent } from './component/backend/basic-inventory-search-backend/basic-inventory-search-backend.component';
+import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
+import { CommunicationComponent } from './component/backend/communication/communication.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
 
   /**Frontend Routing**/
-  { path: '', component: LoginComponent },
+  { path: 'admin-login', component: LoginComponent },
+  { path: 'salesrep-login', component: LoginComponent },
+  { path: 'customer-login', component: LoginComponent },
+  
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'sign-up', component: SignUpComponent },
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'contactus', component: ContactusComponent },
   {
@@ -125,11 +141,8 @@ const routes: Routes = [
     component: ServicelistComponent
   },
 
-
-  // { path: 'bloghome', component: BlogComponent, resolve: { serviceListData: ResolveService }, data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalist' } },
+  { path: 'bloghome', component: BlogComponent, resolve: { serviceListData: ResolveService }, data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalist' } },
   
-  {path: 'bloghome', component: BlogComponent},
-
   { path: 'blog', component: BloglistComponent },
   { path: 'blogdetail', component: BlogdetailComponent },
   { path: 'advance-inventory-search', component: AdvanceInventorySearchComponent },
@@ -143,9 +156,7 @@ const routes: Routes = [
   // {path: 'customer-dashboard', component:DashboardComponent, canActivate:[AuthGuard]},       // Useing for canActive
   { path: 'customer-dashboard', component: DashboardComponent },
   { path: 'admin-dashboard', component: MaindashboardComponent },
-
   { path: 'bk-leftdiv', component: BkLeftdivComponent },
-
   { path: 'testimonial/add', component: AddeditTestimonialComponent },
   {
     path: 'testimonial/edit/:_id', component: AddeditTestimonialComponent, resolve: { testimonialData: ResolveService },
@@ -166,30 +177,55 @@ const routes: Routes = [
   },
   { path: 'blog-management', component: BlogManagementComponent },
   { path: 'commission-report', component: CommissionReportComponent },
-  { path: 'inventory-search', component: InventorySearchComponent },
+  { path: 'inventory-list', component: InventorySearchComponent },
   { path: 'manage-availability', component: ManageAvailabilityComponent },
   { path: 'testimonial-lists-admin', component: TestimonialListsAdminComponent },
   { path: 'birddog-list', component: BirddogListComponent },
   { path: 'commission-list', component: CommissionListComponent },
-  { path: 'customer-list', component: CustomerListComponent },
+  { path: 'customer-list-admin', component: CustomerListComponent },
   { path: 'manage-commission', component: ManageCommissionComponent },
   { path: 'newsletter-list', component: NewsletterlistsComponent },
   { path: 'sales-report', component: SalesReportComponent },
-  { path: 'salesrep-list', component: SalesreplistsComponent },
+  { path: 'salesrep-list-admin', component: SalesreplistsComponent },
   { path: 'rsvp', component: RsvplistsComponent },
   { path: 'manage-training', component: ManageTrainingComponent },
-
+  { path: 'manage-lessons', component: ManageLessonsComponent },
+  { path: 'training-center', component: TrainingCenterComponent },
+  { path: 'training-report', component: TrainingReportComponent },
+  { path: 'my-appointment-admin', component: MyAppointmentComponent },
+  { path: 'create-new-inventory', component: CreateNewInventoryComponent },
+  { path: 'job-ticket', component: JobTicketComponent },
+  { path: 'social-advo-admin', component: SocialAdvoComponent },  
+ 
   /**************** User Management *****************/
   {
     path: 'user-management', component: UserManagementComponent, resolve: { serviceList: ResolveService },
     data: { requestcondition: { source: 'user', condition: {} }, endpoint: 'datalist' }
   },
-
+  
+  { path: 'my-appointment-user', component: MyAppointmentComponent },
+  { path: 'book-an-appointment-user', component: BookAnAppointmentComponent },
+  
+  { path: 'advance-inventory-search-user', component: AdvanceInventorySearchBackendComponent },
+  { path: 'basic-inventory-search-user', component: BasicInventorySearchBackendComponent },
+  { path: 'mysalesrep', component: MysalesrepComponent },
   // { path:'contact-us-dashboard', component:ContactUsDashboardComponent,  resolve: { serviceList: ResolveService },
   // data: { requestcondition: { source: 'contactusForm', condition: {} }, endpoint: 'datalist'}},
-
   /**************** Rep Management *****************/
   { path: 'rep-dashboard', component: RepdashboardComponent },
+  { path: 'my-commission', component: CommissionListComponent },
+  { path: 'my-birddog', component: BirddogListComponent },
+  
+  { path: 'my-appointment-rep', component: MyAppointmentComponent },
+  { path: 'book-an-appointment-rep', component: BookAnAppointmentComponent },
+  { path: 'customer-list-rep', component: CustomerListComponent },
+  { path: 'social-advo-rep', component: SocialAdvoComponent },
+
+  
+  { path: 'advance-inventory-search-rep', component: AdvanceInventorySearchBackendComponent },
+  { path: 'basic-inventory-search-rep', component: BasicInventorySearchBackendComponent },
+  { path: 'communication', component: CommunicationComponent },
+  { path: 'training-center-rep', component: TrainingCenterComponent },
 
   /**End Backend Routing**/
 

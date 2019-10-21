@@ -1,0 +1,31 @@
+    @media only screen and (max-width: 1350px) {
+    .topblock .mat-list .mat-list-item .mat-list-item-content button{margin:0;padding:0 10px}
+    .topmenulist .navigation-left a {font-size: 12px; padding: 0px 0px;}
+    .admcls .header .toolbar-row .logo {width: 150px;padding: 12px 13px;}
+    }
+    @media only screen and (max-width: 1280px) {
+    .topmenulist .navigation-left .nav-item .mat-list-item-content {padding: 0 6px;}
+    }
+
+    @media only screen and (max-width: 1199px) {
+    .topmenulist{display: none;}
+    }
+    @media only screen and (max-width: 1080px) {
+    .clearmenu{clear:both;overflow:hidden;background:none!important;border:none!important;box-shadow:none!important;margin:0!important;padding:0!important;border-radius:0!important;display:block!important}
+    .topblock .mat-list{display:block;float:none;margin:22px auto;padding:0;clear:both;width:586px}
+    }
+   
+    @media only screen and (max-width: 667px) {
+    .topmenudevider2{display:block;width:30px;height:78px;float:left}
+    .topmenudevider2 .dehazeicon{color:#fb4a32;display:block;margin:24px 0 0!important;font-size:30px;cursor:pointer}
+    .topblock .mat-list{margin:0 auto;height:0;width:0;position:absolute;-webkit-transition:all .2s linear;-moz-transition:all .2s linear;-o-transition:all .2s linear;transition:all .2s linear}
+    .topblock .mat-list .mat-list-item{display:block;float:none;width:auto;margin:0;padding:0;height:auto;color:#fff!important;background:#222!important;text-align:center}
+    .topblock .mat-list .mat-list-item .mat-list-item-content button{margin:0;padding:5px;height:auto;line-height:32px;font-size:16px!important;color:#fff!important;text-align:center;border-bottom:solid 1px #ccc!important}
+    .topblock .mat-list .mat-list-item .mat-list-item-content button:hover{color:#fff!important;background:#dc4430!important}
+    .topblock .mat-list .mat-list-item .mat-list-item-content button.active{color:#fff!important;background:#dc4430!important}
+    .topblock .mat-list .mat-list-item .mat-list-item-content button:last-of-type{border:none}
+    }
+    @media only screen and (max-width: 540px) {
+    .headerlogo{width:100%;float:none;background:#222!important;padding:10px 2px;display:block}
+    .headerlogo img{width:auto;max-width:90%}
+    }

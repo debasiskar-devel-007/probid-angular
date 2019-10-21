@@ -10,8 +10,9 @@
 /* @import "~material-icons/iconfont/material-icons.css"; */
 
 
-
-
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.contact-form .main-div{height:auto!important;display:inherit!important;justify-content:inherit!important;align-items:inherit!important}
+.contact-form .mat-form-field-appearance-legacy .mat-form-field-wrapper .mat-form-field-suffix{color: #000;}
+
+.example-container .mat-form-field { margin: 0 0px !important;}

@@ -108,6 +108,18 @@ import { CKEditorModule } from 'ngx-ckeditor';
 import { ClipboardModule } from 'ngx-clipboard';
 import { RepTraingcenterComponent } from './training/rep-traingcenter/rep-traingcenter.component';
 import { ManageleadsComponent } from './training/manageleads/manageleads.component';
+import { ManageLessonsComponent } from './component/backend/manage-lessons/manage-lessons.component';
+import { TrainingCenterComponent } from './component/backend/training-center/training-center.component';
+import { TrainingReportComponent } from './component/backend/training-report/training-report.component';
+import { MyAppointmentComponent } from './component/backend/my-appointment/my-appointment.component';
+import { CreateNewInventoryComponent } from './component/backend/create-new-inventory/create-new-inventory.component';
+import { JobTicketComponent } from './component/backend/job-ticket/job-ticket.component';
+import { SocialAdvoComponent } from './component/backend/social-advo/social-advo.component';
+import { BookAnAppointmentComponent } from './component/backend/book-an-appointment/book-an-appointment.component';
+import { AdvanceInventorySearchBackendComponent } from './component/backend/advance-inventory-search-backend/advance-inventory-search-backend.component';
+import { BasicInventorySearchBackendComponent } from './component/backend/basic-inventory-search-backend/basic-inventory-search-backend.component';
+import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
+import { CommunicationComponent } from './component/backend/communication/communication.component';
 /**End Backend Component** */
 
 
@@ -170,6 +182,18 @@ import { ManageleadsComponent } from './training/manageleads/manageleads.compone
     SearchListViewComponent,
     ListingComponent,
     TranningcategorymanagementComponent,
+    ManageLessonsComponent,
+    TrainingCenterComponent,
+    TrainingReportComponent,
+    MyAppointmentComponent,
+    CreateNewInventoryComponent,
+    JobTicketComponent,
+    SocialAdvoComponent,
+    BookAnAppointmentComponent,
+    AdvanceInventorySearchBackendComponent,
+    BasicInventorySearchBackendComponent,
+    MysalesrepComponent,
+    CommunicationComponent,
   ],
   imports: [
     // TrainingModule,

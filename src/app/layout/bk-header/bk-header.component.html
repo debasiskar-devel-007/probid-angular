@@ -1,306 +1,323 @@
-    <!-- <mat-toolbar class="header fixed" *ngIf="user_data.type == 'admin'"> -->
-            <mat-toolbar class="header fixed" *ngIf=" router.url ==='/admin-dashboard' || router.url === '/blog-management' || router.url === '/commission-report' || router.url === '/inventory-search' || router.url === '/manage-availability' || router.url === '/testimonial-lists-admin'|| router.url === '/commission-list' || router.url === '/customer-list' || router.url === '/manage-commission' || router.url === '/newsletterlists' || router.url === '/sales-report' || router.url === '/salesreplists' || router.url === '/rsvp' || router.url === '/birddog-list' || router.url === '/manage-training'">
-        <mat-toolbar-row class="toolbar-row">
-            <div class="logo">
-                <img src="assets/images/logomain.png" alt="">
-            </div>
-            <div class="topmenuicon menu-toggle rightSidenav_toggle" [class.active]="toggleActive" (click)="toggleRightSidenav()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="topmenulist">
-                <mat-list class="navigation-left">
-                        <mat-list-item class="nav-item" routerLinkActive="activemenu">
-                                <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/home']">
-                                    <span class="nav-text">home</span>
-                                </a>
-                                <div class="triangle"></div>
-                            </mat-list-item>
-                    <mat-list-item  class="nav-item" routerLinkActive="activemenu" (click)="open(1)">
-                        <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/admin-dashboard']">
-                            <span class="nav-text">Dashboard</span>
-                        </a>
-                        <div class="triangle"></div>
-                    </mat-list-item>
-                    <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
-                            <a [matMenuTriggerFor]="menu3">Inventory Search</a>
-                            <mat-menu #menu3="matMenu" class="activedropmenu">
-                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/inventory-search-by-category']">Inventory Search by Category</a>
-                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/create-new-inventory']">Create new Inventory</a>
-                            </mat-menu>
-                            <div class="triangle"></div>
-                        <!-- <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/inventory-search']">Inventory Search</a> -->
-                        <!-- <mat-menu #menu1="matMenu" class="activedropmenu">
-                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/by-category']">by category</a>
-                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/create-new']">create new</a>
-                        </mat-menu> -->
-                        <div class="triangle"></div>
-                    </mat-list-item>                    
-                    <mat-list-item class="nav-item" routerLinkActive="activemenu" (click)="open(2)">
-                        <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-commission']">
-                            <span class="nav-text">Manage Commission</span>
-                        </a>
-                        <div class="triangle"></div>
-                    </mat-list-item>
-                    <mat-list-item class="nav-item" routerLinkActive="activemenu">
-                        <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/rsvp']">
-                            <span class="nav-text">RSVP</span>
-                        </a>
-                        <div class="triangle"></div>
-                    </mat-list-item>
-<!-- 
-                    <mat-list-item class="nav-item" routerLinkActive="activemenu">
-                        <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" (click)="gototrainingsectionwithcat()">
-                            <span class="nav-text">RSVP</span>
-                        </a>
-                        <div class="triangle"></div>
-                    </mat-list-item> -->
 
-                    <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
-                        <a [matMenuTriggerFor]="menu2">Report</a>
-                        <mat-menu #menu2="matMenu" class="activedropmenu">
-                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/sales-report']">Sales Report</a>
-                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/commission-report']">Commission Report</a>
-                        </mat-menu>
-                        <div class="triangle"></div>
-                    </mat-list-item>                     
-                   
-                    <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
-                        <a [matMenuTriggerFor]="menu1">User Management</a>
-                        <mat-menu #menu1="matMenu" class="activedropmenu">
-                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/customer-list']">Customers</a>
-                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/salesrep-list']">SalesRep</a>
-                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/birddog-list']">Birddogs</a>
-                        </mat-menu>
-                        <div class="triangle"></div>
-                    </mat-list-item>  
-                    <mat-list-item class="nav-item" routerLinkActive="activemenu">
-                            <a [matMenuTriggerFor]="menu4">Training Manager</a>
-                            <mat-menu #menu4="matMenu" class="activedropmenu">
-                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-training']">Manage Training</a>
-                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-lessons']">Manage Lessons</a>
-                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/training-center']">Training Center</a>
-                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/training-report']">Training Report</a>
-                            </mat-menu>
+<mat-toolbar class="header fixed" *ngIf="router.url ==='/admin-dashboard' || router.url ==='/service-listing' || router.url === '/contact-us-dashboard' || router.url === '/blog-management' || router.url === '/commission-report' || router.url === '/inventory-list' || router.url === '/manage-availability' || router.url === '/testimonial-lists-admin'|| router.url === '/commission-list' || router.url === '/customer-list-admin' || router.url === '/manage-commission' || router.url === '/newsletter-list' || router.url === '/sales-report' || router.url === '/salesrep-list-admin' || router.url === '/rsvp' || router.url === '/birddog-list' || router.url === '/manage-training' || router.url === '/manage-lessons' || router.url === '/training-center' || router.url === '/training-report' || router.url === '/create-new-inventory' || router.url === '/job-ticket' || router.url === '/social-advo-admin' || router.url === '/my-appointment-admin'">
+    <mat-toolbar-row class="toolbar-row">
+        <div class="logo">
+            <img src="assets/images/logomain.png" alt="">
+        </div>
+        <div class="topmenuicon menu-toggle rightSidenav_toggle" [class.active]="toggleActive" (click)="toggleRightSidenav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="topmenulist">
+            <mat-list class="navigation-left">
+                    <mat-list-item class="nav-item">
+                            <a class="nav-item-hold" routerLinkActive="activemenu" mat-menu-item [routerLink]="['/home']">
+                                <span class="nav-text">home</span>
+                            </a>
                             <div class="triangle"></div>
-
-                        <!-- <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-training']">
-                            <span class="nav-text">Manage Training</span>
-                        </a>
-                        <div class="triangle"></div> -->
-                    </mat-list-item>
-                    <mat-list-item class="nav-item" routerLinkActive="activemenu">
-                            <a [matMenuTriggerFor]="menu5">Calendar Manager</a>
-                            <mat-menu #menu5="matMenu" class="activedropmenu">
-                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-availability']">Manage Availability</a>
-                                <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/my-appointment']">My Appointment</a>
-                            </mat-menu>
-                            <div class="triangle"></div>
-                        <!-- <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-availability']">
-                            <span class="nav-text">Manage Availability</span>
-                        </a>
-                        <div class="triangle"></div> -->
-                    </mat-list-item>
-                    <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
-                        <a [matMenuTriggerFor]="menu3">Manage Website</a>
+                        </mat-list-item>
+                <mat-list-item  class="nav-item" routerLinkActive="activemenu" (click)="open(1)">
+                    <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/admin-dashboard']">
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                    <div class="triangle"></div>
+                </mat-list-item>
+                <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+                        <a [matMenuTriggerFor]="menu3">Inventory</a>
                         <mat-menu #menu3="matMenu" class="activedropmenu">
-                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/blog-management']">Blog Management</a> 
-                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/testimonial-lists-admin']">testimonial lists</a>
-                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/newsletter-lists']">newsletter</a>
+                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/inventory-list']">Inventory list</a>
+                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/create-new-inventory']">Create new Inventory</a>
                         </mat-menu>
                         <div class="triangle"></div>
-                    </mat-list-item>  
-                </mat-list>
-            </div>
-            <div style="margin: auto"></div>
-            <div class="header-part-right">
-                <h4>{{user_full_name}}</h4>
-                <!-- User avatar dropdown -->
-                <div class="dropdown">
-                    <div class="user">
-                        <button class="userwrapper" mat-button [matMenuTriggerFor]="menu"><img src="http://gull-html-laravel.ui-lib.com/assets/images/faces/1.jpg" id="userDropdown" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                        <mat-menu #menu="matMenu">
-                            <button mat-menu-item>Item 1</button>
-                            <button mat-menu-item>Item 2</button>
+                </mat-list-item>
+                <mat-list-item class="nav-item" routerLinkActive="activemenu" (click)="open(2)">
+                        <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/job-ticket']">
+                            <span class="nav-text">Job Ticket</span>
+                        </a>
+                        <div class="triangle"></div>
+                </mat-list-item>
+
+                <mat-list-item class="nav-item" routerLinkActive="activemenu">
+                    <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/rsvp']">
+                        <span class="nav-text">RSVP</span>
+                    </a>
+                    <div class="triangle"></div>
+                </mat-list-item>
+                <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+                    <a [matMenuTriggerFor]="menu2">Report</a>
+                    <mat-menu #menu2="matMenu" class="activedropmenu">
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/sales-report']">Sales Report</a>
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/commission-report']">Commission Report</a>
+                    </mat-menu>
+                    <div class="triangle"></div>
+                </mat-list-item>
+
+                <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+                    <a [matMenuTriggerFor]="menu1">User Management</a>
+                    <mat-menu #menu1="matMenu" class="activedropmenu">
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/customer-list-admin']">Customers</a>
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/salesrep-list-admin']">SalesRep</a>
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/birddog-list']">Birddogs</a>
+                    </mat-menu>
+                    <div class="triangle"></div>
+                </mat-list-item>
+                <mat-list-item class="nav-item" routerLinkActive="activemenu">
+                        <a [matMenuTriggerFor]="menu4">Training Manager</a>
+                        <mat-menu #menu4="matMenu" class="activedropmenu">
+                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-training']">Manage Training</a>
+                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-lessons']">Manage Lessons</a>
+                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/training-center']">Training Center</a>
+                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/training-report']">Training Report</a>
                         </mat-menu>
-    
-                        <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                          <div class="dropdown-header">
-                              <i class="i-Lock-User mr-1"></i> Timothy Carlson
-                          </div>
-                          <a class="dropdown-item">Account settings</a>
-                          <a class="dropdown-item">Billing history</a>
-                          <a class="dropdown-item" href="javascript:void(0)">Sign out</a>
-                      </div> -->
-                    </div>
+                        <div class="triangle"></div>
+
+                    <!-- <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-training']">
+                        <span class="nav-text">Manage Training</span>
+                    </a>
+                    <div class="triangle"></div> -->
+                </mat-list-item>
+                <mat-list-item class="nav-item" routerLinkActive="activemenu">
+                        <a [matMenuTriggerFor]="menu5">Calendar Manager</a>
+                        <mat-menu #menu5="matMenu" class="activedropmenu">
+                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-availability']">Manage Availability</a>
+                            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/my-appointment-admin']">My Appointment</a>
+                        </mat-menu>
+                        <div class="triangle"></div>
+                    <!-- <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-availability']">
+                        <span class="nav-text">Manage Availability</span>
+                    </a>
+                    <div class="triangle"></div> -->
+                </mat-list-item>
+                <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+                    <a [matMenuTriggerFor]="menu6">Manage Website</a>
+                    <mat-menu #menu6="matMenu" class="activedropmenu">
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-commission']">Manage Commission</a>
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/social-advo-admin']">Social Advo</a>
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/blog-management']">Blog Management</a>
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/testimonial-lists-admin']">testimonial lists</a>
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/newsletter-list']">newsletter</a>
+                    </mat-menu>
+                    <div class="triangle"></div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+        <div style="margin: auto"></div>
+        <div class="header-part-right">
+            <h4>{{user_full_name}}</h4>
+            <!-- User avatar dropdown -->
+            <div class="dropdown">
+                <div class="user">
+                    <button class="userwrapper" mat-button [matMenuTriggerFor]="menu"><img src="http://gull-html-laravel.ui-lib.com/assets/images/faces/1.jpg" id="userDropdown" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>Item 1</button>
+                        <button mat-menu-item>Item 2</button>
+                    </mat-menu>
+
+                    <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                      <div class="dropdown-header">
+                          <i class="i-Lock-User mr-1"></i> Timothy Carlson
+                      </div>
+                      <a class="dropdown-item">Account settings</a>
+                      <a class="dropdown-item">Billing history</a>
+                      <a class="dropdown-item" href="javascript:void(0)">Sign out</a>
+                  </div> -->
                 </div>
             </div>
-        </mat-toolbar-row>
-    </mat-toolbar>
-    
-    <!-- <mat-toolbar class="header fixed" *ngIf="user_data.type == 'rep'"> --> 
-            <mat-toolbar class="header fixed" *ngIf="router.url ==='/rep-dashboard'">
-        <mat-toolbar-row class="toolbar-row">
-            <div class="logo">
-                <img src="assets/images/logomain.png" alt="">
-            </div>
-            <div class="topmenuicon menu-toggle rightSidenav_toggle" [class.active]="toggleActive" (click)="toggleRightSidenav()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="topmenulist">
-                <mat-list class="navigation-left">
-                        <mat-list-item class="nav-item" routerLinkActive="activemenu">
-                                <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/home']">
-                                    <span class="nav-text">home</span>
-                                </a>
-                                <div class="triangle"></div>
-                            </mat-list-item>
-                    <mat-list-item class="nav-item" routerLinkActive="activemenu" (click)="open(1)">
-                        <a class="nav-item-hold">
-                            <span class="nav-text">Dashboard</span>
-                        </a>
-                        <div class="triangle"></div>
-                    </mat-list-item>
-                    <mat-list-item  class="nav-item" routerLinkActive="activemenu" (click)="open(2)">
-                        <a class="nav-item-hold" (click)="Header.openDialog()">
-                            <span class="nav-text">Customers</span>
-                        </a>
-                        <div class="triangle"></div>
-                    </mat-list-item>
-                    <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
-                        <a [matMenuTriggerFor]="menu1">Inventory</a>
-                        <mat-menu #menu1="matMenu" class="activedropmenu">
-                            <a mat-menu-item routerLinkActive="activemenu" (click)="Header.openDialog()">Basic Inventory Search</a>
-                            <a mat-menu-item routerLinkActive="activemenu" (click)="Header.openDialog()">Advance Inventory Search</a>
-                        </mat-menu>
-                        <div class="triangle"></div>
-                    </mat-list-item>
-                    <mat-list-item class="nav-item" routerLinkActive="activemenu">
-                        <a class="nav-item-hold" (click)="Header.openDialog()">
-                            <span class="nav-text">Communication</span>
-                        </a>
-                        <div class="triangle"></div>
-                    </mat-list-item>
-                    <mat-list-item class="nav-item" routerLinkActive="activemenu">
-                        <a class="nav-item-hold" (click)="Header.openDialog()">
-                            <span class="nav-text">Social Advo</span>
-                        </a>
-                        <div class="triangle"></div>
-                    </mat-list-item>
-                    <mat-list-item class="nav-item" routerLinkActive="activemenu">
-                        <a class="nav-item-hold" (click)="Header.openDialog()">
-                            <span class="nav-text">Manager’s Calendar</span>
-                        </a>
-                        <div class="triangle"></div>
-                    </mat-list-item>
-                </mat-list>
-            </div>
-            <div style="margin: auto"></div>
-            <div class="header-part-right">
-                <h4>{{user_full_name}}</h4>
-                <!-- User avatar dropdown -->
-                <div class="dropdown">
-                    <div class="user">
-                        <button class="userwrapper" mat-button [matMenuTriggerFor]="menu"><img src="http://gull-html-laravel.ui-lib.com/assets/images/faces/1.jpg" id="userDropdown" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                        <mat-menu #menu="matMenu">
-                            <button mat-menu-item>Item 1</button>
-                            <button mat-menu-item>Item 2</button>
-                        </mat-menu>
-    
-                        <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                              <div class="dropdown-header">
-                                  <i class="i-Lock-User mr-1"></i> Timothy Carlson
-                              </div>
-                              <a class="dropdown-item">Account settings</a>
-                              <a class="dropdown-item">Billing history</a>
-                              <a class="dropdown-item" href="javascript:void(0)">Sign out</a>
-                          </div> -->
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+<!-- <mat-toolbar class="header fixed" *ngIf="user_data.type == 'user'"> -->
+<mat-toolbar class="header fixed" *ngIf="router.url === '/customer-dashboard' || router.url === '/book-an-appointment-user' || router.url === '/my-appointment-user' || router.url === '/mysalesrep' || router.url === '/advance-inventory-search-user' || router.url === '/basic-inventory-search-user'">
+  <mat-toolbar-row class="toolbar-row">
+    <div class="logo">
+      <img src="assets/images/logomain.png" alt="">
+    </div>
+    <div class="topmenuicon menu-toggle rightSidenav_toggle" [class.active]="toggleActive" (click)="toggleRightSidenav()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="topmenulist">
+      <mat-list class="navigation-left">
+        <mat-list-item class="nav-item" routerLinkActive="activemenu">
+          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/']">
+            <span class="nav-text">home</span>
+          </a>
+          <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item  class="nav-item" routerLinkActive="activemenu" (click)="open(1)">
+          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/customer-dashboard']">
+            <span class="nav-text">Dashboard</span>
+          </a>
+          <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item  class="nav-item" routerLinkActive="activemenu" (click)="open(2)">
+          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/mysalesrep']">
+            <span class="nav-text">SalesRep</span>
+          </a>
+          <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+          <a [matMenuTriggerFor]="menu1">Inventory</a>
+          <mat-menu #menu1="matMenu" class="activedropmenu">
+            <!-- <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/basic-inventory']">Basic Inventory Search</a> -->
+            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/basic-inventory-search-user']">Basic Inventory Search</a>
+            <!-- <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/advance-inventory']">Advance Inventory Search</a> -->
+            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/advance-inventory-search-user']">Advance Inventory Search</a>
+          </mat-menu>
+          <div class="triangle"></div>
+        </mat-list-item>
+        <!-- <mat-list-item  class="nav-item" routerLinkActive="activemenu">
+            <a class="nav-item-hold" (click)="Header.openDialog()">
+                <span class="nav-text">Social Advo</span>
+            </a>
+            <div class="triangle"></div>
+        </mat-list-item> -->
+        <mat-list-item  class="nav-item" routerLinkActive="activemenu">
+          <!-- <a class="nav-item-hold" (click)="Header.openDialog()">
+              <span class="nav-text">Manager’s Calendar</span>
+          </a> -->
+          <a class="nav-item-hold" [matMenuTriggerFor]="menu3">Manage Calendar</a>
+          <mat-menu #menu3="matMenu" class="activedropmenu">
+            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/book-an-appointment-user']">Book an Appointment</a>
+            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/my-appointment-user']">My Appointment</a>
+          </mat-menu>
+          <div class="triangle"></div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div style="margin: auto"></div>
+    <div class="header-part-right">
+      <h4>{{user_full_name}}</h4>
+      <!-- User avatar dropdown -->
+      <div class="dropdown">
+        <div class="user">
+          <button class="userwrapper" mat-button [matMenuTriggerFor]="menu"><img src="http://gull-html-laravel.ui-lib.com/assets/images/faces/1.jpg" id="userDropdown" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
+
+          <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <div class="dropdown-header">
+                        <i class="i-Lock-User mr-1"></i> Timothy Carlson
                     </div>
+                    <a class="dropdown-item">Account settings</a>
+                    <a class="dropdown-item">Billing history</a>
+                    <a class="dropdown-item" href="javascript:void(0)">Sign out</a>
+                </div> -->
+        </div>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+
+<!-- <mat-toolbar class="header fixed" *ngIf="user_data.type == 'rep'"> -->
+<mat-toolbar class="header fixed" *ngIf="router.url ==='/rep-dashboard' || router.url === '/my-appointment-rep' || router.url === '/book-an-appointment-rep' || router.url === '/my-birddog' || router.url === '/my-commission' || router.url === '/social-advo-rep' || router.url === '/customer-list-rep' || router.url === '/advance-inventory-search-rep' || router.url === '/basic-inventory-search-rep' || router.url === '/communication' || router.url === '/training-center-rep'">
+  <mat-toolbar-row class="toolbar-row">
+    <div class="logo">
+      <img src="assets/images/logomain.png" alt="">
+    </div>
+    <div class="topmenuicon menu-toggle rightSidenav_toggle" [class.active]="toggleActive" (click)="toggleRightSidenav()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="topmenulist">
+      <mat-list class="navigation-left">
+        <mat-list-item class="nav-item" routerLinkActive="activemenu">
+          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['']">
+            <span class="nav-text">home</span>
+          </a>
+          <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item class="nav-item" routerLinkActive="activemenu" (click)="open(1)">
+          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/rep-dashboard']">
+            <span class="nav-text">Dashboard</span>
+          </a>
+          <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item  class="nav-item" routerLinkActive="activemenu" (click)="open(2)">
+          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/customer-list-rep']">
+            <span class="nav-text">Customers</span>
+          </a>
+          <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+          <a [matMenuTriggerFor]="menu1">Inventory</a>
+          <mat-menu #menu1="matMenu" class="activedropmenu">
+            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/basic-inventory-search-rep']">Basic Inventory Search</a>
+            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/advance-inventory-search-rep']">Advance Inventory Search</a>
+          </mat-menu>
+          <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item class="nav-item" routerLinkActive="activemenu">
+          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/communication']">
+            <span class="nav-text">Communication</span>
+          </a>
+          <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item class="nav-item" routerLinkActive="activemenu" (click)="open(1)">
+          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/my-commission']">
+            <span class="nav-text">My Commission</span>
+          </a>
+          <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item class="nav-item" routerLinkActive="activemenu" (click)="open(1)">
+          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/my-birddog']">
+            <span class="nav-text">My Birddog</span>
+          </a>
+          <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item class="nav-item" routerLinkActive="activemenu">
+          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/social-advo-rep']">
+            <span class="nav-text">Social Advo</span>
+          </a>
+          <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item class="nav-item" routerLinkActive="activemenu">
+          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/training-center-rep']">
+            <span class="nav-text">Training Center</span>
+          </a>
+          <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item class="nav-item" routerLinkActive="activemenu">
+          <a class="nav-item-hold" [matMenuTriggerFor]="menu2">Manage Calendar</a>
+          <mat-menu #menu2="matMenu" class="activedropmenu">
+            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/book-an-appointment-rep']">Book an Appointment</a>
+            <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/my-appointment-rep']">My Appointment</a>
+          </mat-menu>
+          <div class="triangle"></div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div style="margin: auto"></div>
+    <div class="header-part-right">
+      <h4>{{user_full_name}}</h4>
+      <!-- User avatar dropdown -->
+      <div class="dropdown">
+        <div class="user">
+          <button class="userwrapper" mat-button [matMenuTriggerFor]="menu"><img src="http://gull-html-laravel.ui-lib.com/assets/images/faces/1.jpg" id="userDropdown" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
+
+          <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <div class="dropdown-header">
+                    <i class="i-Lock-User mr-1"></i> Timothy Carlson
                 </div>
-            </div>
-        </mat-toolbar-row>
-    </mat-toolbar>
-    
-    <!-- <mat-toolbar class="header fixed" *ngIf="user_data.type == 'customer'"> -->
-            <mat-toolbar class="header fixed" *ngIf="router.url === '/customer-dashboard'">
-        <mat-toolbar-row class="toolbar-row">
-            <div class="logo">
-                <img src="assets/images/logomain.png" alt="">
-            </div>
-            <div class="topmenuicon menu-toggle rightSidenav_toggle" [class.active]="toggleActive" (click)="toggleRightSidenav()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="topmenulist">
-                <mat-list class="navigation-left">
-                        <mat-list-item class="nav-item" routerLinkActive="activemenu">
-                                <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/home']">
-                                    <span class="nav-text">home</span>
-                                </a>
-                                <div class="triangle"></div>
-                            </mat-list-item>
-                    <mat-list-item  class="nav-item" routerLinkActive="activemenu" (click)="open(1)">
-                        <a class="nav-item-hold">
-                            <span class="nav-text">Dashboard</span>
-                        </a>
-                        <div class="triangle"></div>
-                    </mat-list-item>
-                    <mat-list-item  class="nav-item" routerLinkActive="activemenu" (click)="open(2)">
-                        <a class="nav-item-hold" (click)="Header.openDialog()">
-                            <span class="nav-text">SalesRep</span>
-                        </a>
-                        <div class="triangle"></div>
-                    </mat-list-item>
-                    <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
-                        <a [matMenuTriggerFor]="menu1">Inventory</a>
-                        <mat-menu #menu1="matMenu" class="activedropmenu">
-                            <!-- <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/basic-inventory']">Basic Inventory Search</a> -->
-                            <a mat-menu-item routerLinkActive="activemenu" (click)="Header.openDialog()">Basic Inventory Search</a>
-                            <!-- <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/advance-inventory']">Advance Inventory Search</a> -->
-                            <a mat-menu-item routerLinkActive="activemenu" (click)="Header.openDialog()">Advance Inventory Search</a>
-                        </mat-menu>
-                        <div class="triangle"></div>
-                    </mat-list-item>
-                    <mat-list-item  class="nav-item" routerLinkActive="activemenu">
-                        <a class="nav-item-hold" (click)="Header.openDialog()">
-                            <span class="nav-text">Social Advo</span>
-                        </a>
-                        <div class="triangle"></div>
-                    </mat-list-item>
-                    <mat-list-item  class="nav-item" routerLinkActive="activemenu">
-                        <a class="nav-item-hold" (click)="Header.openDialog()">
-                            <span class="nav-text">Manager’s Calendar</span>
-                        </a>
-                        <div class="triangle"></div>
-                    </mat-list-item>
-                </mat-list>
-            </div>
-            <div style="margin: auto"></div>
-            <div class="header-part-right">
-                <h4>{{user_full_name}}</h4>
-                <!-- User avatar dropdown -->
-                <div class="dropdown">
-                    <div class="user">
-                        <button class="userwrapper" mat-button [matMenuTriggerFor]="menu"><img src="http://gull-html-laravel.ui-lib.com/assets/images/faces/1.jpg" id="userDropdown" alt="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                        <mat-menu #menu="matMenu">
-                            <button mat-menu-item>Item 1</button>
-                            <button mat-menu-item>Item 2</button>
-                        </mat-menu>
-    
-                        <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                                  <div class="dropdown-header">
-                                      <i class="i-Lock-User mr-1"></i> Timothy Carlson
-                                  </div>
-                                  <a class="dropdown-item">Account settings</a>
-                                  <a class="dropdown-item">Billing history</a>
-                                  <a class="dropdown-item" href="javascript:void(0)">Sign out</a>
-                              </div> -->
-                    </div>
-                </div>
-            </div>
-        </mat-toolbar-row>
-    </mat-toolbar>
+                <a class="dropdown-item">Account settings</a>
+                <a class="dropdown-item">Billing history</a>
+                <a class="dropdown-item" href="javascript:void(0)">Sign out</a>
+            </div> -->
+        </div>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

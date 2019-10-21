@@ -1,11 +1,11 @@
 .contactusbg.mat-card{background:url(../../../../assets/images/contactusbg.jpg) no-repeat center center !important;}
 
 .contactusblockinner{display:flex!important;justify-content:space-between;align-items:stretch}
-.contactusinfoblock{padding:0;position:absolute;top:50%;left:3%;width:40%;transform:translateY(-50%);height:65%;z-index:9999}
+.contactusinfoblock{padding:0;position:absolute;top:50%;left:3%;width:40%;transform:translateY(-50%);z-index:9999}
 .contact-form .contactusinfoblock .main-div .mat-card{margin:4em auto!important}
 .contactusformblock{flex:1 1 100%;position:relative}
 .contactusinfoblock .mat-card{box-shadow:none!important;padding:30px 48px!important;background:transparent!important;height:100%}
-.contactusinfoblock .mat-card img{margin-left:-22%;width:143%;margin-top:-20%}
+.contactusinfoblock .mat-card img{margin-left:-22%;width:143%;margin-top:0%}
 .contactusinfoblock .mat-card h2{text-transform:uppercase;color:#fff;font-size:40px}
 .contactusinfoblock .mat-card{box-shadow:none!important}
 

@@ -1,4 +1,4 @@
-i{font-family:'iconsmind'!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+i{font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 .admgeneralcls .mat-card-header-text{margin:0!important;width:100%}
 .admgeneralcls .mat-card-title{font-family:'RalewayRegular';font-size:48px!important;line-height:48px!important;text-transform:uppercase;margin:0;padding:0;margin-bottom:30px!important;color:#2a2b2c;display:flex;width:100%;align-items:center;justify-content:space-between}
 .admgeneralcls .mat-card-title span span{font-family:'RalewayBold';padding-left:10px}
@@ -167,6 +167,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32393f', end
 .d_block4_label span:nth-of-type(3){background: url("../images/ami_amin_blockcon4_icon4.png") no-repeat left center!important;}
 
 .starimgnew{ width: 43px!important; position: absolute; left: 1px; top:1px; border: none!important;}
+
+
+.footerbg.mat-card{width: 100%; display: block; background: #dde2e5 !important; padding: 10px; text-align: left; color: #fff;}
+.footerbg .mat-card{background: #dde2e5 !important;}
+.footerblock.mat-card{background: #dde2e5 !important;}
 
 
 @media only screen and (max-width: 1760px) {

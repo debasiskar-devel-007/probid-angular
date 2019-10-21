@@ -1,4 +1,5 @@
   @media only screen and (max-width: 1366px) {
+  .probidhomeblock1.mat-card .mat-tab-header {width: 100%;}
   .homemain .mat-nav-list{width:100%}
   .mainwrappercontent{width:96%}
   .homemain .mat-nav-list{width:96%;align-items:center}
@@ -7,6 +8,7 @@
   .generalcls p{font-size:16px;line-height:24px}
   }
   @media only screen and (max-width: 1199px) {
+  .probidhomeblock4 .mat-list-base.lists .mat-list-item {padding: 13px;width: 46.5%;}
   .vpheaderwrapper .mat-nav-list a{font-size:13px}
   .mat-drawer{position:relative;z-index:4;display:block;position:inherit;top:0;bottom:0;z-index:3;outline:0;box-sizing:border-box;overflow-y:auto;transform:translate3d(-100%,0,0)}
   .mat-drawer-container.mat-drawer-opened{position:absolute;z-index:999;box-sizing:border-box;-webkit-overflow-scrolling:touch;display:block;overflow:visible}
@@ -21,17 +23,27 @@
   .homemain mat-nav-list span.logowrapper{flex:1 1 10%!important}
   }
   @media only screen and (max-width: 991px) {
+  .mat-list-base.lists .mat-list-item {width: 49%;}
+  .probidhomeblock2inner .mat-list {flex-wrap: wrap;}
+  .probidhomeblock4 .mat-list-base.lists .mat-list-item {width: 44%;}
+
   .headermiddlewrapper.mat-card-content{justify-content:center!important}
   .mat-icon-button.mat-animation-noopable .smlmenudiv.ng-star-inserted{display:none!important}
   .mat-icon-button.mat-animation-noopable.cdk-touch-focused .smlmenudiv.ng-star-inserted{display:block!important}
   .pagelogowrapper{display:none}
   .topsocialblock{width:100px!important;margin:20px auto;display:block}
   .topsocialblock .mat-list{display:inline-flex;justify-content:center!important}
-  .headerbottom .mainwrappercontent{width:100%!important}
-  
+  .headerbottom .mainwrappercontent{width:100%!important}  
   .contact-form .main-div .from.mat-card{margin:4em auto!important;width:90%!important;padding:15px!important}
   }
+
+  @media only screen and (max-width:1024px) {
+    .probidhomeblock4 .mat-list-base.lists .mat-list-item {padding: 11px; width: 46.5%;}
+  }
+
   @media only screen and (max-width:991px) {
+  .generalcls.blog .mat-card-title{justify-content: center !important;}
+  .bottom_blog .item_wrapper .item {width: 100%;}
   .mat-icon-button{display:block!important}
   .vpheaderwrapper .mat-toolbar-row,.vpheaderwrapper .mat-toolbar-single-row{display:inline-block;width:100%}
   .topmenuiconlogo{display:block;width:100%;align-items:center;border-bottom:1px solid #58565a}
@@ -47,12 +59,38 @@
   .vpheaderwrapper .mat-drawer-backdrop{position:inherit}
   .vpheaderwrapper.mat-card{padding:0!important}
   .vpheaderwrapper .mat-nav-list .mat-list-item{border-bottom:1px solid #333}
+  .innerpagebanner.mat-card {min-height: 1px!important;}
+  .rightsidelinks {width: 47px;}
   }
+
+  @media only screen and (max-width:900px) {
+    .probidhomeblock4 .mat-list-base.lists .mat-list-item {padding: 20px;  width: 100%;}
+  }
+
+  @media only screen and (max-width: 768px) {
+    .probidhomeblock4 .mat-list-base.lists .mat-list-item {width: 43%;}
+  }
+
   @media only screen and (max-width: 640px) {
+  .probidhomeblock2inner .mat-list .mat-list-item {height: auto; position: relative; width: 40%; padding: 15px;}
+  .popuplogo img{width: 100%;}  
   .from{width:90%!important;margin:0 auto;padding:15px!important;margin:0 auto!important;margin-top:0!important}
   .from h2{padding:0!important}
   .mat-form-field-appearance-legacy .mat-form-field-infix{padding:6px 0}
   .mat-form-field-appearance-legacy .mat-form-field-wrapper{padding-bottom:14px}
   .logowrapper{margin-top:0!important;margin-bottom:9px!important;width:80%}
   .example-container > * {width: inherit !important;}
+  }
+
+  @media only screen and (max-width: 600px) {
+    .mat-list-base.lists .mat-list-item {width: 100%;}
+    .probidhomeblock4 .mat-list-base.lists .mat-list-item {width: 100%;}
+    .bottom_blog .item_wrapper .item .item_images img {width: 100%;}
+    .listsimgwholewrap img {height: auto; width: 100%;}
+    .probidhomeblock2inner .mat-list .mat-list-item {padding: 10px;}
+  }
+
+  @media only screen and (max-width: 540px) {
+    .innerpagebanner.mat-card h1 {font-size: 36px;}
+    .infoblock .mat-list-base {flex-wrap: wrap;}
   }

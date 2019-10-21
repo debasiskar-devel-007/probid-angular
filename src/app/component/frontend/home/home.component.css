@@ -7,10 +7,10 @@
 .probidhomeblock1.mat-card{background-color: #e2ecee !important;}
 
 .basicsearchinventorybg{
-    overflow-x:hidden;background:url(../../../../assets/images/basicsearchinventorybg.jpg) no-repeat center center !important;top:0;left:0;min-width:100%;min-height:457px;-webkit-background-size:cover !important;-moz-background-size:cover !important;-o-background-size:cover !important;background-size:cover !important;position:relative; padding: 0;display: flex; flex-wrap: wrap;
+    overflow-x:hidden;background:url(../../../../assets/images/basicsearchinventorybg.jpg) no-repeat center center !important;top:0;left:0;min-width:100%;min-height:1px;-webkit-background-size:cover !important;-moz-background-size:cover !important;-o-background-size:cover !important;background-size:cover !important;position:relative; padding: 0;display: flex; flex-wrap: wrap;
 }
 
-.probidhomeblock2 {overflow-x:hidden;background:url(../../../../assets/images/probidhomeblock2bg.jpg) no-repeat center center !important;top:0;left:0;min-width:100%;min-height:457px;-webkit-background-size:cover !important;-moz-background-size:cover !important;-o-background-size:cover !important;background-size:cover !important;position:relative; padding: 0;display: flex; align-items: center;}
+.probidhomeblock2 {overflow-x:hidden;background:url(../../../../assets/images/probidhomeblock2bg.jpg) no-repeat center center !important;top:0;left:0;min-width:100%;min-height:1px;-webkit-background-size:cover !important;-moz-background-size:cover !important;-o-background-size:cover !important;background-size:cover !important;position:relative; padding: 0;display: flex; align-items: center;}
 
 
 
@@ -33,4 +33,17 @@
 .probidhomeblock4 .listsimgwrap{width: 98px; height: 98px;}
 .probidhomeblock4 .listsimgwrap img{max-width: 100%; object-fit: inherit;}
 .probidhomeblock4 h3{font-family: "HelveticaBold"; font-size: 18px; color:#12c3e3;margin-top: 19px;}
+.probidhomeblock4 h3 {
+    font-family: "HelveticaBold";
+    font-size: 18px;
+    color: #12c3e3;
+    margin-top: 19px;
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 991px) {
+    .probidhomeblock2inner .mat-list .mat-list-item {width: 100%;}
+    .probidhomeblock2inner .mat-list .mat-list-item.orangebg {margin-top: 20px;}
+}
 
