@@ -54,6 +54,12 @@ import { SalesreplistsComponent } from './component/backend/salesreplists/salesr
 import { RsvplistsComponent } from './component/backend/rsvplists/rsvplists.component';
 import { ManageTrainingComponent } from './component/backend/manage-training/manage-training.component';
 import { from } from 'rxjs';
+import { TranningcategorymanagementComponent } from './training/tranningcategorymanagement/tranningcategorymanagement.component';
+import { AddEditComponent } from './training/tranningcategorymanagement/add-edit/add-edit.component';
+import { TrainingsectionlistComponent } from './training/trainingsectionlist/trainingsectionlist.component';
+import { TrainingsectionComponent } from './training/trainingsection/trainingsection.component';
+import { RepTraingcenterComponent } from './training/rep-traingcenter/rep-traingcenter.component';
+import { ManageleadsComponent } from './training/manageleads/manageleads.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -120,7 +126,10 @@ const routes: Routes = [
   },
 
 
-  { path: 'bloghome', component: BlogComponent, resolve: { serviceListData: ResolveService }, data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalist' } },
+  // { path: 'bloghome', component: BlogComponent, resolve: { serviceListData: ResolveService }, data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalist' } },
+  
+  {path: 'bloghome', component: BlogComponent},
+
   { path: 'blog', component: BloglistComponent },
   { path: 'blogdetail', component: BlogdetailComponent },
   { path: 'advance-inventory-search', component: AdvanceInventorySearchComponent },
@@ -185,10 +194,23 @@ const routes: Routes = [
   /**End Backend Routing**/
 
 
+  {path: 'tranningcategory', component: TranningcategorymanagementComponent},
+  {path: 'addtrainings', component: TranningcategorymanagementComponent},
+  { path: 'category-management/add-new', component: AddEditComponent },
+  { path: 'category-management/edit/:id', component: AddEditComponent },
+  { path:'trainingsectionlist', component: TrainingsectionlistComponent},
+  { path:'trainingsection', component: TrainingsectionComponent},
+  { path:'trainingsection/:id', component: TrainingsectionComponent},
 
 
+  { path: 'reptrainingcenter', component: RepTraingcenterComponent},
+  // { path: 'reptrainingcenter/:cid', component: RepTraingcenterComponent}, // cat id
+  { path: 'reptrainingcenter/:cid', component: RepTraingcenterComponent,resolve : {results: ResolveService},data: { requestcondition: { trainingcategory:{}, userid:{} }, endpoint:'traininglessonlist'}},
+  { path: 'reptrainingcenter/:cid/:lid', component: RepTraingcenterComponent}, // lesson id
+  { path: 'manage-leads', component: ManageleadsComponent },
 
 
+  
   { path: '**', component: LoginComponent },
 ];
 

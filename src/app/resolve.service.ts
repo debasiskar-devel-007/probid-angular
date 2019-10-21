@@ -3,8 +3,8 @@
 import { Injectable } from '@angular/core';
 import { Router, Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
-
-import { HttpService } from './http.service';
+import { ApiService } from './api.service';
+import { CookieService } from 'ngx-cookie-service';
 
 export interface EndpointComponent {
     endpoint: string;
@@ -15,23 +15,61 @@ export interface EndpointComponent {
 })
 
 export class ResolveService implements Resolve<any> {
+  public userid:any;
 
-  constructor(private _apiService: HttpService, private router: Router) { }
+ //   constructor(private _apiService: ApiService, private router: Router,public _http:HttpClient,public cookie:CookieService,public commonservices:Commonservices) {}
+    constructor(private _apiService: ApiService, public cookieservice: CookieService) {
+        if(this.cookieservice.get('userid')!=null)
+        this.userid = this.cookieservice.get('userid');
+    }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
-     
-    /* will come into play while editing otherwise no effect */
-    let requestData: any = route.data.requestcondition;
-    requestData.condition = Object.assign(requestData.condition, route.params);
 
-    return new Promise((resolve) => {
-      this._apiService.CustomRequest(route.data.requestcondition, route.data.endpoint).subscribe(api_object => {
-        if (api_object) {
-          return resolve(api_object);
-        } else { // id not found
-          return true;
-        }
-      });
-    });
-  }
+
+    resolve(route: ActivatedRouteSnapshot,state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
+        //let id = route.params['id'];
+        console.log('resolve route data');
+        console.log(route.data);
+        console.log(state);
+        let endpoint=route.data.link;
+        let source=route.data.source;
+        let condition=route.data.condition;
+        let requestData: any = route.data.requestcondition;
+        console.log(this.userid);
+        if(route.data.requestcondition.trainingcategory!=null){
+            console.log('yeah!');
+            requestData.trainingcategory =  route.params.cid;
+            requestData.userid =this.userid;
+        }else
+            requestData.condition = Object.assign(requestData.condition, route.params);
+
+//old code
+            /*var result = new Promise((resolve) => {this._http.post(this.commonservices.nodesslurl+'datalist?token='+this.cookie.get('jwttoken'),
+                {source:source,condition:condition}/!*JSON.stringify(data)*!/).pipe(map(res => res));
+            return result;*/
+
+        // return new Promise((resolve) => { this._apiService.postData(endpoint,source,condition).subscribe(api_object => {
+        //     if (api_object) {
+        //         return resolve(api_object);
+        //     } else { // id not found
+        //       //  this.router.navigateByUrl('dashboard');
+        //         return true;
+        //     }
+        // });
+        
+        // });
+        console.log('route.data.requestcondition');
+        console.log(route.data.requestcondition);
+        return new Promise ((resolve)=>{
+            this._apiService.CustomRequest(route.data.requestcondition, route.data.endpoint)
+            .subscribe(api_object =>{
+                if (api_object) {
+                    return resolve(api_object);
+                } else { // id not found
+                  //  this.router.navigateByUrl('dashboard');
+                    return true;
+                }
+            })
+        });
+    }
 }
+

@@ -1,24 +1,28 @@
  
     <mat-card-content class="bottom_blog">    
       <span class="item_wrapper">
-        <mat-card-content class="item">
+        <mat-card-content class="item" *ngFor="let item of blogList | slice:0:indexval; let i=index">
           <span class="item_images">
             <img src="../../../../assets/images/blog-img1.jpg">
+            <!-- <img [src]="item.blog_image" alt=""> -->
           </span>
           <mat-card-content class="contentsection">
-            <mat-card-title class="inner_header">Lorem Ipsum is simply dummy</mat-card-title>
+            <!-- <mat-card-title class="inner_header">Lorem Ipsum is simply dummy</mat-card-title> -->
+            <mat-card-title class="inner_header">{{item.blog_title}}</mat-card-title>
             <span class="author">
               <span class="authornmimg">
                 <span class="writer_image">
                   <img src="../../../../assets/images/blog-icon.png">
                 </span>
-                <p class="authorName">author name</p>
+                <p class="authorName">{{item.author_name}}</p>
               </span>
-              <p class="date">Date: 08/05/2019 </p>
+              <p class="date">Date: {{item.created_at}} </p>
             </span>
-            <p class="description">
+            <!-- <p class="description">
               Mauris mattis auctor cursus. Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec
               vehicula luctus nunc in...<a class="next_page" routerLink="/">read more</a>
+            </p>   -->
+            <p class="description">{{item.blog_description}}<a class="next_page" *ngIf="indexval.length >indexval" (click)="showMoreFunc()" >read more</a>
             </p>  
             <span class="blogsociallists">
                 <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
@@ -30,7 +34,7 @@
               </span>          
           </mat-card-content>
         </mat-card-content>  
-        <mat-card-content class="item">
+        <!-- <mat-card-content class="item">
           <span class="item_images">
             <img src="../../../../assets/images/blog-img2.jpg">
           </span>
@@ -87,8 +91,10 @@
                 <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
             </span>       
           </mat-card-content>
-        </mat-card-content>  
+        </mat-card-content>   -->
         <button mat-button class="btnblue sim-button" [routerLink]="['/blog']">Learn More >></button>
       </span>
     </mat-card-content>
 
+
+    <lib-sharetools [Config]="ConfigData"></lib-sharetools>

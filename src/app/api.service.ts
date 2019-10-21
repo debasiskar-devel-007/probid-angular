@@ -13,7 +13,12 @@ import {environment } from '../environments/environment';
 export class ApiService {
 
   public serverUrlDemo =  environment["API_URL"];
+  public nodesslurl =  environment["nodesslurl"];
+  public uploadurl =  environment["uploadurl"];
+  public base64encode =  environment["base64encode"];
+  public uploadsslurl: any= environment["download_url"];
 
+  public fileimgsslurl: any;
 
 
 
@@ -51,6 +56,10 @@ export class ApiService {
 
   constructor(private _http: HttpClient,
     private _authHttp: HttpClient,private cookieService :CookieService) {
+
+      this.fileimgsslurl = 'http://api.nexgentesting.com/';
+
+
     this.subscriptionServer = this.getServerUrl().subscribe(message => {
      let result: any;
       result = message;

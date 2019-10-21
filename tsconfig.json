@@ -19,6 +19,7 @@
       "dom"
     ],
     "paths": {
+  
       "on-page-editor": [
         "dist/on-page-editor"
       ],
@@ -90,6 +91,12 @@
       ],
       "file-upload/*": [
         "dist/file-upload/*"
+      ],
+      "sharetools": [
+        "dist/sharetools"
+      ],
+      "sharetools/*": [
+        "dist/sharetools/*"
       ]
  
     }

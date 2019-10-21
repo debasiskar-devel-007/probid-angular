@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+
+import { FormsModule, ReactiveFormsModule  }   from '@angular/forms'
 
 import {DemoMaterialModule} from "../material-module";
 import { DragScrollModule } from 'ngx-drag-scroll';
@@ -87,11 +89,36 @@ import { SalesreplistsComponent } from './component/backend/salesreplists/salesr
 import { RsvplistsComponent } from './component/backend/rsvplists/rsvplists.component';
 import { ManageTrainingComponent } from './component/backend/manage-training/manage-training.component';
 import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
+// import { SharetoolsModule } from 'sharetools';
+import { ListingComponent } from './training/listing/listing.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import {ModalModule} from 'ngx-bootstrap/modal';
+import { TranningcategorymanagementComponent } from './training/tranningcategorymanagement/tranningcategorymanagement.component';
+import { UsersearchPipe } from './training/search.pipe';
+import { TrainingModule } from './training/training.module';
+import { AddEditComponent } from './training/tranningcategorymanagement/add-edit/add-edit.component';
+
+import { TrainingsectionlistComponent } from './training/trainingsectionlist/trainingsectionlist.component';
+import { TrainingsectionComponent } from './training/trainingsection/trainingsection.component';
+import { NgxUploaderModule } from 'ngx-uploader';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { CKEditorModule } from 'ngx-ckeditor';
+import { ClipboardModule } from 'ngx-clipboard';
+import { RepTraingcenterComponent } from './training/rep-traingcenter/rep-traingcenter.component';
+import { ManageleadsComponent } from './training/manageleads/manageleads.component';
 /**End Backend Component** */
 
 
 @NgModule({
   declarations: [
+    ManageleadsComponent,
+    RepTraingcenterComponent,
+    TrainingsectionlistComponent,
+    TrainingsectionComponent,
+    AddEditComponent,
+    UsersearchPipe,
     AppComponent,
     LoginComponent,
     ContactusComponent,
@@ -140,9 +167,13 @@ import { SearchListViewComponent } from './component/frontend/search-list-view/s
     SalesreplistsComponent,
     RsvplistsComponent,
     ManageTrainingComponent,
-    SearchListViewComponent
+    SearchListViewComponent,
+    ListingComponent,
+    TranningcategorymanagementComponent,
   ],
   imports: [
+    // TrainingModule,
+    NgxUploaderModule,
     AngularFontAwesomeModule,
     DragScrollModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -160,11 +191,22 @@ import { SearchListViewComponent } from './component/frontend/search-list-view/s
     HttpClientModule,
     AppRoutingModule,MetaModule.forRoot(), BrowserAnimationsModule,
     ListingModule,
-    MatIconModule
+    MatIconModule,
+    ImageCropperModule,
+     CarouselModule.forRoot(),
+    CKEditorModule,
+    ClipboardModule,
+    BsDatepickerModule.forRoot(),
+    TimepickerModule.forRoot(),
+    ModalModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    
+    // SharetoolsModule
   ],
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   entryComponents: [comingSoonDialog, DialogPrivacyDialog, DialogTermsDialog,]
 })
 export class AppModule { }
