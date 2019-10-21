@@ -66,6 +66,7 @@ import { AdvanceInventorySearchBackendComponent } from './component/backend/adva
 import { BasicInventorySearchBackendComponent } from './component/backend/basic-inventory-search-backend/basic-inventory-search-backend.component';
 import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
 import { CommunicationComponent } from './component/backend/communication/communication.component';
+import { AdminManageCategoriesComponent } from './component/backend/admin-manage-categories/admin-manage-categories.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -189,6 +190,10 @@ const routes: Routes = [
   { path: 'create-new-inventory', component: CreateNewInventoryComponent },
   { path: 'job-ticket', component: JobTicketComponent },
   { path: 'social-advo-admin', component: SocialAdvoComponent },  
+  { path: 'manage-type', component: AdminManageCategoriesComponent },  
+  { path: 'manage-make', component: AdminManageCategoriesComponent },  
+  { path: 'manage-model', component: AdminManageCategoriesComponent },  
+  { path: 'manage-year', component: AdminManageCategoriesComponent },  
  
   /**************** User Management *****************/
   {

@@ -34,6 +34,7 @@
     "@ckeditor/ckeditor5-angular": "^1.1.0",
     "@ckeditor/ckeditor5-build-classic": "^12.4.0",
     "@ng-toolkit/universal": "^7.1.2",
+    "@ngmodule/material-carousel": "^0.5.1",
     "@nguniversal/common": "0.0.0",
     "@nguniversal/express-engine": "0.0.0",
     "@nguniversal/module-map-ngfactory-loader": "0.0.0",

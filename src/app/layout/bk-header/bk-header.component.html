@@ -1,4 +1,4 @@
-<mat-toolbar class="header fixed" *ngIf="router.url ==='/admin-dashboard' || router.url ==='/service-listing' || router.url === '/contact-us-dashboard' || router.url === '/blog-management' || router.url === '/commission-report' || router.url === '/inventory-list' || router.url === '/manage-availability' || router.url === '/testimonial-lists-admin'|| router.url === '/commission-list' || router.url === '/customer-list-admin' || router.url === '/manage-commission' || router.url === '/newsletter-list' || router.url === '/sales-report' || router.url === '/salesrep-list-admin' || router.url === '/rsvp' || router.url === '/birddog-list' || router.url === '/manage-training' || router.url === '/manage-lessons' || router.url === '/training-center' || router.url === '/training-report' || router.url === '/create-new-inventory' || router.url === '/job-ticket' || router.url === '/social-advo-admin' || router.url === '/my-appointment-admin'">
+<mat-toolbar class="header fixed" *ngIf="router.url ==='/admin-dashboard' || router.url ==='/service-listing' || router.url === '/contact-us-dashboard' || router.url === '/blog-management' || router.url === '/commission-report' || router.url === '/inventory-list' || router.url === '/manage-availability' || router.url === '/testimonial-lists-admin'|| router.url === '/commission-list' || router.url === '/customer-list-admin' || router.url === '/manage-commission' || router.url === '/newsletter-list' || router.url === '/sales-report' || router.url === '/salesrep-list-admin' || router.url === '/rsvp' || router.url === '/birddog-list' || router.url === '/manage-training' || router.url === '/manage-lessons' || router.url === '/training-center' || router.url === '/training-report' || router.url === '/create-new-inventory' || router.url === '/job-ticket' || router.url === '/social-advo-admin' || router.url === '/my-appointment-admin' || router.url === '/manage-type' || router.url === '/manage-make' || router.url === '/manage-model' || router.url === '/manage-year'">
     <mat-toolbar-row class="toolbar-row">
         <div class="logo">
             <img src="assets/images/logomain.png" alt="">
@@ -99,6 +99,16 @@
                     </mat-menu>
                     <div class="triangle"></div>
                 </mat-list-item>
+                <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+                    <a [matMenuTriggerFor]="menu7">Manage Categories</a>
+                    <mat-menu #menu7="matMenu" class="activedropmenu">
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-type']">Manage Type</a>
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-make']">Manage Make</a>
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-model']">Manage Model</a>
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-year']">Manage Year</a>
+                    </mat-menu>
+                    <div class="triangle"></div>
+                </mat-list-item>
             </mat-list>
         </div>
         <div style="margin: auto"></div>
@@ -141,8 +151,8 @@
     </div>
     <div class="topmenulist">
       <mat-list class="navigation-left">
-        <mat-list-item class="nav-item" routerLinkActive="activemenu">
-          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/']">
+        <mat-list-item class="nav-item">
+          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/home']">
             <span class="nav-text">home</span>
           </a>
           <div class="triangle"></div>
@@ -229,8 +239,8 @@
     </div>
     <div class="topmenulist">
       <mat-list class="navigation-left">
-        <mat-list-item class="nav-item" routerLinkActive="activemenu">
-          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['']">
+        <mat-list-item class="nav-item">
+          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/home']">
             <span class="nav-text">home</span>
           </a>
           <div class="triangle"></div>

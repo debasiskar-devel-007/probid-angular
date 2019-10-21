@@ -24,6 +24,8 @@ import {ListingModule} from 'listing-angular7';
 import {MatIconModule} from '@angular/material/icon';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+
 
 /**Frontend Component**/
 
@@ -99,6 +101,7 @@ import { AdvanceInventorySearchBackendComponent } from './component/backend/adva
 import { BasicInventorySearchBackendComponent } from './component/backend/basic-inventory-search-backend/basic-inventory-search-backend.component';
 import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
 import { CommunicationComponent } from './component/backend/communication/communication.component';
+import { AdminManageCategoriesComponent } from './component/backend/admin-manage-categories/admin-manage-categories.component';
 /**End Backend Component** */
 
 
@@ -165,9 +168,11 @@ import { CommunicationComponent } from './component/backend/communication/commun
     BasicInventorySearchBackendComponent,
     MysalesrepComponent,
     CommunicationComponent,
+    AdminManageCategoriesComponent,
   ],
   imports: [
     AngularFontAwesomeModule,
+    MatCarouselModule.forRoot(),
     DragScrollModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
