@@ -26,6 +26,8 @@ import {ListingModule} from 'listing-angular7';
 import {MatIconModule} from '@angular/material/icon';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
+import { MatCarouselModule } from '@ngmodule/material-carousel';
+
 
 /**Frontend Component**/
 
@@ -120,6 +122,8 @@ import { AdvanceInventorySearchBackendComponent } from './component/backend/adva
 import { BasicInventorySearchBackendComponent } from './component/backend/basic-inventory-search-backend/basic-inventory-search-backend.component';
 import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
 import { CommunicationComponent } from './component/backend/communication/communication.component';
+import { AdminManageCategoriesComponent, DialogAddCategoryDialog } from './component/backend/admin-manage-categories/admin-manage-categories.component';
+import { AddAdminCategoriesComponent } from './component/backend/add-admin-categories/add-admin-categories.component';
 /**End Backend Component** */
 
 
@@ -194,11 +198,15 @@ import { CommunicationComponent } from './component/backend/communication/commun
     BasicInventorySearchBackendComponent,
     MysalesrepComponent,
     CommunicationComponent,
+    AdminManageCategoriesComponent,
+    DialogAddCategoryDialog,
+    AddAdminCategoriesComponent,
   ],
   imports: [
     // TrainingModule,
     NgxUploaderModule,
     AngularFontAwesomeModule,
+    MatCarouselModule.forRoot(),
     DragScrollModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
@@ -231,6 +239,6 @@ import { CommunicationComponent } from './component/backend/communication/commun
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [comingSoonDialog, DialogPrivacyDialog, DialogTermsDialog,]
+  entryComponents: [comingSoonDialog, DialogPrivacyDialog, DialogTermsDialog,DialogAddCategoryDialog]
 })
 export class AppModule { }

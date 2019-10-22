@@ -72,6 +72,8 @@ import { AdvanceInventorySearchBackendComponent } from './component/backend/adva
 import { BasicInventorySearchBackendComponent } from './component/backend/basic-inventory-search-backend/basic-inventory-search-backend.component';
 import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
 import { CommunicationComponent } from './component/backend/communication/communication.component';
+import { AdminManageCategoriesComponent } from './component/backend/admin-manage-categories/admin-manage-categories.component';
+import { AddAdminCategoriesComponent } from './component/backend/add-admin-categories/add-admin-categories.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -196,6 +198,17 @@ const routes: Routes = [
   { path: 'create-new-inventory', component: CreateNewInventoryComponent },
   { path: 'job-ticket', component: JobTicketComponent },
   { path: 'social-advo-admin', component: SocialAdvoComponent },  
+  { path: 'manage-type', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
+  data: { requestcondition: { source: 'manage-categories', condition: {"categoriesType": "type"} }, endpoint: 'datalist' }},
+
+  { path: 'manage-make', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
+  data: { requestcondition: { source: 'manage-categories', condition: {"categoriesType": "make"} }, endpoint: 'datalist' } }, 
+
+  { path: 'manage-model', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
+  data: { requestcondition: { source: 'manage-categories', condition: {"categoriesType": "model"} }, endpoint: 'datalist' } }, 
+
+  { path: 'manage-year', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
+  data: { requestcondition: { source: 'manage-categories', condition: {"categoriesType": "year"} }, endpoint: 'datalist' } },  
  
   /**************** User Management *****************/
   {
@@ -244,6 +257,8 @@ const routes: Routes = [
   { path: 'reptrainingcenter/:cid', component: RepTraingcenterComponent,resolve : {results: ResolveService},data: { requestcondition: { trainingcategory:{}, userid:{} }, endpoint:'traininglessonlist'}},
   { path: 'reptrainingcenter/:cid/:lid', component: RepTraingcenterComponent}, // lesson id
   { path: 'manage-leads', component: ManageleadsComponent },
+
+  { path: 'editcategori/:id', component: AddAdminCategoriesComponent },
 
 
   

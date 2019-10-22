@@ -1,5 +1,7 @@
-
-.innerpagebanner.homebanner.mat-card .mat-card-content {
+.homebanner{
+    height:570px;
+}
+.homebanner.mat-card .mat-card-content {
     height: auto !important;
     position: relative;
 }

@@ -263,6 +263,32 @@ export class ApiService {
 
   }
 /*************** Added by himadri start here ***************/ 
+
+
+getDataResolve(endpoint: any) {
+
+  const httpOptions = {
+      headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Authorization': this.accesstoken
+      })
+  };
+  console.log(this.cookieService.get('id'));
+  console.log(this.cookieService.get('id'));
+  console.log('endpoint');
+  console.log(endpoint);
+  console.log('httpOptions');
+  console.log(httpOptions);
+  console.log(this.cookieService.get('jwttoken'));
+  console.log('httpOptions');
+  console.log(httpOptions);
+
+  // this.isTokenExpired()
+  var result = this._http.post(this.serverUrl + 'datalist', endpoint, httpOptions).pipe(map(res => res));
+
+  return result;
+}
+// getData end
 /*************** Added by himadri using for datalist start here ***************/ 
 
 getDatalist(requestdata: any) {
@@ -275,8 +301,24 @@ getDatalist(requestdata: any) {
   var result = this._http.post(this.serverUrlDemo + requestdata.endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
   return result;
 
-/*************** Added by himadri end here ***************/ 
+
 }
+/*************** Added by himadri end here ***************/ 
+
+getDatalistForResolve(requestdata: any) {
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.accesstoken
+    })
+  };
+  var result = this._http.post(this.serverUrlDemo + 'datalist', JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
+  return result;
+
+
+}
+
+
 
 
   addLogin(requestdata: any) {

@@ -52,9 +52,9 @@ export class BkHeaderComponent implements OnInit {
       private ApiService: ApiService,
        private _http: HttpClient
     ) {
-  setTimeout(()=>{
-        this.getrepdetails();
-      },500);
+  // setTimeout(()=>{
+  //       this.getrepdetails();
+  //     },500);
     // this.user_data = JSON.parse(this.cookieService.get('user_details'));
     // console.log(this.user_data);
 
@@ -69,39 +69,45 @@ export class BkHeaderComponent implements OnInit {
     
    }
 
-   getrepdetails() {
-    const link = this.ApiService.nodesslurl + 'getrecvalues?token=' + this.cookie.get('jwtToken');
-    var data = { _id: this.cookie.get('userid') }
-    this._http.post(link, data)
-      .subscribe(res => {
-        let result: any;
-        result = res;
-        if (result.status == 'error') {
-        } else {
-          this.repdetails = result.res;
-          this.reptraininglessondetails = result.res2;
-          /*console.log('this.repdetails');
-          console.log(this.repdetails);*/
-          /* console.log('this.reptraininglessondetails');
-           console.log(this.reptraininglessondetails);*/
-        }
-      }, error => {
-        console.log('Oooops!');
-      });
-  }
+   gotoHome(){
+     console.log('ok')
+     this.router.navigateByUrl('/home');
+   }
 
-   gototrainingsectionwithcat() {
-    if (this.reptraininglessondetails != null) {
-      console.log('this.reptraininglessondetails.trainingcategory');
-      console.log(this.reptraininglessondetails.trainingcategory)
-      var link = 'reptrainingcenter/' + this.reptraininglessondetails.trainingcategory;
-      this.router.navigate([link]);
-    } else {
-      var link = 'reptrainingcenter/5d36d7256778e75a3d6c37ce';
-      //   var link = 'reptrainingcenter/5c6d54656fac495dd5c209e9';
-      this.router.navigate([link]);
-    }
-  }
+  //  getrepdetails() {
+  //   // const link = this.ApiService.nodesslurl + 'getrecvalues?token=' + this.cookie.get('jwttoken');
+  //   const link = this.ApiService.nodesslurl + 'datalist?token=' + this.cookie.get('jwttoken');
+  //   var data = { _id: this.cookie.get('userid') }
+  //   this._http.post(link, data)
+  //     .subscribe(res => {
+  //       let result: any;
+  //       result = res;
+  //       if (result.status == 'error') {
+  //       } else {
+  //         this.repdetails = result.res;
+  //         this.reptraininglessondetails = result.res2;
+  //         /*console.log('this.repdetails');
+  //         console.log(this.repdetails);*/
+  //         /* console.log('this.reptraininglessondetails');
+  //          console.log(this.reptraininglessondetails);*/
+  //       }
+  //     }, error => {
+  //       console.log('Oooops!');
+  //     });
+  // }
+
+  //  gototrainingsectionwithcat() {
+  //   if (this.reptraininglessondetails != null) {
+  //     console.log('this.reptraininglessondetails.trainingcategory');
+  //     console.log(this.reptraininglessondetails.trainingcategory)
+  //     var link = 'reptrainingcenter/' + this.reptraininglessondetails.trainingcategory;
+  //     this.router.navigate([link]);
+  //   } else {
+  //     var link = 'reptrainingcenter/5d36d7256778e75a3d6c37ce';
+  //     //   var link = 'reptrainingcenter/5c6d54656fac495dd5c209e9';
+  //     this.router.navigate([link]);
+  //   }
+  // }
 
   ngOnInit() {
     // this.userCookies = JSON.parse(this.cookieService.get('user_details'));
@@ -111,25 +117,25 @@ export class BkHeaderComponent implements OnInit {
     // console.log(this.user_full_name);
   }
 
-  getvideocatagory() {
-    let link = this.ApiService.nodesslurl + 'datalist?token=' + this.cookie.get('jwtToken');
-    console.log(link);
-    this._http.post(link, { source: "videocategory_view_with_parent", condition: { status: true } })
-      .subscribe(res => {
-        let result;
-        result = res;
-        if (result.status == 'error') {
+  // getvideocatagory() {
+  //   let link = this.ApiService.nodesslurl + 'datalist?token=' + this.cookie.get('jwttoken');
+  //   console.log(link);
+  //   this._http.post(link, { source: "videocategory_view_with_parent", condition: { status: true } })
+  //     .subscribe(res => {
+  //       let result;
+  //       result = res;
+  //       if (result.status == 'error') {
 
-        } else {
-          this.videoCategoryarry = [];
-          this.videoCategoryarry = result.res;
+  //       } else {
+  //         this.videoCategoryarry = [];
+  //         this.videoCategoryarry = result.res;
 
-        }
-      }, error => {
-        console.log('Oooops!');
-        this.videoCategoryarry = [];
-      });
-  }
+  //       }
+  //     }, error => {
+  //       console.log('Oooops!');
+  //       this.videoCategoryarry = [];
+  //     });
+  // }
 
 }
 

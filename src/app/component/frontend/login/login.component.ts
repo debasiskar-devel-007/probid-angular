@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
 import { ApiService } from '../../../api.service';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-/***************** This is use for image upload ********************/ 
+  /***************** This is use for image upload ********************/
   // public configData: any = {
   //   baseUrl: "http://3.15.236.141:5005/",
   //   endpoint: "uploads",
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
   //   prefix: "profile_picture_"
   // }
 
-  
+
   public logo: any = '../../assets/images/logo.png';      // logo url 
   public fromTitle: any = "Login";    // This is a From Title 
   // public fullUrl: any = "https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/";  // server url
@@ -28,22 +29,39 @@ export class LoginComponent implements OnInit {
   public endpoint: any = "login";  // login endpoint
   // public signUpRouteingUrl: any = 'sign-up';      // navigate the sign up page
   // public forgetRouteingUrl: any = 'forget-password';      // navigate the Forget password page
-  public buttonName:any= 'Login Button';
-  public signUpRouteingUrl: any = { 
-    "path":"sign-up",
-    "buttonName":"sign-up",
-    "customLink":"",
-    "customURl":""
+  public buttonName: any = 'Login Button';
+  public signUpRouteingUrl: any = {
+    "path": "sign-up",
+    "buttonName": "sign-up",
+    "customLink": "",
+    "customURl": ""
   };
 
   public forgetRouteingUrl: any = {
-    "path":"forget-password",
-    "buttonName":"forget-password",
-    "customLink":"",
-    "customURl":""
+    "path": "forget-password",
+    "buttonName": "forget-password",
+    "customLink": "",
+    "customURl": ""
   };
   public routerStatus: any;
-    constructor(private readonly meta: MetaService, public apiService:ApiService, public router:Router) { 
+  public userData: any = {};
+  constructor(private readonly meta: MetaService, public apiService: ApiService, public router: Router, public cookieService: CookieService) {
+
+
+
+ 
+    // this.userData = JSON.parse(this.cookieService.get('user_details'));
+    // console.log(this.userData.type);
+    // console.log(cookieService.get('jwttoken').length)
+    // if (this.userData.type == 'user' && cookieService.get('jwttoken').length >= 10) {
+    //   router.navigateByUrl('/customer-dashboard');
+    // } else if (this.userData.type == 'admin' && cookieService.get('jwttoken').length >= 10) {
+    //   router.navigateByUrl('/admin-dashboard');
+    // } else if (this.userData.type == 'res' && cookieService.get('jwttoken').length >= 10) {
+    //   router.navigateByUrl('/rep-dashboard');
+    // }
+
+
 
     this.meta.setTitle('Login Form dynamic');
     this.meta.setTag('og:description', 'This is dynamic decription');
@@ -51,44 +69,43 @@ export class LoginComponent implements OnInit {
     this.meta.setTag('og:type', 'website');
     this.meta.setTag('og:image', 'https://upload.wikimedia.org/wikipedia/commons/f/f8/superraton.jpg');
 
-      this.routerStatus = {           // this is use for if login succcess then navigate which page 
-        "data": [
-          {
-           "type":"admin",
-           "routerNav":"admin-dashboard"
-          },
-          {
-            "type":"customer",
-           "routerNav":"customer-dashboard"
-          },
-          {
-            "type":"rep",
-            "routerNav":"rep-dashboard"
-          }
-        ]
-      }
-  
-    }
-  
-    ngOnInit() {
-      console.log(this.apiService.serverUrlDemo)
+    this.routerStatus = {           // this is use for if login succcess then navigate which page 
+      "data": [
+        {
+          "type": "admin",
+          "routerNav": "admin-dashboard"
+        },
+        {
+          "type": "customer",
+          "routerNav": "customer-dashboard"
+        },
+        {
+          "type": "rep",
+          "routerNav": "rep-dashboard"
+        }
+      ]
     }
 
-
-    goto(){
-      console.log('sadfdff');
-      if (this.router.url =='/admin-login') {
-        this.router.navigateByUrl('/admin-dashboard');
-
-      } else if (this.router.url =='/salesrep-login') {
-
-        this.router.navigateByUrl('/rep-dashboard');
-
-      } else if(this.router.url =='/customer-login') {
-
-        this.router.navigateByUrl('/customer-dashboard');
-      }
-    }
-  
   }
-  
+
+  ngOnInit() {
+    // console.log(this.apiService.serverUrlDemo)
+  }
+
+
+  goto() {
+    console.log('sadfdff');
+    if (this.router.url == '/admin-login') {
+      this.router.navigateByUrl('/admin-dashboard');
+
+    } else if (this.router.url == '/salesrep-login') {
+
+      this.router.navigateByUrl('/rep-dashboard');
+
+    } else if (this.router.url == '/customer-login') {
+
+      this.router.navigateByUrl('/customer-dashboard');
+    }
+  }
+
+}

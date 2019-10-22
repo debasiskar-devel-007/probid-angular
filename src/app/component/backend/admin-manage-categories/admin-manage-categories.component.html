@@ -1,0 +1,114 @@
+<div class="adminwrappercls">
+    <app-header></app-header>
+        <div class="main-content-wrap">
+          <mat-card class="generalcls blog" style="padding: 0 !important;">  
+
+              <span *ngIf=" router.url === '/manage-type'">
+              <label>Categories Type</label>
+              <button mat-raised-button color="accent"  (click)="addType()">Add Type</button>
+                <lib-listing *ngIf="manage_type !=null && manage_type.length>0" 
+                  [datasource]="manage_type"    
+                  [skip]="manage_type_skip"                              
+                  [modify_header_array]="manage_type_modify_header"
+                  [jwttoken]="apiService.accesstoken" 
+                  [sourcedata]="tablename"  
+                  [updateendpoint]="updateurl"   
+                  [statusarr]="statusarray"      
+                  [apiurl]="apiService.serverUrlDemo"   
+                  [editroute] = "editroute"    
+                  [deleteendpoint]="deleteurl" >
+                                                                   
+         </lib-listing>
+              
+              
+              
+              </span>
+             
+             
+              <span *ngIf=" router.url === '/manage-make'">
+                
+                <label>Categories Make</label>
+                <button mat-raised-button color="accent" (click)="addMake()">Add Make</button>
+
+                <lib-listing *ngIf="manage_make !=null && manage_make.length>0" 
+                  [datasource]="manage_make"    
+                  [skip]="manage_make_skip"                              
+                  [modify_header_array]="manage_make_modify_header"
+                  [jwttoken]="apiService.accesstoken" 
+                  [sourcedata]="tablename"  
+                  [updateendpoint]="updateurl"   
+                  [statusarr]="statusarray"      
+                  [apiurl]="apiService.serverUrlDemo"   
+                  [editroute] = "editroute"       
+                  [deleteendpoint]="deleteurl" >
+                                                                   
+         </lib-listing>
+              
+              
+
+              </span>
+             
+             
+             
+             
+              <span *ngIf=" router.url === '/manage-model'">
+                
+
+                <label>Categories Model</label>
+
+                <button mat-raised-button color="accent"  (click)="addModel()">Add Model</button>
+
+                <lib-listing *ngIf="manage_model !=null && manage_model.length>0" 
+                  [datasource]="manage_model"    
+                  [skip]="manage_model_skip"                              
+                  [modify_header_array]="manage_model_modify_header"
+                  [jwttoken]="apiService.accesstoken" 
+                  [sourcedata]="tablename"  
+                  [updateendpoint]="updateurl"   
+                  [statusarr]="statusarray"      
+                  [apiurl]="apiService.serverUrlDemo" 
+                  [editroute] = "editroute"         
+                  [deleteendpoint]="deleteurl" >
+                                                                   
+         </lib-listing>
+              
+              
+
+
+
+              </span>
+             
+             
+             
+              <span *ngIf=" router.url === '/manage-year'">
+               
+
+
+                <label>Categories Year</label>
+
+                <button mat-raised-button color="accent"  (click)="addYear()">Add Year</button>
+
+                <lib-listing *ngIf="manage_year !=null && manage_year.length>0" 
+                  [datasource]="manage_year"    
+                  [skip]="manage_year_skip"                              
+                  [modify_header_array]="manage_year_modify_header"
+                  [jwttoken]="apiService.accesstoken" 
+                  [sourcedata]="tablename"  
+                  [updateendpoint]="updateurl"   
+                  [statusarr]="statusarray"      
+                  [apiurl]="apiService.serverUrlDemo" 
+                  [editroute] = "editroute"         
+                  [deleteendpoint]="deleteurl" >
+                                                                   
+         </lib-listing>
+              
+              
+
+
+
+
+              </span>
+          </mat-card>
+        </div>
+    </div>
+  <app-footer></app-footer>
