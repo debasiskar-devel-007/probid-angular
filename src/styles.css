@@ -16,3 +16,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .contact-form .mat-form-field-appearance-legacy .mat-form-field-wrapper .mat-form-field-suffix{color: #000;}
 
 .example-container .mat-form-field { margin: 0 0px !important;}
+.mat-focused .mat-form-field-label.ng-star-inserted.mat-empty.mat-form-field-empty {display: none !important}
+.mat-form-field-label.ng-star-inserted.mat-empty.mat-form-field-empty {display: block !important}
+.mat-form-field-label.ng-star-inserted {display: none !important}
+.mat-form-field-infix {border: 0 !important}
+
+.mat-dialog-container {padding: 0 !important;}
+
+
+.mat-focused .mat-form-field-label.ng-star-inserted.mat-empty.mat-form-field-empty {display: none !important}
+.mat-form-field-label.ng-star-inserted.mat-empty.mat-form-field-empty {display: block !important}
+.mat-form-field-label.ng-star-inserted {display: none !important}
+.mat-form-field-infix {border: 0 !important;}
+
+
+
+

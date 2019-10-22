@@ -67,6 +67,7 @@ import { BasicInventorySearchBackendComponent } from './component/backend/basic-
 import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
 import { CommunicationComponent } from './component/backend/communication/communication.component';
 import { AdminManageCategoriesComponent } from './component/backend/admin-manage-categories/admin-manage-categories.component';
+import { AdminAddCategoriesComponent } from './component/backend/admin-add-categories/admin-add-categories.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -192,8 +193,10 @@ const routes: Routes = [
   { path: 'social-advo-admin', component: SocialAdvoComponent },  
   { path: 'manage-type', component: AdminManageCategoriesComponent },  
   { path: 'manage-make', component: AdminManageCategoriesComponent },  
+  { path: 'manage-make-edit/:id', component: AdminManageCategoriesComponent },  
   { path: 'manage-model', component: AdminManageCategoriesComponent },  
   { path: 'manage-year', component: AdminManageCategoriesComponent },  
+  { path: 'admin-add-categories', component: AdminAddCategoriesComponent },  
  
   /**************** User Management *****************/
   {

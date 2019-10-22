@@ -1,0 +1,45 @@
+<span class="modalouter_body">
+    <span class="modalouter_wrapper">
+            <span class="modalouter_wrapper_inner">
+                    <h1 mat-dialog-title class="modalttitle">Add Model</h1>
+                    <span class="modalttitlewrapper">
+                        <div mat-dialog-content>
+                            <mat-form-field>
+                                <label>Name:</label>
+                                <input matInput>
+                            </mat-form-field>
+                            <mat-form-field>                
+                                    <label>Choose Model:</label>
+                                    <mat-label>Select an option</mat-label>
+                                    <mat-select>
+                                    <mat-option value="1">Option 1</mat-option>
+                                    <mat-option value="2">Option 2</mat-option>
+                                    <mat-option value="3">Option 3</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            <mat-form-field>
+                                    <label>Description (optional):</label>
+                                <input matInput>
+                            </mat-form-field>
+                            <mat-form-field>
+                                    <label>Status:</label>
+                                    <mat-label>Select an option</mat-label>
+                                    <mat-select>
+                                    <mat-option value="1">Active </mat-option>
+                                    <mat-option value="2">InActive </mat-option>
+                                    <mat-option value="3">Pending </mat-option>
+                                    </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div mat-dialog-actions>
+                            <button mat-button (click)="onNoClick()">No Thanks</button>
+                            <button mat-button>Ok</button>
+                        </div>
+                    </span>
+            
+            </span>
+    </span>
+</span>
+
+
+
