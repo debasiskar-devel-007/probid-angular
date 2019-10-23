@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,12 +15,13 @@ export class SignUpComponent implements OnInit {
   public loginRouteingUrl: any = 'login';
 
   public formTitle: any = 'Sign Up';
-  public serverUrl: any = 'https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/';
+  // public serverUrl: any = 'https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/';
+  public serverUrl: any = this.apiService.serverUrlDemo;
   public addEndpoint: any = {
     endpoint:'addorupdatedata',
     source:'user'
   };
-  constructor(private readonly meta: MetaService) {
+  constructor(private readonly meta: MetaService, public apiService: ApiService) {
     
     this.meta.setTitle('Sign Up dynamic');
     this.meta.setTag('og:description', 'This is dynamic description ');

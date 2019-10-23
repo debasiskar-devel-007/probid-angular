@@ -13,7 +13,12 @@ import {environment } from '../environments/environment';
 export class ApiService {
 
   public serverUrlDemo =  environment["API_URL"];
+  public nodesslurl =  environment["nodesslurl"];
+  public uploadurl =  environment["uploadurl"];
+  public base64encode =  environment["base64encode"];
+  public uploadsslurl: any= environment["download_url"];
 
+  public fileimgsslurl: any;
 
 
 
@@ -24,7 +29,6 @@ export class ApiService {
   public uploadtype;
   public uploaderror: any = '';
   public accesstoken:any=this.cookieService.get('jwtToken');
-  // public accesstoken:any='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmb28iOiJiYXIiLCJleHAiOjE1NjgzNTgyMTAsImlhdCI6MTU2ODI3MTgxMH0.2ltvxVKwfX1uwMOwQ2Zzgp1K2jiaCDj051Wyho0Iw-Q';
   fileservername: any = [];
   serverUrl: any;
   addendpointUrl: any;
@@ -52,6 +56,10 @@ export class ApiService {
 
   constructor(private _http: HttpClient,
     private _authHttp: HttpClient,private cookieService :CookieService) {
+
+      this.fileimgsslurl = 'http://api.nexgentesting.com/';
+
+
     this.subscriptionServer = this.getServerUrl().subscribe(message => {
      let result: any;
       result = message;
@@ -255,6 +263,23 @@ export class ApiService {
 
   }
 /*************** Added by himadri start here ***************/ 
+
+
+getDataResolve(endpoint: any) {
+
+  const httpOptions = {
+      headers: new HttpHeaders({
+          'Content-Type':  'application/json',
+          'Authorization': this.accesstoken
+      })
+  };
+
+  // this.isTokenExpired()
+  var result = this._http.post(this.serverUrl + 'datalist', endpoint, httpOptions).pipe(map(res => res));
+
+  return result;
+}
+// getData end
 /*************** Added by himadri using for datalist start here ***************/ 
 
 getDatalist(requestdata: any) {
@@ -267,8 +292,24 @@ getDatalist(requestdata: any) {
   var result = this._http.post(this.serverUrlDemo + requestdata.endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
   return result;
 
-/*************** Added by himadri end here ***************/ 
+
 }
+/*************** Added by himadri end here ***************/ 
+
+getDatalistForResolve(requestdata: any) {
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.accesstoken
+    })
+  };
+  var result = this._http.post(this.serverUrlDemo + 'datalist', JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
+  return result;
+
+
+}
+
+
 
 
   addLogin(requestdata: any) {
@@ -307,7 +348,7 @@ forgetPassword(requestdata: any) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'access-token': this.accesstoken
+        'Authorization': this.accesstoken
       })
     };
     var result = this._http.post(this.serverUrl + this.deletesingle_endpointUrl, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
@@ -318,7 +359,7 @@ forgetPassword(requestdata: any) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'access-token': this.accesstoken
+        'Authorization': this.accesstoken
       })
     };
     var result = this._http.post(this.serverUrl + this.deletesingle_endpointUrl+'many', JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
@@ -329,7 +370,7 @@ forgetPassword(requestdata: any) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'access-token': this.accesstoken
+        'Authorization': this.accesstoken
       })
     };
     var result = this._http.post(this.serverUrl + this.updatestatus_single_endpointUrl, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
@@ -340,7 +381,7 @@ forgetPassword(requestdata: any) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'access-token': this.accesstoken
+        'Authorization': this.accesstoken
       })
     };
     var result = this._http.post(this.serverUrl + this.updatestatus_single_endpointUrl+'many', JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
@@ -350,10 +391,11 @@ forgetPassword(requestdata: any) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'access-token': this.accesstoken
+        'Authorization': this.accesstoken
       })
     };
-    var result = this._http.post(this.serverUrl +endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
+    console.log(requestdata)
+    var result = this._http.post(this.serverUrlDemo +endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
     return result;
   }
 

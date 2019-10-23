@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+
+import { FormsModule, ReactiveFormsModule  }   from '@angular/forms'
 
 import {DemoMaterialModule} from "../material-module";
 import { DragScrollModule } from 'ngx-drag-scroll';
@@ -89,6 +91,25 @@ import { SalesreplistsComponent } from './component/backend/salesreplists/salesr
 import { RsvplistsComponent } from './component/backend/rsvplists/rsvplists.component';
 import { ManageTrainingComponent } from './component/backend/manage-training/manage-training.component';
 import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
+// import { SharetoolsModule } from 'sharetools';
+import { ListingComponent } from './training/listing/listing.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import {ModalModule} from 'ngx-bootstrap/modal';
+import { TranningcategorymanagementComponent } from './training/tranningcategorymanagement/tranningcategorymanagement.component';
+import { UsersearchPipe } from './training/search.pipe';
+import { TrainingModule } from './training/training.module';
+import { AddEditComponent } from './training/tranningcategorymanagement/add-edit/add-edit.component';
+
+import { TrainingsectionlistComponent } from './training/trainingsectionlist/trainingsectionlist.component';
+import { TrainingsectionComponent } from './training/trainingsection/trainingsection.component';
+import { NgxUploaderModule } from 'ngx-uploader';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { CKEditorModule } from 'ngx-ckeditor';
+import { ClipboardModule } from 'ngx-clipboard';
+import { RepTraingcenterComponent } from './training/rep-traingcenter/rep-traingcenter.component';
+import { ManageleadsComponent } from './training/manageleads/manageleads.component';
 import { ManageLessonsComponent } from './component/backend/manage-lessons/manage-lessons.component';
 import { TrainingCenterComponent } from './component/backend/training-center/training-center.component';
 import { TrainingReportComponent } from './component/backend/training-report/training-report.component';
@@ -101,6 +122,7 @@ import { AdvanceInventorySearchBackendComponent } from './component/backend/adva
 import { BasicInventorySearchBackendComponent } from './component/backend/basic-inventory-search-backend/basic-inventory-search-backend.component';
 import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
 import { CommunicationComponent } from './component/backend/communication/communication.component';
+import { AddAdminCategoriesComponent } from './component/backend/add-admin-categories/add-admin-categories.component';
 import { AdminManageCategoriesComponent, DialogModalOpenDialog } from './component/backend/admin-manage-categories/admin-manage-categories.component';
 import { AdminAddCategoriesComponent } from './component/backend/admin-add-categories/admin-add-categories.component';
 /**End Backend Component** */
@@ -108,6 +130,12 @@ import { AdminAddCategoriesComponent } from './component/backend/admin-add-categ
 
 @NgModule({
   declarations: [
+    ManageleadsComponent,
+    RepTraingcenterComponent,
+    TrainingsectionlistComponent,
+    TrainingsectionComponent,
+    AddEditComponent,
+    UsersearchPipe,
     AppComponent,
     LoginComponent,
     ContactusComponent,
@@ -157,6 +185,8 @@ import { AdminAddCategoriesComponent } from './component/backend/admin-add-categ
     RsvplistsComponent,
     ManageTrainingComponent,
     SearchListViewComponent,
+    ListingComponent,
+    TranningcategorymanagementComponent,
     ManageLessonsComponent,
     TrainingCenterComponent,
     TrainingReportComponent,
@@ -170,10 +200,13 @@ import { AdminAddCategoriesComponent } from './component/backend/admin-add-categ
     MysalesrepComponent,
     CommunicationComponent,
     AdminManageCategoriesComponent,
+    AddAdminCategoriesComponent,
     DialogModalOpenDialog,
     AdminAddCategoriesComponent,
   ],
   imports: [
+    // TrainingModule,
+    NgxUploaderModule,
     AngularFontAwesomeModule,
     MatCarouselModule.forRoot(),
     DragScrollModule,
@@ -192,11 +225,22 @@ import { AdminAddCategoriesComponent } from './component/backend/admin-add-categ
     HttpClientModule,
     AppRoutingModule,MetaModule.forRoot(), BrowserAnimationsModule,
     ListingModule,
-    MatIconModule
+    MatIconModule,
+    ImageCropperModule,
+     CarouselModule.forRoot(),
+    CKEditorModule,
+    ClipboardModule,
+    BsDatepickerModule.forRoot(),
+    TimepickerModule.forRoot(),
+    ModalModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    
+    // SharetoolsModule
   ],
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   entryComponents: [comingSoonDialog, DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog]
 })
 export class AppModule { }

@@ -61,12 +61,19 @@ import { CreateNewInventoryComponent } from './component/backend/create-new-inve
 import { JobTicketComponent } from './component/backend/job-ticket/job-ticket.component';
 import { SocialAdvoComponent } from './component/backend/social-advo/social-advo.component';
 import { from } from 'rxjs';
+import { TranningcategorymanagementComponent } from './training/tranningcategorymanagement/tranningcategorymanagement.component';
+import { AddEditComponent } from './training/tranningcategorymanagement/add-edit/add-edit.component';
+import { TrainingsectionlistComponent } from './training/trainingsectionlist/trainingsectionlist.component';
+import { TrainingsectionComponent } from './training/trainingsection/trainingsection.component';
+import { RepTraingcenterComponent } from './training/rep-traingcenter/rep-traingcenter.component';
+import { ManageleadsComponent } from './training/manageleads/manageleads.component';
 import { BookAnAppointmentComponent } from './component/backend/book-an-appointment/book-an-appointment.component';
 import { AdvanceInventorySearchBackendComponent } from './component/backend/advance-inventory-search-backend/advance-inventory-search-backend.component';
 import { BasicInventorySearchBackendComponent } from './component/backend/basic-inventory-search-backend/basic-inventory-search-backend.component';
 import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
 import { CommunicationComponent } from './component/backend/communication/communication.component';
 import { AdminManageCategoriesComponent } from './component/backend/admin-manage-categories/admin-manage-categories.component';
+import { AddAdminCategoriesComponent } from './component/backend/add-admin-categories/add-admin-categories.component';
 import { AdminAddCategoriesComponent } from './component/backend/admin-add-categories/admin-add-categories.component';
 /**End Backend Routing**/
 
@@ -138,6 +145,7 @@ const routes: Routes = [
   },
 
   { path: 'bloghome', component: BlogComponent, resolve: { serviceListData: ResolveService }, data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalist' } },
+  
   { path: 'blog', component: BloglistComponent },
   { path: 'blogdetail', component: BlogdetailComponent },
   { path: 'advance-inventory-search', component: AdvanceInventorySearchComponent },
@@ -191,11 +199,19 @@ const routes: Routes = [
   { path: 'create-new-inventory', component: CreateNewInventoryComponent },
   { path: 'job-ticket', component: JobTicketComponent },
   { path: 'social-advo-admin', component: SocialAdvoComponent },  
-  { path: 'manage-type', component: AdminManageCategoriesComponent },  
-  { path: 'manage-make', component: AdminManageCategoriesComponent },  
-  { path: 'manage-make-edit/:id', component: AdminManageCategoriesComponent },  
-  { path: 'manage-model', component: AdminManageCategoriesComponent },  
-  { path: 'manage-year', component: AdminManageCategoriesComponent },  
+  { path: 'manage-type', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
+  data: { requestcondition: { source: 'manage-categories', condition: {"categoriesType": "type"} }, endpoint: 'datalist' }},
+
+  { path: 'manage-make', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
+  data: { requestcondition: { source: 'manage-categories', condition: {"categoriesType": "make"} }, endpoint: 'datalist' } }, 
+
+  { path: 'manage-model', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
+  data: { requestcondition: { source: 'manage-categories', condition: {"categoriesType": "model"} }, endpoint: 'datalist' } }, 
+
+  { path: 'manage-year', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
+  data: { requestcondition: { source: 'manage-categories', condition: {"categoriesType": "year"} }, endpoint: 'datalist' } },  
+ 
+  { path: 'manage-make-edit/:id', component: AdminManageCategoriesComponent },    
   { path: 'admin-add-categories', component: AdminAddCategoriesComponent },  
  
   /**************** User Management *****************/
@@ -231,10 +247,25 @@ const routes: Routes = [
   /**End Backend Routing**/
 
 
+  {path: 'tranningcategory', component: TranningcategorymanagementComponent},
+  {path: 'addtrainings', component: TranningcategorymanagementComponent},
+  { path: 'category-management/add-new', component: AddEditComponent },
+  { path: 'category-management/edit/:id', component: AddEditComponent },
+  { path:'trainingsectionlist', component: TrainingsectionlistComponent},
+  { path:'trainingsection', component: TrainingsectionComponent},
+  { path:'trainingsection/:id', component: TrainingsectionComponent},
 
 
+  { path: 'reptrainingcenter', component: RepTraingcenterComponent},
+  // { path: 'reptrainingcenter/:cid', component: RepTraingcenterComponent}, // cat id
+  { path: 'reptrainingcenter/:cid', component: RepTraingcenterComponent,resolve : {results: ResolveService},data: { requestcondition: { trainingcategory:{}, userid:{} }, endpoint:'traininglessonlist'}},
+  { path: 'reptrainingcenter/:cid/:lid', component: RepTraingcenterComponent}, // lesson id
+  { path: 'manage-leads', component: ManageleadsComponent },
+
+  { path: 'editcategori/:id', component: AddAdminCategoriesComponent },
 
 
+  
   { path: '**', component: LoginComponent },
 ];
 

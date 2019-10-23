@@ -13,10 +13,23 @@
                       <h2>Manage Type</h2>
                     </span>
                     <span>
-                        <mat-form-field>
-                            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
-                        </mat-form-field>
-                        <button mat-button class="btnorange sim-button"><i class="material-icons">add</i> Add Type</button>
+                        
+                        <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add Type</button>
+
+                <lib-listing *ngIf="manage_type !=null && manage_type.length>0" 
+                  [datasource]="manage_type"    
+                  [skip]="manage_type_skip"                              
+                  [modify_header_array]="manage_type_modify_header"
+                  [jwttoken]="apiService.accesstoken" 
+                  [sourcedata]="tablename"  
+                  [updateendpoint]="updateurl"   
+                  [statusarr]="statusarray"      
+                  [apiurl]="apiService.serverUrlDemo"   
+                  [editroute] = "editroute"    
+                  [deleteendpoint]="deleteurl" >
+                                                                   
+         </lib-listing>
+              
                     </span>
                       
                   </span>
@@ -25,7 +38,7 @@
                 </span>
 
                 
-                <img src="../../../../assets/images/admin-manage-type_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+                <!-- <img src="../../../../assets/images/admin-manage-type_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
               
               </span>
 
@@ -39,10 +52,22 @@
                       <h2>Manage make</h2>
                     </span>
                     <span>
-                        <mat-form-field>
-                            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
-                        </mat-form-field>
-                        <button mat-button class="btnorange sim-button"><i class="material-icons">add</i> Add make</button>
+
+                        <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add make</button>
+
+                        <lib-listing *ngIf="manage_make !=null && manage_make.length>0" 
+                          [datasource]="manage_make"    
+                          [skip]="manage_make_skip"                              
+                          [modify_header_array]="manage_make_modify_header"
+                          [jwttoken]="apiService.accesstoken" 
+                          [sourcedata]="tablename"  
+                          [updateendpoint]="updateurl"   
+                          [statusarr]="statusarray"      
+                          [apiurl]="apiService.serverUrlDemo"   
+                          [editroute] = "editroute"       
+                          [deleteendpoint]="deleteurl" >
+                                                                           
+                 </lib-listing>
                     </span>
                       
                   </span>
@@ -51,7 +76,7 @@
                 </span>
 
                 
-                <img src="../../../../assets/images/admin-manage-make_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+                <!-- <img src="../../../../assets/images/admin-manage-make_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
               
               </span>
               
@@ -65,10 +90,24 @@
                       <h2>Manage model</h2>
                     </span>
                     <span>
-                        <mat-form-field>
-                            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
-                        </mat-form-field>
-                        <button mat-button class="btnorange sim-button"><i class="material-icons">add</i> Add model</button>
+
+                       
+                        <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add model</button>
+
+                        <lib-listing *ngIf="manage_model !=null && manage_model.length>0" 
+                          [datasource]="manage_model"    
+                          [skip]="manage_model_skip"                              
+                          [modify_header_array]="manage_model_modify_header"
+                          [jwttoken]="apiService.accesstoken" 
+                          [sourcedata]="tablename"  
+                          [updateendpoint]="updateurl"   
+                          [statusarr]="statusarray"      
+                          [apiurl]="apiService.serverUrlDemo" 
+                          [editroute] = "editroute"         
+                          [deleteendpoint]="deleteurl" >
+                                                                           
+                 </lib-listing>
+                      
                     </span>
                       
                   </span>
@@ -77,7 +116,7 @@
                 </span>
 
                 
-                <img src="../../../../assets/images/admin-manage-model_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+                <!-- <img src="../../../../assets/images/admin-manage-model_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
               
               </span>
               
@@ -91,10 +130,24 @@
                       <h2>Manage year</h2>
                     </span>
                     <span>
-                        <mat-form-field>
-                            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
-                        </mat-form-field>
-                        <button mat-button class="btnorange sim-button"><i class="material-icons">add</i> Add year</button>
+
+                      
+                        <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add year</button>
+
+                        <lib-listing *ngIf="manage_year !=null && manage_year.length>0" 
+                          [datasource]="manage_year"    
+                          [skip]="manage_year_skip"                              
+                          [modify_header_array]="manage_year_modify_header"
+                          [jwttoken]="apiService.accesstoken" 
+                          [sourcedata]="tablename"  
+                          [updateendpoint]="updateurl"   
+                          [statusarr]="statusarray"      
+                          [apiurl]="apiService.serverUrlDemo" 
+                          [editroute] = "editroute"         
+                          [deleteendpoint]="deleteurl" >
+                                                                           
+                 </lib-listing>
+                      
                     </span>
                       
                   </span>
@@ -103,7 +156,7 @@
                 </span>
 
                 
-                <img src="../../../../assets/images/admin-manage-year_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+                <!-- <img src="../../../../assets/images/admin-manage-year_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
               
               </span>
 

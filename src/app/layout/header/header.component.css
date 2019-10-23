@@ -240,12 +240,13 @@
 }
 
 .topsocialblock .iconwarpper{
-    width: 20px;
-    height: 20px;
-    background-color: #1e1e1b;
-    padding:5px;
-    border-radius: 50px;
-    line-height: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #1e1e1b;
+  padding: 5px;
+  border-radius: 50px;
+  line-height: 15px;
+  display: block;
 }
 
 .topsocialblock a{width: 20px; height: 20px; padding:5px; border-radius: 50px; line-height: 20px;}
