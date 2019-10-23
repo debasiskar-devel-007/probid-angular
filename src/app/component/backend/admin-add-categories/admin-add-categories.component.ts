@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import { MatDialogRef } from '@angular/material';
+import { DialogModalOpenDialog } from '../admin-manage-categories/admin-manage-categories.component';
 
 @Component({
   selector: 'app-admin-add-categories',
@@ -16,7 +18,7 @@ export class AdminAddCategoriesComponent implements OnInit {
   public addModelform: FormGroup;
   public allData: any = {};
   public makeArray: any;
-  constructor(public route: ActivatedRoute, public apiService: ApiService, public fb: FormBuilder, public router: Router) {
+  constructor(public route: ActivatedRoute, public apiService: ApiService, public fb: FormBuilder, public router: Router, public dialogRef: MatDialogRef<DialogModalOpenDialog>) {
 
 
     let id = route.snapshot.params.id;
@@ -99,6 +101,7 @@ let result: any = {};
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
+      this.dialogRef.close();
     })
   }
   addMakeSubmit() {
@@ -110,6 +113,7 @@ let result: any = {};
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
+      this.dialogRef.close();
     })
   }
   addModelSubmit() {
@@ -121,6 +125,7 @@ let result: any = {};
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
+      this.dialogRef.close();
     })
   }
   addYearSubmit() {
@@ -132,6 +137,10 @@ let result: any = {};
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
+      this.dialogRef.close();
     })
+  }
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }

@@ -16,7 +16,15 @@
                         
                         <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add Type</button>
 
-                <lib-listing *ngIf="manage_type !=null && manage_type.length>0" 
+               
+                    </span>
+                      
+                  </span>
+                    
+                    <!-- <img src="../../../../assets/images/admin-manage-type_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+                </span>
+                <div class="tablediv">
+                <lib-listing class="formfilterdiv" *ngIf="manage_type !=null && manage_type.length>0" 
                   [datasource]="manage_type"    
                   [skip]="manage_type_skip"                              
                   [modify_header_array]="manage_type_modify_header"
@@ -27,16 +35,10 @@
                   [apiurl]="apiService.serverUrlDemo"   
                   [editroute] = "editroute"    
                   [deleteendpoint]="deleteurl" >
+                
                                                                    
          </lib-listing>
-              
-                    </span>
-                      
-                  </span>
-                    
-                    <!-- <img src="../../../../assets/images/admin-manage-type_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
-                </span>
-
+        </div>
                 
                 <!-- <img src="../../../../assets/images/admin-manage-type_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
               
@@ -55,26 +57,28 @@
 
                         <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add make</button>
 
-                        <lib-listing *ngIf="manage_make !=null && manage_make.length>0" 
-                          [datasource]="manage_make"    
-                          [skip]="manage_make_skip"                              
-                          [modify_header_array]="manage_make_modify_header"
-                          [jwttoken]="apiService.accesstoken" 
-                          [sourcedata]="tablename"  
-                          [updateendpoint]="updateurl"   
-                          [statusarr]="statusarray"      
-                          [apiurl]="apiService.serverUrlDemo"   
-                          [editroute] = "editroute"       
-                          [deleteendpoint]="deleteurl" >
-                                                                           
-                 </lib-listing>
+                        
                     </span>
                       
                   </span>
                     
                     <!-- <img src="../../../../assets/images/admin-manage-make_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
                 </span>
-
+                <div class="tablediv">
+                  <lib-listing *ngIf="manage_make !=null && manage_make.length>0" 
+                    [datasource]="manage_make"    
+                    [skip]="manage_make_skip"                              
+                    [modify_header_array]="manage_make_modify_header"
+                    [jwttoken]="apiService.accesstoken" 
+                    [sourcedata]="tablename"  
+                    [updateendpoint]="updateurl"   
+                    [statusarr]="statusarray"      
+                    [apiurl]="apiService.serverUrlDemo"   
+                    [editroute] = "editroute"       
+                    [deleteendpoint]="deleteurl" >
+                                                                     
+           </lib-listing>
+                </div>
                 
                 <!-- <img src="../../../../assets/images/admin-manage-make_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
               
@@ -94,19 +98,7 @@
                        
                         <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add model</button>
 
-                        <lib-listing *ngIf="manage_model !=null && manage_model.length>0" 
-                          [datasource]="manage_model"    
-                          [skip]="manage_model_skip"                              
-                          [modify_header_array]="manage_model_modify_header"
-                          [jwttoken]="apiService.accesstoken" 
-                          [sourcedata]="tablename"  
-                          [updateendpoint]="updateurl"   
-                          [statusarr]="statusarray"      
-                          [apiurl]="apiService.serverUrlDemo" 
-                          [editroute] = "editroute"         
-                          [deleteendpoint]="deleteurl" >
-                                                                           
-                 </lib-listing>
+                        
                       
                     </span>
                       
@@ -114,7 +106,21 @@
                     
                     <!-- <img src="../../../../assets/images/admin-manage-model_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
                 </span>
-
+                <div class="tablediv">
+                  <lib-listing *ngIf="manage_model !=null && manage_model.length>0" 
+                    [datasource]="manage_model"    
+                    [skip]="manage_model_skip"                              
+                    [modify_header_array]="manage_model_modify_header"
+                    [jwttoken]="apiService.accesstoken" 
+                    [sourcedata]="tablename"  
+                    [updateendpoint]="updateurl"   
+                    [statusarr]="statusarray"      
+                    [apiurl]="apiService.serverUrlDemo" 
+                    [editroute] = "editroute"         
+                    [deleteendpoint]="deleteurl" >
+                                                                     
+           </lib-listing>
+                </div>
                 
                 <!-- <img src="../../../../assets/images/admin-manage-model_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
               
@@ -134,19 +140,7 @@
                       
                         <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add year</button>
 
-                        <lib-listing *ngIf="manage_year !=null && manage_year.length>0" 
-                          [datasource]="manage_year"    
-                          [skip]="manage_year_skip"                              
-                          [modify_header_array]="manage_year_modify_header"
-                          [jwttoken]="apiService.accesstoken" 
-                          [sourcedata]="tablename"  
-                          [updateendpoint]="updateurl"   
-                          [statusarr]="statusarray"      
-                          [apiurl]="apiService.serverUrlDemo" 
-                          [editroute] = "editroute"         
-                          [deleteendpoint]="deleteurl" >
-                                                                           
-                 </lib-listing>
+                        
                       
                     </span>
                       
@@ -154,8 +148,22 @@
                     
                     <!-- <img src="../../../../assets/images/admin-manage-year_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
                 </span>
+                <div class="tablediv">
 
-                
+                <lib-listing *ngIf="manage_year !=null && manage_year.length>0" 
+                  [datasource]="manage_year"    
+                  [skip]="manage_year_skip"                              
+                  [modify_header_array]="manage_year_modify_header"
+                  [jwttoken]="apiService.accesstoken" 
+                  [sourcedata]="tablename"  
+                  [updateendpoint]="updateurl"   
+                  [statusarr]="statusarray"      
+                  [apiurl]="apiService.serverUrlDemo" 
+                  [editroute] = "editroute"         
+                  [deleteendpoint]="deleteurl" >
+                                                                   
+         </lib-listing>
+         </div>
                 <!-- <img src="../../../../assets/images/admin-manage-year_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
               
               </span>
