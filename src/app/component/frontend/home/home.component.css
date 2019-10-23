@@ -1,9 +1,67 @@
 .homebanner{
-    height:570px;
+    height: auto;
+    min-height: 570px;
 }
 .homebanner.mat-card .mat-card-content {
-    height: auto !important;
-    position: relative;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.d-block {
+    display: block;
+}
+.w-100 {
+    /* width: 100%; */
+}
+
+
+
+.carousalinfo{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    width: 760px;
+    height: auto;
+    transform: translateY(-50%);
+}
+.carousalinfo h1{
+    font-family:'OrbitronBold';font-size:72px!important;line-height:72px!important;text-transform:uppercase;margin:0;padding:0;margin-bottom:18px;margin-top:25px;white-space:normal!important;background: -webkit-linear-gradient(#cfd5dc, #7f8c94);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+
+.carousalinfo p{
+    font-size: 22px;
+    color: #a3adb4;
+    margin: 0;
+    padding: 0;
+    line-height: 24px;
+    width: 88%;
+}
+
+.righttxt{
+    position: absolute;
+    text-align: right;
+    transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    -moz-transform: rotate(-15deg);
+    -o-transform: rotate(-15deg);
+    bottom: -68%;
+    right: 0;
+}
+.righttxt p{
+    color:#fff;
+    font-family: "Kristi";
+    font-size: 48px;
+    padding-right: 48px;
+    line-height: normal;
+}
+.righttxt:after{
+    content: '';
+    background: url(../../../../assets/images/righttxticon.png) no-repeat bottom right;
+    background-size: 172px;
+    height: 74px;
+    display: block;
 }
 
 .probidhomeblock1.mat-card{background-color: #e2ecee !important;}
@@ -41,6 +99,37 @@
     color: #12c3e3;
     margin-top: 19px;
     width: 100%;
+}
+
+@media only screen and (max-width: 1199px) {
+    .homebanner {
+        background: #000;
+    }
+    .homebanner img.d-block{
+        width: 100%;
+    }
+
+    .homebanner{
+        height: auto;
+        min-height: inherit;
+    }
+    .homebanner.mat-card .mat-card-content {
+        position: inherit;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+        
+    .carousalinfo{
+        position: inherit;
+        right: 0;
+        top: 0;
+        width: 760px;
+        margin: 0 auto;
+        height: auto;
+        transform: inherit;
+    }
 }
 
 

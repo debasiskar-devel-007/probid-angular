@@ -31,4 +31,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 
+.carousel{
+    /* overflow: inherit !important; */
+    height: 100%;
+}
 
+.carousel .carousel-indicators > button {
+    width: 19px !important;
+    height: 19px !important;
+    margin: 7.5px;
+    background-color: #3e4447;
+}
+
+.mat-fab.mat-accent[disabled], .mat-fab.mat-primary[disabled], .mat-fab.mat-warn[disabled], .mat-fab[disabled][disabled], .mat-flat-button.mat-accent[disabled], .mat-flat-button.mat-primary[disabled], .mat-flat-button.mat-warn[disabled], .mat-flat-button[disabled][disabled], .mat-mini-fab.mat-accent[disabled], .mat-mini-fab.mat-primary[disabled], .mat-mini-fab.mat-warn[disabled], .mat-mini-fab[disabled][disabled], .mat-raised-button.mat-accent[disabled], .mat-raised-button.mat-primary[disabled], .mat-raised-button.mat-warn[disabled], .mat-raised-button[disabled][disabled] {
+    background-color: #91989b;
+}
+.carousel > button .mat-icon{
+    color:#fff !important;
+}
