@@ -4,7 +4,7 @@
 <span class="modalouter_body">
     <span class="modalouter_wrapper">
 
-            <span class="modalouter_wrapper_inner" >
+            <span class="modalouter_wrapper_inner" *ngIf="allData != '' && allData != 'null' &&  allData.categoriesType == 'type'">
                     <h1 mat-dialog-title class="modalttitle">Add Type</h1>
                     <span class="modalttitlewrapper">
                             <form [formGroup]="addType" (ngSubmit)="addTypeSubmit()">
@@ -43,7 +43,7 @@
             </span>
 
 
-            <span class="modalouter_wrapper_inner"  *ngIf="allData.categoriesType == make">
+            <span class="modalouter_wrapper_inner"  *ngIf="allData.categoriesType == make && allData != '' && allData != 'null'">
                     <h1 mat-dialog-title class="modalttitle">Add Make</h1>
                     <span class="modalttitlewrapper" >
                             <form [formGroup]="addMakeform" (ngSubmit)="addMakeSubmit()">
@@ -82,7 +82,7 @@
             </span>
 
 
-            <span class="modalouter_wrapper_inner"   *ngIf="allData.categoriesType == model">
+            <span class="modalouter_wrapper_inner"   *ngIf="allData.categoriesType == model && allData != '' && allData != 'null'">
                     <h1 mat-dialog-title class="modalttitle">Add Model</h1>
                     <span class="modalttitlewrapper">
                             <form [formGroup]="addModelform" (ngSubmit)="addModelSubmit()">
@@ -130,7 +130,7 @@
 
 
 
-            <span class="modalouter_wrapper_inner"   *ngIf="allData.categoriesType == year">
+            <span class="modalouter_wrapper_inner"   *ngIf="allData.categoriesType == year && allData != '' && allData != 'null'">
                     <h1 mat-dialog-title class="modalttitle">Add Year</h1>
                     <span class="modalttitlewrapper">
                             <form [formGroup]="addyearform" (ngSubmit)="addyearSubmit()">

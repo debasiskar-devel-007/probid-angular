@@ -68,6 +68,7 @@ let result: any = {};
       result = res;
        
       this.allData = result.res[0];
+      console.log(this.allData);
       console.log(this.allData.categoriesType);
 if (this.allData.categoriesType == 'type') {
 
@@ -115,7 +116,8 @@ if (this.allData.categoriesType == 'type') {
   }
 
   ngOnInit() {
-  
+    console.log('this.allData');
+    console.log(this.allData);
   }
 
   
