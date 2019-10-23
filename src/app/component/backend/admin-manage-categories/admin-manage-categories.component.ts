@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
+
 export interface DialogData {
   
 }
@@ -39,6 +40,7 @@ export class AdminManageCategoriesComponent implements OnInit {
 
   constructor(public router: Router, public apiService: ApiService, public activatedRoute: ActivatedRoute, public dialog: MatDialog) { }
 
+
   ngOnInit() {
     this.activatedRoute.data.forEach(data=>{
       let result:any;
@@ -60,33 +62,22 @@ export class AdminManageCategoriesComponent implements OnInit {
     })
   }
 
+  modalopen() {
+    const dialogRef = this.dialog.open(DialogModalOpenDialog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
 
   addType(): void {
     console.log('Type');
    
-      const dialogRef = this.dialog.open(DialogAddCategoryDialog, {
-        width: '',
-        data: {}
-      });
-      dialogRef.afterClosed().subscribe(result => {
-        console.log('The dialog was closed');
-        // this.animal = result;
-      });
-
-  
   }
 
   addMake() {
-    console.log('Make');
-    const dialogRef = this.dialog.open(DialogAddCategoryDialog, {
-      width: '',
-      data: {}
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      // this.animal = result;
-    });
+   
   }
   addModel() {
     console.log('Model')
@@ -99,16 +90,10 @@ export class AdminManageCategoriesComponent implements OnInit {
 
 
 @Component({
-  selector: 'addcategory-dialog',
-  templateUrl: 'addcategory-dialog.html',
-  styleUrls: ['addcategory-dialog.css']
+  selector: 'admin-add-categories',
+  template: `<app-admin-add-categories></app-admin-add-categories>`,
 })
+export class DialogModalOpenDialog {}
 
-export class DialogAddCategoryDialog {
-  constructor(
-    public dialogRef: MatDialogRef<DialogAddCategoryDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-}
+
+

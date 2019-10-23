@@ -1,0 +1,37 @@
+.mat-dialog-content {padding: 0 !important;}
+.modalttitlewrapper{background-color:#22282c; display: block;  padding: 50px; height: 100%;    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;}
+.mat-dialog-content .add-dialog .mat-dialog-title{background-color:#4f4f4f;border:0;padding:.35em;color:#fff}
+.modalttitlewrapper .mat-dialog-content .mat-form-field{width: 100%;}
+
+.mat-dialog-title.modalttitle {
+    margin: 0 0 0px;
+    display: block;
+    background: #0ac5fc;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "HelveticaBold";
+    color:#fff;
+    font-size: 24px!important;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.modalouter_wrapper_inner input.mat-input-element, .modalouter_wrapper_inner textarea.mat-input-element, .modalouter_wrapper_inner .mat-select {
+    outline: none;
+    font-size: 1em;
+    color: #000;
+    padding: .6em;
+    margin: 0;
+    width: 100%;
+    border: none;
+    -webkit-appearance: none;
+    display: block;
+    background: #b3f3f6;
+    border-radius: 5px;
+    padding: 15px 10px;
+    color: #333;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}

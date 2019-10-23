@@ -273,15 +273,6 @@ getDataResolve(endpoint: any) {
           'Authorization': this.accesstoken
       })
   };
-  console.log(this.cookieService.get('id'));
-  console.log(this.cookieService.get('id'));
-  console.log('endpoint');
-  console.log(endpoint);
-  console.log('httpOptions');
-  console.log(httpOptions);
-  console.log(this.cookieService.get('jwttoken'));
-  console.log('httpOptions');
-  console.log(httpOptions);
 
   // this.isTokenExpired()
   var result = this._http.post(this.serverUrl + 'datalist', endpoint, httpOptions).pipe(map(res => res));

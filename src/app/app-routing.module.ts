@@ -74,6 +74,7 @@ import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.c
 import { CommunicationComponent } from './component/backend/communication/communication.component';
 import { AdminManageCategoriesComponent } from './component/backend/admin-manage-categories/admin-manage-categories.component';
 import { AddAdminCategoriesComponent } from './component/backend/add-admin-categories/add-admin-categories.component';
+import { AdminAddCategoriesComponent } from './component/backend/admin-add-categories/admin-add-categories.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -209,6 +210,9 @@ const routes: Routes = [
 
   { path: 'manage-year', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
   data: { requestcondition: { source: 'manage-categories', condition: {"categoriesType": "year"} }, endpoint: 'datalist' } },  
+ 
+  { path: 'manage-make-edit/:id', component: AdminManageCategoriesComponent },    
+  { path: 'admin-add-categories', component: AdminAddCategoriesComponent },  
  
   /**************** User Management *****************/
   {

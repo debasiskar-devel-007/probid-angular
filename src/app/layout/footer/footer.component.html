@@ -1,12 +1,96 @@
-<mat-card style="padding: 0" class="footerwrapper"  *ngIf="router.url ==='/' || router.url =='/home' || router.url =='/forget-password' || router.url =='/reset-password' || router.url =='/sign-up' || router.url == '/contactus' || router.url == '/service' || router.url == '/servicelist' || router.url == '/testimonial' || router.url == '/testimoniallist' || router.url == '/blog' || router.url == '/bloglist' || router.url == '/blogdetail' || router.url == '/basic-inventory-search' || router.url == '/advance-inventory-search' || router.url == '/pre-owned' || router.url == '/aboutus' || router.url == '/pre-owned-list' || router.url == '/online-inventory-list' || router.url == '/search-inventory-list' || router.url == '/specials-list'">
+<mat-card class="footerwrapper" style="padding: 0"  *ngIf="router.url ==='/' || router.url =='/home' || router.url =='/forget-password' || router.url =='/reset-password' || router.url =='/sign-up' || router.url == '/contactus' || router.url == '/service' || router.url == '/servicelist' || router.url == '/testimonial' || router.url == '/testimoniallist' || router.url == '/blog' || router.url == '/bloglist' || router.url == '/blogdetail' || router.url == '/basic-inventory-search' || router.url == '/advance-inventory-search' || router.url == '/pre-owned' || router.url == '/aboutus' || router.url == '/pre-owned-list' || router.url == '/online-inventory-list' || router.url == '/search-inventory-list' || router.url == '/specials-list'">
   <span class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
     <a (click)="scrollToTop()">
       <!-- <i class="fa fa-chevron-up"></i> -->
       <mat-icon aria-hidden="false">keyboard_arrow_up</mat-icon> 
     </a>
-  
   </span>
-  <img src="../../../assets/images/pro-home-block8-ft.jpg" style="padding: 0; margin: 0; display: block; width: 100%;">
+
+  <span class="footerwrappercontent">
+    <span class="mainwrappercontent">
+        <mat-card-content>
+          
+          <span class="newsletterwrapper">
+              <h3>Newsletter</h3>
+              <span class="newslettermain">
+                <h4>Subscribe to our newsletter</h4>
+                <div class="example-container">
+                  <mat-form-field>
+                    <input matInput placeholder="Email Address" required>
+                    <!-- <mat-error *ngIf="email.invalid">email is required</mat-error> -->
+                  </mat-form-field>
+                  <a mat-raised-button (click)="newsletter()"><img src="../../assets/images/newlettericon.png"></a>
+                </div>
+               <h5>We’ll never share your email address</h5>
+              </span>
+          </span>
+          <span class="footertopwrapper footernavlist footerborder">
+              <h3>Navigation</h3>
+              <mat-nav-list fxLayout>
+                <span class="menuwrapper">
+                    <span class="bdr">
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/home']">Home</a>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/pre-owned-list']">Pre-Owned</a>
+                    <!-- <a (click)="openDialog()">Pre-Owned</a> -->
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                      <a [matMenuTriggerFor]="menu1">Inventory</a>
+                      <mat-menu #menu1="matMenu" class="activedropmenu">
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/basic-inventory-search']">Basic Inventory Search</a>
+                        <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/advance-inventory-search']">Advance Inventory Search</a>
+                      </mat-menu>
+                  </mat-list-item>
+                  </span>
+                  <span class="bdr">
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [matMenuTriggerFor]="menu">Join Probid</a>
+                    <mat-menu #menu="matMenu" class="activedropmenu">
+                      <a mat-menu-item routerLinkActive="activemenu" href="https://www.probidautomotive.com/" target="_blank">Sign up as Sales Rep</a>
+                      <a mat-menu-item routerLinkActive="activemenu" href="https://www.probidautomotive.com/salesrepsignup/" target="_blank">Sign up as Customer</a>
+                    </mat-menu>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                   <!-- <a [routerLink]="['/aboutus']">About Us</a> -->
+                    <a [routerLink]="['/aboutus']">About Us</a>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/service']">Service</a>
+                  </mat-list-item>
+                  </span>
+                  <span class="bdr">
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/testimonial']">Testimonials</a>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/blog']">Blog</a>
+                  </mat-list-item>
+                  <mat-list-item fxFlex routerLinkActive="activemenu">
+                    <a [routerLink]="['/contactus']">Contact Us</a>
+                  </mat-list-item>
+                  <!-- <mat-list-item fxFlex routerLinkActive="activemenu">
+                      <a [routerLink]="['/admin-dashboard']">Dashboard</a>
+                    </mat-list-item> -->
+                </span>
+              </span>
+              </mat-nav-list>
+           </span>
+           
+           <span class="footerddress">
+             <span class="footerddressinner">
+                <span class="logowrapper" fxFlex>
+                    <a [routerLink]="['/home']"><img src="../../assets/images/logomain.png" class="landinglogoblock1"></a>
+                  </span>
+                  <p>© 2019 ProBidAutoMotive. All rights reserved.</p>
+             </span>               
+           </span>
+        </mat-card-content>
+     </span>
+</span>
+
+  <!-- <img src="../../../assets/images/pro-home-block8-ft.jpg" style="padding: 0; margin: 0; display: block; width: 100%;"> -->
   <span class="footerbottom">
     <h3><a mat-raised-button (click)="termscondition()">terms of service</a> | <a mat-raised-button (click)="privacypolicy()">privacy policy</a> </h3>
   </span>
@@ -64,7 +148,7 @@
 </mat-card>
 
 
-<mat-card class="adminheaderleftdiv footerbg" *ngIf="router.url ==='/service-listing' || router.url ==='/admin-dashboard' || router.url === '/contact-us-dashboard' || router.url === '/rep-dashboard'  || router.url === '/customer-dashboard' || router.url === '/blog-management' || router.url === '/commission-report' || router.url === '/inventory-list' || router.url === '/manage-availability' || router.url === '/testimonial-lists-admin'|| router.url === '/commission-list' || router.url === '/customer-list-admin' || router.url === '/customer-list-rep' || router.url === '/manage-commission' || router.url === '/newsletter-list' || router.url === '/sales-report' || router.url === '/salesrep-list-admin' || router.url === '/mysalesrep' || router.url === '/rsvp' || router.url === '/birddog-list' || router.url === '/manage-training' || router.url === '/manage-lessons' || router.url === '/training-center' || router.url === '/training-report' || router.url === '/my-appointment-rep' || router.url === '/my-appointment-user' || router.url === '/my-appointment-admin' || router.url === '/book-an-appointment-rep' || router.url === '/book-an-appointment-user' || router.url === '/create-new-inventory' || router.url === '/job-ticket' || router.url === '/social-advo-admin' || router.url === '/social-advo-rep' || router.url === '/advance-inventory-search-user' || router.url === '/basic-inventory-search-user' || router.url === '/my-birddog' || router.url === '/my-commission' || router.url === '/communication' || router.url === '/training-center-rep' || router.url === '/manage-type' || router.url === '/manage-make' || router.url === '/manage-model' || router.url === '/manage-year'">
+<mat-card class="adminheaderleftdiv footerbg" *ngIf="router.url ==='/service-listing' || router.url ==='/admin-dashboard' || router.url === '/contact-us-dashboard' || router.url === '/rep-dashboard'  || router.url === '/customer-dashboard' || router.url === '/blog-management' || router.url === '/commission-report' || router.url === '/inventory-list' || router.url === '/manage-availability' || router.url === '/testimonial-lists-admin'|| router.url === '/commission-list' || router.url === '/customer-list-admin' || router.url === '/customer-list-rep' || router.url === '/manage-commission' || router.url === '/newsletter-list' || router.url === '/sales-report' || router.url === '/salesrep-list-admin' || router.url === '/mysalesrep' || router.url === '/rsvp' || router.url === '/birddog-list' || router.url === '/manage-training' || router.url === '/manage-lessons' || router.url === '/training-center' || router.url === '/training-report' || router.url === '/my-appointment-rep' || router.url === '/my-appointment-user' || router.url === '/my-appointment-admin' || router.url === '/book-an-appointment-rep' || router.url === '/book-an-appointment-user' || router.url === '/create-new-inventory' || router.url === '/job-ticket' || router.url === '/social-advo-admin' || router.url === '/social-advo-rep' || router.url === '/advance-inventory-search-user' || router.url === '/basic-inventory-search-user' || router.url === '/my-birddog' || router.url === '/my-commission' || router.url === '/communication' || router.url === '/training-center-rep' || router.url === '/manage-type' || router.url === '/manage-make' || router.url === '/manage-model' || router.url === '/manage-year' || router.url === '/admin-add-categories'">
   <mat-card-content>
     <!-- footer -->
     <app-bk-footer></app-bk-footer>

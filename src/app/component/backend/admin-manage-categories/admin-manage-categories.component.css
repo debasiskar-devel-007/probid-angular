@@ -1,0 +1,26 @@
+.searchblock{margin: 0; padding: 0; position: relative;width: 100%; display: block;}
+.searchblock .btnorange{
+    width: 160px;
+    border-radius: 0px;
+    padding: 9px 18px 7px !important;
+    margin: 0 !important;
+}
+
+.searchblock{background: #dde2e5 !important; padding: 1px 10px 1px 22px !important;width: 96% !important; display: block; margin:0 auto !important;}
+.searchblock span{display: flex; align-items: center;}
+.searchblock .searchblockwrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.searchblock span h2{
+    font-family: "Helvetica-Normal";
+    color:#373b3d;
+    font-size: 24px!important;
+    margin: 0;
+}
+
+
+

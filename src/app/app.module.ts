@@ -122,8 +122,9 @@ import { AdvanceInventorySearchBackendComponent } from './component/backend/adva
 import { BasicInventorySearchBackendComponent } from './component/backend/basic-inventory-search-backend/basic-inventory-search-backend.component';
 import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
 import { CommunicationComponent } from './component/backend/communication/communication.component';
-import { AdminManageCategoriesComponent, DialogAddCategoryDialog } from './component/backend/admin-manage-categories/admin-manage-categories.component';
 import { AddAdminCategoriesComponent } from './component/backend/add-admin-categories/add-admin-categories.component';
+import { AdminManageCategoriesComponent, DialogModalOpenDialog } from './component/backend/admin-manage-categories/admin-manage-categories.component';
+import { AdminAddCategoriesComponent } from './component/backend/admin-add-categories/admin-add-categories.component';
 /**End Backend Component** */
 
 
@@ -199,8 +200,9 @@ import { AddAdminCategoriesComponent } from './component/backend/add-admin-categ
     MysalesrepComponent,
     CommunicationComponent,
     AdminManageCategoriesComponent,
-    DialogAddCategoryDialog,
     AddAdminCategoriesComponent,
+    DialogModalOpenDialog,
+    AdminAddCategoriesComponent,
   ],
   imports: [
     // TrainingModule,
@@ -239,6 +241,6 @@ import { AddAdminCategoriesComponent } from './component/backend/add-admin-categ
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [comingSoonDialog, DialogPrivacyDialog, DialogTermsDialog,DialogAddCategoryDialog]
+  entryComponents: [comingSoonDialog, DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog]
 })
 export class AppModule { }

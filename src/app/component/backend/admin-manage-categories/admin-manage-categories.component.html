@@ -4,8 +4,18 @@
           <mat-card class="generalcls blog" style="padding: 0 !important;">  
 
               <span *ngIf=" router.url === '/manage-type'">
-              <label>Categories Type</label>
-              <button mat-raised-button color="accent"  (click)="addType()">Add Type</button>
+
+                <img src="../../../../assets/images/admin-manage-type_img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+                
+                <span class="searchblock">
+                  <span class="searchblockwrapper">
+                    <span>
+                      <h2>Manage Type</h2>
+                    </span>
+                    <span>
+                        
+                        <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add Type</button>
+
                 <lib-listing *ngIf="manage_type !=null && manage_type.length>0" 
                   [datasource]="manage_type"    
                   [skip]="manage_type_skip"                              
@@ -20,94 +30,133 @@
                                                                    
          </lib-listing>
               
-              
+                    </span>
+                      
+                  </span>
+                    
+                    <!-- <img src="../../../../assets/images/admin-manage-type_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+                </span>
+
+                
+                <!-- <img src="../../../../assets/images/admin-manage-type_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
               
               </span>
-             
-             
+
               <span *ngIf=" router.url === '/manage-make'">
+
+                <img src="../../../../assets/images/admin-manage-make_img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
                 
-                <label>Categories Make</label>
-                <button mat-raised-button color="accent" (click)="addMake()">Add Make</button>
+                <span class="searchblock">
+                  <span class="searchblockwrapper">
+                    <span>
+                      <h2>Manage make</h2>
+                    </span>
+                    <span>
+                        <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add make</button>
 
-                <lib-listing *ngIf="manage_make !=null && manage_make.length>0" 
-                  [datasource]="manage_make"    
-                  [skip]="manage_make_skip"                              
-                  [modify_header_array]="manage_make_modify_header"
-                  [jwttoken]="apiService.accesstoken" 
-                  [sourcedata]="tablename"  
-                  [updateendpoint]="updateurl"   
-                  [statusarr]="statusarray"      
-                  [apiurl]="apiService.serverUrlDemo"   
-                  [editroute] = "editroute"       
-                  [deleteendpoint]="deleteurl" >
-                                                                   
-         </lib-listing>
-              
-              
+                        <lib-listing *ngIf="manage_make !=null && manage_make.length>0" 
+                          [datasource]="manage_make"    
+                          [skip]="manage_make_skip"                              
+                          [modify_header_array]="manage_make_modify_header"
+                          [jwttoken]="apiService.accesstoken" 
+                          [sourcedata]="tablename"  
+                          [updateendpoint]="updateurl"   
+                          [statusarr]="statusarray"      
+                          [apiurl]="apiService.serverUrlDemo"   
+                          [editroute] = "editroute"       
+                          [deleteendpoint]="deleteurl" >
+                                                                           
+                 </lib-listing>
+                    </span>
+                      
+                  </span>
+                    
+                    <!-- <img src="../../../../assets/images/admin-manage-make_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+                </span>
 
+                
+                <!-- <img src="../../../../assets/images/admin-manage-make_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+              
               </span>
-             
-             
-             
-             
+              
               <span *ngIf=" router.url === '/manage-model'">
+
+                <img src="../../../../assets/images/admin-manage-model_img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
                 
+                <span class="searchblock">
+                  <span class="searchblockwrapper">
+                    <span>
+                      <h2>Manage model</h2>
+                    </span>
+                    <span>
+                       
+                        <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add model</button>
 
-                <label>Categories Model</label>
+                        <lib-listing *ngIf="manage_model !=null && manage_model.length>0" 
+                          [datasource]="manage_model"    
+                          [skip]="manage_model_skip"                              
+                          [modify_header_array]="manage_model_modify_header"
+                          [jwttoken]="apiService.accesstoken" 
+                          [sourcedata]="tablename"  
+                          [updateendpoint]="updateurl"   
+                          [statusarr]="statusarray"      
+                          [apiurl]="apiService.serverUrlDemo" 
+                          [editroute] = "editroute"         
+                          [deleteendpoint]="deleteurl" >
+                                                                           
+                 </lib-listing>
+                      
+                    </span>
+                      
+                  </span>
+                    
+                    <!-- <img src="../../../../assets/images/admin-manage-model_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+                </span>
 
-                <button mat-raised-button color="accent"  (click)="addModel()">Add Model</button>
-
-                <lib-listing *ngIf="manage_model !=null && manage_model.length>0" 
-                  [datasource]="manage_model"    
-                  [skip]="manage_model_skip"                              
-                  [modify_header_array]="manage_model_modify_header"
-                  [jwttoken]="apiService.accesstoken" 
-                  [sourcedata]="tablename"  
-                  [updateendpoint]="updateurl"   
-                  [statusarr]="statusarray"      
-                  [apiurl]="apiService.serverUrlDemo" 
-                  [editroute] = "editroute"         
-                  [deleteendpoint]="deleteurl" >
-                                                                   
-         </lib-listing>
+                
+                <!-- <img src="../../../../assets/images/admin-manage-model_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
               
-              
-
-
-
               </span>
-             
-             
-             
+              
               <span *ngIf=" router.url === '/manage-year'">
-               
 
+                <img src="../../../../assets/images/admin-manage-year_img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+                
+                <span class="searchblock">
+                  <span class="searchblockwrapper">
+                    <span>
+                      <h2>Manage year</h2>
+                    </span>
+                    <span>
+                      
+                        <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add year</button>
 
-                <label>Categories Year</label>
+                        <lib-listing *ngIf="manage_year !=null && manage_year.length>0" 
+                          [datasource]="manage_year"    
+                          [skip]="manage_year_skip"                              
+                          [modify_header_array]="manage_year_modify_header"
+                          [jwttoken]="apiService.accesstoken" 
+                          [sourcedata]="tablename"  
+                          [updateendpoint]="updateurl"   
+                          [statusarr]="statusarray"      
+                          [apiurl]="apiService.serverUrlDemo" 
+                          [editroute] = "editroute"         
+                          [deleteendpoint]="deleteurl" >
+                                                                           
+                 </lib-listing>
+                      
+                    </span>
+                      
+                  </span>
+                    
+                    <!-- <img src="../../../../assets/images/admin-manage-year_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+                </span>
 
-                <button mat-raised-button color="accent"  (click)="addYear()">Add Year</button>
-
-                <lib-listing *ngIf="manage_year !=null && manage_year.length>0" 
-                  [datasource]="manage_year"    
-                  [skip]="manage_year_skip"                              
-                  [modify_header_array]="manage_year_modify_header"
-                  [jwttoken]="apiService.accesstoken" 
-                  [sourcedata]="tablename"  
-                  [updateendpoint]="updateurl"   
-                  [statusarr]="statusarray"      
-                  [apiurl]="apiService.serverUrlDemo" 
-                  [editroute] = "editroute"         
-                  [deleteendpoint]="deleteurl" >
-                                                                   
-         </lib-listing>
+                
+                <!-- <img src="../../../../assets/images/admin-manage-year_img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
               
-              
-
-
-
-
               </span>
+
           </mat-card>
         </div>
     </div>
