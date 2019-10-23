@@ -4,24 +4,24 @@
 <span class="modalouter_body">
     <span class="modalouter_wrapper">
 
-            <span class="modalouter_wrapper_inner" *ngIf="allData != '' && allData != 'null' &&  allData.categoriesType == 'type'">
-                    <h1 mat-dialog-title class="modalttitle">Add Type</h1>
+            <span class="modalouter_wrapper_inner" *ngIf="dataType != '' && dataType != undefined">
+                    <h1  class="modalttitle">Add Type</h1>
                     <span class="modalttitlewrapper">
                             <form [formGroup]="addType" (ngSubmit)="addTypeSubmit()">
-                        <div mat-dialog-content>
+                        <div >
 
                             <mat-form-field>
                                 <label>Name:</label>
-                                <input matInput placeholder="Name" formControlName="added_on">
+                                <input matInput formControlName="added_on">
                             </mat-form-field>
 
                             <mat-form-field>                
                                     <label>Type Name:</label>
-                                    <input matInput placeholder="Type Name" formControlName="TypeName">
+                                    <input matInput  formControlName="TypeName">
                                 </mat-form-field>
                             <mat-form-field>
                                     <label>Cars Number:</label>
-                                <input matInput placeholder="Cars Number" formControlName="Cars">
+                                <input matInput formControlName="Cars">
                             </mat-form-field>
                             <mat-form-field>
                                     <label>Status:</label>
@@ -33,7 +33,7 @@
                                     </mat-select>
                             </mat-form-field>
                         </div>
-                        <div mat-dialog-actions>
+                        <div >
                             <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
                             <button mat-button >Ok</button>
                         </div>
@@ -43,11 +43,11 @@
             </span>
 
 
-            <span class="modalouter_wrapper_inner"  *ngIf="allData.categoriesType == make && allData != '' && allData != 'null'">
-                    <h1 mat-dialog-title class="modalttitle">Add Make</h1>
+            <!-- <span class="modalouter_wrapper_inner"  *ngIf="allData.categoriesType == make && allData != '' && allData != 'null'">
+                    <h1  class="modalttitle">Add Make</h1>
                     <span class="modalttitlewrapper" >
                             <form [formGroup]="addMakeform" (ngSubmit)="addMakeSubmit()">
-                        <div mat-dialog-content>
+                        <div >
                             <mat-form-field>
                                 <label>Name:</label>
                                 <input matInput placeholder="Name" formControlName="added_on">
@@ -72,8 +72,7 @@
                                         </mat-select>
                                 </mat-form-field>
                         </div>
-                        <div mat-dialog-actions>
-                            <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
+                        <div >
                             <button mat-button>Ok</button>
                         </div>
                             </form>
@@ -119,7 +118,6 @@
                             </mat-form-field>
                         </div>
                         <div mat-dialog-actions>
-                            <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
                             <button mat-button>Ok</button>
                         </div>
                             </form>
@@ -159,14 +157,13 @@
                             </mat-form-field>
                         </div>
                         <div mat-dialog-actions>
-                            <!-- <button mat-button (click)="onNoClick()">No Thanks</button> -->
                             <button mat-button>Ok</button>
                         </div>
                             </form>
                     </span>
             
             
-            </span>
+            </span> -->
     </span>
 </span>
 

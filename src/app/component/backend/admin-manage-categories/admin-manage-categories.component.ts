@@ -19,16 +19,16 @@ export class AdminManageCategoriesComponent implements OnInit {
   public manage_year: any = [];
 
 
-  public manage_type_skip: any = ['_id','created_at','Status'];
-  public manage_type_modify_header: any = {'TypeName': 'Type Name', 'status':'Status', 'categoriesType':'Type'};
+  public manage_type_skip: any = ['_id','created_at','Status','updated_at','id','categoriesType'];
+  public manage_type_modify_header: any = {'added_on':'Name','TypeName': 'Type Name', 'status':'Status'};
 
-  public manage_make_skip: any = [];
-  public manage_make_modify_header: any = {};
+  public manage_make_skip: any = ['_id','created_at','Status','updated_at','id','categoriesType'];
+  public manage_make_modify_header: any = {'Added_on':'Name','make_name': 'Make Name', 'status':'Status'};
 
-  public manage_model_skip: any = ['_id','created_at','Status'];
+  public manage_model_skip: any = ['_id','created_at','Status','updated_at','id','categoriesType'];
   public manage_model_modify_header: any = {};
 
-  public manage_year_skip: any = ['_id','created_at','Status'];
+  public manage_year_skip: any = ['_id','created_at','Status','updated_at','id','categoriesType'];
   public manage_year_modify_header: any = {};
 
   public tablename: any = 'manage-categories';

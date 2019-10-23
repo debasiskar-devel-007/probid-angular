@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
@@ -13,8 +13,8 @@ export class AddAdminCategoriesComponent implements OnInit {
   public addMakeform: FormGroup;
   public addModelform: FormGroup;
 
-  public allData: any = {};
-  constructor(public route: ActivatedRoute, public apiService: ApiService, public fb: FormBuilder) {
+  public dataType: any;
+  constructor(public route: ActivatedRoute, public apiService: ApiService, public fb: FormBuilder, public router: Router) {
 
 
 
@@ -64,49 +64,50 @@ export class AddAdminCategoriesComponent implements OnInit {
 
     this.apiService.getDatalistForResolve(data).subscribe(res => {
       // console.log(res);
-let result: any = {};
-      result = res;
+// let result: any = {};
+//       result = res;
        
-      this.allData = result.res[0];
-      console.log(this.allData);
-      console.log(this.allData.categoriesType);
-if (this.allData.categoriesType == 'type') {
-
+      this.dataType = res;
+      this.dataType = this.dataType.res[0];
+      console.log(this.dataType);
+     
+if (this.dataType.categoriesType === 'type') {
+  console.log(this.dataType.categoriesType);
   this.addType = this.fb.group({
-    id: [result._id],
-    TypeName: [result.TypeName, Validators.required],
-    added_on: [result.added_on, Validators.required],
-    Cars: [result.Cars, Validators.required],
-    status: [result.status],
-    categoriesType: [result.categoriesType]
+    id: [this.dataType._id],
+    TypeName: [this.dataType.TypeName, Validators.required],
+    added_on: [this.dataType.added_on, Validators.required],
+    Cars: [this.dataType.Cars, Validators.required],
+    status: [this.dataType.status],
+    categoriesType: [this.dataType.categoriesType]
   })
-} else if(this.allData.categoriesType == 'make') {
+} else if(this.dataType.categoriesType == 'make') {
   this.addMakeform = this.fb.group({
-    id: [result._id],
-    make_name: [result.make_name, Validators.required],
-    added_on: [result.added_on, Validators.required],
-    Cars: [result.Cars, Validators.required],
-    status: [result.status],
-    categoriesType: [result.categoriesType]
+    id: [this.dataType._id],
+    make_name: [this.dataType.make_name, Validators.required],
+    added_on: [this.dataType.added_on, Validators.required],
+    Cars: [this.dataType.Cars, Validators.required],
+    status: [this.dataType.status],
+    categoriesType: [this.dataType.categoriesType]
   })
-}else if(this.allData.categoriesType == 'model') {
+}else if(this.dataType.categoriesType == 'model') {
   this.addModelform = this.fb.group({
-    id: [result._id],
-    model_name: [result.model_name, Validators.required],
-    added_on: [result.added_on, Validators.required],
-    make_name: [result.make_name, Validators.required],
-    Cars: [result.Cars, Validators.required],
-    status: [result.status],
-    categoriesType: [result.categoriesType]
+    id: [this.dataType._id],
+    model_name: [this.dataType.model_name, Validators.required],
+    added_on: [this.dataType.added_on, Validators.required],
+    make_name: [this.dataType.make_name, Validators.required],
+    Cars: [this.dataType.Cars, Validators.required],
+    status: [this.dataType.status],
+    categoriesType: [this.dataType.categoriesType]
   })
-}else if (this.allData.categoriesType == 'year') {
+}else if (this.dataType.categoriesType == 'year') {
   this.addyearform = this.fb.group({
-    id: [result._id],
-    added_on: [result.added_on, Validators.required],
-    year: [result.year, Validators.required],
-    Cars: [result.Cars, Validators.required],
-    status: [result.status],
-    categoriesType: [result.categoriesType]
+    id: [this.dataType._id],
+    added_on: [this.dataType.added_on, Validators.required],
+    year: [this.dataType.year, Validators.required],
+    Cars: [this.dataType.Cars, Validators.required],
+    status: [this.dataType.status],
+    categoriesType: [this.dataType.categoriesType]
   })
 }
 
@@ -117,7 +118,7 @@ if (this.allData.categoriesType == 'type') {
 
   ngOnInit() {
     console.log('this.allData');
-    console.log(this.allData);
+    console.log(this.dataType);
   }
 
   
@@ -131,6 +132,7 @@ if (this.allData.categoriesType == 'type') {
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
+      this.router.navigateByUrl('/manage-type');
     })
   }
   addMakeSubmit() {
@@ -142,6 +144,7 @@ if (this.allData.categoriesType == 'type') {
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
+      this.router.navigateByUrl('/manage-make');
     })
   }
   addModelSubmit() {
@@ -153,6 +156,7 @@ if (this.allData.categoriesType == 'type') {
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
+      this.router.navigateByUrl('/manage-model');
     })
   }
   addyearSubmit() {
@@ -164,6 +168,7 @@ if (this.allData.categoriesType == 'type') {
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
+      this.router.navigateByUrl('/manage-yera');
     })
   }
 }
