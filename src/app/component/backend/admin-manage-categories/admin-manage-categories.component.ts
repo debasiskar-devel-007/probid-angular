@@ -93,7 +93,15 @@ export class AdminManageCategoriesComponent implements OnInit {
   selector: 'admin-add-categories',
   template: `<app-admin-add-categories></app-admin-add-categories>`,
 })
-export class DialogModalOpenDialog {}
+export class DialogModalOpenDialog {
+  constructor(
+    public dialogRef: MatDialogRef<DialogModalOpenDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+}
 
 
 
