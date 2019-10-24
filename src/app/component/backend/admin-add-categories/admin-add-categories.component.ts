@@ -102,6 +102,7 @@ let result: any = {};
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
       this.dialogRef.close();
+      this.router.navigateByUrl('/manage-type');
     })
   }
   addMakeSubmit() {
@@ -114,6 +115,7 @@ let result: any = {};
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
       this.dialogRef.close();
+      this.router.navigateByUrl('/manage-make');
     })
   }
   addModelSubmit() {
@@ -126,6 +128,7 @@ let result: any = {};
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
       this.dialogRef.close();
+      this.router.navigateByUrl('/manage-model');
     })
   }
   addYearSubmit() {
@@ -138,6 +141,7 @@ let result: any = {};
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
       this.dialogRef.close();
+      this.router.navigateByUrl('/manage-year');
     })
   }
   onNoClick(): void {

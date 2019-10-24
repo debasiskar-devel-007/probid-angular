@@ -97,7 +97,7 @@
       ],
       "sharetools/*": [
         "dist/sharetools/*"
-      ]
+      ],
  
     }
   }

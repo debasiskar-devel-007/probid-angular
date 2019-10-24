@@ -371,7 +371,7 @@
                         /* Button text */
                         this.buttonText = "SUBMIT";
                         this.flag = false;
-                        this.header_name = "ADD";
+                        this.header_name = "Add Testimonial";
                         break;
                     case 'edit':
                         /* Button text */
