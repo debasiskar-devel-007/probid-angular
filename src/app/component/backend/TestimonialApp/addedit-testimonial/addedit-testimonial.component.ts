@@ -10,9 +10,11 @@ import { ApiService } from 'src/app/api.service';
 })
 export class AddeditTestimonialComponent implements OnInit {
 /* Config for add and edit start */
+
+
 public configAddEdit: any = {
   action: "add",
-  // endpoint: "https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/addorupdatedata",
+  // endpoint: "https://63zzhpnoti.execute-api.us-east-1.amazonaws.com/production/api/addorupdatedata",
   endpoint: this.ApiService.serverUrlDemo + 'addorupdatedata',
   source: "testimonial",
   condition: {},
@@ -21,6 +23,17 @@ public configAddEdit: any = {
   callBack: "testimonial/list",
   userData: { id: "18801017007", name: "Admin" },
 }
+
+public configData: any = {
+  baseUrl: "http://3.15.236.141:5005/",
+  endpoint: "uploads",
+  size: "51200", // kb
+  format: ["jpg", "jpeg", "png"], // use all small font
+  type: "testimonial-image",
+  path: "testimonial",
+  prefix: "testimonial-image_"
+}
+
 /* Config for add and edit end */
 
   constructor( private router : Router , private activatedRoute : ActivatedRoute ,private cookieService : CookieService, public ApiService: ApiService) { }
@@ -36,5 +49,6 @@ public configAddEdit: any = {
       }
     });
   }
+
 
 }

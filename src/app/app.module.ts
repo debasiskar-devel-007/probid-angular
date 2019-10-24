@@ -125,6 +125,9 @@ import { CommunicationComponent } from './component/backend/communication/commun
 import { AddAdminCategoriesComponent } from './component/backend/add-admin-categories/add-admin-categories.component';
 import { AdminManageCategoriesComponent, DialogModalOpenDialog } from './component/backend/admin-manage-categories/admin-manage-categories.component';
 import { AdminAddCategoriesComponent } from './component/backend/admin-add-categories/admin-add-categories.component';
+
+
+import { FileUploadModule } from 'file-upload';
 /**End Backend Component** */
 
 
@@ -206,6 +209,7 @@ import { AdminAddCategoriesComponent } from './component/backend/admin-add-categ
   ],
   imports: [
     // TrainingModule,
+    FileUploadModule,
     NgxUploaderModule,
     AngularFontAwesomeModule,
     MatCarouselModule.forRoot(),
@@ -221,7 +225,6 @@ import { AdminAddCategoriesComponent } from './component/backend/admin-add-categ
     TestimonialModule,
     ServicelibModule,
     ContactusModule,
-    // FileUploadModule,
     HttpClientModule,
     AppRoutingModule,MetaModule.forRoot(), BrowserAnimationsModule,
     ListingModule,

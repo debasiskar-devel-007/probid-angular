@@ -1,7 +1,7 @@
 import { map } from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { Injectable, NgModule, Component, Input, Inject, defineInjectable, inject } from '@angular/core';
+import { Injectable, Component, Input, Inject, NgModule, defineInjectable, inject } from '@angular/core';
 import { A11yModule } from '@angular/cdk/a11y';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { PortalModule } from '@angular/cdk/portal';
@@ -379,7 +379,7 @@ class AddeditComponent {
                 /* Button text */
                 this.buttonText = "SUBMIT";
                 this.flag = false;
-                this.header_name = "ADD";
+                this.header_name = "Add Testimonial";
                 break;
             case 'edit':
                 /* Button text */
