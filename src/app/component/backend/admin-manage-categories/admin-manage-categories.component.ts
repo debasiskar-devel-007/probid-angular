@@ -35,7 +35,7 @@ export class AdminManageCategoriesComponent implements OnInit {
   public updateurl: any = 'addorupdatedata';
   public deleteurl: any = 'deletesingledata';
   public custombutton: any = '';
-  public statusarray: any = [{val: 1, name: 'Active'}, {val: 0, name: 'Inactive'}];
+  public statusarray: any = [{val: 1, name: 'Active'}, {val: 0, name: 'Inactive'}, {val: 2, name: 'Pending'}];
   public editroute:any = 'editcategori';
 
   constructor(public router: Router, public apiService: ApiService, public activatedRoute: ActivatedRoute, public dialog: MatDialog) { }

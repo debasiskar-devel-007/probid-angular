@@ -72,7 +72,7 @@ export class AddAdminCategoriesComponent implements OnInit {
       console.log(this.dataType);
      
 if (this.dataType.categoriesType === 'type') {
-  console.log(this.dataType.categoriesType);
+  console.log(this.dataType.categoriesType);  
   this.addType = this.fb.group({
     id: [this.dataType._id],
     TypeName: [this.dataType.TypeName, Validators.required],
