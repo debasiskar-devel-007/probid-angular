@@ -191,7 +191,7 @@ const routes: Routes = [
   { path: 'sales-report', component: SalesReportComponent },
   { path: 'salesrep-list-admin', component: SalesreplistsComponent },
   { path: 'rsvp', component: RsvplistsComponent },
-  { path: 'manage-training', component: ManageTrainingComponent },
+  // { path: 'manage-training1', component: ManageTrainingComponent },
   { path: 'manage-lessons', component: ManageLessonsComponent },
   { path: 'training-center', component: TrainingCenterComponent },
   { path: 'training-report', component: TrainingReportComponent },
@@ -248,6 +248,7 @@ const routes: Routes = [
 
 
   {path: 'tranningcategory', component: TranningcategorymanagementComponent},
+  {path: 'manage-training', component: TranningcategorymanagementComponent},
   {path: 'addtrainings', component: TranningcategorymanagementComponent},
   { path: 'category-management/add-new', component: AddEditComponent },
   { path: 'category-management/edit/:id', component: AddEditComponent },
@@ -257,7 +258,7 @@ const routes: Routes = [
 
 
   { path: 'reptrainingcenter', component: RepTraingcenterComponent},
-  // { path: 'reptrainingcenter/:cid', component: RepTraingcenterComponent}, // cat id
+  { path: 'reptrainingcenter/:cid', component: RepTraingcenterComponent}, // cat id
   { path: 'reptrainingcenter/:cid', component: RepTraingcenterComponent,resolve : {results: ResolveService},data: { requestcondition: { trainingcategory:{}, userid:{} }, endpoint:'traininglessonlist'}},
   { path: 'reptrainingcenter/:cid/:lid', component: RepTraingcenterComponent}, // lesson id
   { path: 'manage-leads', component: ManageleadsComponent },
