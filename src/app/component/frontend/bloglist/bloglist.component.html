@@ -22,12 +22,24 @@
 
 <mat-card class="ptb-40 generalcls blog bloglist">     
     <span class="mainwrappercontent">
-        <span class="bloglistswrapper">
-            <app-blog></app-blog>
-        </span>        
-        <span class="categorywrapper">
-            <h2>Categories</h2>
+        <span class="bloglistinner">
+                <span class="bloglistswrapper">
+                        <app-blog></app-blog>
+                    </span>        
+                    <span class="categorywrapper">
+                        <h2>Categories</h2>
+                        <mat-list>
+                            <mat-list-item>
+                                <span>
+                                <img matListAvatar src="../../../../assets/images/blog-img1.jpg" alt="blog image">
+                                </span>
+                                <mat-card-title class="inner_header">title</mat-card-title>
+                            </mat-list-item>
+                            
+                        </mat-list>
+                    </span>
         </span>
+        
     </span>
 </mat-card>
 

@@ -602,6 +602,10 @@ addcategory-dialog .mat-dialog-content{
 .tablediv.trainingtablediv{margin-top:0px !important;}
 .tablediv.trainingtablediv table {margin-top: 27px;}
 
+
+
+
+
 @media only screen and (max-width: 1760px) {
 .dashboard_block1{ background-position: 790px top!important;}
 .dashboard_block1 mat-card-content{ width: 1000px;}

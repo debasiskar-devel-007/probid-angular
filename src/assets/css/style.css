@@ -301,7 +301,28 @@ a{cursor:pointer;outline:none}
 .bottom_blog .item_wrapper .item .next_page:hover i{width:35px;transition:all 500ms;background:#1299de;color:#fff;}
 .readmore{color:#ffffff;margin-left:auto;display:flex;background:#1299e1;width:150px;text-align:center;align-items:center;justify-content:center;font-family:'HelveticaBold';font-size:17px;}
 .bottom_blog .item_wrapper .item .contentsection .description{color:#838383;line-height:24px;font-size:16px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;}
- .mat-menu-panel.activedropmenu{margin-left:0;margin-top:16px;background-color:#cdd4da !important;}
+
+.bloglistinner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.bloglistswrapper{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 60%;
+}
+
+.categorywrapper{
+    flex: 1 1 28%;
+}
+
+.bloglistinner .bottom_blog .item_wrapper .item {
+    width: 48%;
+}
+
+.mat-menu-panel.activedropmenu{margin-left:0;margin-top:16px;background-color:#cdd4da !important;}
  .mat-menu-panel{min-width: 140px;}
 .mat-menu-panel.activedropmenu .mat-menu-content{background-color:#222222 !important;}
 .activemenu{background-color:#12c3e3;}
