@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, FormGroupDirective } from '@angular/forms';
 @Component({
   selector: 'app-add-admin-categories',
   templateUrl: './add-admin-categories.component.html',
@@ -15,6 +15,7 @@ export class AddAdminCategoriesComponent implements OnInit {
 
   public dataType: any=null;
   public typeChacking: any ;
+  @ViewChild(FormGroupDirective) formDirective: FormGroupDirective;
   constructor(public route: ActivatedRoute, public apiService: ApiService, public fb: FormBuilder, public router: Router) {
 
 
@@ -121,7 +122,9 @@ let result: any = {};
 
   ngOnInit() {}
 
-  
+  resetForm() {
+    this.formDirective.resetForm(); 
+  }
    
   addTypeSubmit() {
     console.log(this.addType.value);
