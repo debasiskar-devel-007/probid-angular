@@ -18,18 +18,74 @@
 
 </div>
 
+
+
+
+
 <div class="nextGen_admin_mainwrapper">
     <div class="page-wrapper s_getmybrand_adminlist">
         <div class="nexgen_adminlist">
             <div class="user_management_wrapper">
                 <div class="user_management_inner">
-                    <h2 *ngIf="router.url==['/tranningcategory'] || router.url==['/addtrainings']">Add {{sourcetitle}}
-                    </h2>
-                    <h2 *ngIf="router.url!=['/tranningcategory'] && router.url!=['/addtrainings']">manage
-                        {{sourcetitle}}</h2>
+                        <span class="searchblock">
+                                <span class="searchblockwrapper">
+                                  <span>
+                                        <h2 *ngIf="router.url==['/tranningcategory'] || router.url==['/addtrainings']">Add {{sourcetitle}}
+                                        </h2>
+                                        <h2 *ngIf="router.url!=['/tranningcategory'] && router.url!=['/addtrainings']">manage
+                                            {{sourcetitle}}</h2>
+                                  </span>
+                                  <span>
+                                        <div class="inner_search_wrapper"  *ngIf="router.url!=['/tranningcategory'] && router.url!=['/addtrainings']">
+                                            <div class="inner_content_wrapper">
+                                                <div class="search_content">
+                                                    <h3><span>Search by Email: </span> <input type="text" [(ngModel)]="filterval2"
+                                                            (keyup)="searchbyval()"><button>search</button> </h3>
+                                                </div>
+                                                <div class="search_content">
+                                                    <h3> <span>Search by Name: </span> <input type="text" [(ngModel)]="filterval3"
+                                                            (keyup)="searchbyval()"><button>search</button> </h3>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                    
+                                        <div class="inner_search_wrapper single_content"
+                                            *ngIf="router.url==['/tranningcategory'] || router.url==['/addtrainings']">
+                                            <div class="inner_content_wrapper">
+                                                <div class="search_content">
+                                                    <!-- <h3> <span>Search by Training Name : </span> <input type="text" [(ngModel)]="filterval1"
+                                                            (keyup)="searchbyval()"><button>search</button> </h3> -->
+                                                     <h3><input placeholder="Search by Training Name" type="text" [(ngModel)]="filterval1" (keyup)="searchbyval()"></h3>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                    
+                                        
+                                        <input type="text" placeholder="Search..." [(ngModel)]="filterval" #listFilter (keyup)="0"
+                                            class="hide">
+                                    <!-- <button class="btnorange sim-button mat-button" mat-button="">
+                                      <span class="mat-button-wrapper"><a [routerLink]="['/trainingsection']"><i class="material-icons">add</i> Add training</a></span>
+                                    </button> -->
 
-                    <div class="inner_search_wrapper"
-                        *ngIf="router.url!=['/tranningcategory'] && router.url!=['/addtrainings']">
+                                    <a *ngIf="hideadd!=null && hideadd!='true' " (click)="openform(formtemplate,0)"
+                                    class="btnorange"><i class="material-icons">add</i> Add {{sourcetitle}}</a>
+                                <a *ngIf="slotlist=='true' " [routerLink]="['/slotview']"
+                                    class="btnorange slotadd"> Slot View</a>
+                                <a *ngIf="slotlist=='true' " href="http://gapi.betoparedes.com/connect-calendar.php"
+                                    class="btnorange slotadd"> Add or update calendar
+                                    settings</a>
+                                <a *ngIf="slotlist=='true' " (click)="syncgoogle()"
+                                    class="btnorange"> Sync with Google Calendar</a>
+
+                                  </span>
+                                </span>
+                              </span>
+
+                   
+
+                    <!-- <div class="inner_search_wrapper"  *ngIf="router.url!=['/tranningcategory'] && router.url!=['/addtrainings']">
                         <div class="inner_content_wrapper">
                             <div class="search_content">
                                 <h3><span>Search by Email: </span> <input type="text" [(ngModel)]="filterval2"
@@ -56,7 +112,7 @@
 
                     
                     <input type="text" placeholder="Search..." [(ngModel)]="filterval" #listFilter (keyup)="0"
-                        class="hide">
+                        class="hide"> -->
                 </div>
             </div>
         </div>
@@ -99,7 +155,7 @@
                         </ul>
                     </div> -->
                             <div class="abcde">
-                                <a *ngIf="hideadd!=null && hideadd!='true' " (click)="openform(formtemplate,0)"
+                                <!-- <a *ngIf="hideadd!=null && hideadd!='true' " (click)="openform(formtemplate,0)"
                                     class="addfrinderbtn s_getmybrand_savebutton"> Add {{sourcetitle}}</a>
                                 <a *ngIf="slotlist=='true' " [routerLink]="['/slotview']"
                                     class="addfrinderbtn s_getmybrand_savebutton slotadd"> Slot View</a>
@@ -107,7 +163,7 @@
                                     class="addfrinderbtn s_getmybrand_savebutton slotadd"> Add or update calendar
                                     settings</a>
                                 <a *ngIf="slotlist=='true' " (click)="syncgoogle()"
-                                    class="addfrinderbtn s_getmybrand_savebutton slotadd"> Sync with Google Calendar</a>
+                                    class="addfrinderbtn s_getmybrand_savebutton slotadd"> Sync with Google Calendar</a> -->
                               <!-- <a (click)="syncgoogle()" class="addfrinderbtn s_getmybrand_savebutton slotadd"> All Leads</a>
                               <a (click)="syncgoogle()" class="addfrinderbtn s_getmybrand_savebutton slotadd"> Product Wise Leads</a> -->
                                 <div class="clearfix"></div>
@@ -289,9 +345,9 @@
                                                 [ngClass]="item1.class"
                                                 (click)="gotorepdetails(item._id)">{{showrealdate(item[item1.value])}}</span>
                                         </td>
-                                        <td *ngIf="hideaction!=null && hideaction!='true' ">
+                                        <td *ngIf="hideaction!=null && hideaction!='true' " class="actionnewbtn">
                                             <span class=" delete_user"
-                                                (click)="deletdata(item,commonconfirmmodal)"> <mat-icon aria-hidden="false">delete</mat-icon></span>
+                                                (click)="deletdata(item,commonconfirmmodal)"> <mat-icon aria-hidden="false">delete_outline</mat-icon></span>
                                                 
                                             <span class="edit_user" (click)="editmodal(formtemplate,item)"> <mat-icon aria-hidden="false">edit</mat-icon></span><br><br>
                                             <span class="delete_user" *ngIf="router.url==['/manage-leads']" (click)="openDiscoverCallModal(item,item.productname,discoverycallmodal)">Discovery Call</span><br><br>

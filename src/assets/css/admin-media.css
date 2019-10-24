@@ -136,6 +136,16 @@
         color: #000;
     }
 
+    .tablediv .mytranningcategory .admin_table_wrapper table td::before {
+        content: attr(datalabel) !important;
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: left;
+        margin-left: 0%;
+        color: #000;
+    }
+
     .tablediv table td::before {
         content: attr(title);
         float: left;
@@ -145,6 +155,8 @@
         margin-left: -33%;
         color: #000;
     }
+
+  
 
     .tablediv table td:last-child {
         border-bottom: 0;

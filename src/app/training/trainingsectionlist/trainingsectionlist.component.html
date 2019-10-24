@@ -3,140 +3,115 @@
 <div class="adminwrappercls">
     <app-header></app-header>
     <div class="main-content-wrap">
-      <mat-card class="generalcls blog" style="padding: 0 !important;">  
-<div class="nextGen_admin_mainwrapper trainingsection">
-  <div class="page-wrapper s_getmybrand_adminlist">
-    <div class="nexgen_adminlist">
-      <div class="user_management_wrapper"  >
-        <div class="user_management_inner">
-          <h2>manage Lesson</h2>
+      <mat-card class="generalcls blog" style="padding: 0 !important;"> 
+          <span>
+            <img src="../../../../assets/images/managelession-topbanner-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+            
+             <span class="searchblock">
+              <span class="searchblockwrapper">
+                <span><h2>manage Lesson</h2></span>
+                <span>
+                  <button class="btnorange sim-button mat-button" mat-button="">
+                    <span class="mat-button-wrapper" [routerLink]="['/trainingsection']"><i class="material-icons">add</i> Add Lesson</span>
+                  </button>
+                </span>
+              </span>
+            </span>
 
-          <!--<div class="inner_search_wrapper">
-            <div class="inner_content_wrapper">
-              <div class="search_content">
-                <h3><span>Search by UserId: </span> <input type="text" ><button>search</button> </h3>
+            <div class="tablediv trainingtablediv">
+                <div class="mytranningcategory">
+              <div class="table-responsive admin_table_wrapper generaltablecls">
+                
+                  <table class="table">
+                    <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Lesson Title</th>
+                      <th scope="col">Prerequisite Lesson</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">File</th>
+                      <th scope="col">Test</th>
+                      <th scope="col">Training</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of traininglist; let i=index">
+                      <td datalabel="ID">{{i+1}}</td>
+                      <td datalabel="Lesson Title">{{item.title}}</td>
+                      <td datalabel="Prerequisite Lesson">{{item.prerequisite_lesson}}</td>
+                      <td datalabel="Description">{{item.description}}</td>
+                      <td class="filedetails" datalabel="File">
+                        <div *ngIf="item.filetype=='file'">
+                          {{item.filelocalname}}<br/>
+                          <a href="{{ApiService.uploadsslurl}}{{item.fileservername}}" target="_blank">Download</a>
+                          <a class="peview_btn" (click)="callslider(item,showfilemodal)">Preview</a>
+                        </div>
+                        <div *ngIf="item.filetype=='audio'">
+                          {{item.audiolocalname}}<br/>
+                          <audio controls>
+                            <source src="{{ApiService.uploadsslurl}}{{item.audioservername}}" type="audio/mp3">
+                            <source src="{{ApiService.uploadsslurl}}{{item.audioservername}}" type="audio/wav">
+                          </audio>
+                        </div>
+                        <div *ngIf="item.filetype=='video'">
+                          {{item.videolocalname }}<br/>
+                          <video width="320" height="240" controls>
+                            <source src="{{ApiService.uploadsslurl}}{{item.videoservername}}" type="video/mp4">
+                            <source src="{{ApiService.uploadsslurl}}{{item.videoservername}}" type="video/*">
+                          </video>
+    
+                        </div>
+                        <div *ngIf="item.filetype=='image'">
+                          {{item.imagelocalname }}<br/>
+                          <img width="320" height="240" src="{{ApiService.uploadsslurl}}{{item.imageservername}}">
+                        </div>
+    
+    
+    
+                        <!--<div *ngIf="item.filetype=='html'">-->
+                        <!--sanitizer.bypassSecurityTrustHtml({{item.htmleditorvalue}})-->
+                        <!--{{trusthtml(item.htmleditorvalue)}}-->
+                        <!--</div>-->
+                        <!--data-label="Group Description" [routerLink]="['/mastergroupedit',item._id]" [innerHTML]=-->
+                        <div *ngIf="item.filetype=='html'">
+                          <span (click)="showhtmlval(item.htmleditorvalue,showhtmlmodal)"><i title="View More" class="fa fa-eye" aria-hidden="true"></i></span>
+                          <!--  <div [innerHTML]="sanitizer.bypassSecurityTrustHtml(item.htmleditorvalue)"></div>-->
+                        </div>
+                      </td>
+                      <td datalabel="Test">{{item.yesorno}}</td>
+                      <td datalabel="Training">{{gettrainingcategoryname(item.trainingcategory)}}</td>
+                      <td datalabel="Status"><span *ngIf="item.status==true">Active</span>
+                        <span *ngIf="item.status==false">Inactive</span></td>
+    
+                      <td datalabel="Action" class="actionnewbtn">
+                        <span class="deletebtn" (click)="deletetrainingsection(item._id,template)"><i class="material-icons"> delete_outline </i></span>
+                        <span class="editbtn" [routerLink]="['/trainingsection' ,item._id]"><i class="material-icons"> edit </i></span><br/>
+                        <span *ngIf="item.yesorno=='yes'" class="editbtn manageanswer" [routerLink]="['/managequiz' ,item._id]">
+                        <img src="../../../../assets/images/managequiz.png" style="vertical-align:top;"></span>
+                        <!-- <span *ngIf="item.yesorno=='yes'" class="editbtn manageanswer" [routerLink]="['/managequiz' ,item._id]"><i _ngcontent-serverapp-c5="" class="material-icons"> pageview </i> Manage Quiz </span> -->
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <div class="search_content">
-                <h3> <span>Search by Name:  </span> <input type="text" ><button>search</button> </h3>
+              <div class="admin_table_pagination hide">
+                  <ul class="pagination">
+                    <span>Page 1 of 3</span>
+                    <li><a href="#">1</a></li>
+                    <li class="active"><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">Next</a></li>
+                    <li><a href="#">Last</a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="clearfix"></div>
-          </div>-->
 
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12 admin_inner_wrapper">
-        <div class="clearfix"></div>
-        <div class="content_header_block">
-          <div class="clearfix"></div>
-          <div class="newblock1 ">
-            <div class="clearfix"></div>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-        <div class="nexgen_admin_table">
-          <div class="action_section">
-            <div class="inner_actionblock abc">
-              <!--<h3> Training Section List</h3>-->
-              <a class="addfrinderbtn s_getmybrand_savebutton" [routerLink]="['/trainingsection']"> Add Lesson</a>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-
-          <div class="table-responsive admin_table_wrapper generaltablecls">
-            <div>
-              <table class="table">
-                <thead>
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">Lesson Title</th>
-                  <th scope="col">Prerequisite Lesson</th>
-                  <th scope="col">Description</th>
-                  <th scope="col">File</th>
-                  <th scope="col">Test</th>
-                  <th scope="col">Training</th>
-                  <th scope="col">Status</th>
-                  <th scope="col">Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr *ngFor="let item of traininglist; let i=index">
-                  <td datalabel="ID">{{i+1}}</td>
-                  <td datalabel="Lesson Title">{{item.title}}</td>
-                  <td datalabel="Prerequisite Lesson">{{item.prerequisite_lesson}}</td>
-                  <td datalabel="Description">{{item.description}}</td>
-                  <td class="filedetails" datalabel="File">
-                    <div *ngIf="item.filetype=='file'">
-                      {{item.filelocalname}}<br/>
-                      <a href="{{ApiService.uploadsslurl}}{{item.fileservername}}" target="_blank">Download</a>
-                      <a class="peview_btn" (click)="callslider(item,showfilemodal)">Preview</a>
-                    </div>
-                    <div *ngIf="item.filetype=='audio'">
-                      {{item.audiolocalname}}<br/>
-                      <audio controls>
-                        <source src="{{ApiService.uploadsslurl}}{{item.audioservername}}" type="audio/mp3">
-                        <source src="{{ApiService.uploadsslurl}}{{item.audioservername}}" type="audio/wav">
-                      </audio>
-                    </div>
-                    <div *ngIf="item.filetype=='video'">
-                      {{item.videolocalname }}<br/>
-                      <video width="320" height="240" controls>
-                        <source src="{{ApiService.uploadsslurl}}{{item.videoservername}}" type="video/mp4">
-                        <source src="{{ApiService.uploadsslurl}}{{item.videoservername}}" type="video/*">
-                      </video>
-
-                    </div>
-                    <div *ngIf="item.filetype=='image'">
-                      {{item.imagelocalname }}<br/>
-                      <img width="320" height="240" src="{{ApiService.uploadsslurl}}{{item.imageservername}}">
-                    </div>
-
-
-
-                    <!--<div *ngIf="item.filetype=='html'">-->
-                    <!--sanitizer.bypassSecurityTrustHtml({{item.htmleditorvalue}})-->
-                    <!--{{trusthtml(item.htmleditorvalue)}}-->
-                    <!--</div>-->
-                    <!--data-label="Group Description" [routerLink]="['/mastergroupedit',item._id]" [innerHTML]=-->
-                    <div *ngIf="item.filetype=='html'">
-                      <span (click)="showhtmlval(item.htmleditorvalue,showhtmlmodal)"><i title="View More" class="fa fa-eye" aria-hidden="true"></i></span>
-                      <!--  <div [innerHTML]="sanitizer.bypassSecurityTrustHtml(item.htmleditorvalue)"></div>-->
-                    </div>
-                  </td>
-                  <td datalabel="Test">{{item.yesorno}}</td>
-                  <td datalabel="Training">{{gettrainingcategoryname(item.trainingcategory)}}</td>
-                  <td datalabel="Status"><span *ngIf="item.status==true">Active</span>
-                    <span *ngIf="item.status==false">Inactive</span></td>
-
-                  <td datalabel="Action"><span class="deletebtn" (click)="deletetrainingsection(item._id,template)">Delete</span>
-                    <span class="editbtn" [routerLink]="['/trainingsection' ,item._id]">Edit</span><br/>
-                    <span *ngIf="item.yesorno=='yes'" class="editbtn manageanswer" [routerLink]="['/managequiz' ,item._id]">Manage Quiz</span>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <div class="admin_table_pagination hide">
-          <ul class="pagination">
-            <span>Page 1 of 3</span>
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">Next</a></li>
-            <li><a href="#">Last</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</span>
 </mat-card>
 </div>
 <div>

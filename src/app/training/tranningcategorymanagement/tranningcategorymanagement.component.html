@@ -4,20 +4,26 @@
   <app-header></app-header>
   <div class="main-content-wrap">
     <mat-card class="generalcls blog" style="padding: 0 !important;">  
-      <div class="s_getmyoffer_adminpanel">
+        <span>
+          <img src="../../../../assets/images/managetraining-topbanner-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+          <div class="tablediv trainingtablediv">
+            <app-listing  class="formfilterdiv mytranningcategory" templatetype="table" sourcetitle="Training" source="tranningcategory" [sourcecondition]="sourcecondition" [tabledatalis]="tabledatalis" menuval="Training Category List " [formdata]="formdata" [formsource]="datasource">
+            </app-listing>
+          </div>
+        </span>
+
+
+      <!-- <div class="s_getmyoffer_adminpanel">
         <div class="s_getmyoffer_adminpanel_inner">
           <div class="s_getmyoffer_adminpanel_inner_content_left">
           </div>
-          <div class="s_getmyoffer_adminpanel_inner_content_right tranningcategorylist">
-              <div class="tablediv">
-                <app-listing  class="formfilterdiv mytranningcategory" templatetype="table" sourcetitle="Training" source="tranningcategory" [sourcecondition]="sourcecondition" [tabledatalis]="tabledatalis" menuval="Training Category List " [formdata]="formdata" [formsource]="datasource">
-                </app-listing>
-              </div>
+          <div class="s_getmyoffer_adminpanel_inner_content_right tranningcategorylist">              
           </div>
         </div>
-      </div>
+      </div> -->
     </mat-card>
   </div>
 </div>
 <app-footer></app-footer>
 <!-- <app-footer></app-footer> -->
+
