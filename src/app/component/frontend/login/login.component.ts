@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   public endpoint: any = "login";  // login endpoint
   // public signUpRouteingUrl: any = 'sign-up';      // navigate the sign up page
   // public forgetRouteingUrl: any = 'forget-password';      // navigate the Forget password page
-  public buttonName: any = 'Login Button';
+  public buttonName: any = 'Login';
   public signUpRouteingUrl: any = {
     "path": "sign-up",
     "buttonName": "sign-up",

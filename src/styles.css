@@ -53,3 +53,99 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .carousel > button .mat-icon{
     color:#fff !important;
 }
+
+
+
+.mat-card{ background:white!important;}
+.mat-dialog-container{padding: 10px !important;border-radius: 0;overflow: hidden !important;}
+.mat-dialog-container .mat-dialog-title{
+    background-color: #4f4f4f;
+    border: 0px;
+    padding: .35em;
+    color: #ffffff;
+}
+
+.mat-dialog-container .mat-card {
+    transition: none !important;
+    display: flex;
+    position: relative;
+    padding: 5px;
+    border-radius: 0px;
+    align-items: center;
+}
+
+.mat-dialog-container .mat-card .mat-card-header{white-space: normal; word-break: break-word;}
+.mat-dialog-container .mat-card .mat-card-content{white-space: normal; word-break: break-word;}
+
+.mat-dialog-container .mat-card-header .mat-card-title {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.mat-dialog-container .mat-dialog-actions {
+    margin-bottom: 0px;
+    justify-content: center;
+}
+
+.mat-dialog-container .mat-dialog-actions button{
+    display: inline-block;
+    height: auto;
+    background: #f7462e;
+    font-size: 18px;
+    color: #fff!important;
+    text-transform: uppercase;
+    font-family: 'HelveticaBold';
+    text-decoration: none!important;
+    line-height: normal;
+    text-align: center;
+    margin: 0 auto;
+    white-space: normal;
+    margin-top: 10px;;
+    padding: 12px 10px;
+    border-radius: 0px !important;
+}
+
+  
+  .cdk-global-overlay-wrapper {
+      align-items: center !important;
+  }
+  .cdk-global-overlay-wrapper .mat-bottom-sheet-container bottom-sheet .mat-nav-list{display:flex; padding-top:0 !important;}
+  .mat-bottom-sheet-container bottom-sheet .mat-nav-list .mat-list-item {
+      display: inline-block;
+      height: auto;
+      background: #cc3333;
+      font-size: 18px;
+      color: #fff!important;
+      text-transform: uppercase;
+      font-family: 'Ralewaybold';
+      text-decoration: none!important;
+      line-height: normal;
+      text-align: center;
+      margin: 5px;
+      white-space: normal;
+      padding: 12px 10px;
+      border-radius: 0px !important;
+  }
+  
+  .mat-bottom-sheet-container bottom-sheet .mat-nav-list{text-align: center;}
+  
+  
+  
+  
+  .mat-dialog-container .mat-card-header .mat-card-title{
+      margin-bottom: 0;
+      font-size: 16px;
+      font-weight: 600;
+  }
+  
+  .mat-dialog-content {
+      padding: 0 24px !important;
+      box-shadow: none !important;
+  }
+  .mat-form-field {
+    margin: 0 10px;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #e0361f;
+}

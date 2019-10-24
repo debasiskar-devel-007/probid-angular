@@ -479,8 +479,7 @@ addcategory-dialog .mat-dialog-content{
 /* 
 .tablediv table.mat-table tr {background-color: #4f4f4f; border: 0px; padding: .35em; display: table-row; color: #ffffff;} */
 .tablediv table.mat-table tr .mat-footer-cell {color: #fff;}
-.tablediv table.mat-table .mat-checkbox-frame {border-color: rgba(255,255,255,.54) !important;}
-
+.tablediv table.mat-table .mat-checkbox-frame {border-color: rgba(0, 0, 0 ,.54) !important;}
 
 .tablediv .mat-paginator .mat-button.mat-accent[disabled], .tablediv .mat-paginator .mat-button.mat-primary[disabled], .tablediv .mat-paginator .mat-button.mat-warn[disabled], .tablediv .mat-paginator .mat-button[disabled][disabled], .tablediv .mat-paginator .mat-icon-button.mat-accent[disabled], .tablediv .mat-paginator .mat-icon-button.mat-primary[disabled], .tablediv .mat-paginator .mat-icon-button.mat-warn[disabled], .tablediv .mat-paginator .mat-icon-button[disabled][disabled], .tablediv .mat-paginator .mat-stroked-button.mat-accent[disabled], .tablediv .mat-paginator .mat-stroked-button.mat-primary[disabled], .tablediv .mat-paginator .mat-stroked-button.mat-warn[disabled], .tablediv .mat-paginator .mat-stroked-button[disabled][disabled] {color: #fff;}
 
@@ -563,11 +562,14 @@ addcategory-dialog .mat-dialog-content{
 
 .tablediv{    margin-top: -70px;}
 .tablediv .searchbar {    padding-right: 173px;flex-direction: row-reverse;}
-
+.tablediv .searchbar .mat-form-field{
+    z-index: 99;
+    position: relative;
+}
 .tablediv .mat-form-field-flex {
     align-items: stretch;
 }
-
+.tablediv table td span .material-icons{color: #4f5051 !important;}
 .tablediv .mat-form-field-appearance-legacy .mat-form-field-infix{height: 40px;    line-height: 25px; padding: 10px 5px;}
 
 
