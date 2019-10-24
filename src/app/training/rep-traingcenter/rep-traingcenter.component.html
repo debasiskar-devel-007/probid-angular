@@ -72,7 +72,7 @@
                     <div class="slider_inner_content">
                       <img
                         *ngIf="flg==1 && sorteddatalist[i].slides!=null && sorteddatalist[i].slides[cureentcursor]!=null"
-                        src="{{_commonservice.fileimgsslurl+sorteddatalist[i].slides[cureentcursor].substr(3,sorteddatalist[i].slides[cureentcursor].length)}}">
+                        src="{{ApiService.fileimgsslurl+sorteddatalist[i].slides[cureentcursor].substr(3,sorteddatalist[i].slides[cureentcursor].length)}}">
 
                     </div>
                   </div>
@@ -121,23 +121,23 @@
               <div *ngIf="item.filetype=='audio'">
                 <!-- {{item.audiolocalname}}<br/>-->
                 <audio controls (ended)="audiovideoended(item,i)">
-                  <source src="{{_commonservice.uploadsslurl}}{{item.audioservername}}" type="audio/mp3">
-                  <source src="{{_commonservice.uploadsslurl}}{{item.audioservername}}" type="audio/wav">
+                  <source src="{{ApiService.uploadsslurl}}{{item.audioservername}}" type="audio/mp3">
+                  <source src="{{ApiService.uploadsslurl}}{{item.audioservername}}" type="audio/wav">
                 </audio>
                 <br />{{item.description}}
               </div>
               <div *ngIf="item.filetype=='video'" class="video_wrapper">
                 <!--{{item.videolocalname }}<br/>-->
                 <video width="320" height="240" controls id="video_{{item._id}}" (ended)="audiovideoended(item,i)">
-                  <source src="{{_commonservice.uploadsslurl}}{{item.videoservername}}" type="video/mp4">
-                  <source src="{{_commonservice.uploadsslurl}}{{item.videoservername}}" type="video/*">
+                  <source src="{{ApiService.uploadsslurl}}{{item.videoservername}}" type="video/mp4">
+                  <source src="{{ApiService.uploadsslurl}}{{item.videoservername}}" type="video/*">
                 </video>
                 <br />{{item.description}}
               </div>
 
               <div *ngIf="item.filetype=='image'" class="img_wrapper">
                 <!--{{item.imagelocalname }}<br/>-->
-                <img src="{{_commonservice.uploadsslurl}}{{item.imageservername}}">
+                <img src="{{ApiService.uploadsslurl}}{{item.imageservername}}">
                 <br />{{item.description}}
 
               </div>
@@ -148,11 +148,11 @@
           <!--for file download button-->
           <div class="action_wrapper">
             <a *ngIf="item.filetype=='file'" class="download_pdf"
-              href="{{_commonservice.uploadsslurl}}{{item.fileservername}}" target="_blank"><i class="fa fa-download"
+              href="{{ApiService.uploadsslurl}}{{item.fileservername}}" target="_blank"><i class="fa fa-download"
                 aria-hidden="true"></i> </a>
             <!--for file download button-->
             <a *ngIf="item.filetype=='image'" class="download_pdf"
-              href="{{_commonservice.uploadsslurl}}{{item.imageservername}}" target="_blank"><i class="fa fa-download"
+              href="{{ApiService.uploadsslurl}}{{item.imageservername}}" target="_blank"><i class="fa fa-download"
                 aria-hidden="true"></i></a>
 
             <a *ngIf="item.yesorno=='yes'"

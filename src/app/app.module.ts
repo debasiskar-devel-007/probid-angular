@@ -126,6 +126,7 @@ import { AddAdminCategoriesComponent } from './component/backend/add-admin-categ
 import { AdminManageCategoriesComponent, DialogModalOpenDialog } from './component/backend/admin-manage-categories/admin-manage-categories.component';
 import { AdminAddCategoriesComponent } from './component/backend/admin-add-categories/admin-add-categories.component';
 
+import { TrainingreportsComponent } from './training/trainingreports/trainingreports.component';
 
 import { FileUploadModule } from 'file-upload';
 /**End Backend Component** */
@@ -206,6 +207,7 @@ import { FileUploadModule } from 'file-upload';
     AddAdminCategoriesComponent,
     DialogModalOpenDialog,
     AdminAddCategoriesComponent,
+    TrainingreportsComponent
   ],
   imports: [
     // TrainingModule,

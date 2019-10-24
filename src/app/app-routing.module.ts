@@ -75,6 +75,7 @@ import { CommunicationComponent } from './component/backend/communication/commun
 import { AdminManageCategoriesComponent } from './component/backend/admin-manage-categories/admin-manage-categories.component';
 import { AddAdminCategoriesComponent } from './component/backend/add-admin-categories/add-admin-categories.component';
 import { AdminAddCategoriesComponent } from './component/backend/admin-add-categories/admin-add-categories.component';
+import { TrainingreportsComponent } from './training/trainingreports/trainingreports.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -266,6 +267,7 @@ const routes: Routes = [
   { path: 'editcategori/:id', component: AddAdminCategoriesComponent },
 
 
+  { path: 'training-reports', component: TrainingreportsComponent },
   
   { path: '**', component: LoginComponent },
 ];
