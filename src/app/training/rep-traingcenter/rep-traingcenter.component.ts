@@ -56,9 +56,15 @@ export class RepTraingcenterComponent implements OnInit {
     /* incomplete lesson */
     public lastLessionName: any;
     public trainingcategoryMod:any =[];
+    public userData: any;
+    public userid: any;
   constructor(public ApiService:ApiService,private router: Router,public _http:HttpClient,public modal:BsModalService,private cookeiservice: CookieService, public sanitizer: DomSanitizer,private route: ActivatedRoute) {
     this.ApiService=ApiService;
     console.log(this.notdoneparentcat);
+
+    this.userData = JSON.parse(this.cookeiservice.get('user_details'));
+    console.log(this.userData._id)
+    this.userid = this.userData._id;
   }
 
   ngOnInit() {
@@ -84,7 +90,8 @@ export class RepTraingcenterComponent implements OnInit {
        
         const link = this.ApiService.nodesslurl+'training_category_foruser?token=' + this.cookeiservice.get('jwtToken');
         // this._http.post(link,{source:'training_category_lesson_view',condition:{type1:'Rep Trainning Table'}})
-        let data={userid: this.cookeiservice.get('userid')};
+        // let data={userid: this.cookeiservice.get('userid')};
+        let data={userid: this.userid};
         this._http.post(link,data)
             .subscribe(res => {
                 let result:any = res;
@@ -151,7 +158,7 @@ export class RepTraingcenterComponent implements OnInit {
 
   getmarkasdonelist(){
     const link = this.ApiService.nodesslurl+'datalist?token='+this.cookeiservice.get('jwtToken');
-    this._http.post(link, { source: 'tranningcategory', condition: { userid_object: this.cookeiservice.get('userid') }})
+    this._http.post(link, { source: 'tranningcategory', condition: { userid_object: this.userid }})
         .subscribe(res => {
           let result: any = res;
           if(result.status=='error') {
@@ -162,7 +169,7 @@ export class RepTraingcenterComponent implements OnInit {
             this.getdatalist(result.res);
 // for updating the training percentage
             let link2 = this.ApiService.nodesslurl+'update_category_qualification';
-            this._http.post(link2, { user_id: this.cookeiservice.get('userid') })
+            this._http.post(link2, { user_id: this.userid })
                 .subscribe(res => {  
                   let result2: any = res;
                   if(result2.status=='error') {
@@ -298,7 +305,7 @@ export class RepTraingcenterComponent implements OnInit {
         let link = this.ApiService.nodesslurl + 'addorupdatedata?token='+this.cookeiservice.get('jwtToken');
         let objarr=['trainingcategory','traininglesson','userid'];
         let data={
-            userid: this.cookeiservice.get('userid'),
+            userid: this.userid,
             traininglesson: item._id,
             trainingcategory: item.trainingcategory
         }
@@ -368,7 +375,7 @@ export class RepTraingcenterComponent implements OnInit {
                         if(this.cid==null || this.cid==0){         //initial
                             let link = this.ApiService.nodesslurl + 'leadsignupquestionnaireupdate?token='+this.cookeiservice.get('jwtToken'); 
                             let data = {
-                                id: this.cookeiservice.get('userid'),
+                                id: this.userid,
                                 reptraininglessonstep: 1
                             }
                             this._http.post(link, {data:data})

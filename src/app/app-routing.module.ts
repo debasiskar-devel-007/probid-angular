@@ -104,22 +104,22 @@ const routes: Routes = [
   { path: 'search-inventory-list', component: SearchListViewComponent },
   { path: 'specials-list', component: SearchListViewComponent },
 
-  // {
-  //   path: "testimonial",
-  //   component: TesimoniallistComponent,
-  //   resolve: { testimonialListData: ResolveService },
-  //   data: {
-  //     requestcondition: { source: "testimonals", condition: {} },
-  //     endpoint: "datalist"
-  //   }
-  // },
+  {
+    path: "testimonial",
+    component: TesimoniallistComponent,
+    resolve: { testimonialListData: ResolveService },
+    data: {
+      requestcondition: { source: "testimonals", condition: {} },
+      endpoint: "datalist"
+    }
+  },
 
 
   //  static path
-  {
-    path: "testimonial",
-    component: TesimoniallistComponent
-  },
+  // {
+  //   path: "testimonial",
+  //   component: TesimoniallistComponent
+  // },
 
 
 
