@@ -50,13 +50,12 @@
                                             <div class="clearfix"></div>
                                         </div>
                     
-                                        <div class="inner_search_wrapper single_content"
-                                            *ngIf="router.url==['/tranningcategory'] || router.url==['/addtrainings']">
+                                        <div class="inner_search_wrapper single_content" *ngIf="router.url==['/tranningcategory'] || router.url==['/addtrainings']">
                                             <div class="inner_content_wrapper">
                                                 <div class="search_content">
                                                     <!-- <h3> <span>Search by Training Name : </span> <input type="text" [(ngModel)]="filterval1"
                                                             (keyup)="searchbyval()"><button>search</button> </h3> -->
-                                                     <h3><input placeholder="Search by Training Name" type="text" [(ngModel)]="filterval1" (keyup)="searchbyval()"></h3>
+                                                    <input placeholder="Search by Training Name" type="text" [(ngModel)]="filterval1" (keyup)="searchbyval()">
                                                 </div>
                                             </div>
                                             <div class="clearfix"></div>
@@ -405,172 +404,177 @@
     </div>
 </ng-template>
 <ng-template #formtemplate data-backdrop="static" >
-    <div class="modal-body brandmanagement_modal newNexgen_modal "  [ngClass]="addeventform1class()">
-        <h1>Add/Edit {{menuval}}</h1>
-        <form novalidate (ngSubmit)="formsubmit()">
-            <!--[ngClass]="addeventformclass()"-->
-            <div class="form-group row rownew1" [formGroup]="dataForm" *ngFor="let item of formdataval; let i=index;">
-                <div *ngIf="(isedit==0 || (item.isaddonly==null && item.isaddonly!=true))" class="form_floating_div">
-                    <!--[ngClass]="addeventclass()"-->
-                    <label *ngIf="item.inputtype!='hidden'  && item.name!='multiple_emails'"
-                        class="  col-form-label col-form-label-sm">{{item.label}}</label>
-                        <label *ngIf="item.inputtype!='hidden' && item.name=='multiple_emails' && inputflag==1"
-                        class="col-form-label col-form-label-sm">{{item.label}}</label>
-                    <div class="col-sm-8">
+    <div class="modal-body generalmodal"  [ngClass]="addeventform1class()">
 
-
-                        <input
-                            *ngIf="(item.inputtype=='text'  || item.inputtype=='password' || item.inputtype=='hidden') && item.name!='multiple_emails'"
-                            [name]="item.name" [formControl]="dataForm.controls[item.name]" [type]="item.inputtype"
-                            class="form-control" [placeholder]="item.placeholder" (keyup)="issubmit=0">
-                        <input *ngIf="item.inputtype=='number'" [name]="item.name"
-                            [formControl]="dataForm.controls[item.name]" [type]="item.inputtype" class="form-control"
-                            [placeholder]="item.placeholder" (keyup)="issubmit=0">
-
-                            <input
-                            *ngIf=" inputflag==1 && item.inputtype=='text' && item.name=='multiple_emails'"
-                            [name]="item.name" [formControl]="dataForm.controls[item.name]" [type]="item.inputtype"
-                            class="form-control" [placeholder]="item.placeholder" (keyup)="issubmit=0">
-                        <div class="checkboxclass" *ngIf="item.inputtype=='checkbox'">
-
-                            <input type="checkbox" *ngIf="item.inputtype=='checkbox' && item.name!='verification_need'" [name]="item.name"
-                                [formControl]="dataForm.controls[item.name]" class="form-control" (keyup)="issubmit=0"
-                                [ngClass]="item.class">
-
-                                <input type="checkbox" *ngIf="item.inputtype=='checkbox' && item.name=='verification_need'" [name]="item.name"
-                                [formControl]="dataForm.controls[item.name]" class="form-control" (keyup)="issubmit=0" (change)="showInputText($event)"
-                                [ngClass]="item.class">
-                        </div>
-
-
-                        <span *ngIf="item.inputtype=='radio'">
-                            <label>{{item.value}} {{item.valuelabel}}</label>
-                            <input type="radio" [name]="item.name" [value]="item.value"
-                                [formControl]="dataForm.controls[item.name]" class="form-control" (keyup)="issubmit=0"
-                                [ngClass]="item.class">
-                            <br />
-                        </span>
-
-                        <input *ngIf="item.inputtype=='email' " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-                            [name]="item.name" [formControl]="dataForm.controls[item.name]" [type]="item.inputtype"
-                            class="form-control" [placeholder]="item.placeholder" (keyup)="issubmit=0">
-
-
-                        <select *ngIf="item.inputtype=='select' && item.multiple==true" [name]="item.name"
-                            [formControl]="dataForm.controls[item.name]" class="form-control" multiple="multiple"
-                            (keyup)="issubmit=0">
-                            <option value="">{{item.defaultchoice}}</option>
-                            <option *ngFor="let selectval of item.sourceval" value="{{selectval[item.selectid]}}">
-                                {{selectval[item.selectvalue]}}</option>
-                        </select>
-                        <!--  <select *ngIf="item.inputtype=='select' && (item.multiple==null || item.multiple==false)" [name]="item.name" [formControl]="dataForm.controls[item.name]" class="form-control" >
-                            <option value="">{{item.defaultchoice}}</option>
-                            <option *ngFor="let selectval of item.sourceval" value="{{selectval[item.selectid]}}">{{selectval[item.selectvalue]}}</option>
-                        </select>-->
-                        <select *ngIf="item.inputtype=='select' && item.multiple==null" [name]="item.name"
-                            [formControl]="dataForm.controls[item.name]" class="form-control" (keyup)="issubmit=0">
-                            <option value="" selected>{{item.defaultchoice}}</option>
-                            <option *ngFor="let selectval of item.sourceval" value="{{selectval[item.selectid]}}">
-                                {{selectval[item.selectvalue]}}</option>
-                        </select>
-
-                        <textarea *ngIf="item.inputtype=='textarea' || item.inputtype=='editor' " [name]="item.name"
-                            [formControl]="dataForm.controls[item.name]" class="form-control"
-                            [placeholder]="item.placeholder" (keyup)="issubmit=0"></textarea>
-
-                        <!--<date-range-picker *ngIf="item.inputtype=='daterange'" [options]="daterangepickerOptions" [class]="'col-md-12 form-control'"  (rangeSelected)="rangeSelected($event,item.name)" ></date-range-picker>-->
-                        <input *ngIf="item.inputtype=='daterange' " id="inputdate{{item.name}}" [name]="item.name"
-                            [formControl]="dataForm.controls[item.name]" type="text" class="form-control"
-                            [placeholder]="item.placeholder"
-                            [bsConfig]="{ dateInputFormat: 'MM-DD-YYYY',  selectFromOtherMonth: false }"
-                            #drp="bsDaterangepicker" bsDaterangepicker [minDate]="minDate" (keyup)="issubmit=0">
-                        <input *ngIf="item.inputtype=='dateis' " id="inputdateis{{item.name}}" [name]="item.name"
-                            [formControl]="dataForm.controls[item.name]" type="text" class="form-control"
-                            [placeholder]="item.placeholder"
-                            [bsConfig]="{ dateInputFormat: 'MM-DD-YYYY',  selectFromOtherMonth: false }"
-                            #drp="bsDatepicker" bsDatepicker [minDate]="minDate" (keyup)="issubmit=0">
-                        <!--[minDate]="minDate"-->
-
-
-
-                        <timepicker *ngIf="item.inputtype=='timeis' && item.name=='start_time'" [(ngModel)]="start_time"
-                            [ngModelOptions]="{standalone: true}"></timepicker>
-                        <timepicker *ngIf="item.inputtype=='timeis' && item.name=='end_time'" [(ngModel)]="end_time"
-                            [ngModelOptions]="{standalone: true}"></timepicker>
-
-
-                        <!--[formControl]="dataForm.controls['start_time']"-->
-                        <!-- <input *ngIf="item.inputtype=='daterange' " [name]="item.name" [formControl]="dataForm.controls[item.name]" type="hidden" class="form-control" [placeholder]="item.placeholder">-->
-
-                        <input *ngIf="item.inputtype=='url'"
-                            pattern="^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?|^((http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"
-                            [name]="item.name" [formControl]="dataForm.controls[item.name]" [type]="item.inputtype"
-                            class="form-control" [placeholder]="item.placeholder" (keyup)="issubmit=0">
-
-
-                        <div *ngIf="item.inputtype=='image'" class="btn_submit">
-                            <!-- <p>{{item.name}}</p>-->
-                            <input type="hidden" [formControl]="dataForm.controls[item.name]" class="form-control">
-                            <button class="" type="button" (click)="fileInput.click()">{{item.buttonname}}</button>
-                            <!--  <input style="display: none" type="file" (change)="onFileChanged($event,item,i)" #fileInput>-->
-                            <input style="display: none" type="file" (change)="fileChangeEvent($event,i)" #fileInput>
-
-                            <div class="imgwrapperImage">
-                                <!--{{i}}-->
-                                <image-cropper class="image_cropper" [imageChangedEvent]="imageChangedEvent[i]"
-                                    [imageBase64]="unsafebase64imgdata[i]" [maintainAspectRatio]="true"
-                                    [imageQuality]="99" [aspectRatio]="(item.aspectRatio)"
-                                    [resizeToWidth]="(item.resizeToWidth)" [outputType]="file" format="png"
-                                    (imageCropped)="imageCropped($event,item,i)" (imageLoaded)="imageLoaded()"
-                                    (loadImageFailed)="loadImageFailed()"></image-cropper>
-
-                                <img *ngIf="croppedImage[i]!=null || isedit==1" style="height: auto; width: 100%;"
-                                    [src]="croppedImage[i]" /><br>
-                                <input *ngIf="croppedImage[i]!=null || isedit==1 " type="button" value="Save"
-                                    class="button_save" (click)="saveimg(item,i,messagemodal)">
-                                <!--<img style="height: 314px;width: 231px"  [src]="base64imgdata" />-->
+        <div class="mat-dialog-title modalttitle">
+            Add/Edit {{menuval}}
+        </div>        
+        <div class="modalcontentwrapper">
+                <form novalidate (ngSubmit)="formsubmit()">
+                        <!--[ngClass]="addeventformclass()"-->
+                        <div class="form-group row rownew1" [formGroup]="dataForm" *ngFor="let item of formdataval; let i=index;">
+                            <div *ngIf="(isedit==0 || (item.isaddonly==null && item.isaddonly!=true))" class="form_floating_div">
+                                <!--[ngClass]="addeventclass()"-->
+                                <div class="col-sm-4 formlabel">
+                                    <label *ngIf="item.inputtype!='hidden'  && item.name!='multiple_emails'" class="col-form-label col-form-label-sm">{{item.label}}
+                                    </label>
+                                    <label *ngIf="item.inputtype!='hidden' && item.name=='multiple_emails' && inputflag==1" class="col-form-label col-form-label-sm">{{item.label}}
+                                    </label>
+                                </div>
+                                <div class="col-sm-8">           
+            
+                                    <input
+                                        *ngIf="(item.inputtype=='text'  || item.inputtype=='password' || item.inputtype=='hidden') && item.name!='multiple_emails'"
+                                        [name]="item.name" [formControl]="dataForm.controls[item.name]" [type]="item.inputtype"
+                                        class="form-control" [placeholder]="item.placeholder" (keyup)="issubmit=0">
+                                    <input *ngIf="item.inputtype=='number'" [name]="item.name"
+                                        [formControl]="dataForm.controls[item.name]" [type]="item.inputtype" class="form-control"
+                                        [placeholder]="item.placeholder" (keyup)="issubmit=0">
+            
+                                        <input
+                                        *ngIf=" inputflag==1 && item.inputtype=='text' && item.name=='multiple_emails'"
+                                        [name]="item.name" [formControl]="dataForm.controls[item.name]" [type]="item.inputtype"
+                                        class="form-control" [placeholder]="item.placeholder" (keyup)="issubmit=0">
+                                    <div class="checkboxclass" *ngIf="item.inputtype=='checkbox'">
+            
+                                        <input type="checkbox" *ngIf="item.inputtype=='checkbox' && item.name!='verification_need'" [name]="item.name"
+                                            [formControl]="dataForm.controls[item.name]" class="form-control" (keyup)="issubmit=0"
+                                            [ngClass]="item.class">
+            
+                                            <input type="checkbox" *ngIf="item.inputtype=='checkbox' && item.name=='verification_need'" [name]="item.name"
+                                            [formControl]="dataForm.controls[item.name]" class="form-control" (keyup)="issubmit=0" (change)="showInputText($event)"
+                                            [ngClass]="item.class">
+                                    </div>
+            
+            
+                                    <span *ngIf="item.inputtype=='radio'">
+                                        <label>{{item.value}} {{item.valuelabel}}</label>
+                                        <input type="radio" [name]="item.name" [value]="item.value"
+                                            [formControl]="dataForm.controls[item.name]" class="form-control" (keyup)="issubmit=0"
+                                            [ngClass]="item.class">
+                                        <br />
+                                    </span>
+            
+                                    <input *ngIf="item.inputtype=='email' " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                                        [name]="item.name" [formControl]="dataForm.controls[item.name]" [type]="item.inputtype"
+                                        class="form-control" [placeholder]="item.placeholder" (keyup)="issubmit=0">
+            
+            
+                                    <select *ngIf="item.inputtype=='select' && item.multiple==true" [name]="item.name"
+                                        [formControl]="dataForm.controls[item.name]" class="form-control" multiple="multiple"
+                                        (keyup)="issubmit=0">
+                                        <option value="">{{item.defaultchoice}}</option>
+                                        <option *ngFor="let selectval of item.sourceval" value="{{selectval[item.selectid]}}">
+                                            {{selectval[item.selectvalue]}}</option>
+                                    </select>
+                                    <!--  <select *ngIf="item.inputtype=='select' && (item.multiple==null || item.multiple==false)" [name]="item.name" [formControl]="dataForm.controls[item.name]" class="form-control" >
+                                        <option value="">{{item.defaultchoice}}</option>
+                                        <option *ngFor="let selectval of item.sourceval" value="{{selectval[item.selectid]}}">{{selectval[item.selectvalue]}}</option>
+                                    </select>-->
+                                    <select *ngIf="item.inputtype=='select' && item.multiple==null" [name]="item.name"
+                                        [formControl]="dataForm.controls[item.name]" class="form-control" (keyup)="issubmit=0">
+                                        <option value="" selected>{{item.defaultchoice}}</option>
+                                        <option *ngFor="let selectval of item.sourceval" value="{{selectval[item.selectid]}}">
+                                            {{selectval[item.selectvalue]}}</option>
+                                    </select>
+            
+                                    <textarea *ngIf="item.inputtype=='textarea' || item.inputtype=='editor' " [name]="item.name"
+                                        [formControl]="dataForm.controls[item.name]" class="form-control"
+                                        [placeholder]="item.placeholder" (keyup)="issubmit=0"></textarea>
+            
+                                    <!--<date-range-picker *ngIf="item.inputtype=='daterange'" [options]="daterangepickerOptions" [class]="'col-md-12 form-control'"  (rangeSelected)="rangeSelected($event,item.name)" ></date-range-picker>-->
+                                    <input *ngIf="item.inputtype=='daterange' " id="inputdate{{item.name}}" [name]="item.name"
+                                        [formControl]="dataForm.controls[item.name]" type="text" class="form-control"
+                                        [placeholder]="item.placeholder"
+                                        [bsConfig]="{ dateInputFormat: 'MM-DD-YYYY',  selectFromOtherMonth: false }"
+                                        #drp="bsDaterangepicker" bsDaterangepicker [minDate]="minDate" (keyup)="issubmit=0">
+                                    <input *ngIf="item.inputtype=='dateis' " id="inputdateis{{item.name}}" [name]="item.name"
+                                        [formControl]="dataForm.controls[item.name]" type="text" class="form-control"
+                                        [placeholder]="item.placeholder"
+                                        [bsConfig]="{ dateInputFormat: 'MM-DD-YYYY',  selectFromOtherMonth: false }"
+                                        #drp="bsDatepicker" bsDatepicker [minDate]="minDate" (keyup)="issubmit=0">
+                                    <!--[minDate]="minDate"-->
+            
+            
+            
+                                    <timepicker *ngIf="item.inputtype=='timeis' && item.name=='start_time'" [(ngModel)]="start_time"
+                                        [ngModelOptions]="{standalone: true}"></timepicker>
+                                    <timepicker *ngIf="item.inputtype=='timeis' && item.name=='end_time'" [(ngModel)]="end_time"
+                                        [ngModelOptions]="{standalone: true}"></timepicker>
+            
+            
+                                    <!--[formControl]="dataForm.controls['start_time']"-->
+                                    <!-- <input *ngIf="item.inputtype=='daterange' " [name]="item.name" [formControl]="dataForm.controls[item.name]" type="hidden" class="form-control" [placeholder]="item.placeholder">-->
+            
+                                    <input *ngIf="item.inputtype=='url'"
+                                        pattern="^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?|^((http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"
+                                        [name]="item.name" [formControl]="dataForm.controls[item.name]" [type]="item.inputtype"
+                                        class="form-control" [placeholder]="item.placeholder" (keyup)="issubmit=0">
+            
+            
+                                    <div *ngIf="item.inputtype=='image'" class="btn_submit">
+                                        <!-- <p>{{item.name}}</p>-->
+                                        <input type="hidden" [formControl]="dataForm.controls[item.name]" class="form-control">
+                                        <button class="" type="button" (click)="fileInput.click()">{{item.buttonname}}</button>
+                                        <!--  <input style="display: none" type="file" (change)="onFileChanged($event,item,i)" #fileInput>-->
+                                        <input style="display: none" type="file" (change)="fileChangeEvent($event,i)" #fileInput>
+            
+                                        <div class="imgwrapperImage">
+                                            <!--{{i}}-->
+                                            <image-cropper class="image_cropper" [imageChangedEvent]="imageChangedEvent[i]"
+                                                [imageBase64]="unsafebase64imgdata[i]" [maintainAspectRatio]="true"
+                                                [imageQuality]="99" [aspectRatio]="(item.aspectRatio)"
+                                                [resizeToWidth]="(item.resizeToWidth)" [outputType]="file" format="png"
+                                                (imageCropped)="imageCropped($event,item,i)" (imageLoaded)="imageLoaded()"
+                                                (loadImageFailed)="loadImageFailed()"></image-cropper>
+            
+                                            <img *ngIf="croppedImage[i]!=null || isedit==1" style="height: auto; width: 100%;"
+                                                [src]="croppedImage[i]" /><br>
+                                            <input *ngIf="croppedImage[i]!=null || isedit==1 " type="button" value="Save"
+                                                class="button_save" (click)="saveimg(item,i,messagemodal)">
+                                            <!--<img style="height: 314px;width: 231px"  [src]="base64imgdata" />-->
+                                        </div>
+                                        <!--<div class="col-md-4 imguploadsuccess" *ngIf="item.filename!=null">
+                                          <img style="width: 100%" src="{{_commonservice.filepathurl}}{{item.filename}}" >
+                                        </div>-->
+                                    </div>
+            
+                                    <div *ngIf="item.inputtype=='file'" class="btn_submit">
+                                        <input type="hidden" [formControl]="dataForm.controls[item.name]" class="form-control">
+                                        <input style="display: none" type="file" accept="*" ngFileSelect [options]="options"
+                                            (uploadOutput)="onUploadOutput(item,i,$event)" [uploadInput]="uploadInput" #fileInput1>
+                                        <div class="button_upload">
+                                            <button class="" type="button" (click)="fileInput1.click()">{{item.buttonname}}</button>
+                                        </div>
+                                        <div *ngIf="lengthis[i]>0">
+                                            <span style="color: #22bdff; font-family: 'OpenSansRegular'; margin-top: 5px;"
+                                                *ngIf="percentageis[i]==100 "><label> File Name: {{nameis[i]}}</label></span>
+                                            <label style="color: #00c314; font-family: 'OpenSansRegular'; margin-top: 5px; "
+                                                *ngIf="percentageis[i]!=100 ">Upload Percentage:{{percentageis[i]}}%</label>
+                                        </div>
+                                    </div>
+            
+            
+            
+                                    <span class="error"
+                                        *ngIf="dataForm.controls[item.name]!=null &&  item.validationrule!=null && !dataForm.controls[item.name].valid && dataForm.controls[item.name].touched && issubmit==1">{{item.label}}
+                                        {{item.validationerrormsg}}</span>
+            
+                                </div>
                             </div>
-                            <!--<div class="col-md-4 imguploadsuccess" *ngIf="item.filename!=null">
-                              <img style="width: 100%" src="{{_commonservice.filepathurl}}{{item.filename}}" >
-                            </div>-->
+            
+            
                         </div>
-
-                        <div *ngIf="item.inputtype=='file'" class="btn_submit">
-                            <input type="hidden" [formControl]="dataForm.controls[item.name]" class="form-control">
-                            <input style="display: none" type="file" accept="*" ngFileSelect [options]="options"
-                                (uploadOutput)="onUploadOutput(item,i,$event)" [uploadInput]="uploadInput" #fileInput1>
-                            <div class="button_upload">
-                                <button class="" type="button" (click)="fileInput1.click()">{{item.buttonname}}</button>
-                            </div>
-                            <div *ngIf="lengthis[i]>0">
-                                <span style="color: #22bdff; font-family: 'OpenSansRegular'; margin-top: 5px;"
-                                    *ngIf="percentageis[i]==100 "><label> File Name: {{nameis[i]}}</label></span>
-                                <label style="color: #00c314; font-family: 'OpenSansRegular'; margin-top: 5px; "
-                                    *ngIf="percentageis[i]!=100 ">Upload Percentage:{{percentageis[i]}}%</label>
-                            </div>
-                        </div>
-
-
-
-                        <span class="error"
-                            *ngIf="dataForm.controls[item.name]!=null &&  item.validationrule!=null && !dataForm.controls[item.name].valid && dataForm.controls[item.name].touched && issubmit==1">{{item.label}}
-                            {{item.validationerrormsg}}</span>
-
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="form-group btn_submit">
-                <div class="asbuttonwrapper">
-                    <button type="submit"> Submit</button>
-                    <button type="reset" (click)="modalRef.hide()"> Cancel</button>
-                </div>
+                       
+                        
+                        
+                    </form>
+        </div>
+        <div class="btn_submit">               
+                <button type="reset" (click)="modalRef.hide()"> Cancel</button>                   
+                <button type="submit"> Submit</button>                 
                 
             </div>
-            
-            
-        </form>
     </div>
 </ng-template>
 

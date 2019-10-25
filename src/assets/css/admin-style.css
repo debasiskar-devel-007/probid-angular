@@ -577,10 +577,12 @@ addcategory-dialog .mat-dialog-content{
 
 .searchblock{margin: 0; padding: 0; position: relative;width: 100%; display: block;}
 .searchblock .btnorange{
-    width: 160px;
+    min-width: 160px;
     border-radius: 0px;
     padding: 9px 18px 7px !important;
     margin: 0 !important;
+    display: flex !important;
+    align-items: center;
 }
 
 .searchblock{background: #dde2e5 !important; padding: 10px 10px 10px 22px !important;width: 100% !important; display: block; margin:0 auto !important;}
@@ -604,6 +606,162 @@ addcategory-dialog .mat-dialog-content{
 
 
 
+/******Dialog CSS********/
+.mat-dialog-content {padding: 0 !important;}
+.modalttitlewrapper{background-color:#22282c; display: block;  padding: 50px; height: 100%;    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;}
+.mat-dialog-content .add-dialog .mat-dialog-title{background-color:#4f4f4f;border:0;padding:.35em;color:#fff}
+.modalttitlewrapper .mat-dialog-content .mat-form-field{width: 100%;}
+
+.mat-dialog-title.modalttitle {
+    margin: 0 0 0px;
+    display: block;
+    background: #0ac5fc;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "HelveticaBold";
+    color:#fff;
+    font-size: 24px!important;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.modalouter_wrapper_inner input.mat-input-element, .modalouter_wrapper_inner textarea.mat-input-element, .modalouter_wrapper_inner .mat-select {
+    outline: none;
+    font-size: 1em;
+    color: #000;
+    padding: .6em;
+    margin: 0;
+    width: 100%;
+    border: none;
+    -webkit-appearance: none;
+    display: block;
+    background: #b3f3f6;
+    border-radius: 5px;
+    padding: 15px 10px;
+    color: #333;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+}
+
+
+
+
+.generalmodal {padding: 0 !important; border-top-left-radius: 15px; border-top-right-radius: 15px; position:relative;}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 15px;
+    outline: 0;
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+}
+
+.modal-content{
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.generalmodal .mat-dialog-title{background-color:#4f4f4f;border:0;padding:.35em;color:#fff; border-radius:0 !important;}
+
+.generalmodal .mat-dialog-title.modalttitle {
+    margin: 0 0 0px;
+    display: block;
+    background: #0ac5fc;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "HelveticaBold";
+    color:#fff;
+    font-size: 24px!important;
+}
+
+.generalmodal .modalttitlewrapper .mat-form-field{width: 100%;}
+.generalmodal .modalcontentwrapper{
+    background-color:#22282c; display: block;  padding: 50px; height: 100%; padding-bottom: 100px;
+}
+
+.generalmodal .modalcontentwrapper .form_floating_div .formlabel label{
+    color:#fff;
+}
+
+.generalmodal .checkboxclass {
+    width: 35px; 
+}
+
+.generalmodal input, .generalmodal textarea, .generalmodal select {
+    outline: none;
+    font-size: 1em;
+    margin: 0;
+    width: 100%;
+    border: none !important;
+    display: block;
+    background: #ffffff;
+    border-radius: 5px !important;
+    color: #333 !important;
+    border: 1px solid #fff !important;
+    box-sizing: border-box;
+}
+.generalmodal .btn_submit {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    background-color: #FFF;
+}
+.generalmodal .btn_submit button {
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    background-color: #EEE;
+    color: #4d5c6e;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.generalmodal .btn_submit button:nth-of-type(2) {
+    float: right;
+    color: #FFF;
+    background-color: #f7462e;
+}
+
+/******Dialog CSS Ends********/
+
+
+
+.inner_search_wrapper input{
+    outline: none;
+    font-size: 1em;
+    margin: 0;
+    border: none !important;
+    display: block;
+    background: #ffffff;
+    border-radius: 0px !important;
+    color: #333 !important;
+    border: 1px solid #fff !important;
+    box-sizing: border-box;
+    height: 40px;
+    margin-right: 10px;
+    padding: 10px;
+    width:auto;
+    min-width: 270px;
+}
+
+.formaddtraining{
+    width: 80%;
+    margin: 35px auto !important;
+    display: block;
+    background: #dde2e5;
+    padding: 50px;
+}
 
 
 @media only screen and (max-width: 1760px) {
