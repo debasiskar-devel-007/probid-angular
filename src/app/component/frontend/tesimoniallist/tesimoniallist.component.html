@@ -14,7 +14,7 @@
         </span>
 </mat-card>
 
-<mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">    
+<mat-card class="ptb-35 generalcls testimonial">    
     <span class="mainwrappercontent"> 
         <img src="../../../../assets/images/testimonial_blockimg1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">   
     </span>
@@ -28,14 +28,13 @@
             <span class="testibottomcontent">
               <mat-card-title class="title1">{{testmon.name}}</mat-card-title>
               <mat-card-title class="title2">{{testmon.designation}}</mat-card-title>
-              <mat-card-title class="title3">{{testmon.address}}</mat-card-title>
             </span>
           </mat-card>
         </mat-list-item>     
     </mat-list>
-<button *ngIf="indexval.length > indexval" (click)="showMoreFunc()" mat-stroked-button class="btngeneral btngray">Show more</button>
+    <button *ngIf="indexval.length > indexval" (click)="showMoreFunc()" mat-stroked-button class="btngeneral btngray">Show more</button>
 </span> -->
 
 </mat-card>
-  
+
 <app-footer></app-footer>

@@ -337,6 +337,14 @@ a{cursor:pointer;outline:none}
 .footertopwrapper .mat-list-item .mat-list-item-content {padding: 0 !important;}
 .mat-form-field-appearance-legacy .mat-form-field-wrapper {width: 100% !important;}
 
+.modal-dialog{}
+.modal-dialog .modal-content{
+    background-color: #22282c;
+    display: block;
+    height: 100%;
+}
+.modal-dialog .modal-content img{max-width: 100%;}
+
   @media screen and (max-width: 768px){
     .bottom_blog .item_wrapper { display: flex; flex-wrap: wrap; justify-content: center;}
     .bottom_blog .item_wrapper .item { width: 48%; margin: 1%; }
