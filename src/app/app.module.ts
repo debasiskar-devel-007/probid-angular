@@ -129,8 +129,7 @@ import { AdminAddCategoriesComponent } from './component/backend/admin-add-categ
 import { TrainingreportsComponent } from './training/trainingreports/trainingreports.component';
 
 import { FileUploadModule } from 'file-upload';
-/**End Backend Component** */
-
+import { OwlModule } from 'ngx-owl-carousel'; 
 
 @NgModule({
   declarations: [
@@ -240,6 +239,7 @@ import { FileUploadModule } from 'file-upload';
     ModalModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+    OwlModule,
     
     // SharetoolsModule
   ],
@@ -249,3 +249,4 @@ import { FileUploadModule } from 'file-upload';
   entryComponents: [comingSoonDialog, DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog]
 })
 export class AppModule { }
+

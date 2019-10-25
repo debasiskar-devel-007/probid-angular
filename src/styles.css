@@ -1,10 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 @import "../src/assets/css/style.css";
 @import "../src/assets/css/admin-style.css";
 @import "../src/assets/css/media.css";
 @import "../src/assets/css/admin-media.css";
+
 
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 /* @import "~material-icons/iconfont/material-icons.css"; */
@@ -148,4 +150,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
     background-color: #e0361f;
+}
+
+
+
+.owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot {
+    background: #ff0000 !important;
+    color: #fff;
+    border: none;
+    padding: 10px !important;
+    font: inherit;
 }

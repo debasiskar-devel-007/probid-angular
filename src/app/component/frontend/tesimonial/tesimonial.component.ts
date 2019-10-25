@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DragScrollComponent } from 'ngx-drag-scroll';
 import { ApiService } from 'src/app/api.service';
+declare var $: any;
 
 @Component({
   selector: 'app-tesimonial',
@@ -9,6 +10,36 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./tesimonial.component.css']
 })
 export class TesimonialComponent implements OnInit {
+
+  carouselOptions = {
+    margin: 25,
+    nav: true,
+    loop: true,
+    navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+        nav: true
+      },
+      600: {
+        items: 1,
+        nav: true
+      },
+      991: {
+        items: 2,
+        nav: true,
+        loop: true
+      },
+      1500: {
+        items: 3,
+        nav: true,
+        loop: true
+      }
+    }
+  }
+
+
 
   @ViewChild('imgsmall') imgsmall: DragScrollComponent;
   public mainImg: any;
@@ -73,6 +104,7 @@ export class TesimonialComponent implements OnInit {
     this.index_number = JSON.parse(imgsmallval._index)
     // console.log(this.index_number)
   }
+
 
 
   imgClick(val: any) {
