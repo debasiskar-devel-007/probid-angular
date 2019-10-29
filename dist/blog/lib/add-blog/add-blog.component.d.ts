@@ -1,18 +1,17 @@
 import { OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from '../api.service';
-import { HttpClient } from '@angular/common/http';
-import { MatDialogRef, MatDialog } from "@angular/material";
+import { Router } from '@angular/router';
+import { BlogService } from '../blog.service';
+import { CookieService } from 'ngx-cookie-service';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 export interface DialogData {
-    message: string;
+    msg: string;
 }
 export declare class AddBlogComponent implements OnInit {
-    fb: FormBuilder;
-    activeroute: ActivatedRoute;
-    apiservice: ApiService;
-    _http: HttpClient;
-    router: Router;
+    private formBuilder;
+    private blogService;
+    private router;
+    private cookieService;
     dialog: MatDialog;
     /**ckeditor start here*/
     Editor: any;
@@ -23,42 +22,27 @@ export declare class AddBlogComponent implements OnInit {
         editorData: string;
     };
     /**ckeditor end here*/
-    /**blog varibles declaration start here**/
-    dialogRef: any;
-    getDataEndpointData: any;
-    addEndpointData: any;
-    serverUrlData: any;
-    listUrl: any;
-    blogarray: any;
-    isSubmitted: boolean;
-    blogAddEditForm: FormGroup;
-    params_id: any;
-    editarray: any;
-    statusarray: any;
-    allData: any;
-    /**blog varibles declaration end here**/
-    headerText: any;
+    blogCatForm: FormGroup;
+    header_txt: any;
     buttonText: any;
-    messageText: any;
-    listRoute: any;
-    serverUrl: any;
-    getDataEndpoint: any;
-    addEndpoint: any;
-    singleData: any;
-    constructor(fb: FormBuilder, activeroute: ActivatedRoute, apiservice: ApiService, _http: HttpClient, router: Router, dialog: MatDialog);
+    configData: any;
+    loader: boolean;
+    successMessage: any;
+    getParentCatArr: any;
+    dialogRef: any;
+    constructor(formBuilder: FormBuilder, blogService: BlogService, router: Router, cookieService: CookieService, dialog: MatDialog);
     ngOnInit(): void;
+    setDefaultValue(defaultValue: any): void;
+    generateForm(): void;
+    config: any;
     openDialog(x: any): void;
-    /**modal end here */
-    /**validation untouch purpose **/
-    inputUntouch(form: any, val: any): void;
-    /** getting all blogs data start here **/
-    getBlogData(): void;
-    /**add & update* blogs submitting form start here**/
-    blogAddEditFormSubmit(): void;
+    getParentData(): void;
+    onSubmit(): void;
+    inputBlur(val: any): void;
 }
-export declare class Dialogtest {
-    dialogRef: MatDialogRef<Dialogtest>;
+export declare class Modal2 {
+    dialogRef: MatDialogRef<Modal2>;
     data: DialogData;
-    is_error: any;
-    constructor(dialogRef: MatDialogRef<Dialogtest>, data: DialogData);
+    constructor(dialogRef: MatDialogRef<Modal2>, data: DialogData);
+    onNoClick(): void;
 }

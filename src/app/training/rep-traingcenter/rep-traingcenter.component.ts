@@ -58,7 +58,15 @@ export class RepTraingcenterComponent implements OnInit {
     public trainingcategoryMod:any =[];
     public userData: any;
     public userid: any;
+    public userCookies: any;
   constructor(public ApiService:ApiService,private router: Router,public _http:HttpClient,public modal:BsModalService,private cookeiservice: CookieService, public sanitizer: DomSanitizer,private route: ActivatedRoute) {
+
+    this.userCookies = JSON.parse(this.cookeiservice.get('user_details'));
+  
+    console.log(this.userCookies);
+    this.userid = this.userCookies._id;
+    console.log(this.userid);
+
     this.ApiService=ApiService;
     console.log(this.notdoneparentcat);
 
@@ -88,10 +96,11 @@ export class RepTraingcenterComponent implements OnInit {
         this.donecategory = [];
         this.notdonecategory = [];
        
-        const link = this.ApiService.nodesslurl+'training_category_foruser?token=' + this.cookeiservice.get('jwtToken');
+        // const link = this.ApiService.nodesslurl+'training_category_foruser?token=' + this.cookeiservice.get('jwtToken');
+        const link = this.ApiService.nodesslurl+'datalist?token=' + this.cookeiservice.get('jwtToken');
         // this._http.post(link,{source:'training_category_lesson_view',condition:{type1:'Rep Trainning Table'}})
-        // let data={userid: this.cookeiservice.get('userid')};
-        let data={userid: this.userid};
+        let data={id: this.userid};
+        // let data={userid: this.userid};
         this._http.post(link,data)
             .subscribe(res => {
                 let result:any = res;
@@ -169,7 +178,7 @@ export class RepTraingcenterComponent implements OnInit {
             this.getdatalist(result.res);
 // for updating the training percentage
             let link2 = this.ApiService.nodesslurl+'update_category_qualification';
-            this._http.post(link2, { user_id: this.userid })
+            this._http.post(link2, { id: this.userid })
                 .subscribe(res => {  
                   let result2: any = res;
                   if(result2.status=='error') {
@@ -193,7 +202,7 @@ export class RepTraingcenterComponent implements OnInit {
             var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
             return result * sortOrder;
         }
-    }
+    } 
 
     getdatalist(itemName) {
         if(typeof(itemName) == 'string') {
@@ -204,7 +213,7 @@ export class RepTraingcenterComponent implements OnInit {
         //this.notdoneparentcat = [];
         //this.doneparentcat = [];
 
-        const link = this.ApiService.nodesslurl + 'datalist?token=' + this.cookeiservice.get('jwtToken');
+        const link = this.ApiService.nodesslurl + 'datalist?token=' + this.userid;
         this._http.post(link,{source:'traininglesson',condition:{trainingcategory_object:this.cid}})
             .subscribe(res => {
                 let result:any = res;

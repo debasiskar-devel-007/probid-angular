@@ -17,7 +17,7 @@ import { WINDOW } from '@ng-toolkit/universal';
 })
 export class BkHeaderComponent implements OnInit {
   public userCookies: any;
-  public user_full_name: any = '';
+  public userid: any = '';
 
   public type: any;
   public recphoneno: any;
@@ -39,6 +39,7 @@ export class BkHeaderComponent implements OnInit {
   public calenderaccess:any;
 
 
+
      
   public user_data: any;
   constructor(
@@ -48,15 +49,10 @@ export class BkHeaderComponent implements OnInit {
        public router: Router,
         public Header: HeaderComponent,
     @Inject(WINDOW) private window: Window,
-     public cookie: CookieService,
       private ApiService: ApiService,
        private _http: HttpClient
     ) {
-  // setTimeout(()=>{
-  //       this.getrepdetails();
-  //     },500);
-    // this.user_data = JSON.parse(this.cookieService.get('user_details'));
-    // console.log(this.user_data);
+      this.getrepdetails();
 
   }
   toggleActive:boolean = false;
@@ -68,74 +64,76 @@ export class BkHeaderComponent implements OnInit {
     
     
    }
+   getrepdetails() {
+    // const link = this.ApiService.nodesslurl + 'getrecvalues?token=' + this.cookie.get('jwtToken');
+    // var data = { _id: this.cookie.get('userid') }
+
+    let value: any = {"source":"traininglesson"}
+
+    this.ApiService.getDataForDatalist(value).subscribe(res =>{
+      console.log('res');
+      console.log(res);
+
+      let result: any;
+        result = res;
+        if (result.status == 'error') {
+        } else {
+          this.repdetails = result.res;
+          this.reptraininglessondetails = result.res;
+          /*console.log('this.repdetails');
+          console.log(this.repdetails);*/
+          /* console.log('this.reptraininglessondetails');
+           console.log(this.reptraininglessondetails);*/
+        }
+      }, error => {
+        console.log('Oooops!');
+    })
+
+    
+    // this._http.post(link, data)
+    //   .subscribe(res => {
+    //     let result: any;
+    //     result = res;
+    //     if (result.status == 'error') {
+    //     } else {
+    //       this.repdetails = result.res;
+    //       this.reptraininglessondetails = result.res2;
+    //       /*console.log('this.repdetails');
+    //       console.log(this.repdetails);*/
+    //       /* console.log('this.reptraininglessondetails');
+    //        console.log(this.reptraininglessondetails);*/
+    //     }
+    //   }, error => {
+    //     console.log('Oooops!');
+    //   });
+  }
+
+   gototrainingsectionwithcat() {
+    if (this.reptraininglessondetails != null) {
+      var link = 'reptrainingcenter/' + this.reptraininglessondetails.trainingcategory;
+      console.log('link')
+      console.log(link)
+      this.router.navigate([link]);
+    } else {
+      var link = 'reptrainingcenter/5da46c324b1928253fdb5d2e';
+      this.router.navigate([link]);
+    }
+  }
 
    gotoHome(){
      console.log('ok')
      this.router.navigateByUrl('/home');
    }
 
-  //  getrepdetails() {
-  //   // const link = this.ApiService.nodesslurl + 'getrecvalues?token=' + this.cookie.get('jwttoken');
-  //   const link = this.ApiService.nodesslurl + 'datalist?token=' + this.cookie.get('jwttoken');
-  //   var data = { _id: this.cookie.get('userid') }
-  //   this._http.post(link, data)
-  //     .subscribe(res => {
-  //       let result: any;
-  //       result = res;
-  //       if (result.status == 'error') {
-  //       } else {
-  //         this.repdetails = result.res;
-  //         this.reptraininglessondetails = result.res2;
-  //         /*console.log('this.repdetails');
-  //         console.log(this.repdetails);*/
-  //         /* console.log('this.reptraininglessondetails');
-  //          console.log(this.reptraininglessondetails);*/
-  //       }
-  //     }, error => {
-  //       console.log('Oooops!');
-  //     });
-  // }
-
-  //  gototrainingsectionwithcat() {
-  //   if (this.reptraininglessondetails != null) {
-  //     console.log('this.reptraininglessondetails.trainingcategory');
-  //     console.log(this.reptraininglessondetails.trainingcategory)
-  //     var link = 'reptrainingcenter/' + this.reptraininglessondetails.trainingcategory;
-  //     this.router.navigate([link]);
-  //   } else {
-  //     var link = 'reptrainingcenter/5d36d7256778e75a3d6c37ce';
-  //     //   var link = 'reptrainingcenter/5c6d54656fac495dd5c209e9';
-  //     this.router.navigate([link]);
-  //   }
-  // }
-
   ngOnInit() {
-    // this.userCookies = JSON.parse(this.cookieService.get('user_details'));
+    this.userCookies = JSON.parse(this.cookieService.get('user_details'));
   
-    // console.log(this.userCookies);
-    // this.user_full_name = this.userCookies.firstname +' '+this.userCookies.lastname;
-    // console.log(this.user_full_name);
+    console.log(this.userCookies);
+    this.userid = this.userCookies._id;
+    console.log(this.userid);
+  
   }
 
-  // getvideocatagory() {
-  //   let link = this.ApiService.nodesslurl + 'datalist?token=' + this.cookie.get('jwttoken');
-  //   console.log(link);
-  //   this._http.post(link, { source: "videocategory_view_with_parent", condition: { status: true } })
-  //     .subscribe(res => {
-  //       let result;
-  //       result = res;
-  //       if (result.status == 'error') {
-
-  //       } else {
-  //         this.videoCategoryarry = [];
-  //         this.videoCategoryarry = result.res;
-
-  //       }
-  //     }, error => {
-  //       console.log('Oooops!');
-  //       this.videoCategoryarry = [];
-  //     });
-  // }
 
 }
 

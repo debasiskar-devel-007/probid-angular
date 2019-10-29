@@ -3,171 +3,42 @@
  * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 import { Component, Input } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { ApiService } from './api.service';
 var BlogComponent = /** @class */ (function () {
-    function BlogComponent(router, apiService, activeroute) {
-        this.router = router;
-        this.apiService = apiService;
-        this.activeroute = activeroute;
-        this.ResolveLIstData = [];
-        this.editRouteUrl = '';
-        this.Blogtablename = '';
-        this.deleteRouteUrl = '';
-        this.addupdateRouteUrl = '';
-        this.apiUrlviaApp = '';
-        this.tokenViapp = '';
-        /**
-         * lib-listing start here*
-         */
-        this.blogDataarray = [];
-        this.Bloglist_skip = ["_id", "description"];
-        this.Bloglist_modify_header = { 'title': "Title", 'description': "Description",
-            'parentcategoryname': "Parent Category", "status": "Status", "priority": "Priority" };
-        this.status = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
+    // ====================================================================================================
+    function BlogComponent() {
+        this.loader = false;
     }
-    Object.defineProperty(BlogComponent.prototype, "BlogapiUrl", {
-        /**lib-listing end here**/
-        set: /**
-         * lib-listing end here*
-         * @param {?} apivalue
+    Object.defineProperty(BlogComponent.prototype, "config", {
+        // ======================================================================================
+        // ================================================Input For Lib Listing================================
+        set: 
+        // ======================================================================================
+        // ================================================Input For Lib Listing================================
+        /**
+         * @param {?} receivedData
          * @return {?}
          */
-        function (apivalue) {
-            this.apiUrlviaApp = (apivalue) || '<no name set>';
-            this.apiUrlviaApp = apivalue;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(BlogComponent.prototype, "BlogToken", {
-        set: /**
-         * @param {?} token
-         * @return {?}
-         */
-        function (token) {
-            this.tokenViapp = (token) || '<no name set>';
-            this.tokenViapp = token;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(BlogComponent.prototype, "addTeammember", {
-        set: /**
-         * @param {?} addvalue
-         * @return {?}
-         */
-        function (addvalue) {
-            this.addMemberviaUrl = (addvalue) || '<no name set>';
-            this.addMemberviaUrl = addvalue;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(BlogComponent.prototype, "Blogtable", {
-        set: /**
-         * @param {?} value
-         * @return {?}
-         */
-        function (value) {
-            this.Blogtablename = (value) || '<no name set>';
-            this.Blogtablename = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(BlogComponent.prototype, "editblog", {
-        set: /**
-         * @param {?} value
-         * @return {?}
-         */
-        function (value) {
-            this.editRouteUrl = (value) || '<no name set>';
-            this.editRouteUrl = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(BlogComponent.prototype, "AddEditBlog", {
-        set: /**
-         * @param {?} addeditvalue
-         * @return {?}
-         */
-        function (addeditvalue) {
-            this.addupdateRouteUrl = (addeditvalue) || '<no name set>';
-            this.addupdateRouteUrl = addeditvalue;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(BlogComponent.prototype, "deleteBlog", {
-        set: /**
-         * @param {?} delValue
-         * @return {?}
-         */
-        function (delValue) {
-            this.deleteRouteUrl = (delValue) || '<no name set>';
-            this.deleteRouteUrl = delValue;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(BlogComponent.prototype, "getDataEndpoint", {
-        set: /**
-         * @param {?} endpointUrlval
-         * @return {?}
-         */
-        function (endpointUrlval) {
-            this.getDataEndpointData = (endpointUrlval) || '<no name set>';
-            this.getDataEndpointData = endpointUrlval;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(BlogComponent.prototype, "getDataSource", {
-        set: /**
-         * @param {?} serverUrlval
-         * @return {?}
-         */
-        function (serverUrlval) {
-            this.getDataSourceData = (serverUrlval) || '<no name set>';
-            this.getDataSourceData = serverUrlval;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(BlogComponent.prototype, "serverUrl", {
-        set: /**
-         * @param {?} serverUrlval
-         * @return {?}
-         */
-        function (serverUrlval) {
-            this.serverUrlData = (serverUrlval) || '<no name set>';
-            this.serverUrlData = serverUrlval;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(BlogComponent.prototype, "addEndpoint", {
-        set: /**
-         * @param {?} endpointUrlval
-         * @return {?}
-         */
-        function (endpointUrlval) {
-            this.addEndpointData = (endpointUrlval) || '<no name set>';
-            this.addEndpointData = endpointUrlval;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(BlogComponent.prototype, "listResolve", {
-        set: /**
-         * @param {?} listresolveUrlval
-         * @return {?}
-         */
-        function (listresolveUrlval) {
-            this.blogDataarray = (listresolveUrlval) || '<no name set>';
-            this.blogDataarray = listresolveUrlval;
+        function (receivedData) {
+            this.blogListConfig = {
+                apiUrl: receivedData.apiBaseUrl,
+                listEndPoint: receivedData.listEndPoint,
+                datasource: receivedData.datasource,
+                tableName: receivedData.tableName,
+                listArray_skip: ["_id", "userId", "created_at", "updated_at", "image", "description_html"],
+                listArray_modify_header: { "blogtitle": "Blog Title", "description": "Description", "priority": "Priority", "status": "Status", "parentcategoryname": "Parent Category Name" },
+                admintablenameTableName: "admin",
+                statusarr: [{ val: 1, name: "Active" }, { val: 0, name: 'Inactive' }],
+                updateurl: receivedData.updateEndpoint,
+                editUrl: receivedData.editUrl,
+                jwtToken: receivedData.jwtToken,
+                deleteEndPoint: receivedData.deleteEndPoint,
+                view: receivedData.view,
+                search_settings: {
+                    textsearch: [{ label: "Search by blog title...", field: 'blogtitle' }, { label: "Search by parent category...", field: 'parentcategoryname' }],
+                    selectsearch: [{ label: 'Search By status', field: 'status', values: [{ val: 1, name: "Active" }, { val: 0, name: 'Inactive' }] }],
+                },
+            };
+            this.loader = false;
         },
         enumerable: true,
         configurable: true
@@ -179,144 +50,26 @@ var BlogComponent = /** @class */ (function () {
      * @return {?}
      */
     function () {
-        var _this = this;
-        /**observable start here**/
-        this.apiService.clearServerUrl();
-        setTimeout((/**
-         * @return {?}
-         */
-        function () {
-            _this.apiService.setServerUrl(_this.serverUrlData);
-        }), 50);
-        this.apiService.clearaddEndpoint();
-        setTimeout((/**
-         * @return {?}
-         */
-        function () {
-            _this.apiService.setaddEndpoint(_this.addEndpointData);
-        }), 50);
-        this.apiService.cleargetdataEndpoint();
-        setTimeout((/**
-         * @return {?}
-         */
-        function () {
-            _this.apiService.setgetdataEndpoint(_this.getDataEndpointData);
-        }), 50);
-        /**observable end here**/
-    };
-    /***getting all the blog data function start here**/
-    /**
-     * getting all the blog data function start here*
-     * @return {?}
-     */
-    BlogComponent.prototype.getData = /**
-     * getting all the blog data function start here*
-     * @return {?}
-     */
-    function () {
-        var _this = this;
-        /** @type {?} */
-        var data;
-        data = {
-            "source": "blog_category_view"
-        };
-        this.apiService.getData(data).subscribe((/**
-         * @param {?} response
-         * @return {?}
-         */
-        function (response) {
-            /** @type {?} */
-            var result;
-            result = response;
-            _this.blogDataarray = result.res;
-        }));
-    };
-    /**function end here**/
-    /**
-     * function end here*
-     * @return {?}
-     */
-    BlogComponent.prototype.addButton = /**
-     * function end here*
-     * @return {?}
-     */
-    function () {
-        this.router.navigateByUrl('/' + this.addMemberviaUrl);
     };
     BlogComponent.decorators = [
         { type: Component, args: [{
                     selector: 'lib-Blog',
-                    template: "<!-- header start here -->\n<mat-card>\n    <mat-toolbar color=\"primary\" style=\"justify-content: center; align-items: center;\">\n        <h2 class=\"headerSpan\">Blogs</h2>\n    </mat-toolbar>\n    <!-- header end here -->\n    <!-- add button start here -->\n    <mat-toolbar class=\"buttonsetToolbar\">\n        <button class=\"singleButton\" mat-raised-button color=\"primary\" (click)=\"addButton()\"> Add Blogs</button>\n    </mat-toolbar>\n    <!-- adding button end here -->\n    <!-- applying lib-listing start here -->\n    <mat-card-content class=\"listing-content-admin\">\n        <lib-listing class=\"formfilterdiv formfilterdivnew\" *ngIf=\"blogDataarray.length>0\" [datasource]=\"blogDataarray\"\n            [skip]=\"Bloglist_skip\" [modify_header_array]=\"Bloglist_modify_header\" [sourcedata]=\"Blogtablename\"\n            [statusarr]=\"status\" [editroute]=\"editRouteUrl\" [apiurl]=\"serverUrlData\" [jwttoken]=\"tokenViapp\"\n            [deleteendpoint]=\"deleteRouteUrl\" [updateendpoint]=\"addupdateRouteUrl\">\n        </lib-listing>\n        <!-- applying lib-listing end here -->\n\n    </mat-card-content>\n</mat-card>",
-                    styles: [".example-card{max-width:400px}.example-header-image{background-image:url(https://material.angular.io/assets/img/examples/shiba1.jpg);background-size:cover;border:2px solid #e0dada}.headerSpan{text-align:center;display:block;margin:auto}.darkToolbar{background-color:#000}.gridListWrapper{padding:30px}.buttonsetToolbar{background-color:#f4f3f8;text-align:center;display:block;padding-top:10px}.singleButton{margin:5px;float:right}.example-form{min-width:150px;max-width:500px;width:100%}.example-full-width{width:100%}td{padding-right:8px}"]
+                    template: "<mat-card *ngIf=\"loader==true\">\n    <mat-spinner class=\"spinner\"></mat-spinner>\n</mat-card>\n\n\n\n<!-- ------------------------lib listing being called------------------------ -->\n<mat-card *ngIf=\"loader==false\">\n    <lib-listing class=\"formfilterdiv\"\n        *ngIf=\"blogListConfig.datasource !=null && blogListConfig.datasource.length > 0\"\n        [datasource]=\"blogListConfig.datasource\" [skip]=\"blogListConfig.listArray_skip\"\n        [modify_header_array]=\"blogListConfig.listArray_modify_header\" [sourcedata]=\"blogListConfig.tableName\"\n        [statusarr]=\"blogListConfig.statusarr\" [jwttoken]=\"blogListConfig.jwtToken\"\n        [apiurl]=\"blogListConfig.apiUrl\" [editroute]=\"blogListConfig.editUrl\"\n        [deleteendpoint]=\"blogListConfig.deleteEndPoint\"\n        [date_search_source]=\"blogListConfig.view\"\n       [date_search_endpoint]=\"blogListConfig.listEndPoint\"\n       [search_settings]=\"blogListConfig.search_settings\"\n       [detail_datatype]=\"blogListConfig.pendingmodelapplicationarray_detail_datatype\">\n    </lib-listing>\n<!-- ----------------------------------------------------------------------------->\n\n    <h2 *ngIf=\"blogListConfig.datasource.length == 0\">No record found.</h2>\n</mat-card>",
+                    styles: [""]
                 }] }
     ];
     /** @nocollapse */
-    BlogComponent.ctorParameters = function () { return [
-        { type: Router },
-        { type: ApiService },
-        { type: ActivatedRoute }
-    ]; };
+    BlogComponent.ctorParameters = function () { return []; };
     BlogComponent.propDecorators = {
-        BlogapiUrl: [{ type: Input }],
-        BlogToken: [{ type: Input }],
-        addTeammember: [{ type: Input }],
-        Blogtable: [{ type: Input }],
-        editblog: [{ type: Input }],
-        AddEditBlog: [{ type: Input }],
-        deleteBlog: [{ type: Input }],
-        getDataEndpoint: [{ type: Input }],
-        getDataSource: [{ type: Input }],
-        serverUrl: [{ type: Input }],
-        addEndpoint: [{ type: Input }],
-        listResolve: [{ type: Input }]
+        config: [{ type: Input }]
     };
     return BlogComponent;
 }());
 export { BlogComponent };
 if (false) {
-    /**
-     * blog variables declaration*
-     * @type {?}
-     */
-    BlogComponent.prototype.addMemberviaUrl;
     /** @type {?} */
-    BlogComponent.prototype.ResolveLIstData;
+    BlogComponent.prototype.blogListConfig;
     /** @type {?} */
-    BlogComponent.prototype.editRouteUrl;
-    /** @type {?} */
-    BlogComponent.prototype.Blogtablename;
-    /** @type {?} */
-    BlogComponent.prototype.deleteRouteUrl;
-    /** @type {?} */
-    BlogComponent.prototype.addupdateRouteUrl;
-    /** @type {?} */
-    BlogComponent.prototype.serverUrlData;
-    /** @type {?} */
-    BlogComponent.prototype.getDataEndpointData;
-    /** @type {?} */
-    BlogComponent.prototype.getDataSourceData;
-    /** @type {?} */
-    BlogComponent.prototype.addEndpointData;
-    /** @type {?} */
-    BlogComponent.prototype.apiUrlviaApp;
-    /** @type {?} */
-    BlogComponent.prototype.tokenViapp;
-    /**
-     * lib-listing start here*
-     * @type {?}
-     */
-    BlogComponent.prototype.blogDataarray;
-    /** @type {?} */
-    BlogComponent.prototype.Bloglist_skip;
-    /** @type {?} */
-    BlogComponent.prototype.Bloglist_modify_header;
-    /** @type {?} */
-    BlogComponent.prototype.status;
-    /** @type {?} */
-    BlogComponent.prototype.router;
-    /** @type {?} */
-    BlogComponent.prototype.apiService;
-    /** @type {?} */
-    BlogComponent.prototype.activeroute;
+    BlogComponent.prototype.loader;
 }
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYmxvZy5jb21wb25lbnQuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9ibG9nLyIsInNvdXJjZXMiOlsibGliL2Jsb2cuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSxPQUFPLEVBQUUsU0FBUyxFQUFVLEtBQUssRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUN6RCxPQUFPLEVBQXdCLE1BQU0sRUFBRSxjQUFjLEVBQUUsTUFBTSxpQkFBaUIsQ0FBQztBQUMvRSxPQUFPLEVBQUUsVUFBVSxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBRTNDO0lBa0dFLHVCQUFtQixNQUFjLEVBQ3hCLFVBQXNCLEVBQVMsV0FBMkI7UUFEaEQsV0FBTSxHQUFOLE1BQU0sQ0FBUTtRQUN4QixlQUFVLEdBQVYsVUFBVSxDQUFZO1FBQVMsZ0JBQVcsR0FBWCxXQUFXLENBQWdCO1FBM0Y1RCxvQkFBZSxHQUFRLEVBQUUsQ0FBQztRQUMxQixpQkFBWSxHQUFRLEVBQUUsQ0FBQztRQUN2QixrQkFBYSxHQUFRLEVBQUUsQ0FBQztRQUN4QixtQkFBYyxHQUFRLEVBQUUsQ0FBQztRQUN6QixzQkFBaUIsR0FBUSxFQUFFLENBQUM7UUFLNUIsaUJBQVksR0FBUSxFQUFFLENBQUM7UUFDdkIsZUFBVSxHQUFLLEVBQUUsQ0FBQTs7OztRQUVqQixrQkFBYSxHQUFRLEVBQUUsQ0FBQztRQUN4QixrQkFBYSxHQUFRLENBQUMsS0FBSyxFQUFDLGFBQWEsQ0FBQyxDQUFDO1FBQzNDLDJCQUFzQixHQUFRLEVBQUUsT0FBTyxFQUFFLE9BQU8sRUFBRSxhQUFhLEVBQUUsYUFBYTtZQUNqRixvQkFBb0IsRUFBRSxpQkFBaUIsRUFBQyxRQUFRLEVBQUMsUUFBUSxFQUFDLFVBQVUsRUFBQyxVQUFVLEVBQUUsQ0FBQztRQUMvRSxXQUFNLEdBQVEsQ0FBQyxFQUFFLEdBQUcsRUFBRSxDQUFDLEVBQUUsTUFBTSxFQUFFLFFBQVEsRUFBRSxFQUFFLEVBQUUsR0FBRyxFQUFFLENBQUMsRUFBRSxNQUFNLEVBQUUsVUFBVSxFQUFFLENBQUMsQ0FBQztJQTZFcEYsQ0FBQztJQTFFRCxzQkFDSSxxQ0FBVTtRQUhkLDBCQUEwQjs7Ozs7O1FBRTFCLFVBQ2UsUUFBYTtZQUMxQixJQUFJLENBQUMsWUFBWSxHQUFHLENBQUMsUUFBUSxDQUFDLElBQUksZUFBZSxDQUFDO1lBQ2xELElBQUksQ0FBQyxZQUFZLEdBQUcsUUFBUSxDQUFDO1FBQy9CLENBQUM7OztPQUFBO0lBQ0Qsc0JBQ0ksb0NBQVM7Ozs7O1FBRGIsVUFDYyxLQUFVO1lBQ3RCLElBQUksQ0FBQyxVQUFVLEdBQUcsQ0FBQyxLQUFLLENBQUMsSUFBSSxlQUFlLENBQUM7WUFDN0MsSUFBSSxDQUFDLFVBQVUsR0FBRyxLQUFLLENBQUM7UUFDMUIsQ0FBQzs7O09BQUE7SUFFRCxzQkFDSSx3Q0FBYTs7Ozs7UUFEakIsVUFDa0IsUUFBYTtZQUM3QixJQUFJLENBQUMsZUFBZSxHQUFHLENBQUMsUUFBUSxDQUFDLElBQUksZUFBZSxDQUFDO1lBQ3JELElBQUksQ0FBQyxlQUFlLEdBQUcsUUFBUSxDQUFDO1FBQ2xDLENBQUM7OztPQUFBO0lBQ0Qsc0JBQ0ksb0NBQVM7Ozs7O1FBRGIsVUFDYyxLQUFVO1lBQ3RCLElBQUksQ0FBQyxhQUFhLEdBQUcsQ0FBQyxLQUFLLENBQUMsSUFBSSxlQUFlLENBQUM7WUFDaEQsSUFBSSxDQUFDLGFBQWEsR0FBRyxLQUFLLENBQUM7UUFDN0IsQ0FBQzs7O09BQUE7SUFFRCxzQkFDSSxtQ0FBUTs7Ozs7UUFEWixVQUNhLEtBQVU7WUFDckIsSUFBSSxDQUFDLFlBQVksR0FBRyxDQUFDLEtBQUssQ0FBQyxJQUFJLGVBQWUsQ0FBQztZQUMvQyxJQUFJLENBQUMsWUFBWSxHQUFHLEtBQUssQ0FBQztRQUM1QixDQUFDOzs7T0FBQTtJQUNELHNCQUNJLHNDQUFXOzs7OztRQURmLFVBQ2dCLFlBQWlCO1lBQy9CLElBQUksQ0FBQyxpQkFBaUIsR0FBRyxDQUFDLFlBQVksQ0FBQyxJQUFJLGVBQWUsQ0FBQztZQUMzRCxJQUFJLENBQUMsaUJBQWlCLEdBQUcsWUFBWSxDQUFBO1FBQ3ZDLENBQUM7OztPQUFBO0lBQ0Qsc0JBQ0kscUNBQVU7Ozs7O1FBRGQsVUFDZSxRQUFhO1lBQzFCLElBQUksQ0FBQyxjQUFjLEdBQUcsQ0FBQyxRQUFRLENBQUMsSUFBSSxlQUFlLENBQUM7WUFDcEQsSUFBSSxDQUFDLGNBQWMsR0FBRyxRQUFRLENBQUE7UUFDaEMsQ0FBQzs7O09BQUE7SUFFRCxzQkFDSSwwQ0FBZTs7Ozs7UUFEbkIsVUFDb0IsY0FBbUI7WUFDckMsSUFBSSxDQUFDLG1CQUFtQixHQUFHLENBQUMsY0FBYyxDQUFDLElBQUksZUFBZSxDQUFDO1lBQy9ELElBQUksQ0FBQyxtQkFBbUIsR0FBRyxjQUFjLENBQUM7UUFFNUMsQ0FBQzs7O09BQUE7SUFDRCxzQkFDSSx3Q0FBYTs7Ozs7UUFEakIsVUFDa0IsWUFBaUI7WUFDakMsSUFBSSxDQUFDLGlCQUFpQixHQUFHLENBQUMsWUFBWSxDQUFDLElBQUksZUFBZSxDQUFDO1lBQzNELElBQUksQ0FBQyxpQkFBaUIsR0FBRyxZQUFZLENBQUM7UUFFeEMsQ0FBQzs7O09BQUE7SUFDRCxzQkFDSSxvQ0FBUzs7Ozs7UUFEYixVQUNjLFlBQWlCO1lBQzdCLElBQUksQ0FBQyxhQUFhLEdBQUcsQ0FBQyxZQUFZLENBQUMsSUFBSSxlQUFlLENBQUM7WUFDdkQsSUFBSSxDQUFDLGFBQWEsR0FBRyxZQUFZLENBQUM7UUFHcEMsQ0FBQzs7O09BQUE7SUFDRCxzQkFDSSxzQ0FBVzs7Ozs7UUFEZixVQUNnQixjQUFtQjtZQUNqQyxJQUFJLENBQUMsZUFBZSxHQUFHLENBQUMsY0FBYyxDQUFDLElBQUksZUFBZSxDQUFDO1lBQzNELElBQUksQ0FBQyxlQUFlLEdBQUcsY0FBYyxDQUFDO1FBRXhDLENBQUM7OztPQUFBO0lBQ0Qsc0JBQ0ksc0NBQVc7Ozs7O1FBRGYsVUFDZ0IsaUJBQXNCO1lBQ3BDLElBQUksQ0FBQyxhQUFhLEdBQUcsQ0FBQyxpQkFBaUIsQ0FBQyxJQUFJLGVBQWUsQ0FBQztZQUM1RCxJQUFJLENBQUMsYUFBYSxHQUFHLGlCQUFpQixDQUFDO1FBR3pDLENBQUM7OztPQUFBOzs7O0lBT0QsZ0NBQVE7OztJQUFSO1FBQUEsaUJBZ0JDO1FBZkMsMkJBQTJCO1FBQzNCLElBQUksQ0FBQyxVQUFVLENBQUMsY0FBYyxFQUFFLENBQUM7UUFDakMsVUFBVTs7O1FBQUM7WUFDVCxLQUFJLENBQUMsVUFBVSxDQUFDLFlBQVksQ0FBQyxLQUFJLENBQUMsYUFBYSxDQUFDLENBQUM7UUFDbkQsQ0FBQyxHQUFFLEVBQUUsQ0FBQyxDQUFDO1FBQ1AsSUFBSSxDQUFDLFVBQVUsQ0FBQyxnQkFBZ0IsRUFBRSxDQUFDO1FBQ25DLFVBQVU7OztRQUFDO1lBQ1QsS0FBSSxDQUFDLFVBQVUsQ0FBQyxjQUFjLENBQUMsS0FBSSxDQUFDLGVBQWUsQ0FBQyxDQUFDO1FBQ3ZELENBQUMsR0FBRSxFQUFFLENBQUMsQ0FBQztRQUNQLElBQUksQ0FBQyxVQUFVLENBQUMsb0JBQW9CLEVBQUUsQ0FBQztRQUN2QyxVQUFVOzs7UUFBQztZQUNULEtBQUksQ0FBQyxVQUFVLENBQUMsa0JBQWtCLENBQUMsS0FBSSxDQUFDLG1CQUFtQixDQUFDLENBQUM7UUFDL0QsQ0FBQyxHQUFFLEVBQUUsQ0FBQyxDQUFDO1FBQ1AseUJBQXlCO0lBRTNCLENBQUM7SUFDRCxvREFBb0Q7Ozs7O0lBRXBELCtCQUFPOzs7O0lBQVA7UUFBQSxpQkFjQzs7WUFaSyxJQUFTO1FBQ2IsSUFBSSxHQUFHO1lBQ0wsUUFBUSxFQUFFLG9CQUFvQjtTQUMvQixDQUFBO1FBQ0QsSUFBSSxDQUFDLFVBQVUsQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLENBQUMsU0FBUzs7OztRQUFDLFVBQUEsUUFBUTs7Z0JBQzFDLE1BQVc7WUFDZixNQUFNLEdBQUcsUUFBUSxDQUFDO1lBQ2xCLEtBQUksQ0FBQyxhQUFhLEdBQUcsTUFBTSxDQUFDLEdBQUcsQ0FBQztRQUdsQyxDQUFDLEVBQUMsQ0FBQTtJQUVKLENBQUM7SUFDQSx1QkFBdUI7Ozs7O0lBRXhCLGlDQUFTOzs7O0lBQVQ7UUFDRSxJQUFJLENBQUMsTUFBTSxDQUFDLGFBQWEsQ0FBQyxHQUFHLEdBQUMsSUFBSSxDQUFDLGVBQWUsQ0FBQyxDQUFDO0lBQ3RELENBQUM7O2dCQTdJRixTQUFTLFNBQUM7b0JBQ1QsUUFBUSxFQUFFLFVBQVU7b0JBQ3BCLDJvQ0FBa0M7O2lCQUVuQzs7OztnQkFQOEIsTUFBTTtnQkFDNUIsVUFBVTtnQkFEb0IsY0FBYzs7OzZCQThCbEQsS0FBSzs0QkFLTCxLQUFLO2dDQU1MLEtBQUs7NEJBS0wsS0FBSzsyQkFNTCxLQUFLOzhCQUtMLEtBQUs7NkJBS0wsS0FBSztrQ0FNTCxLQUFLO2dDQU1MLEtBQUs7NEJBTUwsS0FBSzs4QkFPTCxLQUFLOzhCQU1MLEtBQUs7O0lBcURSLG9CQUFDO0NBQUEsQUEvSUQsSUErSUM7U0ExSVksYUFBYTs7Ozs7O0lBRXhCLHdDQUE0Qjs7SUFDNUIsd0NBQWlDOztJQUNqQyxxQ0FBOEI7O0lBQzlCLHNDQUErQjs7SUFDL0IsdUNBQWdDOztJQUNoQywwQ0FBbUM7O0lBQ25DLHNDQUEwQjs7SUFDMUIsNENBQWdDOztJQUNoQywwQ0FBOEI7O0lBQzlCLHdDQUE0Qjs7SUFDNUIscUNBQThCOztJQUM5QixtQ0FBd0I7Ozs7O0lBRXhCLHNDQUErQjs7SUFDL0Isc0NBQWtEOztJQUNsRCwrQ0FDc0Y7O0lBQ3RGLCtCQUFvRjs7SUEwRXhFLCtCQUFxQjs7SUFDL0IsbUNBQTZCOztJQUFFLG9DQUFrQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgT25Jbml0LCBJbnB1dCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgUm91dGVyTW9kdWxlLCBSb3V0ZXMsIFJvdXRlciwgQWN0aXZhdGVkUm91dGUgfSBmcm9tICdAYW5ndWxhci9yb3V0ZXInO1xuaW1wb3J0IHsgQXBpU2VydmljZSB9IGZyb20gJy4vYXBpLnNlcnZpY2UnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdsaWItQmxvZycsXG4gIHRlbXBsYXRlVXJsOiAnYmxvZy5jb21wb25lbnQuaHRtbCcsXG4gIHN0eWxlVXJsczogWydzdHlsZS5jc3MnXVxufSlcbmV4cG9ydCBjbGFzcyBCbG9nQ29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcbiAgLyoqYmxvZyB2YXJpYWJsZXMgZGVjbGFyYXRpb24qKi9cbiAgcHVibGljIGFkZE1lbWJlcnZpYVVybDogYW55O1xuICBwdWJsaWMgUmVzb2x2ZUxJc3REYXRhOiBhbnkgPSBbXTtcbiAgcHVibGljIGVkaXRSb3V0ZVVybDogYW55ID0gJyc7XG4gIHB1YmxpYyBCbG9ndGFibGVuYW1lOiBhbnkgPSAnJztcbiAgcHVibGljIGRlbGV0ZVJvdXRlVXJsOiBhbnkgPSAnJztcbiAgcHVibGljIGFkZHVwZGF0ZVJvdXRlVXJsOiBhbnkgPSAnJztcbiAgcHVibGljIHNlcnZlclVybERhdGE6IGFueTtcbiAgcHVibGljIGdldERhdGFFbmRwb2ludERhdGE6IGFueTtcbiAgcHVibGljIGdldERhdGFTb3VyY2VEYXRhOiBhbnk7XG4gIHB1YmxpYyBhZGRFbmRwb2ludERhdGE6IGFueTtcbiAgcHVibGljIGFwaVVybHZpYUFwcDogYW55ID0gJyc7XG4gIHB1YmxpYyB0b2tlblZpYXBwOmFueT0nJ1xuICAvKipsaWItbGlzdGluZyBzdGFydCBoZXJlKiovXG4gIHB1YmxpYyBibG9nRGF0YWFycmF5OiBhbnkgPSBbXTtcbiAgcHVibGljIEJsb2dsaXN0X3NraXA6IGFueSA9IFtcIl9pZFwiLFwiZGVzY3JpcHRpb25cIl07XG4gIHB1YmxpYyBCbG9nbGlzdF9tb2RpZnlfaGVhZGVyOiBhbnkgPSB7ICd0aXRsZSc6IFwiVGl0bGVcIiwgJ2Rlc2NyaXB0aW9uJzogXCJEZXNjcmlwdGlvblwiLFxuICAgICAgJ3BhcmVudGNhdGVnb3J5bmFtZSc6IFwiUGFyZW50IENhdGVnb3J5XCIsXCJzdGF0dXNcIjpcIlN0YXR1c1wiLFwicHJpb3JpdHlcIjpcIlByaW9yaXR5XCIgfTtcbiAgcHVibGljIHN0YXR1czogYW55ID0gW3sgdmFsOiAxLCAnbmFtZSc6ICdBY3RpdmUnIH0sIHsgdmFsOiAwLCAnbmFtZSc6ICdJbmFjdGl2ZScgfV07XG4gIC8qKmxpYi1saXN0aW5nIGVuZCBoZXJlKiovXG5cbiAgQElucHV0KCkgIC8vZm9yIGFwaVVybCB2aWEgYXBwbGljYXRpb25cbiAgc2V0IEJsb2dhcGlVcmwoYXBpdmFsdWU6IGFueSkge1xuICAgIHRoaXMuYXBpVXJsdmlhQXBwID0gKGFwaXZhbHVlKSB8fCAnPG5vIG5hbWUgc2V0Pic7XG4gICAgdGhpcy5hcGlVcmx2aWFBcHAgPSBhcGl2YWx1ZTtcbiAgfVxuICBASW5wdXQoKSAgLy9mb3IgdG9rZW4gdmlhIGFwcGxpY2F0aW9uXG4gIHNldCBCbG9nVG9rZW4odG9rZW46IGFueSkge1xuICAgIHRoaXMudG9rZW5WaWFwcCA9ICh0b2tlbikgfHwgJzxubyBuYW1lIHNldD4nO1xuICAgIHRoaXMudG9rZW5WaWFwcCA9IHRva2VuO1xuICB9XG5cbiAgQElucHV0KCkgIC8vZm9yIGFkZCBidXR0b25cbiAgc2V0IGFkZFRlYW1tZW1iZXIoYWRkdmFsdWU6IGFueSkge1xuICAgIHRoaXMuYWRkTWVtYmVydmlhVXJsID0gKGFkZHZhbHVlKSB8fCAnPG5vIG5hbWUgc2V0Pic7XG4gICAgdGhpcy5hZGRNZW1iZXJ2aWFVcmwgPSBhZGR2YWx1ZTtcbiAgfVxuICBASW5wdXQoKSAgIC8vVGFibGVuYW1lIGZyb20gYXBwbGljYXRpb25cbiAgc2V0IEJsb2d0YWJsZSh2YWx1ZTogYW55KSB7XG4gICAgdGhpcy5CbG9ndGFibGVuYW1lID0gKHZhbHVlKSB8fCAnPG5vIG5hbWUgc2V0Pic7XG4gICAgdGhpcy5CbG9ndGFibGVuYW1lID0gdmFsdWU7XG4gIH1cblxuICBASW5wdXQoKSAvL2ZvciBlZGl0IHJvdXRlXG4gIHNldCBlZGl0YmxvZyh2YWx1ZTogYW55KSB7XG4gICAgdGhpcy5lZGl0Um91dGVVcmwgPSAodmFsdWUpIHx8ICc8bm8gbmFtZSBzZXQ+JztcbiAgICB0aGlzLmVkaXRSb3V0ZVVybCA9IHZhbHVlO1xuICB9XG4gIEBJbnB1dCgpICAvL2ZvciBhZGQgb3IgdXBkYXRlIGVuZHBvaW50XG4gIHNldCBBZGRFZGl0QmxvZyhhZGRlZGl0dmFsdWU6IGFueSkge1xuICAgIHRoaXMuYWRkdXBkYXRlUm91dGVVcmwgPSAoYWRkZWRpdHZhbHVlKSB8fCAnPG5vIG5hbWUgc2V0Pic7XG4gICAgdGhpcy5hZGR1cGRhdGVSb3V0ZVVybCA9IGFkZGVkaXR2YWx1ZVxuICB9XG4gIEBJbnB1dCgpICAgICAvL2ZvciBkZWxldGVFbmRwb2ludFxuICBzZXQgZGVsZXRlQmxvZyhkZWxWYWx1ZTogYW55KSB7XG4gICAgdGhpcy5kZWxldGVSb3V0ZVVybCA9IChkZWxWYWx1ZSkgfHwgJzxubyBuYW1lIHNldD4nO1xuICAgIHRoaXMuZGVsZXRlUm91dGVVcmwgPSBkZWxWYWx1ZVxuICB9XG5cbiAgQElucHV0KCkgICAgICAgICAgLy9zZXR0aW5nIHRoZSBzZXJ2ZXIgdXJsIGZyb20gcHJvamVjdFxuICBzZXQgZ2V0RGF0YUVuZHBvaW50KGVuZHBvaW50VXJsdmFsOiBhbnkpIHtcbiAgICB0aGlzLmdldERhdGFFbmRwb2ludERhdGEgPSAoZW5kcG9pbnRVcmx2YWwpIHx8ICc8bm8gbmFtZSBzZXQ+JztcbiAgICB0aGlzLmdldERhdGFFbmRwb2ludERhdGEgPSBlbmRwb2ludFVybHZhbDtcblxuICB9XG4gIEBJbnB1dCgpICAgICAgICAgIC8vc2V0dGluZyB0aGUgc2VydmVyIHVybCBmcm9tIHByb2plY3RcbiAgc2V0IGdldERhdGFTb3VyY2Uoc2VydmVyVXJsdmFsOiBhbnkpIHtcbiAgICB0aGlzLmdldERhdGFTb3VyY2VEYXRhID0gKHNlcnZlclVybHZhbCkgfHwgJzxubyBuYW1lIHNldD4nO1xuICAgIHRoaXMuZ2V0RGF0YVNvdXJjZURhdGEgPSBzZXJ2ZXJVcmx2YWw7XG5cbiAgfVxuICBASW5wdXQoKSAgICAgICAgICAvL3NldHRpbmcgdGhlIHNlcnZlciB1cmwgZnJvbSBwcm9qZWN0XG4gIHNldCBzZXJ2ZXJVcmwoc2VydmVyVXJsdmFsOiBhbnkpIHtcbiAgICB0aGlzLnNlcnZlclVybERhdGEgPSAoc2VydmVyVXJsdmFsKSB8fCAnPG5vIG5hbWUgc2V0Pic7XG4gICAgdGhpcy5zZXJ2ZXJVcmxEYXRhID0gc2VydmVyVXJsdmFsO1xuXG5cbiAgfVxuICBASW5wdXQoKSAgICAgICAgICAvL3NldHRpbmcgdGhlIHNlcnZlciB1cmwgZnJvbSBwcm9qZWN0XG4gIHNldCBhZGRFbmRwb2ludChlbmRwb2ludFVybHZhbDogYW55KSB7XG4gICAgdGhpcy5hZGRFbmRwb2ludERhdGEgPSAoZW5kcG9pbnRVcmx2YWwpIHx8ICc8bm8gbmFtZSBzZXQ+JztcbiAgICB0aGlzLmFkZEVuZHBvaW50RGF0YSA9IGVuZHBvaW50VXJsdmFsO1xuXG4gIH1cbiAgQElucHV0KCkgICAgICAgICAgLy9yZXNvbHZlIGxpc3RcbiAgc2V0IGxpc3RSZXNvbHZlKGxpc3RyZXNvbHZlVXJsdmFsOiBhbnkpIHtcbiAgICB0aGlzLmJsb2dEYXRhYXJyYXkgPSAobGlzdHJlc29sdmVVcmx2YWwpIHx8ICc8bm8gbmFtZSBzZXQ+JztcbiAgICB0aGlzLmJsb2dEYXRhYXJyYXkgPSBsaXN0cmVzb2x2ZVVybHZhbDtcbiAgICBcbiAgICBcbiAgfVxuXG4gIGNvbnN0cnVjdG9yKHB1YmxpYyByb3V0ZXI6IFJvdXRlcixcbiAgICBwdWJsaWMgYXBpU2VydmljZTogQXBpU2VydmljZSwgcHVibGljIGFjdGl2ZXJvdXRlOiBBY3RpdmF0ZWRSb3V0ZSkge1xuXG4gIH1cblxuICBuZ09uSW5pdCgpIHtcbiAgICAvKipvYnNlcnZhYmxlIHN0YXJ0IGhlcmUqKi9cbiAgICB0aGlzLmFwaVNlcnZpY2UuY2xlYXJTZXJ2ZXJVcmwoKTtcbiAgICBzZXRUaW1lb3V0KCgpID0+IHtcbiAgICAgIHRoaXMuYXBpU2VydmljZS5zZXRTZXJ2ZXJVcmwodGhpcy5zZXJ2ZXJVcmxEYXRhKTtcbiAgICB9LCA1MCk7XG4gICAgdGhpcy5hcGlTZXJ2aWNlLmNsZWFyYWRkRW5kcG9pbnQoKTtcbiAgICBzZXRUaW1lb3V0KCgpID0+IHtcbiAgICAgIHRoaXMuYXBpU2VydmljZS5zZXRhZGRFbmRwb2ludCh0aGlzLmFkZEVuZHBvaW50RGF0YSk7XG4gICAgfSwgNTApO1xuICAgIHRoaXMuYXBpU2VydmljZS5jbGVhcmdldGRhdGFFbmRwb2ludCgpO1xuICAgIHNldFRpbWVvdXQoKCkgPT4ge1xuICAgICAgdGhpcy5hcGlTZXJ2aWNlLnNldGdldGRhdGFFbmRwb2ludCh0aGlzLmdldERhdGFFbmRwb2ludERhdGEpO1xuICAgIH0sIDUwKTtcbiAgICAvKipvYnNlcnZhYmxlIGVuZCBoZXJlKiovXG4gICAgXG4gIH1cbiAgLyoqKmdldHRpbmcgYWxsIHRoZSBibG9nIGRhdGEgZnVuY3Rpb24gc3RhcnQgaGVyZSoqL1xuXG4gIGdldERhdGEoKSB7XG5cbiAgICBsZXQgZGF0YTogYW55O1xuICAgIGRhdGEgPSB7XG4gICAgICBcInNvdXJjZVwiOiBcImJsb2dfY2F0ZWdvcnlfdmlld1wiXG4gICAgfVxuICAgIHRoaXMuYXBpU2VydmljZS5nZXREYXRhKGRhdGEpLnN1YnNjcmliZShyZXNwb25zZSA9PiB7XG4gICAgICBsZXQgcmVzdWx0OiBhbnk7XG4gICAgICByZXN1bHQgPSByZXNwb25zZTtcbiAgICAgIHRoaXMuYmxvZ0RhdGFhcnJheSA9IHJlc3VsdC5yZXM7XG4gICAgICBcblxuICAgIH0pXG5cbiAgfVxuICAgLyoqZnVuY3Rpb24gZW5kIGhlcmUqKi9cbiBcbiAgYWRkQnV0dG9uKCl7XG4gICAgdGhpcy5yb3V0ZXIubmF2aWdhdGVCeVVybCgnLycrdGhpcy5hZGRNZW1iZXJ2aWFVcmwpO1xuICB9XG4gXG59XG4iXX0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYmxvZy5jb21wb25lbnQuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9ibG9nLyIsInNvdXJjZXMiOlsibGliL2Jsb2cuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSxPQUFPLEVBQUUsU0FBUyxFQUFVLEtBQUssRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUl6RDtJQTJDRSx1R0FBdUc7SUFFdkc7UUFwQ0EsV0FBTSxHQUFTLEtBQUssQ0FBQztJQW9DTCxDQUFDO0lBaENqQixzQkFDSSxpQ0FBTTtRQUpWLHlGQUF5RjtRQUV6Rix3R0FBd0c7Ozs7Ozs7O1FBQ3hHLFVBQ1csWUFBaUI7WUFFMUIsSUFBSSxDQUFDLGNBQWMsR0FBRztnQkFDcEIsTUFBTSxFQUFFLFlBQVksQ0FBQyxVQUFVO2dCQUMvQixZQUFZLEVBQUUsWUFBWSxDQUFDLFlBQVk7Z0JBQ3ZDLFVBQVUsRUFBRSxZQUFZLENBQUMsVUFBVTtnQkFDbkMsU0FBUyxFQUFFLFlBQVksQ0FBQyxTQUFTO2dCQUNqQyxjQUFjLEVBQUUsQ0FBQyxLQUFLLEVBQUUsUUFBUSxFQUFFLFlBQVksRUFBRSxZQUFZLEVBQUMsT0FBTyxFQUFDLGtCQUFrQixDQUFDO2dCQUN4Rix1QkFBdUIsRUFBRSxFQUFFLFdBQVcsRUFBQyxZQUFZLEVBQUUsYUFBYSxFQUFFLGFBQWEsRUFBRSxVQUFVLEVBQUUsVUFBVSxFQUFFLFFBQVEsRUFBRSxRQUFRLEVBQUUsb0JBQW9CLEVBQUMsc0JBQXNCLEVBQUM7Z0JBQzNLLHVCQUF1QixFQUFFLE9BQU87Z0JBQ2hDLFNBQVMsRUFBRSxDQUFDLEVBQUUsR0FBRyxFQUFFLENBQUMsRUFBRSxJQUFJLEVBQUUsUUFBUSxFQUFFLEVBQUUsRUFBRSxHQUFHLEVBQUUsQ0FBQyxFQUFFLElBQUksRUFBRSxVQUFVLEVBQUUsQ0FBQztnQkFDckUsU0FBUyxFQUFFLFlBQVksQ0FBQyxjQUFjO2dCQUN0QyxPQUFPLEVBQUUsWUFBWSxDQUFDLE9BQU87Z0JBQzdCLFFBQVEsRUFBRSxZQUFZLENBQUMsUUFBUTtnQkFDL0IsY0FBYyxFQUFFLFlBQVksQ0FBQyxjQUFjO2dCQUMzQyxJQUFJLEVBQUUsWUFBWSxDQUFDLElBQUk7Z0JBQ3ZCLGVBQWUsRUFBQztvQkFDZCxVQUFVLEVBQUUsQ0FBQyxFQUFFLEtBQUssRUFBRSx5QkFBeUIsRUFBRSxLQUFLLEVBQUUsV0FBVyxFQUFFLEVBQUMsRUFBRSxLQUFLLEVBQUUsOEJBQThCLEVBQUUsS0FBSyxFQUFFLG9CQUFvQixFQUFFLENBQUM7b0JBQzdJLFlBQVksRUFBRSxDQUFDLEVBQUUsS0FBSyxFQUFFLGtCQUFrQixFQUFFLEtBQUssRUFBRSxRQUFRLEVBQUUsTUFBTSxFQUFFLENBQUMsRUFBRSxHQUFHLEVBQUUsQ0FBQyxFQUFFLElBQUksRUFBRSxRQUFRLEVBQUUsRUFBRSxFQUFFLEdBQUcsRUFBRSxDQUFDLEVBQUUsSUFBSSxFQUFFLFVBQVUsRUFBRSxDQUFDLEVBQUUsQ0FBQztpQkFDbkk7YUFPRixDQUFBO1lBQ0QsSUFBSSxDQUFDLE1BQU0sR0FBRyxLQUFLLENBQUM7UUFDdEIsQ0FBQzs7O09BQUE7Ozs7SUFLRCxnQ0FBUTs7O0lBQVI7SUFDQSxDQUFDOztnQkFoREYsU0FBUyxTQUFDO29CQUNULFFBQVEsRUFBRSxVQUFVO29CQUNwQiw2dkNBQWtDOztpQkFFbkM7Ozs7O3lCQVNFLEtBQUs7O0lBcUNSLG9CQUFDO0NBQUEsQUFsREQsSUFrREM7U0E3Q1ksYUFBYTs7O0lBR3hCLHVDQUFtQjs7SUFDbkIsK0JBQXFCIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tcG9uZW50LCBPbkluaXQsIElucHV0IH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBSb3V0ZXJNb2R1bGUsIFJvdXRlcywgUm91dGVyLCBBY3RpdmF0ZWRSb3V0ZSB9IGZyb20gJ0Bhbmd1bGFyL3JvdXRlcic7XG5pbXBvcnQgeyBBcGlTZXJ2aWNlIH0gZnJvbSAnLi9hcGkuc2VydmljZSc7XG5cbkBDb21wb25lbnQoe1xuICBzZWxlY3RvcjogJ2xpYi1CbG9nJyxcbiAgdGVtcGxhdGVVcmw6ICdibG9nLmNvbXBvbmVudC5odG1sJyxcbiAgc3R5bGVVcmxzOiBbJ3N0eWxlLmNzcyddXG59KVxuZXhwb3J0IGNsYXNzIEJsb2dDb21wb25lbnQgaW1wbGVtZW50cyBPbkluaXQge1xuIFxuICAvLyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ZGVjbGFyYXRpb249PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuICBibG9nTGlzdENvbmZpZzphbnk7XG4gIGxvYWRlcjpib29sZWFuPWZhbHNlO1xuICAvLyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuXG4gIC8vID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PUlucHV0IEZvciBMaWIgTGlzdGluZz09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09XG4gIEBJbnB1dCgpXG4gIHNldCBjb25maWcocmVjZWl2ZWREYXRhOiBhbnkpIHtcbiAgIFxuICAgIHRoaXMuYmxvZ0xpc3RDb25maWcgPSB7XG4gICAgICBhcGlVcmw6IHJlY2VpdmVkRGF0YS5hcGlCYXNlVXJsLFxuICAgICAgbGlzdEVuZFBvaW50OiByZWNlaXZlZERhdGEubGlzdEVuZFBvaW50LFxuICAgICAgZGF0YXNvdXJjZTogcmVjZWl2ZWREYXRhLmRhdGFzb3VyY2UsXG4gICAgICB0YWJsZU5hbWU6IHJlY2VpdmVkRGF0YS50YWJsZU5hbWUsXG4gICAgICBsaXN0QXJyYXlfc2tpcDogW1wiX2lkXCIsIFwidXNlcklkXCIsIFwiY3JlYXRlZF9hdFwiLCBcInVwZGF0ZWRfYXRcIixcImltYWdlXCIsXCJkZXNjcmlwdGlvbl9odG1sXCJdLFxuICAgICAgbGlzdEFycmF5X21vZGlmeV9oZWFkZXI6IHsgXCJibG9ndGl0bGVcIjpcIkJsb2cgVGl0bGVcIiwgXCJkZXNjcmlwdGlvblwiOiBcIkRlc2NyaXB0aW9uXCIsIFwicHJpb3JpdHlcIjogXCJQcmlvcml0eVwiLCBcInN0YXR1c1wiOiBcIlN0YXR1c1wiICxcInBhcmVudGNhdGVnb3J5bmFtZVwiOlwiUGFyZW50IENhdGVnb3J5IE5hbWVcIn0sXG4gICAgICBhZG1pbnRhYmxlbmFtZVRhYmxlTmFtZTogXCJhZG1pblwiLFxuICAgICAgc3RhdHVzYXJyOiBbeyB2YWw6IDEsIG5hbWU6IFwiQWN0aXZlXCIgfSwgeyB2YWw6IDAsIG5hbWU6ICdJbmFjdGl2ZScgfV0sXG4gICAgICB1cGRhdGV1cmw6IHJlY2VpdmVkRGF0YS51cGRhdGVFbmRwb2ludCxcbiAgICAgIGVkaXRVcmw6IHJlY2VpdmVkRGF0YS5lZGl0VXJsLFxuICAgICAgand0VG9rZW46IHJlY2VpdmVkRGF0YS5qd3RUb2tlbixcbiAgICAgIGRlbGV0ZUVuZFBvaW50OiByZWNlaXZlZERhdGEuZGVsZXRlRW5kUG9pbnQsXG4gICAgICB2aWV3OiByZWNlaXZlZERhdGEudmlldyxcbiAgICAgIHNlYXJjaF9zZXR0aW5nczp7XG4gICAgICAgIHRleHRzZWFyY2g6IFt7IGxhYmVsOiBcIlNlYXJjaCBieSBibG9nIHRpdGxlLi4uXCIsIGZpZWxkOiAnYmxvZ3RpdGxlJyB9LHsgbGFiZWw6IFwiU2VhcmNoIGJ5IHBhcmVudCBjYXRlZ29yeS4uLlwiLCBmaWVsZDogJ3BhcmVudGNhdGVnb3J5bmFtZScgfV0sXG4gICAgICAgIHNlbGVjdHNlYXJjaDogW3sgbGFiZWw6ICdTZWFyY2ggQnkgc3RhdHVzJywgZmllbGQ6ICdzdGF0dXMnLCB2YWx1ZXM6IFt7IHZhbDogMSwgbmFtZTogXCJBY3RpdmVcIiB9LCB7IHZhbDogMCwgbmFtZTogJ0luYWN0aXZlJyB9XSB9XSxcbiAgICAgIH0sXG4gICAgICAvLyAgLypTaG93aW5nIEltYWdlIGluIHRoZSBNb2RhbCovXG4gICAgICAvLyAgcGVuZGluZ21vZGVsYXBwbGljYXRpb25hcnJheV9kZXRhaWxfZGF0YXR5cGU6IFt7XG4gICAgICAvLyAgIGtleTogXCJpbWFnZVwiLFxuICAgICAgLy8gICB2YWx1ZTogJ2ltYWdlJyxcbiAgICAgIC8vICAgZmlsZXVybDogJ2h0dHBzOi8vczMudXMtZWFzdC0yLmFtYXpvbmF3cy5jb20vY3JtZmlsZXMuaW5mbHV4aG9zdHNlcnZlci90ZXN0aW1vbmlhbC8nICAgICAgICAgICAgIC8vIEltYWdlIHBhdGggXG4gICAgICAvLyB9XSxcbiAgICB9XG4gICAgdGhpcy5sb2FkZXIgPSBmYWxzZTtcbiAgfVxuICAvLyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09XG5cbiAgY29uc3RydWN0b3IoKSB7IH1cblxuICBuZ09uSW5pdCgpIHtcbiAgfVxuXG59XG5cbiJdfQ==

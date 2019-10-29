@@ -69,7 +69,8 @@
                             <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/addtrainings']">Manage Training</a>
                             <!-- <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-lessons']">Manage Lessons</a> -->
                             <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/trainingsectionlist']">Manage Lessons</a>
-                            <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/training-center']">Training Center</a>
+                            <!-- <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/training-center']">Training Center</a> -->
+                            <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" (click)="gototrainingsectionwithcat()">Training Center</a>
                             <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/training-report']">Training Report</a>
                         </mat-menu>
                         <div class="triangle"></div>

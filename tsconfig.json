@@ -44,11 +44,11 @@
       "login/*": [
         "dist/login/*"
       ],
-      "blogs": [
-        "dist/blogs"
+      "blog": [
+        "dist/blog"
       ],
-      "blogs/*": [
-        "dist/blogs/*"
+      "blog/*": [
+        "dist/blog/*"
       ],
       "from": [
         "dist/from"

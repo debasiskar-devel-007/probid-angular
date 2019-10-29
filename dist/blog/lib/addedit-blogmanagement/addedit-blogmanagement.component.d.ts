@@ -46,6 +46,18 @@ export declare class AddeditBlogmanagementComponent implements OnInit {
     messageText: any;
     listUrl: any;
     testTag: any;
+    imageConfigData: any;
+    ErrCode: any;
+    img_var: any;
+    image_name: any;
+    image_type: any;
+    flag: boolean;
+    images_array: any;
+    images_array_edit: any;
+    fileConfigData: any;
+    file_array: any;
+    file_array_edit: any;
+    action2: any;
     config: any;
     serverUrl: any;
     getDataEndpoint: any;
@@ -54,9 +66,12 @@ export declare class AddeditBlogmanagementComponent implements OnInit {
     constructor(http: HttpClient, apiservice: ApiService, activatedRoute: ActivatedRoute, router: Router, formBuilder: FormBuilder, dialog: MatDialog, snackBar: MatSnackBar);
     ngOnInit(): void;
     private _filter;
+    action: any;
+    imageUpload: any;
+    fileUpload: any;
     openDialog(x: any): void;
     trackByFn(index: any): any;
-    addYoutubeVideo(val: any): void;
+    addYoutubeVideo(vid_url: any, vid_tit: any, vid_desc: any): void;
     deleteCreds(): void;
     getBlogCategory(): void;
     getTagsCount(): void;
@@ -70,6 +85,8 @@ export declare class AddeditBlogmanagementComponent implements OnInit {
     preview_video(video_index: any): void;
     clearTags(index: any): void;
     openSnackBar(): void;
+    clear_image(index: any): void;
+    clearFileTags(index: any): void;
 }
 export declare class Modal {
     dialogRef: MatDialogRef<Modal>;

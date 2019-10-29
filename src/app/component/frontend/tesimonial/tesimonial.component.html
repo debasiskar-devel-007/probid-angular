@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="demo-border">
         <drag-scroll class="demo-one"
           drag-scroll-y-disabled="true"
@@ -35,7 +35,7 @@
           <button mat-raised-button color="primary"  (click)="moveTo(TestimonialListArray.length - 1)">last</button>
         </div>
     </div>
-    <button mat-button class="btnblue sim-button" (click)="btnClick();">View More</button>
+    <button mat-button class="btnblue sim-button" (click)="btnClick();">View More</button> -->
 
 
   <!-- <button mat-stroked-button class="btngeneral btngray" (click)="btnClick();">View More</button>  -->
@@ -67,8 +67,7 @@
         <owl-carousel [options]="carouselOptions" [items]="TestimonialListArray" [carouselClasses]="['owl-theme', 'row', 'sliding']">
     <div class="item" *ngFor="let image of TestimonialListArray;let i= index">
       <img class="slide-image" src="{{image.image}}" >
-      <div class="slide-text">
-        <p>{{i}}</p>
+      <div class="slide-text" (click)="showBut()">
           <h1 class="demo cursor">{{image.name}}</h1>
           <h4  class="title2 demo cursor">{{image.designation}}</h4>
           <p  class="quatation demo cursor">{{image.quatation}}</p>

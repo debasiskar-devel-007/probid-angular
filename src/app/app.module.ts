@@ -45,7 +45,7 @@ import { TesimonialComponent } from './component/frontend/tesimonial/tesimonial.
 import { TesimoniallistComponent } from './component/frontend/tesimoniallist/tesimoniallist.component';
 
 import { BlogComponent } from './component/frontend/blog/blog.component';
-import { BloglistComponent } from './component/frontend/bloglist/bloglist.component';
+// import { BloglistComponent } from './component/frontend/bloglist/bloglist.component';
 import { BlogdetailComponent } from './component/frontend/blogdetail/blogdetail.component';
 
 import { AdvanceInventorySearchComponent } from './component/frontend/advance-inventory-search/advance-inventory-search.component';
@@ -128,11 +128,23 @@ import { AdminAddCategoriesComponent } from './component/backend/admin-add-categ
 
 import { TrainingreportsComponent } from './training/trainingreports/trainingreports.component';
 
+
 import { FileUploadModule } from 'file-upload';
 import { OwlModule } from 'ngx-owl-carousel'; 
+import { ManagequizComponent } from './training/managequiz/managequiz.component';
+
+import { AddComponent } from './component/frontend/all_blog/add/add.component';
+import { ListingBlogmanagementComponent } from './component/frontend/all_blog/listing-blogmanagement/listing-blogmanagement.component';
+import { BloglistComponent } from './component/frontend/all_blog/bloglist/bloglist.component';
+import { BlogModule } from 'blog';
+import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/addedit-blogmanagement/addedit-blogmanagement.component';
 
 @NgModule({
   declarations: [
+    AddComponent,
+    AddeditBlogmanagementComponent,
+    ListingBlogmanagementComponent,
+    BloglistComponent,
     ManageleadsComponent,
     RepTraingcenterComponent,
     TrainingsectionlistComponent,
@@ -165,7 +177,7 @@ import { OwlModule } from 'ngx-owl-carousel';
     TesimonialComponent,
     TesimoniallistComponent,
     BlogComponent,
-    BloglistComponent,
+    // BloglistComponent,
     BlogdetailComponent,
     UserManagementComponent,
     BasicInventorySearchComponent,
@@ -206,10 +218,12 @@ import { OwlModule } from 'ngx-owl-carousel';
     AddAdminCategoriesComponent,
     DialogModalOpenDialog,
     AdminAddCategoriesComponent,
-    TrainingreportsComponent
+    TrainingreportsComponent,
+    ManagequizComponent
   ],
   imports: [
     // TrainingModule,
+    BlogModule,
     FileUploadModule,
     NgxUploaderModule,
     AngularFontAwesomeModule,

@@ -88,9 +88,8 @@
                       <td datalabel="Action" class="actionnewbtn">
                         <span class="deletebtn" (click)="deletetrainingsection(item._id,template)"><i class="material-icons"> delete_outline </i></span>
                         <span class="editbtn" [routerLink]="['/trainingsection' ,item._id]"><i class="material-icons"> edit </i></span><br/>
-                        <span *ngIf="item.yesorno=='yes'" class="editbtn manageanswer" [routerLink]="['/managequiz' ,item._id]">
-                        <img src="../../../../assets/images/managequiz.png" style="vertical-align:top;"></span>
-                        <!-- <span *ngIf="item.yesorno=='yes'" class="editbtn manageanswer" [routerLink]="['/managequiz' ,item._id]"><i _ngcontent-serverapp-c5="" class="material-icons"> pageview </i> Manage Quiz </span> -->
+                        <!-- <span *ngIf="item.yesorno=='yes'" class="editbtn manageanswer" [routerLink]="['/managequiz' ,item._id]">
+                        <img src="../../../../assets/images/managequiz.png" style="vertical-align:top;"></span> -->
                       </td>
                     </tr>
                     </tbody>

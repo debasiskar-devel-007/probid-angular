@@ -14,7 +14,7 @@ import { TesimoniallistComponent } from './component/frontend/tesimoniallist/tes
 import { ServiceComponent } from './component/frontend/service/service.component';
 import { ServicelistComponent } from './component/frontend/servicelist/servicelist.component';
 import { BlogComponent } from './component/frontend/blog/blog.component';
-import { BloglistComponent } from './component/frontend/bloglist/bloglist.component';
+// import { BloglistComponent } from './component/frontend/bloglist/bloglist.component';
 import { BlogdetailComponent } from './component/frontend/blogdetail/blogdetail.component';
 import { AdvanceInventorySearchComponent } from './component/frontend/advance-inventory-search/advance-inventory-search.component';
 import { BasicInventorySearchComponent } from './component/frontend/basic-inventory-search/basic-inventory-search.component';
@@ -60,7 +60,6 @@ import { MyAppointmentComponent } from './component/backend/my-appointment/my-ap
 import { CreateNewInventoryComponent } from './component/backend/create-new-inventory/create-new-inventory.component';
 import { JobTicketComponent } from './component/backend/job-ticket/job-ticket.component';
 import { SocialAdvoComponent } from './component/backend/social-advo/social-advo.component';
-import { from } from 'rxjs';
 import { TranningcategorymanagementComponent } from './training/tranningcategorymanagement/tranningcategorymanagement.component';
 import { AddEditComponent } from './training/tranningcategorymanagement/add-edit/add-edit.component';
 import { TrainingsectionlistComponent } from './training/trainingsectionlist/trainingsectionlist.component';
@@ -76,6 +75,11 @@ import { AdminManageCategoriesComponent } from './component/backend/admin-manage
 import { AddAdminCategoriesComponent } from './component/backend/add-admin-categories/add-admin-categories.component';
 import { AdminAddCategoriesComponent } from './component/backend/admin-add-categories/admin-add-categories.component';
 import { TrainingreportsComponent } from './training/trainingreports/trainingreports.component';
+import { ManagequizComponent } from './training/managequiz/managequiz.component';
+import { AddComponent } from './component/frontend/all_blog/add/add.component';
+import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/addedit-blogmanagement/addedit-blogmanagement.component';
+import { ListingBlogmanagementComponent } from './component/frontend/all_blog/listing-blogmanagement/listing-blogmanagement.component';
+import { BloglistComponent } from './component/frontend/all_blog/bloglist/bloglist.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -270,6 +274,46 @@ const routes: Routes = [
   { path: 'training-reports', component: TrainingreportsComponent },
   
   { path: '**', component: LoginComponent },
+  { path:'managequiz/:lessonid', component: ManagequizComponent},
+
+
+
+
+  /*********************** blog lib start*************************/ 
+  { path: 'blog-category/add', component: AddComponent },
+  {
+    path: 'blog-category/list',
+    component: BloglistComponent,
+    resolve: { blogCatList: ResolveService },
+    data: { requestcondition: { source: 'blog_category_view', condition: {} }, endpoint: 'datalist' }
+  },
+  {
+    path: 'blog-category/edit/:_id',
+    component: AddComponent,
+    resolve: { blogCatList: ResolveService },
+    data: { requestcondition: { source: 'blog_category', condition: {} }, endpoint: 'datalist' }
+  },
+
+
+  // ______________________BLOG LIST____________________
+
+  
+  { path: 'blog-management/add', component: AddeditBlogmanagementComponent },
+
+  {
+    path: 'blog-management/list',
+    component: ListingBlogmanagementComponent,
+    resolve: { blogList: ResolveService },
+    data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' }
+  },
+  {
+    path: 'blog-management/edit/:_id',
+    component: AddeditBlogmanagementComponent,
+    resolve: { blogList: ResolveService },
+    data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalist' }
+  },
+  
+  /*********************** blog lib start*************************/ 
 ];
 
 @NgModule({

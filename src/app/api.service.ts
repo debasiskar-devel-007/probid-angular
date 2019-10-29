@@ -265,7 +265,7 @@ export class ApiService {
 /*************** Added by himadri start here ***************/ 
 
 
-getDataResolve(endpoint: any) {
+getDataForDatalist(endpoint: any) {
 
   const httpOptions = {
       headers: new HttpHeaders({
@@ -275,7 +275,7 @@ getDataResolve(endpoint: any) {
   };
 
   // this.isTokenExpired()
-  var result = this._http.post(this.serverUrl + 'datalist', endpoint, httpOptions).pipe(map(res => res));
+  var result = this._http.post(this.serverUrlDemo + 'datalist', endpoint, httpOptions).pipe(map(res => res));
 
   return result;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ɵConsole } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DragScrollComponent } from 'ngx-drag-scroll';
 import { ApiService } from 'src/app/api.service';
@@ -85,104 +85,108 @@ export class TesimonialComponent implements OnInit {
     // })
   }
 
-
-
-  moveLeft() {
-    this.imgsmall.moveLeft();
-    // console.log(this.imgsmall);
-    let imgsmallval: any;
-    imgsmallval = this.imgsmall;
-    this.index_number = JSON.parse(imgsmallval._index)
-    // console.log(this.index_number)
-    // this.mainImg = this.imgsmall._index;
-  }
-
-  moveRight() {
-    this.imgsmall.moveRight();
-    let imgsmallval: any;
-    imgsmallval = this.imgsmall;
-    this.index_number = JSON.parse(imgsmallval._index)
-    // console.log(this.index_number)
+  showBut() {
+    console.log('show button')
   }
 
 
 
-  imgClick(val: any) {
-    // console.log(val)
-  }
-  btnClick() {
-    this.router.navigateByUrl('/testimonial');
-  };
-
-
-
-
-
-
-
-
-  clickItem(item) {
-    console.log('item clicked');
-  }
-
-  // remove() {
-  //   this.imagelist.pop();
+  // moveLeft() {
+  //   this.imgsmall.moveLeft();
+  //   // console.log(this.imgsmall);
+  //   let imgsmallval: any;
+  //   imgsmallval = this.imgsmall;
+  //   this.index_number = JSON.parse(imgsmallval._index)
+  //   // console.log(this.index_number)
+  //   // this.mainImg = this.imgsmall._index;
   // }
 
-  toggleHideSB() {
-    this.hideScrollbar = !this.hideScrollbar;
-  }
+  // moveRight() {
+  //   this.imgsmall.moveRight();
+  //   let imgsmallval: any;
+  //   imgsmallval = this.imgsmall;
+  //   this.index_number = JSON.parse(imgsmallval._index)
+  //   // console.log(this.index_number)
+  // }
 
-  toggleDisable() {
-    this.disabled = !this.disabled;
-  }
-  toggleXDisable() {
-    this.xDisabled = !this.xDisabled;
-  }
-  toggleYDisable() {
-    this.yDisabled = !this.yDisabled;
-  }
 
-  moveLeft1() {
-    this.ds.moveLeft();
-  }
 
-  moveRight1() {
-    this.ds.moveRight();
-  }
+  // imgClick(val: any) {
+  //   // console.log(val)
+  // }
+  // btnClick() {
+  //   this.router.navigateByUrl('/testimonial');
+  // };
 
-  moveTo(idx: number) {
-    this.ds.moveTo(idx);
-  }
 
-  leftBoundStat(reachesLeftBound: boolean) {
-    this.leftNavDisabled = reachesLeftBound;
-  }
 
-  rightBoundStat(reachesRightBound: boolean) {
-    this.rightNavDisabled = reachesRightBound;
-  }
 
-  onSnapAnimationFinished() {
-    console.log('snap animation finished');
-  }
 
-  onIndexChanged(idx) {
-    this.index = idx;
-    console.log('current index: ' + idx);
-  }
 
-  onDragScrollInitialized() {
-    console.log('first demo drag scroll has been initialized.');
-  }
 
-  onDragStart() {
-    console.log('drag start');
-  }
 
-  onDragEnd() {
-    console.log('drag end');
-  }
+  // clickItem(item) {
+  //   console.log('item clicked');
+  // }
+
+  // // remove() {
+  // //   this.imagelist.pop();
+  // // }
+
+  // toggleHideSB() {
+  //   this.hideScrollbar = !this.hideScrollbar;
+  // }
+
+  // toggleDisable() {
+  //   this.disabled = !this.disabled;
+  // }
+  // toggleXDisable() {
+  //   this.xDisabled = !this.xDisabled;
+  // }
+  // toggleYDisable() {
+  //   this.yDisabled = !this.yDisabled;
+  // }
+
+  // moveLeft1() {
+  //   this.ds.moveLeft();
+  // }
+
+  // moveRight1() {
+  //   this.ds.moveRight();
+  // }
+
+  // moveTo(idx: number) {
+  //   this.ds.moveTo(idx);
+  // }
+
+  // leftBoundStat(reachesLeftBound: boolean) {
+  //   this.leftNavDisabled = reachesLeftBound;
+  // }
+
+  // rightBoundStat(reachesRightBound: boolean) {
+  //   this.rightNavDisabled = reachesRightBound;
+  // }
+
+  // onSnapAnimationFinished() {
+  //   console.log('snap animation finished');
+  // }
+
+  // onIndexChanged(idx) {
+  //   this.index = idx;
+  //   console.log('current index: ' + idx);
+  // }
+
+  // onDragScrollInitialized() {
+  //   console.log('first demo drag scroll has been initialized.');
+  // }
+
+  // onDragStart() {
+  //   console.log('drag start');
+  // }
+
+  // onDragEnd() {
+  //   console.log('drag end');
+  // }
 
 
 }
