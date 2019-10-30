@@ -260,7 +260,7 @@ a{cursor:pointer;outline:none}
 
 .testimonial{background-color:#f3f3f3;padding:50px 16px}
 .testimonial .mat-list{margin-top:0!important}
-.testimonial .mat-list .mat-list-item{flex:1;flex-basis:100%;height: auto;}
+.testimonial .mat-list .mat-list-item{flex:1;flex-basis:100%;height: auto; width: 33.33%;}
 .testimonial .testiimgwarpper{float:left;padding:0 20px 10px 0}
 .testimonial .testiimgwarpper img{float:left;border:7px solid #f9f8f7;border-radius:50%;box-shadow:0 5px 5px 0 rgba(50,50,50,.15);max-width:100px;max-height:100px}
 h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-size:24px !important;font-weight:600;line-height:24px;letter-spacing:1.92px; text-transform:uppercase !important;}

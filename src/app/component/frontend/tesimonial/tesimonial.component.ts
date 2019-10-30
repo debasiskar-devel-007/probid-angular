@@ -12,35 +12,35 @@ declare var $: any;
 export class TesimonialComponent implements OnInit {
 
   carouselOptions = {
-    margin: 25,
+    margin: 5,
     nav: true,
     loop: true,
-    navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
+    navText: ["<div class='nav-btn prev-slide'><i class='material-icons'>keyboard_backspace</i></div>", "<div class='nav-btn next-slide'><i class='material-icons'>keyboard_backspace</i></div>"],
     responsiveClass: true,
     dots: false,
     responsive: {
       0: {
         items: 1,
         autoplay: true,
-        autoplayTimeout: 2000,
+        autoplayTimeout: 6000,
         autoplayHoverPause: true,
         center: true,
         loop: true,
         nav: true,
       },
       600: {
-        items: 1,
+        items: 2,
         autoplay: true,
-        autoplayTimeout: 2000,
+        autoplayTimeout: 6000,
         autoplayHoverPause: true,
         center: true,
         loop: true,
         nav: true,
       },
       991: {
-        items: 2,
+        items: 3,
         autoplay: true,
-        autoplayTimeout: 2000,
+        autoplayTimeout: 6000,
         autoplayHoverPause: true,
         center: true,
         loop: true,
@@ -49,7 +49,7 @@ export class TesimonialComponent implements OnInit {
       1500: {
         items: 3,
         autoplay: true,
-        autoplayTimeout: 2000,
+        autoplayTimeout: 6000,
         autoplayHoverPause: true,
         center: true,
         loop: true,
