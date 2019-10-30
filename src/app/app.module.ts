@@ -136,7 +136,7 @@ import { ManagequizComponent } from './training/managequiz/managequiz.component'
 import { AddComponent } from './component/frontend/all_blog/add/add.component';
 import { ListingBlogmanagementComponent } from './component/frontend/all_blog/listing-blogmanagement/listing-blogmanagement.component';
 import { BloglistComponent } from './component/frontend/all_blog/bloglist/bloglist.component';
-import { BlogModule } from 'blog';
+// import { BlogModule } from 'blog';
 import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/addedit-blogmanagement/addedit-blogmanagement.component';
 
 @NgModule({
@@ -223,7 +223,7 @@ import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/ad
   ],
   imports: [
     // TrainingModule,
-    BlogModule,
+    // BlogModule,
     FileUploadModule,
     NgxUploaderModule,
     AngularFontAwesomeModule,

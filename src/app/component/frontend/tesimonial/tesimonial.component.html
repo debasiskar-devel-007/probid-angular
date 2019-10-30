@@ -68,9 +68,9 @@
     <div class="item" *ngFor="let image of TestimonialListArray;let i= index">
       <img class="slide-image" src="{{image.image}}" >
       <div class="slide-text" (click)="showBut()">
-          <h1 class="demo cursor">{{image.name}}</h1>
-          <h4  class="title2 demo cursor">{{image.designation}}</h4>
-          <p  class="quatation demo cursor">{{image.quatation}}</p>
+          <h1 class="title1 demo cursor">{{image.name}}</h1>
+          <!-- <h4 class="title2 demo cursor">{{image.designation}}</h4> -->
+          <p class="quatation demo cursor">{{image.quatation}}</p>
       </div>
     </div>
   </owl-carousel>

@@ -155,9 +155,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot {
-    background: #ff0000 !important;
+    
     color: #fff;
     border: none;
     padding: 10px !important;
     font: inherit;
 }
+
+.owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next{
+    background: rgb(253,253,253) !important;
+    background: -moz-linear-gradient(350deg, rgba(253,253,253,1) 0%, rgba(225,225,225,1) 100%) !important;
+    background: -webkit-linear-gradient(350deg, rgba(253,253,253,1) 0%, rgba(225,225,225,1) 100%) !important;
+    background: linear-gradient(350deg, rgba(253,253,253,1) 0%, rgba(225,225,225,1) 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fdfdfd",endColorstr="#e1e1e1",GradientType=1)!important;
+}
+
+.owl-carousel .owl-item.active img {
+    display: block;
+    width: 332px;
+    height: 332px;
+    border-radius: 100%;
+}
+
+.owl-carousel .owl-item img {
+    display: block;
+    width: 210px;
+    height: 210px;
+    border-radius: 100%;
+}
+
+.owl-carousel .owl-item h1.title1{display: none !important;}
+.owl-carousel .owl-item p.quatation{display: none !important;}
