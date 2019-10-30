@@ -41,23 +41,23 @@ export class TesimonialComponent implements OnInit {
 
 
 
-  @ViewChild('imgsmall') imgsmall: DragScrollComponent;
-  public mainImg: any;
+  // @ViewChild('imgsmall') imgsmall: DragScrollComponent;
+  // public mainImg: any;
   public TestimonialListArray: any = [];
-  public index_number: any = 1;
+  // public index_number: any = 1;
 
 
 
-  hideScrollbar;
-  disabled;
-  xDisabled;
-  yDisabled;
+  // hideScrollbar;
+  // disabled;
+  // xDisabled;
+  // yDisabled;
 
-  leftNavDisabled = false;
-  rightNavDisabled = false;
-  index = 0;
+  // leftNavDisabled = false;
+  // rightNavDisabled = false;
+  // index = 0;
 
-  @ViewChild('nav', { read: DragScrollComponent }) ds: DragScrollComponent;
+  // @ViewChild('nav', { read: DragScrollComponent }) ds: DragScrollComponent;
 
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService) { }

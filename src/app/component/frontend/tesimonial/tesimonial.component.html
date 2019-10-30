@@ -66,8 +66,8 @@
 
         <owl-carousel [options]="carouselOptions" [items]="TestimonialListArray" [carouselClasses]="['owl-theme', 'row', 'sliding']">
     <div class="item" *ngFor="let image of TestimonialListArray;let i= index">
-      <img class="slide-image" src="{{image.image}}" >
-      <div class="slide-text" (click)="showBut()">
+      <img class="slide-image" src="{{image.image}}"  (click)="showBut()">
+      <div class="slide-text">
           <h1 class="title1 demo cursor">{{image.name}}</h1>
           <!-- <h4 class="title2 demo cursor">{{image.designation}}</h4> -->
           <p class="quatation demo cursor">{{image.quatation}}</p>
