@@ -168,24 +168,71 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background: -webkit-linear-gradient(350deg, rgba(253,253,253,1) 0%, rgba(225,225,225,1) 100%) !important;
     background: linear-gradient(350deg, rgba(253,253,253,1) 0%, rgba(225,225,225,1) 100%)!important;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fdfdfd",endColorstr="#e1e1e1",GradientType=1)!important;
+    width: 73px;
+    height: 73px;
+    border-radius: 100%;
+}
+.owl-carousel .owl-nav button.owl-prev{
+    position:absolute;
+    top:50%;
+    left:-5%;
 }
 
-.owl-carousel .owl-item.active img {
+.owl-carousel .owl-nav button.owl-next{
+    position:absolute;
+    top:50%;
+    right:-5%;
+}
+
+.owl-carousel .owl-item.active.center img {
     display: block;
     width: 332px;
     height: 332px;
     border-radius: 100%;
+    margin: 0 auto;
 }
 
 .owl-carousel .owl-item img {
     display: block;
     width: 210px;
     height: 210px;
-    border-radius: 100%;
+    border-radius: 100%;    
+    margin: 0 auto;
 }
 
 .owl-carousel .owl-item h1.title1{display: none !important;}
 .owl-carousel .owl-item p.quatation{display: none !important;}
 
-.owl-carousel .owl-item.active h1.title1{display: block !important;}
-.owl-carousel .owl-item.active p.quatation{display: block !important;}
+.owl-carousel .owl-item.active.center h1.title1{display: block !important; width: 300%; margin-left: -100%;}
+.owl-carousel .owl-item.active.center p.quatation{display: block !important; width: 300%; margin-left: -100%;}
+.owl-carousel.owl-drag .owl-item{
+    position: relative;
+}
+
+  .owl-carousel .owl-item.active > div:after {
+    content: '';
+  }
+  .owl-carousel .owl-item.center > div:after {
+    content: '';
+  }
+
+  .owl-carousel .owl-item.active.center > div:after {
+    content: '';
+  }
+  .owl-carousel .owl-item > div:after {
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .owl-carousel .owl-item > .active.center {
+    transform: scale(1);
+    -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
+      filter: grayscale(0);
+  }
+  .owl-carousel .owl-item > .active {
+    transform: scale(.8);
+    transition: .6s ease;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+  }

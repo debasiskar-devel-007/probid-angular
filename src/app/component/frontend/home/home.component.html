@@ -1,36 +1,8 @@
 <app-header></app-header>
-<!-- 
-<mat-card class="innerpagebanner homebanner">    
-        <mat-card-content>
-          <mat-list id="slides">
-            <mat-list-item class="slide showing">
-                <img src="../../../../assets/images/contactusbg.jpg">
-                <span class="mainwrappercontent">
-                    <h1>CONTACT US</h1>
-                </span>             
-            </mat-list-item>
-            <mat-list-item class="slide">
-                <img src="../../../../assets/images/contactusbg.jpg">
-                <span class="mainwrappercontent">
-                    <h1>CONTACT US 1</h1>
-                </span>              
-            </mat-list-item>
-            <mat-list-item class="slide">
-                <img src="../../../../assets/images/contactusbg.jpg">
-                <span class="mainwrappercontent">
-                    <h1>CONTACT US 2</h1>
-                </span>              
-            </mat-list-item>
-          </mat-list>
-          <button class="controls" id="previous"><mat-icon aria-hidden="false">arrow_back_ios</mat-icon></button>
-          <button class="controls" id="next"><mat-icon aria-hidden="false">arrow_forward_ios</mat-icon></button>          
-        </mat-card-content>    
-</mat-card> -->
+
 <mat-card class="homebanner generalcls" style="padding: 0 !important">    
     <mat-card-content>
-      <!-- <img src="../../../../assets/images/pro-home-block1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
-      <mat-carousel
-  timings="250ms ease-in"
+      <mat-carousel timings="250ms ease-in"
   [autoplay]="true"
   interval="5000"
   color="primary"
@@ -42,8 +14,7 @@
   [hideIndicators]="false"
   [useKeyboard]="true"
   [useMouseWheel]="true"
-  orientation="ltr"
->
+  orientation="ltr" >
   <mat-carousel-slide #matCarouselSlide overlayColor="#00000040" [hideOverlay]="false">      
       <img class="d-block w-100" src="../../assets/images/probidhome-slide1img.jpg">
       <div class="carousalinfo">
