@@ -186,3 +186,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .owl-carousel .owl-item h1.title1{display: none !important;}
 .owl-carousel .owl-item p.quatation{display: none !important;}
+
+.owl-carousel .owl-item.active h1.title1{display: block !important;}
+.owl-carousel .owl-item.active p.quatation{display: block !important;}
