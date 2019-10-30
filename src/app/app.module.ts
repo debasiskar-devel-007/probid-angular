@@ -45,7 +45,6 @@ import { TesimonialComponent } from './component/frontend/tesimonial/tesimonial.
 import { TesimoniallistComponent } from './component/frontend/tesimoniallist/tesimoniallist.component';
 
 import { BlogComponent } from './component/frontend/blog/blog.component';
-// import { BloglistComponent } from './component/frontend/bloglist/bloglist.component';
 import { BlogdetailComponent } from './component/frontend/blogdetail/blogdetail.component';
 
 import { AdvanceInventorySearchComponent } from './component/frontend/advance-inventory-search/advance-inventory-search.component';
@@ -135,8 +134,7 @@ import { ManagequizComponent } from './training/managequiz/managequiz.component'
 
 import { AddComponent } from './component/frontend/all_blog/add/add.component';
 import { ListingBlogmanagementComponent } from './component/frontend/all_blog/listing-blogmanagement/listing-blogmanagement.component';
-import { BloglistComponent } from './component/frontend/all_blog/bloglist/bloglist.component';
-// import { BlogModule } from 'blog';
+import { BlogModule } from 'blog';
 import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/addedit-blogmanagement/addedit-blogmanagement.component';
 
 @NgModule({
@@ -144,7 +142,6 @@ import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/ad
     AddComponent,
     AddeditBlogmanagementComponent,
     ListingBlogmanagementComponent,
-    BloglistComponent,
     ManageleadsComponent,
     RepTraingcenterComponent,
     TrainingsectionlistComponent,
@@ -177,7 +174,6 @@ import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/ad
     TesimonialComponent,
     TesimoniallistComponent,
     BlogComponent,
-    // BloglistComponent,
     BlogdetailComponent,
     UserManagementComponent,
     BasicInventorySearchComponent,
@@ -219,11 +215,11 @@ import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/ad
     DialogModalOpenDialog,
     AdminAddCategoriesComponent,
     TrainingreportsComponent,
-    ManagequizComponent
+    ManagequizComponent,
   ],
   imports: [
     // TrainingModule,
-    // BlogModule,
+    BlogModule,
     FileUploadModule,
     NgxUploaderModule,
     AngularFontAwesomeModule,
