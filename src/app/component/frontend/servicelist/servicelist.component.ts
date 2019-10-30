@@ -12,7 +12,7 @@ export class ServicelistComponent implements OnInit {
   public ServiceListArray:any=[];
   // showMore = false;
   showme=true;
-  public indexval:any = 6;
+  public indexval:any = 13;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
 
