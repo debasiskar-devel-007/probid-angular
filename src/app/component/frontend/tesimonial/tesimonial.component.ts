@@ -17,24 +17,44 @@ export class TesimonialComponent implements OnInit {
     loop: true,
     navText: ["<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>"],
     responsiveClass: true,
+    dots: false,
     responsive: {
       0: {
         items: 1,
-        nav: true
+        autoplay: true,
+        autoplayTimeout: 2000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
+        nav: true,
       },
       600: {
         items: 1,
-        nav: true
+        autoplay: true,
+        autoplayTimeout: 2000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
+        nav: true,
       },
       991: {
         items: 2,
-        nav: true,
-        loop: true
+        autoplay: true,
+        autoplayTimeout: 2000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
+        nav: true,         
       },
       1500: {
         items: 3,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
         nav: true,
-        loop: true
+        dot:false,
       }
     }
   }
@@ -114,9 +134,9 @@ export class TesimonialComponent implements OnInit {
   // imgClick(val: any) {
   //   // console.log(val)
   // }
-  // btnClick() {
-  //   this.router.navigateByUrl('/testimonial');
-  // };
+  btnClick() {
+    this.router.navigateByUrl('/testimonial');
+  };
 
 
 
