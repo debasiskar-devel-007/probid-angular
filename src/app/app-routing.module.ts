@@ -135,19 +135,19 @@ const routes: Routes = [
     resolve: { serviceListData: ResolveService },
     data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
   },
-  // {
-  //   path: 'service',
-  //   component: ServicelistComponent,
-  //   resolve: { serviceListData: ResolveService },
-  //   data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
-  // },
+  {
+    path: 'service',
+    component: ServicelistComponent,
+    resolve: { serviceListData: ResolveService },
+    data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
+  },
 
   //  static path
 
-  {
-    path: 'service',
-    component: ServicelistComponent
-  },
+  // {
+  //   path: 'service',
+  //   component: ServicelistComponent
+  // },
 
   { path: 'bloghome', component: BlogComponent, resolve: { serviceListData: ResolveService }, data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalist' } },
   

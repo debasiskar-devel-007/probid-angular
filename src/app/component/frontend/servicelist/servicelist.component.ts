@@ -17,11 +17,10 @@ export class ServicelistComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.activatedRoute.data.forEach(data=>{
-      let result:any;
-      result=data.serviceListData.res;
-      this.ServiceListArray=result;
-      // console.log("ojjjjjjjjhgdfhgdf",this.ServiceListArray);       
+    this.activatedRoute.data.forEach((data:any)=>{
+      console.log(data)
+
+      this.ServiceListArray=data.serviceListData.res;     
      this.indexvallength = this.ServiceListArray.length;    
     })
   }
