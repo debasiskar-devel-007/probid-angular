@@ -3,6 +3,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import * as moment from 'moment';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-blog',
@@ -162,3 +163,4 @@ export class BlogComponent implements OnInit {
   }
 
 }
+

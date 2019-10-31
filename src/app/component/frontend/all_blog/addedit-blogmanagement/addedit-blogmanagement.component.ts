@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { ApiService } from 'src/app/api.service';
 @Component({
   selector: 'app-addedit-blogmanagement',
   templateUrl: './addedit-blogmanagement.component.html',
@@ -8,7 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AddeditBlogmanagementComponent implements OnInit {
 
-    server: any ='https://r245816wug.execute-api.us-east-1.amazonaws.com/dev/api/';
+    server: any =this.ApiService.serverUrlDemo+'addorupdatedata';
     addUrl: any = 'addorupdatedata';
     getDataUrl: any= 'datalist';
     public editdata: any = [];
@@ -35,7 +36,7 @@ export class AddeditBlogmanagementComponent implements OnInit {
       path: "blogs",
       prefix: "blogs-file"
     }
-  constructor(private cookieService: CookieService, private activatedRoute: ActivatedRoute) { }
+  constructor(private cookieService: CookieService, private activatedRoute: ActivatedRoute,public ApiService:ApiService) { }
 
   ngOnInit() {
     

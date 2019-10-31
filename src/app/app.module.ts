@@ -45,7 +45,6 @@ import { TesimonialComponent } from './component/frontend/tesimonial/tesimonial.
 import { TesimoniallistComponent } from './component/frontend/tesimoniallist/tesimoniallist.component';
 
 import { BlogComponent } from './component/frontend/blog/blog.component';
-// import { BloglistComponent } from './component/frontend/bloglist/bloglist.component';
 import { BlogdetailComponent } from './component/frontend/blogdetail/blogdetail.component';
 
 import { AdvanceInventorySearchComponent } from './component/frontend/advance-inventory-search/advance-inventory-search.component';
@@ -53,6 +52,8 @@ import { BasicInventorySearchComponent } from './component/frontend/basic-invent
 
 import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.component';
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
+import { BlogCategoryComponent } from './component/frontend/blog-category/blog-category.component';
+
 /**End Frontend Component**/
 
 
@@ -135,20 +136,16 @@ import { ManagequizComponent } from './training/managequiz/managequiz.component'
 
 import { AddComponent } from './component/frontend/all_blog/add/add.component';
 import { ListingBlogmanagementComponent } from './component/frontend/all_blog/listing-blogmanagement/listing-blogmanagement.component';
-import { BloglistComponent } from './component/frontend/all_blog/bloglist/bloglist.component';
-// import { BlogModule } from 'blog';
+import { BlogModule } from 'blog';
 import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/addedit-blogmanagement/addedit-blogmanagement.component';
-import { AdeditBlogmanagComponent } from './component/frontend//all_bloging/adedit-blogmanag/adedit-blogmanag.component';
-import { BlglistComponent } from './component/frontend//all_bloging/blglist/blglist.component';
-import { ListingblogManagmentComponent } from './component/frontend/all_bloging/listingblog-managment/listingblog-managment.component';
-import { AddblogComponent } from './component/frontend/all_bloging/addblog/addblog.component';
+import { BloglistComponent } from './component/frontend/all_blog/bloglist/bloglist.component';
 
 @NgModule({
   declarations: [
+    BloglistComponent,
     AddComponent,
     AddeditBlogmanagementComponent,
     ListingBlogmanagementComponent,
-    BloglistComponent,
     ManageleadsComponent,
     RepTraingcenterComponent,
     TrainingsectionlistComponent,
@@ -181,7 +178,6 @@ import { AddblogComponent } from './component/frontend/all_bloging/addblog/addbl
     TesimonialComponent,
     TesimoniallistComponent,
     BlogComponent,
-    // BloglistComponent,
     BlogdetailComponent,
     UserManagementComponent,
     BasicInventorySearchComponent,
@@ -224,15 +220,11 @@ import { AddblogComponent } from './component/frontend/all_bloging/addblog/addbl
     AdminAddCategoriesComponent,
     TrainingreportsComponent,
     ManagequizComponent,
-    AdeditBlogmanagComponent,
-    BlglistComponent,
-    ListingblogManagmentComponent,
-    AddblogComponent,
-    
+    BlogCategoryComponent,
   ],
   imports: [
     // TrainingModule,
-    // BlogModule,
+    BlogModule,
     FileUploadModule,
     NgxUploaderModule,
     AngularFontAwesomeModule,

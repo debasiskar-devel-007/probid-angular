@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-
+import { ApiService } from 'src/app/api.service';
 @Component({
   selector: 'app-listing-blogmanagement',
   templateUrl: './listing-blogmanagement.component.html',
@@ -11,7 +11,7 @@ export class ListingBlogmanagementComponent implements OnInit {
 
   //Blogs Lib List
   public blogListConfig: any = {
-    apiBaseUrl: "https://r245816wug.execute-api.us-east-1.amazonaws.com/dev/api/",
+    apiBaseUrl:this.apiService.serverUrlDemo,
     listEndPoint: "datalist",
     datasource: "",
     tableName: "blogs",
@@ -25,7 +25,7 @@ export class ListingBlogmanagementComponent implements OnInit {
   }
 
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService,public apiService: ApiService) {
 
   }
 

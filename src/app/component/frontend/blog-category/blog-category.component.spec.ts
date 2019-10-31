@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdeditBlogmanagComponent } from './adedit-blogmanag.component';
+import { BlogCategoryComponent } from './blog-category.component';
 
-describe('AdeditBlogmanagComponent', () => {
-  let component: AdeditBlogmanagComponent;
-  let fixture: ComponentFixture<AdeditBlogmanagComponent>;
+describe('BlogCategoryComponent', () => {
+  let component: BlogCategoryComponent;
+  let fixture: ComponentFixture<BlogCategoryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdeditBlogmanagComponent ]
+      declarations: [ BlogCategoryComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AdeditBlogmanagComponent);
+    fixture = TestBed.createComponent(BlogCategoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

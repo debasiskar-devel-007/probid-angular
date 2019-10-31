@@ -21,6 +21,13 @@ import { BasicInventorySearchComponent } from './component/frontend/basic-invent
 import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.component';
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
 import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
+
+import { AddComponent } from './component/frontend/all_blog/add/add.component';
+import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/addedit-blogmanagement/addedit-blogmanagement.component';
+import { ListingBlogmanagementComponent } from './component/frontend/all_blog/listing-blogmanagement/listing-blogmanagement.component';
+import { BloglistComponent } from './component/frontend/all_blog/bloglist/bloglist.component';
+import { BlogCategoryComponent } from './component/frontend/blog-category/blog-category.component';
+
 /**End Frontend Routing**/
 
 /**Backend Routing**/
@@ -76,16 +83,13 @@ import { AddAdminCategoriesComponent } from './component/backend/add-admin-categ
 import { AdminAddCategoriesComponent } from './component/backend/admin-add-categories/admin-add-categories.component';
 import { TrainingreportsComponent } from './training/trainingreports/trainingreports.component';
 import { ManagequizComponent } from './training/managequiz/managequiz.component';
-import { AddComponent } from './component/frontend/all_blog/add/add.component';
-import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/addedit-blogmanagement/addedit-blogmanagement.component';
-import { ListingBlogmanagementComponent } from './component/frontend/all_blog/listing-blogmanagement/listing-blogmanagement.component';
-import { BloglistComponent } from './component/frontend/all_blog/bloglist/bloglist.component';
-import { AddblogComponent } from './component/frontend/all_bloging/addblog/addblog.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
 
   /**Frontend Routing**/
+  { path: '', component: HomeComponent },
+
   { path: 'admin-login', component: LoginComponent },
   { path: 'salesrep-login', component: LoginComponent },
   { path: 'customer-login', component: LoginComponent },
@@ -93,7 +97,6 @@ const routes: Routes = [
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'contactus', component: ContactusComponent },
   {
@@ -120,16 +123,6 @@ const routes: Routes = [
     }
   },
 
-
-  //  static path
-  // {
-  //   path: "testimonial",
-  //   component: TesimoniallistComponent
-  // },
-
-
-
-
   {
     path: 'servicehome',
     component: ServiceComponent,
@@ -142,22 +135,62 @@ const routes: Routes = [
     resolve: { serviceListData: ResolveService },
     data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
   },
+  { path: 'blog-category/add', component: BlogComponent },
+  { path: 'blog-category/edit/:_id', component: BlogComponent, resolve: { blogCatList: ResolveService },
+  data: { requestcondition: { source: 'blog_category', condition: {} }, endpoint: 'datalist' }},
+  
+  { path: 'blog-category/list', component: BlogdetailComponent, resolve: { blogCatList: ResolveService },
+  data: { requestcondition: { source: 'blog_category_view', condition: {} }, endpoint: 'datalist' }},
 
-  //  static path
 
-  // {
-  //   path: 'service',
-  //   component: ServicelistComponent
-  // },
-
-  { path: 'bloghome', component: BlogComponent, resolve: { serviceListData: ResolveService }, data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalist' } },
   
   { path: 'blog', component: BloglistComponent },
-  { path: 'blogdetail', component: BlogdetailComponent },
+
   { path: 'advance-inventory-search', component: AdvanceInventorySearchComponent },
   { path: 'basic-inventory-search', component: BasicInventorySearchComponent },
   { path: 'pre-owned', component: PreOwnedComponent },
   { path: 'aboutus', component: AboutusComponent },
+  { path: 'blog-category', component: BlogCategoryComponent },
+
+  
+
+  /*********************** blog lib start*************************/ 
+  { path: 'blog-category/add', component: AddComponent },
+  {
+    path: 'blog-category/list',
+    component: BloglistComponent,
+    resolve: { blogCatList: ResolveService },
+    data: { requestcondition: { source: 'blog_category_view', condition: {} }, endpoint: 'datalist' }
+  },
+  {
+    path: 'blog-category/edit/:_id',
+    component: AddComponent,
+    resolve: { blogCatList: ResolveService },
+    data: { requestcondition: { source: 'blog_category', condition: {} }, endpoint: 'datalist' }
+  },
+
+
+  // ______________________BLOG LIST____________________
+
+  
+  { path: 'blog-management/add', component: AddeditBlogmanagementComponent },
+
+  {
+    path: 'blog-management/list',
+    component: ListingBlogmanagementComponent,
+    resolve: { blogList: ResolveService },
+    data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' }
+  },
+  {
+    path: 'blog-management/edit/:_id',
+    component: AddeditBlogmanagementComponent,
+    resolve: { blogList: ResolveService },
+    data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalist' }
+  },
+  
+  /*********************** blog lib start*************************/ 
+
+  { path:'managequiz/:lessonid', component: ManagequizComponent},
 
   /**End Frontend Routing**/
 
@@ -273,49 +306,11 @@ const routes: Routes = [
 
 
   { path: 'training-reports', component: TrainingreportsComponent },
-  
-  { path: '**', component: LoginComponent },
-  { path:'managequiz/:lessonid', component: ManagequizComponent},
 
 
-
-
-  /*********************** blog lib start*************************/ 
-  { path: 'blog-category/add', component: AddComponent },
-  {
-    path: 'blog-category/list',
-    component: BloglistComponent,
-    resolve: { blogCatList: ResolveService },
-    data: { requestcondition: { source: 'blog_category_view', condition: {} }, endpoint: 'datalist' }
-  },
-  {
-    path: 'blog-category/edit/:_id',
-    component: AddComponent,
-    resolve: { blogCatList: ResolveService },
-    data: { requestcondition: { source: 'blog_category', condition: {} }, endpoint: 'datalist' }
-  },
-
-
-  // ______________________BLOG LIST____________________
 
   
-  { path: 'blog-management/add', component: AddeditBlogmanagementComponent },
-
-  {
-    path: 'blog-management/list',
-    component: ListingBlogmanagementComponent,
-    resolve: { blogList: ResolveService },
-    data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' }
-  },
-  {
-    path: 'blog-management/edit/:_id',
-    component: AddeditBlogmanagementComponent,
-    resolve: { blogList: ResolveService },
-    data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalist' }
-  },
-  
-  /*******************Sourav blog lib start*************************/ 
-  {path:'blog-add',component:AddblogComponent}
+  { path: '**', component: HomeComponent }
 ];
 
 @NgModule({
