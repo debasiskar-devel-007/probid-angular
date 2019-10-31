@@ -13,8 +13,6 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { LoginComponent } from './component/frontend/login/login.component';
-// import { ContactusModule } from 'contactus';
-// import { LoginModule } from 'login';
 import { CookieService } from 'ngx-cookie-service';
 import { MetaModule } from '@ngx-meta/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,6 +26,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 
+import { BloglistfrontendComponent } from './component/frontend/bloglist/bloglist.component';
 
 /**Frontend Component**/
 
@@ -141,7 +140,11 @@ import { ListingBlogsComponent } from './component/frontend/blogs/listing-blogs/
 
 @NgModule({
   declarations: [
-    
+    BloglistfrontendComponent,
+    // BloglistComponent,
+    // AddComponent,
+    // AddeditBlogmanagementComponent,
+    // ListingBlogmanagementComponent,
     ManageleadsComponent,
     RepTraingcenterComponent,
     TrainingsectionlistComponent,

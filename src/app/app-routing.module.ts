@@ -14,8 +14,7 @@ import { TesimoniallistComponent } from './component/frontend/tesimoniallist/tes
 import { ServiceComponent } from './component/frontend/service/service.component';
 import { ServicelistComponent } from './component/frontend/servicelist/servicelist.component';
 import { BlogComponent } from './component/frontend/blog/blog.component';
-// import { BloglistComponent } from './component/frontend/bloglist/bloglist.component';
-import { BlogdetailComponent } from './component/frontend/blogdetail/blogdetail.component';
+import { BloglistfrontendComponent } from './component/frontend/bloglist/bloglist.component';
 import { AdvanceInventorySearchComponent } from './component/frontend/advance-inventory-search/advance-inventory-search.component';
 import { BasicInventorySearchComponent } from './component/frontend/basic-inventory-search/basic-inventory-search.component';
 import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.component';
@@ -91,9 +90,7 @@ const routes: Routes = [
   /**Frontend Routing**/
   { path: '', component: HomeComponent },
 
-  { path: 'admin-login', component: LoginComponent },
-  { path: 'salesrep-login', component: LoginComponent },
-  { path: 'customer-login', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
@@ -145,7 +142,8 @@ const routes: Routes = [
 
 
   
-  // { path: 'blog', component: BloglistComponent },
+  { path: 'bloglist', component: BloglistfrontendComponent, resolve: { blogCatList: ResolveService },
+  data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' } },
 
   { path: 'advance-inventory-search', component: AdvanceInventorySearchComponent },
   { path: 'basic-inventory-search', component: BasicInventorySearchComponent },
@@ -346,8 +344,12 @@ const routes: Routes = [
 
 
 
+
+
+
+
   
-  { path: '**', component: LoginComponent },
+  { path: '**', component: HomeComponent },
 
 ];
 

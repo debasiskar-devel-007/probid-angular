@@ -19,7 +19,7 @@ export class ListingBlogsComponent implements OnInit {
       editUrl: "manage-websites/addblogs/edit",
       jwtToken: "",
       deleteEndPoint: "deletesingledata",
-      addLink: "/manage-websites/addblogs/add",
+      addLink: "/blogs/list",
       view: "blogs_view"
   
     }

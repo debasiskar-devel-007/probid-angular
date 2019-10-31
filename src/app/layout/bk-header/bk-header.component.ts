@@ -37,6 +37,7 @@ export class BkHeaderComponent implements OnInit {
   public oldcookiedata: any;
   public gameplanButton:any = 0;
   public calenderaccess:any;
+  public user_full_name: any;
 
 
 
@@ -127,10 +128,8 @@ export class BkHeaderComponent implements OnInit {
 
   ngOnInit() {
     this.userCookies = JSON.parse(this.cookieService.get('user_details'));
-  
-    console.log(this.userCookies);
+    this.user_full_name = this.userCookies.firstname + ' '+ this.userCookies.lastname ;
     this.userid = this.userCookies._id;
-    console.log(this.userid);
   
   }
 

@@ -10,9 +10,9 @@ export class ForgetPasswordComponent implements OnInit {
 
   public logo: any = '../../assets/images/logo.png';
   public loginRouteingUrl: any = { 
-    "path":"login",
+    "path":"",
     "buttonName":"Login",
-    "customLink":"",
+    "customLink":"/login",
     "customURl":""
   };
   public signUpRouteingUrl: any = { 

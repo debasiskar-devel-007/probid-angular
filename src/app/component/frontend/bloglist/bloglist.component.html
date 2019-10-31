@@ -14,32 +14,61 @@
         </span>
 </mat-card>
 
-<mat-card class="generalcls blog" style="padding: 0 !important;"> 
+<!-- <mat-card class="generalcls blog" style="padding: 0 !important;"> 
   <img src="../../../../assets/images/blog-block1img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
-</mat-card>
+</mat-card> -->
 
 
 
 <mat-card class="ptb-40 generalcls blog bloglist">     
     <span class="mainwrappercontent">
         <span class="bloglistinner">
-                <span class="bloglistswrapper">
-                        <app-blog></app-blog>
-                    </span>        
-                    <!-- <span class="categorywrapper">
-                        <h2>Categories</h2>
-                        <mat-list>
-                            <mat-list-item>
-                                <span>
-                                <img matListAvatar src="../../../../assets/images/blog-img1.jpg" alt="blog image">
-                                </span>
-                                <mat-card-title class="inner_header">title</mat-card-title>
-                            </mat-list-item>
-                            
-                        </mat-list>
-                    </span> -->
-        </span>
-        
+            <span class="bloglistswrapper">
+                <mat-card-content class="bottom_blog">    
+                    <span class="item_wrapper">
+                      <!-- <mat-card-content class="item" *ngFor="let item of blogList | slice:0:indexval; let i=index"> -->
+                      <mat-card-content class="item" *ngFor="let item of blogList">
+                        <span class="item_images">
+                          <img [src]="item.blogs_image">
+                        </span>
+                        <mat-card-content class="contentsection">
+                          <mat-card-title class="inner_header">{{item.blogtitle}}</mat-card-title>
+                          <span class="author">
+                            <span class="authornmimg">
+                              <span class="writer_image">
+                                <img src="../../../../assets/images/blog-icon.png">
+                              </span>
+                              <p class="authorName">{{item.author}}</p>
+                            </span>
+                            <p class="date">Date: {{item.date_added}} </p>
+                          </span>
+                          <p class="description">{{item.description}}<a class="next_page" >read more</a>
+                          </p>  
+                          <span class="blogsociallists">
+                              <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
+                              <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
+                              <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
+                              <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
+                              <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
+                              <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
+                            </span>          
+                        </mat-card-content>
+                    </mat-card-content>
+                    </span>
+                    <button mat-button class="btnblue sim-button" [routerLink]="['/bloglist']">Learn More</button>
+                  
+                  </mat-card-content>
+                                         
+            </span>        
+            <span class="categorywrapper">
+                <h2>Categories</h2>
+                <mat-list>
+                    <mat-list-item>                        
+                        <mat-card-title class="inner_header">Category Name Category Name <span>(10)</span></mat-card-title>
+                    </mat-list-item>                            
+                </mat-list>
+            </span>
+        </span>        
     </span>
 </mat-card>
 
