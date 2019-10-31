@@ -1,13 +1,11 @@
- 
+<!--  
     <mat-card-content class="bottom_blog">    
       <span class="item_wrapper">
         <mat-card-content class="item" *ngFor="let item of blogList | slice:0:indexval; let i=index">
           <span class="item_images">
             <img src="../../../../assets/images/blog-img1.jpg">
-            <!-- <img [src]="item.blog_image" alt=""> -->
           </span>
           <mat-card-content class="contentsection">
-            <!-- <mat-card-title class="inner_header">Lorem Ipsum is simply dummy</mat-card-title> -->
             <mat-card-title class="inner_header">{{item.blog_title}}</mat-card-title>
             <span class="author">
               <span class="authornmimg">
@@ -18,10 +16,6 @@
               </span>
               <p class="date">Date: {{item.created_at}} </p>
             </span>
-            <!-- <p class="description">
-              Mauris mattis auctor cursus. Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem. Donec
-              vehicula luctus nunc in...<a class="next_page" routerLink="/">read more</a>
-            </p>   -->
             <p class="description">{{item.blog_description}}<a class="next_page" *ngIf="indexval.length >indexval" (click)="showMoreFunc()" >read more</a>
             </p>  
             <span class="blogsociallists">
@@ -52,4 +46,6 @@
     </mat-card-content>
 
 
-    <lib-sharetools [Config]="ConfigData"></lib-sharetools>
+    <lib-sharetools [Config]="ConfigData"></lib-sharetools> -->
+
+    <lib-add-blog [config]="configAddEdit"></lib-add-blog>

@@ -88,6 +88,8 @@ import { ManagequizComponent } from './training/managequiz/managequiz.component'
 const routes: Routes = [
 
   /**Frontend Routing**/
+  { path: '', component: HomeComponent },
+
   { path: 'admin-login', component: LoginComponent },
   { path: 'salesrep-login', component: LoginComponent },
   { path: 'customer-login', component: LoginComponent },
@@ -95,7 +97,6 @@ const routes: Routes = [
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'contactus', component: ContactusComponent },
   {
@@ -122,16 +123,6 @@ const routes: Routes = [
     }
   },
 
-
-  //  static path
-  // {
-  //   path: "testimonial",
-  //   component: TesimoniallistComponent
-  // },
-
-
-
-
   {
     path: 'servicehome',
     component: ServiceComponent,
@@ -144,18 +135,17 @@ const routes: Routes = [
     resolve: { serviceListData: ResolveService },
     data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
   },
+  { path: 'blog-category/add', component: BlogComponent },
+  { path: 'blog-category/edit/:_id', component: BlogComponent, resolve: { blogCatList: ResolveService },
+  data: { requestcondition: { source: 'blog_category', condition: {} }, endpoint: 'datalist' }},
+  
+  { path: 'blog-category/list', component: BlogdetailComponent, resolve: { blogCatList: ResolveService },
+  data: { requestcondition: { source: 'blog_category_view', condition: {} }, endpoint: 'datalist' }},
 
-  //  static path
 
-  // {
-  //   path: 'service',
-  //   component: ServicelistComponent
-  // },
-
-  { path: 'bloghome', component: BlogComponent, resolve: { serviceListData: ResolveService }, data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalist' } },
   
   { path: 'blog', component: BloglistComponent },
-  { path: 'blogdetail', component: BlogdetailComponent },
+
   { path: 'advance-inventory-search', component: AdvanceInventorySearchComponent },
   { path: 'basic-inventory-search', component: BasicInventorySearchComponent },
   { path: 'pre-owned', component: PreOwnedComponent },
@@ -316,9 +306,11 @@ const routes: Routes = [
 
 
   { path: 'training-reports', component: TrainingreportsComponent },
+
+
+
   
   { path: '**', component: LoginComponent },
-
 
 ];
 

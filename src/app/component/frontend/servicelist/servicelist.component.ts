@@ -21,7 +21,7 @@ export class ServicelistComponent implements OnInit {
       console.log(data)
 
       this.ServiceListArray=data.serviceListData.res;     
-     this.indexvallength = this.ServiceListArray.length;    
+     this.indexvallength = this.ServiceListArray.length;
     })
   }
 
