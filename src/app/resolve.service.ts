@@ -26,27 +26,21 @@ export class ResolveService implements Resolve<any> {
         // console.log('resolve route data');
         // console.log(route.data);
         // console.log(state);
-        let endpoint = route.data.link;
-        let source = route.data.source;
-        let condition = route.data.condition;
-        let requestData: any = route.data.requestcondition;
-        console.log(this.userid);
+        var endpoint = route.data.link;
+        var source = route.data.source;
+        var condition = route.data.condition;
+        var requestData: any = route.data.requestcondition;
+
         if (route.data.requestcondition.trainingcategory != null) {
-            console.log('yeah!');
             requestData.trainingcategory = route.params.cid;
             requestData.userid = this.userid;
         } else
             requestData.condition = Object.assign(requestData.condition, route.params);
-
-
-
             return new Promise((resolve) => {
-                this._apiService.getDatalistForResolve(route.data.requestcondition)
-                .subscribe(api_object =>{
+                this._apiService.getDatalistForResolve(route.data.requestcondition).subscribe(api_object =>{
                     if (api_object) {
                         return resolve(api_object);
                     } else { // id not found
-                      //  this.router.navigateByUrl('dashboard');
                         return true;
                     }
                 })

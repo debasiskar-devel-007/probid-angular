@@ -76,7 +76,7 @@ export class BlogComponent implements OnInit {
 
     let data: any = {};
     data = {
-      source:"blogs_view_1",
+      source:"blogs_view",
       endpoint: "datalist"
     }
     this.apiService.getDatalist(data).subscribe((res)=>{
@@ -84,64 +84,7 @@ export class BlogComponent implements OnInit {
        result = res;
        this.blogList = result.res;
        console.warn(this.blogList);
-      //  let date = this.blogList[0].created_at;
-      //  data = moment().format('l')
-      //  console.log(data)
     })
-
-    // data = (moment().format('l')
-    
-    // var slides = document.querySelectorAll('#custom_slider_by_subrata .subrata');
-    // var currentSlide = 0;
-    // var slideInterval = setInterval(nextSlide, 3000);
-
-    // var next: HTMLElement = document.querySelectorAll('#next')[0] as HTMLElement;
-    // var previous: HTMLElement = document.querySelectorAll('#previous')[0] as HTMLElement;
-
-
-    // next.onclick = function () {
-
-    //   nextSlide();
-    // };
-    // previous.onclick = function () {
-
-    //   previousSlide();
-    // };
-
-    // function nextSlide() {
-    //   goToSlide(currentSlide + 1);
-    // }
-
-    // function previousSlide() {
-    //   goToSlide(currentSlide - 1);
-    // }
-
-    // function goToSlide(n) {
-    //   slides[currentSlide].className = 'subrata';
-    //   currentSlide = (n + slides.length) % slides.length;
-    //   slides[currentSlide].className = 'subrata showing';
-    // }
-
-
-    // get youtube video id
-
-    // // function youtube_parser(url) {
-    // var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
-    // //   var match = url.match(regExp);
-    // //   return (match && match[7].length == 11) ? match[7] : false;
-    // // }
-
-
-    // var regex = new RegExp(/(?:\?v=)([^&]+)(?:\&)*/);
-    // var url = "http://www.youtube.com/watch?v=kJ9g_-p3dLA";
-    // var matches = regex.exec(url);
-    // var down = document.querySelector('#GFG_DOWN');
-
-    // var videoId = matches[1];
-    // down.innerHTML = "ID = " + videoId;
-
-
-
 
   }
 
@@ -163,4 +106,6 @@ export class BlogComponent implements OnInit {
   }
 
 }
+
+
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { ApiService } from 'src/app/api.service';
 
 
 @Component({
@@ -12,13 +13,13 @@ export class BloglistComponent implements OnInit {
 
   //Blogs Lib List
   public blogListConfig: any = {
-    apiBaseUrl: "https://r245816wug.execute-api.us-east-1.amazonaws.com/dev/api/",
+    apiBaseUrl: this.apiService.serverUrlDemo,
     listEndPoint: "datalist",
     datasource: "",
     tableName: "blogs",
     updateurl: "addorupdatedata",
     editUrl: "blog-management/edit",
-    jwtToken: "",
+    jwtToken: this.cookieService.get('jwtToken'),
     deleteEndPoint: "deletesingledata",
     addLink: "/blog-management/add",
     view: "blogs"
@@ -26,7 +27,7 @@ export class BloglistComponent implements OnInit {
   }
 
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService, public apiService: ApiService) {
 
   }
 

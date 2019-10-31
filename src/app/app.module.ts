@@ -129,23 +129,19 @@ import { AdminAddCategoriesComponent } from './component/backend/admin-add-categ
 
 import { TrainingreportsComponent } from './training/trainingreports/trainingreports.component';
 
-
+import { BlogModule } from 'blog';
 import { FileUploadModule } from 'file-upload';
 import { OwlModule } from 'ngx-owl-carousel'; 
 import { ManagequizComponent } from './training/managequiz/managequiz.component';
+import { AddEditBlogcatComponent } from './component/frontend/blogs/add-edit-blogcat/add-edit-blogcat.component';
+import { ListingBlogcatComponent } from './component/frontend/blogs/listing-blogcat/listing-blogcat.component';
+import { AddEditBlogsComponent } from './component/frontend/blogs/add-edit-blogs/add-edit-blogs.component';
+import { ListingBlogsComponent } from './component/frontend/blogs/listing-blogs/listing-blogs.component';
 
-import { AddComponent } from './component/frontend/all_blog/add/add.component';
-import { ListingBlogmanagementComponent } from './component/frontend/all_blog/listing-blogmanagement/listing-blogmanagement.component';
-import { BlogModule } from 'blog';
-import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/addedit-blogmanagement/addedit-blogmanagement.component';
-import { BloglistComponent } from './component/frontend/all_blog/bloglist/bloglist.component';
 
 @NgModule({
   declarations: [
-    BloglistComponent,
-    AddComponent,
-    AddeditBlogmanagementComponent,
-    ListingBlogmanagementComponent,
+    
     ManageleadsComponent,
     RepTraingcenterComponent,
     TrainingsectionlistComponent,
@@ -221,6 +217,10 @@ import { BloglistComponent } from './component/frontend/all_blog/bloglist/blogli
     TrainingreportsComponent,
     ManagequizComponent,
     BlogCategoryComponent,
+    AddEditBlogcatComponent,
+    ListingBlogcatComponent,
+    AddEditBlogsComponent,
+    ListingBlogsComponent,
   ],
   imports: [
     // TrainingModule,
