@@ -29,23 +29,8 @@
           </mat-card-content>
       </mat-card-content>
       </span>
-      <button mat-button class="btnblue sim-button" [routerLink]="['/blog']">Learn More</button>
-
-      <span class="categorywrapper" *ngIf="router.url =='/blog'">
-        <h2>Categories</h2>
-        <mat-list>
-            <mat-list-item>
-                <span>
-                <img matListAvatar src="../../../../assets/images/blog-img1.jpg" alt="blog image">
-                </span>
-                <mat-card-title class="inner_header">title</mat-card-title>
-            </mat-list-item>
-            
-        </mat-list>
-      </span>
+      <button mat-button class="btnblue sim-button" [routerLink]="['/bloglist']">Learn More</button>
     </mat-card-content>
 
 
     <lib-sharetools [Config]="ConfigData"></lib-sharetools>
-
-    <!-- <lib-add-blog [config]="configAddEdit"></lib-add-blog> -->

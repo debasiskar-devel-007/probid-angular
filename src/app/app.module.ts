@@ -28,6 +28,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 
+import { BloglistfrontendComponent } from './component/frontend/bloglist/bloglist.component';
 
 /**Frontend Component**/
 
@@ -142,6 +143,7 @@ import { BloglistComponent } from './component/frontend/all_blog/bloglist/blogli
 
 @NgModule({
   declarations: [
+    BloglistfrontendComponent,
     BloglistComponent,
     AddComponent,
     AddeditBlogmanagementComponent,

@@ -95,14 +95,14 @@ export class LoginComponent implements OnInit {
 
   goto() {
     console.log('sadfdff');
-    if (this.router.url == '/admin-login') {
+    if (this.router.url == '/login') {
       this.router.navigateByUrl('/admin-dashboard');
 
-    } else if (this.router.url == '/salesrep-login') {
+    } else if (this.router.url == '/login') {
 
       this.router.navigateByUrl('/rep-dashboard');
 
-    } else if (this.router.url == '/customer-login') {
+    } else if (this.router.url == '/login') {
 
       this.router.navigateByUrl('/customer-dashboard');
     }

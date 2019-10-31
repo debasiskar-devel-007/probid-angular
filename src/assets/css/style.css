@@ -342,13 +342,27 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
     flex-wrap: wrap;
     flex: 1 1 60%;
 }
-
-.categorywrapper{
-    flex: 1 1 28%;
+.bloglistswrapper .bottom_blog {
+    width: 100%;
 }
 
+.categorywrapper{
+    flex: 1 1 24%;
+    background-color: #e9edef;
+    box-sizing: border-box;
+    margin-left: 4%;
+}
+.categorywrapper h2{    
+    background-color: #fb4a32;
+    padding: 17px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+
 .bloglistinner .bottom_blog .item_wrapper .item {
-    width: 48%;
+    /* width: 48%; */
+    width: calc(1/2*100% - (1 - 1/2)*18px);
 }
 
 .mat-menu-panel.activedropmenu{margin-left:0;margin-top:16px;background-color:#cdd4da !important;}
@@ -473,10 +487,11 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
 .bottom_blog .mat-tab-labels {flex-wrap: wrap;}
 .bottom_blog .mat-tab-label {min-width: inherit; width: 100%;}
 
+.blog .categorywrapper .mat-list-item{height: auto;}
+.blog .categorywrapper .mat-card-title {font-size: 20px!important; text-transform: uppercase;}
+.blog .categorywrapper .mat-card-title span{color:#fb4a32; padding: 0 11px;}
 
-
-
-.signupfooter a{cursor: pointer; padding-right: 0 !important;}
+.signupfooter a{cursor: pointer; padding-right: 0 !important; color:#fff;}
 /* .loginwrappernew .formgenrl button.mat-primary{display: none;} */
 
 

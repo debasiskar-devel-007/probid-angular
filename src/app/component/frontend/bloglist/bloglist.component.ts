@@ -8,7 +8,7 @@ import { CookieService } from 'ngx-cookie-service';
   templateUrl: './bloglist.component.html',
   styleUrls: ['./bloglist.component.css']
 })
-export class BloglistComponent implements OnInit {
+export class BloglistfrontendComponent implements OnInit {
 
   //Blogs Lib List
   public blogListConfig: any = {
@@ -24,6 +24,7 @@ export class BloglistComponent implements OnInit {
     view: "blogs"
 
   }
+  public blogList: any;
 
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService) {
@@ -31,8 +32,10 @@ export class BloglistComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activatedRoute.data.subscribe(resolveData => {
-      this.blogListConfig.datasource = resolveData.blogList.res;
+    this.activatedRoute.data.subscribe((resolveData: any) => {
+      console.log(resolveData.blogCatList);
+      this.blogList = resolveData.blogCatList.res;
+      this.blogListConfig.datasource = this.blogList;
       this.blogListConfig.jwtToken = this.cookieService.get('jwtToken');
 
     });
