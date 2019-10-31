@@ -53,6 +53,8 @@ import { BasicInventorySearchComponent } from './component/frontend/basic-invent
 
 import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.component';
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
+import { BlogCategoryComponent } from './component/frontend/blog-category/blog-category.component';
+
 /**End Frontend Component**/
 
 
@@ -219,7 +221,8 @@ import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/ad
     DialogModalOpenDialog,
     AdminAddCategoriesComponent,
     TrainingreportsComponent,
-    ManagequizComponent
+    ManagequizComponent,
+    BlogCategoryComponent
   ],
   imports: [
     // TrainingModule,

@@ -298,8 +298,9 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
 .modelthumbimginnerwarpper.active .testimonialcontent .title3{font-size: 18px !important; margin-bottom: 10px !important;line-height: normal !important;}
 .modelthumbimginnerwarpper.active .testimonialcontent .quatation{font-size: 16px !important;}
 .testimonialwrappercontent .mat-card-title {justify-content: center;}
-.generalcls .testibottomcontent .mat-card-title {font-size: 26px!important;line-height: normal!important; margin-bottom: 5px !important; justify-content: inherit !important; text-transform: capitalize !important;}
-
+.generalcls .testibottomcontent .mat-card-title.title1 {font-size: 20px!important;line-height: normal!important; margin-bottom: 5px !important; justify-content: inherit !important; text-transform: capitalize !important; color:#3c3f42;}
+.generalcls .testibottomcontent .mat-card-title.title2 {font-size: 16px!important;line-height: normal!important; margin-bottom: 5px !important; justify-content: inherit !important; text-transform: capitalize !important; color:#858686; margin-top: 10px; font-size: 'Helvetica-Normal';}
+.generalcls .quatation {font-size: 16px !important;font-size: 'Helvetica-Normal';color:#858686;}
 
 
 .generalcls.blog .mat-card-title {font-size: 24px!important;line-height: normal!important;justify-content: space-between;    margin-bottom: 15px!important; margin-top: 15px!important;text-transform: capitalize;}
