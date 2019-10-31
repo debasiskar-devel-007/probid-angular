@@ -103,6 +103,20 @@
     text-align: center;
 }
 
+
+
+@media only screen and (max-width: 1820px) {
+    .carousalinfo{width: 615px;}
+}
+
+@media only screen and (max-width: 1700px) {
+    .carousalinfo{width: 540px;}
+    .carousalinfop{font-size: 18px !important;}
+    .righttxtp{font-size: 36px !important;}
+    .carousalinfoh1{font-size: 60px !important; line-height: 60px!important;}
+    .homebanner .carousel-slide .carousel-slide-content .d-block{margin-left: -23%;}
+}
+
 @media only screen and (max-width: 1199px) {
     .homebanner {
         background: #000;

@@ -35,16 +35,21 @@
                             <mat-card-title class="title1">{{testmon.name}}</mat-card-title>
                             <mat-card-title class="title2">{{testmon.created_at}}</mat-card-title>
                         </span>
-                        <span class="rateingdiv">
+                        <!-- <span class="rateingdiv">
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star"></span>
-                        </span>
+                        </span> -->
                         <span class="quatation truncate">
-                            <p>&quot; {{testmon.quatation}} &quot;</p>
-                            <!-- <button (click)="myFunction()">Read more</button> -->
+                           &quot; {{testmon.quatation}} &quot;
+                            <button class="hide" data-target="read-more.moreButton" data-action="read-more#showMore">
+                                read more
+                            </button>
+                            <button class="hide" data-target="read-more.lessButton" data-action="read-more#showLess">
+                                read less
+                            </button>
                         </span>                        
                        </mat-card-content>                    
                 </mat-card>

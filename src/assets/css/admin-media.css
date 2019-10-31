@@ -1,8 +1,27 @@
+    @media only screen and (max-width: 1620px) {
+        .topmenulist .navigation-left .nav-item .mat-list-item-content {
+            padding: 0 4px;
+        }
+    }
+    @media only screen and (max-width: 1540px) {
+        .topmenulist .navigation-left .nav-item .mat-list-item-content {
+            padding: 0 0px;
+        }
+    }
+    
     @media only screen and (max-width: 1350px) {
     .topblock .mat-list .mat-list-item .mat-list-item-content button{margin:0;padding:0 10px}
-    .topmenulist .navigation-left a {font-size: 12px; padding: 0px 0px;}
-    .admcls .header .toolbar-row .logo {width: 150px;padding: 12px 13px;}
+    .topmenulist .navigation-left a {font-size: 13px; padding: 0px 10px;}
+    .admcls .header .toolbar-row .logo {width: 150px;}
     }
+
+    @media only screen and (max-width: 1300px) {
+        .topmenulist .navigation-left a {
+            font-size: 12px;
+            padding: 0px 4px;
+        }
+    }
+
     @media only screen and (max-width: 1280px) {
     .topmenulist .navigation-left .nav-item .mat-list-item-content {padding: 0 6px;}
     }
