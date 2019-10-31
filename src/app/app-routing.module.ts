@@ -157,7 +157,8 @@ const routes: Routes = [
   /*********************** blog lib start*************************/ 
   { path: 'blog-category/add', component: AddComponent },
   {
-    path: 'blog-category/list',
+    // path: 'blog-category/list',
+    path: 'blog-management',
     component: BloglistComponent,
     resolve: { blogCatList: ResolveService },
     data: { requestcondition: { source: 'blog_category_view', condition: {} }, endpoint: 'datalist' }
