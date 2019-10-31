@@ -80,6 +80,7 @@ import { AddComponent } from './component/frontend/all_blog/add/add.component';
 import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/addedit-blogmanagement/addedit-blogmanagement.component';
 import { ListingBlogmanagementComponent } from './component/frontend/all_blog/listing-blogmanagement/listing-blogmanagement.component';
 import { BloglistComponent } from './component/frontend/all_blog/bloglist/bloglist.component';
+import { AddblogComponent } from './component/frontend/all_bloging/addblog/addblog.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -135,19 +136,19 @@ const routes: Routes = [
     resolve: { serviceListData: ResolveService },
     data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
   },
-  // {
-  //   path: 'service',
-  //   component: ServicelistComponent,
-  //   resolve: { serviceListData: ResolveService },
-  //   data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
-  // },
+  {
+    path: 'service',
+    component: ServicelistComponent,
+    resolve: { serviceListData: ResolveService },
+    data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
+  },
 
   //  static path
 
-  {
-    path: 'service',
-    component: ServicelistComponent
-  },
+  // {
+  //   path: 'service',
+  //   component: ServicelistComponent
+  // },
 
   { path: 'bloghome', component: BlogComponent, resolve: { serviceListData: ResolveService }, data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalist' } },
   
@@ -313,7 +314,8 @@ const routes: Routes = [
     data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalist' }
   },
   
-  /*********************** blog lib start*************************/ 
+  /*******************Sourav blog lib start*************************/ 
+  {path:'blog-add',component:AddblogComponent}
 ];
 
 @NgModule({

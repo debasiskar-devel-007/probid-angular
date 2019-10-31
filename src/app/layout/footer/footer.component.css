@@ -4,7 +4,7 @@
 .footertopwrapper .mat-nav-list {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;justify-content: space-between;padding-top: 0;}
 .footertopwrapper .mat-list-item {float: right;text-align: center;height: auto;width: auto;position: relative;color: #fff;font-family: 'Helvetica-Regular';} */
 
-.footerwrapper {background-color:#353535 !important; position:relative; }
+.footerwrapper {background-color:#353535 !important; position:relative; width: 100%; display: inline-block; }
 
 .footerwrappercontent{
     background:#353535 !important; min-height: 20px;    

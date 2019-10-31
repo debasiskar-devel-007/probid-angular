@@ -99,7 +99,7 @@ import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import { TranningcategorymanagementComponent } from './training/tranningcategorymanagement/tranningcategorymanagement.component';
 import { UsersearchPipe } from './training/search.pipe';
-import { TrainingModule } from './training/training.module';
+// import { TrainingModule } from './training/training.module';
 import { AddEditComponent } from './training/tranningcategorymanagement/add-edit/add-edit.component';
 
 import { TrainingsectionlistComponent } from './training/trainingsectionlist/trainingsectionlist.component';
@@ -136,8 +136,12 @@ import { ManagequizComponent } from './training/managequiz/managequiz.component'
 import { AddComponent } from './component/frontend/all_blog/add/add.component';
 import { ListingBlogmanagementComponent } from './component/frontend/all_blog/listing-blogmanagement/listing-blogmanagement.component';
 import { BloglistComponent } from './component/frontend/all_blog/bloglist/bloglist.component';
-import { BlogModule } from 'blog';
+// import { BlogModule } from 'blog';
 import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/addedit-blogmanagement/addedit-blogmanagement.component';
+import { AdeditBlogmanagComponent } from './component/frontend//all_bloging/adedit-blogmanag/adedit-blogmanag.component';
+import { BlglistComponent } from './component/frontend//all_bloging/blglist/blglist.component';
+import { ListingblogManagmentComponent } from './component/frontend/all_bloging/listingblog-managment/listingblog-managment.component';
+import { AddblogComponent } from './component/frontend/all_bloging/addblog/addblog.component';
 
 @NgModule({
   declarations: [
@@ -219,11 +223,16 @@ import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/ad
     DialogModalOpenDialog,
     AdminAddCategoriesComponent,
     TrainingreportsComponent,
-    ManagequizComponent
+    ManagequizComponent,
+    AdeditBlogmanagComponent,
+    BlglistComponent,
+    ListingblogManagmentComponent,
+    AddblogComponent,
+    
   ],
   imports: [
     // TrainingModule,
-    BlogModule,
+    // BlogModule,
     FileUploadModule,
     NgxUploaderModule,
     AngularFontAwesomeModule,
