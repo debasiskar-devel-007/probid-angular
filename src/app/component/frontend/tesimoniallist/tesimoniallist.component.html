@@ -24,10 +24,13 @@
             <mat-list-item role="listitem" class="testimonialserv" *ngFor="let testmon of TestimonialListArray | slice:0:indexval; let i=index">
                 <mat-card>
                     <span class="testiimgwarpper">
-                        <img src="{{testmon.image}}" class="iconcls">
-                    </span>        
-                            
-                    <mat-card-content>
+                        <img src="{{testmon.image}}" class="iconcls">                                              
+                    </span> 
+                    <mat-card-content class="testicontent">
+                        <span class="bnticons">
+                            <button (click)="showvideo()"><img src="../../../../assets/images/videoicon.png"></button>
+                            <button (click)="showaudio()"><img src="../../../../assets/images/audioicon.png"></button>
+                        </span>  
                         <span class="testibottomcontent">
                             <mat-card-title class="title1">{{testmon.name}}</mat-card-title>
                             <mat-card-title class="title2">{{testmon.created_at}}</mat-card-title>
