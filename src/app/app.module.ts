@@ -52,6 +52,8 @@ import { BasicInventorySearchComponent } from './component/frontend/basic-invent
 
 import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.component';
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
+import { BlogCategoryComponent } from './component/frontend/blog-category/blog-category.component';
+
 /**End Frontend Component**/
 
 
@@ -136,9 +138,11 @@ import { AddComponent } from './component/frontend/all_blog/add/add.component';
 import { ListingBlogmanagementComponent } from './component/frontend/all_blog/listing-blogmanagement/listing-blogmanagement.component';
 import { BlogModule } from 'blog';
 import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/addedit-blogmanagement/addedit-blogmanagement.component';
+import { BloglistComponent } from './component/frontend/all_blog/bloglist/bloglist.component';
 
 @NgModule({
   declarations: [
+    BloglistComponent,
     AddComponent,
     AddeditBlogmanagementComponent,
     ListingBlogmanagementComponent,
@@ -216,6 +220,7 @@ import { AddeditBlogmanagementComponent } from './component/frontend/all_blog/ad
     AdminAddCategoriesComponent,
     TrainingreportsComponent,
     ManagequizComponent,
+    BlogCategoryComponent,
   ],
   imports: [
     // TrainingModule,
