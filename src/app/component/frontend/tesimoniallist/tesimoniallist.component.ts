@@ -35,4 +35,8 @@ export class TesimoniallistComponent implements OnInit {
     console.log(this.indexval);
   }
 
+
+
 }
+
+
