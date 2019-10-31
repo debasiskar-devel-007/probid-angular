@@ -374,8 +374,9 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
 
 
 
-
-
+.rateingdiv{width: 100%; display: block;}
+.rateingdiv .fa{margin: 5px 5px 5px 0px;}
+.rateingdiv .checked {color: #f4cd64;}
 
 
   @media screen and (max-width: 768px){

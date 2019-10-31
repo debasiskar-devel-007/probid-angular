@@ -135,7 +135,7 @@ const routes: Routes = [
     resolve: { serviceListData: ResolveService },
     data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
   },
-  { path: 'blog-category/add', component: BlogComponent },
+  { path: 'blog', component: BlogComponent },
   { path: 'blog-category/edit/:_id', component: BlogComponent, resolve: { blogCatList: ResolveService },
   data: { requestcondition: { source: 'blog_category', condition: {} }, endpoint: 'datalist' }},
   
@@ -144,7 +144,7 @@ const routes: Routes = [
 
 
   
-  { path: 'blog', component: BloglistComponent },
+  // { path: 'blog', component: BloglistComponent },
 
   { path: 'advance-inventory-search', component: AdvanceInventorySearchComponent },
   { path: 'basic-inventory-search', component: BasicInventorySearchComponent },
