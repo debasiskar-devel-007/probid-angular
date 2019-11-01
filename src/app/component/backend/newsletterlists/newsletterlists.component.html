@@ -2,24 +2,36 @@
   <app-header></app-header>
   <div class="main-content-wrap">
     <mat-card class="generalcls blog" style="padding: 0 !important;">  
-      <span class="adminnerbannerblock">
+      <!-- <span class="adminnerbannerblock">
         
-      </span>
-      <!-- <img src="../../../../assets/images/admin-manage-type_img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+      </span> -->
+      <!-- <img src="../../../../assets/images/admin-newsletterlists-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
       <span class="searchblock">
         <span class="searchblockwrapper">
           <span>
             <h2>Newsletter</h2>
           </span>
           <span>                        
-            <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Create New Newsletter</button>
+            <button mat-button class="btnorange sim-button"><i class="material-icons">add</i> Create New Newsletter</button>
           </span>  
         </span>  
-      </span> 
-      <div class="tablediv">
-        
-      </div>
-      <!-- <img src="../../../../assets/images/newsletter-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+      </span>  -->
+      <!-- <div class="tablediv"> -->
+          <!-- <lib-listing-newsletter
+          [serverUrl]="server"
+          addTeammember="blog/add"
+          editblog="blog/edit"
+          [Blogtable]="listingTablename"
+          [deleteBlog]="Blogdelete"
+          [AddEditBlog]="updateUrl"
+          [getDataEndpoint]="getDataUrl"
+          [getDataSource]="getSourceUrl"
+          [listResolve]="BlogList"
+          [BlogToken]="token"
+        >
+        </lib-listing-newsletter> -->
+      <!-- </div> -->
+    <img src="../../../../assets/images/newsletter-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> 
     </mat-card>
   </div>
 </div>

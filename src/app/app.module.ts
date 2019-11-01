@@ -124,7 +124,6 @@ import { CommunicationComponent } from './component/backend/communication/commun
 import { AddAdminCategoriesComponent } from './component/backend/add-admin-categories/add-admin-categories.component';
 import { AdminManageCategoriesComponent, DialogModalOpenDialog } from './component/backend/admin-manage-categories/admin-manage-categories.component';
 import { AdminAddCategoriesComponent } from './component/backend/admin-add-categories/admin-add-categories.component';
-
 import { TrainingreportsComponent } from './training/trainingreports/trainingreports.component';
 
 import { BlogModule } from 'blog';
@@ -133,10 +132,10 @@ import { NewsTitleModule } from 'news-title';
 import { FileUploadModule } from 'file-upload';
 import { OwlModule } from 'ngx-owl-carousel'; 
 import { ManagequizComponent } from './training/managequiz/managequiz.component';
-import { AddEditBlogcatComponent } from './component/frontend/blogs/add-edit-blogcat/add-edit-blogcat.component';
-import { ListingBlogcatComponent } from './component/frontend/blogs/listing-blogcat/listing-blogcat.component';
-import { AddEditBlogsComponent } from './component/frontend/blogs/add-edit-blogs/add-edit-blogs.component';
-import { ListingBlogsComponent } from './component/frontend/blogs/listing-blogs/listing-blogs.component';
+import { AddEditBlogcatComponent } from './component/backend/blogs/add-edit-blogcat/add-edit-blogcat.component';
+import { ListingBlogcatComponent } from './component/backend/blogs/listing-blogcat/listing-blogcat.component';
+import { AddEditBlogsComponent } from './component/backend/blogs/add-edit-blogs/add-edit-blogs.component';
+import { ListingBlogsComponent } from './component/backend/blogs/listing-blogs/listing-blogs.component';
 
 
 @NgModule({

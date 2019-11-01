@@ -1,7 +1,6 @@
 import { Component, OnInit, TemplateRef, ViewChild, EventEmitter, ElementRef, Input } from "@angular/core";
 import { FormBuilder, FormGroup, Validators, ValidatorFn, AbstractControl, FormControl } from "@angular/forms";
 import { Router } from "@angular/router";
-// import { Commonservices } from "../app.commonservices";
 import { ApiService } from '../../api.service';
 import { HttpClient } from "@angular/common/http";
 import { BsModalService } from "ngx-bootstrap/modal";
@@ -9,7 +8,6 @@ import { BsModalRef } from "ngx-bootstrap/modal/bs-modal-ref.service";
 import { ImageCroppedEvent } from "ngx-image-cropper";
 import { CookieService } from "ngx-cookie-service";
 import { UploadOutput, UploadInput, UploadFile, humanizeBytes, UploaderOptions } from "ngx-uploader";
-import { routerNgProbeToken } from "@angular/router/src/router_module";
 import {ModalOptions} from "ngx-bootstrap";
 import { DomSanitizer} from '@angular/platform-browser';
 
@@ -19,7 +17,6 @@ declare var $: any;
     selector: 'app-listing',
     templateUrl: './listing.component.html',
     styleUrls: ['./listing.component.css'],
-    // providers: [Commonservices],
 })
 export class ListingComponent implements OnInit {
     public start_time: any;

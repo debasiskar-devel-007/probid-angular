@@ -326,3 +326,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
       filter: grayscale(100%);
   }
+
+  .tablediv .formfilterdiv .searchbar {
+    justify-content: inherit !important;
+}

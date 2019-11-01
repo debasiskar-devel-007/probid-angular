@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute,Router} from '@angular/router';
  import{CookieService} from 'ngx-cookie-service';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-blogdetail',
@@ -8,7 +9,7 @@ import {ActivatedRoute,Router} from '@angular/router';
   styleUrls: ['./blogdetail.component.css']
 })
 export class BlogdetailComponent implements OnInit {
- 
+ public blogList: any;
 
     /************** lib list setup start here *************/
     public blogListConfig:any = {
