@@ -128,6 +128,8 @@ import { AdminAddCategoriesComponent } from './component/backend/admin-add-categ
 import { TrainingreportsComponent } from './training/trainingreports/trainingreports.component';
 
 import { BlogModule } from 'blog';
+import { NewsTitleModule } from 'news-title';
+
 import { FileUploadModule } from 'file-upload';
 import { OwlModule } from 'ngx-owl-carousel'; 
 import { ManagequizComponent } from './training/managequiz/managequiz.component';
@@ -225,6 +227,7 @@ import { ListingBlogsComponent } from './component/frontend/blogs/listing-blogs/
     ListingBlogsComponent,
   ],
   imports: [
+    NewsTitleModule,
     // TrainingModule,
     BlogModule,
     FileUploadModule,

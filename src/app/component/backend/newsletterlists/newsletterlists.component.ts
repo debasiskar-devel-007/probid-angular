@@ -13,3 +13,5 @@ export class NewsletterlistsComponent implements OnInit {
   }
 
 }
+
+
