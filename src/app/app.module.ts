@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule  }   from '@angular/forms'
 
 import {DemoMaterialModule} from "../material-module";
 import { DragScrollModule } from 'ngx-drag-scroll';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
@@ -96,7 +95,7 @@ import { ListingComponent } from './training/listing/listing.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
-import {ModalModule} from 'ngx-bootstrap/modal';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { TranningcategorymanagementComponent } from './training/tranningcategorymanagement/tranningcategorymanagement.component';
 import { UsersearchPipe } from './training/search.pipe';
 // import { TrainingModule } from './training/training.module';

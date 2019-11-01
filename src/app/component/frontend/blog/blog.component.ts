@@ -24,7 +24,7 @@ export class BlogComponent implements OnInit {
   ];
 
 
-  constructor(public sanitizer: DomSanitizer, public activatedRoute: ActivatedRoute, public apiService: ApiService) { }
+  constructor(public activatedRoute: ActivatedRoute, public apiService: ApiService) { }
 
 
   showMoreFunc(){
