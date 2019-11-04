@@ -340,12 +340,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .bloglists .tablediv .searchbar {padding-right: 192px;}
 .blogcatlists .tablediv .searchbar {padding-right: 192px;}
 
-.mat-toolbar.mat-primary {
-    /* background: #673ab7;
-    color: #fff; */
-    display:none !important;
-}
-
 .mat-form-field-appearance-legacy .mat-form-field-infix{
     padding: 1em !important;
     background: #fff;
