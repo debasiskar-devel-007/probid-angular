@@ -16,6 +16,7 @@ export class BlogComponent implements OnInit {
   public blogList: any;
   public indexval:any = 3;
 
+
   public ConfigData: any = [
     { type: 'facebook', link: 'https://SoureshBanerjee.com' },
     { type: 'twitter', link: 'https://google.com' },
@@ -24,7 +25,7 @@ export class BlogComponent implements OnInit {
   ];
 
 
-  constructor(public activatedRoute: ActivatedRoute, public apiService: ApiService) { }
+  constructor(public activatedRoute: ActivatedRoute, public apiService: ApiService) {}
 
 
   showMoreFunc(){
@@ -37,16 +38,17 @@ export class BlogComponent implements OnInit {
   ngOnInit() {
 
     let data: any = {};
+    
     data = {
       source:"blogs_view",
       endpoint: "datalist"
     }
-    this.apiService.getDatalist(data).subscribe((res)=>{
-       let result: any = {};
-       result = res;
-       this.blogList = result.res;
+    this.apiService.getDatalistWithToken(data).subscribe((res: any) => {
+      console.log(res);
+       this.blogList = res.res;
        console.warn(this.blogList);
-    })
+    });
+  
 
   }
 }
