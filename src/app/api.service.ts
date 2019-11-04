@@ -61,6 +61,7 @@ export class ApiService {
       //   this.tokenVal = res;
       //   console.log('token')
       //   console.log(this.tokenVal)
+      //   console.log(this.tokenVal.token.length)
       // });
 
       this.fileimgsslurl = 'http://api.nexgentesting.com/';
@@ -300,19 +301,21 @@ getDatalist(requestdata: any) {
 
 
 }
+test(requestdata: any, newdata: any){
+    console.log('ssssssssssssss', newdata);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': newdata.token
+      })
+    };
+    var result = this._http.post(this.serverUrlDemo + requestdata.endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
+    return result;
+}
 
-
-getDatalistWithToken(requestdata: any) {
- 
-  const httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': this.tokenVal
-    })
-  };
-  var result = this._http.post(this.serverUrlDemo + requestdata.endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
+getDatalistWithToken() {
+  var result = this._http.get(this.serverUrlDemo + 'gettemptoken').pipe(map(res => res));
   return result;
-
 }
 /*************** Added by himadri end here ***************/ 
 

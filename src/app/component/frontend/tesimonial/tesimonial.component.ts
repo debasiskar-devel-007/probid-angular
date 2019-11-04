@@ -63,18 +63,40 @@ export class TesimonialComponent implements OnInit {
 
 
   ngOnInit() {
-    let data: any = {};
+    var data: any = {};
     data = {
       source:"testimonals",
       endpoint: "datalist"
     }
-    this.apiService.getDatalist(data).subscribe((res)=>{
-      console.log(res);
-          let result: any = {};
-      result = res;
-      this.TestimonialListArray = result.res;
-      console.log(this.TestimonialListArray);
-    })
+    // this.apiService.getDatalist(data).subscribe((res)=>{
+    //   console.log(res);
+    //       let result: any = {};
+    //   result = res;
+    //   this.TestimonialListArray = result.res;
+    //   console.log(this.TestimonialListArray);
+    // });
+
+
+    // this.apiService.getDatalist(data).subscribe((res)=>{
+    //   console.log(res);
+    //       let result: any = {};
+    //   result = res;
+    //   this.TestimonialListArray = result.res;
+    //   console.log(this.TestimonialListArray);
+    // });
+
+    this.apiService.getDatalistWithToken().subscribe((res:any)=>{
+      if(res.status == 'success') {
+        console.log('=============', res);
+        this.apiService.test(data, res).subscribe((res2:any)=>{
+          console.log('PPPPPPPPPPPPPPPP', res2);
+          if(res2.status == 'success') {
+            console.log('&&&&&&&&&&&&', res2);
+            this.TestimonialListArray = res2.res;
+          }
+        });
+      }
+    });
   }
 
   showBut() {
