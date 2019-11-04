@@ -44,7 +44,7 @@ export class BlogComponent implements OnInit {
       endpoint: "datalist"
     }
     this.apiService.getDatalistWithToken(data).subscribe((res: any) => {
-      console.log(res);
+      //console.log(res);
        this.blogList = res.res;
        console.warn(this.blogList);
     });

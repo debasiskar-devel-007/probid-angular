@@ -303,8 +303,6 @@ getDatalist(requestdata: any) {
 
 
 getDatalistWithToken(requestdata: any) {
-
-    
  
   const httpOptions = {
     headers: new HttpHeaders({
