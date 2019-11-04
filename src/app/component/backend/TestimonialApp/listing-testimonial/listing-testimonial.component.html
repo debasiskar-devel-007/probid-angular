@@ -1,18 +1,23 @@
 
-<app-adminheader>
-    <mat-card>
-        <span class="searchblock">
-            <span class="searchblockwrapper">
-                <span>
-                    <h2>Testimonials List</h2>
+<div class="adminwrappercls">
+  <app-header></app-header>
+      <div class="main-content-wrap">
+        <mat-card class="generalcls blog" style="padding: 0 !important;">  
+            <img src="../../../../assets/images/testimoniallists-dashboard-bannerimg1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+            <span class="searchblock">
+                <span class="searchblockwrapper">
+                    <span>
+                        <h2>Testimonials List</h2>
+                    </span>
+                    <span>
+                        <button mat-button class="btnorange sim-button" [routerLink]="['/testimonial/add']"><i class="material-icons">add</i> Add a testimonial</button>
+                    </span>                    
                 </span>
-                <span>
-                    <button mat-button class="btnorange sim-button" [routerLink]="['/testimonial/add']"><i class="material-icons">add</i> Add a testimonial</button>
-                </span>                    
             </span>
-        </span>
-        <div class="tablediv">
-            <lib-testimonial class="formfilterdiv" [config]="testimonialListConfig"></lib-testimonial>
-         </div>
-    </mat-card>
-</app-adminheader>
+            <div class="tablediv">
+                <lib-testimonial class="formfilterdiv" [config]="testimonialListConfig"></lib-testimonial>
+            </div>
+        </mat-card>
+      </div>
+  </div>
+<app-footer></app-footer>
