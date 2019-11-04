@@ -346,10 +346,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-infix{
-    padding: .5em !important;
+    padding: 1em !important;
     background: #fff;
 }
-
+.tablediv .searchbar .mat-form-field .mat-form-field-prefix, .tablediv .searchbar .mat-form-field .mat-form-field-suffix{display: flex; align-items: center;}
 
 .formspan .form-field-span, .formspan .mat-form-field {
     width: 100% !important;
