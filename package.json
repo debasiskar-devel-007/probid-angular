@@ -47,6 +47,7 @@
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
     "jquery": "^3.4.1",
+    "jw-angular-social-buttons": "^1.0.0",
     "listing-angular7": "0.0.94",
     "material-design-icons": "^3.0.1",
     "moment": "^2.24.0",

@@ -1,0 +1,29 @@
+<app-adminheader>
+
+    <mat-card>
+        <!-- <mat-toolbar color="primary" style="justify-content: center; align-items: center;">
+            <h2 class="headerSpan">Blogs</h2>
+        </mat-toolbar> -->
+
+        <!-- ---------------------Button for adding new role------------------------------ -->
+        <!-- <mat-toolbar class="buttonsetToolbar">
+            <button style="margin-left: auto;" class="singleButton" mat-raised-button color="primary"
+                [routerLink]="['/blogs/add']">Add New Blog</button>
+        </mat-toolbar> -->
+
+        <span class="searchblock">
+            <span class="searchblockwrapper">
+                <span>
+                    <h2>Manage Blog</h2>
+                </span>
+                <span>
+                    <button mat-button class="btnorange sim-button" [routerLink]="['/blogs/add']"><i class="material-icons">add</i> Add New Blog</button>
+                </span>                    
+            </span>
+        </span>
+        <!-- to listing library -->
+        <div class="tablediv">
+            <lib-listing-blogmanagementlib class="formfilterdiv" *ngIf="blogListConfig.datasource != null && blogListConfig.datasource.length > 0" [config]="blogListConfig"></lib-listing-blogmanagementlib>
+        </div>
+    </mat-card>
+</app-adminheader>

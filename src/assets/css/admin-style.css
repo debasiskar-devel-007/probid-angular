@@ -559,9 +559,10 @@ addcategory-dialog .mat-dialog-content{
 .formfilterdiv {
     margin-top: -10% !important;
 }
+.formfilterdiv .container{width: 100%;}
 
 .tablediv{    margin-top: -70px;}
-.tablediv .searchbar {    padding-right: 173px;flex-direction: row-reverse;}
+.tablediv .searchbar {padding-right: 173px;flex-direction: row-reverse; justify-content: inherit !important;}
 .tablediv .searchbar .mat-form-field{
     z-index: 99;
     position: relative;
@@ -762,6 +763,80 @@ addcategory-dialog .mat-dialog-content{
     background: #dde2e5;
     padding: 50px;
 }
+
+
+.breadcrumb { 
+    list-style: none; 
+    overflow: hidden; 
+    font: 18px Helvetica, Arial, Sans-Serif;
+    margin: 40px;
+    padding: 0;
+  }
+  .breadcrumb li { 
+    float: left; 
+  }
+  .breadcrumb li a {
+    color: white;
+    text-decoration: none; 
+    padding: 10px 0 10px 55px;
+    background: brown; /* fallback color */
+    background: #b5bdbf; 
+    position: relative; 
+    display: block;
+    float: left;
+  }
+  .breadcrumb li a:after { 
+    content: " "; 
+    display: block; 
+    width: 0; 
+    height: 0;
+    border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid #b5bdbf;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px; 
+    left: 100%;
+    z-index: 2; 
+  }   
+  .breadcrumb li a:before { 
+    content: " "; 
+    display: block; 
+    width: 0; 
+    height: 0;
+    border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+    border-bottom: 50px solid transparent;
+    border-left: 30px solid white;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px; 
+    margin-left: 1px;
+    left: 100%;
+    z-index: 1; 
+  }   
+  .breadcrumb li:first-child a {
+    padding-left: 10px;
+  }
+  .breadcrumb li:nth-child(2) a       { background:        #b5bdbf; }
+  .breadcrumb li:nth-child(2) a:after { border-left-color: #b5bdbf; }
+  .breadcrumb li:nth-child(3) a       { background:        #b5bdbf; }
+  .breadcrumb li:nth-child(3) a:after { border-left-color: #b5bdbf; }
+  .breadcrumb li:nth-child(4) a       { background:        #b5bdbf; }
+  .breadcrumb li:nth-child(4) a:after { border-left-color: #b5bdbf; }
+  .breadcrumb li:nth-child(5) a       { background:        #b5bdbf; }
+  .breadcrumb li:nth-child(5) a:after { border-left-color: #b5bdbf; }
+  .breadcrumb li:last-child a {
+    background: #fff !important;
+    color: black;
+    pointer-events: none;
+    cursor: default;
+  }
+  .breadcrumb li:last-child a:after { border: 0; }
+  .breadcrumb li a:hover { background: #b5bdbf; }
+  .breadcrumb li a:hover:after { border-left-color: #b5bdbf !important; }
+  
+
+  app-bk-leftdiv{position: relative; z-index: 999;}
 
 
 @media only screen and (max-width: 1760px) {
