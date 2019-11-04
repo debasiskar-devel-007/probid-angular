@@ -11,7 +11,7 @@ export class TesimoniallistComponent implements OnInit {
   public TestimonialListArray: any = [];
   // showMore = false;
   showme = true;
-  public indexval: any = 6;
+  public indexval: any=6;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
 
@@ -23,6 +23,7 @@ export class TesimoniallistComponent implements OnInit {
       console.warn(result)
       this.TestimonialListArray = result;
       this.indexvallength = this.TestimonialListArray.length;
+      console.log(this.indexvallength);
     })
   }
 

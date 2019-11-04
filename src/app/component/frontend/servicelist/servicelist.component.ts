@@ -28,6 +28,7 @@ export class ServicelistComponent implements OnInit {
   btnBackClick= function () {
     this.router.navigateByUrl('service');
   };
+  
 
   showMoreFunc(){
     this.indexval = this.indexval + 3;   
