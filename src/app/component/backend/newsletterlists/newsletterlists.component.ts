@@ -4,6 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 
+
 @Component({
   selector: 'app-newsletterlists',
   templateUrl: './newsletterlists.component.html',
@@ -11,7 +12,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class NewsletterlistsComponent implements OnInit {
 
-  apiBaseUrl:any= "https://63zzhpnoti.execute-api.us-east-1.amazonaws.com/production/api/";
+  apiBaseUrl:any= this.ApiService.serverUrlDemo;
   listEndPoint:any= "datalist";
   datasource:any= "";
   tableName: any="resources";
@@ -22,7 +23,7 @@ export class NewsletterlistsComponent implements OnInit {
   addLink:any ="/resource/add";
   view: any="resources_view";
 
-  constructor( private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService ) { 
+  constructor( private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService,  public ApiService: ApiService ) { 
     
   }
 
