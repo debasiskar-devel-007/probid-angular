@@ -3,7 +3,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from 'src/app/api.service';
 
-
 @Component({
   selector: 'app-bloglist',
   templateUrl: './bloglist.component.html',
