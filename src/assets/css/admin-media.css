@@ -34,6 +34,11 @@
             padding-right: 9px !important;
             background: #70daee;
         }
+
+        .tablediv .searchbar{
+            padding-right: 9px !important;
+            background: #70daee;
+        }
         .mat-form-field-appearance-legacy .mat-form-field-wrapper {
             padding-bottom: 0 !important;
         }

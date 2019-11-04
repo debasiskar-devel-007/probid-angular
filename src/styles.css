@@ -386,3 +386,7 @@ ckeditor{
 lib-file-upload div.uploadfilecontainer[style]{
     background-color: rgb(140, 176, 195)!important;
 }
+
+.lib-addedit-blogmanagement .mat-toolbar.mat-primary{display:none}
+.lib-addedit-blogcat .mat-toolbar.mat-primary{display:none}
+.lib-addedit-testimonial .mat-toolbar.mat-primary{display:none}
