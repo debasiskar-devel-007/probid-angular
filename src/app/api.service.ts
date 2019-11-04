@@ -53,9 +53,15 @@ export class ApiService {
   public subscriptiondeletesingleEndpoint: Subscription;
   public subscriptionupdatestatusSingleEndpoint: Subscription;
   public subscriptionGetdataEndpoint: Subscription;
+  public tokenVal: any;
+  constructor(private _http: HttpClient, private cookieService :CookieService) {
 
-  constructor(private _http: HttpClient,
-    private _authHttp: HttpClient,private cookieService :CookieService) {
+
+      // this._http.get(this.serverUrlDemo + 'gettemptoken').subscribe((res: any)=>{
+      //   this.tokenVal = res;
+      //   console.log('token')
+      //   console.log(this.tokenVal)
+      // });
 
       this.fileimgsslurl = 'http://api.nexgentesting.com/';
 
@@ -294,6 +300,22 @@ getDatalist(requestdata: any) {
 
 
 }
+
+
+getDatalistWithToken(requestdata: any) {
+
+    
+ 
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': this.tokenVal
+    })
+  };
+  var result = this._http.post(this.serverUrlDemo + requestdata.endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
+  return result;
+
+}
 /*************** Added by himadri end here ***************/ 
 
 getDatalistForResolve(requestdata: any) {
@@ -397,6 +419,11 @@ forgetPassword(requestdata: any) {
     };
     console.log(requestdata);
     var result = this._http.post(this.serverUrlDemo + endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
+    return result;
+  }
+
+  gettemptoken(){
+    var result = this._http.get(this.serverUrlDemo + 'gettemptoken').pipe(map(res=>res));
     return result;
   }
 
