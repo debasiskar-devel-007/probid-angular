@@ -344,3 +344,28 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: #fff; */
     display:none !important;
 }
+
+.mat-form-field-appearance-legacy .mat-form-field-infix{
+    padding: .5em !important;
+    background: #fff;
+}
+
+
+.formspan .form-field-span, .formspan .mat-form-field {
+    width: 100% !important;
+    box-sizing: border-box;
+    margin-bottom: 9px !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+.formspan .example-container {   
+    width: 100% !important;
+    box-sizing: border-box;   
+}
+
+ckeditor{
+    margin-bottom: 9px !important;
+    display: inline-block;
+    width: 100%;
+}
