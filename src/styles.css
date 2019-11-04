@@ -330,6 +330,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   .tablediv .formfilterdiv mat-toolbar-row [style] {
     justify-content: inherit !important;
 }
+.tablediv .searchbar .mat-form-field .mat-form-field-prefix, .tablediv .searchbar .mat-form-field .mat-form-field-suffix{display: flex; align-items: center;}
 
 .mat-form-field-appearance-legacy .mat-form-field-underline{
     height:inherit !important;
@@ -349,7 +350,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding: 1em !important;
     background: #fff;
 }
-.tablediv .searchbar .mat-form-field .mat-form-field-prefix, .tablediv .searchbar .mat-form-field .mat-form-field-suffix{display: flex; align-items: center;}
 
 .formspan .form-field-span, .formspan .mat-form-field {
     width: 100% !important;
