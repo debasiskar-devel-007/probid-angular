@@ -369,3 +369,26 @@ ckeditor{
     display: inline-block;
     width: 100%;
 }
+
+.uploadfilecontainer {
+    width:100% !important;
+    box-sizing: border-box;  
+}
+
+.formspan h1{
+    font-family: 'HelveticaBold';
+    font-size: 24px!important;
+    line-height: normal!important;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 18px;
+    margin-top: 25px;
+    color: #fff;
+    white-space: normal!important;
+}
+
+.formspan .mat-form-field-flex {align-items: center !important;}
+lib-file-upload div.uploadfilecontainer[style]{
+    background-color: rgb(140, 176, 195)!important;
+}
