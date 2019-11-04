@@ -85,13 +85,10 @@ export class TesimonialComponent implements OnInit {
     //   console.log(this.TestimonialListArray);
     // });
 
-    this.apiService.getDatalistWithToken().subscribe((res:any)=>{
+    this.apiService.getTempToken().subscribe((res:any)=>{
       if(res.status == 'success') {
-        console.log('=============', res);
-        this.apiService.test(data, res).subscribe((res2:any)=>{
-          console.log('PPPPPPPPPPPPPPPP', res2);
+        this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
           if(res2.status == 'success') {
-            console.log('&&&&&&&&&&&&', res2);
             this.TestimonialListArray = res2.res;
           }
         });
