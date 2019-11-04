@@ -327,6 +327,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       filter: grayscale(100%);
   }
 
-  .tablediv .formfilterdiv .searchbar {
+  .tablediv .formfilterdiv mat-toolbar-row [style] {
     justify-content: inherit !important;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline{
+    height:inherit !important;
+}
+
+.bloglists, .blogcatlists{}
+.bloglists .tablediv .searchbar {padding-right: 192px;}
+.blogcatlists .tablediv .searchbar {padding-right: 192px;}
+
+.mat-toolbar.mat-primary {
+    /* background: #673ab7;
+    color: #fff; */
+    display:none !important;
 }
