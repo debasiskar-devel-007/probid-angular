@@ -3,7 +3,39 @@
         <div class="main-content-wrap">
           <mat-card class="generalcls blog" style="padding: 0 !important;">  
               <img src="../../../../assets/images/blogmang-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
-              <img src="../../../../assets/images/blogmang-dashboard-img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+              <!-- <ul class="breadcrumb">
+                  <li><a href="#">Dashboard</a></li>
+                  <li><a href="#">Lorem Ipsum..</a></li>
+                  <li><a href="#">Lorem Ipsum is simply dummy text</a></li>
+                </ul> -->
+              <mat-tab-group class="tabwrapper">
+                    <mat-tab>
+                        <ng-template mat-tab-label>
+                            <h2 class="innertitle2">Blogs List</h2>
+                        </ng-template>          
+                      <ng-template matTabContent>    
+                        <span>               
+                            <app-listing-blogs></app-listing-blogs>     
+                          <!-- <button mat-button class="btnblue sim-button" [routerLink]="['/']">View all</button> -->
+                        </span>
+                      </ng-template>
+                    </mat-tab>
+                    <mat-tab>            
+                        <ng-template mat-tab-label>
+                          <h2>Blog Catagory List</h2>
+                        </ng-template>           
+                        <ng-template matTabContent>
+                            <span> 
+                                <app-listing-blogcat></app-listing-blogcat>     
+                               <!-- <button mat-button class="btnblue sim-button" [routerLink]="['/']">View all</button> -->                               
+                            </span>
+                        </ng-template>
+                    </mat-tab>
+                           
+                 </mat-tab-group> 
+
+
+              <!-- <img src="../../../../assets/images/blogmang-dashboard-img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
           </mat-card>
         </div>
     </div>

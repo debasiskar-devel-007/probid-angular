@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import * as moment from 'moment'; // add this 1 of 4
 
 @Component({
   selector: 'app-tesimoniallist',
@@ -12,8 +13,12 @@ export class TesimoniallistComponent implements OnInit {
   // showMore = false;
   showme = true;
   public indexval: any = 6;
+  public dataformate: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+    this.dataformate = moment(); // add this 2 of 4
+    // console.log(this.dataformate)
+   }
 
 
   ngOnInit() {
@@ -34,7 +39,9 @@ export class TesimoniallistComponent implements OnInit {
     this.indexval = this.indexval + 3;
     console.log(this.indexval);
   }
-
+  showmore() {
+    
+  }
 
 
 }

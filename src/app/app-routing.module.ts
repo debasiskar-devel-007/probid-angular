@@ -15,6 +15,9 @@ import { ServiceComponent } from './component/frontend/service/service.component
 import { ServicelistComponent } from './component/frontend/servicelist/servicelist.component';
 import { BlogComponent } from './component/frontend/blog/blog.component';
 import { BloglistfrontendComponent } from './component/frontend/bloglist/bloglist.component';
+
+import { BlogdetailComponent } from './component/frontend/blogdetail/blogdetail.component';
+
 import { AdvanceInventorySearchComponent } from './component/frontend/advance-inventory-search/advance-inventory-search.component';
 import { BasicInventorySearchComponent } from './component/frontend/basic-inventory-search/basic-inventory-search.component';
 import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.component';
@@ -79,10 +82,10 @@ import { AddAdminCategoriesComponent } from './component/backend/add-admin-categ
 import { AdminAddCategoriesComponent } from './component/backend/admin-add-categories/admin-add-categories.component';
 import { TrainingreportsComponent } from './training/trainingreports/trainingreports.component';
 import { ManagequizComponent } from './training/managequiz/managequiz.component';
-import { AddEditBlogcatComponent } from './component/frontend/blogs/add-edit-blogcat/add-edit-blogcat.component';
-import { ListingBlogcatComponent } from './component/frontend/blogs/listing-blogcat/listing-blogcat.component';
-import { AddEditBlogsComponent } from './component/frontend/blogs/add-edit-blogs/add-edit-blogs.component';
-import { ListingBlogsComponent } from './component/frontend/blogs/listing-blogs/listing-blogs.component';
+import { AddEditBlogcatComponent } from './component/backend/blogs/add-edit-blogcat/add-edit-blogcat.component';
+import { ListingBlogcatComponent } from './component/backend/blogs/listing-blogcat/listing-blogcat.component';
+import { AddEditBlogsComponent } from './component/backend/blogs/add-edit-blogs/add-edit-blogs.component';
+import { ListingBlogsComponent } from './component/backend/blogs/listing-blogs/listing-blogs.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -116,7 +119,7 @@ const routes: Routes = [
     component: TesimoniallistComponent,
     resolve: { testimonialListData: ResolveService },
     data: {
-      requestcondition: { source: "testimonals", condition: {} },
+      requestcondition: { source: "testimonals_view", condition: {} },
       endpoint: "datalist"
     }
   },
@@ -145,6 +148,13 @@ const routes: Routes = [
   { path: 'bloglist', component: BloglistfrontendComponent, resolve: { blogCatList: ResolveService },
   data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' } },
 
+
+
+  { path: 'blogdetail', component: BlogdetailComponent, resolve: { blogCatList: ResolveService },
+  data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' } },
+
+
+
   { path: 'advance-inventory-search', component: AdvanceInventorySearchComponent },
   { path: 'basic-inventory-search', component: BasicInventorySearchComponent },
   { path: 'pre-owned', component: PreOwnedComponent },
@@ -161,16 +171,17 @@ const routes: Routes = [
 
 {
   path: 'blog-category/list',
-  component: ListingBlogcatComponent,
+  component: ListingBlogcatComponent
+  // ,
  
-  resolve: { blogCatList: ResolveService },
-  data: {
-    requestcondition: {
-      source: 'blog_category',
-      condition: {}
-    },
-    endpoint: 'datalist'
-  },
+  // resolve: { blogCatList: ResolveService },
+  // data: {
+  //   requestcondition: {
+  //     source: 'blog_category',
+  //     condition: {}
+  //   },
+  //   endpoint: 'datalist'
+  // },
 },
 {
   path: 'blog-category/edit/:_id',
@@ -196,16 +207,16 @@ const routes: Routes = [
 
   {
     path: 'blogs/list',
-    component: ListingBlogsComponent,
+    component: ListingBlogsComponent
     
-    resolve: { blogsList: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'blogs_view',
-        condition: {}
-      },
-      endpoint: 'datalist'
-    },
+    // resolve: { blogsList: ResolveService },
+    // data: {
+    //   requestcondition: {
+    //     source: 'blogs_view',
+    //     condition: {}
+    //   },
+    //   endpoint: 'datalist'
+    // },
   },
   {
     path: 'blogs/edit/:_id',
@@ -261,7 +272,7 @@ const routes: Routes = [
   { path: 'commission-list', component: CommissionListComponent },
   { path: 'customer-list-admin', component: CustomerListComponent },
   { path: 'manage-commission', component: ManageCommissionComponent },
-  { path: 'newsletter-list', component: NewsletterlistsComponent },
+  // { path: 'newsletter-list', component: NewsletterlistsComponent },
   { path: 'sales-report', component: SalesReportComponent },
   { path: 'salesrep-list-admin', component: SalesreplistsComponent },
   { path: 'rsvp', component: RsvplistsComponent },
@@ -342,8 +353,15 @@ const routes: Routes = [
 
   { path: 'training-reports', component: TrainingreportsComponent },
 
+//News letter
 
-
+  {
+    path: 'newsletter-list',
+    component: NewsletterlistsComponent,
+    resolve: { newsLetterData: ResolveService },
+    data: { requestcondition: { source: 'newslettertable', condition: {} }, endpoint: 'datalist' }
+  },
+ 
 
 
 

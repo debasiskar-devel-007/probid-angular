@@ -33,7 +33,7 @@
                         </span>  
                         <span class="testibottomcontent">
                             <mat-card-title class="title1">{{testmon.name}}</mat-card-title>
-                            <mat-card-title class="title2">{{testmon.created_at}}</mat-card-title>
+                            <mat-card-title class="title2">{{testmon.date_added}}</mat-card-title>
                         </span>
                         <!--<span class="rateingdiv">
                             <span class="fa fa-star checked"></span>
@@ -44,12 +44,7 @@
                         </span>-->
                         <span class="quatation truncate">
                            &quot; {{testmon.quatation}} &quot;
-                            <button class="hide" data-target="read-more.moreButton" data-action="read-more#showMore">
-                                read more
-                            </button>
-                            <button class="hide" data-target="read-more.lessButton" data-action="read-more#showLess">
-                                read less
-                            </button>
+                            <a *ngIf="testmon.quatation.length >= 160" (click)="showmore()">..... read more</a>
                         </span>                        
                        </mat-card-content>                    
                 </mat-card>
