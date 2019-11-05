@@ -503,8 +503,10 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
 .bottom_blog .mat-tab-label {min-width: inherit; width: 100%;}
 
 .blog .categorywrapper .mat-list-item{height: auto;}
-.blog .categorywrapper .mat-card-title {font-size: 20px!important; text-transform: uppercase;}
-.blog .categorywrapper .mat-card-title span{color:#fb4a32; padding: 0 11px;}
+.blog .categorywrapper .mat-list-item .mat-list-item-content{flex-wrap: wrap;}
+.blog .categorywrapper .mat-list-item .mat-list-item-content .mat-list .mat-card-title{font-size: 16px!important;text-transform: capitalize;margin: 8px 0px !important;}
+.blog .categorywrapper .inner_header.mat-card-title {font-size: 18px!important; text-transform: uppercase;}
+.blog .categorywrapper .inner_header.mat-card-title span{color:#fb4a32; padding: 0 11px;}
 
 .signupfooter a{cursor: pointer; padding-right: 0 !important; color:#fff;}
 /* .loginwrappernew .formgenrl button.mat-primary{display: none;} */
