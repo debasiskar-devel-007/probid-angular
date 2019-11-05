@@ -561,7 +561,7 @@ addcategory-dialog .mat-dialog-content{
 }
 .formfilterdiv .container{width: 100%;}
 
-.tablediv{    margin-top: -70px;}
+.tablediv{margin-top: -63px;}
 .tablediv .searchbar {padding-right: 173px;flex-direction: row-reverse; justify-content: inherit !important;}
 .tablediv .searchbar .mat-form-field{
     z-index: 99;

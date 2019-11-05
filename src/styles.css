@@ -327,7 +327,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       filter: grayscale(100%);
   }
 
-  .tablediv .formfilterdiv mat-toolbar-row [style] {
+  .tablediv .formfilterdiv mat-toolbar-row[style] {
     justify-content: inherit !important;
 }
 .tablediv .searchbar .mat-form-field .mat-form-field-prefix, .tablediv .searchbar .mat-form-field .mat-form-field-suffix{display: flex; align-items: center;}
@@ -337,8 +337,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .bloglists, .blogcatlists{}
-.bloglists .tablediv .searchbar {padding-right: 192px;}
-.blogcatlists .tablediv .searchbar {padding-right: 192px;}
+.bloglists .tablediv .searchbar {padding-right: 200px;margin-top: -10px;}
+.blogcatlists .tablediv .searchbar {padding-right: 252px;margin-top: -10px;}
+.tablediv .searchbar .mat-form-field{margin: 0 2px;}
 
 .mat-form-field-appearance-legacy .mat-form-field-infix{
     padding: 1em !important;
