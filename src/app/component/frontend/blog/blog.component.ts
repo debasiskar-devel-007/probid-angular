@@ -37,8 +37,6 @@ public tokenVal: any;
     console.log(this.indexval);
   }
 
-
-
   ngOnInit() {
    
 

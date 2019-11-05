@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute,Router} from '@angular/router';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
   selector: 'app-servicelist',
@@ -13,8 +14,12 @@ export class ServicelistComponent implements OnInit {
   // showMore = false;
   showme=true;
   public indexval:any = 13;
+  public serv_list:any = '';
+ 
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+    
+   }
 
   ngOnInit() {
     this.activatedRoute.data.forEach((data:any)=>{
@@ -22,16 +27,27 @@ export class ServicelistComponent implements OnInit {
 
       this.ServiceListArray=data.serviceListData.res;     
      this.indexvallength = this.ServiceListArray.length;
+     if (this.serv_list == '' ) {
+      this.serv_list = this.ServiceListArray[0];
+     }
+    
     })
   }
 
   btnBackClick= function () {
     this.router.navigateByUrl('service');
   };
+  
 
   showMoreFunc(){
     this.indexval = this.indexval + 3;   
     console.log(this.indexval);
+  }
+//service list data display
+  servicelist(val: any){
+  // console.log(val)
+  this.serv_list=val;
+  console.log(this.serv_list)
   }
 
 }

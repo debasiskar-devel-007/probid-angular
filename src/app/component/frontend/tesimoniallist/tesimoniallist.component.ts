@@ -28,6 +28,7 @@ export class TesimoniallistComponent implements OnInit {
       console.warn(result)
       this.TestimonialListArray = result;
       this.indexvallength = this.TestimonialListArray.length;
+      console.log(this.indexvallength);
     })
   }
 
