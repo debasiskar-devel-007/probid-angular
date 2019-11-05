@@ -46,10 +46,10 @@
   .mat-drawer{position:relative;z-index:4;display:block;position:inherit;top:0;bottom:0;z-index:3;outline:0;box-sizing:border-box;overflow-y:auto;transform:translate3d(-100%,0,0)}
   .mat-drawer-container.mat-drawer-opened{position:absolute;z-index:999;box-sizing:border-box;-webkit-overflow-scrolling:touch;display:block;overflow:visible}
   .videoclsgen{float:none;margin:0 auto;display:block}
-  .generalcls .mat-card-content{display:inline-block;width:100%;text-align:center}
+  .generalcls .mat-card-content{display:inline-block;width:100%;}
   .vpblock2left .btnyellow{float:none}
   .headertitlerightdesign{display:none!important}
-  .mat-card-header .mat-card-title span{width:100%;display:inline;text-align:center}
+  .mat-card-header .mat-card-title span{width:100%; display:inline;}
   .ptb-77.mat-card{padding-top:30px!important;padding-bottom:30px!important}
   .vpheaderwrapper.mat-card{background-color:#47484a!important;position:inherit!important}
   .vpheaderwrapper .mat-list-base .mat-list-item .mat-list-item-content,.vpheaderwrapper .mat-list-base .mat-list-option .mat-list-item-content{padding:0 8px}

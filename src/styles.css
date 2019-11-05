@@ -395,3 +395,4 @@ lib-file-upload div.uploadfilecontainer[style]{
 
 
 .singleservice .mat-list-item-content{height: 100%;}
+.singleservice{cursor:pointer;}

@@ -592,3 +592,17 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
 .servicewrappercontent .mat-list .mat-list-item:nth-child(6) { order: 7; }
 .servicewrappercontent .mat-list .mat-list-item:nth-child(7) { order: 8; }
 .servicewrappercontent .mat-list .mat-list-item:nth-child(8) { order: 9; }
+
+.truncate{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-overflow: -o-ellipsis-lastline;
+    display: -webkit-box;
+    line-height: normal;
+    max-height: 108px;
+    -webkit-line-clamp: 5;
+}
+.truncateopen{
+    overflow: inherit;
+    max-height: initial;
+}

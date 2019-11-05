@@ -40,6 +40,7 @@ export class TesimoniallistComponent implements OnInit {
     this.indexval = this.indexval + 3;
     console.log(this.indexval);
   }
+  
   showmore() {
     
   }
