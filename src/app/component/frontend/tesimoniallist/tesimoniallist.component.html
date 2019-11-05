@@ -43,7 +43,8 @@
                             <span class="fa fa-star"></span>
                         </span>-->
                         <span class="quatation">
-                           <p class="truncate">&quot; {{testmon.quatation}} &quot;</p>
+                            <!-- truncateopen -->
+                           <p class="truncate">&quot; {{testmon.quatation}} &quot;</p> 
                             <a *ngIf="testmon.quatation.length >= 160" (click)="showmore()"> read more</a>
                         </span>                        
                        </mat-card-content>                    
