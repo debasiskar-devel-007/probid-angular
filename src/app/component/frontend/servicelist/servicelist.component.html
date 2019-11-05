@@ -41,9 +41,9 @@
             <span class="servinfoarrow"></span>
       </span>  
       <span class="servlist">
-        <mat-list role="list">          
-            <mat-list-item role="listitem" (click)="servicelist(srv)" class="singleservice activecls" *ngFor="let srv of ServiceListArray | slice:0:indexval; let i=index">
-                <mat-card>
+        <mat-list role="list">       
+            <mat-list-item role="listitem" class="singleservice" *ngFor="let srv of ServiceListArray | slice:0:indexval; let i=index" [ngClass]="{'activecls': srv._id == serv_list._id }" (click)="servicelist(srv)"  >
+                <mat-card >            
                   <div class="imagewrap">
                       <img src="{{srv.image}}" class="iconcls">
                   </div>                  

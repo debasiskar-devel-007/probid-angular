@@ -15,6 +15,7 @@ export class ServicelistComponent implements OnInit {
   showme=true;
   public indexval:any = 13;
   public serv_list:any = '';
+
  
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {
@@ -48,6 +49,7 @@ export class ServicelistComponent implements OnInit {
   // console.log(val)
   this.serv_list=val;
   console.log(this.serv_list)
+  
   }
 
 }
