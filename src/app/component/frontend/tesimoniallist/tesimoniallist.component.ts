@@ -14,6 +14,7 @@ export class TesimoniallistComponent implements OnInit {
   showme = true;
   public indexval: any = 6;
   public dataformate: any;
+  isCollapsed = true;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router,public apiService: ApiService) {
     this.dataformate = moment(); // add this 2 of 4
@@ -54,11 +55,9 @@ export class TesimoniallistComponent implements OnInit {
     console.log(this.indexval);
   }
   
-  showmore(val:any) {
+  showmore(index:any) {
     console.log("readmore");
     var status: any = true;
-    
+    this.TestimonialListArray[index].quatation = ''; 
   }
-
-
 }
