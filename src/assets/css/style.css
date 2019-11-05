@@ -514,3 +514,9 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
 .modalouter_wrapper {width: 300vh; height: 100vh; display: table-cell; text-align: right; vertical-align: middle;  position: relative;
     z-index: 9999;}
 .modalouter_wrapper .modalouter_wrapper_inner {width: 790px; margin: 0 auto; margin-bottom: 20px; display: block;    position: relative;}
+
+
+.newslettermain .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    width: 100% !important;
+    padding-bottom: 0px !important;
+}
