@@ -616,6 +616,9 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
     -webkit-line-clamp: 5;
 }
 .truncateopen{
-    overflow: inherit;
-    max-height: initial;
+    overflow: inherit !important;
+    max-height: 100% !important;
+    height: auto;
+    text-overflow: inherit !important;
+    -webkit-line-clamp: inherit !important;
 }
