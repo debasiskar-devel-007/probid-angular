@@ -40,38 +40,25 @@ public tokenVal: any;
 
 
   ngOnInit() {
-   
-
-
 
       // console.log(this.tokenVal.length)
 
-    let data: any = {};
+    var data: any = {};
     
     data = {
       source:"blogs_view",
       endpoint: "datalist"
     }
+    this.apiService.getTempToken().subscribe((res:any)=>{
+      
+      if(res.status == 'success') {
+        this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
 
-    this._http.get(this.apiService.serverUrlDemo + 'gettemptoken').subscribe((res: any)=>{
-      this.tokenVal = res;
+          this.blogList = res2.res;
 
-      console.log('token')
-      console.log(this.tokenVal.token)
-      console.log(this.tokenVal.token.length)
-      if (res.status == 'success') {
-         const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': this.tokenVal.token
-      })
-    };
-    var result = this._http.post(this.apiService.serverUrlDemo + 'datalist', JSON.stringify(data), httpOptions).subscribe((res: any)=>{
-      console.log(res);
-      this.blogList = res.res;
-      console.warn(this.blogList);
-    });
+        });
       }
     });
   }
+
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute,Router} from '@angular/router';
-
+import { ApiService } from 'src/app/api.service';
 @Component({
   selector: 'app-servicelist',
   templateUrl: './servicelist.component.html',
@@ -14,15 +14,33 @@ export class ServicelistComponent implements OnInit {
   showme=true;
   public indexval:any = 13;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router,public apiService: ApiService) { }
 
   ngOnInit() {
-    this.activatedRoute.data.forEach((data:any)=>{
-      console.log(data)
+    var data: any = {};
+    data = {
+      source:"service",
+      endpoint: "datalist"
+    }
+    // this.activatedRoute.data.forEach((data:any)=>{
+    //   console.log(data)
 
-      this.ServiceListArray=data.serviceListData.res;     
-     this.indexvallength = this.ServiceListArray.length;
-    })
+    //   this.ServiceListArray=data.serviceListData.res;     
+    //  this.indexvallength = this.ServiceListArray.length;
+    // })
+
+    /**sourav */
+    this.apiService.getTempToken().subscribe((res:any)=>{
+      
+      if(res.status == 'success') {
+        this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
+         //console.log(res2);
+         this.ServiceListArray=res2.res;     
+         this.indexvallength = res2.length;
+
+        });
+      }
+    });
   }
 
   btnBackClick= function () {

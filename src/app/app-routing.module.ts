@@ -113,16 +113,16 @@ const routes: Routes = [
   { path: 'online-inventory-list', component: SearchListViewComponent },
   { path: 'search-inventory-list', component: SearchListViewComponent },
   { path: 'specials-list', component: SearchListViewComponent },
-
-  {
-    path: "testimonial",
-    component: TesimoniallistComponent,
-    resolve: { testimonialListData: ResolveService },
-    data: {
-      requestcondition: { source: "testimonals_view", condition: {} },
-      endpoint: "datalist"
-    }
-  },
+{    path: "testimonial",  component: TesimoniallistComponent },
+  // {
+  //   path: "testimonial",
+  //   component: TesimoniallistComponent,
+  //   resolve: { testimonialListData: ResolveService },
+  //   data: {
+  //     requestcondition: { source: "testimonals_view", condition: {} },
+  //     endpoint: "datalist"
+  //   }
+  // },
 
   {
     path: 'servicehome',
@@ -132,10 +132,14 @@ const routes: Routes = [
   },
   {
     path: 'service',
-    component: ServicelistComponent,
-    resolve: { serviceListData: ResolveService },
-    data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
+    component: ServicelistComponent
   },
+  // {
+  //   path: 'service',
+  //   component: ServicelistComponent,
+  //   resolve: { serviceListData: ResolveService },
+  //   data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
+  // },
   { path: 'blog', component: BlogComponent },
   // { path: 'blog-category/edit/:_id', component: BlogComponent, resolve: { blogCatList: ResolveService },
   // data: { requestcondition: { source: 'blog_category', condition: {} }, endpoint: 'datalist' }},
@@ -143,10 +147,11 @@ const routes: Routes = [
   // { path: 'blog-category/list', component: BlogdetailComponent, resolve: { blogCatList: ResolveService },
   // data: { requestcondition: { source: 'blog_category_view', condition: {} }, endpoint: 'datalist' }},
 
-
+  { path: 'bloglist', component: BloglistfrontendComponent },
+  // data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' } },
   
-  { path: 'bloglist', component: BloglistfrontendComponent, resolve: { blogCatList: ResolveService },
-  data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' } },
+  // { path: 'bloglist', component: BloglistfrontendComponent, resolve: { blogCatList: ResolveService },
+  // data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' } },
 
 
 
