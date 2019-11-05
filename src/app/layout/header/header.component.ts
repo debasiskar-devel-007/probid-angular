@@ -41,6 +41,10 @@ public user_full_name: any = '';
   ngOnInit() {
   }
 
+  logOut() {
+    this.cookieService.deleteAll();
+  }
+
   openDialog(): void {
     const dialogRef = this.dialog.open(comingSoonDialog, {
      

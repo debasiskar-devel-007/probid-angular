@@ -301,8 +301,7 @@ getDatalist(requestdata: any) {
 
 
 }
-test(requestdata: any, newdata: any){
-    console.log('ssssssssssssss', newdata);
+getDatalistWithToken(requestdata: any, newdata: any){
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -313,7 +312,7 @@ test(requestdata: any, newdata: any){
     return result;
 }
 
-getDatalistWithToken() {
+getTempToken() {
   var result = this._http.get(this.serverUrlDemo + 'gettemptoken').pipe(map(res => res));
   return result;
 }
