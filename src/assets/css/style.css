@@ -304,8 +304,11 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
 .testimonialwrappercontent .mat-card-title {justify-content: center;}
 .generalcls .testibottomcontent .mat-card-title.title1 {font-size: 20px!important;line-height: normal!important; margin-bottom: 5px !important; justify-content: inherit !important; text-transform: capitalize !important; color:#3c3f42;}
 .generalcls .testibottomcontent .mat-card-title.title2 {font-size: 16px!important;line-height: normal!important; margin-bottom: 5px !important; justify-content: inherit !important; text-transform: capitalize !important; color:#858686; margin-top: 10px; font-size: 'Helvetica-Normal';}
-.generalcls .quatation {font-size: 16px !important;font-size: 'Helvetica-Normal';color:#858686;display: block;display: -webkit-box;
-    max-width: 100%; margin: 0 auto;}
+.generalcls .quatation {font-size: 16px !important;font-size: 'Helvetica-Normal';color:#858686; display: -webkit-box;
+    max-width: 100%; margin: 0 auto; display: inherit;}
+    .generalcls .quatation p {font-size: 16px !important;font-size: 'Helvetica-Normal';color:#858686;display: block;display: -webkit-box;
+        max-width: 100%; margin: 0 auto;}
+
 /* .generalcls .quatation {font-size: 16px !important;font-size: 'Helvetica-Normal';color:#858686;display: block;display: -webkit-box;
     max-width: 100%; height: 92px; margin: 0 auto; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;
 } */
