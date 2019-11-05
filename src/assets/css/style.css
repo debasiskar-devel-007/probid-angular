@@ -520,3 +520,61 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
     width: 100% !important;
     padding-bottom: 0px !important;
 }
+
+
+.aboutusblock1content {display: flex !important; justify-content: space-between; align-items: stretch;background-color: #dfeff7; padding:9px;}
+.aboutusblock1content span {flex: 1 1 50%;}
+.aboutb1info h1{
+    font-family: 'HelveticaBold';
+    font-size: 26px!important;
+    line-height: 28px!important;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;    
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #1e2931;
+    white-space: normal!important;
+}
+.aboutb1info{padding-left: 30px; padding-right: 10px;}
+.aboutb1img {position: relative; overflow: hidden;}
+.aboutb1img img{
+    width: auto;
+    height: 100% !important;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    -moz-transform: translate(-50%,0);
+    -ms-transform: translate(-50%,0);
+    -o-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    max-width: 100%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.aboutb1img img {width: 100%;}
+
+
+.aboutusblock2.mat-card{
+    background-image: url("../images/aboutb2imgdesktop.jpg") !important;
+    background-position: right center !important;
+    background-size: cover !important;
+    display: inline-block;
+    width: 100%;
+    background-repeat: no-repeat !important;
+    position: relative;
+    border: none!important; 
+    margin: 0!important; 
+    outline: none!important; 
+    box-shadow:none!important; 
+    padding: 0px!important;
+    min-height: 379px; 
+    display: flex; 
+    align-items: center;
+}
+.aboutusblock2content {width: 59%; padding-left: 20px;}
+.generalcls.aboutusblock2 p{border-left: 4px solid #ff5e5d; padding-left: 20px; margin-left: -20px;}
