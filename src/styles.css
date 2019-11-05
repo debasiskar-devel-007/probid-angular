@@ -392,3 +392,6 @@ lib-file-upload div.uploadfilecontainer[style]{
 .lib-addedit-blogmanagement .mat-toolbar.mat-primary{display:none}
 .lib-addedit-blogcat .mat-toolbar.mat-primary{display:none}
 .lib-addedit-testimonial .mat-toolbar.mat-primary{display:none}
+
+
+.singleservice .mat-list-item-content{height: 100%;}
