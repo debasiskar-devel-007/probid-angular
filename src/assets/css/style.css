@@ -581,3 +581,14 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
 .generalcls.aboutusblock2 p{border-left: 4px solid #ff5e5d; padding-left: 20px; margin-left: -20px;}
 
 .activecls{background: #b0eef2 !important;}
+
+
+.servicewrappercontent .mat-list .mat-list-item:nth-child(9) { order: 1; }
+.servicewrappercontent .mat-list .mat-list-item:nth-child(1) { order: 2; }
+.servicewrappercontent .mat-list .mat-list-item:nth-child(2) { order: 3; }
+.servicewrappercontent .mat-list .mat-list-item:nth-child(3) { order: 4; }
+.servicewrappercontent .mat-list .mat-list-item:nth-child(4) { order: 5; }
+.servicewrappercontent .mat-list .mat-list-item:nth-child(5) { order: 6; }
+.servicewrappercontent .mat-list .mat-list-item:nth-child(6) { order: 7; }
+.servicewrappercontent .mat-list .mat-list-item:nth-child(7) { order: 8; }
+.servicewrappercontent .mat-list .mat-list-item:nth-child(8) { order: 9; }
