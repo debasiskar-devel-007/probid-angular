@@ -249,8 +249,12 @@ const routes: Routes = [
     path: 'testimonial/edit/:_id', component: AddeditTestimonialComponent, resolve: { testimonialData: ResolveService },
     data: { requestcondition: { source: 'testimonial', condition: {} }, endpoint: 'datalist' }
   },
+  // {
+  //   path: 'testimonial-listing', component: ListingTestimonialComponent, resolve: { testimonialList: ResolveService },
+  //   data: { requestcondition: { source: 'testimonial_view', condition: {} }, endpoint: 'datalist' }
+  // },
   {
-    path: 'testimonial-listing', component: ListingTestimonialComponent, resolve: { testimonialList: ResolveService },
+    path: 'testimonial-lists-admin', component: ListingTestimonialComponent, resolve: { testimonialList: ResolveService },
     data: { requestcondition: { source: 'testimonial_view', condition: {} }, endpoint: 'datalist' }
   },
   {
@@ -266,7 +270,7 @@ const routes: Routes = [
   { path: 'commission-report', component: CommissionReportComponent },
   { path: 'inventory-list', component: InventorySearchComponent },
   { path: 'manage-availability', component: ManageAvailabilityComponent },
-  { path: 'testimonial-lists-admin', component: TestimonialListsAdminComponent },
+  // { path: 'testimonial-lists-admin', component: TestimonialListsAdminComponent },
   { path: 'birddog-list', component: BirddogListComponent },
   { path: 'commission-list', component: CommissionListComponent },
   { path: 'customer-list-admin', component: CustomerListComponent },

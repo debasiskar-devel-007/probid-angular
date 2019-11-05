@@ -32,8 +32,6 @@ export class BlogComponent implements OnInit {
     console.log(this.indexval);
   }
 
-
-
   ngOnInit() {
 
     let data: any = {};
