@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute,Router} from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 @Component({
   selector: 'app-servicelist',
   templateUrl: './servicelist.component.html',
@@ -13,6 +14,7 @@ export class ServicelistComponent implements OnInit {
   // showMore = false;
   showme=true;
   public indexval:any = 13;
+  public serv_list:any = '';
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router,public apiService: ApiService) { }
 
@@ -41,15 +43,25 @@ export class ServicelistComponent implements OnInit {
         });
       }
     });
+ 
+
   }
 
   btnBackClick= function () {
     this.router.navigateByUrl('service');
   };
+  
 
   showMoreFunc(){
     this.indexval = this.indexval + 3;   
     console.log(this.indexval);
+  }
+//service list data display
+  servicelist(val: any){
+  // console.log(val)
+  this.serv_list=val;
+  console.log(this.serv_list)
+  
   }
 
 }

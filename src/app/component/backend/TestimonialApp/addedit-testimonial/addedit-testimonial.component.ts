@@ -20,7 +20,7 @@ public configAddEdit: any = {
   condition: {},
   defaultData: null,
   jwtToken: this.cookieService.get('jwtToken'),
-  callBack: "testimonial/list",
+  callBack: "testimonial-lists-admin",
   userData: { id: "18801017007", name: "Admin" },
 }
 

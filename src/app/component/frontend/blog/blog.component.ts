@@ -37,8 +37,6 @@ public tokenVal: any;
     console.log(this.indexval);
   }
 
-
-
   ngOnInit() {
 
       // console.log(this.tokenVal.length)

@@ -1,3 +1,8 @@
+@media only screen and (max-width: 1500px) {
+  .aboutusblock2content {width: 46%;}
+}
+  
+  
   @media only screen and (max-width: 1366px) {
   .probidhomeblock1.mat-card .mat-tab-header {width: 100%;}
   .homemain .mat-nav-list{width:100%}
@@ -8,15 +13,43 @@
   .generalcls p{font-size:16px;line-height:24px}
   }
   @media only screen and (max-width: 1199px) {
+
+
+    .aboutusblock2.mat-card {
+      background-position: top right !important;
+      background-size: 260%!important;
+      padding: 10px;
+      padding-top: 50% !important;
+      background-color: #a1c4dc !important;
+  }
+  .aboutusblock2.mat-card[style]{
+    padding-top: inherit;
+  }
+  .generalcls.aboutusblock2 p{border-left: none !important;padding-left: 0px; margin-left: auto;}
+
+  .aboutusblock1content {flex-wrap: wrap;}
+  .aboutusblock1content span {flex: 1 1 100%; padding-bottom: 10px;}
+  .aboutb1img img {
+    position: inherit;
+    left: inherit;
+    transform: inherit;
+    max-width: 100%;
+    cursor: pointer;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.aboutusblock2content{width: 100% !important; padding-left: 20px; padding-right: 20px;}
+.aboutb1info{padding-left: 20px; padding-right: 20px;}
+
   .probidhomeblock4 .mat-list-base.lists .mat-list-item {padding: 13px;width: 46.5%;}
   .vpheaderwrapper .mat-nav-list a{font-size:13px}
   .mat-drawer{position:relative;z-index:4;display:block;position:inherit;top:0;bottom:0;z-index:3;outline:0;box-sizing:border-box;overflow-y:auto;transform:translate3d(-100%,0,0)}
   .mat-drawer-container.mat-drawer-opened{position:absolute;z-index:999;box-sizing:border-box;-webkit-overflow-scrolling:touch;display:block;overflow:visible}
   .videoclsgen{float:none;margin:0 auto;display:block}
-  .generalcls .mat-card-content{display:inline-block;width:100%;text-align:center}
+  .generalcls .mat-card-content{display:inline-block;width:100%;}
   .vpblock2left .btnyellow{float:none}
   .headertitlerightdesign{display:none!important}
-  .mat-card-header .mat-card-title span{width:100%;display:inline;text-align:center}
+  .mat-card-header .mat-card-title span{width:100%; display:inline;}
   .ptb-77.mat-card{padding-top:30px!important;padding-bottom:30px!important}
   .vpheaderwrapper.mat-card{background-color:#47484a!important;position:inherit!important}
   .vpheaderwrapper .mat-list-base .mat-list-item .mat-list-item-content,.vpheaderwrapper .mat-list-base .mat-list-option .mat-list-item-content{padding:0 8px}

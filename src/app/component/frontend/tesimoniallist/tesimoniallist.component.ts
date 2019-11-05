@@ -53,12 +53,12 @@ export class TesimoniallistComponent implements OnInit {
     this.indexval = this.indexval + 3;
     console.log(this.indexval);
   }
-
-  showmore() {
+  
+  showmore(val:any) {
     console.log("readmore");
+    var status: any = true;
+    
   }
 
 
 }
-
-
