@@ -1301,7 +1301,7 @@
              * ckeditor end here
              */
             // ---------------------declarations-------------------------------------
-            this.headerText = 'Add Blog Management Data';
+            // this.headerText = 'Add Blog Management Data';
             this.buttonText = 'SUBMIT';
             this.blogCategoryArray = [];
             this.isSubmitted = false;

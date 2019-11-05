@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
 public user_full_name: any = '';
    
   constructor(public router: Router, public cookieService: CookieService, public dialog: MatDialog, activeroute: ActivatedRoute) {
-    console.log(router.url)
+    
     // this.userCookies = JSON.parse(this.cookieService.get('user_details'));
 
     // console.log(this.userCookies.firstname);
@@ -39,6 +39,10 @@ public user_full_name: any = '';
    }
 
   ngOnInit() {
+  }
+
+  logOut() {
+    this.cookieService.deleteAll();
   }
 
   openDialog(): void {

@@ -105,7 +105,7 @@ const routes: Routes = [
     component: TesimonialComponent,
     resolve: { testimonialListData: ResolveService },
     data: {
-      requestcondition: { source: "testimonals", condition: {} },
+      requestcondition: { source: "testimonal", condition: {} },
       endpoint: "datalist"
     }
   },
@@ -242,29 +242,29 @@ const routes: Routes = [
   /**Backend Routing**/
   // {path: 'customer-dashboard', component:DashboardComponent, canActivate:[AuthGuard]},       // Useing for canActive
   { path: 'customer-dashboard', component: DashboardComponent },
-  { path: 'admin-dashboard', component: MaindashboardComponent },
+  { path: 'admin-dashboard', component: MaindashboardComponent,canActivate: [AuthGuard] },
   { path: 'bk-leftdiv', component: BkLeftdivComponent },
-  { path: 'testimonial/add', component: AddeditTestimonialComponent },
+  { path: 'testimonial/add', component: AddeditTestimonialComponent,canActivate: [AuthGuard] },
   {
     path: 'testimonial/edit/:_id', component: AddeditTestimonialComponent, resolve: { testimonialData: ResolveService },
-    data: { requestcondition: { source: 'testimonial', condition: {} }, endpoint: 'datalist' }
+    data: { requestcondition: { source: 'testimonial', condition: {} }, endpoint: 'datalist' },canActivate: [AuthGuard]
   },
   // {
   //   path: 'testimonial-listing', component: ListingTestimonialComponent, resolve: { testimonialList: ResolveService },
-  //   data: { requestcondition: { source: 'testimonial_view', condition: {} }, endpoint: 'datalist' }
+  //   data: { requestcondition: { source: 'testimonial_view', condition: {} }, endpoint: 'datalist' },canActivate: [AuthGuard]
   // },
   {
     path: 'testimonial-lists-admin', component: ListingTestimonialComponent, resolve: { testimonialList: ResolveService },
-    data: { requestcondition: { source: 'testimonial_view', condition: {} }, endpoint: 'datalist' }
+    data: { requestcondition: { source: 'testimonial_view', condition: {} }, endpoint: 'datalist' },canActivate: [AuthGuard]
   },
   {
     path: 'service-listing', component: ListingServiceComponent, resolve: { serviceList: ResolveService },
-    data: { requestcondition: { source: 'services_view', condition: {} }, endpoint: 'datalist' }
+    data: { requestcondition: { source: 'services_view', condition: {} }, endpoint: 'datalist' },canActivate: [AuthGuard]
   },
-  { path: 'service/add', component: AddeditServiceComponent },
+  { path: 'service/add', component: AddeditServiceComponent ,canActivate: [AuthGuard]},
   {
     path: 'service/edit/:_id', component: AddeditServiceComponent, resolve: { serviceList: ResolveService },
-    data: { requestcondition: { source: 'services', condition: {} }, endpoint: 'datalist' }
+    data: { requestcondition: { source: 'services', condition: {} }, endpoint: 'datalist' ,canActivate: [AuthGuard]}
   },
   { path: 'blog-management', component: BlogManagementComponent },
   { path: 'commission-report', component: CommissionReportComponent },
