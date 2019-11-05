@@ -32,12 +32,28 @@ export class BloglistfrontendComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activatedRoute.data.subscribe((resolveData: any) => {
-      console.log(resolveData.blogCatList);
-      this.blogList = resolveData.blogCatList.res;
-      this.blogListConfig.datasource = this.blogList;
-      this.blogListConfig.jwtToken = this.cookieService.get('jwtToken');
+    // this.activatedRoute.data.subscribe((resolveData: any) => {
+    //   console.log(resolveData.blogCatList);
+    //   this.blogList = resolveData.blogCatList.res;
+    //   this.blogListConfig.datasource = this.blogList;
+    //   this.blogListConfig.jwtToken = this.cookieService.get('jwtToken');
 
+    // });
+    var data: any = {};
+    
+    data = {
+      source:"blogs_view",
+      endpoint: "datalist"
+    }
+    this.apiService.getTempToken().subscribe((res:any)=>{
+      
+      if(res.status == 'success') {
+        this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
+
+          this.blogList = res2.res;
+
+        });
+      }
     });
   }
 
