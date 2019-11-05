@@ -307,7 +307,14 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
 .generalcls .quatation {font-size: 16px !important;font-size: 'Helvetica-Normal';color:#858686; display: -webkit-box;
     max-width: 100%; margin: 0 auto; display: inherit;}
     .generalcls .quatation p {font-size: 16px !important;font-size: 'Helvetica-Normal';color:#858686;display: block;display: -webkit-box;
-        max-width: 100%; margin: 0 auto;}
+        max-width: 100%; margin: 0 auto;overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-height: 18px;     /* fallback */
+        max-height: 90px;      /* fallback */
+        -webkit-line-clamp: 5; /* number of lines to show */
+        -webkit-box-orient: vertical;
+}
 
 /* .generalcls .quatation {font-size: 16px !important;font-size: 'Helvetica-Normal';color:#858686;display: block;display: -webkit-box;
     max-width: 100%; height: 92px; margin: 0 auto; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;
@@ -496,8 +503,11 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
 .bottom_blog .mat-tab-label {min-width: inherit; width: 100%;}
 
 .blog .categorywrapper .mat-list-item{height: auto;}
-.blog .categorywrapper .mat-card-title {font-size: 20px!important; text-transform: uppercase;}
-.blog .categorywrapper .mat-card-title span{color:#fb4a32; padding: 0 11px;}
+.blog .categorywrapper .mat-list-item .mat-list-item-content{flex-wrap: wrap;}
+.blog .categorywrapper .mat-list-item .mat-list-item-content .mat-list.category .mat-card-title{font-size: 18px!important;text-transform: uppercase;}
+.blog .categorywrapper .mat-list-item .mat-list-item-content .mat-list.categorysub .mat-card-title{font-size: 16px!important;text-transform: capitalize;margin: 8px 0px !important;}
+.blog .categorywrapper .inner_header.mat-card-title {font-size: 18px!important; text-transform: uppercase;}
+.blog .categorywrapper .inner_header.mat-card-title span{color:#fb4a32; padding: 0 11px;}
 
 .signupfooter a{cursor: pointer; padding-right: 0 !important; color:#fff;}
 /* .loginwrappernew .formgenrl button.mat-primary{display: none;} */
