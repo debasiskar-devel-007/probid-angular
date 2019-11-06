@@ -73,7 +73,6 @@ export class BloglistfrontendComponent implements OnInit {
       endpoint: "datalist"
     }
     this.apiService.getTempToken().subscribe((res:any)=>{
-      
       if(res.status == 'success') {
         this.apiService.getDatalistWithToken(datacat, res).subscribe((res2:any)=>{
 
@@ -104,8 +103,6 @@ export class BloglistfrontendComponent implements OnInit {
     
     });
 
-
-
     /**api service for sub blog_catagory by uttam */
     var datacatsearch:any={};
     datacatsearch={
@@ -124,8 +121,6 @@ export class BloglistfrontendComponent implements OnInit {
         }
       })
     }
-
-
     panelOpenState = false;
 
 }

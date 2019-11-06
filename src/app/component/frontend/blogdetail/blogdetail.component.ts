@@ -30,9 +30,6 @@ export class BlogdetailComponent implements OnInit {
     }
     constructor( public apiService: ApiService,public router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService ) { 
       this.blogdetail();
-    
-        
-     
     }
 
 

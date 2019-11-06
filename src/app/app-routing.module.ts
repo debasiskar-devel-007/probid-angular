@@ -155,7 +155,7 @@ const routes: Routes = [
 
 
 
-  { path: 'blogdetail/:id', component: BlogdetailComponent },
+  { path: 'blogdetail/:id', component: BlogdetailComponent},
 
 
 
