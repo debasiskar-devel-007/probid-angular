@@ -30,11 +30,9 @@ export class BlogdetailComponent implements OnInit {
     }
     constructor( public apiService: ApiService,public router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService ) { 
       this.blogdetail();
-      this.activatedRoute.data.subscribe(resolveData => {
-        this.blogListConfig.datasource = resolveData.blogCatList.res;
-        this.blogListConfig.jwtToken = this.cookieService.get('jwtToken');
+    
         
-      });
+     
     }
 
 
