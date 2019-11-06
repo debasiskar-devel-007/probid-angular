@@ -35,6 +35,11 @@ export class BloglistfrontendComponent implements OnInit {
 
   }
 
+  blogdetail(val:any){
+    console.log(val)
+    this.router.navigateByUrl('/blogdetail/' +val)
+  }
+
   ngOnInit() {
     // this.activatedRoute.data.subscribe((resolveData: any) => {
     //   console.log(resolveData.blogCatList);
@@ -55,6 +60,7 @@ export class BloglistfrontendComponent implements OnInit {
         this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
 
           this.blogList = res2.res;
+          // console.log(this.blogList)
 
         });
       }
@@ -105,9 +111,7 @@ export class BloglistfrontendComponent implements OnInit {
     datacatsearch={
       source:"blogs_view",
       endpoint: "datalist",
-      condition:{
-        blogcategory:'test3'
-      },
+     
     }
       this.apiService.getTempToken().subscribe((res:any)=>{
         if(res.status == 'success') {
@@ -122,7 +126,7 @@ export class BloglistfrontendComponent implements OnInit {
     }
 
 
-
+    panelOpenState = false;
 
 }
 

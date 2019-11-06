@@ -155,7 +155,7 @@ const routes: Routes = [
 
 
 
-  { path: 'blogdetail', component: BlogdetailComponent, resolve: { blogCatList: ResolveService },
+  { path: 'blogdetail/:id', component: BlogdetailComponent, resolve: { blogCatList: ResolveService },
   data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' } },
 
 
