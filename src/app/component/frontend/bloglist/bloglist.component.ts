@@ -120,7 +120,7 @@ export class BloglistfrontendComponent implements OnInit {
     }
 
 
-
+    panelOpenState = false;
 
 }
 
