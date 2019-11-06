@@ -35,6 +35,8 @@ export class BloglistfrontendComponent implements OnInit {
 
   }
 
+  panelOpenState = false;
+
   blogdetail(val:any){
     console.log(val)
     this.router.navigateByUrl('/blogdetail/' +val)
@@ -126,7 +128,7 @@ export class BloglistfrontendComponent implements OnInit {
     }
 
 
-    panelOpenState = false;
+   
 
 }
 
