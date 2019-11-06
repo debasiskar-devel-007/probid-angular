@@ -15,6 +15,8 @@ export class TesimoniallistComponent implements OnInit {
   public indexval: any = 6;
   public dataformate: any;
   isCollapsed = true;
+  public p_id: any;
+  public name:any;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router,public apiService: ApiService) {
     this.dataformate = moment(); // add this 2 of 4
@@ -33,7 +35,7 @@ export class TesimoniallistComponent implements OnInit {
       if(res.status == 'success') {
         this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
           this.TestimonialListArray = res2.res;
-
+console.log(this.TestimonialListArray)
         });
       }
     });
@@ -56,8 +58,10 @@ export class TesimoniallistComponent implements OnInit {
   }
   
   showmore(index:any) {
-    console.log("readmore");
-    var status: any = true;
-    this.TestimonialListArray[index].quatation = ''; 
+   this.p_id = index._id;
+   console.log(this.p_id)
+   console.log(index.quatation.length);
+   this.name='junaid';
+   console.log(this.name)
   }
 }
