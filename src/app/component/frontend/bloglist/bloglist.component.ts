@@ -105,9 +105,7 @@ export class BloglistfrontendComponent implements OnInit {
     datacatsearch={
       source:"blogs_view",
       endpoint: "datalist",
-      condition:{
-        blogcategory:'test3'
-      },
+     
     }
       this.apiService.getTempToken().subscribe((res:any)=>{
         if(res.status == 'success') {
