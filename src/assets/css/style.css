@@ -622,3 +622,13 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
     text-overflow: inherit !important;
     -webkit-line-clamp: inherit !important;
 }
+
+.categorywrapper .mat-accordion .mat-expansion-panel:last-of-type {
+    margin: 10px;
+    box-shadow: none;
+}
+
+.categorywrapper .mat-expansion-panel-content {
+    background: #e2e2e2;
+    padding: 5px;
+}
