@@ -659,10 +659,15 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
 }
 
 .categorysub {cursor: pointer;border-bottom: 1px solid #cdcdcd; padding-top: 5px !important; padding-bottom: 5px !important;}
-.categorysub p{text-transform: capitalize;padding-left: 5px; padding-right: 5px;}
+p.categorysub{text-transform: capitalize;padding-left: 5px; padding-right: 5px;}
 .categorysub.active{background: #3f3f3f;}
 
 
 
 .blogdetail .bloglistinner .bottom_blog .item_wrapper .item {width: calc(1/1*100% - (1 - 1/1)*18px) !important;}
 .blogdetail .bloglistinner .bottom_blog .item_wrapper .item .item_images {height: 355px;}
+.blogdetail .mat-card-content .inner_header.mat-card-title{text-transform: uppercase;} 
+.blogdetail .bottom_blog .item_wrapper .item .contentsection {margin-top: 16px; display: flex; align-items: center; justify-content: space-between;}
+.blogdetail .bottom_blog .item_wrapper .item .author {margin-bottom: 0;}
+.blogdetail .blogsociallists {margin-top: 0;}
+.blogdetail .bloglistinner .bottom_blog .item_wrapper .item .description{margin-top:10px;}
