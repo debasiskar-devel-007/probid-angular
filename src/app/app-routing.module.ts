@@ -291,6 +291,7 @@ const routes: Routes = [
   { path: 'create-new-inventory', component: CreateNewInventoryComponent },
   { path: 'job-ticket', component: JobTicketComponent },
   { path: 'social-advo-admin', component: SocialAdvoComponent },  
+  
   { path: 'manage-type', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
   data: { requestcondition: { source: 'manage-categories', condition: {"categoriesType": "type"} }, endpoint: 'datalist' }},
 

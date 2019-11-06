@@ -28,7 +28,7 @@ export class ApiService {
   public progress: any = [];
   public uploadtype;
   public uploaderror: any = '';
-  public accesstoken:any=this.cookieService.get('jwtToken');
+  public accesstoken:any = this.cookieService.get('jwtToken');
   fileservername: any = [];
   serverUrl: any;
   addendpointUrl: any;

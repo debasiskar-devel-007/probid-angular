@@ -46,11 +46,16 @@
                   <span class="item_wrapper"> 
                     <!-- <mat-card-content class="item"> -->
                     <mat-card-content class="item" >
+                      
+                      <mat-card-title class="inner_header">{{blog.blogtitle}}</mat-card-title>
+
                       <span class="item_images" *ngIf="blog !='' && blog.blogs_image !='' && blog.blogs_image !=null">
                         <img [src]="blog.blogs_image">
                       </span>
-                      <mat-card-content class="contentsection" >
-                        <mat-card-title class="inner_header">{{blog.blogtitle}}</mat-card-title>
+                      
+                      <p class="description">{{blog.description_html}}</p> 
+
+                      <mat-card-content class="contentsection" > 
                         <span class="author">
                           <span class="authornmimg">
                             <span class="writer_image">
@@ -58,10 +63,9 @@
                             </span>
                             <p class="authorName">{{blog.author}}</p>
                           </span>
-                          <p class="date">Date: {{blog.date_added}} </p>
+                          <p class="date">Date: {{blog.date_added}}</p>
                         </span>
-                        <p class="description">{{blog.description_html}}<a class="next_page" >read more</a>
-                        </p>  
+                        
                         <span class="blogsociallists">
                             <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
                             <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
@@ -77,10 +81,9 @@
           </span>        
           <span class="categorywrapper">
               <h2>Categories ({{blogcategorycount}})</h2>
-              <span  *ngFor="let item of blogcategory">
+              
               <mat-accordion class="category">
-                      <mat-expansion-panel (opened)="panelOpenState = true"
-                      (closed)="panelOpenState = false">
+                      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let item of blogcategory">
                         <mat-expansion-panel-header>
                           <mat-panel-title>
                               {{item.blogtitle}}
@@ -89,11 +92,8 @@
                         <p class="categorysub" *ngFor="let item of blogcategorysearch">
                           <span class="inner_header">{{item.blogtitle}}</span>
                       </p>
-                      </mat-expansion-panel>
-
-              
+                      </mat-expansion-panel>              
                     </mat-accordion>
-                  </span>
           </span>
       </span>        
   </span>
