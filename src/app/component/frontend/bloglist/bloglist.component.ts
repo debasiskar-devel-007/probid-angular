@@ -35,6 +35,11 @@ export class BloglistfrontendComponent implements OnInit {
 
   }
 
+  blogdetail(val:any){
+    console.log(val)
+    this.router.navigateByUrl('/blogdetail/' +val)
+  }
+
   ngOnInit() {
     // this.activatedRoute.data.subscribe((resolveData: any) => {
     //   console.log(resolveData.blogCatList);
@@ -55,6 +60,7 @@ export class BloglistfrontendComponent implements OnInit {
         this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
 
           this.blogList = res2.res;
+          // console.log(this.blogList)
 
         });
       }
