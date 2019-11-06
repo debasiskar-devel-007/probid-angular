@@ -14,13 +14,11 @@ export class TesimoniallistComponent implements OnInit {
   showme = true;
   public indexval: any = 6;
   public dataformate: any;
-  isCollapsed = true;
   public p_id: any;
-  public name:any;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router,public apiService: ApiService) {
     this.dataformate = moment(); // add this 2 of 4
-    // console.log(this.dataformate)
+    //console.log(this.dataformate)
    }
 
 
@@ -61,7 +59,5 @@ console.log(this.TestimonialListArray)
    this.p_id = index._id;
    console.log(this.p_id)
    console.log(index.quatation.length);
-   this.name='junaid';
-   console.log(this.name)
   }
 }
