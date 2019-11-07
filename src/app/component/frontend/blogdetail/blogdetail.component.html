@@ -1,25 +1,3 @@
-<!-- <app-header></app-header>
-<mat-card>
-        <mat-toolbar color="primary" style="justify-content: center; align-items: center;">
-            <h2 class="headerSpan">Blog Categories</h2>
-        </mat-toolbar> -->
-    
-        <!-- ---------------------Button for adding new role------------------------------ -->
-        <!-- <mat-toolbar class="buttonsetToolbar">
-            <button class="singleButton" mat-raised-button color="primary"
-             [routerLink]="['/blog-category/add']">Add blog category </button>
-        </mat-toolbar> -->
-    
-    
-        <!-- to listing library -->
-    
-        <!-- <lib-Blog [config]="blogListConfig"></lib-Blog>
-    </mat-card>
-<app-footer></app-footer> -->
-
-
-
-
 
 <app-header></app-header>
 <mat-card class="innerpagebanner blogbg">
@@ -82,16 +60,20 @@
           <span class="categorywrapper">
               <h2>Categories ({{blogcategorycount}})</h2>
               
-              <mat-accordion class="category">
+              <mat-accordion class="category" >
                       <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let item of blogcategory">
                         <mat-expansion-panel-header>
                           <mat-panel-title>
                               {{item.blogtitle}}
                           </mat-panel-title>                           
                         </mat-expansion-panel-header>
-                        <div class="categorysub" *ngFor="let item of blogcategorysearch">
-                          <p><span class="inner_header">{{item.blogtitle}}</span></p>
-                        </div>
+                        <span  *ngFor="let item of blogcategorysearch" (click)="subblog(item)">
+                        <div class="categorysub">
+                        <p> 
+                          <span class="inner_header">{{item.blogtitle}}</span>
+                      </p>
+                    </div>
+                  </span>
                       </mat-expansion-panel>              
                     </mat-accordion>
           </span>
