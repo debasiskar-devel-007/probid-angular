@@ -52,6 +52,9 @@ import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.comp
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
 import { BlogCategoryComponent } from './component/frontend/blog-category/blog-category.component';
 
+import { SalesrepSignupComponent } from './component/frontend/salesrep-signup/salesrep-signup.component';
+import { CustomerSignupComponent } from './component/frontend/customer-signup/customer-signup.component';
+
 /**End Frontend Component**/
 
 
@@ -226,6 +229,8 @@ import { MyAccountComponent } from './component/backend/my-account/my-account.co
     AddEditBlogsComponent,
     ListingBlogsComponent,
     MyAccountComponent,
+    SalesrepSignupComponent,
+    CustomerSignupComponent,
   ],
   imports: [
     NewsTitleModule,
