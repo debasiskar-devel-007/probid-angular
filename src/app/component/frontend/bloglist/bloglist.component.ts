@@ -29,6 +29,7 @@ export class BloglistfrontendComponent implements OnInit {
   public blogcount:any;
   public blogcategorysearch:any;
   public blogcategorycount:any;
+  public blogcat:any;
 
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService, public apiService: ApiService) {
@@ -123,6 +124,16 @@ export class BloglistfrontendComponent implements OnInit {
         }
       })
     }
+
+    // blog(){
+    //   console.log('asdgagfsdfs');
+    // }
+
+    blog(val:any){
+      this.blogcat = val._id;
+      this.router.navigateByUrl('/blogdetail/'+val._id)
+    }
+
 
 
    

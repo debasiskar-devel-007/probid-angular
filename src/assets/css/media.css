@@ -1,7 +1,6 @@
-@media only screen and (max-width: 1500px) {
-  .aboutusblock2content {width: 46%;}
-}
-  
+  @media only screen and (max-width: 1500px) {
+    .aboutusblock2content {width: 46%;}
+  }   
   
   @media only screen and (max-width: 1366px) {
   .probidhomeblock1.mat-card .mat-tab-header {width: 100%;}
@@ -12,35 +11,16 @@
   .singleservice .mat-card-title {font-size: 18px !important;line-height:normal!important}
   .generalcls p{font-size:16px;line-height:24px}
   }
+
   @media only screen and (max-width: 1199px) {
-
-
-    .aboutusblock2.mat-card {
-      background-position: top right !important;
-      background-size: 260%!important;
-      padding: 10px;
-      padding-top: 50% !important;
-      background-color: #a1c4dc !important;
-  }
-  .aboutusblock2.mat-card[style]{
-    padding-top: inherit;
-  }
+  .aboutusblock2.mat-card {background-position: top right !important; background-size: 260%!important; padding: 10px; padding-top: 50% !important; background-color: #a1c4dc !important;}  
+  .aboutusblock2.mat-card[style]{padding-top: inherit;}
   .generalcls.aboutusblock2 p{border-left: none !important;padding-left: 0px; margin-left: auto;}
-
   .aboutusblock1content {flex-wrap: wrap;}
   .aboutusblock1content span {flex: 1 1 100%; padding-bottom: 10px;}
-  .aboutb1img img {
-    position: inherit;
-    left: inherit;
-    transform: inherit;
-    max-width: 100%;
-    cursor: pointer;
-    -o-object-fit: cover;
-    object-fit: cover;
-}
-.aboutusblock2content{width: 100% !important; padding-left: 20px; padding-right: 20px;}
-.aboutb1info{padding-left: 20px; padding-right: 20px;}
-
+  .aboutb1img img {position: inherit; left: inherit; transform: inherit; max-width: 100%; cursor: pointer; -o-object-fit: cover; object-fit: cover;}
+  .aboutusblock2content{width: 100% !important; padding-left: 20px; padding-right: 20px;}
+  .aboutb1info{padding-left: 20px; padding-right: 20px;}
   .probidhomeblock4 .mat-list-base.lists .mat-list-item {padding: 13px;width: 46.5%;}
   .vpheaderwrapper .mat-nav-list a{font-size:13px}
   .mat-drawer{position:relative;z-index:4;display:block;position:inherit;top:0;bottom:0;z-index:3;outline:0;box-sizing:border-box;overflow-y:auto;transform:translate3d(-100%,0,0)}
@@ -55,6 +35,7 @@
   .vpheaderwrapper .mat-list-base .mat-list-item .mat-list-item-content,.vpheaderwrapper .mat-list-base .mat-list-option .mat-list-item-content{padding:0 8px}
   .homemain mat-nav-list span.logowrapper{flex:1 1 10%!important}
   }
+  
   @media only screen and (max-width: 991px) {
   .mat-list-base.lists .mat-list-item {width: 49%;}
   .probidhomeblock2inner .mat-list {flex-wrap: wrap;}
@@ -75,6 +56,7 @@
   }
 
   @media only screen and (max-width:991px) {
+   .categorywrapper h2 {padding: 12px !important; font-size: 20px!important; line-height: 24px!important;}
   .generalcls.blog .mat-card-title{justify-content: center !important;}
   .bottom_blog .item_wrapper .item {width: 100%;}
   .mat-icon-button{display:block!important}
@@ -102,9 +84,11 @@
 
   @media only screen and (max-width: 768px) {
     .probidhomeblock4 .mat-list-base.lists .mat-list-item {width: 43%;}
+    
   }
 
   @media only screen and (max-width: 640px) {
+
   .probidhomeblock2inner .mat-list .mat-list-item {height: auto; position: relative; width: 40%; padding: 15px;}
   .popuplogo img{width: 100%;}  
   .from{width:90%!important;margin:0 auto;padding:15px!important;margin:0 auto!important;margin-top:0!important}
@@ -113,6 +97,9 @@
   .mat-form-field-appearance-legacy .mat-form-field-wrapper{padding-bottom:14px}
   .logowrapper{margin-top:0!important;margin-bottom:9px!important;width:80%}
   .example-container > * {width: inherit !important;}
+  .categorywrapper {margin-left: auto;}
+  .categorywrapper h2 {padding: 10px !important;font-size: 18px!important;}
+  .blogdetail .bloglistinner .bottom_blog .item_wrapper .item .item_images {height: auto;}
   }
 
   @media only screen and (max-width: 600px) {
