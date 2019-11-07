@@ -30,6 +30,7 @@ export class BloglistfrontendComponent implements OnInit {
   public blogcategorysearch:any;
   public blogcategorycount:any;
   public blogcat:any;
+  public blogsubcategorycount:any;
 
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService, public apiService: ApiService) {
@@ -124,12 +125,43 @@ export class BloglistfrontendComponent implements OnInit {
           });
         }
       })
+
+      //*********blog sub category count***********//
+      var datasubcatcount:any={};
+      datasubcatcount={
+      source:"blogs_view",
+      endpoint: "datalist",
+     
+    }
+    this.apiService.getTempToken().subscribe((resc:any)=>{
+      
+      if(resc.status == 'success') {
+        this.apiService.getDatalistWithToken(datasubcatcount, resc).subscribe((res:any)=>{
+
+          
+          
+            this.blogsubcategorycount = res.resc;
+          
+          console.log('++++++++=======++++++++',this.blogsubcategorycount)
+
+        });
+      }
+    
+    });
+
     }
 
-
+//***********blog list view in blog detail************//
     blog(val:any){
       this.blogcat = val._id;
       this.router.navigateByUrl('/blogdetail/'+val._id)
     }
+//***********load more blog *************//
+    blogloadmore(){
+      console.log('load more')
+
+    }
+
+
 }
 
