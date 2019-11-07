@@ -82,16 +82,20 @@
           <span class="categorywrapper">
               <h2>Categories ({{blogcategorycount}})</h2>
               
-              <mat-accordion class="category">
+              <mat-accordion class="category" >
                       <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let item of blogcategory">
                         <mat-expansion-panel-header>
                           <mat-panel-title>
                               {{item.blogtitle}}
                           </mat-panel-title>                           
                         </mat-expansion-panel-header>
-                        <p class="categorysub" *ngFor="let item of blogcategorysearch">
+                        <span  *ngFor="let item of blogcategorysearch" (click)="subblog(item)">
+                        <div class="categorysub">
+                        <p   > 
                           <span class="inner_header">{{item.blogtitle}}</span>
                       </p>
+                    </div>
+                  </span>
                       </mat-expansion-panel>              
                     </mat-accordion>
           </span>

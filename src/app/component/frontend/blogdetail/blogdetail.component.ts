@@ -13,6 +13,7 @@ export class BlogdetailComponent implements OnInit {
  public blogcategory:any;
   public blogcategorycount:any;
   public blog:any = '';
+  public blogcat:any;
 
     /************** lib list setup start here *************/
     public blogListConfig:any = {
@@ -125,6 +126,11 @@ export class BlogdetailComponent implements OnInit {
        })
       }
        panelOpenState = false;
+
+       subblog(val:any){
+         console.log('>>>>>>>>>>>')
+         console.log(val);
+       }
   
  
      
