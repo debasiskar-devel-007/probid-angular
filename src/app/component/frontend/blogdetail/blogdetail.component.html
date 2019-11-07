@@ -67,13 +67,13 @@
                               {{item.blogtitle}}
                           </mat-panel-title>                           
                         </mat-expansion-panel-header>
-                        <span  *ngFor="let itemVal of blogcategorysearch">
+                        <ng-container *ngFor="let itemVal of blogcategorysearch">
                         <div class="categorysub"  (click)="subblog(itemVal)" [ngClass]="{'active':itemVal._id == blogsubcat}">
-                        <p> 
-                          <span class="inner_header" *ngIf="itemVal.blogcategory == item.blogtitle">{{itemVal.metatitle}}</span>
-                        </p>
+                        <span  *ngIf="itemVal.blogcategory == item.blogtitle"> 
+                          <p class="inner_header">{{itemVal.metatitle}}</p>
+                        </span>
                     </div>
-                  </span>
+                  </ng-container>
                       </mat-expansion-panel>              
                     </mat-accordion>
           </span>
