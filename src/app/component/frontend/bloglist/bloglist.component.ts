@@ -118,6 +118,7 @@ export class BloglistfrontendComponent implements OnInit {
           this.apiService.getDatalistWithToken(datacatsearch, res).subscribe((res2:any)=>{
   
             this.blogcategorysearch = res2.res;
+            console.log('this.blogcategorysearch')
             console.log(this.blogcategorysearch)
   
           });
@@ -125,18 +126,10 @@ export class BloglistfrontendComponent implements OnInit {
       })
     }
 
-    // blog(){
-    //   console.log('asdgagfsdfs');
-    // }
 
     blog(val:any){
       this.blogcat = val._id;
       this.router.navigateByUrl('/blogdetail/'+val._id)
     }
-
-
-
-   
-
 }
 
