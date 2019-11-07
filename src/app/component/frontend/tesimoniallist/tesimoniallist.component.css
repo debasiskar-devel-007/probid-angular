@@ -1,2 +1,5 @@
 .testimonialbg.mat-card{background:url(../../../../assets/images/testimonialbg.jpg) no-repeat center center !important;}
 
+.hide{
+display: none;
+}

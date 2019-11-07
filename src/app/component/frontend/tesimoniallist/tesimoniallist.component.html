@@ -49,7 +49,7 @@
                                     > read more</a>
                         </span>                         -->
                         <p class="truncate" [ngClass]="{'truncate truncateopen':testmon._id == p_id }">&quot; {{testmon.quatation}} &quot;</p>
-                            <a *ngIf="testmon.quatation.length > 254" (click)="showmore(testmon)"> read more</a>
+                        <a *ngIf="testmon.quatation.length > 254" [ngClass]="{'hide':testmon._id == p_id}" (click)="showmore(testmon)"> read more</a>
                         </span>                        
                        </mat-card-content>                    
                 </mat-card>
