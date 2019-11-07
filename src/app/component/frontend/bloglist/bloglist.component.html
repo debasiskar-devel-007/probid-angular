@@ -27,7 +27,8 @@
                 <mat-card-content class="bottom_blog">    
                     <span class="item_wrapper">
                       <!-- <mat-card-content class="item" *ngFor="let item of blogList | slice:0:indexval; let i=index"> -->
-                      <mat-card-content class="item" *ngFor="let item of blogList" (click)="blogdetail(item._id)">
+                        
+                      <mat-card-content class="item" *ngFor="let item of blogList | slice:0:indexval ; let i=index" (click)="blogdetail(item._id)">
                         <span class="item_images">
                           <img [src]="item.blogs_image">
                         </span>
@@ -55,8 +56,9 @@
                         </mat-card-content>
                     </mat-card-content>
                     </span>
-                    <button mat-button class="btnblue sim-button" (click)="blogloadmore()">Load More</button>                  
-                  </mat-card-content>                                         
+                    <button mat-button class="btnblue sim-button" *ngIf="blogList !=null && indexval < blogList.length"  (click)="blogloadmore()">Load More</button>                  
+                  </mat-card-content> 
+                                                       
             </span>        
             <span class="categorywrapper">
                 <h2>Categories ({{blogcategorycount}})</h2>
@@ -66,21 +68,12 @@
                           <mat-expansion-panel-header >
                             <mat-panel-title  >
                                 {{item.blogtitle}} &nbsp;
-                              <h4 >({{blogsubcategorycount}})</h4>
+                              <h4 >({{count}})</h4>
                             </mat-panel-title>                           
                           </mat-expansion-panel-header>
-<<<<<<< HEAD
-
-                          <ng-container *ngFor="let itemVal of blogcategorysearch">
-                            
-                              <span *ngIf="itemVal.blogcategory == item.blogtitle" > 
-                          <div class="categorysub" (click)="blog(itemVal)"  [ngClass]="{'active': itemVal._id == blogcat }">
-                            
-=======
                           <ng-container *ngFor="let itemVal of blogcategorysearch">                            
                               <span *ngIf="itemVal.blogcategory == item.blogtitle"> 
                           <div class="categorysub" (click)="blog(itemVal)"  [ngClass]="{'active': itemVal._id == blogcat }">                            
->>>>>>> 3b4d72854c6beee2f592eda28c6872ccfa9510e1
                               <p class="inner_header">{{itemVal.metatitle}}</p>
 
                         </div>

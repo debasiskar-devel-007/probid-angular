@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from 'src/app/api.service';
+import { IfStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-bloglist',
@@ -31,7 +32,9 @@ export class BloglistfrontendComponent implements OnInit {
   public blogcategorycount:any;
   public blogcat:any;
   public blogsubcategorycount:any;
-
+  public count:any=0;
+  public indexval:any=2;
+  // btn_hide:any=false;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService, public apiService: ApiService) {
 
@@ -43,6 +46,7 @@ export class BloglistfrontendComponent implements OnInit {
     console.log(val)
     this.router.navigateByUrl('/blogdetail/' +val)
   }
+  
 
   ngOnInit() {
     // this.activatedRoute.data.subscribe((resolveData: any) => {
@@ -127,28 +131,28 @@ export class BloglistfrontendComponent implements OnInit {
       })
 
       //*********blog sub category count***********//
-      var datasubcatcount:any={};
-      datasubcatcount={
-      source:"blogs_view",
-      endpoint: "datalist",
+    //   var datasubcatcount:any={};
+    //   datasubcatcount={
+    //   source:"blogs_view",
+    //   endpoint: "datalist",
      
-    }
-    this.apiService.getTempToken().subscribe((resc:any)=>{
+    // }
+    // this.apiService.getTempToken().subscribe((resc:any)=>{
       
-      if(resc.status == 'success') {
-        this.apiService.getDatalistWithToken(datasubcatcount, resc).subscribe((res:any)=>{
+    //   if(resc.status == 'success') {
+    //     this.apiService.getDatalistWithToken(datasubcatcount, resc).subscribe((res:any)=>{
 
           
           
-            this.blogsubcategorycount = res.resc;
+    //         this.blogsubcategorycount = res.resc;
           
-          console.log('++++++++=======++++++++',this.blogsubcategorycount)
+    //       console.log('++++++++=======++++++++',this.blogsubcategorycount)
 
-        });
-      }
+    //     });
+    //   }
     
-    });
-
+    // });
+      
     }
 
 //***********blog list view in blog detail************//
@@ -159,9 +163,15 @@ export class BloglistfrontendComponent implements OnInit {
 //***********load more blog *************//
     blogloadmore(){
       console.log('load more')
+      this.indexval=this.indexval+2;
+      console.log('>>>>>>>>>',this.indexval);
+      console.log("+++++++++++++++++++++",this.blogList.length);
+      // if(this.indexval==this.blogList.length)
+      // this.btn_hide=true;
 
+      // console.log(this.btn_hide);
+     
+      
     }
-
-
 }
 
