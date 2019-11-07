@@ -428,7 +428,25 @@ forgetPassword(requestdata: any) {
   }
 
 
+  getJsonObject(path:any){
+    var result = this._http.get(path).pipe(map(res => res));
+    return result;
+}
 
+/**add postData */
+postdata(requestdata: any) {
+  console.log('post Data');
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+      // 'Authorization': this.accesstoken          //hard code written access-token(temp)
+    })
+  };
+
+  console.log(this.serverUrl,requestdata);
+  var result = this._http.post(this.serverUrl + this.addendpointUrl, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
+  return result;
+}
 
 }
 
