@@ -124,9 +124,10 @@ export class BloglistfrontendComponent implements OnInit {
         }
       })
     }
-    blog(){
-      console.log('asdgagfsdfs');
-    }
+
+    // blog(){
+    //   console.log('asdgagfsdfs');
+    // }
 
     blog(val:any){
       this.blogcat = val._id;
