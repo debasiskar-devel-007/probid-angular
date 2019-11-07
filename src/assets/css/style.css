@@ -458,7 +458,7 @@ max-width: 100%; margin: 0 auto; display: inherit;}
 .truncateopen{overflow: inherit !important; max-height: 100% !important; height: auto; text-overflow: inherit !important; -webkit-line-clamp: inherit !important;}
 .categorywrapper .mat-accordion .mat-expansion-panel:last-of-type {margin: 10px; box-shadow: none;}
 .categorywrapper .mat-expansion-panel-content {background: #e9edef;}
-.categorywrapper .mat-expansion-panel {background: #0071bc; color: #fff; margin: 10px;}
+.categorywrapper .mat-expansion-panel {background: #858585; color: #fff; margin: 10px;}
 .categorywrapper .mat-expansion-panel-header-title {color: #fff;}
 .categorywrapper .mat-expansion-indicator::after, .categorywrapper .mat-expansion-panel-header-description {color: #fff;}
 .categorywrapper .mat-expansion-panel-body {padding: 5px 0px 0px;}
