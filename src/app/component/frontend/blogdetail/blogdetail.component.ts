@@ -14,6 +14,7 @@ export class BlogdetailComponent implements OnInit {
   public blogcategorycount:any;
   public blog:any = '';
   public blogcat:any;
+  public blogsubcat:any;
 
     /************** lib list setup start here *************/
     public blogListConfig:any = {
@@ -33,7 +34,7 @@ export class BlogdetailComponent implements OnInit {
       this.blogdetail();
     }
 
-
+// ************* blog details *****************//
     blogdetail(){
       
       let url:any={};
@@ -130,6 +131,31 @@ export class BlogdetailComponent implements OnInit {
        subblog(val:any){
          console.log('>>>>>>>>>>>')
          console.log(val);
+         this.blogsubcat=val._id;
+         console.log(this.blogsubcat)
+        //  this.router.navigateByUrl('/blogdetail/'+val._id)
+        let data:any;
+        data = {
+          source:"blogs_view",
+          endpoint: "datalist",
+          condition:{
+          _id: val._id
+        },
+      }
+        this.apiService.getTempToken().subscribe((res:any)=>{
+          
+          if(res.status == 'success') {
+            this.apiService.getDatalistWithToken(data, res).subscribe((res:any)=>{
+    
+              this.blog = res.res[0];
+              console.log('..........>>>>>>>>>>>>>',this.blog)
+    
+            });
+          }
+        });
+
+
+
        }
   
  
