@@ -23,9 +23,9 @@ import { BasicInventorySearchComponent } from './component/frontend/basic-invent
 import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.component';
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
 import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
-
-
 import { BlogCategoryComponent } from './component/frontend/blog-category/blog-category.component';
+import { SalesrepSignupComponent } from './component/frontend/salesrep-signup/salesrep-signup.component';
+import { CustomerSignupComponent } from './component/frontend/customer-signup/customer-signup.component';
 
 /**End Frontend Routing**/
 
@@ -165,6 +165,8 @@ const routes: Routes = [
   { path: 'pre-owned', component: PreOwnedComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'blog-category', component: BlogCategoryComponent },
+  { path: 'salesrep-signup', component: SalesrepSignupComponent },
+  { path: 'customer-signup', component: CustomerSignupComponent },
 
   
 // ___________________BLOG MANAGEMENT_________________
