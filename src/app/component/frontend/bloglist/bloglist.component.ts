@@ -123,6 +123,9 @@ export class BloglistfrontendComponent implements OnInit {
         }
       })
     }
+    blog(){
+      console.log('asdgagfsdfs');
+    }
 
 
    

@@ -89,9 +89,9 @@
                               {{item.blogtitle}}
                           </mat-panel-title>                           
                         </mat-expansion-panel-header>
-                        <p class="categorysub" *ngFor="let item of blogcategorysearch">
-                          <span class="inner_header">{{item.blogtitle}}</span>
-                      </p>
+                        <div class="categorysub" *ngFor="let item of blogcategorysearch">
+                          <p><span class="inner_header">{{item.blogtitle}}</span></p>
+                        </div>
                       </mat-expansion-panel>              
                     </mat-accordion>
           </span>

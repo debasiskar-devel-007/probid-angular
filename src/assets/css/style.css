@@ -659,7 +659,7 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
 }
 
 .categorysub {cursor: pointer;border-bottom: 1px solid #cdcdcd; padding-top: 5px !important; padding-bottom: 5px !important;}
-p.categorysub{text-transform: capitalize;padding-left: 5px; padding-right: 5px;}
+.categorysub p{text-transform: capitalize;padding-left: 5px; padding-right: 5px;}
 .categorysub.active{background: #656565; color: #fff;}
 
 

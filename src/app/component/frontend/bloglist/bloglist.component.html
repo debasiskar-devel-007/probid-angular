@@ -68,7 +68,7 @@
                                 {{item.blogtitle}}
                             </mat-panel-title>                           
                           </mat-expansion-panel-header>
-                          <div class="categorysub" *ngFor="let item of blogcategorysearch">
+                          <div class="categorysub" *ngFor="let item of blogcategorysearch" (click)="blog()">
                             <p><span class="inner_header">{{item.blogtitle}}</span></p>
                         </div>
                         
