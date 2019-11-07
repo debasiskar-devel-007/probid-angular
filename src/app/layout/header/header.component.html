@@ -37,11 +37,11 @@
                     </span>
                    </mat-list-item> -->
                     <mat-list-item role="listitem" class="activedropmenu">
-                        <span><a [routerLink]="['/login']">login</a></span>
-                        <!-- <span><a (click)="logOut()">logout</a></span> -->
+                        <span><a *ngIf="token==''" [routerLink]="['/login']">login</a></span>
+                        <span><a *ngIf="token!=''" (click)="logOut()">logout</a></span>
                     </mat-list-item>
                     <mat-list-item role="listitem" class="activedropmenu">
-                        <span><a [routerLink]="['/sign-up']">Register</a></span>
+                        <span><a *ngIf="token==''" [routerLink]="['/sign-up']">Register</a></span>
                     </mat-list-item>
                 </mat-list>
               </span>
