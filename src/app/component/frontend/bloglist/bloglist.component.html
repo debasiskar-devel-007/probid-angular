@@ -71,7 +71,9 @@
 
                           <span *ngFor="let itemval of blogcategorysearch">
                           <div class="categorysub" (click)="blog(itemval)"  [ngClass]="{'active': itemval._id == blogcat }">
-                            <p><span class="inner_header" >{{item.blogtitle}}</span></p>
+                            <p >
+                              <span class="inner_header" >{{item.blogtitle}}</span>
+                            </p>
                         </div>
                       </span>
                         
