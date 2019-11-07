@@ -16,24 +16,24 @@
         </span>
 </mat-card>
 
-<mat-card class="ptb-40 generalcls blog bloglist blogdetail">     
+<mat-card class="ptb-40 generalcls blog bloglist blogdetail">
   <span class="mainwrappercontent">
       <span class="bloglistinner">
           <span class="bloglistswrapper">
-              <mat-card-content class="bottom_blog">    
-                  <span class="item_wrapper"> 
+              <mat-card-content class="bottom_blog">
+                  <span class="item_wrapper">
                     <!-- <mat-card-content class="item"> -->
                     <mat-card-content class="item" >
-                      
+
                       <mat-card-title class="inner_header">{{blog.blogtitle}}</mat-card-title>
 
                       <span class="item_images" *ngIf="blog !='' && blog.blogs_image !='' && blog.blogs_image !=null">
                         <img [src]="blog.blogs_image">
                       </span>
-                      
-                      <p class="description">{{blog.description_html}}</p> 
 
-                      <mat-card-content class="contentsection" > 
+                      <p class="description">{{blog.description_html}}</p>
+
+                      <mat-card-content class="contentsection" >
                         <span class="author">
                           <span class="authornmimg">
                             <span class="writer_image">
@@ -43,7 +43,7 @@
                           </span>
                           <p class="date">Date: {{blog.date_added}}</p>
                         </span>
-                        
+
                         <span class="blogsociallists">
                             <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
                             <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
@@ -51,34 +51,34 @@
                             <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
                             <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
                             <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
-                          </span>          
+                          </span>
                       </mat-card-content>
                   </mat-card-content>
-                  </span>          
-                </mat-card-content>                                         
-          </span>        
+                  </span>
+                </mat-card-content>
+          </span>
           <span class="categorywrapper">
               <h2>Categories ({{blogcategorycount}})</h2>
-              
+
               <mat-accordion class="category">
                       <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let item of blogcategory">
                         <mat-expansion-panel-header>
                           <mat-panel-title>
                               {{item.blogtitle}}
-                          </mat-panel-title>                           
+                          </mat-panel-title>
                         </mat-expansion-panel-header>
                         <ng-container *ngFor="let itemVal of blogcategorysearch">
                             <span  *ngIf="itemVal.blogcategory == item.blogtitle">
-                              <div class="categorysub"  (click)="subblog(itemVal)" [ngClass]="{'active':itemVal._id == blogsubcat}">                         
+                              <div class="categorysub"  (click)="subblog(itemVal)" [ngClass]="{'active':itemVal._id == blogsubcat}">
                                 <p class="inner_header">{{itemVal.metatitle}}</p>
-                        
+                                  <!-- <p>{{itemVal.blogcategory}} hi</p> -->
                               </div>
                           </span>
                         </ng-container>
-                      </mat-expansion-panel>              
+                      </mat-expansion-panel>
               </mat-accordion>
           </span>
-      </span>        
+      </span>
   </span>
 </mat-card>
 

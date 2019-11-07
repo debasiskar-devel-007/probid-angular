@@ -15,22 +15,22 @@
         </span>
 </mat-card>
 
-<mat-card class="ptb-35 generalcls testimonial">    
-    <!-- <span class="mainwrappercontent"> 
-        <img src="../../../../assets/images/testimonial_blockimg1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">   
+<mat-card class="ptb-35 generalcls testimonial">
+    <!-- <span class="mainwrappercontent">
+        <img src="../../../../assets/images/testimonial_blockimg1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
     </span> -->
     <span class="mainwrappercontent">
-        <mat-list role="list">          
+        <mat-list role="list">
             <mat-list-item role="listitem" class="testimonialserv" *ngFor="let testmon of TestimonialListArray | slice:0:indexval; let i=index">
                 <mat-card>
                     <span class="testiimgwarpper">
-                        <img src="{{testmon.image}}" class="iconcls">                                              
-                    </span> 
+                        <img src="{{testmon.image}}" class="iconcls">
+                    </span>
                     <mat-card-content class="testicontent">
                         <span class="bnticons">
-                            <button (click)="showvideo()"><img src="../../../../assets/images/videoicon.png"></button>
-                            <button (click)="showaudio()"><img src="../../../../assets/images/audioicon.png"></button>
-                        </span>  
+                            <button *ngIf="testmon.video" (click)="showvideo()"><img src="../../../../assets/images/videoicon.png"></button>
+                            <button *ngIf="testmon.audio" (click)="showaudio()"><img src="../../../../assets/images/audioicon.png"></button>
+                        </span>
                         <span class="testibottomcontent">
                             <mat-card-title class="title1">{{testmon.name}}</mat-card-title>
                             <mat-card-title class="title2">{{testmon.date_added}}</mat-card-title>
@@ -48,12 +48,12 @@
                             <!-- <a *ngIf="testmon.quatation.length >= 160" (click)="status=!status"
                                     > read more</a>
                         </span>                         -->
-                        <p class="truncate" [ngClass]="{'truncate truncateopen':testmon._id == p_id }">&quot; {{testmon.testimonial}} &quot;</p>
-                        <a *ngIf="testmon.testimonial.length > 254" [ngClass]="{'hide':testmon._id == p_id}" (click)="showmore(testmon)"> read more</a>
-                        </span>                        
-                       </mat-card-content>                    
+                        <p class="truncate" [ngClass]="{'truncate truncateopen':testmon._id == p_id }">&quot; {{testmon.quatation}} &quot;</p>
+                        <a *ngIf="testmon.quatation != '' && testmon != '' && testmon.quatation.length >= 254" [ngClass]="{'hide':testmon._id == p_id}" (click)="showmore(testmon)"> read more</a>
+                        </span>
+                       </mat-card-content>
                 </mat-card>
-            </mat-list-item>     
+            </mat-list-item>
         </mat-list>
         <button *ngIf="indexval.length > indexval" (click)="showMoreFunc()" mat-stroked-button class="btngeneral btngray">Load more</button>
     </span>
