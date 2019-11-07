@@ -136,6 +136,7 @@ import { AddEditBlogcatComponent } from './component/backend/blogs/add-edit-blog
 import { ListingBlogcatComponent } from './component/backend/blogs/listing-blogcat/listing-blogcat.component';
 import { AddEditBlogsComponent } from './component/backend/blogs/add-edit-blogs/add-edit-blogs.component';
 import { ListingBlogsComponent } from './component/backend/blogs/listing-blogs/listing-blogs.component';
+import { MyAccountComponent } from './component/backend/my-account/my-account.component';
 
 
 @NgModule({
@@ -224,6 +225,7 @@ import { ListingBlogsComponent } from './component/backend/blogs/listing-blogs/l
     ListingBlogcatComponent,
     AddEditBlogsComponent,
     ListingBlogsComponent,
+    MyAccountComponent,
   ],
   imports: [
     NewsTitleModule,

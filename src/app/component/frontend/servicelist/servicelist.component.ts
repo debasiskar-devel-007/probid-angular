@@ -48,11 +48,6 @@ export class ServicelistComponent implements OnInit {
       }
 
     });
-   
-
-
- 
-
   }
 
   btnBackClick= function () {

@@ -17,7 +17,7 @@ export class ListingTestimonialComponent implements OnInit {
     apiBaseUrl: this.ApiService.serverUrlDemo,
     listEndPoint: "datalist",
     datasource: "",
-    tableName: "testimonial",
+    tableName: "testimonial_view",
     updateurl: "addorupdatedata",
     editUrl: "testimonial/edit",
     jwtToken: this.ApiService.accesstoken,

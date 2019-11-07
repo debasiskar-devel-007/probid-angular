@@ -65,7 +65,7 @@ export class TesimonialComponent implements OnInit {
   ngOnInit() {
     var data: any = {};
     data = {
-      source:"testimonals",
+      source:"testimonial_view",
       endpoint: "datalist"
     }
     // this.apiService.getDatalist(data).subscribe((res)=>{

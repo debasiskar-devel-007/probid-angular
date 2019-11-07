@@ -86,6 +86,7 @@ import { AddEditBlogcatComponent } from './component/backend/blogs/add-edit-blog
 import { ListingBlogcatComponent } from './component/backend/blogs/listing-blogcat/listing-blogcat.component';
 import { AddEditBlogsComponent } from './component/backend/blogs/add-edit-blogs/add-edit-blogs.component';
 import { ListingBlogsComponent } from './component/backend/blogs/listing-blogs/listing-blogs.component';
+import { MyAccountComponent } from './component/backend/my-account/my-account.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -336,6 +337,7 @@ const routes: Routes = [
   { path: 'basic-inventory-search-rep', component: BasicInventorySearchBackendComponent },
   { path: 'communication', component: CommunicationComponent },
   { path: 'training-center-rep', component: TrainingCenterComponent },
+  { path: 'my-account', component: MyAccountComponent },
 
   /**End Backend Routing**/
 
