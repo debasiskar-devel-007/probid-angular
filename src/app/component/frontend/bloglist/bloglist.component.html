@@ -69,9 +69,11 @@
                             </mat-panel-title>                           
                           </mat-expansion-panel-header>
 
-                          <span *ngFor="let item of blogcategorysearch">
-                          <div class="categorysub" (click)="blog(item)"  [ngClass]="{'active': item._id == blogcat }">
-                            <p><span class="inner_header" >{{item.blogtitle}}</span></p>
+                          <span *ngFor="let itemVal of blogcategorysearch">
+                          <div class="categorysub" (click)="blog(itemVal)"  [ngClass]="{'active': itemVal._id == blogcat }">
+                            <p> 
+                              <span class="inner_header" *ngIf="itemVal.blogcategory == item.blogtitle">{{itemVal.metatitle}}</span>
+                            </p>
                         </div>
                       </span>
                         
