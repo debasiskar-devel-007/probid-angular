@@ -33,7 +33,6 @@ export class TesimoniallistComponent implements OnInit {
       if(res.status == 'success') {
         this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
           this.TestimonialListArray = res2.res;
-console.log(this.TestimonialListArray)
         });
       }
     });
@@ -57,7 +56,5 @@ console.log(this.TestimonialListArray)
   
   showmore(index:any) {
    this.p_id = index._id;
-   console.log(this.p_id)
-   console.log(index.quatation.length);
   }
 }
