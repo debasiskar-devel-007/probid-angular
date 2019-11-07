@@ -45,7 +45,8 @@ public user_full_name: any = '';
 
   logOut() {
     this.cookieService.deleteAll();
-    this.router.navigate(['/home']);
+    this.router.navigateByUrl('/');
+    console.log("logout");
   }
 
   openDialog(): void {
