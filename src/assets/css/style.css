@@ -469,3 +469,178 @@ max-width: 100%; margin: 0 auto; display: inherit;}
 .categorysub p{text-transform: capitalize;padding-left: 5px; padding-right: 5px;}
 .categorysub.active{background: #ecc8c3; color: #fff;}
 
+
+
+/*--Sales Rep Signup css---*/
+
+.signupnewtop-header.mat-card{background: #222222 !important; padding-top: 16px; padding-bottom: 16px;text-align: center; position: relative;}
+.signupnewtop-header .top-header-inner{display: flex; align-items: center; justify-content:flex-start;}
+.signupnewtop-header p{font-family: 'Helvetica-Normal'; font-size: 20px; text-transform: uppercase;margin: 0px;margin-left: -260px; color: #d4d8d9; text-align: center;}
+.signupnewtop-header p span{font-family: 'HelveticaBold';}
+.signupnewtop-header p {display: block;float: left !important;margin: 0 0 0 60px !important;text-align: center !important; width: 55%; font-size: 34px;}
+.signupnewtop-header .socialblock{ width: 114px; float: left;   margin-top: 0px;}
+.signupnewtop-header .top-header-inner .logo{width: 16.66666667%;}
+.signupnewtop-header .top-header-inner .headerright{width: 83.33333333%;}
+
+.signupnewtop-banner.mat-card{margin:0; padding:0;}
+.signupnewtop-banner .banner {width: 100%; height: 565px;margin: 0; padding: 0; position: relative; overflow: hidden;}
+.signupnewtop-banner .banner img {margin: 0;padding: 0;}
+
+
+
+.signupnew-form.mat-card{position: inherit;}
+
+.formhome{width: 333px; height: 100%; position: absolute; top:10px; right:175px;}
+.formhomeinner{padding: 0px 0px;}
+
+
+.form-group:last-of-type {
+    margin-bottom: 0px;
+}
+
+.formhomeinnertop{background: url("../images/formbgtop.png") no-repeat!important; vertical-align:top; width: 333px; height:129px;}
+.formhomeinnertop.mat-card-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.formhomeinnertop.mat-card-header .mat-card-header-text{margin: 0;}
+.formhomeinnerbottom {
+    margin-top: 0px;
+    background: url("../images/formbg.png") repeat-y;
+    width: 333px;
+    height: 100%;
+    padding: 15px 20px 0px 20px;
+    display: block;
+    position: relative;
+}
+.formhomeinnerbottom:after {
+    content: '';
+    background: url("../images/formbgbottom.png")no-repeat bottom;
+    width: 333px;
+    height: 166px;
+    display: block;
+    float: left;
+    left: 0;
+    position: absolute;
+    bottom: -140px;
+}
+
+.formhomeinnertop h3{font-family: 'Helvetica-Normal'; font-size: 30px; text-transform: uppercase; text-align: center; color: #fff; margin-top: 10px; margin-bottom: 0px;}
+.formhomeinnertop h2{font-family: 'HelveticaBold'; font-size: 40px; margin-top: 10px; text-transform: uppercase;text-align: center;  color: #fb4a32;line-height: 0.9;}
+
+.form-control {height: 37px; font-family: 'Helvetica-Normal'; font-style: italic; padding: 6px 12px; font-size: 14px; line-height: 1.42857143; color: #d4d4d4; background-color: #20262a; background-image: none; border: 1px solid #43494d;  border-radius: 0px;}
+.mat-form-field {margin-bottom: 16px;}
+
+.formhomeinnertop h3 {margin-top: 31px;}
+
+.formhomeinnerbottom .btn-lg, .formhomeinnerbottom .btn-group-lg > .btn {
+    border-radius: 30px;
+    font-size: 18px;
+    line-height: 1.33;
+    padding: 15px 50px;
+    border:3px solid #0f2532;
+    background: rgba(1,132,206,1);
+    background: -moz-linear-gradient(top, rgba(1,132,206,1) 0%, rgba(0,31,57,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(1,132,206,1)), color-stop(100%, rgba(0,31,57,1)));
+    background: -webkit-linear-gradient(top, rgba(1,132,206,1) 0%, rgba(0,31,57,1) 100%);
+    background: -o-linear-gradient(top, rgba(1,132,206,1) 0%, rgba(0,31,57,1) 100%);
+    background: -ms-linear-gradient(top, rgba(1,132,206,1) 0%, rgba(0,31,57,1) 100%);
+    background: linear-gradient(to bottom, rgba(1,132,206,1) 0%, rgba(0,31,57,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0184ce', endColorstr='#001f39', GradientType=0 );
+    text-transform: uppercase;
+}
+
+.formhomeinnerbottom .btn-lg:hover, .formhomeinnerbottom .btn-group-lg > .btn:hover {
+    border-radius: 30px;
+    font-size: 18px;
+    line-height: 1.33;
+    padding: 15px 50px;
+    border:3px solid #0f2532;
+    background: rgba(0,31,57,1);
+    background: -moz-linear-gradient(top, rgba(0,31,57,1) 0%, rgba(1,132,206,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(100%, rgba(0,31,57,1)), color-stop(0%, rgba(1,132,206,1)));
+    background: -webkit-linear-gradient(top, rgba(0,31,57,1) 0%, rgba(1,132,206,1) 100%);
+    background: -o-linear-gradient(top, rgba(0,31,57,1) 0%, rgba(1,132,206,1) 100%);
+    background: -ms-linear-gradient(top, rgba(0,31,57,1) 0%, rgba(1,132,206,1) 100%);
+    background: linear-gradient(to bottom, rgba(0,31,57,1) 0%, rgba(1,132,206,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001f39', endColorstr='#0184ce', GradientType=0 );
+    text-transform: uppercase;
+}
+
+.bottompart{
+    font-family: 'Helvetica-Normal'; font-style: italic; padding: 6px 12px; font-size: 14px; line-height: 1.42857143; color: #d4d4d4; 
+}
+.formhome .mat-form-field {display: block;}
+
+.formhome .mat-form-field {
+    z-index: 999;
+    position: inherit;
+    margin-bottom: 0px;
+}
+
+/* .formhome .mat-input-element {
+    height: 37px;
+    font-family: 'OpenSans-Regular';
+    font-style: italic;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #d4d4d4;
+    background-color: #20262a;
+    background-image: none;
+    border: 1px solid #43494d;
+    border-radius: 0px;
+} */
+
+.formhome .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 1em !important;
+    background: #20262a;
+    border: 1px solid #43494d !important;
+    border-radius: 0px;
+    color: #d4d4d4;
+    font-style: italic;
+}
+
+.formhome .mat-form-field-appearance-legacy .mat-form-field-label {
+    color: #d4d4d4;
+}
+
+.formhome .mat-checkbox{
+    position: relative;
+    z-index: 99;
+}
+
+.formhome .mat-button{
+    position: relative;
+    z-index: 99;   
+     margin: 0 auto;
+    display: block;
+}
+.formhome .mat-checkbox-frame {
+    border-color: #333;
+}
+
+.formhome .mat-checkbox-label label{
+    font-weight: normal !important;
+}
+.formhome .mat-select-value {
+    color: #d4d4d4;
+}
+
+
+
+
+
+
+.revolution {
+    background: url(../images/bg-revolution.png) no-repeat left top;
+    height: 973px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-size: cover;
+}
+
+/*--End of Sales Rep Signup css---*/
