@@ -60,7 +60,6 @@
             </span>        
             <span class="categorywrapper">
                 <h2>Categories ({{blogcategorycount}})</h2>
-                <!-- <span > -->
                 <mat-accordion class="category">
                         <mat-expansion-panel  (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let item of blogcategory">
                           <mat-expansion-panel-header >
@@ -69,29 +68,16 @@
                               <h4 >({{blogsubcategorycount}})</h4>
                             </mat-panel-title>                           
                           </mat-expansion-panel-header>
-<<<<<<< HEAD
 
-                          <ng-container *ngFor="let itemVal of blogcategorysearch">
-                            
-                              <span *ngIf="itemVal.blogcategory == item.blogtitle" > 
-                          <div class="categorysub" (click)="blog(itemVal)"  [ngClass]="{'active': itemVal._id == blogcat }">
-                            
-=======
                           <ng-container *ngFor="let itemVal of blogcategorysearch">                            
                               <span *ngIf="itemVal.blogcategory == item.blogtitle"> 
-                          <div class="categorysub" (click)="blog(itemVal)"  [ngClass]="{'active': itemVal._id == blogcat }">                            
->>>>>>> 3b4d72854c6beee2f592eda28c6872ccfa9510e1
-                              <p class="inner_header">{{itemVal.metatitle}}</p>
-
-                        </div>
-                      </span>
-                      </ng-container>
-                        
-                        </mat-expansion-panel>
-                
+                                <div class="categorysub" (click)="blog(itemVal)"  [ngClass]="{'active': itemVal._id == blogcat }">   
+                                  <p class="inner_header">{{itemVal.metatitle}}</p>
+                                </div>
+                              </span>
+                         </ng-container>                        
+                        </mat-expansion-panel>                
                       </mat-accordion>
-
-              <!-- </span> -->
             </span>
         </span>        
     </span>
