@@ -125,6 +125,10 @@ export class BloglistfrontendComponent implements OnInit {
       })
     }
 
+    // blog(){
+    //   console.log('asdgagfsdfs');
+    // }
+
     blog(val:any){
       this.blogcat = val._id;
       this.router.navigateByUrl('/blogdetail/'+val._id)
