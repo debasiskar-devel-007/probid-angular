@@ -11,6 +11,7 @@ export class SalesrepSignupComponent implements OnInit {
   public stateList:any;
   public cityList:any;
   public timezone:any;
+  public term_msg:any;
   constructor(public apiservice:ApiService,public fb: FormBuilder) {
        /**genarate Sales Ref-signUp form */
        this.salesSignUpForm = this.fb.group({
@@ -28,6 +29,7 @@ export class SalesrepSignupComponent implements OnInit {
         companyname:[null,Validators.required],
         webiner:[null],
         timezone:[null],
+        check:[false,Validators.required],
         type:["salesref"],
       }, {
         validator: this.machpassword('password', 'conpass')
@@ -78,22 +80,30 @@ getTimezone() {
 
 /**Sales Ref Submit function */
 salesSignUpFormSubmit(){
+  console.log(this.salesSignUpForm.value);
   for (let x in this.salesSignUpForm.controls) {
     this.salesSignUpForm.controls[x].markAsTouched();
   }
 
+  /**Checkbox check */
+if(this.salesSignUpForm.value.check==true){
   if(this.salesSignUpForm.valid){
 
     if(this.salesSignUpForm.value.conpass!=null){
       delete this.salesSignUpForm.value.conpass;
     }
-     /**Api service for insert form */
+    /**Api service for insert form */
     //  var data={"source":"user","data":this.salesSignUpForm.value}
     //  this.apiservice.CustomRequest(data,'addorupdatedata' ).subscribe((data) => {     
     //    console.log(data);
     //  })
     console.log(this.salesSignUpForm.value);
   }
+}
+else{
+this.term_msg='Please accept terms';
+}
+              
 
 }
 

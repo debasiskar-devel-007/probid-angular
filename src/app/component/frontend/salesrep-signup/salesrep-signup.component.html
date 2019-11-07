@@ -118,5 +118,10 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
+
+          <mat-checkbox formControlName="check" [checked]="myModel" class="example-margin">
+            <label>Accept Terms And Conditions</label>
+          </mat-checkbox>
+          <mat-label *ngIf="term_msg!=true">{{term_msg}}</mat-label>
             <button mat-raised-button color="primary">Sign Up</button>
         </form>
