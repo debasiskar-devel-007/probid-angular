@@ -62,7 +62,6 @@
             </span>        
             <span class="categorywrapper">
                 <h2>Categories ({{blogcategorycount}})</h2>
-                <!-- <span > -->
                 <mat-accordion class="category">
                         <mat-expansion-panel  (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let item of blogcategory">
                           <mat-expansion-panel-header >
@@ -71,20 +70,19 @@
                               <h4 >({{count}})</h4>
                             </mat-panel-title>                           
                           </mat-expansion-panel-header>
+
+
+
                           <ng-container *ngFor="let itemVal of blogcategorysearch">                            
                               <span *ngIf="itemVal.blogcategory == item.blogtitle"> 
-                          <div class="categorysub" (click)="blog(itemVal)"  [ngClass]="{'active': itemVal._id == blogcat }">                            
-                              <p class="inner_header">{{itemVal.metatitle}}</p>
+                                <div class="categorysub" (click)="blog(itemVal)"  [ngClass]="{'active': itemVal._id == blogcat }">   
+                                  <p class="inner_header">{{itemVal.metatitle}}</p>
+                                </div>
+                              </span>
+                         </ng-container>                        
+                        </mat-expansion-panel>  
 
-                        </div>
-                      </span>
-                      </ng-container>
-                        
-                        </mat-expansion-panel>
-                
                       </mat-accordion>
-
-              <!-- </span> -->
             </span>
         </span>        
     </span>
