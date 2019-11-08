@@ -4,8 +4,7 @@
         <mat-card class="generalcls blog" style="padding: 0 !important;">  
           <mat-card-title class="editprofiletitle">My Account</mat-card-title>
       
-          <form [formGroup]="UpdateForm"  (ngSubmit)="UpdateFormSubmit()">
-              <!-- <mat-error class="error" *ngIf="msg != ''">{{msg}}</mat-error> -->
+          <!-- <form [formGroup]="UpdateForm"  (ngSubmit)="UpdateFormSubmit()">
             <mat-form-field>
               <input matInput type="text" placeholder="First Name" formControlName="firstname" (blur)="inputUntouched('firstname')">
               <mat-error
@@ -31,7 +30,6 @@
             </mat-form-field>
       
       
-            <!-- added by sourav -->
             <mat-form-field>
               <input matInput type="text" placeholder="Phone Number" formControlName="phone" (blur)="inputUntouched('phone')">
               <mat-error
@@ -63,10 +61,9 @@
             </mat-select>
           </mat-form-field>
       
-            <!-- added by sourav -->
       
             <button mat-raised-button color="primary">Update</button>
-        </form>
+        </form> -->
         </mat-card>
       </div>
 </div>
