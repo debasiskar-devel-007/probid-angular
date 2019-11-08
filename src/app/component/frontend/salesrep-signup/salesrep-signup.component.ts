@@ -87,7 +87,6 @@ export class SalesrepSignupComponent implements OnInit {
     }
 
 
-
     if (this.salesSignUpForm.valid) {
       /**Checkbox check */
       if (this.salesSignUpForm.value.check == true) {

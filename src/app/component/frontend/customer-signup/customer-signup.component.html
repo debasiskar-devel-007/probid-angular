@@ -1,4 +1,3 @@
-
 <mat-card class="signupnewtop-header">
   <mat-card-content class="top-header-inner">
     <span class="logo">
@@ -7,168 +6,141 @@
     <span class="headerright">
       <p>Consumer <span>PRE-ENROLLMENT</span></p>
       <div class="socialblock">
-          <a href="https://www.linkedin.com/in/betoparedes" target="_blank"><img src="../../assets/images/linkedin_circle.png"></a>
-          <a href="https://twitter.com/BetoCParedes " target="_blank"><img src="../../assets/images/twitter_circle.png"></a>
-          <a href="https://www.facebook.com/betocparedes" target="_blank"><img src="../../assets/images/facebook_circle.png"></a>
-          <div class="clear"></div>
-        </div>
+        <a href="https://www.linkedin.com/in/betoparedes" target="_blank"><img
+            src="../../assets/images/linkedin_circle.png"></a>
+        <a href="https://twitter.com/BetoCParedes " target="_blank"><img
+            src="../../assets/images/twitter_circle.png"></a>
+        <a href="https://www.facebook.com/betocparedes" target="_blank"><img
+            src="../../assets/images/facebook_circle.png"></a>
+        <div class="clear"></div>
+      </div>
     </span>
   </mat-card-content>
 </mat-card>
 
 <mat-card class="signupnewtop-banner">
   <mat-card-content class="banner">
-      <img src="../../assets/images/salessignupimg-banner-home.jpg" alt="sales signup banner">
+    <img src="../../assets/images/salessignupimg-banner-home.jpg" alt="sales signup banner">
   </mat-card-content>
 </mat-card>
 
 <mat-card class="signupnew-form">
-    <mat-card-content class="formhome">
-      <span class="formhomeinner">
-        <!-- <form class="signupformdiv">
-          <mat-card-header class="formhomeinnertop">
-              <h3>be A part of the</h3>
-              <h2>revolution</h2>
-          </mat-card-header>    
-          <mat-card-content class="formhomeinnerbottom">
-                <mat-form-field>
-                  <input matInput placeholder="First Name">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="Last Name">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="Telephone">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="Email">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="Country">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="City">
-                </mat-form-field>
-                <mat-form-field>
-                  <mat-select [(value)]="selected">
-                    <mat-option>None</mat-option>
-                    <mat-option value="option1">State/Province</mat-option>
-                    <mat-option value="option2">Option 2</mat-option>
-                    <mat-option value="option3">Option 3</mat-option>
-                  </mat-select>
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="zip">
-                </mat-form-field>    
-                <span class="bottompart">
-                  <mat-checkbox [checked]="myModel" class="example-margin">
-                    <label>Accept Terms And Conditions</label>
-                  </mat-checkbox>
-                  <button mat-button class="btn-lg">Submit</button>
-              </span>
-            </mat-card-content>
-  
-            </form> -->
+  <mat-card-content class="formhome">
+    <span class="formhomeinner">
 
-            <form class="signupformdiv" [formGroup]="customerSignUpForm"  (ngSubmit)="customerSignUpFormSubmit()">
-                <!-- <mat-error class="error" *ngIf="msg != ''">{{msg}}</mat-error> -->
-                <mat-card-header class="formhomeinnertop">
-                    <h3>be A part of the</h3>
-                    <h2>revolution</h2>
-                </mat-card-header>    
-                <mat-card-content class="formhomeinnerbottom">
-                    <mat-form-field>
-                      <input matInput type="text" placeholder="First Name" formControlName="firstname" (blur)="inputUntouched('firstname')">
-                      <mat-error
-                        *ngIf="!customerSignUpForm.controls['firstname'].valid && customerSignUpForm.controls['firstname'].errors.required && customerSignUpForm.controls['firstname'].touched">
-                        First Name field can not be blank</mat-error>
-                    </mat-form-field>
-              
-              
-                    <mat-form-field>
-                      <input matInput type="text" placeholder="Last Name" formControlName="lastname" (blur)="inputUntouched('lastname')">
-                      <mat-error
-                        *ngIf="!customerSignUpForm.controls['lastname'].valid && customerSignUpForm.controls['lastname'].errors.required && customerSignUpForm.controls['lastname'].touched">
-                        Last Name field can not be blank</mat-error>
-                    </mat-form-field>
-              
-                    <mat-form-field>
-                      <input matInput type="text" placeholder="Email" formControlName="email" (blur)="inputUntouched('email')">
-                      <mat-error
-                        *ngIf="!customerSignUpForm.controls['email'].valid && customerSignUpForm.controls['email'].errors.required && customerSignUpForm.controls['email'].touched">
-                        Email field can not be blank</mat-error>
-                      <mat-error *ngIf="!customerSignUpForm.controls['email'].valid && !customerSignUpForm.controls['email'].errors.required">Email is
-                        not valid</mat-error>
-                    </mat-form-field>
-              
-                    <mat-form-field>
-                      <input matInput type="text" placeholder="Phone Number" formControlName="phone" (blur)="inputUntouched('phone')">
-                      <mat-error
-                        *ngIf="!customerSignUpForm.controls['phone'].valid && customerSignUpForm.controls['phone'].errors.required && customerSignUpForm.controls['phone'].touched">
-                        Phone Number field can not be blank</mat-error>
-                    </mat-form-field>
-        
-                    <mat-form-field>
-                      <input matInput placeholder="Password" type="password" formControlName="password" (blur)="inputUntouched('password')">
-                      <mat-error
-                        *ngIf="!customerSignUpForm.controls['password'].valid && customerSignUpForm.controls['password'].errors.required && customerSignUpForm.controls['password'].touched">
-                        Password field can not be blank</mat-error> 
-                    </mat-form-field>
-        
-                    <mat-form-field>
-                    <input matInput placeholder="Confirm Password" type="password" formControlName="conpass" (blur)="inputUntouched('conpass')">
-                    <mat-error  *ngIf="!customerSignUpForm.controls['conpass'].valid && customerSignUpForm.controls['conpass'].errors.required && customerSignUpForm.controls['conpass'].touched">
-                        Confirm Password field can not be blank</mat-error>
-                    <mat-error *ngIf="!customerSignUpForm.controls['conpass'].valid && customerSignUpForm.controls['conpass'].touched">Password does not match </mat-error>
-                    </mat-form-field>
-          
-                      <mat-form-field>
-                        <input matInput placeholder="Address" type="text" formControlName="address" (blur)="inputUntouched('address')">
-                        <mat-error
-                          *ngIf="!customerSignUpForm.controls['address'].valid && customerSignUpForm.controls['address'].errors.required && customerSignUpForm.controls['address'].touched">
-                          Address field can not be blank</mat-error>
-                      </mat-form-field>
-  
-                      <mat-form-field>
-                        <input matInput placeholder="Zip Code" type="text" formControlName="zip" (blur)="inputUntouched('zip')">
-                        <mat-error
-                          *ngIf="!customerSignUpForm.controls['zip'].valid && customerSignUpForm.controls['zip'].errors.required && customerSignUpForm.controls['zip'].touched">
-                          Zip field can not be blank</mat-error>
-                      </mat-form-field>
-        
-                      <mat-form-field>
-                        <mat-label>City</mat-label>
-                        <mat-select formControlName="city" (blur)="inputUntouched('city')">
-                          <mat-option *ngFor="let city of cityList" [value]="city.city">
-                            {{city.city}}
-                          </mat-option>
-                        </mat-select>
-                        <mat-error
-                          *ngIf="!customerSignUpForm.controls['city'].valid && customerSignUpForm.controls['city'].errors.required && customerSignUpForm.controls['city'].touched">
-                          City field can not be blank</mat-error>
-                      </mat-form-field>
-                      
-  
-                        <mat-form-field>
-                        <mat-label>State</mat-label>
-                        <mat-select formControlName="state" (blur)="inputUntouched('state')">
-                          <mat-option *ngFor="let state of stateList" [value]="state.abbreviation">
-                            {{state.name}}
-                          </mat-option>
-                        </mat-select>
-                        <mat-error
-                            *ngIf="!customerSignUpForm.controls['state'].valid && customerSignUpForm.controls['state'].errors.required && customerSignUpForm.controls['state'].touched">
-                            State field can not be blank</mat-error>
-                      </mat-form-field>
-                      <span class="bottompart">
-                          <mat-checkbox [checked]="myModel" class="example-margin">
-                            <label>Accept Terms And Conditions</label>
-                          </mat-checkbox>
-                          <button mat-raised-button class="btn-lg">Sign Up</button>
-                      </span>
-              
-            </mat-card-content>
-          </form>
-      </span>
-    </mat-card-content>
+      <form class="signupformdiv" [formGroup]="customerSignUpForm" (ngSubmit)="customerSignUpFormSubmit()">
+        <mat-card-header class="formhomeinnertop">
+          <h3>be A part of the</h3>
+          <h2>revolution</h2>
+        </mat-card-header>
+        <mat-card-content class="formhomeinnerbottom">
+          <mat-form-field>
+            <input matInput type="text" placeholder="First Name" formControlName="firstname"
+              (blur)="inputUntouched('firstname')">
+            <mat-error
+              *ngIf="!customerSignUpForm.controls['firstname'].valid && customerSignUpForm.controls['firstname'].errors.required && customerSignUpForm.controls['firstname'].touched">
+              First Name field can not be blank</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field>
+            <input matInput type="text" placeholder="Last Name" formControlName="lastname"
+              (blur)="inputUntouched('lastname')">
+            <mat-error
+              *ngIf="!customerSignUpForm.controls['lastname'].valid && customerSignUpForm.controls['lastname'].errors.required && customerSignUpForm.controls['lastname'].touched">
+              Last Name field can not be blank</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput type="text" placeholder="Email" formControlName="email" (blur)="inputUntouched('email')">
+            <mat-error
+              *ngIf="!customerSignUpForm.controls['email'].valid && customerSignUpForm.controls['email'].errors.required && customerSignUpForm.controls['email'].touched">
+              Email field can not be blank</mat-error>
+            <mat-error
+              *ngIf="!customerSignUpForm.controls['email'].valid && !customerSignUpForm.controls['email'].errors.required">
+              Email is
+              not valid</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput type="text" placeholder="Phone Number" formControlName="phone"
+              (blur)="inputUntouched('phone')">
+            <mat-error
+              *ngIf="!customerSignUpForm.controls['phone'].valid && customerSignUpForm.controls['phone'].errors.required && customerSignUpForm.controls['phone'].touched">
+              Phone Number field can not be blank</mat-error>
+              <mat-error
+              *ngIf="!customerSignUpForm.controls['phone'].valid && !customerSignUpForm.controls['phone'].errors.required">
+              Phone Number is
+              not valid</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Password" type="password" formControlName="password"
+              (blur)="inputUntouched('password')">
+            <mat-error
+              *ngIf="!customerSignUpForm.controls['password'].valid && customerSignUpForm.controls['password'].errors.required && customerSignUpForm.controls['password'].touched">
+              Password field can not be blank</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Confirm Password" type="password" formControlName="conpass"
+              (blur)="inputUntouched('conpass')">
+            <mat-error
+              *ngIf="!customerSignUpForm.controls['conpass'].valid && customerSignUpForm.controls['conpass'].errors.required && customerSignUpForm.controls['conpass'].touched">
+              Confirm Password field can not be blank</mat-error>
+            <mat-error
+              *ngIf="!customerSignUpForm.controls['conpass'].valid && customerSignUpForm.controls['conpass'].touched">
+              Password does not match </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Address" type="text" formControlName="address"
+              (blur)="inputUntouched('address')">
+            <mat-error
+              *ngIf="!customerSignUpForm.controls['address'].valid && customerSignUpForm.controls['address'].errors.required && customerSignUpForm.controls['address'].touched">
+              Address field can not be blank</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="Zip Code" type="text" formControlName="zip" (blur)="inputUntouched('zip')">
+            <mat-error
+              *ngIf="!customerSignUpForm.controls['zip'].valid && customerSignUpForm.controls['zip'].errors.required && customerSignUpForm.controls['zip'].touched">
+              Zip field can not be blank</mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>City</mat-label>
+            <mat-select formControlName="city" (blur)="inputUntouched('city')">
+              <mat-option *ngFor="let city of cityList" [value]="city.city">
+                {{city.city}}
+              </mat-option>
+            </mat-select>
+            <mat-error
+              *ngIf="!customerSignUpForm.controls['city'].valid && customerSignUpForm.controls['city'].errors.required && customerSignUpForm.controls['city'].touched">
+              City field can not be blank</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field>
+            <mat-label>State</mat-label>
+            <mat-select formControlName="state" (blur)="inputUntouched('state')">
+              <mat-option *ngFor="let state of stateList" [value]="state.abbreviation">
+                {{state.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error
+              *ngIf="!customerSignUpForm.controls['state'].valid && customerSignUpForm.controls['state'].errors.required && customerSignUpForm.controls['state'].touched">
+              State field can not be blank</mat-error>
+          </mat-form-field>
+          <span class="bottompart">
+            <mat-checkbox [checked]="myModel" class="example-margin">
+              <label>Accept Terms And Conditions</label>
+            </mat-checkbox>
+            <button mat-raised-button class="btn-lg">Sign Up</button>
+          </span>
+
+        </mat-card-content>
+      </form>
+    </span>
+  </mat-card-content>
 </mat-card>
