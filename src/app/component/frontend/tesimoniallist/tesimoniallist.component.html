@@ -33,7 +33,7 @@
                         </span>
                         <span class="testibottomcontent">
                             <mat-card-title class="title1">{{testmon.name}}</mat-card-title>
-                            <mat-card-title class="title2">{{testmon.date_added}}</mat-card-title>
+                            <!-- <mat-card-title class="title2">{{testmon.date_added}}</mat-card-title> -->
                         </span>
                         <!--<span class="rateingdiv">
                             <span class="fa fa-star checked"></span>
@@ -44,12 +44,8 @@
                         </span>-->
                         <span class="quatation">
                             <!-- truncateopen -->
-                           <!-- <p class="truncate" [ngClass]="status ? 'truncate truncateopen' : 'truncate'">&quot; {{testmon.quatation}} &quot;</p>  -->
-                            <!-- <a *ngIf="testmon.quatation.length >= 160" (click)="status=!status"
-                                    > read more</a>
-                        </span>                         -->
-                        <p class="truncate" [ngClass]="{'truncate truncateopen':testmon._id == p_id }">&quot; {{testmon.quatation}} &quot;</p>
-                        <a *ngIf="testmon.quatation != '' && testmon != '' && testmon.quatation.length >= 254" [ngClass]="{'hide':testmon._id == p_id}" (click)="showmore(testmon)"> read more</a>
+                        <p class="truncate" [ngClass]="{'truncate truncateopen':testmon._id == p_id }">&quot; {{testmon.testimonial}} &quot;</p>
+                        <a *ngIf="testmon.testimonial != '' && testmon != '' && testmon.testimonial.length >= 254 " [ngClass]="{'hide':testmon._id == p_id}" (click)="showmore(testmon)"> read more</a>
                         </span>
                        </mat-card-content>
                 </mat-card>

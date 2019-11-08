@@ -1,4 +1,3 @@
-
 <mat-card class="signupnewtop-header">
   <mat-card-content class="top-header">
     <span class="logo">
@@ -7,17 +6,21 @@
     <span class="headerright">
       <p>Consumer <span>PRE-ENROLLMENT</span></p>
       <div class="socialblock">
-          <a href="https://www.linkedin.com/in/betoparedes" target="_blank"><img src="../../assets/images/linkedin_circle.png"></a>
-          <a href="https://twitter.com/BetoCParedes " target="_blank"><img src="../../assets/images/twitter_circle.png"></a>
-          <a href="https://www.facebook.com/betocparedes" target="_blank"><img src="../../assets/images/facebook_circle.png"></a>
-          <div class="clear"></div>
-        </div>
+        <a href="https://www.linkedin.com/in/betoparedes" target="_blank"><img
+            src="../../assets/images/linkedin_circle.png"></a>
+        <a href="https://twitter.com/BetoCParedes " target="_blank"><img
+            src="../../assets/images/twitter_circle.png"></a>
+        <a href="https://www.facebook.com/betocparedes" target="_blank"><img
+            src="../../assets/images/facebook_circle.png"></a>
+        <div class="clear"></div>
+      </div>
     </span>
   </mat-card-content>
 </mat-card>
 
 <mat-card class="signupnewtop-banner">
   <mat-card-content class="banner">
+
       <img src="../../assets/images/customersignup-banner-home.jpg" alt="customer signup banner">
   </mat-card-content>
 </mat-card>
@@ -116,8 +119,9 @@
                             State field can not be blank</mat-error>
                       </mat-form-field>
                       <span class="bottompart">
-                          <mat-checkbox [checked]="myModel" class="example-margin">
+                          <mat-checkbox formControlName="check" [checked]="myModel" class="example-margin">
                             <label>Accept Terms And Conditions</label>
+                            <mat-label *ngIf="term_msg!=true">{{term_msg}}</mat-label>
                           </mat-checkbox>
                           <button mat-raised-button class="btn-lg">Sign Up</button>
                       </span>
