@@ -1,6 +1,11 @@
-import { Component, OnInit, ViewChildren, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChildren, ViewChild,Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+export interface DialogData {
+  name: string;
+}
+
 @Component({
   selector: 'app-customer-signup',
   templateUrl: './customer-signup.component.html',
@@ -12,7 +17,7 @@ export class CustomerSignupComponent implements OnInit {
   public stateList: any;
   public cityList: any;
   public term_msg: any = '';
-  constructor(public apiservice: ApiService, public fb: FormBuilder) {
+  constructor(public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog) {
     /**genarate customer-signUp form */
     this.customerSignUpForm = this.fb.group({
       email: [null, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
@@ -87,6 +92,9 @@ export class CustomerSignupComponent implements OnInit {
         var data = { "source": "user", "data": this.customerSignUpForm.value }
         this.apiservice.CustomRequest(data, 'addorupdatedata').subscribe((data: any) => {
           if (data.status == 'success') {
+            this.dialog.open(customerSignUpsuccessDialog, {
+              width: '250px',
+            });
             this.formDirective.resetForm();
           }
           // console.log(data);
@@ -105,4 +113,21 @@ export class CustomerSignupComponent implements OnInit {
   gotoenroll() {
     document.querySelector('.signupformdiv').scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
+}
+
+
+@Component({
+  selector: 'coming',
+   templateUrl: './success.html',
+})
+export class customerSignUpsuccessDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<customerSignUpsuccessDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
 }

@@ -53,7 +53,7 @@ import { AboutusComponent } from './component/frontend/aboutus/aboutus.component
 import { BlogCategoryComponent } from './component/frontend/blog-category/blog-category.component';
 
 import { SalesrepSignupComponent } from './component/frontend/salesrep-signup/salesrep-signup.component';
-import { CustomerSignupComponent } from './component/frontend/customer-signup/customer-signup.component';
+import { CustomerSignupComponent,customerSignUpsuccessDialog } from './component/frontend/customer-signup/customer-signup.component';
 
 /**End Frontend Component**/
 
@@ -164,6 +164,7 @@ import { MyAccountComponent } from './component/backend/my-account/my-account.co
     DashboardComponent,
     HeaderComponent,
     comingSoonDialog,
+    customerSignUpsuccessDialog,
     FooterComponent,
     DialogPrivacyDialog,
     DialogTermsDialog,
@@ -272,7 +273,7 @@ import { MyAccountComponent } from './component/backend/my-account/my-account.co
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [comingSoonDialog, DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog]
+  entryComponents: [comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog]
 })
 export class AppModule { }
 
