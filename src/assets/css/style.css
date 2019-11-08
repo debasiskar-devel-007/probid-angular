@@ -182,7 +182,7 @@ text-decoration:none!important;	margin: 0; margin-top: 0; margin-bottom: 0; bord
 .servicewrappercontent .mat-list .mat-list-item{flex:1;flex-basis:25.33%;height:auto;background-color:#e2ecee;box-shadow:0 5px 27px 0 rgba(0,0,0,0.09);transition:background 0.3s,border 0.3s,border-radius 0.3s,box-shadow .3s;margin:6px;padding:0;display:flex;align-items:stretch; border-radius:10px; align-items: flex-start;}
 .servicewrappercontent .mat-list .mat-list-item .mat-card{box-shadow:none!important;text-align:left;background: transparent !important;}
 .servicewrappercontent .mat-list .mat-list-item .mat-card .mat-card-content{font-size:16px; font-family:"Helvetica-Normal"; overflow: hidden;
-    text-overflow: ellipsis; text-overflow: -o-ellipsis-lastline;  display: -webkit-box; line-height: normal; max-height: 134px; -webkit-line-clamp: 5; -webkit-box-orient: vertical;}
+    text-overflow: ellipsis; text-overflow: -o-ellipsis-lastline;  display: -webkit-box; line-height: normal; max-height: 127px; -webkit-line-clamp: 5; -webkit-box-orient: vertical;}
 .servicewrappercontent .mat-list .mat-list-item .mat-card .iconcls{margin-bottom:20px;width:auto; /* -webkit-filter:grayscale(100%);filter:grayscale(100%); */ height:60px;}
 .servicewrappercontent .mat-list .mat-list-item .mat-card .imagewrap{position:relative;width:60px;}
 .servicewrappercontent .btngeneral{padding:5px 30px;text-transform:uppercase}
@@ -224,7 +224,7 @@ text-decoration:none!important;	margin: 0; margin-top: 0; margin-bottom: 0; bord
 .testimonial .mat-list .mat-list-item{width: 32.91%;height: auto; background-color: #e2ecee !important; margin: 0.21%; padding: 0;}
 .testimonial .mat-list .mat-list-item .mat-list-item-content{padding: 0;}
 .testimonial .testiimgwarpper{padding:0; width: 100%; height: 306px;overflow: hidden; display: inline-block; position: relative;}
-.testimonial .testiimgwarpper img{height: 100% !important;width: auto; height: auto; max-width: 100%; object-fit: cover;}
+.testimonial .testiimgwarpper img{height: 100% !important;width: 100%; height: auto; max-width: 100%; object-fit: cover;}
 
 h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-size:24px !important;font-weight:600;line-height:24px;letter-spacing:1.92px; text-transform:uppercase !important;}
 .title2{color:#999;font-size:16px;font-style:italic;line-height:24px;letter-spacing:1.28px}
@@ -800,17 +800,15 @@ max-width: 100%; margin: 0 auto; display: inherit;}
 
 
 .associate_new_con1.mat-card{ background: url("../images/salesrepblock1bg.jpg") no-repeat !important; background-size: cover !important;background-position: left top;}
-.associate_new_con1_wrapper{ width: 1526px; margin: 0 auto; padding: 45px 0;}
+.associate_new_con1_wrapper{ width: 1526px; margin: 0 auto; padding: 45px 15px;}
 
-.associate_new_con1_wrapper .associate_new_con1_left{ width: 100%;padding-left: 420px;}
+.associate_new_con1_wrapper .associate_new_con1_left{ width: 100%;padding-left: 420px; display: inherit;}
 .associate_new_con1_wrapper .associate_new_con1_right{ width: 100%; padding-left: 420px;padding-top: 40px;display: flex; justify-content: space-between;align-items: flex-end;}
 
-.associate_new_con1_wrapper h2{ font-size: 30px; color: #fff; text-transform: uppercase;  font-family: 'OpenSans-Semibold'; margin: 0; padding: 0 0 25px 0;}
+.associate_new_con1_wrapper h2{ font-size: 30px; color: #fff; text-transform: uppercase;  font-family: 'Helvetica-Normal'; margin: 0; padding: 0 0 25px 0;}
 
 .associate_new_con1_wrapper p{ font-size: 17px; color: #fff;  line-height: 28px; margin: 0; padding: 0;}
-.associate_new_con1_wrapper .as_video-container{
-    width: 48.5%;
-}
+.associate_new_con1_wrapper .as_video-container{width: 48.5%;}
 .associate_new_con1_wrapper .video-container {
     position: relative;
     padding-bottom: 48%;
@@ -819,6 +817,7 @@ max-width: 100%; margin: 0 auto; display: inherit;}
     overflow: hidden;
     border: 8px solid #fff;
     box-shadow: 0 4px 10px #000000a6;
+    display: inherit;
 }
 .associate_new_con1_wrapper .video-container img{border: 1px solid #b7b7b7;}
 
@@ -846,11 +845,11 @@ max-width: 100%; margin: 0 auto; display: inherit;}
     padding-bottom: 30px;
     padding-top: 30px;
 }
-.associate_new_con5_text h2{ font-size: 34px; color: #1f1f1f; text-transform: uppercase;  font-family: 'OpenSans-Extrabold'; margin: 0; padding: 0;}
+.associate_new_con5_text h2{ font-size: 34px; color: #1f1f1f; text-transform: uppercase;  font-family: 'HelveticaBold'; margin: 0; padding: 0;}
 .associate_new_con5_text h2 span{color: #fb4a32;}
 
 .associate_new_con5_text p{ font-size: 18px; color: #000000; line-height: 30px; margin:18px 0; padding: 0 0 0 22px; border-left: solid 8px #fb4a32;}
-.associate_new_con5_text h3{ font-size: 24px; color: #181818; text-transform: uppercase;  font-family: 'OpenSans-Semibold'; margin: 0; padding: 0 ;}
+.associate_new_con5_text h3{ font-size: 24px; color: #181818; text-transform: uppercase;  font-family: 'HelveticaBold'; margin: 0; padding: 0 ;}
 .associate_new_con5_text h3 span{color: #ff0167;}
 .associate_new_con5_link{
     border-radius: 3px;
@@ -870,10 +869,10 @@ a.associate_new_con5_link:hover{color: #fff !important; text-decoration: none;}
 
 .associate_new_con5_text table{ margin: 25px 0; width: 100%;}
 
-.associate_new_con5_text td{ font-size: 20px; color: #ffffff; font-family: 'OpenSans-Semibold'; line-height: 24px;  }
+.associate_new_con5_text td{ font-size: 20px; color: #ffffff; font-family: 'HelveticaBold'; line-height: 24px;  }
 
-.associate_new_con5_text td label{ display: block; margin: 0; padding: 0; font-size: 14px; color: #ffffff;   font-family: 'open_sansregular'; font-weight: normal; line-height: 16px;}
-.associate_new_con5_text td span{   margin: 0; padding: 0; font-size: 14px; color: #ffffff;   font-family: 'open_sansregular'; font-weight: normal; line-height: 16px;}
+.associate_new_con5_text td label{ display: block; margin: 0; padding: 0; font-size: 14px; color: #ffffff;   font-family: 'Helvetica-Normal'; font-weight: normal; line-height: 16px;}
+.associate_new_con5_text td span{   margin: 0; padding: 0; font-size: 14px; color: #ffffff;   font-family: 'Helvetica-Normal'; font-weight: normal; line-height: 16px;}
 
 .associate_new_con5_text td{ vertical-align: middle; padding: 15px;}
 
@@ -931,5 +930,9 @@ a.associate_new_con5_link:hover{color: #fff !important; text-decoration: none;}
     border-bottom: solid 5px #ecf9ff; border-right: solid 5px #ecf9ff;
 }
 
+.associate_new_con1_wrapper .associate_new_con1_left {
+    width: 100%;
+    padding-left: 420px;
+}
 
 /*--Sales Rep Signup css---*/
