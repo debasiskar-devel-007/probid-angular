@@ -32,6 +32,7 @@ export class CustomerSignupComponent implements OnInit {
     this.getCityList();
   }
 
+  
   ngOnInit() {
   }
   /**Miss Match password check function */
@@ -87,5 +88,8 @@ export class CustomerSignupComponent implements OnInit {
 
   inputUntouched(val: any) {
     this.customerSignUpForm.controls[val].markAsUntouched();
+  }
+  gotoenroll(){
+    document.querySelector('.signupformdiv').scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 }

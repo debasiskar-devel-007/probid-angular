@@ -25,52 +25,7 @@
 <mat-card class="signupnew-form">
     <mat-card-content class="formhome">
       <span class="formhomeinner">
-        <!-- <form class="signupformdiv">
-          <mat-card-header class="formhomeinnertop">
-              <h3>be A part of the</h3>
-              <h2>revolution</h2>
-          </mat-card-header>    
-          <mat-card-content class="formhomeinnerbottom">
-                <mat-form-field>
-                  <input matInput placeholder="First Name">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="Last Name">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="Telephone">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="Email">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="Country">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="City">
-                </mat-form-field>
-                <mat-form-field>
-                  <mat-select [(value)]="selected">
-                    <mat-option>None</mat-option>
-                    <mat-option value="option1">State/Province</mat-option>
-                    <mat-option value="option2">Option 2</mat-option>
-                    <mat-option value="option3">Option 3</mat-option>
-                  </mat-select>
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput placeholder="zip">
-                </mat-form-field>    
-                <span class="bottompart">
-                  <mat-checkbox [checked]="myModel" class="example-margin">
-                    <label>Accept Terms And Conditions</label>
-                  </mat-checkbox>
-                  <button mat-button class="btn-lg">Submit</button>
-              </span>
-            </mat-card-content>
-  
-            </form> -->
-
-            <form class="signupformdiv" [formGroup]="customerSignUpForm"  (ngSubmit)="customerSignUpFormSubmit()">
+             <form class="signupformdiv" [formGroup]="customerSignUpForm"  (ngSubmit)="customerSignUpFormSubmit()">
                 <!-- <mat-error class="error" *ngIf="msg != ''">{{msg}}</mat-error> -->
                 <mat-card-header class="formhomeinnertop">
                     <h3>be A part of the</h3>
@@ -149,7 +104,7 @@
                       </mat-form-field>
                       
   
-                        <mat-form-field>
+                      <mat-form-field>
                         <mat-label>State</mat-label>
                         <mat-select formControlName="state" (blur)="inputUntouched('state')">
                           <mat-option *ngFor="let state of stateList" [value]="state.abbreviation">
@@ -171,4 +126,84 @@
           </form>
       </span>
     </mat-card-content>
+</mat-card>
+
+<mat-card class="revolutionwrapper">
+  <mat-card-content class="revolution">
+    <span class="revolutionleft">
+        <span class="revologo"><img src="../../assets/images/logo-probidauto-revolution.png"></span>
+        <span class="revocurve"><img src="../../assets/images/arrow-leftcurve-revolution.png"></span>
+        <span class="revoinfo"><h2>Obtain incredible benefits and industry-challenging prices by getting in early and registering with us for your used-car purchase.</h2></span>
+        <span class="revocarman"><img src="../../assets/images/logo-man-revolution.png"></span>
+    </span>
+    <span class="revolutionright">
+      <span class="revoinfo1 pull-right">
+        <h2>What’s more, you could even get the vehicle at less than the retail prices offered by most dealerships! All you have to do is let us know about the vehicle you want, and we will get the car to you at the best prices! <span>Our methodology is centred on allowing consumers to get their hands on the car of their choice with minimum fuss.</span>
+        </h2>
+      </span>
+      <span class="revomobile"><img src="../../assets/images/logo-mobile-revolution.png"></span>
+      <span class="revoinfo2 pull-right">
+        <h2>Our <span>Smart Dealer Dashboard</span> allows you to access and RSVP for your desired vehicle from the wide variety of choices offered by an incredible inventory, making it easy for you to get your hands on the car at retail prices, or even less!</h2>
+      </span>
+      <span class="revocurveright"><img src="../../assets/images/arrow-rightcurve-revolution.png"></span>
+    </span>
+    <span class="revolutionbottom text-center">
+      <h3>THIS IS THE <span>REVOLUTION</span> OF THE CAR BUYING PROCESS THAT YOU HAVE BEEN WAITING FOR!</h3>
+    </span>
+  </mat-card-content>
+</mat-card>    
+
+<mat-card class="benefitwrapper">
+  <span class="benefit">
+    <span class="benefittop">
+      <h2>The benefits you will gain through ProBidAuto.com are UNHEARD OF and are ground-breaking when it comes to purchasing from Used-Car Auctions:</h2>
+    </span>
+    <mat-card-content class="benefitbottom">
+      <mat-list>
+        <mat-item-list>Make hassle-free used-car purchases by not having to deal with multiple dealers or auction houses to get your desired car</mat-item-list>
+        <mat-item-list>Increased chances of getting the cars of your choice for purchase</mat-item-list>
+        <mat-item-list>A vast inventory to choose from, with variety in vehicle type, make, model, year, etc.</mat-item-list>
+        <mat-item-list>Incredible prices that match, or are less than industry retail prices</mat-item-list>
+        <mat-item-list>Great options for the more modernized “Instant-More Choice” younger consumers</mat-item-list>
+        <mat-item-list>Inventories added from multiple Used-Car Auctions to offer you a greater variety to choose from apart from our in-house inventory</mat-item-list>
+      </mat-list>
+
+      <span class="benefitsingle">
+          <mat-list class="list2">
+            <mat-item-list>You will receive alerts and notifications when new cars matching your requirements are added to the inventory, or when prices drop</mat-item-list>
+            <mat-item-list>Save thousands of dollars and loads of time by not having to browse through the inventories of multiple dealerships</mat-item-list>
+            <mat-item-list>Choose from hundreds of salespersons who will make your used-car-buying experience even more stress-free</mat-item-list>
+            <mat-item-list>Obtain great money-saving options through regular discounts and offers</mat-item-list>
+            <mat-item-list>Have access to regular newsletters informing you about the latest developments and trends in the Used-Car Auction industry</mat-item-list>
+          </mat-list>
+      </span>
+      <span class="clearfix"></span>
+      <span class="prerolldealer">
+        <h2>Although we do not display or reveal Auction Prices for any vehicle, Consumers have access to retail prices of the same vehicle. We strive to offer better prices than the retail prices through offers and discounts.</h2>
+      </span>
+      <span class="clearfix"></span>
+      <span class="btnjoin"><button class="btn-join" (click)="gotoenroll()">JOIN THE REVOLUTION</button></span>
+      <span class="imgbottom"><img src="../../assets/images/benefit-family.png"></span>
+    </mat-card-content>
+  </span>
+</mat-card>
+
+<mat-card class="newmillinium">
+  <mat-card-content class="maincontentinner">
+    <span class="newmilliniummaintop">
+      <h3>New Millennium Used-Car Purchase Method</h3>
+    </span>
+    <span class="newmilliniummainbottom">
+        <span class="bottomleft">
+          <h3>You no longer have to go through the hassles of visiting Used-Car Dealerships or browsing through their inventories to get your hands on the vehicle of your choice.</h3>
+          <p><span>Our New Millennium Used-Car Purchase Method</span> has been developed while keeping CONSUMERS in mind, in order to give you the best advantages in the industry, while reducing YOUR workload drastically.</p>
+          <p><img src="../../assets/images/img-wealth.jpg"></p>
+        </span>
+        <span class="bottomright">
+          <h3>You can now approach the purchase of a used car with the peace of mind that you no longer have to go through the struggles of finding the precise car of your choice at Used-Car Dealerships. We include and display the vehicles available at large Used-Car Auctions in order to expand the inventory at your disposal.</h3>
+          <p>Through our virtual, state-of-the-art, real-time inventory viewership on our Smart Dealer Dashboard, you will be able to view all vehicles currently available, and RSVP for them. We will then work with the Auction houses to obtain your desired cars for you. <span>Our aim is simple – To Enable You to Walk Away, A Happy and Satisfied Customer!</span></p>
+          <p>Our methods enable us to reduce inventory costs, decrease inventory depreciation and substantially cut the costs for used-car sales. This allows us to offer competitive prices, which are at par with retail prices, if not less!</p>
+        </span>
+    </span>
+  </mat-card-content>
 </mat-card>

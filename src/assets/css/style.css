@@ -488,7 +488,7 @@ max-width: 100%; margin: 0 auto; display: inherit;}
 
 
 
-.signupnew-form.mat-card{position: inherit;}
+.signupnew-form.mat-card{position: inherit;padding: 0px;}
 
 .formhome{width: 333px; height: 100%; position: absolute; top:10px; right:175px;}
 .formhomeinner{padding: 0px 0px;}
@@ -550,6 +550,7 @@ max-width: 100%; margin: 0 auto; display: inherit;}
     background: linear-gradient(to bottom, rgba(1,132,206,1) 0%, rgba(0,31,57,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0184ce', endColorstr='#001f39', GradientType=0 );
     text-transform: uppercase;
+    color: #fff;
 }
 
 .formhomeinnerbottom .btn-lg:hover, .formhomeinnerbottom .btn-group-lg > .btn:hover {
@@ -567,10 +568,15 @@ max-width: 100%; margin: 0 auto; display: inherit;}
     background: linear-gradient(to bottom, rgba(0,31,57,1) 0%, rgba(1,132,206,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001f39', endColorstr='#0184ce', GradientType=0 );
     text-transform: uppercase;
+    
 }
 
 .bottompart{
-    font-family: 'Helvetica-Normal'; font-style: italic; padding: 6px 12px; font-size: 14px; line-height: 1.42857143; color: #d4d4d4; 
+    font-family: 'Helvetica-Normal'; font-style: italic; padding: 6px 12px; font-size: 14px; line-height: 1.42857143; color: #d4d4d4; display: block;
+    z-index: 9;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
 }
 .formhome .mat-form-field {display: block;}
 
@@ -580,27 +586,19 @@ max-width: 100%; margin: 0 auto; display: inherit;}
     margin-bottom: 0px;
 }
 
-/* .formhome .mat-input-element {
+.formhome .mat-form-field-appearance-legacy .mat-form-field-infix {
+    background: #20262a;
+    border: 1px solid #43494d !important;
     height: 37px;
     font-family: 'OpenSans-Regular';
     font-style: italic;
-    padding: 6px 12px;
+    padding: 6px 12px !important;
     font-size: 14px;
-    line-height: 1.42857143;
+    line-height: 20px;
     color: #d4d4d4;
     background-color: #20262a;
     background-image: none;
-    border: 1px solid #43494d;
     border-radius: 0px;
-} */
-
-.formhome .mat-form-field-appearance-legacy .mat-form-field-infix {
-    padding: 1em !important;
-    background: #20262a;
-    border: 1px solid #43494d !important;
-    border-radius: 0px;
-    color: #d4d4d4;
-    font-style: italic;
 }
 
 .formhome .mat-form-field-appearance-legacy .mat-form-field-label {
@@ -629,18 +627,79 @@ max-width: 100%; margin: 0 auto; display: inherit;}
     color: #d4d4d4;
 }
 
-
-
-
-
-
-.revolution {
-    background: url(../images/bg-revolution.png) no-repeat left top;
-    height: 973px;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-size: cover;
+.signupformdiv .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 16px;
 }
+
+.signupformdiv .mat-form-field .mat-form-field-label {
+    line-height: 26px;
+}
+
+
+.revolutionwrapper.mat-card{position: inherit; padding: 0px;} 
+.revolution{background: url(../images/bg-revolution.png) no-repeat left top; height: 973px; margin: 0; padding: 0;text-align: center; background-size:cover;}
+.revolutionleft {display: inline-block; position: relative; max-width: 49%; text-align: left; vertical-align: top;}
+.revolutionright{display: inline-block; position: relative; max-width: 49%;text-align: left;}
+.revolutionleft .revologo{position: absolute; top:53px; right:0px;}
+.revolutionleft .revocurve{position: absolute; top:65px; right:400px;}
+.revolutionleft .revoinfo{color: #5b605e; font-family: "Helvetica-Normal"; font-size: 30px; position: absolute; right: 149px;top: 204px;width: 435px;text-transform: uppercase;}
+.revolutionleft .revocarman{position: absolute; top:265px; right:-140px;z-index: 9999999;}
+
+.revolutionright .revoinfo1{position: absolute; top:90px; left: 122px; text-transform: uppercase; width: 622px; font-family: 'HelveticaBold'; font-size: 30px;}
+.revolutionright .revoinfo1 h2{font-family: 'HelveticaBold'; font-size: 18px; margin-top: 10px;}
+.revolutionright .revoinfo1 span{color:#ff0167; font-family: 'HelveticaBold'; text-transform: uppercase;}
+.revolutionright .revomobile{position: absolute; top: 235px; left: 116px; font-family: 'HelveticaBold'; font-size: 30px;}
+.revolutionright .revoinfo2{position: absolute; top:597px; left: 204px; width: 468px; }
+.revolutionright .revoinfo2 h2{font-family: 'Helvetica-Normal'; font-size: 20px;}
+.revolutionright .revoinfo2 h2 span{color:#ff0167; text-transform: uppercase;}
+.revolutionright .revocurveright{position: absolute; top:519px; left: 506px; }
+
+.revolutionbottom{position: relative; top: 760px; margin-left: auto; margin-right: auto; left: 0px;}
+.revolutionbottom h3{font-family: 'Helvetica-Normal'; font-size: 48px; text-transform: uppercase; max-width: 1310px; margin-left: auto;  margin-right: auto;}
+.revolutionbottom h3 span{color:#fb4a32; font-size: 60px; }
+
+
+.benefitwrapper.mat-card{padding: 0px;}
+.benefittop{background-color: #fb4a32; padding-top: 20px; padding-bottom: 20px;text-align: left; width: 100%; padding-left: 38px; display: block;}
+.benefittop h2{color:#fff; font-family: 'HelveticaBold'; text-shadow: 2px 2px 2px #000; font-size: 48px;margin-top: 0;}
+.benefitbottom{background: url(../images/benefitbg.jpg) no-repeat left top; height: 1152px; margin: 0; padding: 0; padding-top: 18px;  text-align: center; background-size:cover;position: relative;}
+.benefitbottom mat-list{ width:100%;  margin-bottom:20px; margin-top:20px; overflow:hidden;padding-left: 15px; padding-right: 15px;}
+.benefitbottom mat-item-list{font-family: 'HelveticaBold'; color: #fff; text-shadow: 2px 2px 2px #000; font-size: 22px; line-height: 31px; display: inline-block; background: url(../images/icon-list-tick.png) no-repeat left 4px; text-align: left; padding-left: 36px; padding-bottom: 24px; vertical-align: top; width: 48%; margin: 0px 1%;}
+.benefitbottom mat-item-list:last-child{padding-bottom: 0px;}
+.benefitbottom .list2 mat-item-list{font-family: 'HelveticaBold'; color: #fff; text-shadow: 2px 2px 2px #000; font-size: 22px; line-height: 31px; display: inline-block; background: url(../images/icon-list-tick.png) no-repeat left 4px; text-align: left; padding-left: 36px;  padding-bottom: 24px; vertical-align: top; width: 96%;}
+
+.benefitsingle {max-width: 900px; display: block;}
+.benefitsingle .list2 .textcapital{text-transform: capitalize; color:#fef626;}
+.benefitsingle .list2 span{text-transform: uppercase; color:#fef626;}
+
+.prerolldealer {background-color: #fb4a32; padding-top: 11px; padding-bottom: 11px; text-align: left; width: 55%; display: block;}
+.prerolldealer h2{color: #fff;font-family: 'HelveticaBold';font-size: 48px;margin-top: 0; width: 93%; margin-left: 38px; margin-bottom: 0px;}
+.imggallery{max-width: 888px; margin-left: 42px; background-color: #000;}
+.benefitbottom .imgbottom{position: absolute; bottom:-152px; right:0px; width: 420px; height: auto;}
+.benefitbottom .imgbottom img{max-width: 100%;}
+.btn-join {border-radius: 3px;background-color: #fb4a32; border: 0px;padding: 26px 12px 26px 12px; font-family: 'HelveticaBold'; font-size: 26px !important; font-size: 24px; color:#fff;}
+.benefitbottom .btnjoin{position: absolute; bottom: 85px; right: 500px;}
+.benefitsingle .list2 ul li {line-height: 37px !important;}
+
+
+
+.newmillinium{position: relative; margin-top: 60px;}
+.newmillinium.mat-card{position: inherit; padding: 0;}
+.newmillinium .maincontentinner {max-width: 1202px;margin-left: auto; margin-right: auto;}
+.newmilliniummaintop h3 {font-size: 48px; color: #000; margin: 0px 0px 31px 0px !important; padding: 0px; font-family: 'HelveticaBold';text-transform: uppercase;}
+.bottomleft {display: inline-block; position: relative; width: 40%; text-align: left; vertical-align: top; margin-right: 1%;}
+.bottomright{display: inline-block; position: relative; width: 55%;text-align: left;padding-left: 1%; }
+.bottomleft h3{color:#ff0167; font-family: 'HelveticaBold'; font-size: 30px; margin: 0;}
+.bottomleft p{color:#555e6b; font-family: 'HelveticaBold'; font-size: 18px;padding-top: 14px;}
+.bottomleft p span{color:#fb4a32; font-family: 'HelveticaBold'; font-size: 24px; text-transform: uppercase;}
+.bottomleft img{}
+.bottomright{border-left: 1px solid #c3c3c3; height: auto;}
+.bottomright h3{color:#555e6b;  font-family: 'HelveticaBold'; font-size: 30px; margin: 0;}
+.bottomright p{color:#555e6b; font-family: 'HelveticaBold'; font-size: 18px; padding-top: 14px; margin-left: 1%;}
+.bottomright p span{color:#fb4a32; font-family: 'HelveticaBold'; font-size: 24px; text-transform: uppercase;}
+.bottomright p span.span3{font-family: 'HelveticaBold'; font-size: 18px;color:#555e6b;}
+.newmilliniummain hr{background-color: #555e6b; border:none;  }
+.bottomright p:last-child{margin: 0px;}
+
 
 /*--End of Sales Rep Signup css---*/
