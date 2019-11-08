@@ -28,7 +28,7 @@
                     <span class="item_wrapper">
                       <!-- <mat-card-content class="item" *ngFor="let item of blogList | slice:0:indexval; let i=index"> -->
                         
-                      <mat-card-content class="item" *ngFor="let item of blogList | slice:0:indexval ; let i=index" (click)="blogdetail(item._id)">
+                      <mat-card-content class="item" *ngFor="let item of blogList | slice:0:indexval ; let i=index">
                         <span class="item_images">
                           <img [src]="item.blogs_image">
                         </span>
@@ -43,8 +43,8 @@
                             </span>
                             <p class="date">Date: {{item.date_added}} </p>
                           </span>
-                          <p class="description">{{item.description_html}}<a class="next_page" >read more</a>
-                          </p>  
+                          <p class="description">{{item.description_html}}</p>  
+                          <a class="next_page" (click)="blogdetail(item._id)">read more</a>
                           <span class="blogsociallists">
                               <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
                               <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>

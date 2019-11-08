@@ -269,15 +269,16 @@ max-width: 100%; margin: 0 auto; display: inherit;}
 .bottom_blog .item_wrapper .item .author .writer_image img{max-width: 100%; height: auto; }
 .bottom_blog .item_wrapper .item .author  .authorName { margin: 0 10px;  text-transform: capitalize; color: #222527; font-family: 'HelveticaBold';}
 .bottom_blog .item_wrapper .item .author  .date { color: #222527;}
-.bottom_blog .item_wrapper .item { width: 32%; margin: .5%; box-sizing: border-box; box-shadow: 0px 2px 10px -1px #ccc;  border-radius: 0px; padding: 20px; background-color: #fff;cursor: pointer; }
+.bottom_blog .item_wrapper .item { width: 32%; margin: .5%; box-sizing: border-box; box-shadow: 0px 2px 10px -1px #ccc;  border-radius: 0px; padding: 20px; background-color: #fff;cursor: pointer; text-align: left;}
 .bottom_blog .item_wrapper .item .item_images{ max-width: 100%; display: flex; justify-content: center; align-items: center; height: 174px; overflow: hidden; border: 1px solid #929ba0; }
-.bottom_blog .item_wrapper .item .item_images img{ width: 100%; height: auto; transition: all 0.3s; transform: scale(1); opacity: .85;}
+.bottom_blog .item_wrapper .item .item_images img{transition: all 0.3s;transform: scale(1); opacity: .85; height: 100% !important; -o-object-fit: cover; object-fit: cover; width: 100% !important; width: auto; height: auto;}
 .bottom_blog .item_wrapper .item .item_images:hover img{ transform: scale(1.5); opacity: 1;}
 .bottom_blog .item_wrapper .item .contentsection{ margin-top: 16px;}
-.bottom_blog .item_wrapper .item .next_page{ color:#21c4e1;}
+.bottom_blog .item_wrapper .item .next_page{ color:#21c4e1; text-align: left; display: inherit;}
 .bottom_blog .item_wrapper .item .next_page:hover i{width:35px;transition:all 500ms;background:#1299de;color:#fff;}
 .readmore{color:#ffffff;margin-left:auto;display:flex;background:#1299e1;width:150px;text-align:center;align-items:center;justify-content:center;font-family:'HelveticaBold';font-size:17px;}
-.bottom_blog .item_wrapper .item .contentsection .description{color:#838383;line-height:24px;font-size:16px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;}
+.bottom_blog .item_wrapper .item .contentsection .description{color:#838383;line-height:24px;font-size:16px;overflow: hidden; text-overflow: ellipsis;display: -webkit-box;line-height: 18px;
+    max-height: 90px;  -webkit-line-clamp: 5;-webkit-box-orient:vertical;}
 
 .bloglistinner {display: flex;flex-wrap: wrap;justify-content: space-between;}
 .bloglistswrapper{display: flex; flex-wrap: wrap; flex: 1 1 60%;}
@@ -471,16 +472,16 @@ max-width: 100%; margin: 0 auto; display: inherit;}
 
 
 
-/*--Sales Rep Signup css---*/
+/*--Customer Signup css---*/
 
 .signupnewtop-header.mat-card{background: #222222 !important; padding-top: 16px; padding-bottom: 16px;text-align: center; position: relative;}
-.signupnewtop-header .top-header-inner{display: flex; align-items: center; justify-content:flex-start;}
+.signupnewtop-header .top-header{display: flex; align-items: center; justify-content:flex-start;}
 .signupnewtop-header p{font-family: 'Helvetica-Normal'; font-size: 20px; text-transform: uppercase;margin: 0px;margin-left: -260px; color: #d4d8d9; text-align: center;}
 .signupnewtop-header p span{font-family: 'HelveticaBold';}
 .signupnewtop-header p {display: block;float: left !important;margin: 0 0 0 60px !important;text-align: center !important; width: 55%; font-size: 34px;}
 .signupnewtop-header .socialblock{ width: 114px; float: left;   margin-top: 0px;}
-.signupnewtop-header .top-header-inner .logo{width: 16.66666667%;}
-.signupnewtop-header .top-header-inner .headerright{width: 83.33333333%;}
+.signupnewtop-header .top-header .logo{width: 16.66666667%;}
+.signupnewtop-header .top-header .headerright{width: 83.33333333%;}
 
 .signupnewtop-banner.mat-card{margin:0; padding:0;}
 .signupnewtop-banner .banner {width: 100%; height: 565px;margin: 0; padding: 0; position: relative; overflow: hidden;}
@@ -628,7 +629,7 @@ max-width: 100%; margin: 0 auto; display: inherit;}
 }
 
 .signupformdiv .mat-form-field-appearance-legacy .mat-form-field-wrapper {
-    padding-bottom: 16px;
+    padding-bottom: 10px;
 }
 
 .signupformdiv .mat-form-field .mat-form-field-label {
@@ -646,7 +647,7 @@ max-width: 100%; margin: 0 auto; display: inherit;}
 .revolutionleft .revocarman{position: absolute; top:265px; right:-140px;z-index: 9999999;}
 
 .revolutionright .revoinfo1{position: absolute; top:90px; left: 122px; text-transform: uppercase; width: 622px; font-family: 'HelveticaBold'; font-size: 30px;}
-.revolutionright .revoinfo1 h2{font-family: 'HelveticaBold'; font-size: 18px; margin-top: 10px;}
+.revolutionright .revoinfo1 h2{font-family: 'Helvetica-Normal'; font-size: 18px; margin-top: 10px;}
 .revolutionright .revoinfo1 span{color:#ff0167; font-family: 'HelveticaBold'; text-transform: uppercase;}
 .revolutionright .revomobile{position: absolute; top: 235px; left: 116px; font-family: 'HelveticaBold'; font-size: 30px;}
 .revolutionright .revoinfo2{position: absolute; top:597px; left: 204px; width: 468px; }
@@ -686,7 +687,7 @@ max-width: 100%; margin: 0 auto; display: inherit;}
 .newmillinium{position: relative; margin-top: 60px;}
 .newmillinium.mat-card{position: inherit; padding: 0;}
 .newmillinium .maincontentinner {max-width: 1202px;margin-left: auto; margin-right: auto;}
-.newmilliniummaintop h3 {font-size: 48px; color: #000; margin: 0px 0px 31px 0px !important; padding: 0px; font-family: 'HelveticaBold';text-transform: uppercase;}
+.newmilliniummaintop h3 {font-size: 46px; color: #000; margin: 0px 0px 31px 0px !important; padding: 0px; font-family: 'HelveticaBold';text-transform: uppercase;}
 .bottomleft {display: inline-block; position: relative; width: 40%; text-align: left; vertical-align: top; margin-right: 1%;}
 .bottomright{display: inline-block; position: relative; width: 55%;text-align: left;padding-left: 1%; }
 .bottomleft h3{color:#ff0167; font-family: 'HelveticaBold'; font-size: 30px; margin: 0;}
@@ -702,4 +703,96 @@ max-width: 100%; margin: 0 auto; display: inherit;}
 .bottomright p:last-child{margin: 0px;}
 
 
-/*--End of Sales Rep Signup css---*/
+
+.smartbid{padding: 50px 0px 10px 0px;}
+.smartbidtop {text-align: center;padding: 0px 0px 23px 0px; margin: 0 auto; display: block;}
+.smartbidtop h3 {font-size: 48px; color: #000; margin: 0px 0px 11px 0px; font-family: 'HelveticaBold';text-transform: uppercase;}
+.smartbidtop h3 span{color:#fb4a32;}
+.smartbidtop p {font-size: 24px; font-family: 'Helvetica-Normal'; color: #555e6b; width: 1340px; margin: 0px auto 0px auto;}
+.smartbidtop p span.span1{color: #fb4a32;font-size: 30px;font-family: 'HelveticaBold'; }
+.smartbidtop p span.span2{color: #ff4281;font-size: 24px;font-family: 'HelveticaBold'; }
+.iconsmart{max-width:88px; height: 88px; margin-left: auto;margin-right: auto; line-height: 88px;margin-bottom: 20px;}
+.smartbidbottom{}
+.smartbidbottom p{text-align: justify;font-family: 'Helvetica-Normal'; color: #333; margin-top: 15px;}
+.smartbidbottom h4{color:#3c5459; width:100%; font-family: 'Helvetica-Normal';text-transform: capitalize; font-size: 18px; vertical-align: baseline; display: inline-block;}
+.smartbidbottom h4 span{color:#00a2c1; font-family: 'HelveticaBold'; font-size: 28px; text-transform: uppercase; vertical-align: baseline; display: inline-block;}
+.smartbidbottom h4:after{content:''; background-color:#d9d9d9; height: 2px; width:100%; float: left; margin-top: 13px;}
+
+.smartbidbottom.mat-list {display: flex; align-items: stretch; justify-content: space-between;}
+.smartbidbottom .mat-item-list {width: calc(1/6*100% - (1 - 1/6)*18px) !important;    height: auto;}
+
+.customerget.mat-card{background-color: #fb4a32 !important; padding-top: 22px; padding-bottom: 16px;text-align: center; width: 100%; padding-left: 10px; padding-right: 10px; display: block;}
+.customerget h2{color:#fff; font-family: 'HelveticaBold'; text-transform: uppercase; font-size: 44px;margin-top: 0;}
+.customerget p{display: none;}
+
+
+.industryhungry.mat-card{padding: 45px 0px 5px 0px !important; background: url(../images/industryhungrybg.png) no-repeat !important; background-size: cover !important;}
+.industryhungrytop {text-align: center;padding: 0px;}
+.industryhungrytop h3 {font-size: 48px; color: #000; margin: 0px 0px 31px 0px; font-family: 'HelveticaBold'; text-transform: uppercase;}
+.industryhungrytop h3 span{color:#fb4a32;}
+
+.industryhungry .maincontentinner{max-width: 1202px; margin-left: auto; margin-right: auto;}
+.hungrybottomleft {display: inline-block; position: relative; width: 69%; text-align: left; vertical-align: top;}
+.hungrybottomright{display: inline-block; position: relative; width: 30%;text-align: center;}
+.hungrybottomleftinfo{float: right;}
+.hungrybottomleftinfo h4{font-size: 26px;font-family: 'Helvetica-Normal'; color:#555e6b;}
+.hungrybottomleftinfo h4 span{color:#ff0167;font-family: 'Helvetica-Normal';}
+.hungrybottomleftinfo p{position: relative;font-size: 18px;font-family: 'Helvetica-Normal'; color: #555e6b; margin-bottom: 18px; word-wrap: break-word;}
+.hungrybottomleftinfo h2{font-size: 54px;font-family: 'Helvetica-Normal'; color:#ff4281; text-transform: uppercase; margin-top: 15px;}
+.hungrybottomright p{display: none;}
+
+.btn-join{border-radius: 3px; background-color: #fb4a32; border:0px; padding: 26px 12px 26px 12px;font-family: 'HelveticaBold'; font-size: 26px !important;font-size: 24px;}
+.outer {position: relative;height: 10px;  width: 100%;}
+.inner {position: absolute; margin-top: 19%; left: 15px; background-color: #8e99aa; padding: 12px 20px 16px 20px; border-radius: 10px; color: #fff !important; left: 0px; font-family: 'HelveticaBold'; font-size: 26px !important; line-height: 26px;}
+.bottomleft img {padding-top: 10px;}
+
+
+
+.joinrevolution.mat-card{padding: 0;}
+.joinrevolution .maincontentinner{max-width: 1202px; margin-left: auto; margin-right: auto;}
+.joinrevolution.mat-card{padding: 0px 0px 0px 0px; background: #fff url(../images/joinrevolutionbg.png) no-repeat bottom left !important; min-height:790px; width:100%;float: left;
+    clear: both; overflow: hidden;}
+.joinrevolutiontop h3 {font-size: 48px; color: #000; margin: 45px 0px 31px 0px; font-family: 'HelveticaBold';text-transform: uppercase; position: relative;  z-index:1;}
+.joinrevolutiontop h3 span{color:#fb4a32;}
+.joinrevolutionmain{position: relative;}
+.joinrevolutionmain .joinrevolman{position: absolute; left: 25%; top:150px;}
+.bepartner1{position: absolute; left: -14%; top: -45px;}
+.revocontent{width:717px; float: right; display: block;}
+
+.revocontenttop p{ color:#fff; font-size: 18px; font-family: 'HelveticaBold'; margin-bottom: 0; padding: 30px 20px;}
+.revocontentbottom p{ color: #415161; font-family: "Helvetica-Normal"; font-size: 18px; margin-bottom: 0; padding: 15px 20px;}
+.revocontenttop{background-color: #8d9fb0; border-top-left-radius: 5px; border-top-right-radius: 5px; display: none;}
+.revocontentbottom{background-color: #c3ced9; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;display: block;}
+.joinrevolutioncontent h3{color:#555e6b; font-size: 30px; font-family: 'Helvetica-Normal';float: right; clear: both; margin-top: 20px; margin-bottom: 15px;}
+.joinrevolutioncontent h2{color:#fb4a32; font-size: 36px; font-family: 'HelveticaBold';text-transform: uppercase;}
+.joinrevolutioncontentleft {display: inline-block; position: relative; width: 40%; text-align: left; vertical-align: top;}
+.joinrevolutioncontentright{display: inline-block; position: relative; width: 59%;text-align: left;}
+.joinlists.mat-list {margin-bottom:20px; margin-top:20px; overflow:hidden; width:604px;}
+.joinlists.mat-list .mat-list-item {height: auto;}
+.joinlists.mat-list .mat-list-item p{line-height: 30px;text-transform: uppercase;font-size: 28px;font-family: 'HelveticaBold'; padding-bottom: 10px;}
+.joinlists.mat-list .mat-list-item p img{padding-right: 10px !important;}
+.joinrevolutioncontentright .btnjoin {float: right;}
+
+
+/*--End of Customer Signup css---*/
+
+
+
+/*--Sales Rep Signup css---*/
+
+.signupnewtop-header .top-header {display: flex; align-items: center; justify-content: flex-start;}
+#header2 .top-header p {font-size: 22px;}
+.formblock_bottomtextnew.mat-card{padding:0; position: inherit;}
+.formblock_bottomtextnew {background: url(../images/bg-revolution.png) no-repeat left top; display: block; width: 100%; z-index: 9; padding: 20px  0;}
+.formblock_bottomtextnew h4 {font-family: 'HelveticaBold'; font-size: 48px; color: #222; margin: 0 0 3px 0; padding: 0; font-weight: normal;}
+.formblock_bottomtextnew h4 span {color: #fb4a32; font-family: 'HelveticaBold'; font-size: 48px; background: transparent !important; padding: 0; width: auto;}
+.formblock_bottomtextnew span {display: inline-block; width: 25.33%; border: none; margin: 0 1px; font-size: 22px; color: #333; text-transform: uppercase; text-align: left; padding: 8px; line-height: 24px;}
+.formblock_bottomtextnew span strong {display: block; font-size: 30px; color: #fff; font-weight: normal; line-height: 60px; float: left; margin: 0; height: 100%; padding: 5px 8px;
+    background-color: #333; margin-right: 10px;}
+.formblock_bottomtextnew h6 {font-size: 40px; color: #131718; margin: 5px 0 0px 0; padding: 0; font-weight: normal;}
+.formblock_bottomtextnew h6 b {color: #fb4a32; font-weight: normal;}
+.formblock_bottomtextnew h6 label {font-weight: normal; margin: 0; padding: 0; display: inline-block;}
+.formblock_bottomtextnew .container_wrapper{ width: 1730px; margin-left: auto; margin-right: auto;}
+.container_wrapper_text.mat-card{padding:0; position: inherit;}
+
+/*--Sales Rep Signup css---*/
