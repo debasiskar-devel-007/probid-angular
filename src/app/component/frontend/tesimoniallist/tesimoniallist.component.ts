@@ -29,7 +29,7 @@ export class TesimoniallistComponent implements OnInit {
       endpoint: "datalist"
     }
     this.apiService.getTempToken().subscribe((res:any)=>{
-      
+
       if(res.status == 'success') {
         this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
           this.TestimonialListArray = res2.res;
@@ -53,8 +53,16 @@ export class TesimoniallistComponent implements OnInit {
     this.indexval = this.indexval + 3;
     console.log(this.indexval);
   }
-  
+
   showmore(index:any) {
    this.p_id = index._id;
+  }
+
+  showaudio() {
+    console.log('showaudio function is wirking')
+  }
+
+  showvideo() {
+    console.log('showvideo function is wirking')
   }
 }
