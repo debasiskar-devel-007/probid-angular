@@ -11,19 +11,21 @@ export class CustomerSignupComponent implements OnInit {
   public customerSignUpForm: FormGroup;
   public stateList: any;
   public cityList: any;
+  public term_msg: any = '';
   constructor(public apiservice: ApiService, public fb: FormBuilder) {
     /**genarate customer-signUp form */
     this.customerSignUpForm = this.fb.group({
       email: [null, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
       firstname: [null, Validators.required],
       lastname: [null, Validators.required],
-      phone: [null,Validators.compose([Validators.required,Validators.pattern(/^0|[1-9]\d*$/)])],
+      phone: [null, Validators.compose([Validators.required, Validators.pattern(/^0|[1-9]\d*$/)])],
       zip: [null, Validators.required],
       city: [null, Validators.required],
       state: [null, Validators.required],
       address: [null, Validators.required],
       password: [null, Validators.required],
       conpass: [null, Validators.required],
+      check: [false, Validators.required],
       type: ["customer"],
     }, {
       validator: this.machpassword('password', 'conpass')
@@ -32,6 +34,7 @@ export class CustomerSignupComponent implements OnInit {
     this.getStateList();
     this.getCityList();
   }
+
 
   ngOnInit() {
   }
@@ -70,25 +73,36 @@ export class CustomerSignupComponent implements OnInit {
       this.customerSignUpForm.controls[x].markAsTouched();
     }
     if (this.customerSignUpForm.valid) {
-      console.log(this.customerSignUpForm.value);
-      if (this.customerSignUpForm.value.conpass != null) {
-        delete this.customerSignUpForm.value.conpass;
+      /**check term and codition */
+      if (this.customerSignUpForm.value.check == true) {
+
+        if (this.customerSignUpForm.value.conpass != null) {
+          delete this.customerSignUpForm.value.conpass;
+          delete this.customerSignUpForm.value.check;
+        }
+        // console.log(this.customerSignUpForm.value);
+
+        /**Api service for insert form */
+
+        var data = { "source": "user", "data": this.customerSignUpForm.value }
+        this.apiservice.CustomRequest(data, 'addorupdatedata').subscribe((data: any) => {
+          if (data.status == 'success') {
+            this.formDirective.resetForm();
+          }
+          // console.log(data);
+        })
       }
-      /**Api service for insert form */
-      // var data = { "source": "user", "data": this.customerSignUpForm.value }
-      // this.apiservice.CustomRequest(data, 'addorupdatedata').subscribe((data: any) => {
-      //   if (data.status == 'success') {
-      //     this.formDirective.resetForm();
-      //   }
-      //   console.log(data);
-
-
-      // })
+    }
+    else {
+      this.term_msg = 'Please Accept Terms And Conditions';
     }
   }
 
 
   inputUntouched(val: any) {
     this.customerSignUpForm.controls[val].markAsUntouched();
+  }
+  gotoenroll() {
+    document.querySelector('.signupformdiv').scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 }

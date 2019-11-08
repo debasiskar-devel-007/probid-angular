@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
@@ -26,12 +27,18 @@ export class BlogComponent implements OnInit {
   ];
 public tokenVal: any;
 
-  constructor(public activatedRoute: ActivatedRoute, public apiService: ApiService, public _http: HttpClient) {
+  constructor(public activatedRoute: ActivatedRoute, public router:Router, public apiService: ApiService, public _http: HttpClient) {
 
   
   }
 
 
+
+  blogdetail(val:any){
+    console.log(val)
+    this.router.navigateByUrl('/blogdetail/' +val)
+  }
+  
   showMoreFunc(){
     this.indexval = this.indexval + 3;   
     console.log(this.indexval);
@@ -58,5 +65,7 @@ public tokenVal: any;
       }
     });
   }
+
+
 
 }

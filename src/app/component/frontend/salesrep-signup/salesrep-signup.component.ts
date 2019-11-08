@@ -100,13 +100,13 @@ export class SalesrepSignupComponent implements OnInit {
         this.apiservice.CustomRequest(data, 'addorupdatedata').subscribe((data: any) => {
           console.log(data);
           if (data.status == 'success') {
-            console.log('success');
+           // console.log('success');
             this.formDirective.resetForm();
           } else {
             console.log('Opps');
           }
         })
-        console.log(this.salesSignUpForm.value);
+        // console.log(this.salesSignUpForm.value);
       }
       else {
         this.term_msg = 'Please accept terms';
