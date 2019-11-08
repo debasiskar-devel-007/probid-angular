@@ -25,7 +25,7 @@ export class TesimoniallistComponent implements OnInit {
   ngOnInit() {
     var data: any = {};
     data = {
-      source:"testimonals",
+      source:"testimonial_view",
       endpoint: "datalist"
     }
     this.apiService.getTempToken().subscribe((res:any)=>{
