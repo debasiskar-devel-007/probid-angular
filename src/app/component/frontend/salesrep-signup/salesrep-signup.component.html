@@ -56,10 +56,10 @@
     </mat-form-field>
 
     <mat-form-field>
-    <input matInput placeholder="Confirm Password" type="password" formControlName="conpass" (blur)="inputUntouched('conpass')">
+    <input matInput placeholder="Confirm password" type="password" formControlName="conpass" (blur)="inputUntouched('conpass')">
     <mat-error  *ngIf="!salesSignUpForm.controls['conpass'].valid && salesSignUpForm.controls['conpass'].errors.required && salesSignUpForm.controls['conpass'].touched">
-        Confirm Password field can not be blank</mat-error>
-    <mat-error *ngIf="!salesSignUpForm.controls['conpass'].valid && salesSignUpForm.controls['conpass'].touched">Password does not match </mat-error>
+      Confirm Password field can not be blank</mat-error>
+  <mat-error *ngIf="!salesSignUpForm.controls['conpass'].valid && salesSignUpForm.controls['conpass'].touched">Password does not match </mat-error>
     </mat-form-field>
 
             <mat-form-field>

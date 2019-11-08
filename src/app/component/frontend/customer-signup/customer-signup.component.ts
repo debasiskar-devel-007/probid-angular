@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
 @Component({
@@ -7,6 +7,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./customer-signup.component.css']
 })
 export class CustomerSignupComponent implements OnInit {
+  @ViewChild(FormGroupDirective) formDirective:FormGroupDirective;
   public customerSignUpForm: FormGroup;
   public stateList:any;
   public cityList:any;
@@ -75,8 +76,10 @@ export class CustomerSignupComponent implements OnInit {
       }
       /**Api service for insert form */
       var data={"source":"user","data":this.customerSignUpForm.value}
-      this.apiservice.CustomRequest(data,'addorupdatedata' ).subscribe((data) => {
-              
+      this.apiservice.CustomRequest(data,'addorupdatedata' ).subscribe((data: any) => {
+              if (data.status == 'success') {
+                this.formDirective.resetForm();
+              }
         console.log(data);
       
         
