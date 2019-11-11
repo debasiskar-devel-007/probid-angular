@@ -32,6 +32,7 @@ export class CustomerSignupComponent implements OnInit {
       conpass: [null, Validators.required],
       check: [false, Validators.required],
       type: ["customer"],
+      status:1
     }, {
       validator: this.machpassword('password', 'conpass')
     });

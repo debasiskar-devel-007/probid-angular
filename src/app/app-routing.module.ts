@@ -280,11 +280,15 @@ const routes: Routes = [
   // { path: 'testimonial-lists-admin', component: TestimonialListsAdminComponent },
   { path: 'birddog-list', component: BirddogListComponent },
   { path: 'commission-list', component: CommissionListComponent },
-  { path: 'customer-list-admin', component: CustomerListComponent },
+
+  { path: 'customer-list-admin', component: CustomerListComponent,resolve: { customerlist: ResolveService },
+  data: { requestcondition: { source: 'user_view', condition: {"type": "customer"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
+
   { path: 'manage-commission', component: ManageCommissionComponent },
   // { path: 'newsletter-list', component: NewsletterlistsComponent },
   { path: 'sales-report', component: SalesReportComponent },
-  { path: 'salesrep-list-admin', component: SalesreplistsComponent },
+  { path: 'salesrep-list-admin', component: SalesreplistsComponent,resolve: { salesreflist: ResolveService },
+  data: { requestcondition: { source: 'user_view', condition: {"type": "salesref"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
   { path: 'rsvp', component: RsvplistsComponent },
   // { path: 'manage-training1', component: ManageTrainingComponent },
   { path: 'manage-lessons', component: ManageLessonsComponent },

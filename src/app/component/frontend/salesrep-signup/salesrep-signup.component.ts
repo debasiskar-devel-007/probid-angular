@@ -33,6 +33,7 @@ export class SalesrepSignupComponent implements OnInit {
       timezone: [null],
       check: [false, Validators.required],
       type: ["salesref"],
+      status:1
     }, {
       validator: this.machpassword('password', 'conpass')
     });

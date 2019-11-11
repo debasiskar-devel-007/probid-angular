@@ -39,6 +39,7 @@ export class ResolveService implements Resolve<any> {
             return new Promise((resolve) => {
                 this._apiService.getDatalistForResolve(route.data.requestcondition).subscribe(api_object =>{
                     if (api_object) {
+                        //console.log(api_object);
                         return resolve(api_object);
                     } else { // id not found
                         return true;

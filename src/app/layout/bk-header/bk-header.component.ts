@@ -72,8 +72,6 @@ export class BkHeaderComponent implements OnInit {
     let value: any = {"source":"traininglesson"}
 
     this.ApiService.getDataForDatalist(value).subscribe(res =>{
-      console.log('res');
-      console.log(res);
 
       let result: any;
         result = res;
