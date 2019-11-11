@@ -119,7 +119,8 @@
                             State field can not be blank</mat-error>
                       </mat-form-field>
                       <span class="bottompart">
-                          <mat-checkbox formControlName="check" [checked]="myModel" class="example-margin">
+                          <!-- [checked]="myModel" -->
+                          <mat-checkbox formControlName="check" class="example-margin">
                             <label>Accept Terms And Conditions</label>
                             <mat-label *ngIf="term_msg!=true">{{term_msg}}</mat-label>
                           </mat-checkbox>

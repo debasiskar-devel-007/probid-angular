@@ -15,13 +15,11 @@
     </mat-card-content>
   </mat-card>
   
-  <mat-card class="signupnewtop-banner">
+<mat-card class="signupnewtop-banner">
     <mat-card-content class="banner">
         <img src="../../assets/images/img-sales-rep-banner.jpg" alt="sales signup banner">
     </mat-card-content>
-  </mat-card>
-
-
+</mat-card>
   
 <mat-card class="signupnew-form">
     <mat-card-content class="formhome formhomealesrep">
@@ -150,7 +148,8 @@
                       </mat-select>
                     </mat-form-field>
                     <span class="bottompart">
-                      <mat-checkbox formControlName="check" [checked]="myModel" class="example-margin">
+                        <!-- [checked]="myModel" -->
+                      <mat-checkbox formControlName="check" class="example-margin">  
                         <label>Accept Terms And Conditions</label>
                       </mat-checkbox>
                       <mat-label *ngIf="term_msg!=true">{{term_msg}}</mat-label>
@@ -206,6 +205,52 @@
   </mat-card-content>
 </mat-card>
 
+<mat-card class="associate_new_con5">
+  <mat-card-content class="associate_new_con5_wrapper">
+    <span class="associate_new_con5_text">
+          <h2>THE FEATURES OF OUR SOFTWARE THAT <span>YOU HAVE ACCESS WERE BUILD</span> TO SUPPORT YOUR SALES</h2>
+          <p>Being sales professionals and a dealership ourselves we know how important the customer experience really is. With ProBidAuto you will get all the tools you need to really get out and win with your potential market of car buyers.</p>
+          <h2>OUR INCREDIBLE SOFTWARE TOOLS INCLUDE:</h2>
+          <span class="associate_new_con5_text_blockdiv">
+             <table width="100%">
+              <tbody>
+                  <tr>
+                    <td>A dashboard <label>for you to add customers</label></td>
+                    <td>Data search <label>with advanced search</label></td>
+                    <td>Fast data search <label>features</label></td>
+                  </tr>
+                  <tr>
+                      <td>Auto selection <label>for RSVP bids</label></td>
+                      <td>Financing <label>submissions for loans</label></td>
+                      <td>Customer favorites <label>auto match tech</label></td>
+                  </tr>
+                  <tr>
+                    <td>Commission reports <label>updated weekly</label></td>
+                    <td>Incredible training <label>on our system</label></td>
+                    <td>Social marketing tools <label>access</label></td>
+                  </tr>
+                </tbody>
+              </table>
+             <h3>WE GIVE YOU EVERYTHING YOU NEED TO OPERATE THIS LIKE YOUR OWN HOME-BASED BUSINESS! <span>NOTHING LIKE THIS HAS EVER EXISTED IN THE AUTOMOTIVE INDUSTRY. AS A CAR SALE PRO YOU WIN!</span>
+             </h3>
+             <a href="javascript:void(0)" class="associate_new_con5_link" (click)="gotoenroll()">Get Started</a>
+          </span>
+    </span>
+  </mat-card-content>
+  <span class="imgbottom"><img src="../../assets/images/img-car-new.png"></span>
+</mat-card> 
+
+<mat-card class="associate_new_con6">
+  <mat-card-content class="associate_new_con6_wrapper">
+    <span class="associate_new_con6_wrapper_body">
+      <span class="associate_new_con6_text">
+        <h2>Make Incredible Commissions TODAY!!</h2>
+        <p>Get Started right away to introduce your Customers to a vast and expansive inventory of used cars. Help them choose and get the cars of their desire and make incredible money along the way by way of attractive Commissions and deals!!</p>
+        <a href="javascript:void(0)" class="associate_new_con6_link" (click)="gotoenroll()">Get Started!</a>
+      </span>
+    </span>
+  </mat-card-content>
+</mat-card>
 
 
 <app-footer></app-footer>

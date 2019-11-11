@@ -120,4 +120,8 @@ export class SalesrepSignupComponent implements OnInit {
     this.salesSignUpForm.controls[val].markAsUntouched();
   }
 
+  gotoenroll() {
+    document.querySelector('.signupformdiv').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  
 }

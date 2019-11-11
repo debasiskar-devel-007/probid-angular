@@ -29,6 +29,12 @@
                         <span class="item_images">
                           <img [src]="item.blogs_image">
                         </span>
+                        <span *ngFor="let vurl of item.credentials" >
+                     
+                        <button mat-button type="button"  class="btnblue sim-button" *ngIf="vurl.video_url !='' && vurl.video_url !=null " (click)="openvideourl(vurl.video_url)">Open Video Url</button>
+                 
+                      </span>
+
                         <mat-card-content class="contentsection">
                           <mat-card-title class="inner_header">{{item.blogtitle}}</mat-card-title>
                           <span class="author">

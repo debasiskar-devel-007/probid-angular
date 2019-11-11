@@ -1,8 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from 'src/app/api.service';
 import { IfStmt } from '@angular/compiler';
+import {MatDialogRef, MAT_DIALOG_DATA, MatDialog} from "@angular/material";
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+
+export interface DialogData {
+  data: any;
+  
+} 
 
 @Component({
   selector: 'app-bloglist',
@@ -35,9 +42,11 @@ export class BloglistfrontendComponent implements OnInit {
   public count:any=0;
   public indexval:any=2;
   public bloglisting:any;
+  public videourl:any='';
+  public url:"https://www.youtube.com/embed/"
   // btn_hide:any=false;
-
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService, public apiService: ApiService) {
+  safeSrc: SafeResourceUrl;
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService, public apiService: ApiService,public dialog:MatDialog, private sanitizer: DomSanitizer) {
 
   }
 
@@ -73,6 +82,16 @@ export class BloglistfrontendComponent implements OnInit {
 
           this.bloglisting = this.blogList.blogCatList.blogs
           console.log('---------------',this.bloglisting)
+          
+          // this.videourl=this.blogList.blogCatList.blogs[3].credentials[0].video_url;
+          
+          // if(this.videourl != ''){
+           
+          
+            
+            // return this.videourl;
+          // }
+
 
     //     });
     //   }
@@ -168,7 +187,32 @@ export class BloglistfrontendComponent implements OnInit {
     //   }
     
     // });
+
       
+    }
+    openvideourl(val:any){
+
+     let url:any;
+     url="https://www.youtube.com/embed/";
+      console.log('video url....>',url+val);
+      this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(url + val);
+      
+      console.log(this.safeSrc)
+      const dialogRef = this.dialog.open(CommonVideoModalComponent, {
+        // panelClass:['modal-md','success-modal'],
+       
+        width:'450px',
+        data:this.safeSrc,
+        
+        
+       
+        
+  
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        
+      });
     }
 
 
@@ -181,7 +225,7 @@ export class BloglistfrontendComponent implements OnInit {
     }
 
 
-    
+
 //***********load more blog *************//
     blogloadmore(){
       // console.log('load more')
@@ -195,5 +239,17 @@ export class BloglistfrontendComponent implements OnInit {
      
       
     }
+}
+
+
+@Component({
+  selector:'app-commonvideomodal',
+  templateUrl:'./commonvideomodal.html'
+})
+export class CommonVideoModalComponent {
+  constructor( public dialogRef: MatDialogRef<CommonVideoModalComponent>,
+               @Inject(MAT_DIALOG_DATA) public data: DialogData){
+
+  }
 }
 

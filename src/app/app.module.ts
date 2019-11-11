@@ -25,7 +25,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 
-import { BloglistfrontendComponent } from './component/frontend/bloglist/bloglist.component';
+import { BloglistfrontendComponent, CommonVideoModalComponent } from './component/frontend/bloglist/bloglist.component';
 
 /**Frontend Component**/
 
@@ -53,7 +53,7 @@ import { AboutusComponent } from './component/frontend/aboutus/aboutus.component
 import { BlogCategoryComponent } from './component/frontend/blog-category/blog-category.component';
 
 import { SalesrepSignupComponent } from './component/frontend/salesrep-signup/salesrep-signup.component';
-import { CustomerSignupComponent } from './component/frontend/customer-signup/customer-signup.component';
+import { CustomerSignupComponent,customerSignUpsuccessDialog } from './component/frontend/customer-signup/customer-signup.component';
 
 /**End Frontend Component**/
 
@@ -140,7 +140,9 @@ import { ListingBlogcatComponent } from './component/backend/blogs/listing-blogc
 import { AddEditBlogsComponent } from './component/backend/blogs/add-edit-blogs/add-edit-blogs.component';
 import { ListingBlogsComponent } from './component/backend/blogs/listing-blogs/listing-blogs.component';
 import { MyAccountComponent } from './component/backend/my-account/my-account.component';
+import { AddSalesrepComponent } from './component/backend/add-salesrep/add-salesrep.component';
 
+//****** for video Modal*********//
 
 @NgModule({
   declarations: [
@@ -164,6 +166,7 @@ import { MyAccountComponent } from './component/backend/my-account/my-account.co
     DashboardComponent,
     HeaderComponent,
     comingSoonDialog,
+    customerSignUpsuccessDialog,
     FooterComponent,
     DialogPrivacyDialog,
     DialogTermsDialog,
@@ -231,6 +234,8 @@ import { MyAccountComponent } from './component/backend/my-account/my-account.co
     MyAccountComponent,
     SalesrepSignupComponent,
     CustomerSignupComponent,
+    AddSalesrepComponent,
+    CommonVideoModalComponent,
   ],
   imports: [
     NewsTitleModule,
@@ -272,7 +277,7 @@ import { MyAccountComponent } from './component/backend/my-account/my-account.co
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [comingSoonDialog, DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog]
+  entryComponents: [CommonVideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog]
 })
 export class AppModule { }
 
