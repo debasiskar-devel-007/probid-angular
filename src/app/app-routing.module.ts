@@ -87,6 +87,7 @@ import { ListingBlogcatComponent } from './component/backend/blogs/listing-blogc
 import { AddEditBlogsComponent } from './component/backend/blogs/add-edit-blogs/add-edit-blogs.component';
 import { ListingBlogsComponent } from './component/backend/blogs/listing-blogs/listing-blogs.component';
 import { MyAccountComponent } from './component/backend/my-account/my-account.component';
+import { __param } from 'tslib';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -148,16 +149,16 @@ const routes: Routes = [
   // { path: 'blog-category/list', component: BlogdetailComponent, resolve: { blogCatList: ResolveService },
   // data: { requestcondition: { source: 'blog_category_view', condition: {} }, endpoint: 'datalist' }},
 
-  { path: 'bloglist', component: BloglistfrontendComponent },
-  // data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' } },
+  { path: 'bloglist', component: BloglistfrontendComponent, resolve: { blogCatList: ResolveService },
+  data: { requestcondition: { source: '', condition: {} }, endpoint: 'blogdata' } },
   
   // { path: 'bloglist', component: BloglistfrontendComponent, resolve: { blogCatList: ResolveService },
   // data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' } },
 
 
 
-  { path: 'blogdetail/:id', component: BlogdetailComponent},
-
+  { path: 'blogdetail/:id', component: BlogdetailComponent,resolve: { blogCatList: ResolveService },
+  data: { requestcondition: { source: '', condition: {_id:'id'} }, endpoint: 'blogdata' } },
 
 
   { path: 'advance-inventory-search', component: AdvanceInventorySearchComponent },

@@ -34,6 +34,7 @@ export class BloglistfrontendComponent implements OnInit {
   public blogsubcategorycount:any;
   public count:any=0;
   public indexval:any=2;
+  public bloglisting:any;
   // btn_hide:any=false;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService, public apiService: ApiService) {
@@ -42,6 +43,7 @@ export class BloglistfrontendComponent implements OnInit {
 
   panelOpenState = false;
 
+//***********blog list view in blog detail************//
   blogdetail(val:any){
     console.log(val)
     this.router.navigateByUrl('/blogdetail/' +val)
@@ -49,86 +51,100 @@ export class BloglistfrontendComponent implements OnInit {
   
 
   ngOnInit() {
-    // this.activatedRoute.data.subscribe((resolveData: any) => {
-    //   console.log(resolveData.blogCatList);
-    //   this.blogList = resolveData.blogCatList.res;
+    this.activatedRoute.data.forEach((data: any) => {
+      this.blogList = data;
+       console.log('>>>>>>>>>>>>>>',this.blogList)
+
+    })
     //   this.blogListConfig.datasource = this.blogList;
     //   this.blogListConfig.jwtToken = this.cookieService.get('jwtToken');
 
-    // });
-    var data: any = {};
+    // // // });
+    // var data: any = {};
     
-    data = {
-      source:"blogs_view",
-      endpoint: "datalist"
-    }
-    this.apiService.getTempToken().subscribe((res:any)=>{
+    // data = {
+    //   source:"blogs_view",
+    //   endpoint: "datalist"
+    // }
+    // this.apiService.getTempToken().subscribe((res:any)=>{
       
-      if(res.status == 'success') {
-        this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
+    //   if(res.status == 'success') {
+    //     this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
 
-          this.blogList = res2.res;
-          // console.log(this.blogList)
+          this.bloglisting = this.blogList.blogCatList.blogs
+          console.log('---------------',this.bloglisting)
 
-        });
-      }
-    });
+    //     });
+    //   }
+    // });
+
+
+
 
     /**api service for blog_catagory by uttam */
-    var datacat:any={};
-    datacat={
-      source:"blog_category",
-      endpoint: "datalist"
-    }
-    this.apiService.getTempToken().subscribe((res:any)=>{
-      if(res.status == 'success') {
-        this.apiService.getDatalistWithToken(datacat, res).subscribe((res2:any)=>{
+    // var datacat:any={};
+    // datacat={
+    //   source:"blog_category",
+    //   endpoint: "datalist"
+    // }
+    // this.apiService.getTempToken().subscribe((res:any)=>{
+    //   if(res.status == 'success') {
+    //     this.apiService.getDatalistWithToken(datacat, res).subscribe((res2:any)=>{
 
-          this.blogcategory = res2.res;
-          console.log('++++++++++++++++++++',this.blogcategory)
+          this.blogcategory =this.blogList.blogCatList.blog_category;
+          console.log('++++++++++++++++++',this.blogcategory)
 
-        });
-      }
+    //     });
+    //   }
     
-    });
+    // });
+
+
+
 
     /**api service for blog_catagory count by uttam */
-    var datacatcount:any={};
-    datacatcount={
-      source:"blog_category",
-      endpoint: "datalist"
-    }
-    this.apiService.getTempToken().subscribe((resc:any)=>{
+    // var datacatcount:any={};
+    // datacatcount={
+    //   source:"blog_category",
+    //   endpoint: "datalist"
+    // }
+    // this.apiService.getTempToken().subscribe((resc:any)=>{
       
-      if(resc.status == 'success') {
-        this.apiService.getDatalistWithToken(datacatcount, resc).subscribe((res2:any)=>{
+    //   if(resc.status == 'success') {
+    //     this.apiService.getDatalistWithToken(datacatcount, resc).subscribe((res2:any)=>{
 
-          this.blogcategorycount = res2.resc;
-          console.log(this.blogcategorycount)
+          this.blogcategorycount = this.blogList.blogCatList.blog_category.length;
+          console.log('>>>>>>>>>>>>>>>>>',this.blogcategorycount)
 
-        });
-      }
+    //     });
+    //   }
     
-    });
+    // });
+   
+
+
 
     /**api service for sub blog_catagory by uttam */
-    var datacatsearch:any={};
-    datacatsearch={
-      source:"blogs_view",
-      endpoint: "datalist",
+    // var datacatsearch:any={};
+    // datacatsearch={
+    //   source:"blogs_view",
+    //   endpoint: "datalist",
      
-    }
-      this.apiService.getTempToken().subscribe((res:any)=>{
-        if(res.status == 'success') {
-          this.apiService.getDatalistWithToken(datacatsearch, res).subscribe((res2:any)=>{
+    // }
+    //   this.apiService.getTempToken().subscribe((res:any)=>{
+    //     if(res.status == 'success') {
+    //       this.apiService.getDatalistWithToken(datacatsearch, res).subscribe((res2:any)=>{
   
-            this.blogcategorysearch = res2.res;
-            console.log('this.blogcategorysearch')
-            console.log(this.blogcategorysearch)
+    //         this.blogcategorysearch = res2.res;
+    //         console.log('this.blogcategorysearch')
+    //         console.log(this.blogcategorysearch)
   
-          });
-        }
-      })
+    //       });
+    //     }
+    //   })
+
+
+
 
       //*********blog sub category count***********//
     //   var datasubcatcount:any={};
@@ -155,17 +171,23 @@ export class BloglistfrontendComponent implements OnInit {
       
     }
 
-//***********blog list view in blog detail************//
+
+
+
+//*********** sub blog list view in blog detail************//
     blog(val:any){
       this.blogcat = val._id;
       this.router.navigateByUrl('/blogdetail/'+val._id)
     }
+
+
+    
 //***********load more blog *************//
     blogloadmore(){
-      console.log('load more')
+      // console.log('load more')
       this.indexval=this.indexval+2;
-      console.log('>>>>>>>>>',this.indexval);
-      console.log("+++++++++++++++++++++",this.blogList.length);
+      // console.log('>>>>>>>>>',this.indexval);
+      // console.log("+++++++++++++++++++++",this.blogList.length);
       // if(this.indexval==this.blogList.length)
       // this.btn_hide=true;
 
