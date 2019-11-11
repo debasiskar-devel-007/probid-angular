@@ -88,6 +88,7 @@ import { AddEditBlogsComponent } from './component/backend/blogs/add-edit-blogs/
 import { ListingBlogsComponent } from './component/backend/blogs/listing-blogs/listing-blogs.component';
 import { MyAccountComponent } from './component/backend/my-account/my-account.component';
 import { AddSalesrepComponent } from './component/backend/add-salesrep/add-salesrep.component';
+import { AddCustomerComponent } from './component/backend/add-customer/add-customer.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -168,7 +169,6 @@ const routes: Routes = [
   { path: 'blog-category', component: BlogCategoryComponent },
   { path: 'salesrep-signup', component: SalesrepSignupComponent },
   { path: 'customer-signup', component: CustomerSignupComponent },
-
   
 // ___________________BLOG MANAGEMENT_________________
 // =======================================================
@@ -281,11 +281,15 @@ const routes: Routes = [
   // { path: 'testimonial-lists-admin', component: TestimonialListsAdminComponent },
   { path: 'birddog-list', component: BirddogListComponent },
   { path: 'commission-list', component: CommissionListComponent },
-  { path: 'customer-list-admin', component: CustomerListComponent },
+
+  { path: 'customer-list-admin', component: CustomerListComponent,resolve: { customerlist: ResolveService },
+  data: { requestcondition: { source: 'user_view', condition: {"type": "customer"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
+
   { path: 'manage-commission', component: ManageCommissionComponent },
   // { path: 'newsletter-list', component: NewsletterlistsComponent },
   { path: 'sales-report', component: SalesReportComponent },
-  { path: 'salesrep-list-admin', component: SalesreplistsComponent },
+  { path: 'salesrep-list-admin', component: SalesreplistsComponent,resolve: { salesreflist: ResolveService },
+  data: { requestcondition: { source: 'user_view', condition: {"type": "salesref"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
   { path: 'rsvp', component: RsvplistsComponent },
   // { path: 'manage-training1', component: ManageTrainingComponent },
   { path: 'manage-lessons', component: ManageLessonsComponent },
@@ -342,6 +346,8 @@ const routes: Routes = [
   { path: 'training-center-rep', component: TrainingCenterComponent },
   { path: 'my-account', component: MyAccountComponent },
   { path: 'add-salesrep', component: AddSalesrepComponent },
+  {path:'add-customer',component:AddCustomerComponent},
+  {path:'editcustomer/:_id',component:AddCustomerComponent},
 
   /**End Backend Routing**/
 

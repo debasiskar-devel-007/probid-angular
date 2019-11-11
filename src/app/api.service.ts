@@ -418,7 +418,6 @@ forgetPassword(requestdata: any) {
         'Authorization': this.accesstoken
       })
     };
-    console.log(requestdata);
     var result = this._http.post(this.serverUrlDemo + endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
     return result;
   }
