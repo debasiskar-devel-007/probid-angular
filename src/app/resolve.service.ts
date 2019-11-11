@@ -23,9 +23,9 @@ export class ResolveService implements Resolve<any> {
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         //let id = route.params['id'];
-        console.log('resolve route data');
-        console.log(route.data);
-        console.log(state);
+        // console.log('resolve route data');
+        // console.log(route.data);
+        // console.log(state);
         var endpoint = route.data.link;
         var source = route.data.source;
         var condition = route.data.condition;
@@ -39,6 +39,7 @@ export class ResolveService implements Resolve<any> {
             return new Promise((resolve) => {
                 this._apiService.getDatalistForResolve(route.data.requestcondition).subscribe(api_object =>{
                     if (api_object) {
+                        //console.log(api_object);
                         return resolve(api_object);
                     } else { // id not found
                         return true;
