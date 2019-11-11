@@ -89,7 +89,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .tablediv .listingtestimonial .searchbar {padding-right: 236px; margin-top: -11px;}
 .tablediv .searchbar .mat-form-field{margin: 0 2px;}
-.mat-form-field-appearance-legacy .mat-form-field-infix{padding: 1em !important; background: #fff;}
+.mat-form-field-appearance-legacy .mat-form-field-infix{padding: 1em !important; background: #fff;margin-bottom: 10px;}
 
 .bloglists .tablediv .searchbar {padding-right: 200px;margin-top: -10px;}
 .blogcatlists .tablediv .searchbar {padding-right: 252px;margin-top: -10px;}
@@ -113,3 +113,47 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
 .smartbidbottom.mat-list-base .mat-list-item .mat-list-item-content {display: flex !important; align-items: stretch !important;flex-wrap: wrap;}
 
 .clearfix:after {clear: both;}
+
+
+
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {width: 100% !important;padding-bottom: 0 !important;}
+.langblock select.mat-input-element:not(:disabled) {padding: 0px !important;}
+.mat-form-field-type-mat-native-select .mat-form-field-infix::after {color: #fff !important;}
+.langblock .mat-form-field-appearance-legacy .mat-form-field-infix {background:transparent !important;}
+
+@media screen and (max-width: 640px){
+
+.owl-carousel.owl-loaded.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+.owl-carousel .owl-nav button.owl-prev {
+  position: absolute;
+  top: 25%;
+  left: 0%;
+}
+.owl-carousel .owl-nav button.owl-next {
+  position: absolute;
+  top: 25%;
+  right: 0;
+}
+.owl-carousel .owl-item.active.center p.quatation {
+  display: block !important;
+  width: 96%;
+  margin-left: auto;
+  height: auto;
+  max-width: inherit;
+  -webkit-line-clamp: inherit;
+  overflow: hidden;
+  text-overflow: inherit;
+  margin-right: auto;
+}
+}
+
+@media screen and (max-width: 480px){
+  .owl-carousel .owl-item.active.center .slide-image-wrapper{
+    width:280px;
+    height:280px;
+  }
+  
+}

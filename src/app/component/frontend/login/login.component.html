@@ -1,8 +1,24 @@
 <div class="bgmain gencls" *ngIf="router.url =='/login'">
     <div class="loginwrappernew">
             <!-- <button class="loginbtn btnblue" (click)="goto()">Login</button> -->
-            <lib-login [fromTitle]="fromTitle" [fullUrl]="fullUrl" [forgetRouteingUrl]="forgetRouteingUrl" class="formgenrl login-form"
+        <span>
+        <lib-login [fromTitle]="fromTitle" [fullUrl]="fullUrl" [forgetRouteingUrl]="forgetRouteingUrl" class="formgenrl login-form"
             [signUpRouteingUrl]='signUpRouteingUrl' [routerStatus]="routerStatus" [endpoint]="endpoint" [logo]="logo" [buttonName]="buttonName"></lib-login>
+        </span>
+        <span class="signupwrapper">
+            <span class="signupsingle">
+                <span class="signupsingleinner">
+                    <p><span>Customer - Sign Up</span> today to browse hundreds & thousands of cars and locate the car of your dreams!!</p>
+                    <button class="btnblue" [routerLink]="['/customer-signup']">Customer Signup</button>
+                </span>
+            </span>
+            <span class="signupsingle">
+                <span class="signupsingleinner">
+                    <p><span>Sales Reps - Sign Up</span> today to create your rep profile and begin making massive commissions!!</p>
+                    <button class="btnblue" [routerLink]="['/salesrep-signup']">Sales Reps Signup</button>
+                </span>
+            </span>
+        </span>    
     </div>    
 </div>
 
@@ -15,13 +31,13 @@
     </div>
 </div>
 
-    <div class="bgmain gencls" *ngIf="router.url =='/customer-login'">  
-        <div class="loginwrappernew">
+<div class="bgmain gencls" *ngIf="router.url =='/customer-login'">  
+    <div class="loginwrappernew">
                 <!-- <button class="loginbtn btnblue" (click)="goto()">Login</button>   -->
         <lib-login [fromTitle]="fromTitle" [fullUrl]="fullUrl" [forgetRouteingUrl]="forgetRouteingUrl" class="formgenrl login-form"
             [signUpRouteingUrl]='signUpRouteingUrl' [routerStatus]="routerStatus" [endpoint]="endpoint" [logo]="logo" [buttonName]="buttonName"></lib-login>        
     </div>
-        </div>
+</div>
 
 
 <!-- <lib-file-upload [config]="configData"></lib-file-upload> -->

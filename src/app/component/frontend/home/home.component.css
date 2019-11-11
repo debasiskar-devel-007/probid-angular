@@ -27,8 +27,7 @@
     transform: translateY(-50%);
 }
 .carousalinfo h1{
-    font-family:'OrbitronBold';font-size:72px!important;line-height:72px!important;text-transform:uppercase;margin:0;padding:0;margin-bottom:18px;margin-top:25px;white-space:normal!important;background: -webkit-linear-gradient(#cfd5dc, #7f8c94);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    font-family:'OrbitronBold';font-size:72px!important;line-height:72px!important;text-transform:uppercase;margin:0;padding:0;margin-bottom:18px;margin-top:25px;white-space:normal!important;background: -webkit-linear-gradient(#cfd5dc, #7f8c94); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
 
 .carousalinfo p{
     font-size: 22px;
@@ -117,7 +116,26 @@
     .homebanner .carousel-slide .carousel-slide-content .d-block{margin-left: -23%;}
 }
 
+@media only screen and (max-width: 1700px) {
+    .carousalinfo h1 {font-size: 64px!important; line-height: normal !important;}
+    .carousalinfo p {font-size: 20px; line-height: normal;}
+    .righttxt {bottom: -65%;}
+    .righttxt p {font-size: 34px; padding-right: 35px;}
+  }
+
+
+  @media only screen and (max-width: 1550px) {
+    .homebanner .carousel-slide .carousel-slide-content .d-block{display: block; margin-left: -17%;}
+    .homebanner .carousel-list{height:100%!important; background: #000;}
+    .homebanner .carousel-slide{height:100%!important;}
+  }
+
 @media only screen and (max-width: 1199px) {
+    .homebanner .righttxt {position: inherit !inherit; text-align: center !inherit; transform: rotate(0deg) !inherit; -webkit-transform: rotate(0deg) !inherit; -moz-transform: rotate(0deg) !inherit; -o-transform: rotate(0deg) !inherit; bottom: 0 !inherit; right: 0 !inherit;}
+    .homebanner .carousel-slide {width: 100% !important; height: 100% !important; text-align: center; position:inherit !important; background-color:#03080c;}
+    .homebanner .carousel-slide-content {position: inherit !important;}
+    .homebanner .carousel-slide .carousel-slide-content .d-block {display: block; margin-left: 0;}
+
     .homebanner {
         background: #000;
     }
@@ -125,10 +143,17 @@
         width: 100%;
     }
 
-    .homebanner{
-        height: auto;
-        min-height: inherit;
+    .homebanner {
+        height: 100% !important;
+        overflow: hidden !important;
     }
+    .homebanner .carousel-slide {
+        position: inherit !important;
+    }
+    .homebanner .carousel-slide-content {
+        position: inherit !important;
+    }
+
     .homebanner.mat-card .mat-card-content {
         position: inherit;
         width: 100%;
