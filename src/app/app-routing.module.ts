@@ -87,6 +87,7 @@ import { ListingBlogcatComponent } from './component/backend/blogs/listing-blogc
 import { AddEditBlogsComponent } from './component/backend/blogs/add-edit-blogs/add-edit-blogs.component';
 import { ListingBlogsComponent } from './component/backend/blogs/listing-blogs/listing-blogs.component';
 import { MyAccountComponent } from './component/backend/my-account/my-account.component';
+import { AddSalesrepComponent } from './component/backend/add-salesrep/add-salesrep.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -340,6 +341,7 @@ const routes: Routes = [
   { path: 'communication', component: CommunicationComponent },
   { path: 'training-center-rep', component: TrainingCenterComponent },
   { path: 'my-account', component: MyAccountComponent },
+  { path: 'add-salesrep', component: AddSalesrepComponent },
 
   /**End Backend Routing**/
 
