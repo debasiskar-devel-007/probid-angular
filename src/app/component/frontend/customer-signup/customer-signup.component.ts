@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular
 import { ApiService } from 'src/app/api.service';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 export interface DialogData {
-  name: string;
+ 
 }
 
 @Component({
@@ -115,7 +115,7 @@ export class CustomerSignupComponent implements OnInit {
   }
 }
 
-
+/**success Modal */
 @Component({
   selector: 'coming',
    templateUrl: './success.html',
