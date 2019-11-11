@@ -88,6 +88,7 @@ import { AddEditBlogsComponent } from './component/backend/blogs/add-edit-blogs/
 import { ListingBlogsComponent } from './component/backend/blogs/listing-blogs/listing-blogs.component';
 import { MyAccountComponent } from './component/backend/my-account/my-account.component';
 import { AddSalesrepComponent } from './component/backend/add-salesrep/add-salesrep.component';
+import { AddCustomerComponent } from './component/backend/add-customer/add-customer.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -168,7 +169,6 @@ const routes: Routes = [
   { path: 'blog-category', component: BlogCategoryComponent },
   { path: 'salesrep-signup', component: SalesrepSignupComponent },
   { path: 'customer-signup', component: CustomerSignupComponent },
-
   
 // ___________________BLOG MANAGEMENT_________________
 // =======================================================
@@ -346,6 +346,8 @@ const routes: Routes = [
   { path: 'training-center-rep', component: TrainingCenterComponent },
   { path: 'my-account', component: MyAccountComponent },
   { path: 'add-salesrep', component: AddSalesrepComponent },
+  {path:'add-customer',component:AddCustomerComponent},
+  {path:'editcustomer/:_id',component:AddCustomerComponent},
 
   /**End Backend Routing**/
 

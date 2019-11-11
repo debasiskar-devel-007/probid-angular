@@ -3,24 +3,20 @@ import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular
 import { ApiService } from 'src/app/api.service';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
-export interface DialogData {
- 
-}
-
 @Component({
-  selector: 'app-customer-signup',
-  templateUrl: './customer-signup.component.html',
-  styleUrls: ['./customer-signup.component.css']
+  selector: 'app-add-customer',
+  templateUrl: './add-customer.component.html',
+  styleUrls: ['./add-customer.component.css']
 })
-export class CustomerSignupComponent implements OnInit {
-  @ViewChild(FormGroupDirective) formDirective: FormGroupDirective;
-  public customerSignUpForm: FormGroup;
+export class AddCustomerComponent implements OnInit {
+  public addcustomerForm: FormGroup;
   public stateList: any;
   public cityList: any;
   public term_msg: any = '';
-  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog) {
-    /**genarate customer-signUp form */
-    this.customerSignUpForm = this.fb.group({
+  @ViewChild(FormGroupDirective) formDirective: FormGroupDirective;
+  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog) { 
+    /**genarate Add-customer form */
+    this.addcustomerForm = this.fb.group({
       id:null,
       email: [null, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
       firstname: [null, Validators.required],
@@ -44,8 +40,6 @@ export class CustomerSignupComponent implements OnInit {
     this.editcustomerprofile();
    
   }
-
-
   ngOnInit() {
   }
   /**Miss Match password check function */
@@ -77,36 +71,38 @@ export class CustomerSignupComponent implements OnInit {
   }
 
   /**Submit function */
-  customerSignUpFormSubmit() {
-
-    for (let x in this.customerSignUpForm.controls) {
-      this.customerSignUpForm.controls[x].markAsTouched();
+  addcustomerFormSubmit() {
+    
+    for (let x in this.addcustomerForm.controls) {
+      this.addcustomerForm.controls[x].markAsTouched();
     }
-    if (this.customerSignUpForm.valid) {
+    if (this.addcustomerForm.valid) {
       /**check id null or not null */
-      if(this.customerSignUpForm.value.id==null){
-        delete this.customerSignUpForm.value.id;
+      if(this.addcustomerForm.value.id==null){
+        delete this.addcustomerForm.value.id;
       }
       /**check term and codition */
-      if (this.customerSignUpForm.value.check == true) {
+      if (this.addcustomerForm.value.check == true) {
 
-        if (this.customerSignUpForm.value.conpass != null) {
-          delete this.customerSignUpForm.value.conpass;
-          delete this.customerSignUpForm.value.check;
+        if (this.addcustomerForm.value.conpass != null) {
+          delete this.addcustomerForm.value.conpass;
+          delete this.addcustomerForm.value.check;
         }
-        // console.log(this.customerSignUpForm.value);
+        //console.log(this.addcustomerForm.value);
 
         /**Api service for insert form */
 
-        var data = { "source": "user", "data": this.customerSignUpForm.value }
+        var data = { "source": "user", "data": this.addcustomerForm.value }
         this.apiservice.CustomRequest(data, 'addorupdatedata').subscribe((data: any) => {
-          if (data.status == 'success') {
-            this.dialog.open(customerSignUpsuccessDialog, {
-              width: '250px',
-            });
+          console.log(data);
+          if (data.status == 'success' && data.update==1) {
+           console.log("Update customer Successfully");
+            this.formDirective.resetForm();
+          }else{
+            console.log("Add customer Successfully");
             this.formDirective.resetForm();
           }
-          // console.log(data);
+          
         })
       }
     }
@@ -115,13 +111,13 @@ export class CustomerSignupComponent implements OnInit {
     }
   }
 
-  /**for edit */
+  /**for Edit Customer form */
   editcustomerprofile(){
     if(this.activatedRouter.snapshot.params._id!=null)
     {
       var data = { "source": "user", "condition": {"_id": this.activatedRouter.snapshot.params._id}}
         this.apiservice.CustomRequest(data, 'datalist').subscribe((data: any) => {
-          this.customerSignUpForm.patchValue({
+          this.addcustomerForm.patchValue({
             id:data.res[0]._id,
             email:data.res[0].email,
             firstname:data.res[0].firstname,
@@ -131,7 +127,8 @@ export class CustomerSignupComponent implements OnInit {
             city:data.res[0].city,
             state:data.res[0].state,
             address:data.res[0].address,
-            check: [false, Validators.required],
+            password: data.res[0].password,
+            conpass: data.res[0].password,
             type:data.res[0].type,
           })
         });
@@ -140,26 +137,7 @@ export class CustomerSignupComponent implements OnInit {
 
 
   inputUntouched(val: any) {
-    this.customerSignUpForm.controls[val].markAsUntouched();
-  }
-  gotoenroll() {
-    document.querySelector('.signupformdiv').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-}
-
-/**success Modal */
-@Component({
-  selector: 'coming',
-   templateUrl: './success.html',
-})
-export class customerSignUpsuccessDialog {
-
-  constructor(
-    public dialogRef: MatDialogRef<customerSignUpsuccessDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
+    this.addcustomerForm.controls[val].markAsUntouched();
   }
 
 }

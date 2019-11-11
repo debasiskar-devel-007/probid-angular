@@ -12,14 +12,14 @@ export class CustomerListComponent implements OnInit {
   statusarray: any = [{val: 1, name: 'Pending'}, {val: 2, name: 'Cancelled'}, {val: 3, name: 'Delivered'}]; 
 
   pendingmodelapplicationarray: any = [];
-pendingmodelapplicationarray_skip: any = ['_id','password','zip','type','state','city'];
+pendingmodelapplicationarray_skip: any = ['_id','type','city','state','password','zip'];
 pendingmodelapplicationarray_detail_skip: any = ['_id'];
 
-  updateendpoint = '';
+  updateendpoint = 'addorupdatedata';
   deleteendpoint = 'deletesingledata';
   tablename = 'salesref';
-  searchendpoint = '';
-  editroute: any = '';
+  searchendpoint = 'datalist';
+  editroute: any = 'editcustomer';
   modify_header_array: any = {
     'fullname': "Name",
     'phone': "Phone",

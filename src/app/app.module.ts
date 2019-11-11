@@ -141,6 +141,7 @@ import { AddEditBlogsComponent } from './component/backend/blogs/add-edit-blogs/
 import { ListingBlogsComponent } from './component/backend/blogs/listing-blogs/listing-blogs.component';
 import { MyAccountComponent } from './component/backend/my-account/my-account.component';
 import { AddSalesrepComponent } from './component/backend/add-salesrep/add-salesrep.component';
+import { AddCustomerComponent } from './component/backend/add-customer/add-customer.component';
 
 
 @NgModule({
@@ -234,6 +235,7 @@ import { AddSalesrepComponent } from './component/backend/add-salesrep/add-sales
     SalesrepSignupComponent,
     CustomerSignupComponent,
     AddSalesrepComponent,
+    AddCustomerComponent,
   ],
   imports: [
     NewsTitleModule,
