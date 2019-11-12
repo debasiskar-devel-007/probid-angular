@@ -357,8 +357,7 @@ display:block !important;
 .bottom_blog .item_wrapper .item .next_page{ color:#21c4e1; text-align: left; display: block;}
 .bottom_blog .item_wrapper .item .next_page:hover i{width:35px;transition:all 500ms;background:#1299de;color:#fff;}
 .readmore{color:#ffffff;margin-left:auto;display:flex;background:#1299e1;width:150px;text-align:center;align-items:center;justify-content:center;font-family:'HelveticaBold';font-size:17px;}
-.bottom_blog .item_wrapper .item .contentsection .description{color:#838383;line-height:24px;font-size:16px;overflow: hidden; text-overflow: ellipsis;display: -webkit-box;line-height: 18px;
-    max-height: 90px;  -webkit-line-clamp: 5;-webkit-box-orient:vertical;}
+.bottom_blog .item_wrapper .item .contentsection .description{color:#838383;line-height:24px;font-size:16px;overflow: hidden; text-overflow: ellipsis;display: -webkit-box;line-height: 18px; min-height: 90px;  -webkit-line-clamp: 5;-webkit-box-orient:vertical;}
 .bloglistinner {display: flex;flex-wrap: wrap;justify-content: space-between;}
 .bloglistswrapper{display: flex; flex-wrap: wrap; flex: 1 1 60%;}
 .bloglistswrapper .bottom_blog {width: 100%;}
@@ -366,6 +365,40 @@ display:block !important;
 .categorywrapper h2{background-color: #fb4a32; padding: 17px !important; margin-top: 0 !important; margin-bottom: 0 !important;}
 .bloglistinner .bottom_blog .item_wrapper .item {width: calc(1/2*100% - (1 - 1/2)*18px);}
 .blogdetail .bloglistswrapper .bottom_blog {margin-bottom: 0;}
+
+.photogallerylists {
+    padding: 5px;
+}
+
+.photogallerylists .photogallerylists{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.photogallerylists .writer_image {
+    width: 200px !important;
+    overflow: hidden;
+    height: 200px !important;
+    margin: 5px;
+    background-color: #e9edef;
+    border: 2px solid #d8d9da;
+    padding: 10px;
+    display: inherit !important;
+}
+
+.photogallerylists .writer_image_wrapper img{
+    transition: all 0.3s;
+    transform: scale(1); 
+    opacity: .85; 
+    height: 100% !important; 
+    -o-object-fit: cover; 
+    object-fit: cover; 
+    width: 100% !important; 
+    width: auto; 
+    height: auto;
+}
+
 
 .mat-menu-panel.activedropmenu{margin-left:0;margin-top:16px;background-color:#cdd4da !important;}
 .mat-menu-panel{min-width: 140px;}
@@ -423,6 +456,10 @@ display:block !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Helvetica-Normal';
+    color:#636363;
+    font-size:16px !important;
+    line-height: normal !important;
   }
 
   .search-sec .example-form .mat-form-field-appearance-legacy .mat-form-field-infix .mat-button{
