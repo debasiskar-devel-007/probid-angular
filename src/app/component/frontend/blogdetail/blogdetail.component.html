@@ -49,13 +49,20 @@
                       <span class="item_images" *ngIf="blog !='' && blog.blogs_image !='' && blog.blogs_image !=null">
                         <img [src]="blog.blogs_image">
                       </span>
-
-                      <p class="description"><span [innerHtml]="blog.description_html"></span></p>
-
-                      
+                      <p class="description"><span [innerHtml]="blog.description_html"></span></p>                      
                   </mat-card-content>
                   </span>
                 </mat-card-content>
+                <!-- start gallery section -->
+                <mat-list class="photogallerylists">
+                    <mat-list-item class="writer_image" >
+                      <span class="writer_image_wrapper">
+                          <img [src]="blog.blogs_image">
+                      </span>
+                    </mat-list-item>
+                    
+                  </mat-list>
+                  <!-- end gallery section -->
           </span>
           <span class="categorywrapper">
               <h2>Categories ({{blogcategorycount}})</h2>
