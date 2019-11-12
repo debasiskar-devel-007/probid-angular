@@ -50,7 +50,7 @@
                         <img [src]="blog.blogs_image">
                       </span>
 
-                      <p class="description">{{blog.description_html}}</p>
+                      <p class="description"><span [innerHtml]="blog.description_html"></span></p>
 
                       
                   </mat-card-content>

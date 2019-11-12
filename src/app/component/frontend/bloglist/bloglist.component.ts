@@ -40,7 +40,7 @@ export class BloglistfrontendComponent implements OnInit {
   public blogcat:any;
   public blogsubcategorycount:any;
   public count:any=0;
-  public indexval:any=2;
+  public indexval:any=4;
   public bloglisting:any;
   public videourl:any='';
   public url:"https://www.youtube.com/embed/"

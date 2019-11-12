@@ -23,12 +23,6 @@ export class ResolveService implements Resolve<any> {
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
 
-        // let id = route.params['id'];
-        // console.log(id)
-        // console.log('resolve route data');
-        // console.log(route.data);
-        // console.log(state);
-
         //let id = route.params['id'];
         // console.log('resolve route data');
         // console.log(route.data);
