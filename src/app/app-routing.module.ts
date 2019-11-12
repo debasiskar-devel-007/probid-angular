@@ -116,16 +116,16 @@ const routes: Routes = [
   { path: 'online-inventory-list', component: SearchListViewComponent },
   { path: 'search-inventory-list', component: SearchListViewComponent },
   { path: 'specials-list', component: SearchListViewComponent },
-{    path: "testimonial",  component: TesimoniallistComponent },
-  // {
-  //   path: "testimonial",
-  //   component: TesimoniallistComponent,
-  //   resolve: { testimonialListData: ResolveService },
-  //   data: {
-  //     requestcondition: { source: "testimonals_view", condition: {} },
-  //     endpoint: "datalist"
-  //   }
-  // },
+// {    path: "testimonial",  component: TesimoniallistComponent },
+  {
+    path: "testimonial",
+    component: TesimoniallistComponent,
+    resolve: { testimonialListData: ResolveService },
+    data: {
+      requestcondition: { source: "testimonial_view", condition: {} },
+      endpoint: "datalistwithouttoken"
+    }
+  },
 
   {
     path: 'servicehome',
@@ -133,16 +133,16 @@ const routes: Routes = [
     resolve: { serviceListData: ResolveService },
     data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
   },
-  {
-    path: 'service',
-    component: ServicelistComponent
-  },
   // {
   //   path: 'service',
-  //   component: ServicelistComponent,
-  //   resolve: { serviceListData: ResolveService },
-  //   data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalist' }
+  //   component: ServicelistComponent
   // },
+  {
+    path: 'service',
+    component: ServicelistComponent,
+    resolve: { serviceListData: ResolveService },
+    data: { requestcondition: { source: 'service', condition: {} }, endpoint: 'datalistwithouttoken' }
+  },
   { path: 'blog', component: BlogComponent },
   // { path: 'blog-category/edit/:_id', component: BlogComponent, resolve: { blogCatList: ResolveService },
   // data: { requestcondition: { source: 'blog_category', condition: {} }, endpoint: 'datalist' }},
@@ -159,7 +159,7 @@ const routes: Routes = [
 
 
   { path: 'blogdetail/:id', component: BlogdetailComponent,resolve: { blogCatList: ResolveService },
-  data: { requestcondition: { source: '', condition: {_id:'id'} }, endpoint: 'blogdata' } },
+  data: { requestcondition: { source: 'blog_view', condition: {} }, endpoint: 'datalist' } },
 
 
   { path: 'advance-inventory-search', component: AdvanceInventorySearchComponent },

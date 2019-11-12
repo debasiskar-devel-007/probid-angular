@@ -23,27 +23,14 @@ export class TesimoniallistComponent implements OnInit {
 
 
   ngOnInit() {
-    var data: any = {};
-    data = {
-      source:"testimonial_view",
-      endpoint: "datalist"
-    }
-    this.apiService.getTempToken().subscribe((res:any)=>{
-
-      if(res.status == 'success') {
-        this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
-          
-          this.TestimonialListArray = res2.res;
-        });
-      }
-    });
-    // this.activatedRoute.data.forEach(data => {
-    //   let result: any = {};
-    //   result = data.testimonialListData.res;
-    //   console.warn(result)
-    //   this.TestimonialListArray = result;
-    //   this.indexvallength = this.TestimonialListArray.length;
-    // })
+    
+    this.activatedRoute.data.forEach(data => {
+      let result: any = {};
+      result = data.testimonialListData.res;
+      console.log('>>>>>>>>>>>>>',result)
+      this.TestimonialListArray = result;
+      this.indexvallength = this.TestimonialListArray.length;
+    })
   }
 
   btnBackClick = function () {

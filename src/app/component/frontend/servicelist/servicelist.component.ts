@@ -19,35 +19,40 @@ export class ServicelistComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router,public apiService: ApiService) { }
 
   ngOnInit() {
-    var data: any = {};
-    data = {
-      source:"service",
-      endpoint: "datalist"
-    }
-    // this.activatedRoute.data.forEach((data:any)=>{
-    //   console.log(data)
+   
+    this.activatedRoute.data.forEach((data:any)=>{
+      console.log(data)
 
-    //   this.ServiceListArray=data.serviceListData.res;     
-    //  this.indexvallength = this.ServiceListArray.length;
-    // })
+      this.ServiceListArray=data.serviceListData.res; 
+      console.log('>>>>>>>>>>>',this.ServiceListArray) 
+      if(this.serv_list==''){
+               this.serv_list=this.ServiceListArray[8];
+             }   
+     this.indexvallength = this.ServiceListArray.length;
+    })
 
     /**sourav */
-    this.apiService.getTempToken().subscribe((res:any)=>{
+     // var data: any = {};
+    // data = {
+    //   source:"service",
+    //   endpoint: "datalist"
+    // }
+    // this.apiService.getTempToken().subscribe((res:any)=>{
       
-      if(res.status == 'success') {
-        this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
-         //console.log(res2);
-         this.ServiceListArray=res2.res;     
-         this.indexvallength = res2.length;
-         //console.log(this.ServiceListArray)
-         if(this.serv_list==''){
-           this.serv_list=this.ServiceListArray[8];
-         }
+    //   if(res.status == 'success') {
+    //     this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
+    //      //console.log(res2);
+    //      this.ServiceListArray=res2.res;     
+    //      this.indexvallength = res2.length;
+    //      //console.log(this.ServiceListArray)
+    //      if(this.serv_list==''){
+    //        this.serv_list=this.ServiceListArray[8];
+    //      }
 
-        });
-      }
+    //     });
+    //   }
 
-    });
+    // });
   }
 
   btnBackClick= function () {
