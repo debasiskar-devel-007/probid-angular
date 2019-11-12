@@ -344,7 +344,8 @@ display:block !important;
 .bottom_blog .item_wrapper .item .author .writer_image{width:45px;height:45px;border-radius:0;display:flex;background-color:#fd8469;justify-content:center;padding:7px 0 0 0;}
 
 .bottom_blog .item_wrapper .item .author .writer_image img{max-width: 100%; height: auto; }
-.bottom_blog .item_wrapper .item .author  .authorName { margin: 0 10px;  text-transform: capitalize; color: #222527; font-family: 'HelveticaBold';}
+.bottom_blog .item_wrapper .item .author  .authorName { margin: 0 10px;  text-transform: capitalize; color: #222527; font-family: 'HelveticaBold';white-space: normal;
+    word-break: break-word;}
 .bottom_blog .item_wrapper .item .author  .date { color: #222527;}
 .bottom_blog .item_wrapper .item { width: 32%; margin: .5%; box-sizing: border-box; box-shadow: 0px 2px 10px -1px #ccc;  border-radius: 0px; padding: 20px; background-color: #fff;cursor: pointer; text-align: left;}
 .bottom_blog .item_wrapper .item .item_images{ max-width: 100%; display: flex; justify-content: center; align-items: center; height: 174px; overflow: hidden; border: 1px solid #929ba0; }
@@ -387,7 +388,8 @@ display:block !important;
 .rateingdiv .checked {color: #f4cd64;}
 
 .hidden {display: none;}
-
+.tablediv .searchbar .mat-form-field .mat-form-field-infix{margin-bottom: 0;}
+.bloglists .tablediv {margin-top: -73px;}
 
 
 @media screen and (max-width: 768px){

@@ -15,7 +15,7 @@
           </span>
           <p class="date">Date: {{item.date_added}} </p>
         </span>
-        <p class="description">{{item.description_html}} </p>  
+        <p class="description"><span [innerHtml]="item.description_html"></span></p>  
         <a class="next_page"  (click)="blogdetail(item._id)" >read more</a>
         <span class="blogsociallists">
             <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>

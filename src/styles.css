@@ -126,8 +126,9 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
   margin-right: 0 !important;
   margin-left: 0 !important;
 }
-
-
+.mat-form-field-appearance-legacy .mat-form-field-underline{
+  display: none;
+}
 
 @media screen and (max-width: 640px){
   .owl-carousel .owl-nav button.owl-prev {
