@@ -121,33 +121,37 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
 .mat-form-field-type-mat-native-select .mat-form-field-infix::after {color: #fff !important;}
 .langblock .mat-form-field-appearance-legacy .mat-form-field-infix {background:transparent !important;}
 
-@media screen and (max-width: 640px){
 
 .owl-carousel.owl-loaded.row {
   margin-right: 0 !important;
   margin-left: 0 !important;
 }
-.owl-carousel .owl-nav button.owl-prev {
-  position: absolute;
-  top: 25%;
-  left: 0%;
-}
-.owl-carousel .owl-nav button.owl-next {
-  position: absolute;
-  top: 25%;
-  right: 0;
-}
-.owl-carousel .owl-item.active.center p.quatation {
-  display: block !important;
-  width: 96%;
-  margin-left: auto;
-  height: auto;
-  max-width: inherit;
-  -webkit-line-clamp: inherit;
-  overflow: hidden;
-  text-overflow: inherit;
-  margin-right: auto;
-}
+
+
+
+@media screen and (max-width: 640px){
+  .owl-carousel .owl-nav button.owl-prev {
+    position: absolute;
+    top: 25%;
+    left: 0%;
+  }
+  .owl-carousel .owl-nav button.owl-next {
+    position: absolute;
+    top: 25%;
+    right: 0;
+  }
+  .owl-carousel .owl-item.active.center .quatation {
+    display: block !important;
+    width: 96%;
+    margin-left: auto;
+    height: auto;
+    max-width: inherit;
+    -webkit-line-clamp: inherit;
+    overflow: hidden;
+    text-overflow: inherit;
+    margin-right: auto;
+  }
+
 }
 
 @media screen and (max-width: 480px){
