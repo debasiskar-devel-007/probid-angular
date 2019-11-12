@@ -150,16 +150,16 @@ const routes: Routes = [
   // { path: 'blog-category/list', component: BlogdetailComponent, resolve: { blogCatList: ResolveService },
   // data: { requestcondition: { source: 'blog_category_view', condition: {} }, endpoint: 'datalist' }},
 
-  { path: 'bloglist', component: BloglistfrontendComponent },
-  // data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' } },
+  { path: 'bloglist', component: BloglistfrontendComponent, resolve: { blogCatList: ResolveService },
+  data: { requestcondition: { source: '', condition: {} }, endpoint: 'blogdata' } },
   
   // { path: 'bloglist', component: BloglistfrontendComponent, resolve: { blogCatList: ResolveService },
   // data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' } },
 
 
 
-  { path: 'blogdetail/:id', component: BlogdetailComponent},
-
+  { path: 'blogdetail/:id', component: BlogdetailComponent,resolve: { blogCatList: ResolveService },
+  data: { requestcondition: { source: '', condition: {_id:'id'} }, endpoint: 'blogdata' } },
 
 
   { path: 'advance-inventory-search', component: AdvanceInventorySearchComponent },

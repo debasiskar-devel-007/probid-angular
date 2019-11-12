@@ -14,9 +14,6 @@
         </span>
 </mat-card>
 
-<!-- <mat-card class="generalcls blog" style="padding: 0 !important;"> 
-  <img src="../../../../assets/images/blog-block1img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
-</mat-card> -->
 
 
 
@@ -26,12 +23,18 @@
             <span class="bloglistswrapper">
                 <mat-card-content class="bottom_blog">    
                     <span class="item_wrapper">
-                      <!-- <mat-card-content class="item" *ngFor="let item of blogList | slice:0:indexval; let i=index"> -->
+                  
                         
-                      <mat-card-content class="item" *ngFor="let item of blogList | slice:0:indexval ; let i=index">
+                      <mat-card-content class="item" *ngFor="let item of bloglisting | slice:0:indexval ; let i=index">
                         <span class="item_images">
                           <img [src]="item.blogs_image">
                         </span>
+                        <span *ngFor="let vurl of item.credentials" >
+                     
+                        <button mat-button type="button"  class="btnblue sim-button" *ngIf="vurl.video_url !='' && vurl.video_url !=null " (click)="openvideourl(vurl.video_url)">Open Video Url</button>
+                 
+                      </span>
+
                         <mat-card-content class="contentsection">
                           <mat-card-title class="inner_header">{{item.blogtitle}}</mat-card-title>
                           <span class="author">
@@ -56,7 +59,7 @@
                         </mat-card-content>
                     </mat-card-content>
                     </span>
-                    <button mat-button class="btnblue sim-button" *ngIf="blogList !=null && indexval < blogList.length"  (click)="blogloadmore()">Load More</button>                  
+                    <button mat-button class="btnblue sim-button" *ngIf="bloglisting !=null && indexval < bloglisting.length"  (click)="blogloadmore()">Load More</button>                  
                   </mat-card-content> 
                                                        
             </span>        
@@ -73,7 +76,7 @@
 
 
 
-                          <ng-container *ngFor="let itemVal of blogcategorysearch">                            
+                          <ng-container *ngFor="let itemVal of bloglisting">                            
                               <span *ngIf="itemVal.blogcategory == item.blogtitle"> 
                                 <div class="categorysub" (click)="blog(itemVal)"  [ngClass]="{'active': itemVal._id == blogcat }">   
                                   <p class="inner_header">{{itemVal.metatitle}}</p>

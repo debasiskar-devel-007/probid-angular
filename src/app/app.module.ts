@@ -25,7 +25,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 
-import { BloglistfrontendComponent } from './component/frontend/bloglist/bloglist.component';
+import { BloglistfrontendComponent, CommonVideoModalComponent } from './component/frontend/bloglist/bloglist.component';
 
 /**Frontend Component**/
 
@@ -143,6 +143,7 @@ import { MyAccountComponent } from './component/backend/my-account/my-account.co
 import { AddSalesrepComponent } from './component/backend/add-salesrep/add-salesrep.component';
 import { AddCustomerComponent } from './component/backend/add-customer/add-customer.component';
 
+//****** for video Modal*********//
 
 @NgModule({
   declarations: [
@@ -235,7 +236,11 @@ import { AddCustomerComponent } from './component/backend/add-customer/add-custo
     SalesrepSignupComponent,
     CustomerSignupComponent,
     AddSalesrepComponent,
+<<<<<<< HEAD
+    CommonVideoModalComponent,
+=======
     AddCustomerComponent,
+>>>>>>> 2089360944ea19f3c5c347afe2a7ab00b784d2e8
   ],
   imports: [
     NewsTitleModule,
@@ -277,7 +282,7 @@ import { AddCustomerComponent } from './component/backend/add-customer/add-custo
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog]
+  entryComponents: [CommonVideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog]
 })
 export class AppModule { }
 
