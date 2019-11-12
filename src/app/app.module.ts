@@ -236,11 +236,8 @@ import { AddCustomerComponent } from './component/backend/add-customer/add-custo
     SalesrepSignupComponent,
     CustomerSignupComponent,
     AddSalesrepComponent,
-<<<<<<< HEAD
     CommonVideoModalComponent,
-=======
     AddCustomerComponent,
->>>>>>> 2089360944ea19f3c5c347afe2a7ab00b784d2e8
   ],
   imports: [
     NewsTitleModule,
