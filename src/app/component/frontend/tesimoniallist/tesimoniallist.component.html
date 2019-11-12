@@ -33,7 +33,6 @@
                         </span>
                         <span class="testibottomcontent">
                             <mat-card-title class="title1">{{testmon.name}}</mat-card-title>
-                            <!-- <mat-card-title class="title2">{{testmon.date_added}}</mat-card-title> -->
                         </span>
                         <!--<span class="rateingdiv">
                             <span class="fa fa-star checked"></span>
@@ -43,8 +42,9 @@
                             <span class="fa fa-star"></span>
                         </span>-->
                         <span class="quatation">
-                            <!-- truncateopen -->
-                        <p class="truncate" [ngClass]="{'truncate truncateopen':testmon._id == p_id }">&quot; {{testmon.testimonial}} &quot;</p>
+                        <p class="truncate" [ngClass]="{'truncate truncateopen':testmon._id == p_id }">
+                            <span [innerHtml]="testmon.testimonial"></span>
+                        </p>
                         <a *ngIf="testmon.testimonial != '' && testmon != '' && testmon.testimonial.length >= 254 " [ngClass]="{'hide':testmon._id == p_id}" (click)="showmore(testmon)"> read more</a>
                         </span>
                        </mat-card-content>

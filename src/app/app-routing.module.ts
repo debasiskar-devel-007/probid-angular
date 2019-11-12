@@ -151,7 +151,7 @@ const routes: Routes = [
   // data: { requestcondition: { source: 'blog_category_view', condition: {} }, endpoint: 'datalist' }},
 
   { path: 'bloglist', component: BloglistfrontendComponent, resolve: { blogCatList: ResolveService },
-  data: { requestcondition: { source: '', condition: {} }, endpoint: 'blogdata' } },
+  data: { requestcondition: { condition: {} }, endpoint: 'blogdata' } },
   
   // { path: 'bloglist', component: BloglistfrontendComponent, resolve: { blogCatList: ResolveService },
   // data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' } },

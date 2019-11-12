@@ -19,7 +19,7 @@ export class ServicelistComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router,public apiService: ApiService) { }
 
   ngOnInit() {
-   
+   //********service list view*******IU//
     this.activatedRoute.data.forEach((data:any)=>{
       console.log(data)
 
@@ -30,29 +30,7 @@ export class ServicelistComponent implements OnInit {
              }   
      this.indexvallength = this.ServiceListArray.length;
     })
-
-    /**sourav */
-     // var data: any = {};
-    // data = {
-    //   source:"service",
-    //   endpoint: "datalist"
-    // }
-    // this.apiService.getTempToken().subscribe((res:any)=>{
-      
-    //   if(res.status == 'success') {
-    //     this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
-    //      //console.log(res2);
-    //      this.ServiceListArray=res2.res;     
-    //      this.indexvallength = res2.length;
-    //      //console.log(this.ServiceListArray)
-    //      if(this.serv_list==''){
-    //        this.serv_list=this.ServiceListArray[8];
-    //      }
-
-    //     });
-    //   }
-
-    // });
+    
   }
 
   btnBackClick= function () {
