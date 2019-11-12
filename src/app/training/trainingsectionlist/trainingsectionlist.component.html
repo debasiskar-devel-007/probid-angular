@@ -5,8 +5,16 @@
     <div class="main-content-wrap">
       <mat-card class="generalcls blog" style="padding: 0 !important;"> 
           <span>
-            <img src="../../../../assets/images/managelession-topbanner-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
-            
+            <!-- <img src="../../../../assets/images/managelession-topbanner-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+            <mat-card-content class="adm_inner_banner managelession">
+                <mat-card-title class="adm_inner_title">manage lession</mat-card-title>
+                <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </mat-card-content>
+            <mat-card-content class="bred_cram_wrapper">
+                <a mat-list-item routerLinkActive="active"> Dashboard </a>
+                <a mat-list-item routerLinkActive="active"> Training Manager </a>
+                <a mat-list-item routerLinkActive="active activebread" [routerLink]="'/trainingsectionlist'"> managelession </a>
+            </mat-card-content>
              <span class="searchblock">
               <span class="searchblockwrapper">
                 <span><h2>manage Lesson</h2></span>

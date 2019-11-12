@@ -1,4 +1,10 @@
-<app-header></app-header>
+<div class="adminwrappercls">
+    <app-header></app-header>
+      <div class="main-content-wrap">
+        <mat-card class="generalcls blog" style="padding: 0 !important;">  
+          <mat-card-title class="editprofiletitle">Add Salesrep</mat-card-title>
+        </mat-card>
+      </div>
 <form [formGroup]="addcustomerForm"  (ngSubmit)="addcustomerFormSubmit()">
 
         <mat-form-field>
@@ -88,5 +94,6 @@
           <span class="bottompart">           
               <button mat-raised-button class="btn-lg">Submit</button>
           </span>
-</form>
+      </form>
+</div>
 <app-footer></app-footer>

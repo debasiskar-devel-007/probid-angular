@@ -133,6 +133,10 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
 .mat-form-field {
   margin: 0 0px;
 }
+.mat-paginator-page-size-select {
+  margin: 0px 4px 0 4px;
+  width: 56px;
+}
 
 @media screen and (max-width: 640px){
   .owl-carousel .owl-nav button.owl-prev {
