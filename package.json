@@ -51,6 +51,7 @@
     "listing-angular7": "0.0.94",
     "material-design-icons": "^3.0.1",
     "moment": "^2.24.0",
+    "ng-mat-search-bar": "^4.0.1",
     "ngx-bootstrap": "^5.1.2",
     "ngx-ckeditor": "^8.0.0",
     "ngx-clipboard": "^12.2.1",

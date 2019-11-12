@@ -246,9 +246,10 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
 .testimonial__company,.testimonial__company-link{font-family:KlinicSlab,serif;letter-spacing:.4px}
 .custom-module .testimonial__company a{color:#1da1db;font-size:16px;line-height:24px;letter-spacing:.8px}
 .testicontent{position: relative;}
+.contentsection{position: relative;}
 .bnticons{position: absolute; right: 11px; top: -50px;}
 .bnticons button {cursor: pointer; outline: none; border: none; background: transparent;margin-left: 11px;}
-
+.bnticons button img{max-width: 55%;}
 .modelthumbimginnerwarpper.active .testimonialcontent .title1, .modelthumbimginnerwarpper.active .testimonialcontent .title2, .modelthumbimginnerwarpper.active .testimonialcontent .title3, .modelthumbimginnerwarpper.active .testimonialcontent .quatation{display: block;}
 .modelthumbimginnerwarpper.active .testimonialcontent .title1{font-size: 28px !important; margin-bottom: 10px !important;line-height: normal !important;}
 .modelthumbimginnerwarpper.active .testimonialcontent .title2{font-size: 20px !important; margin-bottom: 10px !important;line-height: normal !important;}
@@ -296,8 +297,9 @@ max-width: 100%; margin: 0 auto;}
     line-height: normal!important;
     justify-content: space-between;
     margin-bottom: 15px!important;
-    margin-top: 15px!important;
+    margin-top: 25px!important;
     text-transform: capitalize;
+    -webkit-box-align: initial;
 }
 
 
@@ -347,7 +349,7 @@ display:block !important;
 .bottom_blog .item_wrapper .item .author  .authorName { margin: 0 10px;  text-transform: capitalize; color: #222527; font-family: 'HelveticaBold';white-space: normal;
     word-break: break-word;}
 .bottom_blog .item_wrapper .item .author  .date { color: #222527;}
-.bottom_blog .item_wrapper .item { width: 32%; margin: .5%; box-sizing: border-box; box-shadow: 0px 2px 10px -1px #ccc;  border-radius: 0px; padding: 20px; background-color: #fff;cursor: pointer; text-align: left;}
+.bottom_blog .item_wrapper .item { width: 32%; margin: .5%; box-sizing: border-box; box-shadow: 0px 2px 10px -1px #ccc;  border-radius: 0px; padding: 20px; background-color: #fff; text-align: left;}
 .bottom_blog .item_wrapper .item .item_images{ max-width: 100%; display: flex; justify-content: center; align-items: center; height: 174px; overflow: hidden; border: 1px solid #929ba0; }
 .bottom_blog .item_wrapper .item .item_images img{transition: all 0.3s;transform: scale(1); opacity: .85; height: 100% !important; -o-object-fit: cover; object-fit: cover; width: 100% !important; width: auto; height: auto;}
 .bottom_blog .item_wrapper .item .item_images:hover img{ transform: scale(1.5); opacity: 1;}
@@ -390,6 +392,68 @@ display:block !important;
 .hidden {display: none;}
 .tablediv .searchbar .mat-form-field .mat-form-field-infix{margin-bottom: 0;}
 .bloglists .tablediv {margin-top: -73px;}
+
+/* .absolute {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+  } */
+.mat-paginator .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 13px 3px !important;
+}
+
+.search-sec{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-sec .example-form {
+    min-width: 270px;
+    max-width: 500px;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e2ecee;
+  }
+
+  .search-sec .example-form .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 6px!important;
+    background: #fff;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .search-sec .example-form .mat-form-field-appearance-legacy .mat-form-field-infix .mat-button{
+    min-width: 30px;
+    line-height: 36px;
+    padding: 0;
+    border-radius: 0;
+    overflow: visible;
+    background: #333;
+    color: #fff;
+  }
+
+  .search-sec .example-form .mat-form-field-appearance-legacy .mat-form-field-infix input{
+      line-height: normal;
+  }
+  .search-sec .mat-search-bar{
+    margin-right: .5%;
+  }
+  
+  .search-sec .example-full-width {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    background: #65d3e7;
+  }
+
+  .blogdetail .mat-card-content .inner_header.mat-card-title {
+    text-transform: uppercase;
+    margin-top: 0px!important;
+    height: auto!important;
+}
 
 
 @media screen and (max-width: 768px){
