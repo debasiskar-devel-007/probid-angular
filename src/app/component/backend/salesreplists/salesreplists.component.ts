@@ -14,11 +14,11 @@ export class SalesreplistsComponent implements OnInit {
 'city'];
   pendingmodelapplicationarray_detail_skip: any = ['_id'];
 
-    updateendpoint = '';
+    updateendpoint = 'addorupdatedata';
     deleteendpoint = 'deletesingledata';
     tablename = 'salesref';
-    searchendpoint = '';
-    editroute: any = '';
+    searchendpoint = 'datalist';
+    editroute: any = 'editsalesref';
     modify_header_array: any = {
       'fullname': "Name",
       'phone': "Phone",
