@@ -2,7 +2,7 @@
   <span class="item_wrapper">
     <mat-card-content class="item" *ngFor="let item of blogList | slice:0:indexval; let i=index">
       <span class="item_images">
-        <img [src]="item.blogs_image">
+        <img [src]="item.profile_picture">
       </span>
       <mat-card-content class="contentsection">
         <mat-card-title class="inner_header">{{item.blogtitle}}</mat-card-title>

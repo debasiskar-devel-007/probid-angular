@@ -50,23 +50,35 @@
                         
                         <img [src]="blog_img">
                       </span>
-                      <div *ngFor="let vurl of blog[0].credentials">
-                          <button  *ngIf="vurl.video_url !='' && vurl.video_url !=null " (click)="openvideourl(vurl.video_url)"><img src="../../../../assets/images/videoicon.png"></button>
-                    </div>
+                      
                       <p class="description"><span [innerHtml]="blog[0].description_html"></span></p>                      
                   </mat-card-content>
                   </span>
                 </mat-card-content>
                 <!-- start gallery section -->
-                <!-- <mat-list class="photogallerylists">
+                <mat-list class="photogallerylists">
                     <mat-list-item class="writer_image" >
                       <span class="writer_image_wrapper">
-                          <img [src]="blog.blogs_image">
+                          <img [src]="blog_img">
                       </span>
                     </mat-list-item>
                     
-                  </mat-list> -->
+                  </mat-list>
                   <!-- end gallery section -->
+                  
+                  <!-- start video section -->
+                <mat-list class="photogallerylists">
+                    <mat-list-item class="writer_image" >
+                      <span class="writer_image_wrapper">
+                        <div *ngFor="let vurl of blog[0].credentials">
+                          <button  *ngIf="vurl.video_url !='' && vurl.video_url !=null " (click)="openvideourl(vurl.video_url)"><img src="../../../../assets/images/videoicon.png"></button>
+                    </div>
+                      </span>
+                    </mat-list-item>
+                    
+                  </mat-list>
+                  <!-- end video section -->
+
           </span>
           <span class="categorywrapper">
               <h2>Categories ({{blogcategorycount}})</h2>

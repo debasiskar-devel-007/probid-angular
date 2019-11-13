@@ -60,6 +60,7 @@ public tokenVal: any;
         this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
 
           this.blogList = res2.res;
+          console.log(this.blogList)
 
         });
       }
