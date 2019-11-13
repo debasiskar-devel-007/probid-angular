@@ -27,7 +27,7 @@
                         
                       <mat-card-content class="item" *ngFor="let item of bloglisting | slice:0:indexval ; let i=index">
                         <span class="item_images">
-                          <img [src]="item.blogs_image">
+                          <img [src]="item.profile_picture">
                         </span>
                         
                         
@@ -71,7 +71,7 @@
                           <mat-expansion-panel-header >
                             <mat-panel-title  >
                                 {{item.blogtitle}} &nbsp;
-                              <h4 >({{count}})</h4>
+                              <!-- <h4 >({{count}})</h4> -->
                             </mat-panel-title>                           
                           </mat-expansion-panel-header>
 

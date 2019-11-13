@@ -1,7 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Inject} from '@angular/core';
 import {ActivatedRoute,Router} from '@angular/router';
  import{CookieService} from 'ngx-cookie-service';
 import { ApiService } from 'src/app/api.service';
+import {MatDialogRef, MAT_DIALOG_DATA, MatDialog} from "@angular/material";
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+
+export interface DialogData {
+  data: any;
+  
+} 
 
 @Component({
   selector: 'app-blogdetail',
@@ -16,6 +23,12 @@ export class BlogdetailComponent implements OnInit {
   public blogcat:any;
   public blogsubcat:any;
   public blogList:any;
+  public blog_img:any
+  public blog_image:any;
+  public videourl:any='';
+  public url:"https://www.youtube.com/embed/"
+  // btn_hide:any=false;
+  safeSrc: SafeResourceUrl;
 
 
 
@@ -33,7 +46,7 @@ export class BlogdetailComponent implements OnInit {
       view: "blog_category_view"
       
     }
-    constructor( public apiService: ApiService,public router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService ) { 
+    constructor( public apiService: ApiService,public router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService,private sanitizer: DomSanitizer,public dialog:MatDialog ) { 
       this.blogdetail();
     }
 
@@ -42,141 +55,182 @@ export class BlogdetailComponent implements OnInit {
 // ************* blog details *****************//
     blogdetail(){
       
-      let url:any={};
-      url=this.activatedRoute.snapshot.params.id;
-      console.log(url)
-      console.log( this.activatedRoute.snapshot.params.id)
+  //     let url:any={};
+  //     url=this.activatedRoute.snapshot.params.id;
+  //     console.log(url)
+  //     console.log( this.activatedRoute.snapshot.params.id)
 
-      var data: any = {};
-    data = {
-      source:"blogs_view",
-      endpoint: "datalist",
-      condition:{
-      _id: this.activatedRoute.snapshot.params.id
-    },
+  //     var data: any = {};
+  //   data = {
+  //     source:"blogs_view",
+  //     endpoint: "datalist",
+  //     condition:{
+  //     _id: this.activatedRoute.snapshot.params.id
+  //   },
+  // }
+  //   this.apiService.getTempToken().subscribe((res:any)=>{
+      
+  //     if(res.status == 'success') {
+  //       this.apiService.getDatalistWithToken(data, res).subscribe((res:any)=>{
+
+  //         this.blog = res.res[0];
+  //         console.log('..........>>>>>>>>>>>>>',this.blog)
+
+  //       });
+  //     }
+  //   });
+  this.activatedRoute.data.forEach((data: any) =>{
+    console.log("ts data",data);
+    this.blog = data.blogCatList.res;
+     console.log('+++++++++++++++++>>>>>>>>>>>>>>',this.blog)
+     this.blog_img=this.blog[0].blogs_image[0].basepath+this.blog[0].blogs_image[0].image;
+   
+     console.log(this.blog_img)
+
+      
+    })
   }
-    this.apiService.getTempToken().subscribe((res:any)=>{
-      
-      if(res.status == 'success') {
-        this.apiService.getDatalistWithToken(data, res).subscribe((res:any)=>{
-
-          this.blog = res.res[0];
-          console.log('..........>>>>>>>>>>>>>',this.blog)
-
-        });
-      }
-    });
-
-      
-    }
 
 
 
   ngOnInit() {
-    // this.activatedRoute.data.forEach((data: any) => {
-    //   this.blogList = data;
-    //    console.log('>>>>>>>>>>>>>>',this.blogList)
 
-    // })
-
-
-
+    
+  
      /**api service for blog_catagory by uttam */
-     var datacat:any={};
-     datacat={
-       source:"blog_category",
-       endpoint: "datalist"
-     }
-     this.apiService.getTempToken().subscribe((res:any)=>{
+    //  var datacat:any={};
+    //  datacat={
+    //    source:"blog_category",
+    //    endpoint: "datalist"
+    //  }
+    //  this.apiService.getTempToken().subscribe((res:any)=>{
        
-       if(res.status == 'success') {
-         this.apiService.getDatalistWithToken(datacat, res).subscribe((res2:any)=>{
+    //    if(res.status == 'success') {
+    //      this.apiService.getDatalistWithToken(datacat, res).subscribe((res2:any)=>{
  
-           this.blogcategory = res2.res;
-           console.log('++++++++++++++++++++',this.blogcategory)
+    //        this.blogcategory = res2.res;
+    //        console.log('++++++++++++++++++++',this.blogcategory)
  
-         });
-       }
+    //      });
+    //    }
      
-     });
+    //  });
  
-
 
 
      /**api service for blog_catagory count by uttam */
-     var datacatcount:any={};
-     datacatcount={
-       source:"blog_category",
-       endpoint: "datalist"
-     }
-     this.apiService.getTempToken().subscribe((resc:any)=>{
+    //  var datacatcount:any={};
+    //  datacatcount={
+    //    source:"blog_category",
+    //    endpoint: "datalist"
+    //  }
+    //  this.apiService.getTempToken().subscribe((resc:any)=>{
        
-       if(resc.status == 'success') {
-         this.apiService.getDatalistWithToken(datacatcount, resc).subscribe((res2:any)=>{
+    //    if(resc.status == 'success') {
+    //      this.apiService.getDatalistWithToken(datacatcount, resc).subscribe((res2:any)=>{
  
-           this.blogcategorycount = res2.resc;
-           console.log(this.blogcategorycount)
+    //        this.blogcategorycount = res2.resc;
+    //        console.log(this.blogcategorycount)
  
-         });
-       }
+    //      });
+    //    }
      
-     });
+    //  });
  
  
 
  
      /**api service for sub blog_catagory by uttam */
-     var datacatsearch:any={};
-     datacatsearch={
-       source:"blogs_view",
-       endpoint: "datalist",
+    //  var datacatsearch:any={};
+    //  datacatsearch={
+    //    source:"blogs_view",
+    //    endpoint: "datalist",
       
-     }
-       this.apiService.getTempToken().subscribe((res:any)=>{
-         if(res.status == 'success') {
-           this.apiService.getDatalistWithToken(datacatsearch, res).subscribe((res2:any)=>{
+    //  }
+    //    this.apiService.getTempToken().subscribe((res:any)=>{
+    //      if(res.status == 'success') {
+    //        this.apiService.getDatalistWithToken(datacatsearch, res).subscribe((res2:any)=>{
    
-             this.blogcategorysearch = res2.res;
-             console.log(this.blogcategorysearch)
+    //          this.blogcategorysearch = res2.res;
+    //          console.log(this.blogcategorysearch)
    
-           });
-         }
-       })
-      }
-       panelOpenState = false;
+    //        });
+    //      }
+    //    })
+    //   }
+      //  panelOpenState = false;
 
-       subblog(val:any){
-         console.log('>>>>>>>>>>>')
-         console.log(val);
-         this.blogsubcat=val._id;
-         console.log(this.blogsubcat)
+      //  subblog(val:any){
+      //    console.log('>>>>>>>>>>>')
+      //    console.log(val);
+      //    this.blogsubcat=val._id;
+      //    console.log(this.blogsubcat)
        
-        let data:any;
-        data = {
-          source:"blogs_view",
-          endpoint: "datalist",
-          condition:{
-          _id: val._id
-        },
-      }
-        this.apiService.getTempToken().subscribe((res:any)=>{
+      //   let data:any;
+      //   data = {
+      //     source:"blogs_view",
+      //     endpoint: "datalist",
+      //     condition:{
+      //     _id: val._id
+      //   },
+      // }
+      //   this.apiService.getTempToken().subscribe((res:any)=>{
           
-          if(res.status == 'success') {
-            this.apiService.getDatalistWithToken(data, res).subscribe((res:any)=>{
+      //     if(res.status == 'success') {
+      //       this.apiService.getDatalistWithToken(data, res).subscribe((res:any)=>{
     
-              this.blog = res.res[0];
-              console.log('..........>>>>>>>>>>>>>',this.blog)
+      //         this.blog = res.res[0];
+      //         console.log('..........>>>>>>>>>>>>>',this.blog)
     
-            });
-          }
-        });
+      //       });
+      //     }
+      //   });
 
 
-       }
+      //  }
   
  
      
 
     
+  }
 
+  openvideourl(val: any){
+    console.log(val)
+    let url:any;
+     url="https://www.youtube.com/embed/";
+      console.log('video url....>',url+val);
+      this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(url + val);
+      
+      console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
+      const dialogRef = this.dialog.open(VideoModalComponent, {
+        // panelClass:['modal-md','success-modal'],
+       
+        width:'450px',
+        data:this.safeSrc,
+        
+        
+       
+        
+  
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        
+      });
+
+  }
 }
+
+
+@Component({
+  selector:'app-videomodal',
+  templateUrl:'./videomodal.html'
+})
+export class VideoModalComponent {
+  constructor( public dialogRef: MatDialogRef<VideoModalComponent>,
+               @Inject(MAT_DIALOG_DATA) public data: DialogData){
+
+  }
+}
+

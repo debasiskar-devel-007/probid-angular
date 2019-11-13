@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router, Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Router, Resolve, ActivatedRouteSnapshot, RouterStateSnapshot,ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ApiService } from './api.service';
 import { CookieService } from 'ngx-cookie-service';
@@ -14,7 +14,7 @@ export interface EndpointComponent {
 
 export class ResolveService implements Resolve<any> {
     public userid: any;
-    constructor(private _apiService: ApiService, public cookieservice: CookieService) {
+    constructor(private _apiService: ApiService, public cookieservice: CookieService , public activedrouter:ActivatedRoute) {
         if (this.cookieservice.get('userid') != null)
             this.userid = this.cookieservice.get('userid');
     }
@@ -23,10 +23,17 @@ export class ResolveService implements Resolve<any> {
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
 
-        // let _id = route.params['id'];
+        let _id = route.params['id'];
         // console.log(_id)
-        console.log('resolve route data');
-        console.log(route.data);
+        // console.log('resolve route data');
+        // console.log(route.data);
+        console.log("soureshhh",route);
+        if (route.data.requestcondition.condition._id == 'id') {
+            console.log('++++++++++++++')
+            route.data.requestcondition.condition._id = _id;
+            delete route.data.requestcondition.condition.id;
+            console.log(route.data.requestcondition.condition)
+        }
         console.log(state); 
         var endpoint = route.data.link;
         var source = route.data.source;
@@ -34,10 +41,20 @@ export class ResolveService implements Resolve<any> {
         var requestData: any = route.data.requestcondition;
 
         if (route.data.requestcondition.trainingcategory != null) {
+            console.log(requestData)
             requestData.trainingcategory = route.params.cid;
             requestData.userid = this.userid;
-        } else
+            console.log( requestData.userid)
+        } else {
             requestData.condition = Object.assign(requestData.condition, route.params);
+            delete route.data.requestcondition.condition.id;
+            console.log('route.data');
+            console.log(route.data)
+            console.log(requestData.condition)
+            if(route.url[0].path == 'blogdetail') {
+                route.data.requestcondition.condition._id_object = route.params['id'] ;
+              
+            }
             return new Promise((resolve) => {
                 this._apiService.getDatalistForResolve(route.data).subscribe(api_object =>{
                     if (api_object) {
@@ -49,6 +66,11 @@ export class ResolveService implements Resolve<any> {
                 })
     
             });
+            }
+
+
+
+
 
 
         //old code

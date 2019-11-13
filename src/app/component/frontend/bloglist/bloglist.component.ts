@@ -88,6 +88,7 @@ export class BloglistfrontendComponent implements OnInit {
           // if(this.videourl != ''){
            
           
+          
             
             // return this.videourl;
           // }
@@ -197,7 +198,7 @@ export class BloglistfrontendComponent implements OnInit {
       console.log('video url....>',url+val);
       this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(url + val);
       
-      console.log(this.safeSrc)
+      console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
       const dialogRef = this.dialog.open(CommonVideoModalComponent, {
         // panelClass:['modal-md','success-modal'],
        

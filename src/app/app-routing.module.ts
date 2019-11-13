@@ -159,8 +159,9 @@ const routes: Routes = [
 
 
   { path: 'blogdetail/:id', component: BlogdetailComponent,resolve: { blogCatList: ResolveService },
-  data: { requestcondition: { source: 'blog_view', condition: {} }, endpoint: 'datalist' } },
+  data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalistwithouttoken' } },
 
+  
 
   { path: 'advance-inventory-search', component: AdvanceInventorySearchComponent },
   { path: 'basic-inventory-search', component: BasicInventorySearchComponent },

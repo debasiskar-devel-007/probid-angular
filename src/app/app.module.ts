@@ -43,7 +43,7 @@ import { TesimonialComponent } from './component/frontend/tesimonial/tesimonial.
 import { TesimoniallistComponent } from './component/frontend/tesimoniallist/tesimoniallist.component';
 
 import { BlogComponent } from './component/frontend/blog/blog.component';
-import { BlogdetailComponent } from './component/frontend/blogdetail/blogdetail.component';
+import { BlogdetailComponent, VideoModalComponent} from './component/frontend/blogdetail/blogdetail.component';
 
 import { AdvanceInventorySearchComponent } from './component/frontend/advance-inventory-search/advance-inventory-search.component';
 import { BasicInventorySearchComponent } from './component/frontend/basic-inventory-search/basic-inventory-search.component';
@@ -237,6 +237,7 @@ import { AddCustomerComponent } from './component/backend/add-customer/add-custo
     CustomerSignupComponent,
     AddSalesrepComponent,
     CommonVideoModalComponent,
+    VideoModalComponent,
     AddCustomerComponent,
   ],
   imports: [
@@ -279,7 +280,7 @@ import { AddCustomerComponent } from './component/backend/add-customer/add-custo
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [CommonVideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog]
+  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog]
 })
 export class AppModule { }
 
