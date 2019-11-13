@@ -1,10 +1,10 @@
-<!-- <app-header></app-header>
-<form [formGroup]="addcustomerForm"  (ngSubmit)="addcustomerFormSubmit()">
+<app-header></app-header>
+<form [formGroup]="addbirddogForm"  (ngSubmit)="addbirddogFormSubmit()">
 
         <mat-form-field>
           <input matInput type="text" placeholder="First Name" formControlName="firstname" (blur)="inputUntouched('firstname')">
           <mat-error
-            *ngIf="!addcustomerForm.controls['firstname'].valid && addcustomerForm.controls['firstname'].errors.required && addcustomerForm.controls['firstname'].touched">
+            *ngIf="!addbirddogForm.controls['firstname'].valid && addbirddogForm.controls['firstname'].errors.required && addbirddogForm.controls['firstname'].touched">
             First Name field can not be blank</mat-error>
         </mat-form-field>
   
@@ -12,51 +12,70 @@
         <mat-form-field>
           <input matInput type="text" placeholder="Last Name" formControlName="lastname" (blur)="inputUntouched('lastname')">
           <mat-error
-            *ngIf="!addcustomerForm.controls['lastname'].valid && addcustomerForm.controls['lastname'].errors.required && addcustomerForm.controls['lastname'].touched">
+            *ngIf="!addbirddogForm.controls['lastname'].valid && addbirddogForm.controls['lastname'].errors.required && addbirddogForm.controls['lastname'].touched">
             Last Name field can not be blank</mat-error>
         </mat-form-field>
   
         <mat-form-field>
           <input matInput type="text" placeholder="Email" formControlName="email" (blur)="inputUntouched('email')">
           <mat-error
-            *ngIf="!addcustomerForm.controls['email'].valid && addcustomerForm.controls['email'].errors.required && addcustomerForm.controls['email'].touched">
+            *ngIf="!addbirddogForm.controls['email'].valid && addbirddogForm.controls['email'].errors.required && addbirddogForm.controls['email'].touched">
             Email field can not be blank</mat-error>
-          <mat-error *ngIf="!addcustomerForm.controls['email'].valid && !addcustomerForm.controls['email'].errors.required">Email is
+          <mat-error *ngIf="!addbirddogForm.controls['email'].valid && !addbirddogForm.controls['email'].errors.required">Email is
             not valid</mat-error>
         </mat-form-field>
   
         <mat-form-field>
           <input matInput type="text" placeholder="Phone Number" formControlName="phone" (blur)="inputUntouched('phone')">
           <mat-error
-            *ngIf="!addcustomerForm.controls['phone'].valid && addcustomerForm.controls['phone'].errors.required && addcustomerForm.controls['phone'].touched">
+            *ngIf="!addbirddogForm.controls['phone'].valid && addbirddogForm.controls['phone'].errors.required && addbirddogForm.controls['phone'].touched">
             Phone Number field can not be blank</mat-error>
         </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="User Name" formControlName="username" (blur)="inputUntouched('username')">
+          <mat-error
+            *ngIf="!addbirddogForm.controls['username'].valid && addbirddogForm.controls['username'].errors.required && addbirddogForm.controls['username'].touched">
+            username Number field can not be blank</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Assign SalesRep</mat-label>
+          <mat-select formControlName="assign_salesref" (blur)="inputUntouched('assign_salesref')">
+            <mat-option *ngFor="let salesr of salesref_list" [value]="salesr._id">
+              {{salesr.fullname}}
+            </mat-option>
+          </mat-select>
+          <mat-error
+              *ngIf="!addbirddogForm.controls['state'].valid && addbirddogForm.controls['state'].errors.required && addbirddogForm.controls['state'].touched">
+              Sales Reference field can not be blank</mat-error>
+        </mat-form-field>
         
-        <mat-form-field *ngIf="addcustomerForm.controls['id'].value==null">
+        <mat-form-field *ngIf="addbirddogForm.controls['id'].value==null">
           <input matInput placeholder="Password" type="password" formControlName="password" (blur)="inputUntouched('password')">
           <mat-error
-            *ngIf="!addcustomerForm.controls['password'].valid && addcustomerForm.controls['password'].errors.required && addcustomerForm.controls['password'].touched">
+            *ngIf="!addbirddogForm.controls['password'].valid && addbirddogForm.controls['password'].errors.required && addbirddogForm.controls['password'].touched">
             Password field can not be blank</mat-error> 
         </mat-form-field>
 
-        <mat-form-field *ngIf="addcustomerForm.controls['id'].value==null">
+        <mat-form-field *ngIf="addbirddogForm.controls['id'].value==null">
         <input matInput placeholder="Confirm Password" type="password" formControlName="conpass" (blur)="inputUntouched('conpass')">
-        <mat-error  *ngIf="!addcustomerForm.controls['conpass'].valid && addcustomerForm.controls['conpass'].errors.required && addcustomerForm.controls['conpass'].touched">
+        <mat-error  *ngIf="!addbirddogForm.controls['conpass'].valid && addbirddogForm.controls['conpass'].errors.required && addbirddogForm.controls['conpass'].touched">
             Confirm Password field can not be blank</mat-error>
-        <mat-error *ngIf="!addcustomerForm.controls['conpass'].valid && addcustomerForm.controls['conpass'].touched">Password does not match </mat-error>
+        <mat-error *ngIf="!addbirddogForm.controls['conpass'].valid && addbirddogForm.controls['conpass'].touched">Password does not match </mat-error>
         </mat-form-field>
 
           <mat-form-field>
             <input matInput placeholder="Address" type="text" formControlName="address" (blur)="inputUntouched('address')">
             <mat-error
-              *ngIf="!addcustomerForm.controls['address'].valid && addcustomerForm.controls['address'].errors.required && addcustomerForm.controls['address'].touched">
+              *ngIf="!addbirddogForm.controls['address'].valid && addbirddogForm.controls['address'].errors.required && addbirddogForm.controls['address'].touched">
               Address field can not be blank</mat-error>
           </mat-form-field>
 
           <mat-form-field>
             <input matInput placeholder="Zip Code" type="text" formControlName="zip" (blur)="inputUntouched('zip')">
             <mat-error
-              *ngIf="!addcustomerForm.controls['zip'].valid && addcustomerForm.controls['zip'].errors.required && addcustomerForm.controls['zip'].touched">
+              *ngIf="!addbirddogForm.controls['zip'].valid && addbirddogForm.controls['zip'].errors.required && addbirddogForm.controls['zip'].touched">
               Zip field can not be blank</mat-error>
           </mat-form-field>
 
@@ -68,7 +87,7 @@
               </mat-option>
             </mat-select>
             <mat-error
-              *ngIf="!addcustomerForm.controls['city'].valid && addcustomerForm.controls['city'].errors.required && addcustomerForm.controls['city'].touched">
+              *ngIf="!addbirddogForm.controls['city'].valid && addbirddogForm.controls['city'].errors.required && addbirddogForm.controls['city'].touched">
               City field can not be blank</mat-error>
           </mat-form-field>
           
@@ -81,7 +100,7 @@
               </mat-option>
             </mat-select>
             <mat-error
-                *ngIf="!addcustomerForm.controls['state'].valid && addcustomerForm.controls['state'].errors.required && addcustomerForm.controls['state'].touched">
+                *ngIf="!addbirddogForm.controls['state'].valid && addbirddogForm.controls['state'].errors.required && addbirddogForm.controls['state'].touched">
                 State field can not be blank</mat-error>
           </mat-form-field>
 
@@ -89,4 +108,4 @@
               <button mat-raised-button class="btn-lg">Submit</button>
           </span>
 </form>
-<app-footer></app-footer> -->
+<app-footer></app-footer>
