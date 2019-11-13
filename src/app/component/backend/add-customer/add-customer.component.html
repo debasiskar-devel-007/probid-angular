@@ -1,4 +1,10 @@
-<app-header></app-header>
+<div class="adminwrappercls">
+    <app-header></app-header>
+      <div class="main-content-wrap">
+        <mat-card class="generalcls blog" style="padding: 0 !important;">  
+          <mat-card-title class="editprofiletitle">Add Salesrep</mat-card-title>
+        </mat-card>
+      </div>
 <form [formGroup]="addcustomerForm"  (ngSubmit)="addcustomerFormSubmit()">
 
         <mat-form-field>
@@ -85,13 +91,9 @@
                 State field can not be blank</mat-error>
           </mat-form-field>
 
-          <span class="bottompart">
-              <!-- [checked]="myModel" -->
-              <mat-checkbox formControlName="check">
-                <label>Accept Terms And Conditions</label>
-                <mat-label *ngIf="term_msg!=true">{{term_msg}}</mat-label>
-              </mat-checkbox>
+          <span class="bottompart">           
               <button mat-raised-button class="btn-lg">Submit</button>
           </span>
-</form>
+      </form>
+</div>
 <app-footer></app-footer>

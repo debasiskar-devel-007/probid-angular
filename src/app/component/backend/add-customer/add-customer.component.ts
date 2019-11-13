@@ -12,7 +12,6 @@ export class AddCustomerComponent implements OnInit {
   public addcustomerForm: FormGroup;
   public stateList: any;
   public cityList: any;
-  public term_msg: any = '';
   @ViewChild(FormGroupDirective) formDirective: FormGroupDirective;
   constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog) { 
     /**genarate Add-customer form */
@@ -28,7 +27,6 @@ export class AddCustomerComponent implements OnInit {
       address: [null, Validators.required],
       password: [null, Validators.required],
       conpass: [null, Validators.required],
-      check: [false, Validators.required],
       type: ["customer"],
       status:1
     }, {
@@ -81,12 +79,9 @@ export class AddCustomerComponent implements OnInit {
       if(this.addcustomerForm.value.id==null){
         delete this.addcustomerForm.value.id;
       }
-      /**check term and codition */
-      if (this.addcustomerForm.value.check == true) {
-
-        if (this.addcustomerForm.value.conpass != null) {
+          if (this.addcustomerForm.value.conpass != null) {
           delete this.addcustomerForm.value.conpass;
-          delete this.addcustomerForm.value.check;
+
         }
         //console.log(this.addcustomerForm.value);
 
@@ -104,10 +99,7 @@ export class AddCustomerComponent implements OnInit {
           }
           
         })
-      }
-    }
-    else {
-      this.term_msg = 'Please Accept Terms And Conditions';
+    
     }
   }
 

@@ -3,7 +3,24 @@
       <div class="main-content-wrap">
         <mat-card class="generalcls blog" style="padding: 0 !important;">  
             <img src="../../../../assets/images/customerlists-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
-        </mat-card>
+        
+        <span class="searchblock">
+            <span class="searchblockwrapper">
+              <span>
+                <h2>customer list</h2>
+              </span>
+              <span>
+                  
+                  <button mat-button class="btnorange sim-button" [routerLink]="['/add-customer']"><i class="material-icons">add</i> Add customer</button>
+
+         
+              </span>
+                
+            </span>
+              
+              <!-- <img src="../../../../assets/images/admin-manage-type_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+          </span>
+
         <div class="tablediv customertablediv">
 
             <lib-listing *ngIf="pendingmodelapplicationarray!=null && pendingmodelapplicationarray.length>0" 
@@ -21,6 +38,7 @@
               [searchendpoint]="searchendpoint"></lib-listing>
               
               </div>
+            </mat-card>
       </div>
   </div>
 <app-footer></app-footer>

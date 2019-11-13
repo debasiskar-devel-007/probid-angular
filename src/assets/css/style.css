@@ -266,20 +266,6 @@ max-width: 100%; margin: 0 auto;}
 .generalcls .quatation p {font-size: 16px !important;font-size: 'Helvetica-Normal';color:#858686;display: block;display: -webkit-box; max-width: 100%; margin: 0 auto;overflow: hidden; text-overflow: ellipsis; display: -webkit-box; line-height: 18px; max-height: 90px; -webkit-line-clamp: 5; -webkit-box-orient: vertical;}
 
 .generalcls.blog .mat-card-title {
-    /* font-size: 24px!important;
-    line-height: normal!important;
-    justify-content: space-between;
-    margin-bottom: 15px!important;
-    margin-top: 15px!important;
-    text-transform: capitalize;
-    display: -webkit-box;
-    max-width: 100%;
-    height: 48px;
-    margin: 0 auto;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis; */
     display: block;
     display: -webkit-box;
     max-width: 100%;
@@ -293,7 +279,7 @@ max-width: 100%; margin: 0 auto;}
     text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
     -ms-text-overflow: ellipsis;
-    font-size: 24px!important;
+    font-size: 24px !important;
     line-height: normal!important;
     justify-content: space-between;
     margin-bottom: 15px!important;
@@ -357,8 +343,7 @@ display:block !important;
 .bottom_blog .item_wrapper .item .next_page{ color:#21c4e1; text-align: left; display: block;}
 .bottom_blog .item_wrapper .item .next_page:hover i{width:35px;transition:all 500ms;background:#1299de;color:#fff;}
 .readmore{color:#ffffff;margin-left:auto;display:flex;background:#1299e1;width:150px;text-align:center;align-items:center;justify-content:center;font-family:'HelveticaBold';font-size:17px;}
-.bottom_blog .item_wrapper .item .contentsection .description{color:#838383;line-height:24px;font-size:16px;overflow: hidden; text-overflow: ellipsis;display: -webkit-box;line-height: 18px;
-    max-height: 90px;  -webkit-line-clamp: 5;-webkit-box-orient:vertical;}
+.bottom_blog .item_wrapper .item .contentsection .description{color:#838383;line-height:24px;font-size:16px;overflow: hidden; text-overflow: ellipsis;display: -webkit-box;line-height: 18px; min-height: 90px;  -webkit-line-clamp: 5;-webkit-box-orient:vertical;}
 .bloglistinner {display: flex;flex-wrap: wrap;justify-content: space-between;}
 .bloglistswrapper{display: flex; flex-wrap: wrap; flex: 1 1 60%;}
 .bloglistswrapper .bottom_blog {width: 100%;}
@@ -434,6 +419,7 @@ display:block !important;
   } */
 .mat-paginator .mat-form-field-appearance-legacy .mat-form-field-infix {
     padding: 13px 3px !important;
+    margin-bottom: 0;
 }
 
 .search-sec{
@@ -443,17 +429,25 @@ display:block !important;
 }
 
 .search-sec .example-form {
-    min-width: 270px;
-    max-width: 500px;
-    width: 100%;
+    width: 100%;    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     background: #ffffff;
-    border: 1px solid #e2ecee;
   }
 
   .search-sec .example-form .mat-form-field-appearance-legacy .mat-form-field-infix {
     padding: 6px!important;
     background: #fff;
     margin-bottom: 0;
+    font-family: 'Helvetica-Normal';
+    color:#636363;
+    font-size:16px !important;
+    line-height: normal !important;
+    min-width: 150px;
+    max-width: 170px;
+    width: 100%;
+    background: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -471,6 +465,7 @@ display:block !important;
 
   .search-sec .example-form .mat-form-field-appearance-legacy .mat-form-field-infix input{
       line-height: normal;
+      padding-right: 6px;
   }
   .search-sec .mat-search-bar{
     margin-right: .5%;
@@ -479,16 +474,20 @@ display:block !important;
   .search-sec .example-full-width {
     width: 100%;
     display: flex;
-    align-items: stretch;
-    background: #65d3e7;
+    align-items: stretch;    
+    border: 1px solid #e2ecee;
+    margin-left: 10px;    
   }
 
   .blogdetail .mat-card-content .inner_header.mat-card-title {
     text-transform: uppercase;
     margin-top: 0px!important;
     height: auto!important;
-}
+  }
 
+  .tabwrapper .mainwrappercontent .mat-list-base {
+    padding-top: 0;
+}
 
 @media screen and (max-width: 768px){
     .bottom_blog .item_wrapper { display: flex; flex-wrap: wrap; justify-content: center;}

@@ -23,7 +23,7 @@ i{font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line
 .userwrapper{width:36px;height:36px;border-radius:50%;min-width:inherit;line-height:36px}
 
 .mat-card{background:#fff!important}
-.mat-dialog-content{padding:10px!important;border-radius:0;overflow:hidden!important}
+.mat-dialog-content{padding:10px!important;border-radius:0;overflow:hidden!important; overflow-y: scroll !important;}
 .mat-dialog-content .mat-dialog-title{background-color:#4f4f4f;border:0;padding:.35em;color:#fff}
 .mat-dialog-content .mat-card{transition:none!important;display:flex!important;position:relative;padding:5px;border-radius:0;align-items:center}
 .mat-dialog-content .mat-card .mat-card-header{white-space:normal;word-break:break-word}
@@ -37,8 +37,17 @@ i{font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line
 .mat-bottom-sheet-container bottom-sheet .mat-nav-list{text-align:center}
 .mat-dialog-container .mat-dialog-actions button{display:inline-block;height:auto;background:#c33;font-size:18px;color:#fff!important;text-transform:uppercase;font-family:'Ralewaybold';text-decoration:none!important;line-height:normal;text-align:center;margin:0 auto;white-space:normal;margin-top:10px;padding:12px 10px;border-radius:0!important}
 .mat-dialog-container .mat-card-header .mat-card-title{margin-bottom:0;font-size:16px;font-weight:600}
-.mat-dialog-content{padding:0 24px!important;box-shadow:none!important}
+.mat-dialog-content{padding:0 24px!important;box-shadow:none!important; max-height: 100%;}
 .mat-form-field{margin:0 10px}
+.form_floating_div{width:100%;}
+admin-add-categories .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 1em !important;
+  background: transparent !important;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .admcls .mat-card{padding:0!important;border-radius:0!important;box-shadow:none}
 .admcls .header{position:fixed;width:100%;height:63px;box-shadow:0 1px 15px rgba(0,0,0,0.04),0 1px 6px rgba(0,0,0,0.04);display:flex;align-items:stretch;flex-wrap:wrap;justify-content:space-between;background:#fafafa;z-index:100}
@@ -274,12 +283,12 @@ text-transform: uppercase!important; font-family: 'Ralewaybold'; text-decoration
 .formfilterdiv {margin-top: -10% !important;}
 .formfilterdiv .container{width: 100%;}
 
-.tablediv{margin-top: -63px;}
+.tablediv{margin-top: -73px;}
 .tablediv .searchbar {padding-right: 173px;flex-direction: row-reverse; justify-content: inherit !important;}
 .tablediv .searchbar .mat-form-field{z-index: 99; position: relative;}
 .tablediv .mat-form-field-flex {align-items: stretch;}
 .tablediv table td span .material-icons{color: #4f5051 !important;}
-.tablediv .mat-form-field-appearance-legacy .mat-form-field-infix{height: 40px;    line-height: 25px; padding: 10px 5px;}
+.tablediv .mat-form-field-appearance-legacy .mat-form-field-infix{height: 39px; line-height: normal; padding: 10px 5px;}
 .tablediv table .actionnewbtn span{cursor:pointer;}
 .tablediv.trainingtablediv{margin-top:0px !important;}
 .tablediv.trainingtablediv table {margin-top: 27px;}
@@ -343,6 +352,65 @@ float: left;}
 .breadcrumb li a:hover:after { border-left-color: #b5bdbf !important; }  
 
 app-bk-leftdiv{position: relative; z-index: 999;}
+
+
+
+
+.adm_inner_banner{background: url("../images/managetype_banner.jpg") no-repeat center center;
+    background-size: cover; border-top-left-radius: 10px; border-top-right-radius: 10px; padding: 50px; padding-right: 45%; }
+    .generalcls.blog .adm_inner_banner .adm_inner_title.mat-card-title{ font-size: 48px !important; color: #fff !important; font-family: "HelveticaBold"; text-transform: uppercase !important;text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);  }
+      .adm_inner_banner .adm_inner_para{ font-size: 24px; color: #ffffff; font-family: "HelveticaBold"; margin: 0;text-shadow: 3px 2px 3px rgba(255,255,255,.2); width: 80%;}
+
+    .adm_inner_banner.managemake {background: url("../images/managemake_banner.jpg") no-repeat center center !important; background-size: cover !important;}
+    .adm_inner_banner.managemodel {background: url("../images/managemodel_banner.jpg") no-repeat center center !important; background-size: cover !important;}
+    .adm_inner_banner.manageyear {background: url("../images/manageyear_banner.jpg") no-repeat center center !important; background-size: cover !important;}
+    .adm_inner_banner.manageblog {background: url("../images/manageblog_banner.jpg") no-repeat center center !important; background-size: cover !important;}
+    .adm_inner_banner.testimoniallistsadmin {background: url("../images/testimoniallistsadmin_banner.jpg") no-repeat center center !important; background-size: cover !important;}
+    .adm_inner_banner.managelession {background: url("../images/managelession_banner.jpg") no-repeat center center !important; background-size: cover !important;}
+    .adm_inner_banner.managetraining {background: url("../images/managetraining_banner.jpg") no-repeat center center !important; background-size: cover !important;}
+  
+    .bred_cram_wrapper{ background: #DDE2E5; display: flex!important;  padding: 8px; align-items: stretch; }
+  .bred_cram_wrapper a{ background: #b5bdbf;
+    background: #b5bdbf;
+    display: flex!important;
+    color: #252525;
+    padding: 8px 20px;
+    text-decoration: none;
+    margin: 0;
+    width: auto;
+    justify-content: center;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-family: "Helvetica-Normal";
+  }
+  .activebread{
+    background: #fff!important;
+    color: #000!important;
+    position: relative;
+  }
+  .activebread::before{
+    content: '';
+    width: 15px;
+    height: 100%;
+    background: #B5BDBF;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  }
+  .activebread::after{
+    content: '';
+    width: 15px;
+    height: 100%;
+    background: #FFFFFF;
+    display: inline-block;
+    position: absolute;
+    right: -15px;
+    top: 0;
+    clip-path: polygon(0 0, 0% 100%, 100% 54%);
+  }
+  
 
 
 @media only screen and (max-width: 1760px) {

@@ -89,6 +89,7 @@ import { ListingBlogsComponent } from './component/backend/blogs/listing-blogs/l
 import { MyAccountComponent } from './component/backend/my-account/my-account.component';
 import { AddSalesrepComponent } from './component/backend/add-salesrep/add-salesrep.component';
 import { AddCustomerComponent } from './component/backend/add-customer/add-customer.component';
+import { AddBirddogComponent } from './component/backend/add-birddog/add-birddog.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -347,8 +348,13 @@ const routes: Routes = [
   { path: 'training-center-rep', component: TrainingCenterComponent },
   { path: 'my-account', component: MyAccountComponent },
   { path: 'add-salesrep', component: AddSalesrepComponent },
+  { path: 'editsalesref/:_id', component: AddSalesrepComponent },
   {path:'add-customer',component:AddCustomerComponent},
   {path:'editcustomer/:_id',component:AddCustomerComponent},
+  
+  {path:'add-birddog',component:AddBirddogComponent,resolve: { salesreflist: ResolveService },
+  data: { requestcondition: { source: 'user_view', condition: {"type": "salesref"} },endpoint: 'datalist',canActivate: [AuthGuard]}},
+  {path:'editbirddog/:_id',component:AddBirddogComponent},
 
   /**End Backend Routing**/
 

@@ -6,28 +6,37 @@
                     <span class="modalttitlewrapper">
                             <form [formGroup]="addType" (ngSubmit)="addTypeSubmit()">
                         <div mat-dialog-content>
-
-                            <mat-form-field>
-                                <label>Name:</label>
-                                <input matInput  formControlName="added_on">
+                            <mat-form-field class="form-group">
+                                <span class="form_floating_div">
+                                    <span class="col-sm-4 formlabel"><label>Name:</label></span>
+                                    <span class="col-sm-8"> <input matInput  formControlName="added_on" placeholder="Name"></span>                               
+                                </span>
                             </mat-form-field>
-
-                            <mat-form-field>                
-                                    <label>Type Name:</label>
-                                    <input matInput  formControlName="TypeName">
-                                </mat-form-field>
-                            <mat-form-field>
-                                    <label>Cars Number:</label>
-                                <input matInput formControlName="Cars">
+                            <mat-form-field class="form-group">
+                                    <span class="form_floating_div">
+                                        <span class="col-sm-4 formlabel"><label>Type Name:</label></span>
+                                        <span class="col-sm-8"> <input matInput  formControlName="TypeName"></span>                               
+                                    </span>
                             </mat-form-field>
-                            <mat-form-field>
-                                    <label>Status:</label>
-                                    <mat-label>Select an option</mat-label>
-                                    <mat-select formControlName="status">
-                                    <mat-option value="1">Active </mat-option>
-                                    <mat-option value="0">InActive </mat-option>
-                                    <mat-option value="2">Pending </mat-option>
-                                    </mat-select>
+                            <mat-form-field class="form-group">
+                                    <span class="form_floating_div">
+                                        <span class="col-sm-4 formlabel"><label>Cars Number:</label></span>
+                                        <span class="col-sm-8"> <input matInput  formControlName="Cars"></span>                               
+                                    </span>
+                            </mat-form-field>
+                            <mat-form-field class="form-group">
+                                    <span class="form_floating_div">
+                                        <span class="col-sm-4 formlabel"><label>Status:</label></span>
+                                        <span class="col-sm-8"> 
+                                                <!-- <mat-label></mat-label> -->
+                                                <mat-select formControlName="status">
+                                                <mat-option >Select an option </mat-option>
+                                                <mat-option value="1">Active </mat-option>
+                                                <mat-option value="0">InActive </mat-option>
+                                                <mat-option value="2">Pending </mat-option>
+                                                </mat-select>
+                                        </span>                               
+                                    </span>    
                             </mat-form-field>
                         </div>
                         <div mat-dialog-actions>

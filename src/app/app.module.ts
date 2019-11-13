@@ -142,6 +142,7 @@ import { ListingBlogsComponent } from './component/backend/blogs/listing-blogs/l
 import { MyAccountComponent } from './component/backend/my-account/my-account.component';
 import { AddSalesrepComponent } from './component/backend/add-salesrep/add-salesrep.component';
 import { AddCustomerComponent } from './component/backend/add-customer/add-customer.component';
+import { AddBirddogComponent } from './component/backend/add-birddog/add-birddog.component';
 
 //****** for video Modal*********//
 
@@ -239,6 +240,7 @@ import { AddCustomerComponent } from './component/backend/add-customer/add-custo
     CommonVideoModalComponent,
     VideoModalComponent,
     AddCustomerComponent,
+    AddBirddogComponent,
   ],
   imports: [
     NewsTitleModule,
