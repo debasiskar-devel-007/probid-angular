@@ -263,7 +263,7 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
 max-width: 100%; margin: 0 auto;}
 .generalcls .quatation p{display: inline-block !important; width: 100%;}
 
-.generalcls .quatation p {font-size: 16px !important;font-size: 'Helvetica-Normal';color:#858686;display: block;display: -webkit-box; max-width: 100%; margin: 0 auto;overflow: hidden; text-overflow: ellipsis; display: -webkit-box; line-height: 18px; max-height: 90px; -webkit-line-clamp: 5; -webkit-box-orient: vertical;}
+.generalcls .quatation p {font-size: 16px !important;font-size: 'Helvetica-Normal';color:#858686;display: block;display: -webkit-box; max-width: 100%; margin: 0 auto;overflow: hidden; text-overflow: ellipsis; display: -webkit-box; line-height: 18px; max-height:86px; -webkit-line-clamp: 5; -webkit-box-orient: vertical;}
 
 .generalcls.blog .mat-card-title {
     display: block;
@@ -343,7 +343,7 @@ display:block !important;
 .bottom_blog .item_wrapper .item .next_page{ color:#21c4e1; text-align: left; display: block;}
 .bottom_blog .item_wrapper .item .next_page:hover i{width:35px;transition:all 500ms;background:#1299de;color:#fff;}
 .readmore{color:#ffffff;margin-left:auto;display:flex;background:#1299e1;width:150px;text-align:center;align-items:center;justify-content:center;font-family:'HelveticaBold';font-size:17px;}
-.bottom_blog .item_wrapper .item .contentsection .description{color:#838383;line-height:24px;font-size:16px;overflow: hidden; text-overflow: ellipsis;display: -webkit-box;line-height: 18px; min-height: 90px;  -webkit-line-clamp: 5;-webkit-box-orient:vertical;}
+.bottom_blog .item_wrapper .item .contentsection .description{color:#838383;line-height:24px;font-size:16px;overflow: hidden; text-overflow: ellipsis;display: -webkit-box;line-height: 18px; min-height: 86px;  -webkit-line-clamp: 5;-webkit-box-orient:vertical;}
 .bloglistinner {display: flex;flex-wrap: wrap;justify-content: space-between;}
 .bloglistswrapper{display: flex; flex-wrap: wrap; flex: 1 1 60%;}
 .bloglistswrapper .bottom_blog {width: 100%;}
