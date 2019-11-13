@@ -27,7 +27,7 @@ export class TesimonialComponent implements OnInit {
         nav: true,
       },
       600: {
-        items: 2,
+        items: 1,
         autoplay: true,
         autoplayTimeout: 6000,
         autoplayHoverPause: true,
@@ -36,7 +36,7 @@ export class TesimonialComponent implements OnInit {
         nav: true,
       },
       991: {
-        items: 3,
+        items: 1,
         autoplay: true,
         autoplayTimeout: 6000,
         autoplayHoverPause: true,
