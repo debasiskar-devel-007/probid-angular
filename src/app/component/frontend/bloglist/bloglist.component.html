@@ -70,18 +70,18 @@
                 <mat-accordion class="category">
                         <mat-expansion-panel  (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let item of blogcategory">
                           <mat-expansion-panel-header >
-                            <mat-panel-title  >
-                                {{item.blogtitle}} &nbsp;
+                            <mat-panel-title (click)="openblog(item._id)" >
+                                {{item.blogtitle}} ({{item.blogcount}}) &nbsp;
                               <!-- <h4 >({{count}})</h4> -->
                             </mat-panel-title>                           
                           </mat-expansion-panel-header>
 
 
 
-                          <ng-container *ngFor="let itemVal of bloglisting">                            
-                              <span *ngIf="itemVal.blogcategory == item.blogtitle"> 
-                                <div class="categorysub" (click)="blog(itemVal)"  [ngClass]="{'active': itemVal._id == blogcat }">   
-                                  <h5 class="inner_header">{{itemVal.blogtitle}}</h5>
+                          <ng-container>                            
+                              <span > 
+                                <div class="categorysub" (click)="blog()"  [ngClass]="{'active': blogcat }">   
+                                  <h5 class="inner_header"></h5>
                                 </div>
                               </span>
                          </ng-container>                        

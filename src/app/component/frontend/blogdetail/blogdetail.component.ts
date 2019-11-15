@@ -189,8 +189,6 @@ export class BlogdetailComponent implements OnInit {
 
       //  }
   
- 
-     
 
     
   }
@@ -208,9 +206,7 @@ export class BlogdetailComponent implements OnInit {
        
         width:'450px',
         data:this.safeSrc,
-        
-        
-       
+      
         
   
       });
