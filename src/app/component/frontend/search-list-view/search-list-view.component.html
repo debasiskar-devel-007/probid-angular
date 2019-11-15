@@ -1,5 +1,4 @@
-
- <mat-card class="searchlistblock" *ngIf=" router.url ==='/pre-owned-list'">
+<mat-card class="searchlistblock" *ngIf=" router.url ==='/pre-owned-list'">
   <app-header></app-header>
   <mat-card class="innerpagebanner preownedlistbg">
     <span class="mainwrappercontent">
@@ -8,105 +7,114 @@
       </mat-card-content>
     </span>
   </mat-card>
-  <!-- <mat-card class="innerpagetitle">
+  <mat-card class="innerpagetitle">
     <span class="mainwrappercontent">
-      <mat-card-content>
-        <h2>pre owned list</h2>
+      <mat-card-content class="bred_cram_wrapper">
+        <mat-list class="bred_cram_wrapper_list">
+          <mat-list-item routerLinkActive="active">
+            <a [routerLink]="'/home'"> home </a>
+            <span class="breadcrumb__divider" aria-hidden="true">›</span>
+          </mat-list-item>
+          <mat-list-item routerLinkActive="active activebread">
+            <a [routerLink]="'/pre-owned-list'"> pre owned list </a>
+            <span class="breadcrumb__divider" aria-hidden="true">›</span>
+          </mat-list-item>
+        </mat-list>
       </mat-card-content>
     </span>
-  </mat-card> -->
-  
-  <mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">    
-      <!-- <span class="mainwrappercontent"> 
+  </mat-card>
+
+  <mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">
+    <!-- <span class="mainwrappercontent"> 
         <p>
             pre owned list
         </p>
       </span> -->
-      <img src="../../../../assets/images/searchlist-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+    <img src="../../../../assets/images/searchlist-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
   </mat-card>
-  
+
   <app-footer></app-footer>
+</mat-card>
+
+<mat-card class="searchlistblock" *ngIf="router.url ==='/online-inventory-list'">
+  <app-header></app-header>
+  <mat-card class="innerpagebanner onlineinventorylistbg">
+    <span class="mainwrappercontent">
+      <mat-card-content>
+        <h1>online inventory list</h1>
+      </mat-card-content>
+    </span>
   </mat-card>
-  
-  <mat-card class="searchlistblock" *ngIf="router.url ==='/online-inventory-list'">
-    <app-header></app-header>
-    <mat-card class="innerpagebanner onlineinventorylistbg">
-      <span class="mainwrappercontent">
-        <mat-card-content>
-          <h1>online inventory list</h1>
-        </mat-card-content>
-      </span>
-    </mat-card>
-    <!-- <mat-card class="innerpagetitle">
+  <!-- <mat-card class="innerpagetitle">
       <span class="mainwrappercontent">
         <mat-card-content>
           <h2>online inventory list</h2>
         </mat-card-content>
       </span>
     </mat-card> -->
-    
-    <mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">     
-        <!-- <span class="mainwrappercontent">
+
+  <mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">
+    <!-- <span class="mainwrappercontent">
           <p>online inventory list</p>
         </span> -->
-        <img src="../../../../assets/images/searchlist-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
-    </mat-card>
-    
-    <app-footer></app-footer>
+    <img src="../../../../assets/images/searchlist-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
   </mat-card>
-  
-  <mat-card class="searchlistblock" *ngIf="router.url === '/search-inventory-list'">
-    <app-header></app-header>
-    <mat-card class="innerpagebanner searchinventorylistbg">
-      <span class="mainwrappercontent">
-        <mat-card-content>
-          <h1>search inventory list</h1>
-        </mat-card-content>
-      </span>
-    </mat-card>
-    <!-- <mat-card class="innerpagetitle">
+
+  <app-footer></app-footer>
+</mat-card>
+
+<mat-card class="searchlistblock" *ngIf="router.url === '/search-inventory-list'">
+  <app-header></app-header>
+  <mat-card class="innerpagebanner searchinventorylistbg">
+    <span class="mainwrappercontent">
+      <mat-card-content>
+        <h1>search inventory list</h1>
+      </mat-card-content>
+    </span>
+  </mat-card>
+  <!-- <mat-card class="innerpagetitle">
       <span class="mainwrappercontent">
         <mat-card-content>
           <h2>search inventory list</h2>
         </mat-card-content>
       </span>
     </mat-card> -->
-    
-    <mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">     
-        <!-- <span class="mainwrappercontent">
+
+  <mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">
+    <!-- <span class="mainwrappercontent">
             <p>search inventory list</p>
         </span> -->
-        <img src="../../../../assets/images/searchlist-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
-    </mat-card>
-    
-    <app-footer></app-footer>
+    <img src="../../../../assets/images/searchlist-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
   </mat-card>
 
-  <mat-card class="searchlistblock" *ngIf=" router.url ==='/specials-list'">
-    <app-header></app-header>
-    <mat-card class="innerpagebanner specialslistbg">
-      <span class="mainwrappercontent">
-        <mat-card-content>
-          <h1>Specials lists</h1>
-        </mat-card-content>
-      </span>
-    </mat-card>
-    <!-- <mat-card class="innerpagetitle">
+  <app-footer></app-footer>
+</mat-card>
+
+<mat-card class="searchlistblock" *ngIf=" router.url ==='/specials-list'">
+  <app-header></app-header>
+  <mat-card class="innerpagebanner specialslistbg">
+    <span class="mainwrappercontent">
+      <mat-card-content>
+        <h1>Specials lists</h1>
+      </mat-card-content>
+    </span>
+  </mat-card>
+  <!-- <mat-card class="innerpagetitle">
       <span class="mainwrappercontent">
         <mat-card-content>
           <h2>pre owned list</h2>
         </mat-card-content>
       </span>
     </mat-card> -->
-    
-    <mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">    
-        <!-- <span class="mainwrappercontent"> 
+
+  <mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">
+    <!-- <span class="mainwrappercontent"> 
           <p>
               pre owned list
           </p>
         </span> -->
-        <img src="../../../../assets/images/searchlist-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
-    </mat-card>
-    
-    <app-footer></app-footer>
+    <img src="../../../../assets/images/searchlist-img.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
   </mat-card>
+
+  <app-footer></app-footer>
+</mat-card>

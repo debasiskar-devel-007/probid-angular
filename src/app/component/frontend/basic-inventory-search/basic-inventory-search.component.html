@@ -1,22 +1,32 @@
 <app-header></app-header>
 <mat-card class="innerpagebanner basicinventorysearchbg">
-    <span class="mainwrappercontent">
-        <mat-card-content>
-            <h1>Basic Inventory Search</h1>
-        </mat-card-content>
-    </span>
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <h1>Basic Inventory Search</h1>
+    </mat-card-content>
+  </span>
 </mat-card>
 <mat-card class="innerpagetitle">
-        <span class="mainwrappercontent">
-            <mat-card-content>
-                <h2>Basic Inventory Search</h2>
-            </mat-card-content>
-        </span>
+  <span class="mainwrappercontent">
+    <mat-card-content class="bred_cram_wrapper">
+      <mat-list class="bred_cram_wrapper_list">
+        <mat-list-item routerLinkActive="active">
+          <a> inventory </a>
+          <span class="breadcrumb__divider" aria-hidden="true">›</span>
+        </mat-list-item>
+        <mat-list-item routerLinkActive="active activebread">
+          <a [routerLink]="'/basic-inventory-search'"> Basic Inventory Search </a>
+          <span class="breadcrumb__divider" aria-hidden="true">›</span>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </span>
 </mat-card>
-<mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">     
-    <span class="mainwrappercontent"> 
-        <img src="../../../../assets/images/basic-inventory-search.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">   
-    </span>
+<mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">
+  <span class="mainwrappercontent">
+    <img src="../../../../assets/images/basic-inventory-search.jpg"
+      style="width: 100%; display: block; margin: 0; padding: 0;">
+  </span>
 </mat-card>
 
 <app-footer></app-footer>

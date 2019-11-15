@@ -93,10 +93,25 @@ text-decoration:none!important;	margin: 0; margin-top: 0; margin-bottom: 0; bord
 .maincontainer{max-width:1340px;margin:0 auto;display:block}
 
 .landinglogoblock1wrapper{width:1340px;margin:0 auto;display:block}
-.innerpagetitle.mat-card{background-color:#e2ecee!important;padding:37px 0 32px;width:100%}
+.innerpagetitle.mat-card{background-color:#e2ecee!important; padding: 10px 0 7px; width:100%;}
+.innerpagetitle.mat-card.innerpagetitlehome{padding: 30px 0 27px; width:100%;}
 .innerpagetitle.mat-card h2{text-align:center;color:#3d3d3d;text-transform:uppercase;font-size:36px;font-family:"HelveticaBold";display:inline-block;}
 .innerpagetitle.mat-card h2 span{color:#043e49;}
 .innerpagetitle.mat-card .mat-card-content{margin-bottom:0}
+
+.innerpagetitle .bred_cram_wrapper_list{display: flex; align-items: center; padding-top: 0px;}
+.innerpagetitle .bred_cram_wrapper{background-color: transparent !important;}
+.innerpagetitle .activebread{background-color: transparent !important;}
+.innerpagetitle .activebread a{color: #1e1e1b; font-weight: 700;}
+.innerpagetitle .activebread::before{display: none;}
+.innerpagetitle .activebread::after{display: none;}
+.innerpagetitle .activebread .breadcrumb__divider{display: none;}
+
+.innerpagetitle .bred_cram_wrapper a{background-color: transparent !important;padding: 0px 14px;}
+.innerpagetitle .bred_cram_wrapper_list .mat-list-item{width: auto; height: auto;}
+.innerpagetitle .bred_cram_wrapper_list .mat-list-item .mat-list-item-content{padding: 0;}
+.breadcrumb__divider{color:#c1bfbf; font-size: 20px;}
+
 .navbarlists{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex}
 .toprightformdiv{width:454px!important;float:right;background-color:rgba(0,0,0,0.3);padding:14px;border:10px solid rgba(221,221,221,0.12);box-shadow:0 0 15px rgba(0,0,0,0.6);-moz-box-shadow:0 0 15px rgba(0,0,0,0.6);-webkit-box-shadow:0 0 15px rgba(0,0,0,0.6);-o-box-shadow:0 0 15px rgba(0,0,0,0.6);border-radius:20px}
 .formheaderblock{background-color:#00c0ff;padding:16px;border-top-right-radius:3px!important;border-top-left-radius:3px!important;border-radius:0;margin-bottom:30px}
@@ -347,10 +362,89 @@ display:block !important;
 .bloglistinner {display: flex;flex-wrap: wrap;justify-content: space-between;}
 .bloglistswrapper{display: flex; flex-wrap: wrap; flex: 1 1 60%;}
 .bloglistswrapper .bottom_blog {width: 100%;}
-.categorywrapper{flex: 1 1 24%; background-color: #e9edef; box-sizing: border-box; margin-left: 4%;}
+
+.bloglistswrapper .search-sec{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.bloglistswrapper .search-sec .mat-search-bar {
+    margin-right: 0;
+    width: 100%;
+}
+.bloglistswrapper .search-sec .example-full-width{
+    display: flex;
+    flex: 1;
+    margin-left: 10px;
+}
+.bloglistswrapper .search-sec .example-full-width:first-child{    
+    margin-left: 0px;
+}
+
+.categorywrapper .search-sec{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.categorywrapper .search-sec .mat-search-bar {
+    margin-right: 0;
+    width: 100%;
+}
+.categorywrapper .search-sec .example-full-width{
+    display: flex;
+    flex: 1;
+    margin-left: 0px;
+}
+
+.categorywrapper .search-sec .example-form .mat-form-field-appearance-legacy .mat-form-field-infix,
+.bloglistswrapper .search-sec .example-form .mat-form-field-appearance-legacy .mat-form-field-infix {
+    min-width: 150px;
+    max-width: 100%;
+}
+
+.blogdetail .bottom_blog .item_wrapper .item {
+    width: 24%;
+}
+
+.categorywrapper{flex: 1 1 24%; box-sizing: border-box; margin-left: 4%;background-color: #e9edef;}
+/* .categorywrapperbg{  display: block;} */
 .categorywrapper h2{background-color: #fb4a32; padding: 17px !important; margin-top: 0 !important; margin-bottom: 0 !important;}
 .bloglistinner .bottom_blog .item_wrapper .item {width: calc(1/2*100% - (1 - 1/2)*18px);}
 .blogdetail .bloglistswrapper .bottom_blog {margin-bottom: 0;}
+
+.blogdetail .youmightalsolike .bottom_blog .item_wrapper .item .contentsection, .blogdetail .mostviewedblogs .bottom_blog .item_wrapper .item .contentsection {
+    display: block !important;
+}
+.blogdetail .youmightalsolike .bottom_blog .item_wrapper .item .author .authorName, .blogdetail .mostviewedblogs .bottom_blog .item_wrapper .item .author .authorName {
+    line-height: 18px;
+    font-size: 16px;
+}
+.blogdetail .youmightalsolike .mat-card-content .inner_header.mat-card-title, .blogdetail .mostviewedblogs .mat-card-content .inner_header.mat-card-title {
+    font-size: 18px !important;
+}
+
+.youmightalsolike h2, .mostviewedblogs h2{
+    color:#333 !important;
+    font-size: 24px!important;
+    line-height: 26px!important;
+}
+
+.youmightalsolike .blogsociallists, .mostviewedblogs .blogsociallists {
+    margin-top: 20px !important;
+}
+
+.blogdetail .youmightalsolike .bottom_blog .item_wrapper .item .contentsection .description, 
+.blogdetail .mostviewedblogs .bottom_blog .item_wrapper .item .contentsection .description {
+    min-height: 36px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-top: 10px;
+}
+
+.blogdetail .youmightalsolike .bottom_blog .item_wrapper .item .author .date, .blogdetail .mostviewedblogs .bottom_blog .item_wrapper .item .author .date {font-size: 14px; line-height: 22px;}
+
+.blogdetail .youmightalsolike .bottom_blog .item_wrapper .item .item_images, .blogdetail .mostviewedblogs .bottom_blog .item_wrapper .item .item_images {
+    height: 124px !important;
+}
+
 
 .photogallerylists {
     padding: 5px;
@@ -363,9 +457,9 @@ display:block !important;
 }
 
 .photogallerylists .writer_image {
-    width: 200px !important;
+    width: 130px !important;
     overflow: hidden;
-    height: 200px !important;
+    height: 130px !important;
     margin: 5px;
     background-color: #e9edef;
     border: 2px solid #d8d9da;
@@ -373,16 +467,14 @@ display:block !important;
     display: inherit !important;
 }
 
+.photogallerylists .writer_image .mat-list-item-content{
+    height: 100% !important;
+    align-items: stretch !important;
+    padding: 0 !important;
+}
+
 .photogallerylists .writer_image_wrapper img{
-    transition: all 0.3s;
-    transform: scale(1); 
-    opacity: .85; 
-    height: 100% !important; 
-    -o-object-fit: cover; 
-    object-fit: cover; 
-    width: 100% !important; 
-    width: auto; 
-    height: auto;
+    transition: all 0.3s;transform: scale(1); opacity: .85; height: 100% !important; -o-object-fit: cover; object-fit: cover; width: 100% !important; width: auto; height: auto;
 }
 
 

@@ -171,6 +171,7 @@ const routes: Routes = [
   { path: 'blog-category', component: BlogCategoryComponent },
   { path: 'salesrep-signup', component: SalesrepSignupComponent },
   { path: 'customer-signup', component: CustomerSignupComponent },
+
   
 // ___________________BLOG MANAGEMENT_________________
 // =======================================================
@@ -388,12 +389,7 @@ const routes: Routes = [
     resolve: { newsLetterData: ResolveService },
     data: { requestcondition: { source: 'newslettertable', condition: {} }, endpoint: 'datalist' }
   },
- 
 
-
-
-
-  
   { path: '**', component: HomeComponent },
 
 ];

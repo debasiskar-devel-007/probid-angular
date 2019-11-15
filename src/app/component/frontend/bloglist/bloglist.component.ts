@@ -78,7 +78,7 @@ export class BloglistfrontendComponent implements OnInit {
     /**api service for total blog_catagory by uttam */
    
           this.blogcategory =this.blogList.blogCatList.blog_category;
-          console.log('++++++++++++++++++',this.blogcategory)
+          // console.log('++++++++++++++++++',this.blogcategory)
 
 
 
@@ -87,7 +87,7 @@ export class BloglistfrontendComponent implements OnInit {
    
 
           this.blogcategorycount = this.blogList.blogCatList.blog_category.length;
-          console.log('>>>>>>>>>>>>>>>>>',this.blogcategorycount)
+          // console.log('>>>>>>>>>>>>>>>>>',this.blogcategorycount)
 
    
    
