@@ -29,7 +29,7 @@ public tokenVal: any;
 
   constructor(public activatedRoute: ActivatedRoute, public router:Router, public apiService: ApiService, public _http: HttpClient) {
 
-  
+    
   }
 
 

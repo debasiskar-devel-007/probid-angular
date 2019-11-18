@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
+import { MetaService } from '@ngx-meta/core';
 @Component({
   selector: 'app-salesrep-signup',
   templateUrl: './salesrep-signup.component.html',
@@ -14,7 +15,22 @@ export class SalesrepSignupComponent implements OnInit {
   public cityList: any;
   public timezone: any;
   public term_msg: any;
-  constructor(public apiservice: ApiService, public fb: FormBuilder) {
+  constructor(public apiservice: ApiService, public fb: FormBuilder,private readonly meta: MetaService) {
+
+    this.meta.setTitle('ProBid Auto - Sales Rep SignUp');
+    this.meta.setTag('og:description', 'Sales Reps can Sign Up to create their account with the ProBid Auto Back-office and make massive commissions by helping customers locate and buy the best Pre-Owned vehicles of their desires.');
+    this.meta.setTag('twitter:description', 'Sales Reps can Sign Up to create their account with the ProBid Auto Back-office and make massive commissions by helping customers locate and buy the best Pre-Owned vehicles of their desires.');    
+    this.meta.setTag('og:keyword', 'ProBid Auto Sales Rep SignUp, Sign Up With ProBid Auto, Join ProBid Auto');
+    this.meta.setTag('twitter:keyword', 'ProBid Auto Sales Rep SignUp, Sign Up With ProBid Auto, Join ProBid Auto');
+    this.meta.setTag('og:title', 'ProBid Auto - Sales Rep SignUp');
+    this.meta.setTag('twitter:title', 'ProBid Auto - Sales Rep SignUp');
+    this.meta.setTag('og:type', 'website');
+    this.meta.setTag('og:image', '../../assets/images/logomain.png');
+    this.meta.setTag('twitter:image', '../../assets/images/logomain.png');
+
+
+
+
     /**genarate Sales Ref-signUp form */
     this.salesSignUpForm = this.fb.group({
       email: [null, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],

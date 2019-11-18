@@ -5,6 +5,7 @@ import { ApiService } from 'src/app/api.service';
 import { IfStmt } from '@angular/compiler';
 import {MatDialogRef, MAT_DIALOG_DATA, MatDialog} from "@angular/material";
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { MetaService } from '@ngx-meta/core';
 
 export interface DialogData {
   data: any;
@@ -46,7 +47,21 @@ export class BloglistfrontendComponent implements OnInit {
   public url:"https://www.youtube.com/embed/"
   // btn_hide:any=false;
   safeSrc: SafeResourceUrl;
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService, public apiService: ApiService,public dialog:MatDialog, private sanitizer: DomSanitizer) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private cookieService: CookieService, public apiService: ApiService,public dialog:MatDialog, private sanitizer: DomSanitizer,private readonly meta: MetaService) {
+
+    
+    this.meta.setTitle('ProBid Auto - Blog lists');
+    this.meta.setTag('og:description', 'Learn about all the latest developments and new technologies being introduced in the Online Auto Trading Industry with the latest Blogs written by our expert Online Auto Trading Professionals and Reps.');
+    this.meta.setTag('twitter:description', 'Learn about all the latest developments and new technologies being introduced in the Online Auto Trading Industry with the latest Blogs written by our expert Online Auto Trading Professionals and Reps.');
+        
+    this.meta.setTag('og:keyword', 'Online Auto Industry Blogs, Online Auto Industry News, Online Auto Industry Journals');
+    this.meta.setTag('twitter:keyword', 'Online Auto Industry Blogs, Online Auto Industry News, Online Auto Industry Journals');
+
+    this.meta.setTag('og:title', 'ProBid Auto - Blog lists');
+    this.meta.setTag('twitter:title', 'ProBid Auto - Blog lists');
+    this.meta.setTag('og:type', 'website');
+    this.meta.setTag('og:image', '../../assets/images/logomain.png');
+    this.meta.setTag('twitter:image', '../../assets/images/logomain.png');
 
   }
 

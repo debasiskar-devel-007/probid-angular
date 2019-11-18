@@ -63,11 +63,23 @@ export class LoginComponent implements OnInit {
 
 
 
-    this.meta.setTitle('Login Form dynamic');
-    this.meta.setTag('og:description', 'This is dynamic decription');
-    this.meta.setTag('og:title', 'This is dynamic title with meta og ');
+    // this.meta.setTitle('Login Form dynamic');
+    // this.meta.setTag('og:description', 'This is dynamic decription');
+    // this.meta.setTag('og:title', 'This is dynamic title with meta og ');
+    // this.meta.setTag('og:type', 'website');
+    // this.meta.setTag('og:image', 'https://upload.wikimedia.org/wikipedia/commons/f/f8/superraton.jpg');
+
+    this.meta.setTitle('ProBid Auto - Login');
+    this.meta.setTag('og:description', 'ProBid Auto offers the easiest and the most convenient way for car buyers to get their desired cars, listing Used Cars for Sale from multiple dealerships and major Auction houses around the USA.');
+    this.meta.setTag('twitter:description', 'ProBid Auto offers the easiest and the most convenient way for car buyers to get their desired cars, listing Used Cars for Sale from multiple dealerships and major Auction houses around the USA.');
+    this.meta.setTag('og:keyword', 'ProBid Auto, Used Cars for Sale in USA, Buy Used Cars USA, Used Car Dealership the USA');
+    this.meta.setTag('twitter:keyword', 'ProBid Auto, Used Cars for Sale in USA, Buy Used Cars USA, Used Car Dealership the USA');
+    this.meta.setTag('og:title', 'ProBid Auto - Login');
+    this.meta.setTag('twitter:title', 'ProBid Auto - Login');
     this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:image', 'https://upload.wikimedia.org/wikipedia/commons/f/f8/superraton.jpg');
+    this.meta.setTag('og:image', '../../assets/images/logomain.png');
+    this.meta.setTag('twitter:image', '../../assets/images/logomain.png');
+
 
     this.routerStatus = {           // this is use for if login succcess then navigate which page 
       "data": [

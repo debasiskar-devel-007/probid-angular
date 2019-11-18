@@ -59,7 +59,10 @@ export class TesimonialComponent implements OnInit {
 
   public TestimonialListArray: any = [];
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, public apiService: ApiService) { 
+
+
+  }
 
 
   ngOnInit() {

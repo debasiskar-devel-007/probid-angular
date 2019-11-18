@@ -26,16 +26,15 @@ export class HeaderComponent implements OnInit {
     this.navbarOpen = !this.navbarOpen;
   }
 
-  public userCookies: any;
+  public userCookies: any ='';
 public user_full_name: any = '';
    public token:any='';
-  constructor(public router: Router, public cookieService: CookieService, public dialog: MatDialog, activeroute: ActivatedRoute) {
-    //console.log(this.router.url)
-    // this.userCookies = JSON.parse(this.cookieService.get('user_details'));
-
-    // console.log(this.userCookies.firstname);
-    // this.user_full_name = this.userCookies.firstname +' '+this.userCookies.lastname;
-    // console.log(this.user_full_name);
+  constructor(public router: Router, public cookieService: CookieService, public dialog: MatDialog, public activeroute: ActivatedRoute) {
+    console.log(this.router.url)
+    if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
+    this.userCookies = JSON.parse(this.cookieService.get('user_details'));
+    console.log(this.userCookies);
+    }
    }
 
   ngOnInit() {

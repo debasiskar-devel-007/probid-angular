@@ -31,11 +31,22 @@ export class ForgetPasswordComponent implements OnInit {
   public domanUrl: any = 'http://localhost:4200/reset-password';
   constructor(private readonly meta: MetaService) {
     
-    this.meta.setTitle('Forget Password dynamic');
-    this.meta.setTag('og:description', 'This is dynamic decription ');
-    this.meta.setTag('og:title', 'This is dynamic title with meta og ');
+    // this.meta.setTitle('Forget Password dynamic');
+    // this.meta.setTag('og:description', 'This is dynamic decription ');
+    // this.meta.setTag('og:title', 'This is dynamic title with meta og ');
+    // this.meta.setTag('og:type', 'website');
+    // this.meta.setTag('og:image', 'https://upload.wikimedia.org/wikipedia/commons/f/f8/superraton.jpg');
+
+    this.meta.setTitle('ProBid Auto - Forget Password');
+    this.meta.setTag('og:description', ' Forget Password');
+    this.meta.setTag('twitter:description', ' Forget Password');
+    this.meta.setTag('og:keyword', 'Forget Password');
+    this.meta.setTag('twitter:keyword', 'Forget Password');
+    this.meta.setTag('og:title', 'ProBid Auto - Forget Password');
+    this.meta.setTag('twitter:title', 'ProBid Auto - Forget Password');
     this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:image', 'https://upload.wikimedia.org/wikipedia/commons/f/f8/superraton.jpg');
+    this.meta.setTag('og:image', '../../assets/images/logomain.png');
+    this.meta.setTag('twitter:image', '../../assets/images/logomain.png');
 
  }
 

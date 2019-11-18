@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular
 import { ApiService } from 'src/app/api.service';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MetaService } from '@ngx-meta/core';
 export interface DialogData {
  
 }
@@ -18,7 +19,7 @@ export class CustomerSignupComponent implements OnInit {
   public stateList: any;
   public cityList: any;
   public term_msg: any = '';
-  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog) {
+  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,private readonly meta: MetaService) {
     /**genarate customer-signUp form */
     this.customerSignUpForm = this.fb.group({
       id:null,
@@ -42,6 +43,21 @@ export class CustomerSignupComponent implements OnInit {
     this.getStateList();
     this.getCityList();
     this.editcustomerprofile();
+
+
+
+    this.meta.setTitle('ProBid Auto - Customer Sign Up');
+    this.meta.setTag('og:description', 'Buyers can Sign Up and create their account with the ProBid Auto Back-office to search for and buy the best Pre-Owned Cars of their choice at competitive prices unmatched anywhere else.');
+    this.meta.setTag('twitter:description', 'Buyers can Sign Up and create their account with the ProBid Auto Back-office to search for and buy the best Pre-Owned Cars of their choice at competitive prices unmatched anywhere else.');
+    
+    this.meta.setTag('og:keyword', 'ProBid Auto Customer SignUp, Sign Up With ProBid Auto, Join ProBid Auto');
+    this.meta.setTag('twitter:keyword', 'ProBid Auto Customer SignUp, Sign Up With ProBid Auto, Join ProBid Auto');
+
+    this.meta.setTag('og:title', 'ProBid Auto - Customer Sign Up');
+    this.meta.setTag('twitter:title', 'ProBid Auto - Customer Sign Up');
+    this.meta.setTag('og:type', 'website');
+    this.meta.setTag('og:image', '../../assets/images/logomain.png');
+    this.meta.setTag('twitter:image', '../../assets/images/logomain.png');
    
   }
 

@@ -159,7 +159,35 @@ text-decoration:none!important;	margin: 0; margin-top: 0; margin-bottom: 0; bord
 .innerpagebanner.mat-card{overflow-x:hidden;background:url(../images/contactusbg.jpg) no-repeat center center;top:0;left:0;min-width:100%;min-height:250px;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;position:relative}
 .innerpagebanner.mat-card h1{text-align:center;text-transform:uppercase;background:-webkit-linear-gradient(#d0d6dd,#7d8a92);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-transform:uppercase;font-size:66px;font-family:"OrbitronBold";position:absolute;top:50%;right:0;transform:translateY(-50%); width: 60%; text-align: right;}
 .innerpagebanner.mat-card .mainwrappercontent{position:relative}
-.innerpagebanner.mat-card .mat-card-content{height:250px;position:relative; margin-bottom: 0;}
+.innerpagebanner.mat-card .mat-card-content{height:250px;position:relative; margin-bottom: 0;z-index: 99;}
+.blogheaderimg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    height: 100%;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: .85;
+    height: 100% !important;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100% !important;
+    width: auto;
+    height: auto;
+}
+.blogheaderimgbg{
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+}
 
 
 .footertopwrapper .mat-list-item:first-child .mat-list-item-content{padding-left: 0 !important;}
