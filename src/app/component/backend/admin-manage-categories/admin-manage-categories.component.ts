@@ -45,13 +45,13 @@ export class AdminManageCategoriesComponent implements OnInit {
     this.activatedRoute.data.forEach(data=>{
       let result:any;
       result=data;
-      console.log('result.res');
-      console.log(result.serviceList.res);
+      // console.log('result.res');
+      // console.log(result.serviceList.res);
       if (this.router.url ==='/manage-type') {
         this.manage_type = result.serviceList.res;
       } else if(this.router.url ==='/manage-make') {
         this.manage_make = result.serviceList.res;
-        console.log('manage_make');
+        // console.log('manage_make');
       } else if(this.router.url ==='/manage-model') {
         this.manage_model = result.serviceList.res;
       } else if (this.router.url ==='/manage-year'){

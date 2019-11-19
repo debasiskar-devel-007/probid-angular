@@ -30,10 +30,10 @@ export class HeaderComponent implements OnInit {
 public user_full_name: any = '';
    public token:any='';
   constructor(public router: Router, public cookieService: CookieService, public dialog: MatDialog, public activeroute: ActivatedRoute) {
-    console.log(this.router.url)
+    //console.log(this.router.url)
     if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
     this.userCookies = JSON.parse(this.cookieService.get('user_details'));
-    console.log(this.userCookies);
+    //console.log(this.userCookies);
     }
    }
 
