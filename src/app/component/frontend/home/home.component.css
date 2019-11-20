@@ -77,8 +77,8 @@
 
 
 .probidhomeblock2inner .mat-list {display: flex;align-items: stretch; justify-content: space-between;}
-.probidhomeblock2inner .mat-list .mat-list-item{height: auto; position: relative;     width: 49%;
-    padding: 48px;}
+.probidhomeblock2inner .mat-list .mat-list-item{box-sizing: border-box; margin-bottom: 20px; width: calc(1/2*100% - (1 - 1/2)*40px); padding: 48px;
+    height: auto;}
 .probidhomeblock2inner .mat-list .mat-list-item.bluebg{background-color:  rgba(18,195,227, 0.85);}
 .probidhomeblock2inner .mat-list .mat-list-item.orangebg{background-color: rgba(251,74,50, 0.85);}
 .probidhomeblock2inner .mat-list .mat-list-item img{position: absolute; top: 10px; right: -35px;}
@@ -131,7 +131,7 @@
   }
 
 @media only screen and (max-width: 1199px) {
-    .homebanner .righttxt {position: inherit !inherit; text-align: center !inherit; transform: rotate(0deg) !inherit; -webkit-transform: rotate(0deg) !inherit; -moz-transform: rotate(0deg) !inherit; -o-transform: rotate(0deg) !inherit; bottom: 0 !inherit; right: 0 !inherit;}
+    .homebanner .righttxt {position: inherit; text-align: center; transform: rotate(0deg); -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); bottom: 0; right: 0;}
     .homebanner .carousel-slide {width: 100% !important; height: 100% !important; text-align: center; position:inherit !important; background-color:#03080c;}
     .homebanner .carousel-slide-content {position: inherit !important;}
     .homebanner .carousel-slide .carousel-slide-content .d-block {display: block; margin-left: 0;}
@@ -173,9 +173,23 @@
     }
 }
 
-
 @media only screen and (max-width: 991px) {
-    .probidhomeblock2inner .mat-list .mat-list-item {width: 100%;}
-    .probidhomeblock2inner .mat-list .mat-list-item.orangebg {margin-top: 20px;}
+.probidhomeblock1 .search-sec .mat-search-bar {margin-right: auto; margin-left: auto;}
+.probidhomeblock1 .search-sec .example-full-width {-webkit-box-align: stretch; align-items: stretch; border: 1px solid #e2ecee; box-sizing: border-box; margin: 5px;
+    width: calc(1/2*100% - (1 - 1/2)*20px); padding: 0px; height: auto;}
+.probidhomeblock2inner .mat-list .mat-list-item{padding: 24px !important;}
+.search-sec {flex-wrap: wrap;}
+.search-sec .example-form {flex-wrap: wrap;}
 }
 
+@media only screen and (max-width: 768px) {
+    .probidhomeblock2inner .mat-list .mat-list-item {width: 100%;}
+}
+
+@media only screen and (max-width: 640px) {
+.probidhomeblock1 .mat-list-base.lists .mat-list-item {width: 100%;}
+}
+
+@media only screen and (max-width: 480px) {
+.probidhomeblock1 .search-sec .example-full-width {width: calc(1/1*100% - (1 - 1/1)*20px) !important;}
+}

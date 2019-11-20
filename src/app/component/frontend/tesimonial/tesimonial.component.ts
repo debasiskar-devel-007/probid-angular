@@ -44,7 +44,7 @@ export class TesimonialComponent implements OnInit {
         loop: true,
         nav: true,         
       },
-      1500: {
+      992: {
         items: 3,
         autoplay: true,
         autoplayTimeout: 6000,

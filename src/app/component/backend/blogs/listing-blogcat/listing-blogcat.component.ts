@@ -14,7 +14,7 @@ export class ListingBlogcatComponent implements OnInit {
   public blogListConfig: any = {
     apiBaseUrl:this.apiService.serverUrlDemo,
     listEndPoint: "datalist",
-    datasource: "",
+    datasource: [],
     tableName: "blog_category",
     updateurl: "addorupdatedata",
     editUrl: "blog-category/edit/",

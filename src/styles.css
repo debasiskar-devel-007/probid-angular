@@ -15,7 +15,7 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .contact-form .main-div{height:auto!important;display:inherit!important;justify-content:inherit!important;align-items:inherit!important}
-.contact-form .mat-form-field-appearance-legacy .mat-form-field-wrapper .mat-form-field-suffix{color: #000;}
+.contact-form .mat-form-field-appearance-legacy .mat-form-field-wrapper .mat-form-field-suffix{color: #000;padding-bottom: 0;}
 
 .example-container .mat-form-field { margin: 0 0px !important;}
 .mat-focused .mat-form-field-label.ng-star-inserted.mat-empty.mat-form-field-empty {display: none !important}
@@ -90,6 +90,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .tablediv .listingtestimonial .searchbar {padding-right: 236px; margin-top: -11px;}
 .tablediv .searchbar .mat-form-field{margin: 0 2px;}
 .mat-form-field-appearance-legacy .mat-form-field-infix{padding: 1em !important; background: #fff;margin-bottom: 10px;}
+.contact-form .mat-form-field-appearance-legacy .mat-form-field-infix {background: #eee;}
+
+.newslettermain .mat-form-field-appearance-legacy .mat-form-field-infix {margin-bottom: 0;}
 
 .bloglists .tablediv .searchbar {padding-right: 200px;margin-top: -10px;}
 .blogcatlists .tablediv .searchbar {padding-right: 252px;margin-top: -10px;}
@@ -136,6 +139,27 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
 .mat-paginator-page-size-select {
   margin: 0px 4px 0 4px;
   width: 56px;
+}
+
+
+
+@media screen and (max-width: 1600px){
+  .owl-carousel .owl-nav button.owl-prev {
+      position: absolute;
+      top: 25%;
+      left: 1%;
+  }
+  .owl-carousel .owl-nav button.owl-next {
+      position: absolute;
+      top: 25%;
+      right: 1%;
+  }
+}
+
+@media screen and (max-width: 991px){
+  .owl-carousel .owl-item.active.center p.quatation{display: block !important; width: 100% !important; margin-left: auto !important;height: auto; max-width: inherit;
+    -webkit-line-clamp: inherit; overflow: hidden; text-overflow: inherit;}
+    .generalcls .owl-carousel .owl-item.active.center .quatation p { max-height: inherit !important; overflow: inherit !important;}
 }
 
 @media screen and (max-width: 640px){

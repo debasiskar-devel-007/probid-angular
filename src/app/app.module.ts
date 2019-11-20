@@ -262,7 +262,6 @@ import { AddBirddogComponent } from './component/backend/add-birddog/add-birddog
     TestimonialModule,
     ServicelibModule,
     ContactusModule,
-    HttpClientModule,
     AppRoutingModule,MetaModule.forRoot(), BrowserAnimationsModule,
     ListingModule,
     MatIconModule,

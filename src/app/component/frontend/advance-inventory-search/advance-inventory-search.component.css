@@ -1,1 +1,5 @@
 .advanceinventorysearchbg.mat-card{background:url(../../../../assets/images/advanceinventorybg.jpg) no-repeat center center !important;}
+
+@media only screen and (max-width:1024px) {
+    .advanceinventorysearchbg.mat-card {background: url(../../../../assets/images/advanceinventorybg.jpg) no-repeat left 25% center !important;}
+}

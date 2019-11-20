@@ -24,6 +24,10 @@
 .contactusinfoblock .mat-card img {margin-left: auto;width: 100%;margin-top: 0;}
 }
 
+@media only screen and (max-width:1024px) {
+    .contactusbg.mat-card {background: url(../../../../assets/images/contactusbg.jpg) no-repeat left 25% center !important;}
+}
+
 @media (max-width: 991px) {
 .contactusinfoblock{padding:0;position:inherit;top:0;left:0;width:100%;transform:inherit;height:auto;z-index:9999}
 .contactusinfoblock .mat-card{box-shadow:none;padding:30px 48px!important;background:transparent;height:auto}

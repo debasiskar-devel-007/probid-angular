@@ -17,26 +17,19 @@ export class ResolveService implements Resolve<any> {
     }
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         let _id = route.params['id'];
-        // console.log(_id)
-        // console.log('resolve route data');
-        // console.log(route.data);
-        console.log("soureshhh",route);
+       
         if (route.data.requestcondition.condition._id == 'id') {
-            console.log('++++++++++++++')
             route.data.requestcondition.condition._id = _id;
             delete route.data.requestcondition.condition.id;
             console.log(route.data.requestcondition.condition)
         }
-        console.log(state);
         var endpoint = route.data.link;
         var source = route.data.source;
         var condition = route.data.condition;
         var requestData: any = route.data.requestcondition;
         if (route.data.requestcondition.trainingcategory != null) {
-            console.log(requestData)
             requestData.trainingcategory = route.params.cid;
             requestData.userid = this.userid;
-            console.log( requestData.userid)
         } else {
             requestData.condition = Object.assign(requestData.condition, route.params);
             delete route.data.requestcondition.condition.id;

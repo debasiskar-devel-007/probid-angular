@@ -3,3 +3,7 @@
 .hide{
 display: none;
 }
+
+@media only screen and (max-width:1024px) {
+.testimonialbg.mat-card {background: url(../../../../assets/images/testimonialbg.jpg) no-repeat left 25% center !important;}
+}

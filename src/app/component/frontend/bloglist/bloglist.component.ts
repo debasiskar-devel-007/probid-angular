@@ -31,7 +31,6 @@ export class BloglistfrontendComponent implements OnInit {
     deleteEndPoint: "deletesingledata",
     addLink: "/blog-management/add",
     view: "blogs"
-
   }
   public blogList: any;
   public blogcategory:any;
