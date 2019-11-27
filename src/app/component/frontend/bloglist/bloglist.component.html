@@ -63,8 +63,9 @@
                 <img [src]="item.profile_picture">
               </span>
               <mat-card-content class="contentsection">
-                <span class="bnticons">
-                  <button><img src="../../../../assets/images/videoicon.png"></button>
+                <span class="bnticons" *ngFor="let vurl of item.credentials">
+                  <button *ngIf="vurl.video_url !='' && vurl.video_url !=null "
+                    (click)="openvideourl(vurl.video_url)"><img src="../../../../assets/images/videoicon.png"></button>
                 </span>
                 <mat-card-title class="inner_header" (click)="blogdetail(item._id)">{{item.blogtitle}}</mat-card-title>
                 <span class="author">
