@@ -1,4 +1,4 @@
-import { Component, OnInit ,Inject} from '@angular/core';
+import { Component, OnInit, Inject} from '@angular/core';
 import {ActivatedRoute,Router} from '@angular/router';
  import{CookieService} from 'ngx-cookie-service';
 import { ApiService } from 'src/app/api.service';
@@ -93,13 +93,12 @@ export class BlogdetailComponent implements OnInit {
   //     }
   //   });
   this.activatedRoute.data.forEach((data: any) =>{
-    console.log("ts data",data);
+    // console.log("ts data",data);
     this.blog = data.blogCatList.res;
-     console.log('+++++++++++++++++>>>>>>>>>>>>>>',this.blog)
-     this.blog_img=this.blog[0].blogs_image[0].basepath+this.blog[0].blogs_image[0].image;
-   
-     console.log(this.blog_img)
-
+    //  console.log('+++++++++++++++++>>>>>>>>>>>>>>',this.blog)
+    //  this.blog_img=this.blog[0].blogs_image[0].basepath+this.blog[0].blogs_image[0].image;
+     this.blog_img=this.blog[0].profile_picture[0];     
+    //  console.log(this.blog_img)
       
     })
   }
@@ -207,13 +206,13 @@ export class BlogdetailComponent implements OnInit {
   }
 
   openvideourl(val: any){
-    console.log(val)
+    //console.log(val)
     let url:any;
      url="https://www.youtube.com/embed/";
-      console.log('video url....>',url+val);
+      //console.log('video url....>',url+val);
       this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(url + val);
       
-      console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
+      //console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
       const dialogRef = this.dialog.open(VideoModalComponent, {
         // panelClass:['modal-md','success-modal'],
        

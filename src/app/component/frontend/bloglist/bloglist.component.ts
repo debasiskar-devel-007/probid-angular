@@ -67,7 +67,7 @@ export class BloglistfrontendComponent implements OnInit {
   panelOpenState = false;
 
 //***********blog list view in blog detail************//
-blog(val:any){
+  blogdetail(val:any){
     console.log(val)
     this.router.navigateByUrl('/blogdetail/' +val)
   }

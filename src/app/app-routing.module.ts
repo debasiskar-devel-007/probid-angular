@@ -160,7 +160,7 @@ const routes: Routes = [
 
 
   { path: 'blogdetail/:id', component: BlogdetailComponent,resolve: { blogCatList: ResolveService },
-  data: { requestcondition: { source: 'blogs', condition: {} }, endpoint: 'datalistwithouttoken' } },
+  data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalistwithouttoken' } },
 
   
 

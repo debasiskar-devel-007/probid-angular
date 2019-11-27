@@ -19,13 +19,7 @@ export class ResetPasswordComponent implements OnInit {
   };
   
   constructor(private readonly meta: MetaService, public apiService: ApiService) {
-    
-    // this.meta.setTitle('Reset Password dynamic');
-    // this.meta.setTag('og:description', 'This is dynamic description');
-    // this.meta.setTag('og:title', 'This is dynamic title with meta og ');
-    // this.meta.setTag('og:type', 'website');
-    // this.meta.setTag('og:image', 'https://upload.wikimedia.org/wikipedia/commons/f/f8/superraton.jpg');
-
+  
     this.meta.setTitle('ProBid Auto - Reset Password');
     this.meta.setTag('og:description', 'Choose from a variety of different models, makes, brands, etc. and find the best Reset Password of your choice. Take home a premium-quality pre-owned car at unbelievable prices.');
     this.meta.setTag('twitter:description', 'Choose from a variety of different models, makes, brands, etc. and find the best Reset Password of your choice. Take home a premium-quality pre-owned car at unbelievable prices.');
