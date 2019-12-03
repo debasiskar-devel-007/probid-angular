@@ -221,6 +221,9 @@ MIT
 @ngx-meta/core
 MIT
 
+amazing-time-picker
+MIT
+
 angular-font-awesome
 MIT
 The MIT License
@@ -246,7 +249,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-blog
+blog-lib-influxiq
 
 bootstrap
 MIT
@@ -298,7 +301,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-file-upload
+file-upload-lib-influxiq
 
 hammerjs
 MIT
@@ -327,7 +330,7 @@ THE SOFTWARE.
 
 listing-angular7
 
-login
+login-lib-influxiq
 
 moment
 MIT
@@ -355,7 +358,7 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 
-news-title
+news-title-lib-influxiq
 
 ngx-bootstrap/accordion
 
@@ -751,9 +754,9 @@ Apache-2.0
  
 
 
-servicelib
+service-lib-influxiq
 
-testimonial
+testimonial-lib-influxiq
 
 tslib
 Apache-2.0

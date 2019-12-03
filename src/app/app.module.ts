@@ -74,10 +74,22 @@ import { BkLeftdivComponent } from './layout/bk-leftdiv/bk-leftdiv.component';
 import { MaindashboardComponent } from './component/backend/maindashboard/maindashboard.component';
 import { UserManagementComponent } from './component/backend/user-management/user-management.component';
 import { RepdashboardComponent } from './component/backend/repdashboard/repdashboard.component';
-import { LoginModule } from 'login';
-import { ServicelibModule } from 'servicelib';
+
+// import { LoginModule } from 'login';
+// import { ServicelibModule } from 'servicelib';
+// import { TestimonialModule } from 'testimonial';
+// import { BlogModule } from 'blog';
+// import { FileUploadModule } from 'file-upload';
+// import { ContactusModule } from 'contactus';
+
+import { ServicelibModule } from 'service-lib-influxiq';
+import { TestimonialModule } from 'testimonial-lib-influxiq';
+import { FileUploadModule } from 'file-upload-lib-influxiq';
+import { LoginModule } from 'login-lib-influxiq';
+import { BlogModule } from 'blog-lib-influxiq';
+import { NewsTitleModule } from 'news-title-lib-influxiq';
 import { ContactusModule } from 'contactus';
-import { TestimonialModule } from 'testimonial';
+
 import { BlogManagementComponent } from './component/backend/blog-management/blog-management.component';
 import { CommissionReportComponent } from './component/backend/commission-report/commission-report.component';
 import { InventorySearchComponent } from './component/backend/inventory-search/inventory-search.component';
@@ -129,10 +141,9 @@ import { AdminManageCategoriesComponent, DialogModalOpenDialog } from './compone
 import { AdminAddCategoriesComponent } from './component/backend/admin-add-categories/admin-add-categories.component';
 import { TrainingreportsComponent } from './training/trainingreports/trainingreports.component';
 
-import { BlogModule } from 'blog';
-import { NewsTitleModule } from 'news-title';
 
-import { FileUploadModule } from 'file-upload';
+
+
 import { OwlModule } from 'ngx-owl-carousel'; 
 import { ManagequizComponent } from './training/managequiz/managequiz.component';
 import { AddEditBlogcatComponent } from './component/backend/blogs/add-edit-blogcat/add-edit-blogcat.component';
@@ -143,6 +154,7 @@ import { MyAccountComponent } from './component/backend/my-account/my-account.co
 import { AddSalesrepComponent } from './component/backend/add-salesrep/add-salesrep.component';
 import { AddCustomerComponent } from './component/backend/add-customer/add-customer.component';
 import { AddBirddogComponent } from './component/backend/add-birddog/add-birddog.component';
+
 
 //****** for video Modal*********//
 
