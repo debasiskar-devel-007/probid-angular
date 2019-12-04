@@ -268,6 +268,7 @@ const routes: Routes = [
     path: 'testimonial-lists-admin', component: ListingTestimonialComponent, resolve: { testimonialList: ResolveService },
     data: { requestcondition: { source: 'testimonial_view', condition: {} }, endpoint: 'datalist' },canActivate: [AuthGuard]
   },
+  
   {
     path: 'service-listing', component: ListingServiceComponent, resolve: { serviceList: ResolveService },
     data: { requestcondition: { source: 'services_view', condition: {} }, endpoint: 'datalist' },canActivate: [AuthGuard]
@@ -277,6 +278,7 @@ const routes: Routes = [
     path: 'service/edit/:_id', component: AddeditServiceComponent, resolve: { serviceList: ResolveService },
     data: { requestcondition: { source: 'services', condition: {} }, endpoint: 'datalist' ,canActivate: [AuthGuard]}
   },
+
   { path: 'blog-management', component: BlogManagementComponent },
   { path: 'commission-report', component: CommissionReportComponent },
   { path: 'inventory-list', component: InventorySearchComponent },
