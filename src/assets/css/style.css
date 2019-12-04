@@ -148,7 +148,7 @@ text-decoration:none!important;	margin: 0; margin-top: 0; margin-bottom: 0; bord
 .mat-card{border-radius:0!important;box-shadow:none}
 .vpblock1bg.mat-card{padding-top:238px!important;box-shadow:none!important}
 .mat-form-field{margin-top:5px}
-.mat-form-field .errortext{font-size:12px;color:red;display:block;margin-top:-4px};
+.mat-form-field .errortext{font-size:12px;color:red;display:block;margin-top:-4px}
 .contact-form .main-div{height:auto !important;display:inherit!important;justify-content:inherit!important;align-items:inherit!important}
 .main-div{height:auto !important;display:inherit!important;justify-content:inherit!important;align-items:inherit!important}
 .main-div .from {margin: 4em auto 0px!important;}
@@ -303,13 +303,13 @@ h1.title1{color:#1da1db !important; font-family: 'LatoMedium' !important; font-s
 .modelthumbimginnerwarpper.active .testimonialcontent .quatation{font-size: 16px !important;}
 .testimonialwrappercontent .mat-card-title {justify-content: center;}
 .generalcls .testibottomcontent .mat-card-title.title1 {font-size: 20px!important;line-height: normal!important; margin-bottom: 5px !important; justify-content: inherit !important; text-transform: capitalize !important; color:#3c3f42;}
-.generalcls .testibottomcontent .mat-card-title.title2 {font-size: 16px!important;line-height: normal!important; margin-bottom: 5px !important; justify-content: inherit !important; text-transform: capitalize !important; color:#858686; margin-top: 10px; font-size: 'Helvetica-Normal';}
+.generalcls .testibottomcontent .mat-card-title.title2 {font-size: 16px!important;line-height: normal!important; margin-bottom: 5px !important; justify-content: inherit !important; text-transform: capitalize !important; color:#858686; margin-top: 10px; font-family: 'Helvetica-Normal';}
 
-.generalcls .quatation {font-size: 16px !important;font-size: 'Helvetica-Normal';color:#858686; display: -webkit-box;
+.generalcls .quatation {font-size: 16px !important; font-family: 'Helvetica-Normal';color:#858686; display: -webkit-box;
 max-width: 100%; margin: 0 auto;}
 .generalcls .quatation p{display: inline-block !important; width: 100%;}
 
-.generalcls .quatation p {font-size: 16px !important;font-size: 'Helvetica-Normal';color:#858686;display: block;display: -webkit-box; max-width: 100%; margin: 0 auto;overflow: hidden; text-overflow: ellipsis; display: -webkit-box; line-height: 18px; max-height:86px; -webkit-line-clamp: 5; -webkit-box-orient: vertical;}
+.generalcls .quatation p {font-size: 16px !important; font-family: 'Helvetica-Normal';color:#858686;display: block;display: -webkit-box; max-width: 100%; margin: 0 auto;overflow: hidden; text-overflow: ellipsis; display: -webkit-box; line-height: 18px; max-height:86px; -webkit-line-clamp: 5; -webkit-box-orient: vertical;}
 
 .generalcls.blog .mat-card-title {
     display: block;
@@ -379,7 +379,7 @@ display:block !important;
 
 .bottom_blog .item_wrapper .item .author .writer_image img{max-width: 100%; height: auto; }
 .bottom_blog .item_wrapper .item .author  .authorName { margin: 0 10px;  text-transform: capitalize; color: #222527; font-family: 'HelveticaBold';white-space: normal;
-    word-break: break-word;}
+    word-break: break-all;}
 .bottom_blog .item_wrapper .item .author  .date { color: #222527;}
 .bottom_blog .item_wrapper .item { width: 32%; margin: .5%; box-sizing: border-box; box-shadow: 0px 2px 10px -1px #ccc;  border-radius: 0px; padding: 20px; background-color: #fff; text-align: left;}
 .bottom_blog .item_wrapper .item .item_images{ max-width: 100%; display: flex; justify-content: center; align-items: center; height: 174px; overflow: hidden; border: 1px solid #929ba0; }
@@ -755,8 +755,8 @@ display:block !important;
 .servicewrappercontent .mat-list .mat-list-item:nth-child(7) { order: 8; }
 .servicewrappercontent .mat-list .mat-list-item:nth-child(8) { order: 9; }
 
-.truncate{overflow: ellipsis;text-overflow: -o-ellipsis-lastline; display: -webkit-box; line-height: normal; max-height: 108px; -webkit-line-clamp: 5;}
-.truncateopen{overflow: inherit !important; max-height: 100% !important; height: auto !important; text-overflow: inherit !important; -webkit-line-clamp: inherit !important;}
+.truncate{text-overflow: ellipsis; text-overflow: -o-ellipsis-lastline; display: -webkit-box; line-height: normal; max-height: 108px; -webkit-line-clamp: 5;}
+.truncateopen{text-overflow: inherit !important; max-height: 100% !important; height: auto !important; text-overflow: inherit !important; -webkit-line-clamp: inherit !important;}
 .truncateopen p{ max-height: 100% !important;}
 .categorywrapper .mat-accordion .mat-expansion-panel:last-of-type {margin: 10px; box-shadow: none;}
 .categorywrapper .mat-expansion-panel-content {background: #e9edef;}
@@ -1247,11 +1247,25 @@ a.associate_new_con6_link:hover{color: #fff;}
 /*-----------------amitava 04/12/2019 start-----------------------*/
 
 
-.newsletterbox .mat-form-field {
-    display: inline-block!important;
-    width: 300px!important;
+.modal-sm {
+    width: auto!important;
 }
 
+.newslettermain form{ display: block; width: 100%;}
+
+
+.example-container .mat-form-field {
+    margin: 0 0px !important;
+    width: 220px;
+    display: block!important;
+    float: left;
+}
+
+.newslettermain .example-container .mat-raised-button {
+    background: #fb4a32 !important;
+    border-radius: 0 !important;
+    padding: 4px 0!important;
+}
 .newsletterbox .mat-form-field-flex{ padding: 0px!important;}
 
 .newsletterbox .mat-form-field-label-wrapper {
@@ -1274,9 +1288,9 @@ a.associate_new_con6_link:hover{color: #fff;}
 
 .newsletter_modal {
     width: 480px;
-    border: 2px solid #14b9af;
+    border: 2px solid #fb4a32;
     border-radius: 5px!important;
-    padding: 15px!important;
+    padding: 15px!important; display: block!important;
 }
 
 .newsletter_modal h2 {
@@ -1285,7 +1299,7 @@ a.associate_new_con6_link:hover{color: #fff;}
     margin: 0;
     padding: 0;
     font-size: 30px;
-    color: #14b9af;
+    color: #fb4a32;
     font-family: HelveticaBold;
 }
 
@@ -1308,13 +1322,15 @@ a.associate_new_con6_link:hover{color: #fff;}
     margin: 5px 0; height: 50px!important;
 }
 
+.newsletter_modal .mat-form-field-appearance-legacy .mat-form-field-infix input{height:50px!important;}
+
 .newsletter_modal .mat-form-field{ display: block!important;}
 
 .newsletter_modal .mat-form-field-flex{ display: block!important;  border: none!important; padding: 0px!important;}
 
 .newsletter_modal button {
     color: #fff;
-    background: #13b9af!important;
+    background: #fb4a32!important;
 
     font-size: 24px;
     line-height: normal;
@@ -1338,9 +1354,18 @@ a.associate_new_con6_link:hover{color: #fff;}
 
 
 @media(max-width:420px) {
-    .newsletterbox .mat-form-field {
-        width: 196px!important;
+    .example-container .mat-form-field {
+        width: 175px!important;
     }
 
+}
+
+@media(max-width:600px) {
+.newslettermain{
+    margin-bottom: 25px; width: auto!important;
+}
+
+    .footerwrapper  h3 { text-align: center;
+        display: block!important;}
 }
 /*-----------------amitava 04/12/2019 end-----------------------*/

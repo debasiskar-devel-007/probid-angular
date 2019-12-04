@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bba0bd0-3d33-4df9-bc5d-42627e12b863" name="Default Changelist" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/tsconfig_roots.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/layout/footer/newsletter-dialog.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/layout/footer/newsletter-success-dialog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/probid-angular.iml" afterPath="$PROJECT_DIR$/.idea/probid-angular.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/api.service.ts" afterPath="$PROJECT_DIR$/src/app/api.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/layout/footer/footer.component.html" afterPath="$PROJECT_DIR$/src/app/layout/footer/footer.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/layout/footer/footer.component.ts" afterPath="$PROJECT_DIR$/src/app/layout/footer/footer.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/layout/footer/footer.component.css" afterPath="$PROJECT_DIR$/src/app/layout/footer/footer.component.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/css/style.css" afterPath="$PROJECT_DIR$/src/assets/css/style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +22,8 @@
       <file leaf-file-name="footer.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/layout/footer/footer.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="-663">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#mat-card#0;n#!!top" expanded="true" />
               </folding>
@@ -39,11 +31,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="footer.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/layout/footer/footer.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1198">
+              <caret line="237" column="46" lean-forward="false" selection-start-line="237" selection-start-column="46" selection-end-line="237" selection-end-column="46" />
+              <folding>
+                <element signature="e#4462#4543#0" expanded="false" />
+                <element signature="e#7512#7609#0" expanded="false" />
+                <element signature="n#NewslattersuccessDialogComponent#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assets/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="1345" column="29" lean-forward="false" selection-start-line="1345" selection-start-column="29" selection-end-line="1345" selection-end-column="29" />
+            <state relative-caret-position="166">
+              <caret line="1284" column="32" lean-forward="true" selection-start-line="1284" selection-start-column="32" selection-end-line="1284" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newsletter-dialog.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/layout/footer/newsletter-dialog.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="33" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.component.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/layout/footer/footer.component.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="466">
+              <caret line="230" column="0" lean-forward="false" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -52,7 +78,7 @@
       <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="-1105">
               <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
               <folding>
                 <element signature="e#1429#1514#0" expanded="true" />
@@ -68,6 +94,8 @@
       <find>footer</find>
       <find>addorupdatedata</find>
       <find>addDataWithoutToken</find>
+      <find>newsletter_modal</find>
+      <find>newslettermain</find>
       <find>termsdialog</find>
     </findStrings>
   </component>
@@ -81,6 +109,7 @@
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/app/layout/footer/footer.component.ts" />
         <option value="$PROJECT_DIR$/src/app/api.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/layout/footer/footer.component.css" />
         <option value="$PROJECT_DIR$/src/assets/css/style.css" />
       </list>
     </option>
@@ -425,12 +454,12 @@
       <option name="presentableId" value="Default" />
       <updated>1571056115179</updated>
       <workItem from="1571056122341" duration="2135000" />
-      <workItem from="1575437093062" duration="3188000" />
+      <workItem from="1575437093062" duration="7541000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3188000" />
+    <option name="totallyTimeSpent" value="7541000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -477,12 +506,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/layout/bk-header/bk-header.component.html</url>
-          <line>219</line>
+          <line>221</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/app/layout/bk-header/bk-header.component.html</url>
-          <line>131</line>
+          <line>133</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
@@ -519,22 +548,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/layout/footer/footer.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/layout/footer/newsletter-dialog.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="237" column="46" lean-forward="false" selection-start-line="237" selection-start-column="46" selection-end-line="237" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#84#0" expanded="true" />
-            <element signature="e#4462#4543#0" expanded="false" />
-            <element signature="e#7512#7609#0" expanded="false" />
-            <element signature="n#NewslattersuccessDialogComponent#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="33" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="1284" column="32" lean-forward="true" selection-start-line="1284" selection-start-column="32" selection-end-line="1284" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/layout/footer/footer.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="230" column="0" lean-forward="false" selection-start-line="230" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="-1105">
           <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
           <folding>
             <element signature="e#1429#1514#0" expanded="true" />
@@ -544,19 +584,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/layout/footer/footer.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="-663">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#mat-card#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/css/style.css">
+    <entry file="file://$PROJECT_DIR$/src/app/layout/footer/footer.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="1345" column="29" lean-forward="false" selection-start-line="1345" selection-start-column="29" selection-end-line="1345" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="1198">
+          <caret line="237" column="46" lean-forward="false" selection-start-line="237" selection-start-column="46" selection-end-line="237" selection-end-column="46" />
+          <folding>
+            <element signature="e#4462#4543#0" expanded="false" />
+            <element signature="e#7512#7609#0" expanded="false" />
+            <element signature="n#NewslattersuccessDialogComponent#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
