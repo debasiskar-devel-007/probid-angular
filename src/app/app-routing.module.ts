@@ -50,7 +50,9 @@ import { CommissionReportComponent } from './component/backend/commission-report
 import { InventorySearchComponent } from './component/backend/inventory-search/inventory-search.component';
 import { ManageAvailabilityComponent } from './component/backend/manage-availability/manage-availability.component';
 import { TestimonialListsAdminComponent } from './component/backend/testimonial-lists-admin/testimonial-lists-admin.component';
+
 import { BirddogListComponent } from './component/backend/birddog-list/birddog-list.component';
+
 import { CommissionListComponent } from './component/backend/commission-list/commission-list.component';
 import { CustomerListComponent } from './component/backend/customer-list/customer-list.component';
 import { ManageCommissionComponent } from './component/backend/manage-commission/manage-commission.component';
@@ -284,7 +286,12 @@ const routes: Routes = [
   { path: 'inventory-list', component: InventorySearchComponent },
   { path: 'manage-availability', component: ManageAvailabilityComponent },
   // { path: 'testimonial-lists-admin', component: TestimonialListsAdminComponent },
-  { path: 'birddog-list', component: BirddogListComponent },
+
+  { path: 'birddog-list', component: BirddogListComponent,resolve: {birddoglist: ResolveService },
+  data: { requestcondition: { source: 'user_view', condition: {"type": "birddog"} },endpoint: 'datalist',canActivate: [AuthGuard]} 
+  },
+
+
   { path: 'commission-list', component: CommissionListComponent },
 
   { path: 'customer-list-admin', component: CustomerListComponent,resolve: { customerlist: ResolveService },
@@ -355,8 +362,7 @@ const routes: Routes = [
   {path:'add-customer',component:AddCustomerComponent},
   {path:'editcustomer/:_id',component:AddCustomerComponent},
   
-  {path:'add-birddog',component:AddBirddogComponent,resolve: { salesreflist: ResolveService },
-  data: { requestcondition: { source: 'user_view', condition: {"type": "salesref"} },endpoint: 'datalist',canActivate: [AuthGuard]}},
+  {path:'add-birddog',component:AddBirddogComponent},
   {path:'editbirddog/:_id',component:AddBirddogComponent},
 
   /**End Backend Routing**/

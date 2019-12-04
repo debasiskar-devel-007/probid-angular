@@ -64,7 +64,7 @@ export class AddAdminCategoriesComponent implements OnInit {
 
     data = { "source": 'manage-categories', condition: { "_id": id } };
 
-    this.apiService.getDatalistForResolve(data).subscribe(res => {
+    this.apiService.CustomRequest(data,"datalist").subscribe(res => {
       // console.log(res);
 let result: any = {};
       result = res;
@@ -120,7 +120,13 @@ let result: any = {};
 
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    // this.route.data.forEach(data=>{
+    //   let result:any;
+    //   result=data;
+    //   console.log(result,'+++++++++++')
+    // })
+  }
 
   resetForm() {
     this.formDirective.resetForm(); 

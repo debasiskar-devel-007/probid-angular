@@ -27,7 +27,7 @@ export class AdminAddCategoriesComponent implements OnInit {
 
     data = { "source": 'manage-categories', condition: { "_id": id } };
 
-    this.apiService.getDatalistForResolve(data).subscribe(res => {
+    this.apiService.CustomRequest(data,"datalist").subscribe(res => {
       // console.log(res);
 let result: any = {};
       result = res;
@@ -81,7 +81,7 @@ let result: any = {};
    
     data = { "source": 'manage-categories', condition: { "categoriesType": "make" } };
 
-    this.apiService.getDatalistForResolve(data).subscribe(res => {
+    this.apiService.CustomRequest(data,"datalist").subscribe(res => {
       
 let result: any = {};
       result = res;
@@ -96,12 +96,13 @@ let result: any = {};
     console.log(this.addType.value);
     let endpoint: any = "addorupdatedata";
     let data: any = {
-      data: this.addType.value,
+      data: this.addMakeform.value,
       source: "manage-categories",
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
       this.dialogRef.close();
+
       this.router.navigateByUrl('/manage-type');
     })
   }

@@ -12,6 +12,8 @@ export class AddSalesrepComponent implements OnInit {
   public addsalesrefForm: FormGroup;
   public stateList: any;
   public cityList: any;
+  public header_text:any="Add Salesrep"
+public btn_text:any="Submit"
   @ViewChild(FormGroupDirective) formDirective: FormGroupDirective;
   constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService,public fb: FormBuilder,public dialog: MatDialog) {
 
@@ -110,6 +112,8 @@ editsalesrefprofile(){
     {
       var data = { "source": "user", "condition": {"_id": this.activatedRouter.snapshot.params._id}}
         this.apiservice.CustomRequest(data, 'datalist').subscribe((data: any) => {
+          this.header_text="Edit Salesrep"
+        this.btn_text="Update"
           this.addsalesrefForm.patchValue({
             id:data.res[0]._id,
             email:data.res[0].email,
