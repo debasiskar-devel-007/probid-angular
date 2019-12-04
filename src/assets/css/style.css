@@ -1240,3 +1240,107 @@ a.associate_new_con6_link:hover{color: #fff;}
 .innerpagetitle .bred_cram_wrapper_list .mat-list-item{width: auto; height: auto;}
 .innerpagetitle .bred_cram_wrapper_list .mat-list-item .mat-list-item-content{padding: 0;}
 .breadcrumb__divider{color:#c1bfbf; font-size: 20px;} */
+
+
+
+
+/*-----------------amitava 04/12/2019 start-----------------------*/
+
+
+.newsletterbox .mat-form-field {
+    display: inline-block!important;
+    width: 300px!important;
+}
+
+.newsletterbox .mat-form-field-flex{ padding: 0px!important;}
+
+.newsletterbox .mat-form-field-label-wrapper {
+    top: 0;
+    padding-top: 0;
+    position: relative!important;
+}
+
+.newsletterbox  .mat-form-field-label-wrapper {
+    top: 0px!important;}
+
+.newsletterbox .mat-form-field-appearance-legacy .mat-form-field-label {
+    top: 0!important;
+    padding: 0 2%!important;
+
+    height: 36px!important;
+    line-height: 36px!important;
+}
+
+
+.newsletter_modal {
+    width: 480px;
+    border: 2px solid #14b9af;
+    border-radius: 5px!important;
+    padding: 15px!important;
+}
+
+.newsletter_modal h2 {
+    display: block;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    color: #14b9af;
+    font-family: HelveticaBold;
+}
+
+.newsletter_modal h3 {
+    display: block;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0 15px;
+    font-size: 18px;
+    color: #111;
+    font-family: Helvetica-Normal;
+    font-weight: 400;
+}
+
+.newsletter_modal .mat-form-field-appearance-legacy .mat-form-field-infix {
+    width: auto;
+    padding: 0px 15px!important;
+    height: 36px!important;
+    background: #e1e0e6!important;
+    margin: 5px 0; height: 50px!important;
+}
+
+.newsletter_modal .mat-form-field{ display: block!important;}
+
+.newsletter_modal .mat-form-field-flex{ display: block!important;  border: none!important; padding: 0px!important;}
+
+.newsletter_modal button {
+    color: #fff;
+    background: #13b9af!important;
+
+    font-size: 24px;
+    line-height: normal;
+    width: auto!important;
+    height: auto!important;
+    font-family: HelveticaBold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding: 14px 15px 8px!important;
+    margin-top: 10px!important;
+}
+
+.newsletter_modal h4{ display: block; text-align: center; margin: 0; padding:10px 0 0px 0; font-size: 22px; color: #111;  font-family: 'Helvetica-Normal'; font-weight: normal;}
+
+.newsletter_modalsuccess{ padding-top: 25px!important; padding-bottom: 25px!important;}
+@media(max-width:540px) {
+
+    .newsletter_modal {
+        width:auto;}
+}
+
+
+@media(max-width:420px) {
+    .newsletterbox .mat-form-field {
+        width: 196px!important;
+    }
+
+}
+/*-----------------amitava 04/12/2019 end-----------------------*/

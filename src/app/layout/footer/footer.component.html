@@ -15,11 +15,28 @@
               <span class="newslettermain">
                 <h4>Subscribe to our newsletter</h4>
                 <div class="example-container">
-                  <mat-form-field>
-                    <input matInput placeholder="Email Address" required>
-                    <!-- <mat-error *ngIf="email.invalid">email is required</mat-error> -->
-                  </mat-form-field>
-                  <a mat-raised-button (click)="newsletter()"><img src="../../assets/images/newlettericon.png"></a>
+
+
+                     <form [formGroup]="myform" name="myform" (ngSubmit)="doSubmit()">
+                   <mat-form-field>
+
+        <input matInput placeholder="Email Address" id="newsEmail" [formControl]="myform.controls['email']">
+  </mat-form-field>
+
+
+                          <button  mat-raised-button><img src="/assets/images/newlettericon.png"></button>
+
+      <mat-error *ngIf="myform.controls['email'].touched && !myform.controls['email'].valid
+           && myform.controls['email'].errors.required">
+                  Email field can not be blank</mat-error>
+
+                <mat-error *ngIf="myform.controls['email'].touched && !myform.controls['email'].valid
+                && myform.controls['email'].errors.pattern">
+
+                  Email is not Valid</mat-error>
+
+                     </form>
+
                 </div>
                <h5>We’ll never share your email address</h5>
               </span>

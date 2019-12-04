@@ -30,7 +30,7 @@ import { BloglistfrontendComponent, CommonVideoModalComponent } from './componen
 /**Frontend Component**/
 
 import { HeaderComponent, comingSoonDialog } from './layout/header/header.component';
-import { FooterComponent, DialogTermsDialog, DialogPrivacyDialog } from './layout/footer/footer.component';
+import { FooterComponent, DialogTermsDialog, DialogPrivacyDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent } from './layout/footer/footer.component';
 import { HomeComponent } from './component/frontend/home/home.component';
 import { ContactusComponent } from './component/frontend/contactus/contactus.component';
 import { ForgetPasswordComponent } from './component/frontend/forget-password/forget-password.component';
@@ -253,6 +253,9 @@ import { AddBirddogComponent } from './component/backend/add-birddog/add-birddog
     VideoModalComponent,
     AddCustomerComponent,
     AddBirddogComponent,
+
+    NewslatterDialogComponent,
+    NewslattersuccessDialogComponent
   ],
   imports: [
     NewsTitleModule,
@@ -293,7 +296,7 @@ import { AddBirddogComponent } from './component/backend/add-birddog/add-birddog
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog]
+  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent]
 })
 export class AppModule { }
 

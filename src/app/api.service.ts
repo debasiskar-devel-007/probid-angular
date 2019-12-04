@@ -448,6 +448,18 @@ postdata(requestdata: any) {
   return result;
 }
 
+  /**add addDataWithoutToken amitava 04-12-2019 */
+  addDataWithoutToken(requestdata: any, endpoint:any ) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.accesstoken
+      })
+    };
+    var result = this._http.post(this.serverUrl + endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
+    return result;
+  }
+
 }
 
 
