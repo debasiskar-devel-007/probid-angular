@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular
 import { ApiService } from 'src/app/api.service';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+ 
 @Component({
   selector: 'app-add-birddog',
   templateUrl: './add-birddog.component.html',
@@ -13,8 +15,10 @@ public salesref_list:any;
 public addbirddogForm: FormGroup;
 public stateList: any;
 public cityList: any;
+public header_text:any="Add Birddog"
+public btn_text:any="Submit"
 @ViewChild(FormGroupDirective) formDirective: FormGroupDirective;
-constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,public rout:Router) { 
+constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,public rout:Router,public cookieService:CookieService) { 
     /**genarate Add-birddog form */
     this.addbirddogForm = this.fb.group({
       id:null,
@@ -38,13 +42,28 @@ constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService
 
     this.getStateList();
     this.getCityList();
+    this.editBirddogProfile();
 }
 
   ngOnInit() {
-    this.activatedRouter.data.forEach(data=>{   
-      //console.log(data.salesreflist.res);
-       this.salesref_list=data.salesreflist.res;
+
+//http service for saleslist 
+
+    let data:any;
+    data={
+      source:"user_view",
+      condition: {
+        type: "salesref"
+      },
+      token:this.cookieService.get('jwtToken')
+    }
+    this.apiservice.postDatawithoutToken("datalist",data).subscribe((res)=>{
+      let result:any;
+      result=res;
+      this.salesref_list=result.res;
+    console.log('>>>>>', this.salesref_list)
     })
+
   }
   
  /**Miss Match password check function */
@@ -108,6 +127,37 @@ addbirddogFormSubmit(){
         
       })
   
+  }
+}
+
+//for edit birddog
+
+editBirddogProfile(){
+  if(this.activatedRouter.snapshot.params._id!=null)
+  {
+    var data = { "source": "user", "condition": {"_id": this.activatedRouter.snapshot.params._id}}
+      this.apiservice.CustomRequest(data, 'datalist').subscribe((data: any) => {
+        this.header_text="Edit Birddog"
+        this.btn_text="Update"
+        this.addbirddogForm.patchValue({
+          id:data.res[0]._id,
+          email:data.res[0].email,
+          firstname:data.res[0].firstname,
+          lastname:data.res[0].lastname,
+          phone:data.res[0].phone,
+          zip:data.res[0].zip,
+          city:data.res[0].city,
+          state:data.res[0].state,
+          address:data.res[0].address,
+          password: data.res[0].password,
+          conpass: data.res[0].password,
+          type:data.res[0].type,
+          assign_salesref:data.res[0].assign_salesref,
+          username:data.res[0].username
+
+          
+        })
+      });
   }
 }
 

@@ -2,7 +2,7 @@
     <app-header></app-header>
       <div class="main-content-wrap">
         <mat-card class="generalcls blog" style="padding: 0 !important;">  
-          <mat-card-title class="editprofiletitle">Add Salesrep</mat-card-title>
+          <mat-card-title class="editprofiletitle">{{header_text}}</mat-card-title>
         </mat-card>
       </div>
 <form [formGroup]="addcustomerForm"  (ngSubmit)="addcustomerFormSubmit()">
@@ -92,7 +92,7 @@
           </mat-form-field>
 
           <span class="bottompart">           
-              <button mat-raised-button class="btn-lg">Submit</button>
+              <button mat-raised-button class="btn-lg">{{btn_text}}</button>
           </span>
       </form>
 </div>

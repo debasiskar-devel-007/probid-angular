@@ -221,6 +221,21 @@ export class ApiService {
     // console.log('refresh_token isExpired:',isRefreshTokenExpired)
   }
 
+//http by data and endpoint
+postDatawithoutToken(endpoint:any, data:any) {
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Authorization': this.accesstoken 
+    })
+  };
+  console.log('endpoint');
+  console.log(endpoint);
+  var result = this._http.post(this.serverUrlDemo+endpoint, JSON.stringify(data), httpOptions).pipe(map(res => res));
+  return result;
+}
+
+
   addData(requestdata: any) {
     console.log('in adddata apiservice');
     const httpOptions = {

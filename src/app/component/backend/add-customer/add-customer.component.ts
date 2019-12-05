@@ -12,6 +12,8 @@ export class AddCustomerComponent implements OnInit {
   public addcustomerForm: FormGroup;
   public stateList: any;
   public cityList: any;
+  public header_text:any="Add Customer"
+public btn_text:any="Submit"
   @ViewChild(FormGroupDirective) formDirective: FormGroupDirective;
   constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog) { 
     /**genarate Add-customer form */
@@ -109,6 +111,9 @@ export class AddCustomerComponent implements OnInit {
     {
       var data = { "source": "user", "condition": {"_id": this.activatedRouter.snapshot.params._id}}
         this.apiservice.CustomRequest(data, 'datalist').subscribe((data: any) => {
+
+          this.header_text="Edit Customer"
+        this.btn_text="Update"
           this.addcustomerForm.patchValue({
             id:data.res[0]._id,
             email:data.res[0].email,
