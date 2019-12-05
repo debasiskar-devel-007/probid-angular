@@ -10,12 +10,21 @@ import { Router } from '@angular/router';
 export class BkFooterComponent implements OnInit {
 
   public user_data: any;
-  constructor(public router: Router, public cookieService: CookieService) {
+  public userCookies: any;
+  public userid: any = '';
+  
+  constructor(public cookieService: CookieService, public router: Router ) {
     this.user_data = JSON.parse(this.cookieService.get('user_details'))
-    // console.log(this.user_data)
+    console.log( 'koushik',  this.user_data)
+    console.log(this.router.url)
+    // if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
+    //   this.userCookies = JSON.parse(this.cookieService.get('user_details'));
+    // }
+    
    }
 
   ngOnInit() {
+    
   }
 
 }

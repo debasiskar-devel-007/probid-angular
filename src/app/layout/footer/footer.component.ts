@@ -24,7 +24,8 @@ export class FooterComponent implements OnInit {
 
     constructor(public router: Router, public route: ActivatedRoute, public dialog: MatDialog, public formbuilder: FormBuilder, public apiService: ApiService, public activeroute: ActivatedRoute, public cookie: CookieService) {
 
-        this.serverUrl = apiService.serverUrl;
+        console.log(this.router.url)
+        this.serverUrl = apiService.serverUrlDemo;
         console.log("anitava",this.serverUrl);
         this.myform = this.formbuilder.group({
             email: ['', Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
