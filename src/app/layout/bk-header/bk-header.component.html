@@ -156,7 +156,7 @@
 </mat-toolbar>
 
 
-<mat-toolbar class="header fixed" *ngIf="userCookies.type == 'user'">
+<mat-toolbar class="header fixed" *ngIf="userCookies.type == 'customer'">
   <!-- <mat-toolbar class="header fixed" *ngIf="router.url === '/customer-dashboard' || router.url === '/book-an-appointment-user' || router.url === '/my-appointment-user' || router.url === '/mysalesrep' || router.url === '/advance-inventory-search-user' || router.url === '/basic-inventory-search-user'"> -->
   <mat-toolbar-row class="toolbar-row">
     <div class="logo" [routerLink]="['/home']">
@@ -193,10 +193,10 @@
           <mat-menu #menu1="matMenu" class="activedropmenu">
             <!-- <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/basic-inventory']">Basic Inventory Search</a> -->
             <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu"
-              [routerLink]="['/basic-inventory-search-user']">Basic Inventory Search</a>
+              [routerLink]="['/basic-inventory-search-customer']">Basic Inventory Search</a>
             <!-- <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/advance-inventory']">Advance Inventory Search</a> -->
             <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu"
-              [routerLink]="['/advance-inventory-search-user']">Advance Inventory Search</a>
+              [routerLink]="['/advance-inventory-search-customer']">Advance Inventory Search</a>
           </mat-menu>
           <div class="triangle"></div>
         </mat-list-item>

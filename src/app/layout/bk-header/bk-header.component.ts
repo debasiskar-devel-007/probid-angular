@@ -127,8 +127,9 @@ export class BkHeaderComponent implements OnInit {
   ngOnInit() {
     if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
       this.userCookies = JSON.parse(this.cookieService.get('user_details'));
-      //console.log(this.userCookies.type);
+      console.log(this.userCookies);
       this.user_full_name = this.userCookies.firstname + ' '+ this.userCookies.lastname ;
+      console.log('>>>>',this.user_full_name)
       // this.userid = this.userCookies._id;    
       }
   }

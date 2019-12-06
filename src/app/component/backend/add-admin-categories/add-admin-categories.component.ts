@@ -61,8 +61,20 @@ export class AddAdminCategoriesComponent implements OnInit {
     let id = route.snapshot.params.id;
 
     let data: any = {};
+    if (route.snapshot.routeConfig.path == 'editmake/:id') {
+      data = { "source": 'manage-make', condition: { "_id": id } };
+    }
+    if (route.snapshot.routeConfig.path == 'editmake/:id') {
+      data = { "source": 'manage-make', condition: { "_id": id } };
+    }
+    if (route.snapshot.routeConfig.path == 'editmake/:id') {
+      data = { "source": 'manage-make', condition: { "_id": id } };
+    }
+    if (route.snapshot.routeConfig.path == 'editmake/:id') {
+      data = { "source": 'manage-make', condition: { "_id": id } };
+    }
 
-    data = { "source": 'manage-categories', condition: { "_id": id } };
+    
 
     this.apiService.CustomRequest(data,"datalist").subscribe(res => {
       // console.log(res);

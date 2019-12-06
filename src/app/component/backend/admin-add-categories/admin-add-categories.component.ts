@@ -13,7 +13,7 @@ import { DialogModalOpenDialog } from '../admin-manage-categories/admin-manage-c
 export class AdminAddCategoriesComponent implements OnInit {
 
   public addyearform: FormGroup;
-  public addType: FormGroup;
+  public addTypeForm: FormGroup;
   public addMakeform: FormGroup;
   public addModelform: FormGroup;
   public allData: any = {};
@@ -37,7 +37,7 @@ let result: any = {};
 
 
 
-    this.addType = this.fb.group({
+    this.addTypeForm = this.fb.group({
      
       TypeName: ['', Validators.required],
       added_on: ['', Validators.required],
@@ -79,7 +79,7 @@ let result: any = {};
   ngOnInit() {
     let data: any = {};
    
-    data = { "source": 'manage-categories', condition: { "categoriesType": "make" } };
+    data = { "source": 'manage-make', condition: { "categoriesType": "make" } };
 
     this.apiService.CustomRequest(data,"datalist").subscribe(res => {
       
@@ -93,11 +93,11 @@ let result: any = {};
 
    
   addTypeSubmit() {
-    console.log(this.addType.value);
+    console.log(this.addTypeForm.value);
     let endpoint: any = "addorupdatedata";
     let data: any = {
-      data: this.addMakeform.value,
-      source: "manage-categories",
+      data: this.addTypeForm.value,
+      source: "manage-type",
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
@@ -111,7 +111,7 @@ let result: any = {};
     let endpoint: any = "addorupdatedata";
     let data: any = {
       data: this.addMakeform.value,
-      source: "manage-categories",
+      source: "manage-make",
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
@@ -124,7 +124,7 @@ let result: any = {};
     let endpoint: any = "addorupdatedata";
     let data: any = {
       data: this.addModelform.value,
-      source: "manage-categories",
+      source: "manage-model",
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
@@ -137,7 +137,7 @@ let result: any = {};
     let endpoint: any = "addorupdatedata";
     let data: any = {
       data: this.addyearform.value,
-      source: "manage-categories",
+      source: "manage-year",
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);

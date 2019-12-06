@@ -2,7 +2,61 @@
   <app-header></app-header>
       <div class="main-content-wrap">
         <mat-card class="generalcls blog" style="padding: 0 !important;">  
-           <img src="../../../../assets/images/basicinventorysearchbackend-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+           <!-- <img src="../../../../assets/images/basicinventorysearchbackend-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+
+           <form [formGroup]="inventoryCustomerForm" >
+
+              <mat-form-field>
+                  <mat-label>Select Type</mat-label>
+                  <mat-select formControlName="type">
+                    <mat-option *ngFor="let typeval of type_list" [value]='typeval._id' >
+                      {{typeval.TypeName}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field><br>
+
+                <mat-form-field>
+                    <mat-label>Select Model</mat-label>
+                    <mat-select formControlName="model">
+                      <mat-option  *ngFor="let modelval of model_list" [value]='modelval._id'  >
+                        {{modelval.model_name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field><br>
+
+                  <mat-form-field>
+                      <mat-label>Select Make</mat-label>
+                      <mat-select formControlName="make">
+                        <mat-option  *ngFor="let makeval of make_list" [value]="makeval._id" >
+                         {{makeval.make_name}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field><br>
+
+                    <mat-form-field>
+                        <mat-label>Select Year</mat-label>
+                        <mat-select formControlName="year">
+                          <mat-option  *ngFor="let yearval of year_list"  [value]='yearval._id' >
+                            {{yearval.year}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field> &nbsp; <br>
+<!-- 
+                      <mat-form-field>
+                          <mat-label>Select Year To</mat-label>
+                          <mat-select formControlName="yearEnd">
+                            <mat-option >
+                             to
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field><br> -->
+
+                        <button mat-raised-button type="reset">Reset</button>&nbsp;
+
+                        <button mat-raised-button type="submit" (click)="inventoryCustomerSearch()">Search</button>
+             </form>
+
+
         </mat-card>
       </div>
 </div>

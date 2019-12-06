@@ -110,7 +110,7 @@ if (this.addsalesrefForm.valid) {
 editsalesrefprofile(){
   if(this.activatedRouter.snapshot.params._id!=null)
     {
-      var data = { "source": "user", "condition": {"_id": this.activatedRouter.snapshot.params._id}}
+      var data = { "source": "users", "condition": {"_id": this.activatedRouter.snapshot.params._id}}
         this.apiservice.CustomRequest(data, 'datalist').subscribe((data: any) => {
           this.header_text="Edit Salesrep"
         this.btn_text="Update"

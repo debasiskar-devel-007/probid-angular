@@ -31,7 +31,10 @@ export class AdminManageCategoriesComponent implements OnInit {
   public manage_year_skip: any = ['_id','created_at','Status','updated_at','id','categoriesType'];
   public manage_year_modify_header: any = {};
 
-  public tablename: any = 'manage-categories';
+  public tableNameForType: any = 'manage-type';
+  public tableNameforMake: any = 'manage-make';
+  public tableNameForModel: any = 'manage-model';
+  public tableNameForYear: any = 'manage-year';
   public updateurl: any = 'addorupdatedata';
   public deleteurl: any = 'deletesingledata';
   public custombutton: any = '';
@@ -45,17 +48,24 @@ export class AdminManageCategoriesComponent implements OnInit {
     this.activatedRoute.data.forEach(data=>{
       let result:any;
       result=data;
-      // console.log('result.res');
+      console.log('result.res');
       // console.log(result.serviceList.res);
       if (this.router.url ==='/manage-type') {
         this.manage_type = result.serviceList.res;
+        console.log('type>>>>',this.manage_type)
       } else if(this.router.url ==='/manage-make') {
         this.manage_make = result.serviceList.res;
         // console.log('manage_make');
+        console.log('make>>>>',this.manage_make)
+
       } else if(this.router.url ==='/manage-model') {
         this.manage_model = result.serviceList.res;
+        console.log('model>>>>',this.manage_model)
+
       } else if (this.router.url ==='/manage-year'){
         this.manage_year = result.serviceList.res;
+        console.log('year>>>>',this.manage_year)
+
       }
       // this.admin_datalist = result.results.res;
       

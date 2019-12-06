@@ -4,7 +4,7 @@
             <span class="modalouter_wrapper_inner"  *ngIf="router.url === '/manage-type'">
                     <h1 mat-dialog-title class="modalttitle">Add Type</h1>
                     <span class="modalttitlewrapper">
-                            <form [formGroup]="addType" (ngSubmit)="addTypeSubmit()">
+                            <form [formGroup]="addTypeForm" (ngSubmit)="addTypeSubmit()">
                         <div mat-dialog-content>
                             <mat-form-field class="form-group">
                                 <span class="form_floating_div">

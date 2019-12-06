@@ -313,16 +313,16 @@ const routes: Routes = [
   { path: 'social-advo-admin', component: SocialAdvoComponent },  
   
   { path: 'manage-type', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
-  data: { requestcondition: { source: 'manage-categories', condition: {"categoriesType": "type"} }, endpoint: 'datalist' }},
+  data: { requestcondition: { source: 'manage-type', condition: {"categoriesType": "type"} }, endpoint: 'datalist' }},
 
   { path: 'manage-make', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
-  data: { requestcondition: { source: 'manage-categories', condition: {"categoriesType": "make"} }, endpoint: 'datalist' } }, 
+  data: { requestcondition: { source: 'manage-make', condition: {"categoriesType": "make"} }, endpoint: 'datalist' } }, 
 
   { path: 'manage-model', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
-  data: { requestcondition: { source: 'manage-categories', condition: {"categoriesType": "model"} }, endpoint: 'datalist' } }, 
+  data: { requestcondition: { source: 'manage-model', condition: {"categoriesType": "model"} }, endpoint: 'datalist' } }, 
 
   { path: 'manage-year', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
-  data: { requestcondition: { source: 'manage-categories', condition: {"categoriesType": "year"} }, endpoint: 'datalist' } },  
+  data: { requestcondition: { source: 'manage-year', condition: {"categoriesType": "year"} }, endpoint: 'datalist' } },  
  
   { path: 'manage-make-edit/:id', component: AdminManageCategoriesComponent },    
   { path: 'admin-add-categories', component: AdminAddCategoriesComponent },  
@@ -336,8 +336,12 @@ const routes: Routes = [
   { path: 'my-appointment-user', component: MyAppointmentComponent },
   { path: 'book-an-appointment-user', component: BookAnAppointmentComponent },
   
-  { path: 'advance-inventory-search-user', component: AdvanceInventorySearchBackendComponent },
-  { path: 'basic-inventory-search-user', component: BasicInventorySearchBackendComponent },
+  { path: 'advance-inventory-search-customer', component: AdvanceInventorySearchBackendComponent },
+  { path: 'basic-inventory-search-customer', component: BasicInventorySearchBackendComponent ,resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' } 
+
+
+},
   { path: 'mysalesrep', component: MysalesrepComponent },
   // { path:'contact-us-dashboard', component:ContactUsDashboardComponent,  resolve: { serviceList: ResolveService },
   // data: { requestcondition: { source: 'contactusForm', condition: {} }, endpoint: 'datalist'}},

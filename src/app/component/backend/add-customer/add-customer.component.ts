@@ -15,7 +15,7 @@ export class AddCustomerComponent implements OnInit {
   public header_text:any="Add Customer"
 public btn_text:any="Submit"
   @ViewChild(FormGroupDirective) formDirective: FormGroupDirective;
-  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog) { 
+  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,public router:Router) { 
     /**genarate Add-customer form */
     this.addcustomerForm = this.fb.group({
       id:null,
@@ -93,8 +93,9 @@ public btn_text:any="Submit"
         this.apiservice.CustomRequest(data, 'addorupdatedata').subscribe((data: any) => {
           console.log(data);
           if (data.status == 'success' && data.update==1) {
-           console.log("Update customer Successfully");
-            this.formDirective.resetForm();
+          //  console.log("Update customer Successfully");
+          //   this.formDirective.resetForm();
+          this.router.navigateByUrl('/customer-list-admin');
           }else{
             console.log("Add customer Successfully");
             this.formDirective.resetForm();
