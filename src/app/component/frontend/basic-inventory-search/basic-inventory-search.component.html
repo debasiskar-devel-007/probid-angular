@@ -22,11 +22,85 @@
     </mat-card-content>
   </span>
 </mat-card>
-<mat-card class="ptb-35 generalcls testimonial" style="padding: 0 !important;">
-  <span class="mainwrappercontent">
-    <img src="../../../../assets/images/basic-inventory-search.jpg"
-      style="width: 100%; display: block; margin: 0; padding: 0;">
-  </span>
+<mat-card class="ptb-35 generalcls inventorysearch" style="padding: 0 !important;">
+  <span class="formblockwrapper">
+    <span class="mainwrappercontent">
+    <!-- <img src="../../../../assets/images/basic-inventory-search.jpg"
+      style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+      
+        <span class="formblock">
+            <form class="example-container">
+
+                <mat-form-field >
+                  <mat-label>Make</mat-label>
+
+                  <mat-select placeholder="Make">
+                      <mat-option value="make">Make</mat-option>
+                      <mat-option value="make1">Make 1</mat-option>
+                      <mat-option value="make2">Make 2</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field >
+                    <mat-label>Model</mat-label>
+                    <mat-select placeholder="Model">
+                        <mat-option value="model">Model</mat-option>
+                        <mat-option value="model1">Model 1</mat-option>
+                        <mat-option value="model2">Model 2</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field >
+                      <mat-label>VEHICLE TYPE</mat-label>
+                      <mat-select placeholder="VEHICLE TYPE">
+                          <mat-option value="vt">VEHICLE TYPE</mat-option>
+                          <mat-option value="vt1">VEHICLE TYPE 1</mat-option>
+                          <mat-option value="vt2">VEHICLE TYPE 2</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <mat-form-field >
+                        <mat-label>Year</mat-label>
+                        <mat-select placeholder="Year" >
+                            <mat-option value="2019">2019</mat-option>
+                            <mat-option value="2018">2018</mat-option>
+                            <mat-option value="2017">2017</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <span>
+                          <mat-form-field >
+                              <mat-label>Trim</mat-label>
+                              <mat-select placeholder="Trim">
+                                  <mat-option value="trim">Trim</mat-option>
+                                  <mat-option value="trim1">Trim 1</mat-option>
+                                  <mat-option value="trim2">Trim 2</mat-option>
+                              </mat-select>
+                            </mat-form-field>
+                            <mat-form-field >
+                                <mat-label>VIN</mat-label>
+                                <mat-select placeholder="VIN" >
+                                    <mat-option value="vin">VIN</mat-option>
+                                    <mat-option value="vin1">vin1</mat-option>
+                                    <mat-option value="vin2">vin2</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                      </span>
+                      <mat-form-field >
+                          <mat-label>STATE</mat-label>
+                          <mat-select placeholder="STATE" >
+                              <mat-option value="WB">West Bengal</mat-option>
+                              <mat-option value="WB1">West Bengal 1</mat-option>
+                              <mat-option value="WB2">Passenger 3</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                        <mat-form-field >
+                            <mat-label>ZIP</mat-label>
+                            <input matInput type="ZIP" placeholder="ZIP" min="13">
+                            <!-- <mat-error *ngIf="options.get('fontSize')?.invalid">Min size: 6</mat-error> -->
+                          </mat-form-field>
+        
+              </form>
+            </span>
+          
+        </span>
+    </span>
 </mat-card>
 
 <app-footer></app-footer>
