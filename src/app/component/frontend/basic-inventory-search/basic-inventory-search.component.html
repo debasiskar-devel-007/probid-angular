@@ -27,56 +27,66 @@
     <span class="mainwrappercontent">
     <!-- <img src="../../../../assets/images/basic-inventory-search.jpg"
       style="width: 100%; display: block; margin: 0; padding: 0;"> -->
-      
+
         <span class="formblock">
-            <form class="example-container">
+            <form class="example-container" [formGroup]="inventoryCustomerForm" (ngSubmit)="inventoryCustomerSearch()">
 
                 <mat-form-field >
                   <mat-label>Make</mat-label>
 
-                  <mat-select placeholder="Make">
-                      <mat-option value="make">Make</mat-option>
-                      <mat-option value="make1">Make 1</mat-option>
-                      <mat-option value="make2">Make 2</mat-option>
+                  <mat-select formControlName="make" placeholder="Make">
+                    <mat-option  *ngFor="let makeval of make_list" [value]="makeval.make_name" >
+                     {{makeval.make_name}}
+                    </mat-option>
                   </mat-select>
                 </mat-form-field>
                 <mat-form-field >
                     <mat-label>Model</mat-label>
-                    <mat-select placeholder="Model">
-                        <mat-option value="model">Model</mat-option>
-                        <mat-option value="model1">Model 1</mat-option>
-                        <mat-option value="model2">Model 2</mat-option>
+                    <mat-select formControlName="model" placeholder="Model">
+                      <mat-option  *ngFor="let modelval of model_list" [value]='modelval.model_name'  >
+                        {{modelval.model_name}}
+                      </mat-option>
                     </mat-select>
                   </mat-form-field>
+
+                  <mat-form-field >
+                      <mat-label>Type</mat-label>
+                      <mat-select formControlName="type" placeholder="Type">
+                        <mat-option *ngFor="let typeval of type_list" [value]='typeval.TypeName' >
+                          {{typeval.TypeName}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
                   <mat-form-field >
                       <mat-label>VEHICLE TYPE</mat-label>
-                      <mat-select placeholder="VEHICLE TYPE">
-                          <mat-option value="vt">VEHICLE TYPE</mat-option>
+                      <mat-select formControlName="vehicle" placeholder="VEHICLE TYPE">
+                          <mat-option value="">VEHICLE TYPE</mat-option>
                           <mat-option value="vt1">VEHICLE TYPE 1</mat-option>
                           <mat-option value="vt2">VEHICLE TYPE 2</mat-option>
                       </mat-select>
                     </mat-form-field>
                     <mat-form-field >
                         <mat-label>Year</mat-label>
-                        <mat-select placeholder="Year" >
-                            <mat-option value="2019">2019</mat-option>
-                            <mat-option value="2018">2018</mat-option>
-                            <mat-option value="2017">2017</mat-option>
+                        <mat-select formControlName="year" placeholder="Year">
+                          <mat-option  *ngFor="let yearval of year_list"  [value]='yearval.year' >
+                            {{yearval.year}}
+                          </mat-option>
                         </mat-select>
                       </mat-form-field>
                       <span>
                           <mat-form-field >
                               <mat-label>Trim</mat-label>
-                              <mat-select placeholder="Trim">
-                                  <mat-option value="trim">Trim</mat-option>
+                              <mat-select formControlName="trim" placeholder="Trim">
+                                  <mat-option value="">Trim</mat-option>
                                   <mat-option value="trim1">Trim 1</mat-option>
                                   <mat-option value="trim2">Trim 2</mat-option>
                               </mat-select>
                             </mat-form-field>
                             <mat-form-field >
                                 <mat-label>VIN</mat-label>
-                                <mat-select placeholder="VIN" >
-                                    <mat-option value="vin">VIN</mat-option>
+                                <mat-select formControlName="vin" placeholder="VIN" >
+                                    <mat-option value="">VIN</mat-option>
                                     <mat-option value="vin1">vin1</mat-option>
                                     <mat-option value="vin2">vin2</mat-option>
                                 </mat-select>
@@ -84,21 +94,19 @@
                       </span>
                       <mat-form-field >
                           <mat-label>STATE</mat-label>
-                          <mat-select placeholder="STATE" >
-                              <mat-option value="WB">West Bengal</mat-option>
-                              <mat-option value="WB1">West Bengal 1</mat-option>
-                              <mat-option value="WB2">Passenger 3</mat-option>
+                          <mat-select formControlName="state" placeholder="STATE" >
+                              <mat-option *ngFor="let item of stateList" [value]="item.abbreviation">{{item.name}}</mat-option>
                           </mat-select>
                         </mat-form-field>
                         <mat-form-field >
                             <mat-label>ZIP</mat-label>
-                            <input matInput type="ZIP" placeholder="ZIP" min="13">
+                            <input matInput formControlName="zip" type="ZIP" placeholder="ZIP" min="13">
                             <!-- <mat-error *ngIf="options.get('fontSize')?.invalid">Min size: 6</mat-error> -->
                           </mat-form-field>
-        
+                          <button mat-raised-button color="primary" type="submit"> Search</button>
               </form>
             </span>
-          
+
         </span>
     </span>
 </mat-card>

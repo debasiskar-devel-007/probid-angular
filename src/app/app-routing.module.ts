@@ -100,7 +100,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
 
   { path: 'login', component: LoginComponent },
-  
+
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'sign-up', component: SignUpComponent },
@@ -149,13 +149,13 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   // { path: 'blog-category/edit/:_id', component: BlogComponent, resolve: { blogCatList: ResolveService },
   // data: { requestcondition: { source: 'blog_category', condition: {} }, endpoint: 'datalist' }},
-  
+
   // { path: 'blog-category/list', component: BlogdetailComponent, resolve: { blogCatList: ResolveService },
   // data: { requestcondition: { source: 'blog_category_view', condition: {} }, endpoint: 'datalist' }},
 
   { path: 'bloglist', component: BloglistfrontendComponent, resolve: { blogCatList: ResolveService },
   data: { requestcondition: { condition: {"limit": 4, "skip":1} }, endpoint: 'blogdata' } },
-  
+
   // { path: 'bloglist', component: BloglistfrontendComponent, resolve: { blogCatList: ResolveService },
   // data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalist' } },
 
@@ -164,17 +164,19 @@ const routes: Routes = [
   { path: 'blogdetail/:id', component: BlogdetailComponent,resolve: { blogCatList: ResolveService },
   data: { requestcondition: { source: 'blogs_view', condition: {} }, endpoint: 'datalistwithouttoken' } },
 
-  
+
 
   { path: 'advance-inventory-search', component: AdvanceInventorySearchComponent },
-  { path: 'basic-inventory-search', component: BasicInventorySearchComponent },
+  { path: 'basic-inventory-search', component: BasicInventorySearchComponent ,
+  resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }},
   { path: 'pre-owned', component: PreOwnedComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'blog-category', component: BlogCategoryComponent },
   { path: 'salesrep-signup', component: SalesrepSignupComponent },
   { path: 'customer-signup', component: CustomerSignupComponent },
 
-  
+
 // ___________________BLOG MANAGEMENT_________________
 // =======================================================
 
@@ -185,7 +187,7 @@ const routes: Routes = [
   path: 'blog-category/list',
   component: ListingBlogcatComponent
   // ,
- 
+
   // resolve: { blogCatList: ResolveService },
   // data: {
   //   requestcondition: {
@@ -198,7 +200,7 @@ const routes: Routes = [
 {
   path: 'blog-category/edit/:_id',
   component: AddEditBlogcatComponent,
-  
+
   resolve: { blogCatList: ResolveService },
   data: {
     requestcondition: {
@@ -220,7 +222,7 @@ const routes: Routes = [
   {
     path: 'blogs/list',
     component: ListingBlogsComponent
-    
+
     // resolve: { blogsList: ResolveService },
     // data: {
     //   requestcondition: {
@@ -233,7 +235,7 @@ const routes: Routes = [
   {
     path: 'blogs/edit/:_id',
     component: AddEditBlogsComponent,
-    
+
     resolve: { blogsList: ResolveService },
     data: {
       requestcondition: {
@@ -270,7 +272,7 @@ const routes: Routes = [
     path: 'testimonial-lists-admin', component: ListingTestimonialComponent, resolve: { testimonialList: ResolveService },
     data: { requestcondition: { source: 'testimonial_view', condition: {} }, endpoint: 'datalist' },canActivate: [AuthGuard]
   },
-  
+
   {
     path: 'service-listing', component: ListingServiceComponent, resolve: { serviceList: ResolveService },
     data: { requestcondition: { source: 'services_view', condition: {} }, endpoint: 'datalist' },canActivate: [AuthGuard]
@@ -288,7 +290,7 @@ const routes: Routes = [
   // { path: 'testimonial-lists-admin', component: TestimonialListsAdminComponent },
 
   { path: 'birddog-list', component: BirddogListComponent,resolve: {birddoglist: ResolveService },
-  data: { requestcondition: { source: 'user_view', condition: {"type": "birddog"} },endpoint: 'datalist',canActivate: [AuthGuard]} 
+  data: { requestcondition: { source: 'user_view', condition: {"type": "birddog"} },endpoint: 'datalist',canActivate: [AuthGuard]}
   },
 
 
@@ -310,37 +312,40 @@ const routes: Routes = [
   { path: 'my-appointment-admin', component: MyAppointmentComponent },
   { path: 'create-new-inventory', component: CreateNewInventoryComponent },
   { path: 'job-ticket', component: JobTicketComponent },
-  { path: 'social-advo-admin', component: SocialAdvoComponent },  
-  
+  { path: 'social-advo-admin', component: SocialAdvoComponent },
+
   { path: 'manage-type', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
   data: { requestcondition: { source: 'manage-type', condition: {"categoriesType": "type"} }, endpoint: 'datalist' }},
 
   { path: 'manage-make', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
-  data: { requestcondition: { source: 'manage-make', condition: {"categoriesType": "make"} }, endpoint: 'datalist' } }, 
+  data: { requestcondition: { source: 'manage-make', condition: {"categoriesType": "make"} }, endpoint: 'datalist' } },
 
   { path: 'manage-model', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
-  data: { requestcondition: { source: 'manage-model', condition: {"categoriesType": "model"} }, endpoint: 'datalist' } }, 
+  data: { requestcondition: { source: 'manage-model', condition: {"categoriesType": "model"} }, endpoint: 'datalist' } },
 
   { path: 'manage-year', component: AdminManageCategoriesComponent , resolve: { serviceList: ResolveService },
-  data: { requestcondition: { source: 'manage-year', condition: {"categoriesType": "year"} }, endpoint: 'datalist' } },  
- 
-  { path: 'manage-make-edit/:id', component: AdminManageCategoriesComponent },    
-  { path: 'admin-add-categories', component: AdminAddCategoriesComponent },  
- 
+  data: { requestcondition: { source: 'manage-year', condition: {"categoriesType": "year"} }, endpoint: 'datalist' } },
+
+  { path: 'manage-make-edit/:id', component: AdminManageCategoriesComponent },
+  { path: 'admin-add-categories', component: AdminAddCategoriesComponent },
+
   /**************** User Management *****************/
   {
     path: 'user-management', component: UserManagementComponent, resolve: { serviceList: ResolveService },
     data: { requestcondition: { source: 'user', condition: {} }, endpoint: 'datalist' }
   },
-  
+
   { path: 'my-appointment-user', component: MyAppointmentComponent },
   { path: 'book-an-appointment-user', component: BookAnAppointmentComponent },
-  
-  { path: 'advance-inventory-search-customer', component: AdvanceInventorySearchBackendComponent },
-  { path: 'basic-inventory-search-customer', component: BasicInventorySearchBackendComponent ,resolve: { inventory_search: ResolveService },
-  data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' } 
 
+  { path: 'advance-inventory-search-customer', component: AdvanceInventorySearchBackendComponent,
+  resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
+  },
 
+  { path: 'basic-inventory-search-customer', component: BasicInventorySearchBackendComponent ,
+  resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
 },
   { path: 'mysalesrep', component: MysalesrepComponent },
   // { path:'contact-us-dashboard', component:ContactUsDashboardComponent,  resolve: { serviceList: ResolveService },
@@ -349,15 +354,13 @@ const routes: Routes = [
   { path: 'rep-dashboard', component: RepdashboardComponent },
   { path: 'my-commission', component: CommissionListComponent },
   { path: 'my-birddog', component: BirddogListComponent },
-  
+
   { path: 'my-appointment-rep', component: MyAppointmentComponent },
   { path: 'book-an-appointment-rep', component: BookAnAppointmentComponent },
   { path: 'customer-list-rep', component: CustomerListComponent },
   { path: 'social-advo-rep', component: SocialAdvoComponent },
 
-  
-  { path: 'advance-inventory-search-rep', component: AdvanceInventorySearchBackendComponent },
-  { path: 'basic-inventory-search-rep', component: BasicInventorySearchBackendComponent },
+
   { path: 'communication', component: CommunicationComponent },
   { path: 'training-center-rep', component: TrainingCenterComponent },
   { path: 'my-account', component: MyAccountComponent },
@@ -365,7 +368,7 @@ const routes: Routes = [
   { path: 'editsalesref/:_id', component: AddSalesrepComponent },
   {path:'add-customer',component:AddCustomerComponent},
   {path:'editcustomer/:_id',component:AddCustomerComponent},
-  
+
   {path:'add-birddog',component:AddBirddogComponent},
   {path:'editbirddog/:_id',component:AddBirddogComponent},
 

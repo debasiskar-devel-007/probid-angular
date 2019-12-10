@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular
 import { ApiService } from 'src/app/api.service';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient} from '@angular/common/http';
 
 
 @Component({
@@ -22,9 +22,8 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   public type = '';
   public year = '';
   public make = '';
-  public link;
 
-  constructor(public fb:FormBuilder,public apiService:ApiService,public activatedRoute:ActivatedRoute,public http:HttpClient ) { 
+  constructor(public fb:FormBuilder,public apiService:ApiService,public activatedRoute:ActivatedRoute,public http:HttpClient ) {
 this.generateForm();
   }
 
@@ -54,13 +53,13 @@ this.model_list = this.inventory_search_list.result.manage_model;
     })
   }
 
-  //____________search function for inventory customer search_________________// 
+  //____________search function for inventory customer search_________________//
 
   inventoryCustomerSearch(){
     if(this.inventoryCustomerForm.valid){
       console.log('>>>',this.inventoryCustomerForm.value)
 
-    
+
     // let api_key="https://marketcheck-prod.apigee.net/v1/search?api_key=OoH93hQWfPpsKtGbfoHTfBrGUjyv77iy"
 
     let yearVal=this.inventoryCustomerForm.value.year;
@@ -81,7 +80,7 @@ console.log('make out',this.make, makeVal.length)
 
 let search_link = this.apiService.inventory_url+this.type+this.year+this.make;
     console.log('+++++++++',search_link)
-   
+
         this.http.get(search_link).subscribe((res)=>{
         let result:any;
         result=res
@@ -90,7 +89,7 @@ let search_link = this.apiService.inventory_url+this.type+this.year+this.make;
       })
 
     }
-  
+
   }
 
 }
