@@ -19,6 +19,10 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   public type_list: any;
   public model_list: any;
   public year_list: any;
+  public type = '';
+  public year = '';
+  public make = '';
+  public link;
 
   constructor(public fb:FormBuilder,public apiService:ApiService,public activatedRoute:ActivatedRoute,public http:HttpClient ) { 
 this.generateForm();
@@ -43,10 +47,10 @@ this.model_list = this.inventory_search_list.result.manage_model;
 
   generateForm(){
     this.inventoryCustomerForm=this.fb.group({
-      type:[],
-      make:[],
-      model:[],
-      year:[],
+      type:[''],
+      make:[''],
+      model:[''],
+      year:[''],
     })
   }
 
@@ -64,13 +68,21 @@ this.model_list = this.inventory_search_list.result.manage_model;
     let typeVal=this.inventoryCustomerForm.value.type;
     let makeVal=this.inventoryCustomerForm.value.make;
     let modelVal=this.inventoryCustomerForm.value.model;
+if (typeVal != null && typeVal != '' && typeVal.length>=0) {
+  this.type = "&0seller_type="+typeVal
+}
+if (yearVal != null && yearVal != '' && yearVal.length>=0) {
+  this.year = "&year="+yearVal
+}
+if (makeVal != null && makeVal != '' && makeVal.length>=0) {
+  this.make = "&make="+makeVal
+}
+console.log('make out',this.make, makeVal.length)
 
-
-    let data="https://marketcheck-prod.apigee.net/v1/search?api_key=OoH93hQWfPpsKtGbfoHTfBrGUjyv77iy&0seller_type="+typeVal+"&year="+yearVal+"&make="+makeVal+"&highway_miles=500"
-
-    console.log('+++++++++',data)
+let search_link = this.apiService.inventory_url+this.type+this.year+this.make;
+    console.log('+++++++++',search_link)
    
-        this.http.get(data).subscribe((res)=>{
+        this.http.get(search_link).subscribe((res)=>{
         let result:any;
         result=res
         console.log('>>>>',result.listings)

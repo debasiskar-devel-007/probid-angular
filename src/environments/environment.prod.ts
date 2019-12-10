@@ -6,4 +6,5 @@ export const environment = {
   // nodesslurl : 'https://dev.api.influxhostserver.com/',
   nodesslurl : 'https://9ozbyvv5v0.execute-api.us-east-1.amazonaws.com/production/api/',
   download_url : 'https://api.influxhostserver.com/download',
+  inventory_url : 'https://marketcheck-prod.apigee.net/v1/search?api_key=OoH93hQWfPpsKtGbfoHTfBrGUjyv77iy'
 };
