@@ -9,7 +9,7 @@
               <mat-form-field>
                   <mat-label>Select Type</mat-label>
                   <mat-select formControlName="type">
-                    <mat-option *ngFor="let typeval of type_list" [value]='typeval._id' >
+                    <mat-option *ngFor="let typeval of type_list" [value]='typeval.TypeName' >
                       {{typeval.TypeName}}
                     </mat-option>
                   </mat-select>
@@ -18,7 +18,7 @@
                 <mat-form-field>
                     <mat-label>Select Model</mat-label>
                     <mat-select formControlName="model">
-                      <mat-option  *ngFor="let modelval of model_list" [value]='modelval._id'  >
+                      <mat-option  *ngFor="let modelval of model_list" [value]='modelval.model_name'  >
                         {{modelval.model_name}}
                       </mat-option>
                     </mat-select>
@@ -27,7 +27,7 @@
                   <mat-form-field>
                       <mat-label>Select Make</mat-label>
                       <mat-select formControlName="make">
-                        <mat-option  *ngFor="let makeval of make_list" [value]="makeval._id" >
+                        <mat-option  *ngFor="let makeval of make_list" [value]="makeval.make_name" >
                          {{makeval.make_name}}
                         </mat-option>
                       </mat-select>
@@ -36,7 +36,7 @@
                     <mat-form-field>
                         <mat-label>Select Year</mat-label>
                         <mat-select formControlName="year">
-                          <mat-option  *ngFor="let yearval of year_list"  [value]='yearval._id' >
+                          <mat-option  *ngFor="let yearval of year_list"  [value]='yearval.year' >
                             {{yearval.year}}
                           </mat-option>
                         </mat-select>

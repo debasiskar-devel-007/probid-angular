@@ -13,6 +13,10 @@ export class AddAdminCategoriesComponent implements OnInit {
   public addMakeform: FormGroup;
   public addModelform: FormGroup;
 
+  public makeArray: any;
+  public typeArray: any;
+  public typeYear: any;
+
   public dataType: any=null;
   public typeChacking: any ;
   @ViewChild(FormGroupDirective) formDirective: FormGroupDirective;
@@ -44,6 +48,8 @@ export class AddAdminCategoriesComponent implements OnInit {
       added_on: ['', Validators.required],
       make_name: ['', Validators.required],
       Cars: ['', Validators.required],
+      type:[],
+      year:[],
       status: [null],
       categoriesType: ["model"]
     })
@@ -64,14 +70,14 @@ export class AddAdminCategoriesComponent implements OnInit {
     if (route.snapshot.routeConfig.path == 'editmake/:id') {
       data = { "source": 'manage-make', condition: { "_id": id } };
     }
-    if (route.snapshot.routeConfig.path == 'editmake/:id') {
-      data = { "source": 'manage-make', condition: { "_id": id } };
+    if (route.snapshot.routeConfig.path == 'edittype/:id') {
+      data = { "source": 'manage-type', condition: { "_id": id } };
     }
-    if (route.snapshot.routeConfig.path == 'editmake/:id') {
-      data = { "source": 'manage-make', condition: { "_id": id } };
+    if (route.snapshot.routeConfig.path == 'editmodel/:id') {
+      data = { "source": 'manage-model', condition: { "_id": id } };
     }
-    if (route.snapshot.routeConfig.path == 'editmake/:id') {
-      data = { "source": 'manage-make', condition: { "_id": id } };
+    if (route.snapshot.routeConfig.path == 'edityear/:id') {
+      data = { "source": 'manage-year', condition: { "_id": id } };
     }
 
     
@@ -112,6 +118,8 @@ let result: any = {};
       make_name: [this.dataType.make_name, Validators.required],
       Cars: [this.dataType.Cars, Validators.required],
       status: [this.dataType.status],
+      type:[this.dataType.type],
+      year:[this.dataType.year],
       categoriesType: [this.dataType.categoriesType]
     })
   }else if (this.dataType.categoriesType == 'year') {
@@ -138,6 +146,49 @@ let result: any = {};
     //   result=data;
     //   console.log(result,'+++++++++++')
     // })
+
+
+    
+    //make drop down
+    let data: any = {};
+
+    data = { "source": 'manage-make', condition: { "categoriesType": "make" } };
+
+    this.apiService.CustomRequest(data, "datalist").subscribe(res => {
+
+      let result: any = {};
+      result = res;
+      this.makeArray = result.res;
+      console.log(this.makeArray);
+    })
+
+    //type dropdown
+    let dataType: any;
+    dataType = { "source": 'manage-type', condition: { "categoriesType": "type" } };
+
+    this.apiService.CustomRequest(dataType, "datalist").subscribe(res => {
+
+      let result: any = {};
+      result = res;
+      this.typeArray = result.res;
+      console.log("@@>>>", this.typeArray);
+    })
+
+
+    //year dropdown
+
+    let dataYear: any;
+    dataYear = { "source": 'manage-year', condition: { "categoriesType": "year" } };
+
+    this.apiService.CustomRequest(dataYear, "datalist").subscribe(res => {
+
+      let result: any = {};
+      result = res;
+      this.typeYear = result.res;
+      console.log("@@>>>", this.typeYear);
+    })
+
+
   }
 
   resetForm() {
@@ -189,7 +240,7 @@ let result: any = {};
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
-      this.router.navigateByUrl('/manage-yera');
+      this.router.navigateByUrl('/manage-year');
     })
   }
 }

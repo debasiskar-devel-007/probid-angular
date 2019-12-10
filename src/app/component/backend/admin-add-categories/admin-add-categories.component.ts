@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { MatDialogRef } from '@angular/material';
@@ -18,6 +18,8 @@ export class AdminAddCategoriesComponent implements OnInit {
   public addModelform: FormGroup;
   public allData: any = {};
   public makeArray: any;
+  public typeArray: any;
+  public typeYear: any;
   constructor(public route: ActivatedRoute, public apiService: ApiService, public fb: FormBuilder, public router: Router, public dialogRef: MatDialogRef<DialogModalOpenDialog>) {
 
 
@@ -27,18 +29,18 @@ export class AdminAddCategoriesComponent implements OnInit {
 
     data = { "source": 'manage-categories', condition: { "_id": id } };
 
-    this.apiService.CustomRequest(data,"datalist").subscribe(res => {
+    this.apiService.CustomRequest(data, "datalist").subscribe(res => {
       // console.log(res);
-let result: any = {};
+      let result: any = {};
       result = res;
-       console.log(result.res[0]);
+      console.log(result.res[0]);
       this.allData = result.res[0];
     });
 
 
 
     this.addTypeForm = this.fb.group({
-     
+
       TypeName: ['', Validators.required],
       added_on: ['', Validators.required],
       Cars: ['', Validators.required],
@@ -47,7 +49,7 @@ let result: any = {};
     })
 
     this.addMakeform = this.fb.group({
-     
+
       make_name: ['', Validators.required],
       added_on: ['', Validators.required],
       Cars: ['', Validators.required],
@@ -56,17 +58,19 @@ let result: any = {};
     })
 
     this.addModelform = this.fb.group({
-      
+
       model_name: ['', Validators.required],
       added_on: ['', Validators.required],
       make_name: ['', Validators.required],
       Cars: ['', Validators.required],
       status: [null],
+      year: ['', Validators.required],
+      type: ['', Validators.required],
       categoriesType: ["model"]
     })
 
     this.addyearform = this.fb.group({
-     
+
       added_on: ['', Validators.required],
       year: ['', Validators.required],
       Cars: ['', Validators.required],
@@ -77,21 +81,49 @@ let result: any = {};
   }
 
   ngOnInit() {
+
+    //make drop down
     let data: any = {};
-   
+
     data = { "source": 'manage-make', condition: { "categoriesType": "make" } };
 
-    this.apiService.CustomRequest(data,"datalist").subscribe(res => {
-      
-let result: any = {};
+    this.apiService.CustomRequest(data, "datalist").subscribe(res => {
+
+      let result: any = {};
       result = res;
       this.makeArray = result.res;
       console.log(this.makeArray);
     })
-    
+
+    //type dropdown
+    let dataType: any;
+    dataType = { "source": 'manage-type', condition: { "categoriesType": "type" } };
+
+    this.apiService.CustomRequest(dataType, "datalist").subscribe(res => {
+
+      let result: any = {};
+      result = res;
+      this.typeArray = result.res;
+      console.log("@@>>>", this.typeArray);
+    })
+
+
+    //year dropdown
+
+    let dataYear: any;
+    dataYear = { "source": 'manage-year', condition: { "categoriesType": "year" } };
+
+    this.apiService.CustomRequest(dataYear, "datalist").subscribe(res => {
+
+      let result: any = {};
+      result = res;
+      this.typeYear = result.res;
+      console.log("@@>>>", this.typeYear);
+    })
+
   }
 
-   
+
   addTypeSubmit() {
     console.log(this.addTypeForm.value);
     let endpoint: any = "addorupdatedata";
@@ -99,7 +131,7 @@ let result: any = {};
       data: this.addTypeForm.value,
       source: "manage-type",
     };
-    this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
+    this.apiService.CustomRequest(data, endpoint).subscribe(res => {
       console.log(res);
       this.dialogRef.close();
 
@@ -113,7 +145,7 @@ let result: any = {};
       data: this.addMakeform.value,
       source: "manage-make",
     };
-    this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
+    this.apiService.CustomRequest(data, endpoint).subscribe(res => {
       console.log(res);
       this.dialogRef.close();
       this.router.navigateByUrl('/manage-make');
@@ -126,7 +158,7 @@ let result: any = {};
       data: this.addModelform.value,
       source: "manage-model",
     };
-    this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
+    this.apiService.CustomRequest(data, endpoint).subscribe(res => {
       console.log(res);
       this.dialogRef.close();
       this.router.navigateByUrl('/manage-model');
@@ -139,7 +171,7 @@ let result: any = {};
       data: this.addyearform.value,
       source: "manage-year",
     };
-    this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
+    this.apiService.CustomRequest(data, endpoint).subscribe(res => {
       console.log(res);
       this.dialogRef.close();
       this.router.navigateByUrl('/manage-year');

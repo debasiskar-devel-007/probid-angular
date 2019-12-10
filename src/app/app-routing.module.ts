@@ -388,7 +388,13 @@ const routes: Routes = [
   { path: 'reptrainingcenter/:cid/:lid', component: RepTraingcenterComponent}, // lesson id
   { path: 'manage-leads', component: ManageleadsComponent },
 
-  { path: 'editcategori/:id', component: AddAdminCategoriesComponent },
+  { path: 'editmake/:id', component: AddAdminCategoriesComponent },
+
+  { path: 'editmodel/:id', component: AddAdminCategoriesComponent },
+
+  { path: 'edityear/:id', component: AddAdminCategoriesComponent },
+
+  { path: 'edittype/:id', component: AddAdminCategoriesComponent },
 
 
   { path: 'training-reports', component: TrainingreportsComponent },

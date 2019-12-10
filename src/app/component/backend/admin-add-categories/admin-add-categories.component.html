@@ -114,6 +114,23 @@
                                     <mat-option *ngFor="let item of makeArray" value="{{item.make_name}}">{{item.make_name}}</mat-option>
                                     </mat-select>
                                 </mat-form-field>
+
+                                <mat-form-field>                
+                                    <label>Choose Type:</label>
+                                    <mat-label>Select an option</mat-label>
+                                    <mat-select formControlName="type">
+                                    <mat-option *ngFor="let item of typeArray" value="{{item.TypeName}}">{{item.TypeName}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+                                <mat-form-field>                
+                                    <label>Choose Year:</label>
+                                    <mat-label>Select an option</mat-label>
+                                    <mat-select formControlName="year">
+                                    <mat-option *ngFor="let item of typeYear" value="{{item.year}}">{{item.year}}</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
                             <mat-form-field>
                                     <label>Status:</label>
                                     <mat-label>Select an option</mat-label>
