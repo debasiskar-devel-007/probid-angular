@@ -38,6 +38,7 @@ export class BasicInventorySearchComponent implements OnInit {
   public search: any;
   public user_details:any;
   public user_id: string;
+  public isFavorite: number = 0;
 
 
   constructor(public fb: FormBuilder,
@@ -151,6 +152,7 @@ export class BasicInventorySearchComponent implements OnInit {
 
         this.http.get(search_link).subscribe((res: any) => {
           this.search = res.listings;
+          console.log('search list',this.search)
 
         })
       } else {
@@ -169,19 +171,33 @@ export class BasicInventorySearchComponent implements OnInit {
   }
 
   favorite(item: any) {
-    console.log(item);
+    console.log('item')
+    console.log(item)
+    if (this.isFavorite = 0) {
+      this.isFavorite = 1;
+      console.log('this.isFavorite',this.isFavorite)
+    }else {
+      this.isFavorite = 0;
+    }
     let endpoint: any = "addorupdatedata";
-    item.id_car=item.id; 
-    item.user_id = this.user_id;
-    delete item.id
+    item.isFavorite = this.isFavorite;
+    let card_data:any = {
+      card_data: item
+    }
     let data: any = {
-      data: item,
+      data: card_data,
       source: "save_favorite",
     };
     console.log(data)
-    this.apiService.CustomRequest(data, endpoint).subscribe(res => {
-      console.log(res);
-    });
+      this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
+        console.log(res);
+        (res.status == "success")
+      });
+
+  }
+
+  rsvpSend(item: any) {
+
   }
 
 }
