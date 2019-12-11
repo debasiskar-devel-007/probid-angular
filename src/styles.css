@@ -141,7 +141,11 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
   width: 56px;
 }
 
-
+.inventorysearch .example-container .mat-form-field-appearance-legacy .mat-form-field-infix{
+  padding: 0 !important;
+  background: #fff !important;
+  margin-bottom: 0 !important;
+}
 
 @media screen and (max-width: 1600px){
   .owl-carousel .owl-nav button.owl-prev {

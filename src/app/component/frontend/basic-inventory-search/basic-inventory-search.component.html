@@ -25,90 +25,117 @@
 <mat-card class="ptb-35 generalcls inventorysearch" style="padding: 0 !important;">
   <span class="formblockwrapper">
     <span class="mainwrappercontent">
-    <!-- <img src="../../../../assets/images/basic-inventory-search.jpg"
+      <!-- <img src="../../../../assets/images/basic-inventory-search.jpg"
       style="width: 100%; display: block; margin: 0; padding: 0;"> -->
 
-        <span class="formblock">
-            <form class="example-container" [formGroup]="inventoryCustomerForm" (ngSubmit)="inventoryCustomerSearch()">
+      <span class="formblock">
+        <form class="example-container" [formGroup]="inventoryCustomerForm" (ngSubmit)="inventoryCustomerSearch()">
 
-                <mat-form-field >
-                  <mat-label>Make</mat-label>
-
-                  <mat-select formControlName="make" placeholder="Make">
-                    <mat-option  *ngFor="let makeval of make_list" [value]="makeval.make_name" >
-                     {{makeval.make_name}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-                <mat-form-field >
-                    <mat-label>Model</mat-label>
-                    <mat-select formControlName="model" placeholder="Model">
-                      <mat-option  *ngFor="let modelval of model_list" [value]='modelval.model_name'  >
-                        {{modelval.model_name}}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-
-                  <mat-form-field >
-                      <mat-label>Type</mat-label>
-                      <mat-select formControlName="type" placeholder="Type">
-                        <mat-option *ngFor="let typeval of type_list" [value]='typeval.TypeName' >
-                          {{typeval.TypeName}}
-                        </mat-option>
-                      </mat-select>
-                    </mat-form-field>
-
-                  <mat-form-field >
-                      <mat-label>VEHICLE TYPE</mat-label>
-                      <mat-select formControlName="vehicle" placeholder="VEHICLE TYPE">
-                          <mat-option value="">VEHICLE TYPE</mat-option>
-                          <mat-option value="vt1">VEHICLE TYPE 1</mat-option>
-                          <mat-option value="vt2">VEHICLE TYPE 2</mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                    <mat-form-field >
-                        <mat-label>Year</mat-label>
-                        <mat-select formControlName="year" placeholder="Year">
-                          <mat-option  *ngFor="let yearval of year_list"  [value]='yearval.year' >
-                            {{yearval.year}}
-                          </mat-option>
-                        </mat-select>
+            <span class="section1">
+                <span>
+                  <span>
+                      <h4>Make:</h4> 
+                      <mat-form-field>
+                          <mat-select formControlName="make" placeholder="Make">
+                              <mat-option *ngFor="let makeval of make_list" [value]="makeval.make_name">
+                                {{makeval.make_name}}
+                              </mat-option>
+                            </mat-select>
                       </mat-form-field>
-                      <span>
-                          <mat-form-field >
-                              <mat-label>Trim</mat-label>
-                              <mat-select formControlName="trim" placeholder="Trim">
-                                  <mat-option value="">Trim</mat-option>
-                                  <mat-option value="trim1">Trim 1</mat-option>
-                                  <mat-option value="trim2">Trim 2</mat-option>
+                  </span>            
+                  <span>
+                      <h4>Model:</h4> 
+                      <mat-form-field>
+                          <mat-select formControlName="model" placeholder="Model">
+                              <mat-option *ngFor="let modelval of model_list" [value]='modelval.model_name'>
+                                {{modelval.model_name}}
+                              </mat-option>
+                            </mat-select>
+                      </mat-form-field>
+                  </span>              
+                  <span>
+                      <h4>TYPE:</h4> 
+                      <mat-form-field>
+                          <mat-select formControlName="type" placeholder="Type">
+                              <mat-option *ngFor="let typeval of type_list" [value]='typeval.TypeName'>
+                                {{typeval.TypeName}}
+                              </mat-option>
+                            </mat-select>
+                      </mat-form-field>              
+                  </span>                                  
+                </span>
+                <span>
+                    <span>
+                        <h4>VEHICLE TYPE:</h4> 
+                        <mat-form-field>
+                            <mat-select formControlName="vehicle" placeholder="VEHICLE TYPE">
+                                <mat-option value="">VEHICLE TYPE</mat-option>
+                                <mat-option value="vt1">VEHICLE TYPE 1</mat-option>
+                                <mat-option value="vt2">VEHICLE TYPE 2</mat-option>
                               </mat-select>
-                            </mat-form-field>
-                            <mat-form-field >
-                                <mat-label>VIN</mat-label>
-                                <mat-select formControlName="vin" placeholder="VIN" >
-                                    <mat-option value="">VIN</mat-option>
-                                    <mat-option value="vin1">vin1</mat-option>
-                                    <mat-option value="vin2">vin2</mat-option>
-                                </mat-select>
-                              </mat-form-field>
-                      </span>
-                      <mat-form-field >
-                          <mat-label>STATE</mat-label>
-                          <mat-select formControlName="state" placeholder="STATE" >
-                              <mat-option *ngFor="let item of stateList" [value]="item.abbreviation">{{item.name}}</mat-option>
-                          </mat-select>
+                        </mat-form-field>              
+                    </span>
+                  <span>
+                      <h4>Year:</h4> 
+                      <mat-form-field>
+                          <mat-select formControlName="year" placeholder="Year">
+                              <mat-option *ngFor="let yearval of year_list" [value]='yearval.year'>
+                                {{yearval.year}}
+                              </mat-option>
+                            </mat-select>
+                      </mat-form-field>
+                  </span>                  
+                  <span>
+                      <h4>Trim:</h4> 
+                      <mat-form-field>
+                          <mat-select formControlName="trim" placeholder="Trim">
+                              <mat-option value="">Trim</mat-option>
+                              <mat-option value="trim1">Trim 1</mat-option>
+                              <mat-option value="trim2">Trim 2</mat-option>
+                            </mat-select>
+                      </mat-form-field>
+                  </span>              
+                  
+                </span>
+                <span>
+                    <span>
+                        <h4>VIN:</h4> 
+                        <mat-form-field>
+                            <mat-select formControlName="vin" placeholder="VIN">
+                                <mat-option value="">VIN</mat-option>
+                                <mat-option value="vin1">vin1</mat-option>
+                                <mat-option value="vin2">vin2</mat-option>
+                              </mat-select>
                         </mat-form-field>
-                        <mat-form-field >
-                            <mat-label>ZIP</mat-label>
-                            <input matInput formControlName="zip" type="ZIP" placeholder="ZIP" min="13">
-                            <!-- <mat-error *ngIf="options.get('fontSize')?.invalid">Min size: 6</mat-error> -->
-                          </mat-form-field>
-                          <button mat-raised-button color="primary" type="submit"> Search</button>
-              </form>
-            </span>
+                    </span>
+                  <span>
+                      <h4>STATE:</h4> 
+                  <mat-form-field>
+                      <mat-select formControlName="state" placeholder="STATE">
+                          <mat-option *ngFor="let item of stateList" [value]="item.abbreviation">{{item.name}}</mat-option>
+                        </mat-select>
+                  </mat-form-field>
+                  </span>            
+                  <span>
+                      <h4>ZIP:</h4> 
+                  <mat-form-field>
+                    <mat-label>ZIP</mat-label>
+                    <input matInput formControlName="zip" type="ZIP" placeholder="ZIP">
+                  </mat-form-field>
+                  </span>
 
-        </span>
+                 
+
+                </span>
+                <button mat-raised-button color="primary" type="submit"> Search</button>
+               
+              </span>
+
+        </form>
+      </span>
+
     </span>
+  </span>
 </mat-card>
 
 <app-footer></app-footer>

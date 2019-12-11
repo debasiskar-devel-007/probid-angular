@@ -8,6 +8,8 @@ import { MetaService } from '@ngx-meta/core';
 })
 export class AdvanceInventorySearchComponent implements OnInit {
 
+ 
+
   constructor(private readonly meta: MetaService) {
 
     this.meta.setTitle('ProBid Auto - Inventory');
