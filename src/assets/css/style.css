@@ -1369,3 +1369,25 @@ a.associate_new_con6_link:hover{color: #fff;}
         display: block!important;}
 }
 /*-----------------amitava 04/12/2019 end-----------------------*/
+
+
+
+/* ---------------avijit css start -------------------- */
+.prmainwrapper mat-list-item .mat-list-item-content{padding: 0 !important; flex-wrap: wrap;}
+
+.text-wrapper .mat-checkbox-inner-container-no-side-margin{height: 24px !important; width: 24px !important;}
+.text-wrapper .mat-checkbox-frame{display: none;}
+.text-wrapper .mat-checkbox-checked.mat-accent .mat-checkbox-background{background: none;}
+.text-wrapper .red .mat-checkbox-inner-container-no-side-margin{background: #e73939;}
+.text-wrapper .black .mat-checkbox-inner-container-no-side-margin{background: #3c3c3c;}
+.text-wrapper .blue .mat-checkbox-inner-container-no-side-margin{background: #395ee7;}
+.text-wrapper .white .mat-checkbox-inner-container-no-side-margin{background: #ffffff; border: 1px solid #dadada;}
+.text-wrapper .white .mat-checkbox-checkmark-path{stroke: #000!important;}
+.rightcontent .rightcontentrow .mat-list-item-content{ align-items: flex-start;}
+.pa_blockfooter .mat-list .mat-list-item .mat-list-item-content{flex-wrap: wrap; justify-content: center;}
+/* ---------------avijit css end ---------------------- */
+
+
+
+
+
