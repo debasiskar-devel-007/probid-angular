@@ -166,7 +166,9 @@ const routes: Routes = [
 
 
 
-  { path: 'advance-inventory-search', component: AdvanceInventorySearchComponent },
+  { path: 'advance-inventory-search', component: AdvanceInventorySearchComponent ,
+  resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' } },
   { path: 'basic-inventory-search', component: BasicInventorySearchComponent ,
   resolve: { inventory_search: ResolveService },
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }},

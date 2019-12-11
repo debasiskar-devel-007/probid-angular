@@ -135,6 +135,19 @@
       </span>
 
     </span>
+
+<span *ngIf="search != null && search.length>=0">
+    <mat-card *ngFor="let item of search">
+        <p>{{item.availability_status}}</p>
+        <p>{{item.media.photo_links[0]}}</p>
+        <img [src]="item.media.photo_links[0]" alt="">
+        <button mat-icon-button color="warn" aria-label="Example icon-button with a heart icon" (click)="favorite(item)">
+          <mat-icon>favorite</mat-icon>
+        </button>
+    </mat-card>
+  </span>
+
+
   </span>
 </mat-card>
 
