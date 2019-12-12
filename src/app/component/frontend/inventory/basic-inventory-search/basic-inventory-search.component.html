@@ -137,86 +137,86 @@
     </span>
 
     <span class="mainwrappercontent">
-    <mat-list class="rightcontent" *ngIf="search != null && search.length>=0">
-        <mat-list-item class="rightcontentrow" *ngFor="let item of search">
-          <mat-card-content class="col-1-3">
-            <span class="as_imgwrapper">
-              <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null && modalImg == ''" [src]="item.media.photo_links[0]">
-              <img *ngIf="modalImg != ''" [src]="modalImg">
-              <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
-            </span>
-            <span class="as_sm_imgmainwrapper">
-                <owl-carousel [options]="carouselOptions" [items]="TestimonialListArray" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-                    <div class="sm-imgwrapper" *ngFor="let img of item.media.photo_links; let i= index">
-                        <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
-                        <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="img" (click)="showimg(img)">
-                    </div>
-            
-                  </owl-carousel>
-                  
-             
-
-              <!-- <span class="as_sm_imgmainwrapperinner">
-                  <span class="sm-imgwrapper" *ngFor="let img of item.media.photo_links">
-                    <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="img" (click)="showimg(img)">
-                    <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg"></span>
-                  </span>
-              </span>               -->
+      <mat-list class="rightcontent" *ngIf="search != null && search.length>=0">
+          <mat-list-item class="rightcontentrow" *ngFor="let item of search">
+            <mat-card-content class="col-1-3">
+              <span class="as_imgwrapper">
+                <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null && modalImg == ''" [src]="item.media.photo_links[0]">
+                <img *ngIf="modalImg != ''" [src]="modalImg">
+                <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
               </span>
-          </mat-card-content>
-          <mat-card-content class="col-1-7">
-            <span class="subrighrwrapper">
-              <span class="sub-col-6">
-                <span class="text-wrapper">
-                  <h2 *ngIf="item.heading != null">{{item.heading}}</h2>
-                  <h3 *ngIf="item.vin != null">VIN: {{item.vin}}</h3>
+              <span class="as_sm_imgmainwrapper">
+                  <owl-carousel [options]="carouselOptions" [items]="TestimonialListArray" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                      <div class="sm-imgwrapper" *ngFor="let img of item.media.photo_links; let i= index">
+                          <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
+                          <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="img" (click)="showimg(img)">
+                      </div>
+              
+                    </owl-carousel>
+                    
+              
 
-                  <p *ngIf="item.build.cylinders != null">{{item.build.cylinders}} Cylinders </p>
-                  <p *ngIf="item.build.vehicle_type != null">Vehicle Type: {{item.build.vehicle_type}}</p>
-                    <p *ngIf="item.build.transmission != null">Transmission: {{item.build.transmission}}</p>
-                    <p *ngIf="item.build.fuel_type != null"> Fuel: {{item.build.fuel_type}}</p>
+                <!-- <span class="as_sm_imgmainwrapperinner">
+                    <span class="sm-imgwrapper" *ngFor="let img of item.media.photo_links">
+                      <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="img" (click)="showimg(img)">
+                      <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg"></span>
+                    </span>
+                </span>               -->
+                </span>
+            </mat-card-content>
+            <mat-card-content class="col-1-7">
+              <span class="subrighrwrapper">
+                <span class="sub-col-6">
+                  <span class="text-wrapper">
+                    <h2 *ngIf="item.heading != null">{{item.heading}}</h2>
+                    <h3 *ngIf="item.vin != null">VIN: {{item.vin}}</h3>
 
-                    <label id="example-radio-group-label">Pick your favorite season</label>
-                    <br>
-                    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="favoriteSeason">
-                      <mat-checkbox class="red"></mat-checkbox>
-                      <mat-checkbox class="black"></mat-checkbox>
-                      <mat-checkbox class="blue"></mat-checkbox>
-                      <mat-checkbox class="white"></mat-checkbox>
-                    </mat-radio-group>
+                    <p *ngIf="item.build.cylinders != null">{{item.build.cylinders}} Cylinders </p>
+                    <p *ngIf="item.build.vehicle_type != null">Vehicle Type: {{item.build.vehicle_type}}</p>
+                      <p *ngIf="item.build.transmission != null">Transmission: {{item.build.transmission}}</p>
+                      <p *ngIf="item.build.fuel_type != null"> Fuel: {{item.build.fuel_type}}</p>
 
-                    <p *ngIf="item.build.body_type != null">Body Type: {{item.build.body_type}}</p>
+                      <label id="example-radio-group-label">Pick your favorite season</label>
+                      <br>
+                      <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="favoriteSeason">
+                        <mat-checkbox class="red"></mat-checkbox>
+                        <mat-checkbox class="black"></mat-checkbox>
+                        <mat-checkbox class="blue"></mat-checkbox>
+                        <mat-checkbox class="white"></mat-checkbox>
+                      </mat-radio-group>
+
+                      <p *ngIf="item.build.body_type != null">Body Type: {{item.build.body_type}}</p>
+                  </span>
+                </span>
+                <span class="sub-col-4">
+                  <mat-card-content class="rrblock1">
+                    <h1>RSVP</h1>
+                    <button (click)="favorite(item)"><i class="material-icons" > favorite </i> ADD</button>
+                  </mat-card-content>
+                  <mat-card-content class="rrblock1 currentbidprice">
+                    <span class="text-wrapper" *ngIf="item.price != null">
+                      <p>Current Bid Price: </p>
+                      <h5>${{item.price}}</h5>
+                      <h6 *ngIf="item.build.engine != null"><strong>Engine Type</strong> {{item.build.engine}}</h6>
+                    </span>
+                  </mat-card-content>
                 </span>
               </span>
-              <span class="sub-col-4">
-                <mat-card-content class="rrblock1">
-                  <h1>RSVP</h1>
-                  <button (click)="favorite(item)"><i class="material-icons" > favorite </i> ADD</button>
-                </mat-card-content>
-                <mat-card-content class="rrblock1 currentbidprice">
-                  <span class="text-wrapper" *ngIf="item.price != null">
-                    <p>Current Bid Price: </p>
-                    <h5>${{item.price}}</h5>
-                    <h6 *ngIf="item.build.engine != null"><strong>Engine Type</strong> {{item.build.engine}}</h6>
-                  </span>
-                </mat-card-content>
-              </span>
+            </mat-card-content>
+            <span class="pa_blockfooter">
+                <mat-list *ngIf="item.build != null">
+                    <mat-list-item class="pa_blockfooterlogo"> <img src="../../assets/images/logomain.png"> </mat-list-item>
+                    <mat-list-item class="pa_blockfootertext"> <strong>Interior Color</strong> Black</mat-list-item>                                        
+                    <mat-list-item class="pa_blockfootertext" *ngIf="item.build.drivetrain != null"> <strong>Drive Train</strong> {{item.build.drivetrain}}</mat-list-item>
+                    <mat-list-item class="pa_blockfootertext" *ngIf="item.build.year != null"> <strong>Year</strong> {{item.build.year}}</mat-list-item>
+                    <mat-list-item class="pa_blockfootertext" *ngIf="item.build.make != null"> <strong>Make</strong> {{item.build.make}}</mat-list-item>
+                    <mat-list-item class="pa_blockfootertext" *ngIf="item.build.model != null"> <strong>Model</strong> {{item.build.model}}</mat-list-item>
+                    <mat-list-item class="pa_blockfootertext" *ngIf="item.build.body_type != null"> <strong>Type</strong> {{item.build.body_type}}</mat-list-item>
+                  </mat-list>
             </span>
-          </mat-card-content>
-          <span class="pa_blockfooter">
-              <mat-list *ngIf="item.build != null">
-                  <mat-list-item class="pa_blockfooterlogo"> <img src="../../assets/images/logomain.png"> </mat-list-item>
-                  <mat-list-item class="pa_blockfootertext"> <strong>Interior Color</strong> Black</mat-list-item>                                        
-                  <mat-list-item class="pa_blockfootertext" *ngIf="item.build.drivetrain != null"> <strong>Drive Train</strong> {{item.build.drivetrain}}</mat-list-item>
-                  <mat-list-item class="pa_blockfootertext" *ngIf="item.build.year != null"> <strong>Year</strong> {{item.build.year}}</mat-list-item>
-                  <mat-list-item class="pa_blockfootertext" *ngIf="item.build.make != null"> <strong>Make</strong> {{item.build.make}}</mat-list-item>
-                  <mat-list-item class="pa_blockfootertext" *ngIf="item.build.model != null"> <strong>Model</strong> {{item.build.model}}</mat-list-item>
-                  <mat-list-item class="pa_blockfootertext" *ngIf="item.build.body_type != null"> <strong>Type</strong> {{item.build.body_type}}</mat-list-item>
-                 </mat-list>
-          </span>
-        </mat-list-item>
-       </mat-list>
-      </span>
+          </mat-list-item>
+      </mat-list>
+    </span>
   </span>
 </mat-card>
 

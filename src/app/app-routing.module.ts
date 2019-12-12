@@ -77,8 +77,8 @@ import { TrainingsectionComponent } from './training/trainingsection/trainingsec
 import { RepTraingcenterComponent } from './training/rep-traingcenter/rep-traingcenter.component';
 import { ManageleadsComponent } from './training/manageleads/manageleads.component';
 import { BookAnAppointmentComponent } from './component/backend/book-an-appointment/book-an-appointment.component';
-import { AdvanceInventorySearchBackendComponent } from './component/backend/advance-inventory-search-backend/advance-inventory-search-backend.component';
-import { BasicInventorySearchBackendComponent } from './component/backend/basic-inventory-search-backend/basic-inventory-search-backend.component';
+import { AdvanceInventorySearchBackendComponent } from './component/backend/inventory/advance-inventory-search-backend/advance-inventory-search-backend.component';
+import { BasicInventorySearchBackendComponent } from './component/backend/inventory/basic-inventory-search-backend/basic-inventory-search-backend.component';
 import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
 import { CommunicationComponent } from './component/backend/communication/communication.component';
 import { AdminManageCategoriesComponent } from './component/backend/admin-manage-categories/admin-manage-categories.component';
@@ -367,7 +367,7 @@ const routes: Routes = [
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
   },
 
-  { path: 'basic-inventory-search-castomer', component: BasicInventorySearchBackendComponent ,
+  { path: 'basic-inventory-search-customer', component: BasicInventorySearchBackendComponent ,
   resolve: { inventory_search: ResolveService },
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
 },
