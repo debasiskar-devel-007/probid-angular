@@ -1,13 +1,13 @@
-.basicinventorysearchbg.mat-card{background:url(../../../../assets/images/basicinventorybg.jpg) no-repeat center center !important;}
+.basicinventorysearchbg.mat-card{background:url(../../../../../assets/images/basicinventorybg.jpg) no-repeat center center !important;}
 
 @media only screen and (max-width:1024px) {
-    .basicinventorysearchbg.mat-card {background: url(../../../../assets/images/basicinventorybg.jpg) no-repeat left 25% center !important;}
+    .basicinventorysearchbg.mat-card {background: url(../../../../../assets/images/basicinventorybg.jpg) no-repeat left 25% center !important;}
 }
 
 
 
   .formblockwrapper{
-    background:url(../../../../assets/images/basicinventorysearchbg.jpg) no-repeat left bottom !important; background-size: cover;
+    background:url(../../../../../assets/images/basicinventorysearchbg.jpg) no-repeat left bottom !important; background-size: cover;
     min-height: 548px;
     position: relative;
     display: block;
@@ -319,7 +319,9 @@ flex-direction: column;
 
 
 .pa_blockfooter .mat-list{display:flex; justify-content: space-between; background-color: #dbdfe0;padding: 0;}
-.pa_blockfooter .mat-list .mat-list-item{height: auto;}
+.pa_blockfooter .mat-list .mat-list-item{height: auto;border-right: 2px solid #bbb;}
+.pa_blockfooter .mat-list .mat-list-item:first-child{border-right: 0px solid #bbb;}
+.pa_blockfooter .mat-list .mat-list-item:last-child{border-right: 0px solid #bbb;}
 .pa_blockfooter {
   display: inline-block;
   width: 100%;
