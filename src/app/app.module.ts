@@ -160,6 +160,27 @@ import { AddCustomerComponent } from './component/backend/add-customer/add-custo
 import { AddBirddogComponent } from './component/backend/add-birddog/add-birddog.component';
 
 
+
+
+
+import { AddEditNewsletterComponent } from './component/backend/newsletterlists/add-edit-newsletter/add-edit-newsletter.component';
+ 
+import { AddEditSubscriberComponent } from './component/backend/newsletterlists/add-edit-subscriber/add-edit-subscriber.component';
+import { AddEditSubscriberGroupComponent } from './component/backend/newsletterlists/add-edit-subscriber-group/add-edit-subscriber-group.component';
+ 
+ import { AddEditTestemailComponent } from './component/backend/newsletterlists/add-edit-testemail/add-edit-testemail.component';
+
+ import { AddEditSenderappComponent } from './component/backend/newsletterlists/add-edit-senderapp/add-edit-senderapp.component';
+ 
+
+import { ListingNewsletterComponent } from './component/backend/newsletterlists/listing-newsletter/listing-newsletter.component';
+
+import { LisitngTestemailappComponent } from './component/backend/newsletterlists/lisitng-testemailapp/lisitng-testemailapp.component';
+import { ListingSenderappComponent } from './component/backend/newsletterlists/listing-senderapp/listing-senderapp.component';
+import { ListingSubscriptionComponent } from './component/backend/newsletterlists/listing-subscription/listing-subscription.component';
+import { ListingSubcategoryComponent } from './component/backend/newsletterlists/listing-subcategory/listing-subcategory.component';
+
+
 //****** for video Modal*********//
 
 @NgModule({
@@ -261,6 +282,18 @@ import { AddBirddogComponent } from './component/backend/add-birddog/add-birddog
     NewslatterDialogComponent,
     NewslattersuccessDialogComponent,
     errorDialog,
+
+
+    AddEditNewsletterComponent,
+    AddEditSubscriberComponent,
+    AddEditSubscriberGroupComponent,
+    AddEditTestemailComponent,
+    AddEditSenderappComponent,
+    ListingNewsletterComponent,
+    LisitngTestemailappComponent,
+    ListingSenderappComponent,
+    ListingSubscriptionComponent,
+    ListingSubcategoryComponent,
     SaveSearchComponent,
     // errorDialogbackend,
   ],

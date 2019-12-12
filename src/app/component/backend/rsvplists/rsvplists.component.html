@@ -1,8 +1,100 @@
 <div class="adminwrappercls">
   <app-header></app-header>
       <div class="main-content-wrap">
-        <mat-card class="generalcls blog" style="padding: 0 !important;">  
-            <img src="../../../../assets/images/rsvplists-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+        <mat-card class="generalcls blog" style="padding: 0 !important;">
+            <span>
+              <!-- <img src="../../../../assets/images/rsvplists-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+              <mat-card-content class="adm_inner_banner rsvpadmin">
+                  <mat-card-title class="adm_inner_title">RSVP LISTS</mat-card-title>
+                  <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              </mat-card-content>
+              <mat-card-content class="bred_cram_wrapper">
+                  <a mat-list-item routerLinkActive="active"> Dashboard </a>
+                  <a mat-list-item routerLinkActive="active activebread" [routerLink]="'/rsvp-admin'"> RSVP</a>
+              </mat-card-content>                
+              <span class="searchblock">
+                <span class="searchblockwrapper">
+                  <span>
+                    <h2>RSVP RESULT</h2>
+                  </span>
+                  <span>                        
+                      <button mat-button class="btnorange sim-button" (click)="modalopen()"><i class="material-icons">add</i> Add New</button>               
+                  </span>                      
+                </span>                    
+              </span>
+              <span class="rsvplistwrapper">
+                <span class="rsvplists">                  
+                  <span class="rsvplistsingle">
+                    <span class="rsvplistsingleinner">
+                        <span class="rsvplistsingleleft">
+                            <span class="rsvpliststop">
+                              <span class="rsvplistimgwrapper">
+                                  <img src="../../../../assets/images/rsvpimg1.jpg">
+                              </span>                        
+                            </span>
+                            <span class="rsvplistsbottom">
+                              <h2>BMW 535I, 2019, NAVI, LEATHER, ABS</h2>
+                              <span class="rsvplistsbottombtm">
+                               <span><h3>Status</h3></span>
+                               <span><h3>Rejected <span class="colorred"></span></h3></span>
+                              </span>
+                            </span>
+                          </span>
+                          <span class="rsvplistsingleright">
+                            <span class="rsvplisttypecontent">
+                              <h2>User</h2>
+                              <span class="rsvplisttypecontentinfo">
+                                <span class="rsvplisttypeimgwrapper">
+                                  <img src="../../../../assets/images/rsvpimg1.jpg">
+                                </span>
+                                <span class="listscontent">
+                                   <mat-list>
+                                     <mat-list-item><span>Name:</span> <span>Lorem Ipsum is</span> </mat-list-item>
+                                     <mat-list-item><span>Email ID:</span> <span>Lorem Ipsum.1256@gmail.com</span> </mat-list-item>
+                                     <mat-list-item><span>Phone:</span> <span>1234567890</span> </mat-list-item>
+                                   </mat-list>
+                                </span>
+                              </span>
+                              <span class="rsvplisttypebottom">
+                                <span>Qualified for Finance: <span class="red">NO</span></span>
+                                <span>Job Ticket related to this car: <span class="green">[1]</span></span>
+                              </span>
+
+                            </span>
+                            <span class="rsvplisttypecontent">
+                                <h2>Salesrep</h2>
+                                <span class="rsvplisttypecontentinfo">
+                                    <span class="rsvplisttypeimgwrapper">
+                                      <img src="../../../../assets/images/rsvpimg1.jpg">
+                                    </span>
+                                    <span class="listscontent">
+                                       <mat-list>
+                                         <mat-list-item><span>Name:</span> <span>Lorem Ipsum is</span> </mat-list-item>
+                                         <mat-list-item><span>Email ID:</span> <span>Lorem Ipsum.1256@gmail.com</span> </mat-list-item>
+                                         <mat-list-item><span>Phone:</span> <span>1234567890</span> </mat-list-item>
+                                       </mat-list>
+                                    </span>
+                                  </span>
+                                  <span class="rsvplisttypebottom">
+                                    <span>Qualified for Finance: <span class="red">NO</span></span>
+                                    <span>Job Ticket related to this car: <span class="green">[1]</span></span>
+                                  </span>
+                            </span>                            
+                          </span>
+                    </span>
+                  </span>
+                  <span> cvc</span>
+                  <span> cvc</span>
+                  <span> cvc</span>
+                  <span> cvc</span>
+                  <span> cvc</span>
+                  <span> cvc</span>
+                  <span> cvc</span>
+                  <span> cvc</span>
+                  <span> cvc</span>
+                </span>                
+              </span>  
+            </span>  
         </mat-card>
       </div>
   </div>

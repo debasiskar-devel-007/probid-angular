@@ -94,6 +94,25 @@ import { MyAccountComponent } from './component/backend/my-account/my-account.co
 import { AddSalesrepComponent } from './component/backend/add-salesrep/add-salesrep.component';
 import { AddCustomerComponent } from './component/backend/add-customer/add-customer.component';
 import { AddBirddogComponent } from './component/backend/add-birddog/add-birddog.component';
+
+
+
+import { AddEditNewsletterComponent } from './component/backend/newsletterlists/add-edit-newsletter/add-edit-newsletter.component';
+ 
+import { AddEditSubscriberComponent } from './component/backend/newsletterlists/add-edit-subscriber/add-edit-subscriber.component';
+import { AddEditSubscriberGroupComponent } from './component/backend/newsletterlists/add-edit-subscriber-group/add-edit-subscriber-group.component';
+ 
+ import { AddEditTestemailComponent } from './component/backend/newsletterlists/add-edit-testemail/add-edit-testemail.component';
+
+ import { AddEditSenderappComponent } from './component/backend/newsletterlists/add-edit-senderapp/add-edit-senderapp.component';
+ 
+
+import { ListingNewsletterComponent } from './component/backend/newsletterlists/listing-newsletter/listing-newsletter.component';
+
+import { LisitngTestemailappComponent } from './component/backend/newsletterlists/lisitng-testemailapp/lisitng-testemailapp.component';
+import { ListingSenderappComponent } from './component/backend/newsletterlists/listing-senderapp/listing-senderapp.component';
+import { ListingSubscriptionComponent } from './component/backend/newsletterlists/listing-subscription/listing-subscription.component';
+import { ListingSubcategoryComponent } from './component/backend/newsletterlists/listing-subcategory/listing-subcategory.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -317,14 +336,16 @@ const routes: Routes = [
   { path: 'commission-list', component: CommissionListComponent },
 
   { path: 'customer-list-admin', component: CustomerListComponent,resolve: { customerlist: ResolveService },
-  data: { requestcondition: { source: 'user_view', condition: {"type": "customer"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
+  data: { requestcondition: { source: 'user', condition: {"type": "customer"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
 
   { path: 'manage-commission', component: ManageCommissionComponent },
   // { path: 'newsletter-list', component: NewsletterlistsComponent },
   { path: 'sales-report', component: SalesReportComponent },
   { path: 'salesrep-list-admin', component: SalesreplistsComponent,resolve: { salesreplist: ResolveService },
   data: { requestcondition: { source: 'user_view', condition: {"type": "salesrep"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
-  { path: 'rsvp', component: RsvplistsComponent },
+  { path: 'rsvp-admin', component: RsvplistsComponent },
+  { path: 'rsvp-salesrep', component: RsvplistsComponent },
+  { path: 'rsvp-customer', component: RsvplistsComponent },
   // { path: 'manage-training1', component: ManageTrainingComponent },
   { path: 'manage-lessons', component: ManageLessonsComponent },
   { path: 'training-center', component: TrainingCenterComponent },
@@ -385,7 +406,9 @@ data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-se
 
   { path: 'my-appointment-rep', component: MyAppointmentComponent },
   { path: 'book-an-appointment-rep', component: BookAnAppointmentComponent },
-  { path: 'customer-list-rep', component: CustomerListComponent },
+  { path: 'customer-list-rep', component: CustomerListComponent,resolve: { customerlist: ResolveService },
+  data: { requestcondition: { source: 'user', condition: {"type": "customer",} },endpoint: 'datalist',canActivate: [AuthGuard] }},
+
   { path: 'social-advo-rep', component: SocialAdvoComponent },
 
 
@@ -430,16 +453,97 @@ data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-se
 
   { path: 'training-reports', component: TrainingreportsComponent },
 
-//News letter
+  // ___________________Newsletter MANAGEMENT_________________
+  // =======================================================
+
+  {
+    path: 'newsletter-list', component: NewsletterlistsComponent, canActivate: [AuthGuard],
+    resolve: { newsData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'newsletters',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+
+
+    // _____________________newsletter________________
+    { path: 'newsletter/add', component: AddEditNewsletterComponent },
+
+    {
+      path: 'newsletter/list',
+      component: ListingNewsletterComponent
+    },
+    {
+      path: 'newsletter/edit/:_id',
+      component: AddEditNewsletterComponent
+    },
+    // -----------------------------------------------
+
+    
+  // _____________________Subscriber________________
+  { path: 'subscriber/add', component: AddEditSubscriberComponent },
 
   {
     path: 'newsletter-list',
-    component: NewsletterlistsComponent,
-    resolve: { newsLetterData: ResolveService },
-    data: { requestcondition: { source: 'newslettertable', condition: {} }, endpoint: 'datalist' }
+    component: ListingSubscriptionComponent 
   },
+  {
+    path: 'subscriber/add-group/edit/:_id',
+    component: AddEditSubscriberComponent
+  },
+  // -----------------------------------------------
+  // -------------------------------------------
 
-  { path: '**', component: HomeComponent },
+
+
+    // _____________________Subscriber GROUP________________
+    { path: 'subscriber-group/add', component: AddEditSubscriberGroupComponent },
+
+    {
+      path: 'newsletter-list',
+      component: ListingSubcategoryComponent 
+    },
+    {
+      path: 'subscriber-group/edit/:_id',
+      component: AddEditSubscriberGroupComponent
+    },
+    // -----------------------------------------------
+    // -------------------------------------------
+  
+
+
+  // ________________________test email _____________________
+  { path: 'test/add', component: AddEditTestemailComponent },
+  {
+    path: 'newsletter-list',
+    component: LisitngTestemailappComponent 
+  
+  },
+  {
+    path: 'test/edit/:_id',
+    component: AddEditTestemailComponent
+    
+  
+    
+  },
+  
+    // ________________________sender's list_____________________
+    { path: 'sender/add', component: AddEditSenderappComponent },
+    {
+      path: 'newsletter-list',
+      component: ListingSenderappComponent 
+    },
+
+    {
+      path: 'sender/edit/:_id',
+      component: AddEditSenderappComponent
+      
+    
+      
+    },
 
 ];
 
