@@ -15,29 +15,41 @@ export class AddCustomerComponent implements OnInit {
   public stateList: any;
   public cityList: any;
   public salesrepList:any;
+  public userType:any;
+  public userDetails:any;
   public header_text:any="Add Customer"
 public btn_text:any="Submit"
   @ViewChild(FormGroupDirective) formDirective: FormGroupDirective;
   constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,public router:Router,public cookieService:CookieService) { 
+
+    this.userDetails = JSON.parse(this.cookieService.get('user_details'));
+
+    this.userType=this.userDetails.type;
+
+    console.log('+++++>>',this.userType)
+
+    
     /**genarate Add-customer form */
-    this.addcustomerForm = this.fb.group({
-      id:null,
-      email: [null, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
-      firstname: [null, Validators.required],
-      lastname: [null, Validators.required],
-      phone: [null, Validators.compose([Validators.required, Validators.pattern(/^0|[1-9]\d*$/)])],
-      zip: [null, Validators.required],
-      city: [null, Validators.required],
-      state: [null, Validators.required],
-      address: [null, Validators.required],
-      password: [null, Validators.required],
-      conpass: [null, Validators.required],
-      salesrep:['',Validators.required],
-      type: ["customer"],
-      status:1
-    }, {
-      validator: this.machpassword('password', 'conpass')
-    });
+    
+      this.addcustomerForm = this.fb.group({
+        id:null,
+        email: [null, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
+        firstname: [null, Validators.required],
+        lastname: [null, Validators.required],
+        phone: [null, Validators.compose([Validators.required, Validators.pattern(/^0|[1-9]\d*$/)])],
+        zip: [null, Validators.required],
+        city: [null, Validators.required],
+        state: [null, Validators.required],
+        address: [null, Validators.required],
+        password: [null, Validators.required],
+        conpass: [null, Validators.required],
+        salesrep:[''],
+        type: ["customer"],
+        status:1
+      }, {
+        validator: this.machpassword('password', 'conpass')
+      });
+
 
     this.getStateList();
     this.getCityList();
@@ -61,6 +73,9 @@ public btn_text:any="Submit"
       console.log('>>>>>>>>>>',result.res)
       this.salesrepList=result.res
     })
+
+   
+
 
   }
   /**Miss Match password check function */
@@ -93,11 +108,21 @@ public btn_text:any="Submit"
 
   /**Submit function */
   addcustomerFormSubmit() {
-    
+    console.log('hit')
+    if (this.userType != null && this.userType != '') {
+      this.addcustomerForm.value.salesrep = this.userDetails._id;
+    }
+
+    if(this.userType != 'salesrep'){
+      this.
+
+    }
+
     for (let x in this.addcustomerForm.controls) {
       this.addcustomerForm.controls[x].markAsTouched();
     }
     if (this.addcustomerForm.valid) {
+      console.log('hit1')
       /**check id null or not null */
       if(this.addcustomerForm.value.id==null){
         delete this.addcustomerForm.value.id;
@@ -116,15 +141,14 @@ public btn_text:any="Submit"
           if (data.status == 'success' && data.update==1) {
           //  console.log("Update customer Successfully");
           //   this.formDirective.resetForm();
-          this.router.navigateByUrl('/customer-list-admin');
+          this.router.navigateByUrl('/customer-list-rep');
           }else{
             console.log("Add customer Successfully");
             this.formDirective.resetForm();
-            this.router.navigateByUrl('/customer-list-admin');
+            this.router.navigateByUrl('/customer-list-rep');
           }
           
         })
-    
     }
   }
 

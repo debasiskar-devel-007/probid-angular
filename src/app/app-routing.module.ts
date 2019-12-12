@@ -310,7 +310,7 @@ const routes: Routes = [
   { path: 'commission-list', component: CommissionListComponent },
 
   { path: 'customer-list-admin', component: CustomerListComponent,resolve: { customerlist: ResolveService },
-  data: { requestcondition: { source: 'user_view', condition: {"type": "customer"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
+  data: { requestcondition: { source: 'user', condition: {"type": "customer"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
 
   { path: 'manage-commission', component: ManageCommissionComponent },
   // { path: 'newsletter-list', component: NewsletterlistsComponent },
@@ -370,7 +370,9 @@ const routes: Routes = [
 
   { path: 'my-appointment-rep', component: MyAppointmentComponent },
   { path: 'book-an-appointment-rep', component: BookAnAppointmentComponent },
-  { path: 'customer-list-rep', component: CustomerListComponent },
+  { path: 'customer-list-rep', component: CustomerListComponent,resolve: { customerlist: ResolveService },
+  data: { requestcondition: { source: 'user', condition: {"type": "customer",} },endpoint: 'datalist',canActivate: [AuthGuard] }},
+
   { path: 'social-advo-rep', component: SocialAdvoComponent },
 
 

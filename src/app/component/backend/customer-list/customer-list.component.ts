@@ -10,7 +10,22 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class CustomerListComponent implements OnInit {
 
-  constructor(public activatedRoute: ActivatedRoute, public router: Router,public apiService: ApiService , public cookieService:CookieService) { }
+  public userDetails:any;
+  public userType:any;
+  public datalist:any
+
+  constructor(public activatedRoute: ActivatedRoute, public router: Router,public apiService: ApiService , public cookieService:CookieService) { 
+
+    this.userDetails = JSON.parse(this.cookieService.get('user_details'));
+
+    console.log('++++++',this.userDetails._id)
+
+    this.userType=this.userDetails.type;
+
+
+    console.log('+++++>>',this.userType)
+
+  }
   public statusarray: any = [{val: 1, name: 'Active'}, {val: 2, name: 'Inactive'}, {val: 0, name: 'Pending'}]; 
 
   pendingmodelapplicationarray: any = [];
@@ -41,9 +56,16 @@ export class CustomerListComponent implements OnInit {
     search:[{label:"Search By autocomplete",field:'name'}]     // this is use for  Autocomplete search
 }
   ngOnInit() {
+
     this.activatedRoute.data.forEach(data=>{   
       this.pendingmodelapplicationarray=data.customerlist.res;
+      console.log('@@>>>>>', this.pendingmodelapplicationarray)
+
+      // if(this.pendingmodelapplicationarray.salesrep == this.userDetails._id){
+
+      // }
     })
+
   }
 
 }
