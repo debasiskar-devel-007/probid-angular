@@ -75,8 +75,16 @@
                     </span>
                     <span class="sub-col-4">
                       <mat-card-content class="rrblock1">
-                        <h1>RSVP</h1>
+                        <h1 (click)='rsvpSend(item)'>RSVP</h1>
                         <button (click)="unFavorite(item)"><i class="material-icons" > delete </i> Remove</button>
+                        <mat-form-field *ngIf="user_details.type == 'salesrep'" class="select-customer">
+                          <mat-label>Select Customer</mat-label>
+                          <mat-select [(ngModel)]="customur_id">
+                            <mat-option *ngFor="let item of customerList" [value]="item._id">
+                              {{item.fullname}}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field>
                       </mat-card-content>
                       <mat-card-content class="rrblock1 currentbidprice">
                         <span class="text-wrapper" *ngIf="item.price != null">

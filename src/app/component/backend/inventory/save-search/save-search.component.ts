@@ -6,6 +6,9 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 
 export interface DialogData {
   errorMsg: string;
@@ -93,12 +96,8 @@ export class SaveSearchComponent implements OnInit {
   public user_id: string = '';
   public modalImg: string = '';
   public isFavorite: number = 0;
-
-
-
-  
-
-
+  public customerList: any = '';
+  public customur_id: any = '';
   constructor(public fb: FormBuilder,
     public apiService: ApiService,
     public activatedRoute: ActivatedRoute,
@@ -124,6 +123,20 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   this.user_id = this.user_details._id;
   console.log(this.user_id);
   
+  if(this.user_details.type == "salesrep") {
+    let data: any = {
+      endpoint: 'datalist',
+      source: 'type_customer_view',
+      condition: {
+        "id_object":  this.user_id
+      }
+    }
+    this.apiService.getDatalist(data).subscribe((res:any)=>{
+      this.customerList = res.res;
+      console.log(this.customerList);
+    });
+
+  }
 }
   }
 
@@ -133,10 +146,9 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     this.activatedRoute.data.forEach((data) => {
       console.log(data)
       this.search = data.inventory_search.res;
-    })
-
+    });
   }
-  
+
   gotologin(){
     this.router.navigateByUrl('/login'+this.router.url)
     console.log('/login'+this.router.url)
@@ -170,8 +182,14 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   }
 
   rsvpSend(item: any) {
+    console.log('rsvp send',this.customur_id);
+    console.log('rsvp send',item);
     let endpoint: any = "addorupdatedata";
-    item.user_id = this.user_id;
+    if (this.user_details.type == 'salesrep') {
+    item.added_for = this.customur_id;
+      
+    }
+    item.added_by = this.user_id;
     let card_data:any = {
       card_data: item
     }
