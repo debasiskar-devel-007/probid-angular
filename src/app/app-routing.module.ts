@@ -107,6 +107,11 @@ const routes: Routes = [
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'sign-up', component: SignUpComponent },
+  { path: 'salesrep-signup', component: SalesrepSignupComponent },
+  
+  { path: 'customer-signup', component: CustomerSignupComponent },
+
+  { path: 'customer-signup/:id', component: CustomerSignupComponent },
   { path: 'home', component: HomeComponent },
   { path: 'contactus', component: ContactusComponent },
   {
@@ -190,8 +195,6 @@ const routes: Routes = [
   { path: 'pre-owned', component: PreOwnedComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'blog-category', component: BlogCategoryComponent },
-  { path: 'salesrep-signup', component: SalesrepSignupComponent },
-  { path: 'customer-signup', component: CustomerSignupComponent },
 
 
 // ___________________BLOG MANAGEMENT_________________
