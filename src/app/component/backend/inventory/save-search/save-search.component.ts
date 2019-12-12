@@ -141,6 +141,17 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     console.log('/login'+this.router.url)
   }
 
+  getData(){
+    let data: any = {
+      endpoint: 'datalist',
+      source: 'save_favorite_view'
+    }
+    this.apiService.getDatalist(data).subscribe((res:any)=>{
+      this.search = res.res
+    })
+  }
+
+
   favorite(item: any) {
     console.log('this is favorite ',item);
     let data: any = {
@@ -149,6 +160,9 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     }
     this.apiService.deleteSingleData1(data).subscribe((res: any)=>{
       console.log(res);
+      if (res.status == 'success') {
+        this.getData();
+      }
     })
   }
 

@@ -56,7 +56,7 @@ import { SalesrepSignupComponent } from './component/frontend/salesrep-signup/sa
 import { CustomerSignupComponent,customerSignUpsuccessDialog } from './component/frontend/customer-signup/customer-signup.component';
 
 import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
-import { SaveSearchComponent } from './component/frontend/inventory/save-search/save-search.component';
+import { SaveSearchComponent } from './component/backend/inventory/save-search/save-search.component';
 
 /**End Frontend Component**/
 

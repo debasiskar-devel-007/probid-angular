@@ -20,7 +20,7 @@ import { BlogdetailComponent } from './component/frontend/blogdetail/blogdetail.
 
 import { AdvanceInventorySearchComponent } from './component/frontend/inventory/advance-inventory-search/advance-inventory-search.component';
 import { BasicInventorySearchComponent } from './component/frontend/inventory/basic-inventory-search/basic-inventory-search.component';
-import { SaveSearchComponent } from './component/frontend/inventory/save-search/save-search.component';
+import { SaveSearchComponent } from './component/backend/inventory/save-search/save-search.component';
 
 import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.component';
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
