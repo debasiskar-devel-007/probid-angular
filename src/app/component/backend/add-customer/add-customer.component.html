@@ -91,6 +91,18 @@
                 State field can not be blank</mat-error>
           </mat-form-field>
 
+          <mat-form-field>
+            <mat-label>Select SalesRep</mat-label>
+            <mat-select formControlName="salesrep" (blur)="inputUntouched('salesrep')">
+              <mat-option *ngFor="let rep of salesrepList" [value]="rep._id">
+                {{rep.fullname}}
+              </mat-option>
+            </mat-select>
+            <mat-error
+                *ngIf="!addcustomerForm.controls['salesrep'].valid && addcustomerForm.controls['salesrep'].errors.required && addcustomerForm.controls['salesrep'].touched">
+                salesref field can not be blank</mat-error>
+          </mat-form-field>
+
           <span class="bottompart">           
               <button mat-raised-button class="btn-lg">{{btn_text}}</button>
           </span>

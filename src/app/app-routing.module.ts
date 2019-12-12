@@ -18,8 +18,10 @@ import { BloglistfrontendComponent } from './component/frontend/bloglist/bloglis
 
 import { BlogdetailComponent } from './component/frontend/blogdetail/blogdetail.component';
 
-import { AdvanceInventorySearchComponent } from './component/frontend/advance-inventory-search/advance-inventory-search.component';
-import { BasicInventorySearchComponent } from './component/frontend/basic-inventory-search/basic-inventory-search.component';
+import { AdvanceInventorySearchComponent } from './component/frontend/inventory/advance-inventory-search/advance-inventory-search.component';
+import { BasicInventorySearchComponent } from './component/frontend/inventory/basic-inventory-search/basic-inventory-search.component';
+import { SaveSearchComponent } from './component/frontend/inventory/save-search/save-search.component';
+
 import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.component';
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
 import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
@@ -173,6 +175,14 @@ const routes: Routes = [
   { path: 'basic-inventory-search', component: BasicInventorySearchComponent ,
   resolve: { inventory_search: ResolveService },
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }},
+
+
+  { path: 'save-search', component: SaveSearchComponent ,
+  resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }},
+
+
+
   { path: 'pre-owned', component: PreOwnedComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'blog-category', component: BlogCategoryComponent },
@@ -306,7 +316,7 @@ const routes: Routes = [
   // { path: 'newsletter-list', component: NewsletterlistsComponent },
   { path: 'sales-report', component: SalesReportComponent },
   { path: 'salesrep-list-admin', component: SalesreplistsComponent,resolve: { salesreflist: ResolveService },
-  data: { requestcondition: { source: 'user_view', condition: {"type": "salesref"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
+  data: { requestcondition: { source: 'user_view', condition: {"type": "salesrep"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
   { path: 'rsvp', component: RsvplistsComponent },
   // { path: 'manage-training1', component: ManageTrainingComponent },
   { path: 'manage-lessons', component: ManageLessonsComponent },
