@@ -16,9 +16,9 @@ export class SalesreplistsComponent implements OnInit {
 
     updateendpoint = 'addorupdatedata';
     deleteendpoint = 'deletesingledata';
-    tablename = 'salesref';
+    tablename = 'salesrep';
     searchendpoint = 'datalist';
-    editroute: any = 'editsalesref';
+    editroute: any = 'editsalesrep';
     modify_header_array: any = {
       'fullname': "Name",
       'phone': "Phone",
@@ -42,8 +42,8 @@ export class SalesreplistsComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.data.forEach(data=>{   
-      console.log(data.salesreflist.res);
-      this.pendingmodelapplicationarray=data.salesreflist.res;
+      console.log(data.salesreplist.res);
+      this.pendingmodelapplicationarray=data.salesreplist.res;
     })
   }
 

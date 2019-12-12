@@ -315,7 +315,7 @@ const routes: Routes = [
   { path: 'manage-commission', component: ManageCommissionComponent },
   // { path: 'newsletter-list', component: NewsletterlistsComponent },
   { path: 'sales-report', component: SalesReportComponent },
-  { path: 'salesrep-list-admin', component: SalesreplistsComponent,resolve: { salesreflist: ResolveService },
+  { path: 'salesrep-list-admin', component: SalesreplistsComponent,resolve: { salesreplist: ResolveService },
   data: { requestcondition: { source: 'user_view', condition: {"type": "salesrep"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
   { path: 'rsvp', component: RsvplistsComponent },
   // { path: 'manage-training1', component: ManageTrainingComponent },
@@ -378,7 +378,7 @@ const routes: Routes = [
   { path: 'training-center-rep', component: TrainingCenterComponent },
   { path: 'my-account', component: MyAccountComponent },
   { path: 'add-salesrep', component: AddSalesrepComponent },
-  { path: 'editsalesref/:_id', component: AddSalesrepComponent },
+  { path: 'editsalesrep/:_id', component: AddSalesrepComponent },
   {path:'add-customer',component:AddCustomerComponent},
   {path:'editcustomer/:_id',component:AddCustomerComponent},
 

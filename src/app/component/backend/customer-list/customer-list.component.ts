@@ -18,7 +18,7 @@ export class CustomerListComponent implements OnInit {
   pendingmodelapplicationarray_detail_skip: any = ['_id'];
   updateendpoint = 'addorupdatedata';
   deleteendpoint = 'deletesingledata';
-  tablename = 'salesref';
+  tablename = 'salesrep';
   searchendpoint = 'datalist';
   editroute: any = 'editcustomer';
   modify_header_array: any = {

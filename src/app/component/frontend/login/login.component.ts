@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
           "routerNav": "customer-dashboard"
         },
         {
-          "type": "rep",
+          "type": "salesrep",
           "routerNav": "rep-dashboard"
         }
       ]
