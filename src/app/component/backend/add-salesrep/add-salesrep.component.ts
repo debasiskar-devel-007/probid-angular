@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./add-salesrep.component.css']
 })
 export class AddSalesrepComponent implements OnInit {
-  public addsalesrefForm: FormGroup;
+  public addsalesrepForm: FormGroup;
   public stateList: any;
   public cityList: any;
   public header_text:any="Add Salesrep"
@@ -17,8 +17,8 @@ public btn_text:any="Submit"
   @ViewChild(FormGroupDirective) formDirective: FormGroupDirective;
   constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService,public fb: FormBuilder,public dialog: MatDialog,public router:Router) {
 
-      /**genarate Add-salesref form */
-    this.addsalesrefForm = this.fb.group({
+      /**genarate Add-salesrep form */
+    this.addsalesrepForm = this.fb.group({
       id:null,
       email: [null, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
       firstname: [null, Validators.required],
@@ -40,7 +40,7 @@ public btn_text:any="Submit"
 
     this.getStateList();
     this.getCityList();
-    this.editsalesrefprofile();
+    this.editsalesrepprofile();
     }
 
   ngOnInit() {
@@ -74,26 +74,26 @@ public btn_text:any="Submit"
     })
   }
 /**Submit function */
-addsalesrefFormSubmit(){
-  for (let x in this.addsalesrefForm.controls) {
-    this.addsalesrefForm.controls[x].markAsTouched();
+addsalesrepFormSubmit(){
+  for (let x in this.addsalesrepForm.controls) {
+    this.addsalesrepForm.controls[x].markAsTouched();
   }
-// console.log(this.addsalesrefForm.value);
-if (this.addsalesrefForm.valid) {
+// console.log(this.addsalesrepForm.value);
+if (this.addsalesrepForm.valid) {
   /**check id null or not null */
-  if(this.addsalesrefForm.value.id==null){
-    delete this.addsalesrefForm.value.id;
+  if(this.addsalesrepForm.value.id==null){
+    delete this.addsalesrepForm.value.id;
   }
 
-    if (this.addsalesrefForm.value.conpass != null) {
-      delete this.addsalesrefForm.value.conpass;
+    if (this.addsalesrepForm.value.conpass != null) {
+      delete this.addsalesrepForm.value.conpass;
 
     }
-    console.log(this.addsalesrefForm.value);
+    console.log(this.addsalesrepForm.value);
 
     /**Api service for insert form */
 
-    var data = { "source": "user", "data": this.addsalesrefForm.value }
+    var data = { "source": "user", "data": this.addsalesrepForm.value }
     this.apiservice.CustomRequest(data, 'addorupdatedata').subscribe((data: any) => {
       console.log(data);
       if (data.status == 'success' && data.update==1) {
@@ -111,14 +111,14 @@ if (this.addsalesrefForm.valid) {
 }
 
 /**update function */
-editsalesrefprofile(){
+editsalesrepprofile(){
   if(this.activatedRouter.snapshot.params._id!=null)
     {
       var data = { "source": "user", "condition": {"_id": this.activatedRouter.snapshot.params._id}}
         this.apiservice.CustomRequest(data, 'datalist').subscribe((data: any) => {
           this.header_text="Edit Salesrep"
         this.btn_text="Update"
-          this.addsalesrefForm.patchValue({
+          this.addsalesrepForm.patchValue({
             id:data.res[0]._id,
             email:data.res[0].email,
             firstname:data.res[0].firstname,
@@ -139,6 +139,6 @@ editsalesrefprofile(){
 }
   /**blur function */
   inputUntouched(val: any) {
-    this.addsalesrefForm.controls[val].markAsUntouched();
+    this.addsalesrepForm.controls[val].markAsUntouched();
   }
 }

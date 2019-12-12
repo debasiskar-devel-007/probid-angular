@@ -11,7 +11,7 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./add-birddog.component.css']
 })
 export class AddBirddogComponent implements OnInit {
-public salesref_list:any;
+public salesrep_list:any;
 public addbirddogForm: FormGroup;
 public stateList: any;
 public cityList: any;
@@ -32,7 +32,7 @@ constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService
       address: [null, Validators.required],
       password: [null, Validators.required],
       conpass: [null, Validators.required],
-      assign_salesref:[null,Validators.required],
+      assign_salesrep:[null,Validators.required],
       username:[null,Validators.required],
       type: ["birddog"],
       status:1
@@ -53,15 +53,15 @@ constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService
     data={
       source:"user_view",
       condition: {
-        type: "salesref"
+        type: "salesrep"
       },
       token:this.cookieService.get('jwtToken')
     }
     this.apiservice.postDatawithoutToken("datalist",data).subscribe((res)=>{
       let result:any;
       result=res;
-      this.salesref_list=result.res;
-    console.log('>>>>>', this.salesref_list)
+      this.salesrep_list=result.res;
+    console.log('>>>>>', this.salesrep_list)
     })
 
   }
@@ -152,7 +152,7 @@ editBirddogProfile(){
           password: data.res[0].password,
           conpass: data.res[0].password,
           type:data.res[0].type,
-          assign_salesref:data.res[0].assign_salesref,
+          assign_salesrep:data.res[0].assign_salesrep,
           username:data.res[0].username
 
           
