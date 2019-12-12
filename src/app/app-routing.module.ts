@@ -100,6 +100,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
 
   { path: 'login', component: LoginComponent },
+  { path: 'login/:id', component: LoginComponent },
 
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
