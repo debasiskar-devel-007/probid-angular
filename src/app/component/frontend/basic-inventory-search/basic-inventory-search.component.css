@@ -323,7 +323,7 @@ flex-direction: column;
 .pa_blockfooter {
   display: inline-block;
   width: 100%;
-  padding: 20px;
+  padding: 7px;
   background: #dbdfe0;
   margin-top: 20px;
 }

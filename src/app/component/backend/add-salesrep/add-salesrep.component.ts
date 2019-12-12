@@ -31,7 +31,7 @@ public btn_text:any="Submit"
       password: [null, Validators.required],
       conpass: [null, Validators.required],
       username:[null,Validators.required],
-      type: ["salesref"],
+      type: ["salesrep"],
       status:1
     }, {
       validator: this.machpassword('password', 'conpass')
@@ -96,10 +96,10 @@ if (this.addsalesrefForm.valid) {
     this.apiservice.CustomRequest(data, 'addorupdatedata').subscribe((data: any) => {
       console.log(data);
       if (data.status == 'success' && data.update==1) {
-       console.log("Update Salesref Successfully");
+       console.log("Update salesrep Successfully");
         this.formDirective.resetForm();
       }else{
-        console.log("Add salesref Successfully");
+        console.log("Add salesrep Successfully");
         this.formDirective.resetForm();
       }
     })

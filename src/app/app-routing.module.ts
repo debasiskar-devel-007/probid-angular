@@ -100,6 +100,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
 
   { path: 'login', component: LoginComponent },
+  { path: 'login/:id', component: LoginComponent },
 
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
@@ -305,7 +306,7 @@ const routes: Routes = [
   // { path: 'newsletter-list', component: NewsletterlistsComponent },
   { path: 'sales-report', component: SalesReportComponent },
   { path: 'salesrep-list-admin', component: SalesreplistsComponent,resolve: { salesreflist: ResolveService },
-  data: { requestcondition: { source: 'user_view', condition: {"type": "salesref"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
+  data: { requestcondition: { source: 'user_view', condition: {"type": "salesrep"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
   { path: 'rsvp', component: RsvplistsComponent },
   // { path: 'manage-training1', component: ManageTrainingComponent },
   { path: 'manage-lessons', component: ManageLessonsComponent },
