@@ -38,6 +38,13 @@
       </mat-form-field>
 
       <mat-form-field>
+        <input matInput type="text" placeholder="company name" formControlName="companyname" (blur)="inputUntouched('companyname')">
+        <mat-error
+          *ngIf="!addsalesrefForm.controls['companyname'].valid && addsalesrefForm.controls['companyname'].errors.required && addsalesrefForm.controls['companyname'].touched">
+          companyname field can not be blank</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
         <input matInput type="text" placeholder="Phone Number" formControlName="phone" (blur)="inputUntouched('phone')">
         <mat-error
           *ngIf="!addsalesrefForm.controls['phone'].valid && addsalesrefForm.controls['phone'].errors.required && addsalesrefForm.controls['phone'].touched">

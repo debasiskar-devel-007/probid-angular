@@ -14,11 +14,11 @@ export class CustomerListComponent implements OnInit {
   public statusarray: any = [{val: 1, name: 'Active'}, {val: 2, name: 'Inactive'}, {val: 0, name: 'Pending'}]; 
 
   pendingmodelapplicationarray: any = [];
-  pendingmodelapplicationarray_skip: any = ['_id','type','city','state','password','zip'];
+  pendingmodelapplicationarray_skip: any = ['_id','type','city','state','password','zip','salesrep_id'];
   pendingmodelapplicationarray_detail_skip: any = ['_id'];
   updateendpoint = 'addorupdatedata';
   deleteendpoint = 'deletesingledata';
-  tablename = 'salesref';
+  tablename = 'user';
   searchendpoint = 'datalist';
   editroute: any = 'editcustomer';
   modify_header_array: any = {
@@ -27,7 +27,8 @@ export class CustomerListComponent implements OnInit {
     'email':"Email",
     'address':'Location',
     'date added':'Date',
-    'status':'status'
+    'status':'status',
+    'salesrep_fullname':'Salesrep Name'
   };
 
    // this is use for  All type of search 

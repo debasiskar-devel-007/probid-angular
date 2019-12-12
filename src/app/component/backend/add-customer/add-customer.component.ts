@@ -120,6 +120,7 @@ public btn_text:any="Submit"
           }else{
             console.log("Add customer Successfully");
             this.formDirective.resetForm();
+            this.router.navigateByUrl('/customer-list-admin');
           }
           
         })

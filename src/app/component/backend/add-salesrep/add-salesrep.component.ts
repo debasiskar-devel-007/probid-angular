@@ -15,7 +15,7 @@ export class AddSalesrepComponent implements OnInit {
   public header_text:any="Add Salesrep"
 public btn_text:any="Submit"
   @ViewChild(FormGroupDirective) formDirective: FormGroupDirective;
-  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService,public fb: FormBuilder,public dialog: MatDialog) {
+  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService,public fb: FormBuilder,public dialog: MatDialog,public router:Router) {
 
       /**genarate Add-salesref form */
     this.addsalesrefForm = this.fb.group({
@@ -31,6 +31,7 @@ public btn_text:any="Submit"
       password: [null, Validators.required],
       conpass: [null, Validators.required],
       username:[null,Validators.required],
+      companyname:['',Validators.required],
       type: ["salesrep"],
       status:1
     }, {
@@ -97,10 +98,13 @@ if (this.addsalesrefForm.valid) {
       console.log(data);
       if (data.status == 'success' && data.update==1) {
        console.log("Update salesrep Successfully");
-        this.formDirective.resetForm();
+       this.formDirective.resetForm();
+       this.router.navigateByUrl('/salesrep-list-admin')
+
       }else{
         console.log("Add salesrep Successfully");
         this.formDirective.resetForm();
+        this.router.navigateByUrl('/salesrep-list-admin')
       }
     })
 }
@@ -110,7 +114,7 @@ if (this.addsalesrefForm.valid) {
 editsalesrefprofile(){
   if(this.activatedRouter.snapshot.params._id!=null)
     {
-      var data = { "source": "users", "condition": {"_id": this.activatedRouter.snapshot.params._id}}
+      var data = { "source": "user", "condition": {"_id": this.activatedRouter.snapshot.params._id}}
         this.apiservice.CustomRequest(data, 'datalist').subscribe((data: any) => {
           this.header_text="Edit Salesrep"
         this.btn_text="Update"
@@ -128,6 +132,7 @@ editsalesrefprofile(){
             conpass: data.res[0].password,
             username:data.res[0].username,
             type:data.res[0].type,
+            companyname:data.res[0].companyname
           })
         });
     }
