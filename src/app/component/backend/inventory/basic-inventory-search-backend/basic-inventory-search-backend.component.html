@@ -189,7 +189,7 @@
                   </span>
                   <span class="sub-col-4">
                     <mat-card-content class="rrblock1">
-                      <h1>RSVP</h1>
+                      <h1 (click)="rsvpSend(item)">RSVP</h1>
                       <button (click)="favorite(item)"><i class="material-icons"> favorite </i> ADD</button>
                       <mat-form-field *ngIf="user_details.type == 'salesrep'" class="select-customer">
                         <mat-label>Select Customer</mat-label>

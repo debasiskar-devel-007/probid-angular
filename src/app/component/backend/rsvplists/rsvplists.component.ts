@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-rsvplists',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rsvplists.component.css']
 })
 export class RsvplistsComponent implements OnInit {
-
-  constructor() { }
+public rsvp_list: any = '';
+  constructor(public activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.activatedRoute.data.forEach((data:any) => {
+      console.log(data)
+      this.rsvp_list = data.rsvp.res;
+    })
   }
 
 }
