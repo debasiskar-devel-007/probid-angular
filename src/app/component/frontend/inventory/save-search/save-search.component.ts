@@ -124,127 +124,32 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   console.log(this.user_id);
   
 }
-
-
-    this.generateForm();
-    this.getStateList();
   }
 
   ngOnInit() {
 
     //for make,model,year,type drop down list
     this.activatedRoute.data.forEach((data) => {
-      this.inventory_search_list = data.inventory_search
-      this.make_list = this.inventory_search_list.result.manage_make;
-      this.model_list = this.inventory_search_list.result.manage_model;
-      this.type_list = this.inventory_search_list.result.manage_type;
-      this.year_list = this.inventory_search_list.result.manage_year;
+      console.log(data)
+      this.search = data.inventory_search.res;
     })
 
   }
-  getStateList() {
-    this.apiService.getJsonObject('assets/data/states.json').subscribe((response: any) => {
-      this.stateList = response;
-    });
-  }
-
-  //___________generate form for inventory customer search________________//
-
-  generateForm() {
-    this.inventoryCustomerForm = this.fb.group({
-      type: [''],
-      make: [''],
-      model: [''],
-      year: [''],
-      vehicle: [''],
-      trim: [''],
-      vin: [''],
-      state: [''],
-      zip: [''],
-
-    })
-  }
-
-  //____________search function for inventory customer search_________________//
-
-  inventoryCustomerSearch() {
-    if (this.inventoryCustomerForm.valid) {
-
-      let yearVal = this.inventoryCustomerForm.value.year;
-      let typeVal = this.inventoryCustomerForm.value.type;
-      let makeVal = this.inventoryCustomerForm.value.make;
-      let modelVal = this.inventoryCustomerForm.value.model;
-      let vinVal = this.inventoryCustomerForm.value.vin;
-      let trimVal = this.inventoryCustomerForm.value.trim;
-      let vehicleVal = this.inventoryCustomerForm.value.vehicle;
-      let stateVal = this.inventoryCustomerForm.value.state;
-      let zipVal = this.inventoryCustomerForm.value.zip;
-
-      if (typeVal != null && typeVal != '' && typeVal.length >= 0) {
-        this.type = "&0seller_type=" + typeVal;
-      }
-      if (yearVal != null && yearVal != '' && yearVal.length >= 0) {
-        this.year = "&year=" + yearVal;
-      }
-      if (makeVal != null && makeVal != '' && makeVal.length >= 0) {
-        this.make = "&make=" + makeVal;
-      }
-      if (modelVal != null && modelVal != '' && modelVal.length >= 0) {
-        this.model = "&model=" + modelVal;
-      }
-      if (vinVal != null && vinVal != '' && vinVal.length >= 0) {
-        this.vin = "&vin=" + vinVal;
-      }
-      if (trimVal != null && trimVal != '' && trimVal.length >= 0) {
-        this.trim = "&trim=" + trimVal;
-      }
-      if (vehicleVal != null && vehicleVal != '' && vehicleVal.length >= 0) {
-        this.vehicle = "&vehicle_type=" + vehicleVal;
-      }
-      if (stateVal != null && stateVal != '' && stateVal.length >= 0) {
-        this.state = "&state=" + stateVal;
-      }
-      if (zipVal != null && zipVal != '' && zipVal.length >= 0) {
-        this.zip = "&zip=" + zipVal;
-      }
-      if (this.type != '' || this.year != '' || this.make != '' || this.vin != '' || this.trim != '' || this.vehicle != '' || this.state != '' || this.zip != '' || this.model != '') {
-
-        let search_link = this.apiService.inventory_url + this.type + this.year + this.make + this.vin + this.trim + this.vehicle + this.state + this.zip + this.model;
-
-        this.http.get(search_link).subscribe((res: any) => {
-          this.search = res.listings;
-          console.log('search list',this.search)
-
-        })
-      } else {
-        this.errorMsg = "Please select at least one field";
-
-        const dialogRef = this.dialog.open(errorDialog, {
-          width: '250px',
-          data: { errorMsg: this.errorMsg }
-        });
-
-      }
-
-
-    }
-
-  }
+  
   gotologin(){
     this.router.navigateByUrl('/login'+this.router.url)
     console.log('/login'+this.router.url)
   }
 
   favorite(item: any) {
-    console.log('this is favorite ')
-    if (this.user_id  == '') {
-      this.cookieService.set('favorite_car', item);
-      setTimeout(() => {
-        this.gotologin();
-      }, 500);
-   
+    console.log('this is favorite ',item);
+    let data: any = {
+      id:item._id,
+      source: 'save_favorite'
     }
-    this.cookieService.get('favorite_car')
+    this.apiService.deleteSingleData1(data).subscribe((res: any)=>{
+      console.log(res);
+    })
   }
 
   rsvpSend(item: any) {

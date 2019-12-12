@@ -179,7 +179,7 @@ const routes: Routes = [
 
   { path: 'save-search', component: SaveSearchComponent ,
   resolve: { inventory_search: ResolveService },
-  data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }},
+  data: { requestcondition: { source: 'save_favorite_view', condition: {} }, endpoint: 'datalist' }},
 
 
 

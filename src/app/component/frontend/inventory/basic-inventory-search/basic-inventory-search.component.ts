@@ -245,7 +245,24 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
       }, 500);
    
     }
-    this.cookieService.get('favorite_car')
+    else{
+      this.cookieService.get('favorite_car')
+      let endpoint: any = "addorupdatedata";
+      item.user_id = this.user_id;
+      let card_data:any = {
+        card_data: item
+      }
+      let data: any = {
+        data: card_data,
+        source: "save_favorite",
+      };
+      console.log(data)
+        this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
+          console.log(res);
+          (res.status == "success")
+        });
+    }
+   
   }
 
   rsvpSend(item: any) {
