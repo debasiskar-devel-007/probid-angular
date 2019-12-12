@@ -38,6 +38,7 @@ export class BasicInventorySearchComponent implements OnInit {
   public search: any;
   public user_details:any;
   public user_id: string = '';
+  public modalImg: string = '';
   public isFavorite: number = 0;
 
 
@@ -206,6 +207,10 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
         (res.status == "success")
       });
 
+  }
+
+  showimg(img: any){
+    this.modalImg = img;
   }
 
 }

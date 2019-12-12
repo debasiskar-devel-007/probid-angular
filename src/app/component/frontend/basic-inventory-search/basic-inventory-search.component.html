@@ -141,12 +141,13 @@
         <mat-list-item class="rightcontentrow" *ngFor="let item of search">
           <mat-card-content class="col-1-3">
             <span class="as_imgwrapper">
-              <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="item.media.photo_links[0]">
+              <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null && modalImg == ''" [src]="item.media.photo_links[0]">
+              <img *ngIf="modalImg != ''" [src]="modalImg">
               <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
             </span>
             <span class="as_sm_imgmainwrapper">
               <span class="sm-imgwrapper" *ngFor="let img of item.media.photo_links">
-                <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="img">
+                <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="img" (click)="showimg(img)">
                 <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg"></span>
               </span>
           </mat-card-content>
