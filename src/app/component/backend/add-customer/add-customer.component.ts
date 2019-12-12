@@ -43,12 +43,17 @@ public btn_text:any="Submit"
         address: [null, Validators.required],
         password: [null, Validators.required],
         conpass: [null, Validators.required],
-        salesrep:[''],
+        salesrep:['', Validators.required],
         type: ["customer"],
         status:1
       }, {
         validator: this.machpassword('password', 'conpass')
       });
+
+      if(this.userType == 'salesrep'){
+        this.addcustomerForm.controls['salesrep'].patchValue(this.userDetails._id)
+
+      }
 
 
     this.getStateList();
@@ -111,11 +116,6 @@ public btn_text:any="Submit"
     console.log('hit')
     if (this.userType != null && this.userType != '') {
       this.addcustomerForm.value.salesrep = this.userDetails._id;
-    }
-
-    if(this.userType != 'salesrep'){
-      this.
-
     }
 
     for (let x in this.addcustomerForm.controls) {

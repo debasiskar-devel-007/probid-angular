@@ -20,7 +20,7 @@ import { BlogdetailComponent } from './component/frontend/blogdetail/blogdetail.
 
 import { AdvanceInventorySearchComponent } from './component/frontend/inventory/advance-inventory-search/advance-inventory-search.component';
 import { BasicInventorySearchComponent } from './component/frontend/inventory/basic-inventory-search/basic-inventory-search.component';
-import { SaveSearchComponent } from './component/frontend/inventory/save-search/save-search.component';
+import { SaveSearchComponent } from './component/backend/inventory/save-search/save-search.component';
 
 import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.component';
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
@@ -77,8 +77,8 @@ import { TrainingsectionComponent } from './training/trainingsection/trainingsec
 import { RepTraingcenterComponent } from './training/rep-traingcenter/rep-traingcenter.component';
 import { ManageleadsComponent } from './training/manageleads/manageleads.component';
 import { BookAnAppointmentComponent } from './component/backend/book-an-appointment/book-an-appointment.component';
-import { AdvanceInventorySearchBackendComponent } from './component/backend/advance-inventory-search-backend/advance-inventory-search-backend.component';
-import { BasicInventorySearchBackendComponent } from './component/backend/basic-inventory-search-backend/basic-inventory-search-backend.component';
+import { AdvanceInventorySearchBackendComponent } from './component/backend/inventory/advance-inventory-search-backend/advance-inventory-search-backend.component';
+import { BasicInventorySearchBackendComponent } from './component/backend/inventory/basic-inventory-search-backend/basic-inventory-search-backend.component';
 import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
 import { CommunicationComponent } from './component/backend/communication/communication.component';
 import { AdminManageCategoriesComponent } from './component/backend/admin-manage-categories/admin-manage-categories.component';
@@ -94,6 +94,25 @@ import { MyAccountComponent } from './component/backend/my-account/my-account.co
 import { AddSalesrepComponent } from './component/backend/add-salesrep/add-salesrep.component';
 import { AddCustomerComponent } from './component/backend/add-customer/add-customer.component';
 import { AddBirddogComponent } from './component/backend/add-birddog/add-birddog.component';
+
+
+
+import { AddEditNewsletterComponent } from './component/backend/newsletterlists/add-edit-newsletter/add-edit-newsletter.component';
+ 
+import { AddEditSubscriberComponent } from './component/backend/newsletterlists/add-edit-subscriber/add-edit-subscriber.component';
+import { AddEditSubscriberGroupComponent } from './component/backend/newsletterlists/add-edit-subscriber-group/add-edit-subscriber-group.component';
+ 
+ import { AddEditTestemailComponent } from './component/backend/newsletterlists/add-edit-testemail/add-edit-testemail.component';
+
+ import { AddEditSenderappComponent } from './component/backend/newsletterlists/add-edit-senderapp/add-edit-senderapp.component';
+ 
+
+import { ListingNewsletterComponent } from './component/backend/newsletterlists/listing-newsletter/listing-newsletter.component';
+
+import { LisitngTestemailappComponent } from './component/backend/newsletterlists/lisitng-testemailapp/lisitng-testemailapp.component';
+import { ListingSenderappComponent } from './component/backend/newsletterlists/listing-senderapp/listing-senderapp.component';
+import { ListingSubscriptionComponent } from './component/backend/newsletterlists/listing-subscription/listing-subscription.component';
+import { ListingSubcategoryComponent } from './component/backend/newsletterlists/listing-subcategory/listing-subcategory.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -107,6 +126,11 @@ const routes: Routes = [
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'sign-up', component: SignUpComponent },
+  { path: 'salesrep-signup', component: SalesrepSignupComponent },
+  
+  { path: 'customer-signup', component: CustomerSignupComponent },
+
+  { path: 'customer-signup/:id', component: CustomerSignupComponent },
   { path: 'home', component: HomeComponent },
   { path: 'contactus', component: ContactusComponent },
   {
@@ -177,7 +201,11 @@ const routes: Routes = [
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }},
 
 
-  { path: 'save-search', component: SaveSearchComponent ,
+  { path: 'save-search-castomer', component: SaveSearchComponent ,
+  resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: 'save_favorite_view', condition: {} }, endpoint: 'datalist' }},
+
+  { path: 'save-search-rep', component: SaveSearchComponent ,
   resolve: { inventory_search: ResolveService },
   data: { requestcondition: { source: 'save_favorite_view', condition: {} }, endpoint: 'datalist' }},
 
@@ -186,8 +214,6 @@ const routes: Routes = [
   { path: 'pre-owned', component: PreOwnedComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'blog-category', component: BlogCategoryComponent },
-  { path: 'salesrep-signup', component: SalesrepSignupComponent },
-  { path: 'customer-signup', component: CustomerSignupComponent },
 
 
 // ___________________BLOG MANAGEMENT_________________
@@ -355,10 +381,18 @@ const routes: Routes = [
   resolve: { inventory_search: ResolveService },
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
   },
+  { path: 'advance-inventory-search-rep', component: AdvanceInventorySearchBackendComponent,
+  resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
+  },
 
   { path: 'basic-inventory-search-customer', component: BasicInventorySearchBackendComponent ,
   resolve: { inventory_search: ResolveService },
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
+},
+{ path: 'basic-inventory-search-rep', component: BasicInventorySearchBackendComponent ,
+resolve: { inventory_search: ResolveService },
+data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
 },
   { path: 'mysalesrep', component: MysalesrepComponent },
   // { path:'contact-us-dashboard', component:ContactUsDashboardComponent,  resolve: { serviceList: ResolveService },
@@ -417,16 +451,97 @@ const routes: Routes = [
 
   { path: 'training-reports', component: TrainingreportsComponent },
 
-//News letter
+  // ___________________Newsletter MANAGEMENT_________________
+  // =======================================================
+
+  {
+    path: 'newsletter-list', component: NewsletterlistsComponent, canActivate: [AuthGuard],
+    resolve: { newsData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'newsletters',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    },
+  },
+
+
+    // _____________________newsletter________________
+    { path: 'newsletter/add', component: AddEditNewsletterComponent },
+
+    {
+      path: 'newsletter/list',
+      component: ListingNewsletterComponent
+    },
+    {
+      path: 'newsletter/edit/:_id',
+      component: AddEditNewsletterComponent
+    },
+    // -----------------------------------------------
+
+    
+  // _____________________Subscriber________________
+  { path: 'subscriber/add', component: AddEditSubscriberComponent },
 
   {
     path: 'newsletter-list',
-    component: NewsletterlistsComponent,
-    resolve: { newsLetterData: ResolveService },
-    data: { requestcondition: { source: 'newslettertable', condition: {} }, endpoint: 'datalist' }
+    component: ListingSubscriptionComponent 
   },
+  {
+    path: 'subscriber/add-group/edit/:_id',
+    component: AddEditSubscriberComponent
+  },
+  // -----------------------------------------------
+  // -------------------------------------------
 
-  { path: '**', component: HomeComponent },
+
+
+    // _____________________Subscriber GROUP________________
+    { path: 'subscriber-group/add', component: AddEditSubscriberGroupComponent },
+
+    {
+      path: 'newsletter-list',
+      component: ListingSubcategoryComponent 
+    },
+    {
+      path: 'subscriber-group/edit/:_id',
+      component: AddEditSubscriberGroupComponent
+    },
+    // -----------------------------------------------
+    // -------------------------------------------
+  
+
+
+  // ________________________test email _____________________
+  { path: 'test/add', component: AddEditTestemailComponent },
+  {
+    path: 'newsletter-list',
+    component: LisitngTestemailappComponent 
+  
+  },
+  {
+    path: 'test/edit/:_id',
+    component: AddEditTestemailComponent
+    
+  
+    
+  },
+  
+    // ________________________sender's list_____________________
+    { path: 'sender/add', component: AddEditSenderappComponent },
+    {
+      path: 'newsletter-list',
+      component: ListingSenderappComponent 
+    },
+
+    {
+      path: 'sender/edit/:_id',
+      component: AddEditSenderappComponent
+      
+    
+      
+    },
 
 ];
 

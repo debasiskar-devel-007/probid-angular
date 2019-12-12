@@ -19,7 +19,15 @@ export class CustomerSignupComponent implements OnInit {
   public stateList: any;
   public cityList: any;
   public term_msg: any = '';
+  public rep_id: string = '';
   constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,private readonly meta: MetaService) {
+    this.activatedRouter.params.subscribe(params=>{
+      console.log('++++++',params['id']);
+      if (params['id'] != '' || params['id'] != null) {
+        this.rep_id = params['id'];
+      }
+    });
+    
     /**genarate customer-signUp form */
     this.customerSignUpForm = this.fb.group({
       id:null,
@@ -39,6 +47,10 @@ export class CustomerSignupComponent implements OnInit {
     }, {
       validator: this.machpassword('password', 'conpass')
     });
+
+
+
+
 
     this.getStateList();
     this.getCityList();
@@ -113,9 +125,14 @@ export class CustomerSignupComponent implements OnInit {
         // console.log(this.customerSignUpForm.value);
 
         /**Api service for insert form */
-
-        var data = { "source": "user", "data": this.customerSignUpForm.value }
-        this.apiservice.CustomRequest(data, 'addorupdatedata').subscribe((data: any) => {
+        let formdata: any = this.customerSignUpForm.value;
+        if (this.rep_id != null && this.rep_id != '') {
+          this.customerSignUpForm.value.salesrep = this.rep_id;
+          formdata = this.customerSignUpForm.value;
+          console.log(formdata);
+        }
+        var data = { "source": "user", "data": formdata }
+        this.apiservice.CustomRequest(data, 'addorupdatedatawithouttoken').subscribe((data: any) => {
           if (data.status == 'success') {
             this.dialog.open(customerSignUpsuccessDialog, {
               width: '250px',

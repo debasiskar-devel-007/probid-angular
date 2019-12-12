@@ -108,7 +108,7 @@ admin-add-categories .mat-form-field-appearance-legacy .mat-form-field-infix {
 .admcls .dropdown-header{display:block;padding:.5rem 1.5rem;margin-bottom:0;font-size:.711375rem;color:#70657b;white-space:nowrap}
 .admcls .dropdown-item{display:block;width:100%;padding:.25rem 1.5rem;clear:both;font-weight:400;color:#47404f;text-align:inherit;white-space:nowrap;background-color:transparent;border:0}
 
-.clear{padding:0!important}
+.clear{padding:0!important; display: block!important;}
 
 .sidebar-left-secondary .childNav .mat-list-item{display:block}
 .sidebar-left-secondary .childNav .mat-list-item a{color:#332e38;text-transform:capitalize;display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-moz-box-orient:horizontal;-webkit-box-direction:normal;-moz-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;align-items:center;font-size:13px;cursor:pointer;padding:12px 24px;transition:.15s all ease-in}
@@ -294,7 +294,7 @@ text-transform: uppercase!important; font-family: 'Ralewaybold'; text-decoration
 .tablediv.trainingtablediv table {margin-top: 27px;}
 
 .searchblock{margin: 0; padding: 0; position: relative;width: 100%; display: block;}
-.searchblock .btnorange{min-width: 160px; border-radius: 0px; padding: 9px 18px 7px !important; margin: 0 !important; display: flex !important; align-items: center;}
+.searchblock .btnorange{min-width: 160px; border-radius: 0px; padding: 9px 8px 7px !important; margin: 0 !important; display: flex !important; align-items: center;}
 .searchblock{background: #dde2e5 !important; padding: 10px 10px 10px 22px !important;width: 100% !important; display: block; margin:0 auto !important;}
 .searchblock span{display: flex; align-items: center; position: relative; z-index: 99;}
 .searchblock .searchblockwrapper {display: flex; align-items: stretch; justify-content: space-between; flex-direction: row;}
@@ -413,6 +413,73 @@ app-bk-leftdiv{position: relative; z-index: 999;}
   
 
 
+   .tablediv_Settings {
+    margin-top: 5px!important;
+}
+
+
+.bloglists .Settings_tab_block .tablediv {
+  margin-top: -72px;
+  display: block;
+}
+
+/*-------------amitava-----------*/
+.setting_formblock{ display: block; margin: 15px 0 10px 0;}
+
+.setting_formblock label{ display: inline-block; float: left; font-size: 14px; color: #111; margin: 10px 0 0 0; font-weight: normal;}
+
+.setting_formblock .mat-form-field{ display: inline-block; float:left; margin: 0 20px;}
+
+.setting_formblock .mat-form-field input{ background: #f0f0f2; padding: 5px; border: solid 1px #eaeaea; width: 350px; height: 40px;}
+
+.mat-radio-group{ display: inline-block; float: left; margin: 0 0 0 20px;}
+
+
+
+.setting_formblock .mat-form-field-infix{ width: auto!important;}
+
+.setting_formblock  .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0!important;
+  background: #fff;
+  margin: 0;
+}
+
+
+.setting_formblock .mat-radio-label-content{ display: inline-block; float: left;     padding: 0 20px 0 8px!important;}
+
+.setting_formblock .mat-radio-container{ display: inline-block; float: left;}
+
+.setting_formblock_btngroup{ display: block; margin-top:25px; padding-top: 20px; text-align: right; border-top: solid 1px #eaeaea;}
+
+.setting_formblock_btngroup button{ display: inline-block; border: none; box-shadow: none; width: 98px; height: 35px; text-align: center; line-height: 30px; font-size: 16px; cursor: pointer; text-transform: uppercase; color: #fff; background: #323234;}
+
+.setting_formblock_btngroup button:nth-of-type(2){ background: #e03621; margin-left: 10px;}
+
+
+@media only screen and (max-width: 1199px) {
+
+.setting_formblock label {
+  display: block;
+  float: none; 
+  margin: 10px 0 10px 0; 
+}
+
+.setting_formblock .mat-form-field{ display: block; float:none; margin: 0 0 20px 0;}
+
+.mat-radio-group {
+  display:  block;
+  float: none;
+  margin: 0 0 0 0;
+}
+.setting_formblock_btngroup{float: none;  text-align: left;}
+
+}
+
+@media only screen and (max-width: 480px) {
+  .setting_formblock .mat-form-field input{ width: auto; }
+}
+/*-------------amitava---end--------*/
+
 @media only screen and (max-width: 1760px) {
 .dashboard_block1{ background-position: 790px top!important;}
 .dashboard_block1 mat-card-content{ width: 1000px;}
@@ -442,3 +509,26 @@ app-bk-leftdiv{position: relative; z-index: 999;}
 } 
 
 
+
+/*-------------amitava---form css--------*/
+
+.newform_css{ display: block!important; background: #e7e9ea!important;     padding: 14px!important;}
+
+.newform_css .mat-form-field {
+  display: block;
+  position: relative;
+  text-align: left;
+}
+
+
+.newform_css .bottompart { 
+  padding: 6px 0; display: block;      text-align: left!important;
+}
+
+.newform_css button{background: #f7462e !important;
+  font-size: 15px !important;
+  color: #fff!important;}
+
+  .newform_css button:nth-of-type(2){ background: #333 !important; margin-left: 10px!important;}
+
+/*-------------amitava---form css end--------*/
