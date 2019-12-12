@@ -18,6 +18,59 @@ export interface DialogData {
   styleUrls: ['./basic-inventory-search.component.css']
 })
 export class BasicInventorySearchComponent implements OnInit {
+
+  public MediaListArray: any = [];
+
+  carouselOptions = {
+    margin: 5,
+    nav: true,
+    loop: true,
+    navText: ["<div class='nav-btn prev-slide'><i class='material-icons'>keyboard_backspace</i></div>", "<div class='nav-btn next-slide'><i class='material-icons'>keyboard_backspace</i></div>"],
+    responsiveClass: true,
+    dots: false,
+    responsive: {
+      0: {
+        items: 3,
+        autoplay: false,
+        autoplayTimeout: 6000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
+        nav: true,
+      },
+      600: {
+        items: 4,
+        autoplay: false,
+        autoplayTimeout: 6000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
+        nav: true,
+      },
+      991: {
+        items: 5,
+        autoplay: false,
+        autoplayTimeout: 6000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
+        nav: true,         
+      },
+      992: {
+        items: 8,
+        autoplay: false,
+        autoplayTimeout: 6000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
+        nav: true,
+        dot:false,
+      }
+    }
+  }
+
+
+
   public errorMsg: string = '';
   public inventoryCustomerForm: FormGroup;
   public stateList: any;
@@ -40,6 +93,10 @@ export class BasicInventorySearchComponent implements OnInit {
   public user_id: string;
   public modalImg: string = '';
   public isFavorite: number = 0;
+
+
+
+  
 
 
   constructor(public fb: FormBuilder,
