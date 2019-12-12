@@ -368,6 +368,9 @@ app-bk-leftdiv{position: relative; z-index: 999;}
     .adm_inner_banner.testimoniallistsadmin {background: url("../images/testimoniallistsadmin_banner.jpg") no-repeat center center !important; background-size: cover !important;}
     .adm_inner_banner.managelession {background: url("../images/managelession_banner.jpg") no-repeat center center !important; background-size: cover !important;}
     .adm_inner_banner.managetraining {background: url("../images/managetraining_banner.jpg") no-repeat center center !important; background-size: cover !important;}
+
+    .adm_inner_banner.rsvpadmin {background: url("../images/adminrsvp_banner.jpg") no-repeat center center !important; background-size: cover !important;}
+
   
     .bred_cram_wrapper{ background: #DDE2E5; display: flex!important;  padding: 8px; align-items: stretch; }
   .bred_cram_wrapper a{ background: #b5bdbf;
