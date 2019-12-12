@@ -136,8 +136,8 @@ import { CreateNewInventoryComponent } from './component/backend/create-new-inve
 import { JobTicketComponent } from './component/backend/job-ticket/job-ticket.component';
 import { SocialAdvoComponent } from './component/backend/social-advo/social-advo.component';
 import { BookAnAppointmentComponent } from './component/backend/book-an-appointment/book-an-appointment.component';
-import { AdvanceInventorySearchBackendComponent } from './component/backend/advance-inventory-search-backend/advance-inventory-search-backend.component';
-import { BasicInventorySearchBackendComponent } from './component/backend/basic-inventory-search-backend/basic-inventory-search-backend.component';
+import { AdvanceInventorySearchBackendComponent } from './component/backend/inventory/advance-inventory-search-backend/advance-inventory-search-backend.component';
+import { BasicInventorySearchBackendComponent } from './component/backend/inventory/basic-inventory-search-backend/basic-inventory-search-backend.component';
 import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
 import { CommunicationComponent } from './component/backend/communication/communication.component';
 import { AddAdminCategoriesComponent } from './component/backend/add-admin-categories/add-admin-categories.component';
@@ -261,7 +261,8 @@ import { AddBirddogComponent } from './component/backend/add-birddog/add-birddog
     NewslatterDialogComponent,
     NewslattersuccessDialogComponent,
     errorDialog,
-    SaveSearchComponent
+    SaveSearchComponent,
+    // errorDialogbackend,
   ],
   imports: [
     NewsTitleModule,
@@ -302,7 +303,8 @@ import { AddBirddogComponent } from './component/backend/add-birddog/add-birddog
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog]
+  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,]
+  // errorDialogbackend
 })
 export class AppModule { }
 
