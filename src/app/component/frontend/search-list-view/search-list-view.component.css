@@ -143,5 +143,11 @@
 .pa_blockfooterlogo{width: 150px; background: #222222;padding: 5px !important;}
 
 
+/*----Start koushik css---*/
+.sub-col-4{display: flex; flex-direction: column;}
+.currentbidprice{margin-top: auto!important; padding-bottom: 14px;}
+.currentbidprice .text-wrapper p{font-size: 18px; color:#30373d; text-transform: capitalize;}
+
+/*----enb of koushik css---*/
 
 
