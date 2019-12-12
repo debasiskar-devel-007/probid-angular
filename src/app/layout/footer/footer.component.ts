@@ -1,17 +1,17 @@
-import { Component, OnInit, HostListener, Inject, ViewChild  } from '@angular/core';
-import {Router, ActivatedRoute} from '@angular/router';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA,} from '@angular/material/dialog';
-import { FormBuilder, Validators, FormGroup} from '@angular/forms';
-import {CookieService} from "ngx-cookie-service";
-import {ApiService} from "../../api.service";
+import { Component, OnInit, HostListener, Inject, ViewChild } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, } from '@angular/material/dialog';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { CookieService } from "ngx-cookie-service";
+import { ApiService } from "../../api.service";
 
 
-export interface DialogData {}
+export interface DialogData { }
 
 @Component({
-  selector: 'app-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+    selector: 'app-footer',
+    templateUrl: './footer.component.html',
+    styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
 
@@ -19,8 +19,8 @@ export class FooterComponent implements OnInit {
 
     public data: any;
     public serverUrl: any;
-  
-  windowScrolled: boolean;
+
+    windowScrolled: boolean;
 
     constructor(public router: Router, public route: ActivatedRoute, public dialog: MatDialog, public formbuilder: FormBuilder, public apiService: ApiService, public activeroute: ActivatedRoute, public cookie: CookieService) {
 
@@ -31,58 +31,58 @@ export class FooterComponent implements OnInit {
             email: ['', Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
 
         })
-    
-   }
 
-   termscondition() {
-    const dialogRef = this.dialog.open(DialogTermsDialog);
+    }
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+    termscondition() {
+        const dialogRef = this.dialog.open(DialogTermsDialog);
 
-  privacypolicy() {
-    const dialogRef = this.dialog.open(DialogPrivacyDialog);
+        dialogRef.afterClosed().subscribe(result => {
+            console.log(`Dialog result: ${result}`);
+        });
+    }
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+    privacypolicy() {
+        const dialogRef = this.dialog.open(DialogPrivacyDialog);
 
-   @HostListener("window:scroll", [])
+        dialogRef.afterClosed().subscribe(result => {
+            console.log(`Dialog result: ${result}`);
+        });
+    }
 
-   onWindowScroll() {
-       if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
-           this.windowScrolled = true;
-       }
-       else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
-           this.windowScrolled = false;
-       }
-   }
+    @HostListener("window:scroll", [])
 
-   scrollToTop() {
-    (function smoothscroll() {
-
-        var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-
-        if (currentScroll > 0) {
-            window.requestAnimationFrame(smoothscroll);
-            window.scrollTo(0, currentScroll - (currentScroll / 8));
+    onWindowScroll() {
+        if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
+            this.windowScrolled = true;
         }
+        else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
+            this.windowScrolled = false;
+        }
+    }
 
-    })();
-}
+    scrollToTop() {
+        (function smoothscroll() {
 
-  ngOnInit() {
-    this.router.events.subscribe(() =>
-          window.scrollTo({
-              top: 0,
-              left: 0,
-              behavior: 'smooth'
-          })
-      );
-  }
+            var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+
+            if (currentScroll > 0) {
+                window.requestAnimationFrame(smoothscroll);
+                window.scrollTo(0, currentScroll - (currentScroll / 8));
+            }
+
+        })();
+    }
+
+    ngOnInit() {
+        this.router.events.subscribe(() =>
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            })
+        );
+    }
 
 
 
@@ -94,7 +94,7 @@ export class FooterComponent implements OnInit {
 
 
         this.data = this.myform.get('email').value;
-        this.cookie.set('email_modal',this.data);
+        this.cookie.set('email_modal', this.data);
         //console.log('test amitava',this.dataemail);
 
         for (let i in this.myform.controls) {
@@ -103,7 +103,7 @@ export class FooterComponent implements OnInit {
         if (this.myform.valid) {
             this.newslatterViewModal(this.data);
             let link = '';
-            let data = {data: this.myform.value};
+            let data = { data: this.myform.value };
             this.apiService.postdata(data).subscribe(res => {
 
                 let result: any = {};
@@ -126,7 +126,7 @@ export class FooterComponent implements OnInit {
 
     }
 
-    newslatterViewModal(deta:any){
+    newslatterViewModal(deta: any) {
 
         const dialogGenreRef = this.dialog.open(NewslatterDialogComponent, {
             panelClass: ['modal-sm', 'infomodal'],
@@ -145,16 +145,16 @@ export class FooterComponent implements OnInit {
 @Component({
     selector: 'terms-dialog',
     templateUrl: 'terms-dialog.html',
-  })
-  export class DialogTermsDialog {}
+})
+export class DialogTermsDialog { }
 
 
-  
+
 @Component({
     selector: 'privacy-dialog',
     templateUrl: 'privacy-dialog.html',
-  })
-  export class DialogPrivacyDialog {}
+})
+export class DialogPrivacyDialog { }
 
 
 
@@ -170,28 +170,36 @@ export class NewslatterDialogComponent {
 
 
 
-    public serverUrl:any;
-    public tokenViaCookie :any;
+    public serverUrl: any;
+    public tokenViaCookie: any;
     constructor(public dialogRef: MatDialogRef<NewslatterDialogComponent>,
 
-                @Inject(MAT_DIALOG_DATA) public data: DialogData, public formbuilder:FormBuilder, public dialog:MatDialog, public apiService: ApiService,public cookie : CookieService ) {
+        @Inject(MAT_DIALOG_DATA) public data: DialogData, public formbuilder: FormBuilder, public dialog: MatDialog, public apiService: ApiService, public cookie: CookieService) {
         this.serverUrl = apiService.serverUrl;
         this.tokenViaCookie = cookie.get('jwtToken');
         this.myformnews = this.formbuilder.group({
             email: ['', Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
-            name: ['', Validators.required],
+            fullname: ['', Validators.required],
             phone: ['', Validators.required],
             company: ['', Validators.required],
+            group: ['',],
+
 
         })
 
-// this.myformnews.value.email.setvalue();
+        // this.myformnews.value.email.setvalue();
 
         this.myformnews.patchValue({
             email: this.cookie.get('email_modal'),
 
 
 
+
+        });
+
+
+        this.myformnews.patchValue({
+            "group": "0"
 
         });
 
@@ -225,18 +233,18 @@ export class NewslatterDialogComponent {
 
             this.newslattersuccessViewModal();
 
-            setTimeout(()=>{
+            setTimeout(() => {
                 this.onNoClick();
 
-            },2000);
+            }, 2000);
 
             // let  link = this.serverUrl +;
             let data = {
-                source:"newsletter",
-                token : this.tokenViaCookie,
+                source: "subscriberList",
+                token: this.tokenViaCookie,
                 data: this.myformnews.value
             };
-            this.apiService.addDataWithoutToken(data,'addorupdatedata').subscribe(res => {
+            this.apiService.addDataWithoutToken(data, 'addorupdatedata').subscribe(res => {
 
 
                 let result: any = {};
@@ -250,9 +258,10 @@ export class NewslatterDialogComponent {
 
 
                     this.myformnews.controls['email'].updateValueAndValidity();
-                    this.myformnews.controls['name'].updateValueAndValidity();
+                    this.myformnews.controls['fullname'].updateValueAndValidity();
                     this.myformnews.controls['phone'].updateValueAndValidity();
                     this.myformnews.controls['company'].updateValueAndValidity();
+                    this.myformnews.controls['group'].updateValueAndValidity();
 
 
 
@@ -270,7 +279,7 @@ export class NewslatterDialogComponent {
 
 
 
-    newslattersuccessViewModal(){
+    newslattersuccessViewModal() {
 
         const dialogGenreRef = this.dialog.open(NewslattersuccessDialogComponent, {
             panelClass: ['modal-sm', 'infomodal'],
@@ -279,7 +288,7 @@ export class NewslatterDialogComponent {
 
         dialogGenreRef.afterClosed().subscribe(result => {
         });
-        setTimeout(function(){
+        setTimeout(function () {
             dialogGenreRef.close();
         }, 2000);
     }
@@ -296,7 +305,7 @@ export class NewslattersuccessDialogComponent {
     public myformnews: FormGroup
 
     constructor(public dialogRef: MatDialogRef<NewslattersuccessDialogComponent>,
-                /* @Inject(MAT_DIALOG_DATA) public data: DialogData*/) {}
+                /* @Inject(MAT_DIALOG_DATA) public data: DialogData*/) { }
 
     public onNoClick(): void {
         this.dialogRef.close();
