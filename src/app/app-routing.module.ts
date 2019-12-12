@@ -177,7 +177,11 @@ const routes: Routes = [
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }},
 
 
-  { path: 'save-search', component: SaveSearchComponent ,
+  { path: 'save-search-castomer', component: SaveSearchComponent ,
+  resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: 'save_favorite_view', condition: {} }, endpoint: 'datalist' }},
+
+  { path: 'save-search-rep', component: SaveSearchComponent ,
   resolve: { inventory_search: ResolveService },
   data: { requestcondition: { source: 'save_favorite_view', condition: {} }, endpoint: 'datalist' }},
 
@@ -355,10 +359,18 @@ const routes: Routes = [
   resolve: { inventory_search: ResolveService },
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
   },
-
-  { path: 'basic-inventory-search-customer', component: BasicInventorySearchBackendComponent ,
+  { path: 'advance-inventory-search-rep', component: AdvanceInventorySearchBackendComponent,
   resolve: { inventory_search: ResolveService },
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
+  },
+
+  { path: 'basic-inventory-search-castomer', component: BasicInventorySearchBackendComponent ,
+  resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
+},
+{ path: 'basic-inventory-search-rep', component: BasicInventorySearchBackendComponent ,
+resolve: { inventory_search: ResolveService },
+data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
 },
   { path: 'mysalesrep', component: MysalesrepComponent },
   // { path:'contact-us-dashboard', component:ContactUsDashboardComponent,  resolve: { serviceList: ResolveService },
