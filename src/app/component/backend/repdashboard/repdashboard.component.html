@@ -1,7 +1,10 @@
 <div class="adminwrappercls">
     <app-header></app-header>
     <div class="main-content-wrap">
-            <mat-card class="generalcls blog" style="padding: 0 !important;">  
+            <mat-card class="generalcls blog" style="padding: 0 !important;">
+                <button (click)="copyInputMessage(userinput)" value="click to copy" >Share Link for Castomer Sign Up</button>
+                <input matInput type="text" value="http://localhost:4200/customer-signup/{{userid}}" #userinput>
+                
                 <img src="../../../../assets/images/rep-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
                 <img src="../../../../assets/images/rep-dashboard-img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
                 <img src="../../../../assets/images/rep-dashboard-img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">

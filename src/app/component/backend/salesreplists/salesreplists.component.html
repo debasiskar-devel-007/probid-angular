@@ -6,11 +6,11 @@
             <span class="searchblock">
                 <span class="searchblockwrapper">
                   <span>
-                    <h2>Sales ref list</h2>
+                    <h2>Sales rep list</h2>
                   </span>
                   <span>
                       
-                      <button mat-button class="btnorange sim-button" [routerLink]="['/add-salesrep']"><i class="material-icons">add</i> Add SalesRef</button>
+                      <button mat-button class="btnorange sim-button" [routerLink]="['/add-salesrep']"><i class="material-icons">add</i> Add salesrep</button>
 
              
                   </span>
@@ -19,16 +19,16 @@
                   
                   <!-- <img src="../../../../assets/images/admin-manage-type_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
               </span>
-        <div class="tablediv salesreftablediv">
+        <div class="tablediv salesreptablediv">
           
         <lib-listing class="formfilterdiv mytranningcategory" *ngIf="pendingmodelapplicationarray!=null && pendingmodelapplicationarray.length>0" 
           [datasource]="pendingmodelapplicationarray"
           [skip]="pendingmodelapplicationarray_skip" 
           [modify_header_array]="modify_header_array" 
-          [apiurl]="apiService.api_url" 
+          [apiurl]="apiService.serverUrlDemo" 
           [deleteendpoint]="deleteendpoint" 
           [updateendpoint]="updateendpoint" 
-          [jwttoken]="apiService.jwttoken" 
+          [jwttoken]="apiService.accesstoken" 
           [editroute]="editroute"
           [sourcedata]="tablename"  
           [statusarr]="statusarray" 

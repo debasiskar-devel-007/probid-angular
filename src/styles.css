@@ -147,6 +147,52 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
   margin-bottom: 0 !important;
 }
 
+
+
+
+.as_sm_imgmainwrapper .owl-carousel.owl-drag .owl-item {
+  margin-top: 0px !important;
+  width: 70px !important;
+}
+.as_sm_imgmainwrapper .owl-carousel .owl-nav button.owl-prev {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  margin: 0;
+}
+.as_sm_imgmainwrapper .owl-carousel .owl-nav button.owl-next {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  margin: 0;
+}
+
+.as_sm_imgmainwrapper .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next {
+  width: 40px !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+  background: #333 !important;
+}
+
+.as_sm_imgmainwrapper .owl-carousel .owl-nav button .nav-btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.as_sm_imgmainwrapper .owl-theme .owl-nav {
+  margin-top: 0 !important;
+}
+
+.as_sm_imgmainwrapper .owl-carousel.owl-loaded {
+  display: block;
+  padding: 0px 0px;
+}
+
+
+.rightcontent .rightcontentrow .mat-list-item-content{ align-items: stretch !important; flex-wrap: wrap;}
+
 @media screen and (max-width: 1600px){
   .owl-carousel .owl-nav button.owl-prev {
       position: absolute;

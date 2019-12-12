@@ -1,0 +1,214 @@
+import { Component, OnInit, Inject } from '@angular/core';
+import { MetaService } from '@ngx-meta/core';
+import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
+import { ApiService } from 'src/app/api.service';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
+
+export interface DialogData {
+  errorMsg: string;
+}
+
+@Component({
+  selector: 'app-save-search',
+  templateUrl: './save-search.component.html',
+  styleUrls: ['./save-search.component.css']
+})
+export class SaveSearchComponent implements OnInit {
+
+  public MediaListArray: any = [];
+  public loader: boolean = false;
+
+  carouselOptions = {
+    margin: 5,
+    nav: true,
+    loop: true,
+    navText: ["<div class='nav-btn prev-slide'><i class='material-icons'>keyboard_backspace</i></div>", "<div class='nav-btn next-slide'><i class='material-icons'>keyboard_backspace</i></div>"],
+    responsiveClass: true,
+    dots: false,
+    responsive: {
+      0: {
+        items: 3,
+        autoplay: false,
+        autoplayTimeout: 6000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
+        nav: true,
+      },
+      600: {
+        items: 4,
+        autoplay: false,
+        autoplayTimeout: 6000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
+        nav: true,
+      },
+      991: {
+        items: 5,
+        autoplay: false,
+        autoplayTimeout: 6000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
+        nav: true,         
+      },
+      992: {
+        items: 8,
+        autoplay: false,
+        autoplayTimeout: 6000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
+        nav: true,
+        dot:false,
+      }
+    }
+  }
+
+
+
+  public errorMsg: string = '';
+  public inventoryCustomerForm: FormGroup;
+  public stateList: any;
+  public inventory_search_list: any;
+  public make_list: any;
+  public type_list: any;
+  public model_list: any;
+  public year_list: any;
+  public type: string = '';
+  public year: string = '';
+  public make: string = '';
+  public model: string = '';
+  public vin: string = '';
+  public trim: string = '';
+  public vehicle: string = '';
+  public state: string = '';
+  public zip: string = '';
+  public search: any;
+  public user_details:any;
+  public user_id: string = '';
+  public modalImg: string = '';
+  public isFavorite: number = 0;
+
+
+
+  
+
+
+  constructor(public fb: FormBuilder,
+    public apiService: ApiService,
+    public activatedRoute: ActivatedRoute,
+    public http: HttpClient,
+    private readonly meta: MetaService,
+    public dialog: MatDialog,
+    public cookieService: CookieService,
+    public router: Router) {
+    this.meta.setTitle('ProBid Auto - Inventory');
+    this.meta.setTag('og:description', 'Locate the Pre-Owned Car of your desire at the ProBid Auto Inventory using Basic, as well as Advanced, Search Parameters to make your Car Search easy and convenient, while also saving you loads of time, effort and money');
+    this.meta.setTag('twitter:description', 'Locate the Pre-Owned Car of your desire at the ProBid Auto Inventory using Basic, as well as Advanced, Search Parameters to make your Car Search easy and convenient, while also saving you loads of time, effort and money');
+    this.meta.setTag('og:keyword', 'Pre-Owned Car Inventory, ProBid Auto Vehicle Inventory, ProBid Auto Inventory');
+    this.meta.setTag('twitter:keyword', 'Pre-Owned Car Inventory, ProBid Auto Vehicle Inventory, ProBid Auto Inventory');
+    this.meta.setTag('og:title', 'ProBid Auto - Inventory');
+    this.meta.setTag('twitter:title', 'ProBid Auto - Inventory');
+    this.meta.setTag('og:type', 'website');
+    this.meta.setTag('og:image', '../../assets/images/logomain.png');
+    this.meta.setTag('twitter:image', '../../assets/images/logomain.png');
+
+
+if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
+  this.user_details = JSON.parse(this.cookieService.get('user_details'));
+  this.user_id = this.user_details._id;
+  console.log(this.user_id);
+  
+}
+  }
+
+  ngOnInit() {
+
+    //for make,model,year,type drop down list
+    this.activatedRoute.data.forEach((data) => {
+      console.log(data)
+      this.search = data.inventory_search.res;
+    })
+
+  }
+  
+  gotologin(){
+    this.router.navigateByUrl('/login'+this.router.url)
+    console.log('/login'+this.router.url)
+  }
+
+  getData(){
+    let data: any = {
+      endpoint: 'datalist',
+      source: 'save_favorite_view'
+    }
+    this.apiService.getDatalist(data).subscribe((res:any)=>{
+      this.search = res.res;
+      this.loader = false;
+    })
+  }
+
+
+  unFavorite(item: any) {
+    console.log('this is favorite ',item);
+    let data: any = {
+      id:item._id,
+      source: 'save_favorite'
+    }
+    this.apiService.deleteSingleData1(data).subscribe((res: any)=>{
+      console.log(res);
+      if (res.status == 'success') {
+        this.loader = true;
+        this.getData();
+      }
+    })
+  }
+
+  rsvpSend(item: any) {
+    let endpoint: any = "addorupdatedata";
+    item.user_id = this.user_id;
+    let card_data:any = {
+      card_data: item
+    }
+    let data: any = {
+      data: card_data,
+      source: "send_for_rsvp",
+    };
+    console.log(data)
+      this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
+        console.log(res);
+        (res.status == "success")
+      });
+
+  }
+
+  showimg(img: any){
+    this.modalImg = img;
+  }
+
+}
+
+
+@Component({
+  selector: 'error',
+  templateUrl: 'errorDialog.co.html',
+})
+export class errorDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<errorDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    console.log(data);
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+
+}

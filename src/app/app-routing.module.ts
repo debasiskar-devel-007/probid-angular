@@ -18,8 +18,10 @@ import { BloglistfrontendComponent } from './component/frontend/bloglist/bloglis
 
 import { BlogdetailComponent } from './component/frontend/blogdetail/blogdetail.component';
 
-import { AdvanceInventorySearchComponent } from './component/frontend/advance-inventory-search/advance-inventory-search.component';
-import { BasicInventorySearchComponent } from './component/frontend/basic-inventory-search/basic-inventory-search.component';
+import { AdvanceInventorySearchComponent } from './component/frontend/inventory/advance-inventory-search/advance-inventory-search.component';
+import { BasicInventorySearchComponent } from './component/frontend/inventory/basic-inventory-search/basic-inventory-search.component';
+import { SaveSearchComponent } from './component/backend/inventory/save-search/save-search.component';
+
 import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.component';
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
 import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
@@ -75,8 +77,8 @@ import { TrainingsectionComponent } from './training/trainingsection/trainingsec
 import { RepTraingcenterComponent } from './training/rep-traingcenter/rep-traingcenter.component';
 import { ManageleadsComponent } from './training/manageleads/manageleads.component';
 import { BookAnAppointmentComponent } from './component/backend/book-an-appointment/book-an-appointment.component';
-import { AdvanceInventorySearchBackendComponent } from './component/backend/advance-inventory-search-backend/advance-inventory-search-backend.component';
-import { BasicInventorySearchBackendComponent } from './component/backend/basic-inventory-search-backend/basic-inventory-search-backend.component';
+import { AdvanceInventorySearchBackendComponent } from './component/backend/inventory/advance-inventory-search-backend/advance-inventory-search-backend.component';
+import { BasicInventorySearchBackendComponent } from './component/backend/inventory/basic-inventory-search-backend/basic-inventory-search-backend.component';
 import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
 import { CommunicationComponent } from './component/backend/communication/communication.component';
 import { AdminManageCategoriesComponent } from './component/backend/admin-manage-categories/admin-manage-categories.component';
@@ -119,10 +121,16 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
 
   { path: 'login', component: LoginComponent },
+  { path: 'login/:id', component: LoginComponent },
 
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'sign-up', component: SignUpComponent },
+  { path: 'salesrep-signup', component: SalesrepSignupComponent },
+  
+  { path: 'customer-signup', component: CustomerSignupComponent },
+
+  { path: 'customer-signup/:id', component: CustomerSignupComponent },
   { path: 'home', component: HomeComponent },
   { path: 'contactus', component: ContactusComponent },
   {
@@ -191,11 +199,21 @@ const routes: Routes = [
   { path: 'basic-inventory-search', component: BasicInventorySearchComponent ,
   resolve: { inventory_search: ResolveService },
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }},
+
+
+  { path: 'save-search-castomer', component: SaveSearchComponent ,
+  resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: 'save_favorite_view', condition: {} }, endpoint: 'datalist' }},
+
+  { path: 'save-search-rep', component: SaveSearchComponent ,
+  resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: 'save_favorite_view', condition: {} }, endpoint: 'datalist' }},
+
+
+
   { path: 'pre-owned', component: PreOwnedComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'blog-category', component: BlogCategoryComponent },
-  { path: 'salesrep-signup', component: SalesrepSignupComponent },
-  { path: 'customer-signup', component: CustomerSignupComponent },
 
 
 // ___________________BLOG MANAGEMENT_________________
@@ -323,8 +341,8 @@ const routes: Routes = [
   { path: 'manage-commission', component: ManageCommissionComponent },
   // { path: 'newsletter-list', component: NewsletterlistsComponent },
   { path: 'sales-report', component: SalesReportComponent },
-  { path: 'salesrep-list-admin', component: SalesreplistsComponent,resolve: { salesreflist: ResolveService },
-  data: { requestcondition: { source: 'user_view', condition: {"type": "salesref"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
+  { path: 'salesrep-list-admin', component: SalesreplistsComponent,resolve: { salesreplist: ResolveService },
+  data: { requestcondition: { source: 'user_view', condition: {"type": "salesrep"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
   { path: 'rsvp', component: RsvplistsComponent },
   // { path: 'manage-training1', component: ManageTrainingComponent },
   { path: 'manage-lessons', component: ManageLessonsComponent },
@@ -363,10 +381,18 @@ const routes: Routes = [
   resolve: { inventory_search: ResolveService },
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
   },
+  { path: 'advance-inventory-search-rep', component: AdvanceInventorySearchBackendComponent,
+  resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
+  },
 
   { path: 'basic-inventory-search-customer', component: BasicInventorySearchBackendComponent ,
   resolve: { inventory_search: ResolveService },
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
+},
+{ path: 'basic-inventory-search-rep', component: BasicInventorySearchBackendComponent ,
+resolve: { inventory_search: ResolveService },
+data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
 },
   { path: 'mysalesrep', component: MysalesrepComponent },
   // { path:'contact-us-dashboard', component:ContactUsDashboardComponent,  resolve: { serviceList: ResolveService },
@@ -386,7 +412,7 @@ const routes: Routes = [
   { path: 'training-center-rep', component: TrainingCenterComponent },
   { path: 'my-account', component: MyAccountComponent },
   { path: 'add-salesrep', component: AddSalesrepComponent },
-  { path: 'editsalesref/:_id', component: AddSalesrepComponent },
+  { path: 'editsalesrep/:_id', component: AddSalesrepComponent },
   {path:'add-customer',component:AddCustomerComponent},
   {path:'editcustomer/:_id',component:AddCustomerComponent},
 

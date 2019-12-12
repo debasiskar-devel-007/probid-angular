@@ -45,8 +45,8 @@ import { TesimoniallistComponent } from './component/frontend/tesimoniallist/tes
 import { BlogComponent } from './component/frontend/blog/blog.component';
 import { BlogdetailComponent, VideoModalComponent} from './component/frontend/blogdetail/blogdetail.component';
 
-import { AdvanceInventorySearchComponent } from './component/frontend/advance-inventory-search/advance-inventory-search.component';
-import { BasicInventorySearchComponent, errorDialog } from './component/frontend/basic-inventory-search/basic-inventory-search.component';
+import { AdvanceInventorySearchComponent } from './component/frontend/inventory/advance-inventory-search/advance-inventory-search.component';
+import { BasicInventorySearchComponent, errorDialog } from './component/frontend/inventory/basic-inventory-search/basic-inventory-search.component';
 
 import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.component';
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
@@ -54,6 +54,9 @@ import { BlogCategoryComponent } from './component/frontend/blog-category/blog-c
 
 import { SalesrepSignupComponent } from './component/frontend/salesrep-signup/salesrep-signup.component';
 import { CustomerSignupComponent,customerSignUpsuccessDialog } from './component/frontend/customer-signup/customer-signup.component';
+
+import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
+import { SaveSearchComponent } from './component/backend/inventory/save-search/save-search.component';
 
 /**End Frontend Component**/
 
@@ -104,7 +107,8 @@ import { SalesReportComponent } from './component/backend/sales-report/sales-rep
 import { SalesreplistsComponent } from './component/backend/salesreplists/salesreplists.component';
 import { RsvplistsComponent } from './component/backend/rsvplists/rsvplists.component';
 import { ManageTrainingComponent } from './component/backend/manage-training/manage-training.component';
-import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
+
+
 // import { SharetoolsModule } from 'sharetools';
 import { ListingComponent } from './training/listing/listing.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
@@ -132,8 +136,8 @@ import { CreateNewInventoryComponent } from './component/backend/create-new-inve
 import { JobTicketComponent } from './component/backend/job-ticket/job-ticket.component';
 import { SocialAdvoComponent } from './component/backend/social-advo/social-advo.component';
 import { BookAnAppointmentComponent } from './component/backend/book-an-appointment/book-an-appointment.component';
-import { AdvanceInventorySearchBackendComponent } from './component/backend/advance-inventory-search-backend/advance-inventory-search-backend.component';
-import { BasicInventorySearchBackendComponent } from './component/backend/basic-inventory-search-backend/basic-inventory-search-backend.component';
+import { AdvanceInventorySearchBackendComponent } from './component/backend/inventory/advance-inventory-search-backend/advance-inventory-search-backend.component';
+import { BasicInventorySearchBackendComponent } from './component/backend/inventory/basic-inventory-search-backend/basic-inventory-search-backend.component';
 import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
 import { CommunicationComponent } from './component/backend/communication/communication.component';
 import { AddAdminCategoriesComponent } from './component/backend/add-admin-categories/add-admin-categories.component';
@@ -289,7 +293,9 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
     LisitngTestemailappComponent,
     ListingSenderappComponent,
     ListingSubscriptionComponent,
-    ListingSubcategoryComponent
+    ListingSubcategoryComponent,
+    SaveSearchComponent,
+    // errorDialogbackend,
   ],
   imports: [
     NewsTitleModule,
@@ -330,7 +336,8 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog]
+  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,]
+  // errorDialogbackend
 })
 export class AppModule { }
 

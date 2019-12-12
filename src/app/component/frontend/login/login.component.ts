@@ -10,25 +10,11 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  /***************** This is use for image upload ********************/
-  // public configData: any = {
-  //   baseUrl: "http://3.15.236.141:5005/",
-  //   endpoint: "uploads",
-  //   size: "51200", // kb
-  //   format: ["jpg", "jpeg", "png", "bmp", "zip", 'html'], // use all small font
-  //   type: "profile-picture",
-  //   path: "files",
-  //   prefix: "profile_picture_"
-  // }
-
 
   public logo: any = '../../assets/images/logo.png';      // logo url 
   public fromTitle: any = "Login";    // This is a From Title 
-  // public fullUrl: any = "https://o820cv2lu8.execute-api.us-east-2.amazonaws.com/production/api/";  // server url
   public fullUrl: any = this.apiService.serverUrlDemo;
   public endpoint: any = "login";  // login endpoint
-  // public signUpRouteingUrl: any = 'sign-up';      // navigate the sign up page
-  // public forgetRouteingUrl: any = 'forget-password';      // navigate the Forget password page
   public buttonName: any = 'Login';
   public signUpRouteingUrl: any = {
     "path": "sign-up",
@@ -45,29 +31,9 @@ export class LoginComponent implements OnInit {
   };
   public routerStatus: any;
   public userData: any = {};
+  public defaultLoginUrl = '/login';
   constructor(private readonly meta: MetaService, public apiService: ApiService, public router: Router, public cookieService: CookieService) {
 
-
-
- 
-    // this.userData = JSON.parse(this.cookieService.get('user_details'));
-    // console.log(this.userData.type);
-    // console.log(cookieService.get('jwttoken').length)
-    // if (this.userData.type == 'user' && cookieService.get('jwttoken').length >= 10) {
-    //   router.navigateByUrl('/customer-dashboard');
-    // } else if (this.userData.type == 'admin' && cookieService.get('jwttoken').length >= 10) {
-    //   router.navigateByUrl('/admin-dashboard');
-    // } else if (this.userData.type == 'res' && cookieService.get('jwttoken').length >= 10) {
-    //   router.navigateByUrl('/rep-dashboard');
-    // }
-
-
-
-    // this.meta.setTitle('Login Form dynamic');
-    // this.meta.setTag('og:description', 'This is dynamic decription');
-    // this.meta.setTag('og:title', 'This is dynamic title with meta og ');
-    // this.meta.setTag('og:type', 'website');
-    // this.meta.setTag('og:image', 'https://upload.wikimedia.org/wikipedia/commons/f/f8/superraton.jpg');
 
     this.meta.setTitle('ProBid Auto - Login');
     this.meta.setTag('og:description', 'ProBid Auto offers the easiest and the most convenient way for car buyers to get their desired cars, listing Used Cars for Sale from multiple dealerships and major Auction houses around the USA.');
@@ -92,7 +58,7 @@ export class LoginComponent implements OnInit {
           "routerNav": "customer-dashboard"
         },
         {
-          "type": "rep",
+          "type": "salesrep",
           "routerNav": "rep-dashboard"
         }
       ]
@@ -103,21 +69,4 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     // console.log(this.apiService.serverUrlDemo)
   }
-
-
-  goto() {
-    console.log('sadfdff');
-    if (this.router.url == '/login') {
-      this.router.navigateByUrl('/admin-dashboard');
-
-    } else if (this.router.url == '/login') {
-
-      this.router.navigateByUrl('/rep-dashboard');
-
-    } else if (this.router.url == '/login') {
-
-      this.router.navigateByUrl('/customer-dashboard');
-    }
-  }
-
 }

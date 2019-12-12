@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular
 import { ApiService } from 'src/app/api.service';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
+import {CookieService} from 'ngx-cookie-service';
+
 @Component({
   selector: 'app-add-customer',
   templateUrl: './add-customer.component.html',
@@ -12,10 +14,11 @@ export class AddCustomerComponent implements OnInit {
   public addcustomerForm: FormGroup;
   public stateList: any;
   public cityList: any;
+  public salesrepList:any;
   public header_text:any="Add Customer"
 public btn_text:any="Submit"
   @ViewChild(FormGroupDirective) formDirective: FormGroupDirective;
-  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,public router:Router) { 
+  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,public router:Router,public cookieService:CookieService) { 
     /**genarate Add-customer form */
     this.addcustomerForm = this.fb.group({
       id:null,
@@ -29,6 +32,7 @@ public btn_text:any="Submit"
       address: [null, Validators.required],
       password: [null, Validators.required],
       conpass: [null, Validators.required],
+      salesrep:['',Validators.required],
       type: ["customer"],
       status:1
     }, {
@@ -41,6 +45,23 @@ public btn_text:any="Submit"
    
   }
   ngOnInit() {
+
+    // salesrep list 
+
+    let data:any;
+    data={
+      source:'user_view',
+      condition: {"type": "salesrep"},
+      token:this.cookieService.get('jwtToken')
+    }
+
+    this.apiservice.CustomRequest(data,'datalist').subscribe((res)=>{
+      let result:any;
+      result=res;
+      console.log('>>>>>>>>>>',result.res)
+      this.salesrepList=result.res
+    })
+
   }
   /**Miss Match password check function */
   machpassword(passwordkye: string, confirmpasswordkye: string) {
@@ -128,6 +149,7 @@ public btn_text:any="Submit"
             password: data.res[0].password,
             conpass: data.res[0].password,
             type:data.res[0].type,
+            salesrep:data.res[0].salesrep
           })
         });
     }

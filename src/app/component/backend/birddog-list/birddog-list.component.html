@@ -19,16 +19,16 @@
                   
                   <!-- <img src="../../../../assets/images/admin-manage-type_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
               </span>
-        <div class="tablediv salesreftablediv">
+        <div class="tablediv salesreptablediv">
           
         <lib-listing class="formfilterdiv mytranningcategory" *ngIf="birdDogList!=null && birdDogList.length>0" 
           [datasource]="birdDogList"
           [skip]="birdDogList_skip" 
           [modify_header_array]="modify_header_array" 
-          [apiurl]="apiService.api_url" 
+          [apiurl]="apiService.serverUrlDemo" 
           [deleteendpoint]="deleteendpoint" 
           [updateendpoint]="updateendpoint" 
-          [jwttoken]="apiService.jwttoken" 
+          [jwttoken]="apiService.accesstoken" 
           [editroute]="editroute"
           [sourcedata]="tablename"  
           [statusarr]="statusarray" 
