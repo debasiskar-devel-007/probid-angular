@@ -26,8 +26,14 @@
         <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
           <a [matMenuTriggerFor]="menu3">Inventory</a>
           <mat-menu #menu3="matMenu" class="activedropmenu">
-            <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu"
-              [routerLink]="['/inventory-list']">Inventory list</a>
+            <!-- <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu"
+              [routerLink]="['/inventory-list']">Inventory list</a> -->
+              <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu"
+              [routerLink]="['/inventory-list']">Advance Inventory Search</a>
+
+              <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu"
+              [routerLink]="['/inventory-list']">Saved Search List</a>
+
             <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu"
               [routerLink]="['/create-new-inventory']">Create new Inventory</a>
             <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-type']">Manage
@@ -124,7 +130,7 @@
           <div class="triangle"></div>
         </mat-list-item>
 
-        <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+        <!-- <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
                     <a [matMenuTriggerFor]="menu9">Manage Categories</a>
                     <mat-menu #menu9="matMenu" class="activedropmenu">
                         <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-type']">Manage Type</a>
@@ -133,7 +139,7 @@
                         <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/manage-year']">Manage Year</a>
                     </mat-menu>
                     <div class="triangle"></div>
-                </mat-list-item>
+                </mat-list-item> -->
 
       </mat-list>
     </div>
@@ -146,7 +152,7 @@
             <img src="http://gull-html-laravel.ui-lib.com/assets/images/faces/1.jpg" id="userDropdown" alt=""
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
             <mat-menu #menu="matMenu">
-              <button mat-menu-item>Item 1</button>
+              <button mat-menu-item (click)="logout()">Logout</button>
               <button mat-menu-item>Item 2</button>
             </mat-menu>
         </div>
@@ -197,8 +203,16 @@
             <!-- <a mat-menu-item routerLinkActive="activemenu" [routerLink]="['/advance-inventory']">Advance Inventory Search</a> -->
             <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu"
               [routerLink]="['/advance-inventory-search-customer']">Advance Inventory Search</a>
+              <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu"
+              [routerLink]="['/advance-inventory-search-customer']">Saved Search List</a>
           </mat-menu>
           <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item  class="nav-item" routerLinkActive="activemenu">
+            <a class="nav-item-hold">
+                <span class="nav-text">RSVP</span>
+            </a>
+            <div class="triangle"></div>
         </mat-list-item>
         <!-- <mat-list-item  class="nav-item" routerLinkActive="activemenu">
             <a class="nav-item-hold" (click)="Header.openDialog()">
@@ -231,7 +245,7 @@
               src="http://gull-html-laravel.ui-lib.com/assets/images/faces/1.jpg" id="userDropdown" alt=""
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item (click)="logout()">Logout</button>
             <button mat-menu-item>Item 2</button>
           </mat-menu>
 
@@ -289,7 +303,15 @@
               [routerLink]="['/basic-inventory-search-rep']">Basic Inventory Search</a>
             <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu"
               [routerLink]="['/advance-inventory-search-rep']">Advance Inventory Search</a>
+              <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu"
+              [routerLink]="['/advance-inventory-search-rep']">Saved Search List</a>
           </mat-menu>
+          <div class="triangle"></div>
+        </mat-list-item>
+        <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+          <a class="nav-item-hold" mat-menu-item routerLinkActive="activemenu" [routerLink]="['/communication']">
+            <span class="nav-text">RSVP</span>
+          </a>
           <div class="triangle"></div>
         </mat-list-item>
         <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
@@ -343,7 +365,7 @@
               src="http://gull-html-laravel.ui-lib.com/assets/images/faces/1.jpg" id="userDropdown" alt=""
               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item (click)="logout()">Logout</button>
             <button mat-menu-item>Item 2</button>
           </mat-menu>
         </div>

@@ -37,7 +37,7 @@ export class BasicInventorySearchComponent implements OnInit {
   public zip: string = '';
   public search: any;
   public user_details:any;
-  public user_id: string;
+  public user_id: string = '';
   public isFavorite: number = 0;
 
 
@@ -47,7 +47,8 @@ export class BasicInventorySearchComponent implements OnInit {
     public http: HttpClient,
     private readonly meta: MetaService,
     public dialog: MatDialog,
-    public cookieService: CookieService) {
+    public cookieService: CookieService,
+    public router: Router) {
     this.meta.setTitle('ProBid Auto - Inventory');
     this.meta.setTag('og:description', 'Locate the Pre-Owned Car of your desire at the ProBid Auto Inventory using Basic, as well as Advanced, Search Parameters to make your Car Search easy and convenient, while also saving you loads of time, effort and money');
     this.meta.setTag('twitter:description', 'Locate the Pre-Owned Car of your desire at the ProBid Auto Inventory using Basic, as well as Advanced, Search Parameters to make your Car Search easy and convenient, while also saving you loads of time, effort and money');
@@ -60,9 +61,12 @@ export class BasicInventorySearchComponent implements OnInit {
     this.meta.setTag('twitter:image', '../../assets/images/logomain.png');
 
 
-    this.user_details = JSON.parse(this.cookieService.get('user_details'));
-    this.user_id = this.user_details._id;
-    console.log(this.user_id);
+if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
+  this.user_details = JSON.parse(this.cookieService.get('user_details'));
+  this.user_id = this.user_details._id;
+  console.log(this.user_id);
+  
+}
 
 
     this.generateForm();
@@ -169,34 +173,38 @@ export class BasicInventorySearchComponent implements OnInit {
     }
 
   }
+  gotologin(){
+    this.router.navigateByUrl('/login'+this.router.url)
+    console.log('/login'+this.router.url)
+  }
 
   favorite(item: any) {
-    console.log('item')
-    console.log(item)
-    if (this.isFavorite = 0) {
-      this.isFavorite = 1;
-      console.log('this.isFavorite',this.isFavorite)
-    }else {
-      this.isFavorite = 0;
+    console.log('this is favorite ')
+    if (this.user_id  == '') {
+      this.cookieService.set('favorite_car', item);
+      setTimeout(() => {
+        this.gotologin();
+      }, 500);
+   
     }
+    this.cookieService.get('favorite_car')
+  }
+
+  rsvpSend(item: any) {
     let endpoint: any = "addorupdatedata";
-    item.isFavorite = this.isFavorite;
+    item.user_id = this.user_id;
     let card_data:any = {
       card_data: item
     }
     let data: any = {
       data: card_data,
-      source: "save_favorite",
+      source: "send_for_rsvp",
     };
     console.log(data)
       this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
         console.log(res);
         (res.status == "success")
       });
-
-  }
-
-  rsvpSend(item: any) {
 
   }
 
