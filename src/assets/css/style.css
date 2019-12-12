@@ -69,8 +69,8 @@ a{cursor:pointer;outline:none}
 .btnblue{display: inline-block !important; background: url('../images/doublearrowicon.png') no-repeat right 10px center #00c0ff !important; background-size: 12px !important; font-size: 16px !important; color: #fff!important; text-transform: uppercase; font-family: 'HelveticaBold' !important; text-decoration: none!important; line-height: normal !important; text-align: center !important;margin: 0; margin-top: 0; margin-bottom: 0; border-radius: 5px; margin-top: 10px !important;text-decoration:none!important;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);padding: 14px 30px 10px 10px !important;}
 .btnyellow{display: inline-block !important; background: #fcd503 !important; font-size: 16px !important; color: #fff!important; text-transform: uppercase; font-family: 'HelveticaBold' !important; text-decoration: none!important; line-height: normal !important; text-align: center !important;
 text-decoration:none!important;	margin: 0; margin-top: 0; margin-bottom: 0; border-radius: 5px; padding: 14px 18px 10px !important; margin-top: 10px !important;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);}
-.btnorange{display: inline-block !important; background: #f7462e !important; font-size: 16px !important; color: #fff!important; text-transform: uppercase; font-family: 'HelveticaBold' !important; text-decoration: none!important; line-height: normal !important; text-align: center !important;
-text-decoration:none!important;	margin: 0; margin-top: 0; margin-bottom: 0; border-radius: 5px; padding: 14px 18px 10px !important; margin-top: 10px !important;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);}
+.btnorange{display: inline-block !important; background: #f7462e !important; font-size: 15px !important; color: #fff!important; text-transform: uppercase; font-family: 'HelveticaBold' !important; text-decoration: none!important; line-height: normal !important; text-align: center !important;
+text-decoration:none!important;	margin: 0; margin-top: 0; margin-bottom: 0; border-radius: 5px; padding: 14px 10px 10px !important; margin-top: 10px !important;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);}
     
 
 .overlaybg{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.7);z-index:9}
@@ -1390,3 +1390,19 @@ a.associate_new_con6_link:hover{color: #fff;}
 
 
 
+.setting_formblock .mat-form-field-appearance-legacy .mat-form-field-label {
+    top: 4px!important;
+}
+
+.setting_formblock  .mat-error {
+    display: block!important;
+    margin-top: 18px!important;
+}
+
+
+.setting_formblock  .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #e03621;
+}
+
+
+.setting_formblock .mat-radio-button.mat-accent .mat-radio-inner-circle{background-color: #e03621;}

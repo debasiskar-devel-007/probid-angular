@@ -19,6 +19,7 @@ export interface DialogData {
 export class SaveSearchComponent implements OnInit {
 
   public MediaListArray: any = [];
+  public loader: boolean = false;
 
   carouselOptions = {
     margin: 5,
@@ -147,12 +148,13 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
       source: 'save_favorite_view'
     }
     this.apiService.getDatalist(data).subscribe((res:any)=>{
-      this.search = res.res
+      this.search = res.res;
+      this.loader = false;
     })
   }
 
 
-  favorite(item: any) {
+  unFavorite(item: any) {
     console.log('this is favorite ',item);
     let data: any = {
       id:item._id,
@@ -161,6 +163,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     this.apiService.deleteSingleData1(data).subscribe((res: any)=>{
       console.log(res);
       if (res.status == 'success') {
+        this.loader = true;
         this.getData();
       }
     })

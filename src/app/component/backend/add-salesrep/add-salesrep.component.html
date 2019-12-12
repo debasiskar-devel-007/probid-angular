@@ -1,11 +1,26 @@
 <div class="adminwrappercls">
-  <app-header></app-header>
+    <app-header></app-header>
+  
     <div class="main-content-wrap">
-      <mat-card class="generalcls blog" style="padding: 0 !important;">  
-        <mat-card-title class="editprofiletitle">{{header_text}}</mat-card-title>
-      </mat-card>
-    </div>
-    <form [formGroup]="addsalesrepForm"  (ngSubmit)="addsalesrepFormSubmit()">
+        <mat-card class="generalcls blog" style="padding: 0 !important;">  
+            <img src="../../../../assets/images/salesreplists-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+            <span class="searchblock">
+                <span class="searchblockwrapper">
+                  <span>
+                    <h2>{{header_text}} </h2>
+                  </span>
+                     
+                </span>
+                  
+                  <!-- <img src="../../../../assets/images/admin-manage-type_img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+              </span>
+        
+  
+              <mat-card>
+  
+                  <mat-card-content class="newform_css">
+    
+    <form [formGroup]="addsalesrefForm"  (ngSubmit)="addsalesrefFormSubmit()">
       <mat-form-field>
         <input matInput type="text" placeholder="First Name" formControlName="firstname" (blur)="inputUntouched('firstname')">
         <mat-error
@@ -99,7 +114,21 @@
 
         <span class="bottompart">
             <button mat-raised-button class="btn-lg">{{btn_text}}</button>
+            <button mat-raised-button class="btn-lg" type="reset">Reset</button>
         </span>
     </form>
+ 
+
+  </mat-card-content>
+
+</mat-card>
+</mat-card>
+</div>
+
+
+
+
+
+
 </div>
 <app-footer></app-footer>

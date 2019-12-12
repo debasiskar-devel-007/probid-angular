@@ -76,7 +76,7 @@
                     <span class="sub-col-4">
                       <mat-card-content class="rrblock1">
                         <h1>RSVP</h1>
-                        <button (click)="favorite(item)"><i class="material-icons" > delete </i> Remove</button>
+                        <button (click)="unFavorite(item)"><i class="material-icons" > delete </i> Remove</button>
                       </mat-card-content>
                       <mat-card-content class="rrblock1 currentbidprice">
                         <span class="text-wrapper" *ngIf="item.price != null">
@@ -106,3 +106,6 @@
       </mat-card>
   </div>
   <app-footer></app-footer>
+
+
+  <mat-spinner *ngIf="loader"></mat-spinner>
