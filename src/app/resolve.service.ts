@@ -17,12 +17,17 @@ export class ResolveService implements Resolve<any> {
     }
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         let _id = route.params['id'];
+
+        console.log('>>++>>',_id)
        
         if (route.data.requestcondition.condition._id == 'id') {
             route.data.requestcondition.condition._id = _id;
             delete route.data.requestcondition.condition.id;
             console.log(route.data.requestcondition.condition)
         }
+
+
+
         var endpoint = route.data.link;
         var source = route.data.source;
         var condition = route.data.condition;
@@ -37,7 +42,7 @@ export class ResolveService implements Resolve<any> {
             console.log(route.data)
             console.log(requestData.condition)
             if(route.url[0].path == 'blogdetail') {
-                route.data.requestcondition.condition._id_object = route.params['id'] ;
+                route.data.requestcondition.condition._id_object = route.params['id'];
             }
             return new Promise((resolve) => {
                 this._apiService.getDatalistForResolve(route.data).subscribe(api_object =>{
