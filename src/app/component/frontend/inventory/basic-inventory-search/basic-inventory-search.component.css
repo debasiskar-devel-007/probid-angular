@@ -77,12 +77,19 @@
   .inventorysearch .example-container > .section1 span{
       box-sizing: border-box;
       flex: 1 1 32.33%;
-      margin: .5% !important;        
+      margin: 0 .5% !important;        
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
       flex-wrap: wrap;
   }
+
+  
+  .inventorysearch .formblock form {
+    display: flex;
+}
+
+.inventorysearch .formblock form .section1{width: 100%;}
 
   .inventorysearch .example-container > .section1 span .mat-form-field{
     width: 100%;
@@ -172,8 +179,8 @@ flex-direction: column!important;
 .inventorysearch .example-container h4{
 color: #474b4e;
 font-size: 15px;
-margin-bottom: 3px;
-margin-top: 3px;
+margin-bottom: 10px;
+margin-top: 10px;
 display: flex;
 flex: 1 1 100%;
 }
