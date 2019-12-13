@@ -35,8 +35,10 @@
                             <span class="rsvplistsbottom">
                               <h2>{{item.heading}}</h2>
                               <span class="rsvplistsbottombtm">
-                               <span><h3>Status</h3></span>
-                               <span><h3>Rejected <span class="colorred"></span></h3></span>
+                               <span>Status</span>
+                               <span>Rejected <span class="colorred"></span></span>
+                               <span>Rejected <span class="coloryellow"></span></span>
+                               <span>Rejected <span class="colorgreen"></span></span>
                               </span>
                             </span>
                           </span>
@@ -49,15 +51,15 @@
                                 </span>
                                 <span class="listscontent">
                                    <mat-list>
-                                     <mat-list-item><span>Name:</span> <span>{{item.added_for_fullname}}</span> </mat-list-item>
-                                     <mat-list-item><span>Email ID:</span> <span>{{item.added_for_email}}</span> </mat-list-item>
-                                     <mat-list-item><span>Phone:</span> <span>{{item.added_for_phone}}</span> </mat-list-item>
+                                     <mat-list-item><span class="labelcls">Name:</span> <span>{{item.added_for_fullname}}</span> </mat-list-item>
+                                     <mat-list-item><span class="labelcls">Email ID:</span> <span>{{item.added_for_email}}</span> </mat-list-item>
+                                     <mat-list-item><span class="labelcls">Phone:</span> <span>{{item.added_for_phone}}</span> </mat-list-item>
                                    </mat-list>
                                 </span>
                               </span>
                               <span class="rsvplisttypebottom">
-                                <span>Qualified for Finance: <span class="red">NO</span></span>
-                                <span>Job Ticket related to this car: <span class="green">[1]</span></span>
+                                <span>Qualified for Finance: <span class="redcls">NO</span></span>
+                                <span>Job Ticket related to this car: <span class="greencls">[1]</span></span>
                               </span>
 
                             </span>
@@ -76,8 +78,8 @@
                                     </span>
                                   </span>
                                   <span class="rsvplisttypebottom">
-                                    <span>Qualified for Finance: <span class="red">NO</span></span>
-                                    <span>Job Ticket related to this car: <span class="green">[1]</span></span>
+                                    <span>Commission: <span class="redcls">NO</span></span>
+                                    <button mat-button class="btnblue">Know More</button>
                                   </span>
                             </span>                            
                           </span>
