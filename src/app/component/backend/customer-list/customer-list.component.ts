@@ -29,7 +29,7 @@ export class CustomerListComponent implements OnInit {
   public statusarray: any = [{val: 1, name: 'Active'}, {val: 2, name: 'Inactive'}, {val: 0, name: 'Pending'}]; 
 
   pendingmodelapplicationarray: any = [];
-  pendingmodelapplicationarray_skip: any = ['_id','type','city','state','password','zip','salesrep_id'];
+  pendingmodelapplicationarray_skip: any = ['_id','type','city','state','password','zip','salesrep_id','created_at','id','salesrep','updated_at'];
   pendingmodelapplicationarray_detail_skip: any = ['_id'];
   updateendpoint = 'addorupdatedata';
   deleteendpoint = 'deletesingledata';
@@ -60,11 +60,9 @@ export class CustomerListComponent implements OnInit {
     this.activatedRoute.data.forEach(data=>{   
       this.pendingmodelapplicationarray=data.customerlist.res;
       console.log('@@>>>>>', this.pendingmodelapplicationarray)
-
-      // if(this.pendingmodelapplicationarray.salesrep == this.userDetails._id){
-
-      // }
     })
+
+   
 
   }
 

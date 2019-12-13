@@ -25,6 +25,8 @@ export class ResolveService implements Resolve<any> {
     }
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         let _id = route.params['id'];
+
+        console.log('>>++>>',_id)
        
         // if (route.data.requestcondition.condition._id == 'id') {
         //     route.data.requestcondition.condition._id = _id;
@@ -60,10 +62,6 @@ export class ResolveService implements Resolve<any> {
                 route.data.requestcondition.condition._id_object = route.params['id'] ;
             }
 
-
-
-
-           
 
             return new Promise((resolve) => {
                 console.log('route.data',route.data, this.userid);
