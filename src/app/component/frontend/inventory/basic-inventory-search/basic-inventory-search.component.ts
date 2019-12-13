@@ -70,7 +70,7 @@ export class BasicInventorySearchComponent implements OnInit {
   }
 
 
-
+  public loginMsg: string ='';
   public errorMsg: string = '';
   public inventoryCustomerForm: FormGroup;
   public stateList: any;
@@ -147,6 +147,15 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     this.apiService.getJsonObject('assets/data/states.json').subscribe((response: any) => {
       this.stateList = response;
     });
+  }
+
+  loginbefore(){
+    this.loginMsg = "Please select at least one field";
+
+        const dialogRef = this.dialog.open(loginBeforeDialog, {
+          width: '250px',
+          data: { errorMsg: this.loginMsg }
+        });
   }
 
   //___________generate form for inventory customer search________________//
@@ -307,3 +316,26 @@ export class errorDialog {
   }
 
 }
+
+
+
+@Component({
+  selector: 'error',
+  templateUrl: 'loginbefore.html',
+})
+export class loginBeforeDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<loginBeforeDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    console.log(data);
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+}
+
+
+
