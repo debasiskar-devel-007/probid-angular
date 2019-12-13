@@ -26,26 +26,34 @@ export class ResolveService implements Resolve<any> {
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         let _id = route.params['id'];
        
-        if (route.data.requestcondition.condition._id == 'id') {
-            route.data.requestcondition.condition._id = _id;
-            delete route.data.requestcondition.condition.id;
-            console.log(route.data.requestcondition.condition)
-        }
+        // if (route.data.requestcondition.condition._id == 'id') {
+        //     route.data.requestcondition.condition._id = _id;
+        //     delete route.data.requestcondition.condition.id;
+        //     console.log(route.data.requestcondition.condition)
+        // }
         var endpoint = route.data.link;
         var source = route.data.source;
         var condition = route.data.condition;
         var requestData: any = route.data.requestcondition;
-        if (route.data.requestcondition.trainingcategory != null) {
-            requestData.trainingcategory = route.params.cid;
-            requestData.userid = this.userid;
-        } else if (route.data.requestcondition.condition.id == 'userid' && route.data.requestcondition.condition.id != null) {
+        // if (route.data.requestcondition.trainingcategory != null) {
+        //     requestData.trainingcategory = route.params.cid;
+        //     requestData.userid = this.userid;
+        // }else{
+
             
-            route.data.requestcondition.condition.id=this.userid;
-            console.log('it is working',route.data.requestcondition.condition)
-       } else{
             requestData.condition = Object.assign(requestData.condition, route.params);
-            delete route.data.requestcondition.condition.id;
-            console.log('route.data');
+            if(this.cookieservice.get('user_details') !='' && this.cookieservice.get('user_details') !=null){
+                this.userCookies = JSON.parse(this.cookieservice.get('user_details'));
+                this.userid = this.userCookies._id;
+                console.log('>>>>',this.userid)  
+              }
+            for(let d in requestData.condition){
+                if(requestData.condition[d]=='user_id'){
+                  requestData.condition[d]=this.userid;
+                  console.log('route.data');
+                }
+              }
+            // delete route.data.requestcondition.condition.id;
             console.log(route.data)
             console.log(requestData.condition)
             if(route.url[0].path == 'blogdetail') {
@@ -68,7 +76,7 @@ export class ResolveService implements Resolve<any> {
                     }
                 })
             });
-            }
+            // }
         //old code
         /*var result = new Promise((resolve) => {this._http.post(this.commonservices.nodesslurl+'datalist?token='+this.cookie.get('jwttoken'),
             {source:source,condition:condition}/!*JSON.stringify(data)*!/).pipe(map(res => res));

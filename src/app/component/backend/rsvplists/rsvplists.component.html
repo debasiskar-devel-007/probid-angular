@@ -36,9 +36,9 @@
                               <h2>{{item.heading}}</h2>
                               <span class="rsvplistsbottombtm">
                                <span>Status</span>
-                               <span class="btnactive">Rejected <span class="colorred"></span></span>
-                               <!-- <span class="btnactive">Pending <span class="coloryellow"></span></span>
-                               <span class="btnactive">Accepted <span class="colorgreen"></span></span> -->
+                               <span *ngIf="item.status == 2" class="btnactive">Rejected <span class="colorred"></span></span>
+                               <span *ngIf="item.status == 0" class="btnactive">Pending <span class="coloryellow"></span></span>
+                               <span *ngIf="item.status == 1" class="btnactive">Accepted <span class="colorgreen"></span></span>
                               </span>
                             </span>
                           </span>

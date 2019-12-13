@@ -385,7 +385,7 @@ const routes: Routes = [
 
   {
     path: 'user-m', component: UserManagementComponent, resolve: { serviceList: ResolveService },
-    data: { requestcondition: { source: 'user', condition: {'id':'userid'} }, endpoint: 'datalist' }
+    data: { requestcondition: { source: 'user', condition: {'id':'user_id'} }, endpoint: 'datalist' }
   },
 
   { path: 'my-appointment-user', component: MyAppointmentComponent },
