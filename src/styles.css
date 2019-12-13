@@ -191,7 +191,11 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
 }
 
 
+
+
 .rightcontent .rightcontentrow .mat-list-item-content{ align-items: stretch !important; flex-wrap: wrap;}
+
+
 
 @media screen and (max-width: 1600px){
   .owl-carousel .owl-nav button.owl-prev {

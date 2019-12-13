@@ -457,7 +457,7 @@ data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-se
     resolve: { newsData: ResolveService },
     data: {
       requestcondition: {
-        source: 'newsletters',
+        source: 'newsletters_view',
         condition: {}
       },
       endpoint: 'datalist'

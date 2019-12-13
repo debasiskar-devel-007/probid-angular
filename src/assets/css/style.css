@@ -1406,3 +1406,8 @@ a.associate_new_con6_link:hover{color: #fff;}
 
 
 .setting_formblock .mat-radio-button.mat-accent .mat-radio-inner-circle{background-color: #e03621;}
+
+
+.lib-addedit-newsletter .mat-toolbar  {
+    display: none!important;
+  }
