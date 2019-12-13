@@ -51,7 +51,7 @@
                     </mat-form-field>
                   </span>
                   <span>
-                    <h4>TYPE:</h4>
+                    <h4>Type:</h4>
                     <mat-form-field>
                       <mat-select formControlName="type" placeholder="Type">
                         <mat-option *ngFor="let typeval of type_list" [value]='typeval.TypeName'>
@@ -63,7 +63,7 @@
                 </span>
                 <span>
                   <span>
-                    <h4>VEHICLE TYPE:</h4>
+                    <h4>Vehicle Type:</h4>
                     <mat-form-field>
                       <mat-select formControlName="vehicle" placeholder="VEHICLE TYPE">
                         <mat-option value="">VEHICLE TYPE</mat-option>
@@ -106,7 +106,7 @@
                     </mat-form-field>
                   </span>
                   <span>
-                    <h4>STATE:</h4>
+                    <h4>State:</h4>
                     <mat-form-field>
                       <mat-select formControlName="state" placeholder="STATE">
                         <mat-option *ngFor="let item of stateList" [value]="item.abbreviation">{{item.name}}
@@ -115,15 +115,11 @@
                     </mat-form-field>
                   </span>
                   <span>
-                    <h4>ZIP:</h4>
+                    <h4>Zip:</h4>
                     <mat-form-field>
-                      <mat-label>ZIP</mat-label>
                       <input matInput formControlName="zip" type="ZIP" placeholder="ZIP">
                     </mat-form-field>
                   </span>
-
-
-
                 </span>
                 <button mat-raised-button color="primary" type="submit"> Search</button>
               </span>

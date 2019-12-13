@@ -52,7 +52,7 @@
                 </mat-form-field>
             </span>                        
             <span>
-              <h4>VEHICLE TYPE:</h4> 
+              <h4>Vehicle Type:</h4> 
               <mat-form-field>
                   <mat-select formControlName="type" placeholder="Type">
                       <mat-option *ngFor="let typeval of type_list" [value]='typeval.TypeName'>
@@ -96,7 +96,7 @@
             </span>
             <span>
               <span>
-                <h4>STATE:</h4> 
+                <h4>State:</h4> 
             <mat-form-field>
                 <mat-select formControlName="state" placeholder="STATE">
                     <mat-option *ngFor="let item of stateList" [value]="item.abbreviation">{{item.name}}</mat-option>
@@ -104,7 +104,7 @@
             </mat-form-field>
             </span>            
               <span>
-                  <h4>ZIP:</h4> 
+                  <h4>Zip:</h4> 
               <mat-form-field>
                 <mat-label>ZIP</mat-label>
                 <input matInput type="ZIP" placeholder="ZIP">
@@ -164,8 +164,12 @@
                         <h4>Transmission:</h4> 
                         <mat-form-field>         
                             <mat-select placeholder="All">
-                              <mat-option value="transm1">All</mat-option>
-                              <mat-option value="transm2">transm 1</mat-option>
+                              <mat-option value="transm1">Any Transmission</mat-option>
+                              <mat-option value="transm2">Manual</mat-option>
+                              <mat-option value="transm3">Automatic</mat-option>
+                              <mat-option value="transm4">Automanual</mat-option>
+                              <mat-option value="transm5">CVT</mat-option>
+                              <mat-option value="transm6">Other / Unknown</mat-option>
                             </mat-select>
                         </mat-form-field>
                     </span>
@@ -196,8 +200,13 @@
                         <h4>Drive Train</h4> 
                         <mat-form-field>          
                             <mat-select placeholder="All">
-                              <mat-option value="DT">All</mat-option>
-                              <mat-option value="DT1">All1</mat-option>
+                              <mat-option value="DT">Any Drivetrain</mat-option>
+                              <mat-option value="DT1">4x2/2-wheel drive</mat-option>
+                              <mat-option value="DT2">4x4/4-wheel drive</mat-option>
+                              <mat-option value="DT3">AWD</mat-option>
+                              <mat-option value="DT4">FWD</mat-option>
+                              <mat-option value="DT5">RWD</mat-option>
+                              <mat-option value="DT6">Unknown</mat-option>
                             </mat-select>
                         </mat-form-field>
                     </span>
@@ -205,8 +214,14 @@
                         <h4>Fuel Type:</h4>                         
                         <mat-form-field>         
                             <mat-select placeholder="All">
-                              <mat-option value="FT1">All</mat-option>
-                              <mat-option value="FT2">All2</mat-option>
+                              <mat-option value="FT1">Any Fuel</mat-option>
+                              <mat-option value="FT2">Gasoline</mat-option>
+                              <mat-option value="FT2">E-85/Gasoline</mat-option>
+                              <mat-option value="FT2">Gasoline Hybrid</mat-option>
+                              <mat-option value="FT2">Diesel</mat-option>
+                              <mat-option value="FT2">Electric</mat-option>
+                              <mat-option value="FT2">Compressed Natural Gas</mat-option>
+                              <mat-option value="FT2">Unknown</mat-option>
                             </mat-select>
                         </mat-form-field>
                     </span>
@@ -224,8 +239,20 @@
                       <h4>Cylinders</h4> 
                       <mat-form-field>          
                           <mat-select placeholder="All">
-                            <mat-option value="Doors">All</mat-option> 
-                            <mat-option value="Doors1">Doors 1</mat-option>
+                            <mat-option value="Doors">Any cylinder count</mat-option>
+                            <mat-option value="1cylinder">1-cylinder</mat-option>
+                            <mat-option value="2cylinder">2-cylinder</mat-option>
+                            <mat-option value="3cylinder">3-cylinder</mat-option>
+                            <mat-option value="4cylinder">4-cylinder</mat-option>
+                            <mat-option value="5cylinder">5-cylinder</mat-option>
+                            <mat-option value="6cylinder">6-cylinder</mat-option>
+                            <mat-option value="7cylinder">7-cylinder</mat-option>
+                            <mat-option value="8cylinder">8-cylinder</mat-option>
+                            <mat-option value="9cylinder">9-cylinder</mat-option>
+                            <mat-option value="10cylinder">10-cylinder</mat-option>
+                            <mat-option value="11cylinder">11-cylinder</mat-option>
+                            <mat-option value="12cylinder">12-cylinder</mat-option>
+                            <mat-option value="12cylinder">Unknown</mat-option>
                           </mat-select>
                       </mat-form-field>
                   </span>
