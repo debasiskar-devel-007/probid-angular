@@ -167,7 +167,7 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
   margin: 0;
 }
 
-.as_sm_imgmainwrapper .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next {
+.as_sm_imgmainwrapper .owl-carousel .owl-nav button.owl-prev, .as_sm_imgmainwrapper .owl-carousel .owl-nav button.owl-next {
   width: 40px !important;
   height: 100% !important;
   border-radius: 0 !important;
