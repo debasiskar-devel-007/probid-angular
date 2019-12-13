@@ -28,6 +28,7 @@
   align-items: stretch;
   justify-content: space-between;
   flex-direction: row;
+  height: 100%;
 }
 
 .rsvpliststop{
@@ -128,14 +129,17 @@
   margin-top: 0px;
   margin-bottom: 8px;
 }
+.rsvplisttypecontent:last-child{
+  margin-top: auto;
+}
 
 .rsvplisttypebottom{
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 15px;
+  padding-bottom: 0px;
 }
 
 .rsvplisttypebottom{font-family: "HelveticaBold"; font-size: 13px; text-transform: uppercase; color:#000000}
