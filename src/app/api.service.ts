@@ -310,7 +310,7 @@ getDatalist(requestdata: any) {
   const httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': this.accesstoken
+      'Authorization': this.cookieService.get('jwtToken')
     })
   };
   var result = this._http.post(this.serverUrlDemo + requestdata.endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));

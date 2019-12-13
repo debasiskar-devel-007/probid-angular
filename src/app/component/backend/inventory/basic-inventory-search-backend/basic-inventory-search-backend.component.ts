@@ -114,20 +114,20 @@ export class BasicInventorySearchBackendComponent implements OnInit {
       console.log(this.user_id);
 
 
-  if(this.user_details.type == "salesrep") {
-    let data: any = {
-      endpoint: 'datalist',
-      source: 'type_customer_view',
-      // condition: {
-      //   "id":this.user_id
-      // }
-    }
-    this.apiService.getDatalist(data).subscribe((res:any)=>{
-      this.customerList = res.res;
-      console.log(this.customerList);
-    });
+    if(this.user_details.type == "salesrep") {
+      let data: any = {
+        endpoint: 'datalist',
+        source: 'type_customer_view',
+        // condition: {
+        //   "id":this.user_id
+        // }
+      }
+      this.apiService.getDatalist(data).subscribe((res:any)=>{
+        this.customerList = res.res;
+        console.log(this.customerList);
+      });
 
-  }
+    }
       
     }
 
@@ -276,7 +276,8 @@ export class BasicInventorySearchBackendComponent implements OnInit {
     item.status = 0;
     if (this.user_details.type == 'salesrep') {
       item.added_for = this.customur_id;
-        
+      } else {
+        item.added_for = this.user_id;
       }
     let card_data:any = {
       card_data: item

@@ -9,6 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 
 export interface DialogData {
   errorMsg: string;
+  
 }
 
 
@@ -94,6 +95,8 @@ export class BasicInventorySearchComponent implements OnInit {
   public user_id: string = '';
   public modalImg: string = '';
   public isFavorite: number = 0;
+  public customerList: any = '';
+  public customur_id: any = '';
 
 
   
@@ -124,6 +127,20 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   this.user_id = this.user_details._id;
   console.log(this.user_id);
   
+  if(this.user_details.type == "salesrep") {
+    let data: any = {
+      endpoint: 'datalist',
+      source: 'type_customer_view',
+      // condition: {
+      //   id:this.user_id
+      // }
+    }
+    this.apiService.getDatalist(data).subscribe((res:any)=>{
+      this.customerList = res.res;
+      console.log(this.customerList);
+    });
+
+  }
 }
 
 
@@ -136,6 +153,8 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
 
 
   ngOnInit() {
+
+    
     console.log(this.apiService.inventory_url)
 
     //for make,model,year,type drop down list
@@ -155,17 +174,6 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   }
 
  
-
-  loginbefore(){
-    this.loginMsg = "To access the ProbidAuto Search Results";
-
-        const dialogRef = this.dialog.open(loginBeforeDialog, {
-          width: '450px',
-          data: { loginMsg: this.loginMsg }
-        });
-
-   
-  }
 
 
 
@@ -253,25 +261,38 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   }
 
 
-  // LinkToLogin(){
-  //   this.router.navigateByUrl('/login'+this.router.url)
-  //   // console.log('/login'+this.router.url)
-  // }
-
-
   gotologin(){
     this.router.navigateByUrl('/login'+this.router.url)
     console.log('/login'+this.router.url)
   }
 
+  loginbefore(){
+    this.loginMsg = "To access the ProbidAuto Search Results";
+
+        const dialogRef = this.dialog.open(loginBeforeDialog, {
+          width: '450px',
+          data: { loginMsg: this.loginMsg }
+        });
+        dialogRef.afterClosed().subscribe(result => {
+          console.log('The dialog was closed', result);
+          if (result == 'yes') {
+            this.gotologin();
+          }
+          // this.loginMsg = result;
+        });
+
+   
+  }
+
+
   favorite(item: any) {
     console.log('this is favorite ')
     if (this.user_id  == '') {
-      this.cookieService.set('favorite_car', item);
+      let dataval: any = JSON.stringify(item)
+      this.cookieService.set('favorite_car', dataval);
       setTimeout(() => {
-        this.gotologin();
+        this.loginbefore();
       }, 500);
-   
     }
     else{
       this.cookieService.get('favorite_car')
@@ -294,8 +315,24 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   }
 
   rsvpSend(item: any) {
+    console.log(this.user_id)
+    if (this.user_id  == '') {
+      let dataval: any = JSON.stringify(item)
+      this.cookieService.set('rsvp_car', dataval);
+      setTimeout(() => {
+        this.loginbefore();
+      }, 500);
+    }
+    else {
+    console.log('rsvpSend',item)
     let endpoint: any = "addorupdatedata";
-    item.user_id = this.user_id;
+    item.added_by = this.user_id;
+    item.status = 0;
+    if (this.user_details.type == 'salesrep') {
+      item.added_for = this.customur_id;
+      } else {
+        item.added_for = this.user_id;
+      }
     let card_data:any = {
       card_data: item
     }
@@ -308,7 +345,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
         console.log(res);
         (res.status == "success")
       });
-
+    }
   }
 
   showimg(img: any){
@@ -351,6 +388,7 @@ export class loginBeforeDialog {
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
     console.log(data);
   }
+  
 
   LinkToLogin(): void {
     this.dialogRef.close();
