@@ -84,6 +84,13 @@
       flex-wrap: wrap;
   }
 
+  
+  .inventorysearch .formblock form {
+    display: flex;
+}
+
+.inventorysearch .formblock form .section1{width: 100%;}
+
   .inventorysearch .example-container > .section1 span .mat-form-field{
     width: 100%;
   }

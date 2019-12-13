@@ -169,25 +169,8 @@
                             </mat-select>
                         </mat-form-field>
                     </span>
-                    <span class="column">
-                        <h4>Drive Train</h4> 
-                        <mat-form-field>          
-                            <mat-select placeholder="All">
-                              <mat-option value="DT">All</mat-option>
-                              <mat-option value="DT1">All1</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </span>
-                    <span class="column">
-                        <h4>Fuel Type:</h4> 
-                        <mat-form-field>         
-                            <mat-select placeholder="All">
-                              <mat-option value="FT1">All</mat-option>
-                              <mat-option value="FT2">All2</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </span>
-                    <span class="column">
+                    
+                    <!-- <span class="column">
                         <h4>Top Type:</h4> 
                         <mat-form-field>          
                             <mat-select placeholder="All">
@@ -204,12 +187,31 @@
                               <mat-option value="it1">All</mat-option>
                             </mat-select>
                         </mat-form-field>
-                    </span>                    
+                    </span>                     -->
                 </span>
               </span>
               <span>
                 <span>
-                  <span class="doublecolumn">
+                    <span class="column">
+                        <h4>Drive Train</h4> 
+                        <mat-form-field>          
+                            <mat-select placeholder="All">
+                              <mat-option value="DT">All</mat-option>
+                              <mat-option value="DT1">All1</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </span>
+                    <span class="column">
+                        <h4>Fuel Type:</h4>                         
+                        <mat-form-field>         
+                            <mat-select placeholder="All">
+                              <mat-option value="FT1">All</mat-option>
+                              <mat-option value="FT2">All2</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </span>
+
+                  <span class="column">
                       <h4>Doors</h4> 
                       <mat-form-field>          
                           <mat-select placeholder="All">
@@ -219,35 +221,46 @@
                       </mat-form-field>
                   </span>
                   <span class="column">
-                      <h4>Exterior Color</h4> 
-                      <span class="textarea">
-                        <span class="textareainner">
-                            <mat-checkbox>All</mat-checkbox>    
-                            <mat-checkbox>Beige</mat-checkbox>    
-                            <mat-checkbox>Black</mat-checkbox>    
-                            <mat-checkbox>Blue</mat-checkbox>    
-                            <mat-checkbox>Brown</mat-checkbox>  
-                        </span>
-                                                 
-                      </span>
+                      <h4>Cylinders</h4> 
+                      <mat-form-field>          
+                          <mat-select placeholder="All">
+                            <mat-option value="Doors">All</mat-option> 
+                            <mat-option value="Doors1">Doors 1</mat-option>
+                          </mat-select>
+                      </mat-form-field>
                   </span>
-                  <span class="column">
-                      <h4>Interior Color:</h4> 
-                      <span class="textarea">
-                        <span class="textareainner">
-                            <mat-checkbox>All</mat-checkbox>    
-                            <mat-checkbox>Beige</mat-checkbox>    
-                            <mat-checkbox>Black</mat-checkbox>    
-                            <mat-checkbox>Blue</mat-checkbox>    
-                            <mat-checkbox>Brown</mat-checkbox>
-                        </span>                                                  
-                      </span>
-                  </span>
+                  
                 </span>
               </span>
               <span>
                 <span>
-                    <span class="doublecolumn fullwidth">
+                    <span class="column">
+                        <h4>Exterior Color</h4> 
+                        <span class="textarea">
+                          <span class="textareainner">
+                              <mat-checkbox>All</mat-checkbox>    
+                              <mat-checkbox>Beige</mat-checkbox>    
+                              <mat-checkbox>Black</mat-checkbox>    
+                              <mat-checkbox>Blue</mat-checkbox>    
+                              <mat-checkbox>Brown</mat-checkbox>  
+                          </span>
+                                                   
+                        </span>
+                    </span>
+                    <span class="column">
+                        <h4>Interior Color:</h4> 
+                        <span class="textarea">
+                          <span class="textareainner">
+                              <mat-checkbox>All</mat-checkbox>    
+                              <mat-checkbox>Beige</mat-checkbox>    
+                              <mat-checkbox>Black</mat-checkbox>    
+                              <mat-checkbox>Blue</mat-checkbox>    
+                              <mat-checkbox>Brown</mat-checkbox>
+                          </span>                                                  
+                        </span>
+                    </span>
+
+                    <!-- <span class="doublecolumn fullwidth">
                         <h4>Title Status</h4> 
                         <mat-form-field>          
                             <mat-select placeholder="All">
@@ -264,11 +277,11 @@
                               <mat-option value="TS1">TS 1</mat-option>
                             </mat-select>
                         </mat-form-field>
-                    </span>                
+                    </span>                 -->
                 </span>
               </span>
           </span>
-          <mat-card-title>Equipment</mat-card-title>
+          <!-- <mat-card-title>Equipment</mat-card-title>
           <span class="section3">       
               <mat-checkbox>3rd Row Seating</mat-checkbox>    
               <mat-checkbox>Alloy Wheels</mat-checkbox>    
@@ -298,9 +311,9 @@
               <mat-checkbox>Heated Seats</mat-checkbox>
               <mat-checkbox>Tinted Glass</mat-checkbox>  
             
-          </span>
+          </span> -->
 
-          <mat-card-title>Condition</mat-card-title>
+          <!-- <mat-card-title>Condition</mat-card-title>
           <span class="section4">
             <span class="section4left">
                 <mat-checkbox>Salvage</mat-checkbox>
@@ -316,10 +329,10 @@
 
             </span>             
 
-          </span>
+          </span> -->
 
 
-          <mat-card-title>Auction</mat-card-title>
+          <!-- <mat-card-title>Auction</mat-card-title>
           <span class="section5">
               <h4>Format</h4>
             <span>
@@ -361,9 +374,9 @@
                 </span>
             </span>
 
-            <button mat-raised-button color="primary" type="submit"> Search</button>
-          </span>
-
+            
+          </span> -->
+          <button mat-raised-button color="primary" type="submit"> Search</button>
         </form>
       </span>
     </span>
