@@ -30,7 +30,7 @@
                             <span class="rsvpliststop">
                               <span class="rsvplistimgwrapper">
                                   <img *ngIf="item.media.photo_links[0] != null" [src]="item.media.photo_links[0]">
-                                  <img *ngIf="item.media.photo_links[0] == null" src="assets/images/no-image-default.jpg">
+                                  <img class="defaultimg" *ngIf="item.media.photo_links[0] == null" src="assets/images/no-image-default.jpg">
                               </span>                        
                             </span>
                             <span class="rsvplistsbottom">
