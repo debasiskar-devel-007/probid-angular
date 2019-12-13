@@ -67,8 +67,8 @@
             
                 <mat-form-field>
                   <mat-label>Assign SalesRep</mat-label>
-                  <mat-select formControlName="assign_salesref" (blur)="inputUntouched('assign_salesref')">
-                    <mat-option *ngFor="let salesr of salesref_list" [value]="salesr._id">
+                  <mat-select formControlName="assign_salesrep" (blur)="inputUntouched('assign_salesrep')">
+                    <mat-option *ngFor="let salesr of salesrep_list" [value]="salesr._id">
                       {{salesr.fullname}}
                     </mat-option>
                   </mat-select>
