@@ -1261,6 +1261,13 @@ a.associate_new_con6_link:hover{color: #fff;}
     float: left;
 }
 
+.contactusformblock .example-container .mat-form-field {
+    margin: 0 0px !important;
+    width: 100%;
+    display: block!important;
+    float: left;
+}
+
 .newslettermain .example-container .mat-raised-button {
     background: #fb4a32 !important;
     border-radius: 0 !important;
