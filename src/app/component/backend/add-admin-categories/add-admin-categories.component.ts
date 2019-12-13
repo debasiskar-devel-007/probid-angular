@@ -16,6 +16,7 @@ export class AddAdminCategoriesComponent implements OnInit {
   public makeArray: any;
   public typeArray: any;
   public typeYear: any;
+  public typeModel:any;
 
   public dataType: any=null;
   public typeChacking: any ;
@@ -37,6 +38,7 @@ export class AddAdminCategoriesComponent implements OnInit {
      
       make_name: ['', Validators.required],
       added_on: ['', Validators.required],
+      model_name:['',Validators.required],
       Cars: ['', Validators.required],
       status: [''],
       categoriesType: ["make"]
@@ -107,6 +109,7 @@ let result: any = {};
       make_name: [this.dataType.make_name, Validators.required],
       added_on: [this.dataType.added_on, Validators.required],
       Cars: [this.dataType.Cars, Validators.required],
+      model_name:[this.dataType.model_name, Validators.required],
       status: [this.dataType.status],
       categoriesType: [this.dataType.categoriesType]
     })
@@ -188,6 +191,18 @@ let result: any = {};
       console.log("@@>>>", this.typeYear);
     })
 
+    //model dropdown
+    let dataModel: any;
+    dataModel = { "source": 'manage-model', condition: { "categoriesType": "model" } };
+
+    this.apiService.CustomRequest(dataModel, "datalist").subscribe(res => {
+
+      let result: any = {};
+      result = res;
+      this.typeModel = result.res;
+      console.log("@++++>>>", this.typeModel);
+    })
+
 
   }
 
@@ -200,7 +215,7 @@ let result: any = {};
     let endpoint: any = "addorupdatedata";
     let data: any = {
       data: this.addType.value,
-      source: "manage-categories",
+      source: "manage-type",
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
@@ -212,7 +227,7 @@ let result: any = {};
     let endpoint: any = "addorupdatedata";
     let data: any = {
       data: this.addMakeform.value,
-      source: "manage-categories",
+      source: "manage-make",
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
@@ -224,7 +239,7 @@ let result: any = {};
     let endpoint: any = "addorupdatedata";
     let data: any = {
       data: this.addModelform.value,
-      source: "manage-categories",
+      source: "manage-model",
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);
@@ -236,7 +251,7 @@ let result: any = {};
     let endpoint: any = "addorupdatedata";
     let data: any = {
       data: this.addyearform.value,
-      source: "manage-categories",
+      source: "manage-year",
     };
     this.apiService.CustomRequest(data, endpoint).subscribe(res =>{
       console.log(res);

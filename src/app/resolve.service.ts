@@ -43,7 +43,7 @@ export class ResolveService implements Resolve<any> {
         } else if (route.data.requestcondition.condition.id == 'userid' && route.data.requestcondition.condition.id != null) {
             
             route.data.requestcondition.condition.id=this.userid;
-            console.log('it is working',route.data.requestcondition.condition)
+            console.log('it is working>>>>>>>>',route.data.requestcondition.condition)
        } else{
             requestData.condition = Object.assign(requestData.condition, route.params);
             delete route.data.requestcondition.condition.id;
@@ -54,10 +54,6 @@ export class ResolveService implements Resolve<any> {
                 route.data.requestcondition.condition._id_object = route.params['id'] ;
             }
 
-
-
-
-           
 
             return new Promise((resolve) => {
                 console.log('route.data',route.data, this.userid);

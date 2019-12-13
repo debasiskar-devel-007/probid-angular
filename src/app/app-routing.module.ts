@@ -336,7 +336,7 @@ const routes: Routes = [
   { path: 'commission-list', component: CommissionListComponent },
 
   { path: 'customer-list-admin', component: CustomerListComponent,resolve: { customerlist: ResolveService },
-  data: { requestcondition: { source: 'user', condition: {"type": "customer"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
+  data: { requestcondition: { source: 'type_customer_view', condition: {} },endpoint: 'datalist',canActivate: [AuthGuard]} },
 
   { path: 'manage-commission', component: ManageCommissionComponent },
   // { path: 'newsletter-list', component: NewsletterlistsComponent },

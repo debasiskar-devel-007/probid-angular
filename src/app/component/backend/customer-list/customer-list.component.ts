@@ -62,7 +62,7 @@ export class CustomerListComponent implements OnInit {
       console.log('@@>>>>>', this.pendingmodelapplicationarray)
     })
 
-    
+   
 
   }
 
