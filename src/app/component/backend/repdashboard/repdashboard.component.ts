@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-
+import { ApiService } from 'src/app/api.service';
 @Component({
   selector: 'app-repdashboard',
   templateUrl: './repdashboard.component.html',
@@ -10,7 +10,7 @@ export class RepdashboardComponent implements OnInit {
   public userCookies: any;
   public userid: any = '';
   
-  constructor( public cookieService: CookieService  ) {
+  constructor( public cookieService: CookieService, public apiService: ApiService) {
     if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
       this.userCookies = JSON.parse(this.cookieService.get('user_details'));
       console.log(this.userCookies);
