@@ -113,10 +113,10 @@
         color: #fff;
         -webkit-box-pack: start;
         justify-content: flex-start;
-        margin-top: 10px !important;
-        margin-bottom: 5px !important;
         text-transform: capitalize;
         font-size: 20px !important;
+        width: 98%;
+        margin: 10px auto 5px auto !important;
     }
 
 
@@ -266,3 +266,8 @@
   flex-wrap: wrap;
   flex-direction: column;
 }
+
+  .inventorysearch button{margin-right: 1%; margin-top: 1%;    background: #1cb7eb;
+    border-radius: 0px;
+    text-transform: capitalize;}
+    .buttonslist{text-align: right;display: inherit;}

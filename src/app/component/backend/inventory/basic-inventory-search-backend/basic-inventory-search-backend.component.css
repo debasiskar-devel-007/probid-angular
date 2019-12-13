@@ -366,5 +366,8 @@ flex-direction: column;
 .col-1-3{display: flex;flex-direction: column;}
 .as_sm_imgmainwrapper {margin-top: auto;}
 .select-customer{width: 100%;}
-
+.inventorysearch button{margin-right: 1%; margin-top: 1%;    background: #1cb7eb;
+  border-radius: 0px;
+  text-transform: capitalize;}
+.buttonslist{text-align: right;display: inherit !important;}
 /*----enb of koushik css---*/
