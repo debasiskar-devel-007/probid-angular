@@ -7,16 +7,17 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./salesreplists.component.css']
 })
 export class SalesreplistsComponent implements OnInit {
-    statusarray: any = [{val: 1, name: 'Pending'}, {val: 2, name: 'Cancelled'}, {val: 3, name: 'Delivered'}]; 
+    statusarray: any = [{val: 1, name: 'Active'}, {val: 2, name: 'Inactive'}, {val: 0, name: 'pending'}]; 
 
     pendingmodelapplicationarray: any = [];
-  pendingmodelapplicationarray_skip: any = ['_id','password','timezone','webiner','username','zip','created_at','type','state',
-'city'];
+  pendingmodelapplicationarray_skip: any = ['_id','password','timezone','webiner','username','zip','created_at','type','state','city','salesrep_id','salesrep_fullname'];
   pendingmodelapplicationarray_detail_skip: any = ['_id'];
 
     updateendpoint = 'addorupdatedata';
     deleteendpoint = 'deletesingledata';
-    tablename = 'salesrep';
+
+    tablename = 'user';
+
     searchendpoint = 'datalist';
     editroute: any = 'editsalesrep';
     modify_header_array: any = {

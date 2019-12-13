@@ -46,7 +46,7 @@ import { BlogComponent } from './component/frontend/blog/blog.component';
 import { BlogdetailComponent, VideoModalComponent} from './component/frontend/blogdetail/blogdetail.component';
 
 import { AdvanceInventorySearchComponent } from './component/frontend/inventory/advance-inventory-search/advance-inventory-search.component';
-import { BasicInventorySearchComponent, errorDialog } from './component/frontend/inventory/basic-inventory-search/basic-inventory-search.component';
+import { BasicInventorySearchComponent, errorDialog, loginBeforeDialog } from './component/frontend/inventory/basic-inventory-search/basic-inventory-search.component';
 
 import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.component';
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
@@ -282,6 +282,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
     NewslatterDialogComponent,
     NewslattersuccessDialogComponent,
     errorDialog,
+    loginBeforeDialog,
 
 
     AddEditNewsletterComponent,
@@ -336,7 +337,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,]
+  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,]
   // errorDialogbackend
 })
 export class AppModule { }

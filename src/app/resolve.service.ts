@@ -11,9 +11,17 @@ export interface EndpointComponent {
 })
 export class ResolveService implements Resolve<any> {
     public userid: any;
+    public userCookies: any;
+
     constructor(private _apiService: ApiService, public cookieservice: CookieService , public activedrouter:ActivatedRoute) {
-        if (this.cookieservice.get('userid') != null)
-            this.userid = this.cookieservice.get('userid');
+
+        if (this.cookieservice.get('user_details') != undefined && this.cookieservice.get('user_details') != null && this.cookieservice.get('user_details') != '') {
+            this.userCookies = JSON.parse(this.cookieservice.get('user_details'));
+            this.userid = this.userCookies._id;
+            console.log('>>>>',this.userid)   
+            }
+        // if (this.cookieservice.get('userid') != null)
+        //     this.userid = this.cookieservice.get('userid');
     }
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
         let _id = route.params['id'];
@@ -30,7 +38,11 @@ export class ResolveService implements Resolve<any> {
         if (route.data.requestcondition.trainingcategory != null) {
             requestData.trainingcategory = route.params.cid;
             requestData.userid = this.userid;
-        } else {
+        } else if (route.data.requestcondition.condition.id == 'userid' && route.data.requestcondition.condition.id != null) {
+            
+            route.data.requestcondition.condition.id=this.userid;
+            console.log('it is working',route.data.requestcondition.condition)
+       } else{
             requestData.condition = Object.assign(requestData.condition, route.params);
             delete route.data.requestcondition.condition.id;
             console.log('route.data');
@@ -39,7 +51,14 @@ export class ResolveService implements Resolve<any> {
             if(route.url[0].path == 'blogdetail') {
                 route.data.requestcondition.condition._id_object = route.params['id'] ;
             }
+
+
+
+
+           
+
             return new Promise((resolve) => {
+                console.log('route.data',route.data, this.userid);
                 this._apiService.getDatalistForResolve(route.data).subscribe(api_object =>{
                     if (api_object) {
                         //console.log(api_object);

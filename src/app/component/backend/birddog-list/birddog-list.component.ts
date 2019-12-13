@@ -8,12 +8,12 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./birddog-list.component.css']
 })
 export class BirddogListComponent implements OnInit {
-  statusarray: any = [{val: 1, name: 'Pending'}, {val: 2, name: 'Cancelled'}, {val: 3, name: 'Delivered'}]; 
+  
+  statusarray: any = [{val: 1, name: 'Active'}, {val: 2, name: 'Inactive'}, {val: 0, name: 'Pending'}]; 
   
 
   public birdDogList: any = [];
-  birdDogList_skip: any = ['_id','password','timezone','webiner','username','zip','created_at','type','state',
-'city'];
+  birdDogList_skip: any = ['_id','password','timezone','webiner','username','zip','created_at','type','state','city','salesrep_id','salesrep_fullname'];
 birdDogList_detail_skip: any = ['_id'];
 
   updateendpoint = 'addorupdatedata';
@@ -27,8 +27,9 @@ birdDogList_detail_skip: any = ['_id'];
     'email':"Email",
     'address':'Location',
     'date added':'Date',
-    'companyname':'Company'
-  };
+    'companyname':'Company',
+    
+  }; 
 
    // this is use for  All type of search 
    search_settings:any={

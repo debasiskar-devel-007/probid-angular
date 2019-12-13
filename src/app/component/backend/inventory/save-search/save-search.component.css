@@ -298,5 +298,6 @@ padding: 10px;
 .currentbidprice .text-wrapper h6 span{padding: 0px 10px; flex: 1 1 35%; justify-content: center; text-align: center;}
 .col-1-3{display: flex;flex-direction: column;}
 .as_sm_imgmainwrapper {margin-top: auto;}
+.select-customer{width: 100%;}
 
 /*----enb of koushik css---*/
