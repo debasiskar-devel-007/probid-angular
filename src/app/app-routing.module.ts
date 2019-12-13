@@ -383,6 +383,11 @@ const routes: Routes = [
     data: { requestcondition: { source: 'user', condition: {} }, endpoint: 'datalist' }
   },
 
+  {
+    path: 'user-m', component: UserManagementComponent, resolve: { serviceList: ResolveService },
+    data: { requestcondition: { source: 'user', condition: {'id':'userid'} }, endpoint: 'datalist' }
+  },
+
   { path: 'my-appointment-user', component: MyAppointmentComponent },
   { path: 'book-an-appointment-user', component: BookAnAppointmentComponent },
 
