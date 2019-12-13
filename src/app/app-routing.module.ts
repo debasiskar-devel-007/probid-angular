@@ -343,9 +343,16 @@ const routes: Routes = [
   { path: 'sales-report', component: SalesReportComponent },
   { path: 'salesrep-list-admin', component: SalesreplistsComponent,resolve: { salesreplist: ResolveService },
   data: { requestcondition: { source: 'user_view', condition: {"type": "salesrep"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
-  { path: 'rsvp-admin', component: RsvplistsComponent },
-  { path: 'rsvp-salesrep', component: RsvplistsComponent },
-  { path: 'rsvp-customer', component: RsvplistsComponent },
+
+  { path: 'rsvp-admin', component: RsvplistsComponent ,
+  resolve: { rsvp: ResolveService },
+  data: { requestcondition: { source: 'send_rsvp_view', condition: {} }, endpoint: 'datalist' }},
+  { path: 'rsvp-salesrep', component: RsvplistsComponent,
+  resolve: { rsvp: ResolveService },
+  data: { requestcondition: { source: 'send_rsvp_view', condition: {} }, endpoint: 'datalist' }},
+  { path: 'rsvp-customer', component: RsvplistsComponent ,
+  resolve: { rsvp: ResolveService },
+  data: { requestcondition: { source: 'send_rsvp_view', condition: {} }, endpoint: 'datalist' }},
   // { path: 'manage-training1', component: ManageTrainingComponent },
   { path: 'manage-lessons', component: ManageLessonsComponent },
   { path: 'training-center', component: TrainingCenterComponent },
@@ -374,6 +381,11 @@ const routes: Routes = [
   {
     path: 'user-management', component: UserManagementComponent, resolve: { serviceList: ResolveService },
     data: { requestcondition: { source: 'user', condition: {} }, endpoint: 'datalist' }
+  },
+
+  {
+    path: 'user-m', component: UserManagementComponent, resolve: { serviceList: ResolveService },
+    data: { requestcondition: { source: 'user', condition: {'id':'userid'} }, endpoint: 'datalist' }
   },
 
   { path: 'my-appointment-user', component: MyAppointmentComponent },
