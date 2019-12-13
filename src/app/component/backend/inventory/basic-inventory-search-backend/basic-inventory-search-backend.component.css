@@ -78,13 +78,19 @@
       flex-wrap: wrap;
   }
 
+  .inventorysearch .formblock form {
+    display: flex;
+}
+
+.inventorysearch .formblock form .section1{width: 100%;}
+
   .inventorysearch .example-container > .section1 span .mat-form-field{
     width: 100%;
   }
 
   .inventorysearch .formblockwrapper .mainwrappercontent{
       position: relative;
-      z-index: 999;
+      z-index: 99;
       }
   
   .inventorysearch .example-container > .section1 > mat-form-field {
@@ -101,6 +107,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.4);
+    z-index: 9;
   }
 
   .inventorysearch{margin: 0; padding: 0;}
@@ -186,7 +193,11 @@ flex-wrap: wrap;
 flex-direction: column;
 }
 
-.inventorysearch button{float: right;}
+.inventorysearch button{
+  display: flex;
+    float: right;
+    flex: 1 1 100%;
+}
 
 .example-card {
   max-width: 400px;
