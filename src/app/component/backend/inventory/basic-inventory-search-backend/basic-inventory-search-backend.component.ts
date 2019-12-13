@@ -136,8 +136,6 @@ export class BasicInventorySearchBackendComponent implements OnInit {
       }
 
       ngOnInit() {
-
-           //for make,model,year,type drop down list
       this.activatedRoute.data.forEach((data) => {
       this.inventory_search_list = data.inventory_search
       this.make_list = this.inventory_search_list.result.manage_make;
