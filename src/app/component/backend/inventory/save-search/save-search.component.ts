@@ -128,7 +128,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
       endpoint: 'datalist',
       source: 'type_customer_view',
       condition: {
-        "id_object":  this.user_id
+        "id":  this.user_id
       }
     }
     this.apiService.getDatalist(data).subscribe((res:any)=>{
