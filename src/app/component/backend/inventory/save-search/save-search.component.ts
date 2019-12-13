@@ -210,23 +210,3 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   }
 
 }
-
-
-@Component({
-  selector: 'error',
-  templateUrl: 'errorDialog.co.html',
-})
-export class errorDialog {
-
-  constructor(
-    public dialogRef: MatDialogRef<errorDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
-    console.log(data);
-  }
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
-
-}
