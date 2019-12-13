@@ -275,6 +275,7 @@ export class BasicInventorySearchBackendComponent implements OnInit {
     console.log('rsvpSend',item)
     let endpoint: any = "addorupdatedata";
     item.added_by = this.user_id;
+    item.status = 0;
     if (this.user_details.type == 'salesrep') {
       item.added_for = this.customur_id;
         
