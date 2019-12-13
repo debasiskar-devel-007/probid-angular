@@ -12,6 +12,7 @@ export interface DialogData {
 }
 
 
+
 @Component({
   selector: 'app-basic-inventory-search',
   templateUrl: './basic-inventory-search.component.html',
@@ -70,7 +71,7 @@ export class BasicInventorySearchComponent implements OnInit {
   }
 
 
-
+  public loginMsg: string ='';
   public errorMsg: string = '';
   public inventoryCustomerForm: FormGroup;
   public stateList: any;
@@ -93,7 +94,6 @@ export class BasicInventorySearchComponent implements OnInit {
   public user_id: string = '';
   public modalImg: string = '';
   public isFavorite: number = 0;
-
 
 
   
@@ -131,7 +131,12 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     this.getStateList();
   }
 
+
+
+
+
   ngOnInit() {
+    console.log(this.apiService.inventory_url)
 
     //for make,model,year,type drop down list
     this.activatedRoute.data.forEach((data) => {
@@ -148,6 +153,21 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
       this.stateList = response;
     });
   }
+
+ 
+
+  loginbefore(){
+    this.loginMsg = "To access the ProbidAuto Search Results";
+
+        const dialogRef = this.dialog.open(loginBeforeDialog, {
+          width: '450px',
+          data: { loginMsg: this.loginMsg }
+        });
+
+   
+  }
+
+
 
   //___________generate form for inventory customer search________________//
 
@@ -231,6 +251,14 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     }
 
   }
+
+
+  // LinkToLogin(){
+  //   this.router.navigateByUrl('/login'+this.router.url)
+  //   // console.log('/login'+this.router.url)
+  // }
+
+
   gotologin(){
     this.router.navigateByUrl('/login'+this.router.url)
     console.log('/login'+this.router.url)
@@ -287,6 +315,9 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     this.modalImg = img;
   }
 
+
+ 
+
 }
 
 
@@ -307,3 +338,25 @@ export class errorDialog {
   }
 
 }
+
+
+
+@Component({
+  selector: 'loginbefore',
+  templateUrl: 'loginbefore.html',
+})
+export class loginBeforeDialog {
+  constructor(
+    public dialogRef: MatDialogRef<loginBeforeDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    console.log(data);
+  }
+
+  LinkToLogin(): void {
+    this.dialogRef.close();
+  }
+
+}
+
+
+
