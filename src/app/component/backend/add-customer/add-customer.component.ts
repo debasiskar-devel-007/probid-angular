@@ -158,6 +158,7 @@ public btn_text:any="Submit"
     {
       var data = { "source": "user", "condition": {"_id": this.activatedRouter.snapshot.params._id}}
         this.apiservice.CustomRequest(data, 'datalist').subscribe((data: any) => {
+          console.log('data',data)
 
           this.header_text="Edit Customer"
         this.btn_text="Update"

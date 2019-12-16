@@ -112,7 +112,7 @@
               
       
                 <mat-form-field [ngClass]="userType == 'salesrep' ? 'hideclasslasttiem' : 'test' " >
-                  <mat-label>Select SalesRep</mat-label>
+                  <mat-label>Assign SalesRep</mat-label>
                   <mat-select formControlName="salesrep" (blur)="inputUntouched('salesrep')">
                     <mat-option *ngFor="let rep of salesrepList" [value]="rep._id">
                       {{rep.fullname}}
