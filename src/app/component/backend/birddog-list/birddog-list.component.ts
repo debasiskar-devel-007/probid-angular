@@ -44,10 +44,10 @@ birdDogList_detail_skip: any = ['_id'];
 constructor(public activatedRoute: ActivatedRoute, public router: Router,public apiService: ApiService) { }
 
 ngOnInit() {
-  this.activatedRoute.data.forEach(data=>{   
-    this.birdDogList=data.birddoglist.res;
-    console.log('>>>>>>',this.birdDogList);
-  })
+  // this.activatedRoute.data.forEach(data=>{   
+  //   this.birdDogList=data.birddoglist.res;
+  //   console.log('>>>>>>',this.birdDogList);
+  // })
 }
 
 }

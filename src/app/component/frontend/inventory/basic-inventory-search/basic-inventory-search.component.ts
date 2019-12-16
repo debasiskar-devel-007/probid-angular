@@ -92,7 +92,7 @@ export class BasicInventorySearchComponent implements OnInit {
   public state: string = '';
   public zip: string = '';
   public search: any;
-  public user_details:any;
+  public user_details:any = '';
   public user_id: string = '';
   public modalImg: string = '';
   public isFavorite: number = 0;
@@ -125,6 +125,12 @@ export class BasicInventorySearchComponent implements OnInit {
 
 if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
   this.user_details = JSON.parse(this.cookieService.get('user_details'));
+  // if ( this.cookieService.get('favorite_car') != undefined && this.cookieService.get('favorite_car') != null && JSON.parse(this.cookieService.get('favorite_car')) != null && JSON.parse(this.cookieService.get('favorite_car')) != '') {
+  //   this.search = JSON.parse(this.cookieService.get('favorite_car'));    
+  // }
+  // if ( this.cookieService.get('rsvp_car') != undefined && this.cookieService.get('rsvp_car') != null && JSON.parse(this.cookieService.get('rsvp_car')) != null && JSON.parse(this.cookieService.get('rsvp_car')) != '') {
+  //   this.search = JSON.parse(this.cookieService.get('rsvp_car'));    
+  // }
   this.user_id = this.user_details._id;
   console.log(this.user_id);
   
@@ -152,7 +158,6 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
 
 
   ngOnInit() {
-
     
     console.log(this.apiService.inventory_url)
 
@@ -287,14 +292,13 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   favorite(item: any) {
     console.log('this is favorite ')
     if (this.user_id  == '') {
-      let dataval: any = JSON.stringify(item)
-      this.cookieService.set('favorite_car', dataval);
+      this.cookieService.set('favorite_car', JSON.stringify(item));
       setTimeout(() => {
         this.loginbefore();
       }, 500);
     }
     else{
-      this.cookieService.get('favorite_car')
+      console.log(this.cookieService.get('favorite_car'))
       let endpoint: any = "addorupdatedata";
       item.user_id = this.user_id;
       let card_data:any = {
@@ -316,14 +320,14 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   rsvpSend(item: any) {
     console.log(this.user_id)
     if (this.user_id  == '') {
-      let dataval: any = JSON.stringify(item)
-      this.cookieService.set('rsvp_car', dataval);
+      this.cookieService.set('rsvp_car', JSON.stringify(item));
       setTimeout(() => {
         this.loginbefore();
       }, 500);
     }
     else {
-    console.log('rsvpSend',item)
+    console.log('rsvpSend',item);
+    console.log(this.cookieService.get('rsvp_car'));
     let endpoint: any = "addorupdatedata";
     item.added_by = this.user_id;
     item.status = 0;
