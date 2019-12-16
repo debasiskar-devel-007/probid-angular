@@ -100,6 +100,8 @@ export class BasicInventorySearchComponent implements OnInit {
   public isFavorite: number = 0;
   public customerList: any = '';
   public customur_id: any = '';
+  public indexCount: number;
+  public indexCountForImg: number;
 
 
   
@@ -249,7 +251,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
      
       if (this.type != '' || this.year != '' || this.make != '' || this.vin != '' || this.trim != '' || this.vehicle != '' || this.state != '' || this.zip != '' || this.model != '') {
 
-        let search_link = this.apiService.inventory_url + this.type + this.year + this.make + this.vin + this.trim + this.vehicle + this.state + this.zip + this.model+ '&rows=50';
+        let search_link = this.apiService.inventory_url + this.type + this.year + this.make + this.vin + this.trim + this.vehicle + this.state + this.zip + this.model+ '&rows=5';
 
         this.http.get(search_link).subscribe((res: any) => {
           this.search = res.listings;
@@ -407,19 +409,14 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     console.log('+++',img,i, j)
 
     // this.modalImg = img;
+    this.indexCount = i;
+    this.indexCountForImg = j;
     console.log('====',this.modalImg)
     console.log('>>>',i)
 
   
     console.log('>>>++>>>',i)
 
-    // for(let a in i){
-    //   for(let b in j){
-    //     a=b;
-    //     a=a+1;
-    //    console.log('aaaaaaaaaa',a)
-    //   }
-    // }
 
    
 
