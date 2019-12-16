@@ -35,65 +35,70 @@
                 <span>
                   <span>
                       <h4>Make:</h4> 
-                      <mat-form-field>
-                          <mat-select formControlName="make" placeholder="Make">
-                              <mat-option *ngFor="let makeval of make_list" [value]="makeval.make_name">
-                                {{makeval.make_name}}
+                        <mat-form-field>
+                            <input type="text" (keyup)="searchAutoComplete($event, 'make')" placeholder="Pick one make" aria-label="Number" matInput formControlName="make" [matAutocomplete]="auto">
+                            <mat-autocomplete #auto="matAutocomplete">
+                              <mat-option *ngFor="let option of make_list" [value]="option">
+                                {{option}}
                               </mat-option>
-                            </mat-select>
-                      </mat-form-field>
+                          </mat-autocomplete>
+                        </mat-form-field>
                   </span>            
                   <span>
                       <h4>Model:</h4> 
                       <mat-form-field>
-                          <mat-select formControlName="model" placeholder="Model">
-                              <mat-option *ngFor="let modelval of model_list" [value]='modelval.model_name'>
-                                {{modelval.model_name}}
-                              </mat-option>
-                            </mat-select>
+                          <input type="text" (keyup)="searchAutoComplete($event, 'model')" placeholder="Pick one make" aria-label="Number" matInput formControlName="model" [matAutocomplete]="automodel">
+                          <mat-autocomplete #automodel="matAutocomplete">
+                            <mat-option *ngFor="let option of model_list" [value]="option">
+                              {{option}}
+                            </mat-option>
+                        </mat-autocomplete>
                       </mat-form-field>
                   </span>              
                   <span>
                       <h4>Type:</h4> 
                       <mat-form-field>
-                          <mat-select formControlName="type" placeholder="Type">
-                              <mat-option *ngFor="let typeval of type_list" [value]='typeval.TypeName'>
-                                {{typeval.TypeName}}
-                              </mat-option>
-                            </mat-select>
-                      </mat-form-field>              
+                          <input type="text" (keyup)="searchAutoComplete($event, 'body_type')" placeholder="Pick one body type" aria-label="Number" matInput formControlName="type" [matAutocomplete]="autotype">
+                          <mat-autocomplete #autotype="matAutocomplete">
+                            <mat-option *ngFor="let option of type_list" [value]="option">
+                              {{option}}
+                            </mat-option>
+                        </mat-autocomplete>
+                      </mat-form-field>            
                   </span>                                  
                 </span>
                 <span>
                     <span>
-                        <h4>Vehicle Type:</h4> 
-                        <mat-form-field>
-                            <mat-select formControlName="vehicle" placeholder="VEHICLE TYPE">
-                                <mat-option value="">VEHICLE TYPE</mat-option>
-                                <mat-option value="vt1">VEHICLE TYPE 1</mat-option>
-                                <mat-option value="vt2">VEHICLE TYPE 2</mat-option>
-                              </mat-select>
-                        </mat-form-field>              
+                        <h4>Vehicle Type:</h4>  
+                          <mat-form-field>
+                              <input type="text" (keyup)="searchAutoComplete($event, 'vehicle_type')" placeholder="Pick one vehicle type" aria-label="Number" matInput formControlName="vehicle" [matAutocomplete]="autovehicle">
+                              <mat-autocomplete #autovehicle="matAutocomplete">
+                                <mat-option *ngFor="let option of vehicle_list" [value]="option">
+                                  {{option}}
+                                </mat-option>
+                            </mat-autocomplete>
+                          </mat-form-field>                
                     </span>
                   <span>
                       <h4>Year:</h4> 
-                      <mat-form-field>
-                          <mat-select formControlName="year" placeholder="Year">
-                              <mat-option *ngFor="let yearval of year_list" [value]='yearval.year'>
-                                {{yearval.year}}
-                              </mat-option>
-                            </mat-select>
-                      </mat-form-field>
+                        <mat-form-field>
+                            <mat-select formControlName="year" placeholder="Year">
+                                <mat-option *ngFor="let yearval of year_list" [value]='yearval.year'>
+                                  {{yearval.year}}
+                                </mat-option>
+                              </mat-select>
+                        </mat-form-field>
                   </span>                  
                   <span>
                       <h4>Trim:</h4> 
                       <mat-form-field>
-                          <mat-select formControlName="trim" placeholder="Trim">
-                              <mat-option value="">Trim</mat-option>
-                              <mat-option value="trim1">Trim 1</mat-option>
-                              <mat-option value="trim2">Trim 2</mat-option>
-                            </mat-select>
-                      </mat-form-field>
+                          <input type="text" (keyup)="searchAutoComplete($event, 'trim')" placeholder="Pick one trim" aria-label="Number" matInput formControlName="trim" [matAutocomplete]="autotrim">
+                          <mat-autocomplete #autotrim="matAutocomplete">
+                            <mat-option *ngFor="let option of trim_list" [value]="option">
+                              {{option}}
+                            </mat-option>
+                        </mat-autocomplete>
+                      </mat-form-field> 
                   </span>              
                   
                 </span>
@@ -128,7 +133,7 @@
 
                 </span>
                 <span class="buttonslist">                  
-                    <button mat-raised-button color="primary" type="submit"> Reset</button>
+                    <button mat-raised-button color="primary" type="button" (click)="reset()"> Reset</button>
                     <button mat-raised-button color="primary" type="submit"> Search</button>
                 </span>
                
@@ -192,7 +197,7 @@
                   </span>
                 </span>
                 <span class="sub-col-4">
-                  <mat-card-content class="rrblock1">
+                  <mat-card-content class="rrblock1" *ngIf="user_details != null && user_details.type != 'admin'">
                     <h1 class="btnrsvp" (click)="rsvpSend(item)">RSVP</h1>
                     <button (click)="favorite(item)"><i class="material-icons" > favorite </i> ADD</button>
                     <mat-form-field *ngIf="user_details != null && user_details.type == 'salesrep'" class="select-customer">

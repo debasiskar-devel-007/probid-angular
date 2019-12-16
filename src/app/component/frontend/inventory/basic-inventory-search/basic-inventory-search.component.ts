@@ -78,10 +78,12 @@ export class BasicInventorySearchComponent implements OnInit {
   public inventoryCustomerForm: FormGroup;
   public stateList: any;
   public inventory_search_list: any;
-  public make_list: any;
-  public type_list: any;
-  public model_list: any;
-  public year_list: any;
+  public make_list: [];
+  public type_list: [];
+  public model_list: [];
+  public year_list: [];
+  public vehicle_list: [];
+  public trim_list: [];
   public type: string = '';
   public year: string = '';
   public make: string = '';
@@ -166,13 +168,14 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     //for make,model,year,type drop down list
     this.activatedRoute.data.forEach((data) => {
       this.inventory_search_list = data.inventory_search
-      this.make_list = this.inventory_search_list.result.manage_make;
-      this.model_list = this.inventory_search_list.result.manage_model;
-      this.type_list = this.inventory_search_list.result.manage_type;
-      this.year_list = this.inventory_search_list.result.manage_year;
+      // this.type_list = this.inventory_search_list.result.manage_type;
+      // this.year_list = this.inventory_search_list.result.manage_year;
     })
 
   }
+
+  
+
   getStateList() {
     this.apiService.getJsonObject('assets/data/states.json').subscribe((response: any) => {
       this.stateList = response;
@@ -201,6 +204,9 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   }
 
   //____________search function for inventory customer search_________________//
+  reset() {
+    this.inventoryCustomerForm.clearValidators();
+  }
 
   inventoryCustomerSearch() {
     if (this.inventoryCustomerForm.valid) {
@@ -216,7 +222,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
       let zipVal = this.inventoryCustomerForm.value.zip;
 
       if (typeVal != null && typeVal != '' && typeVal.length >= 0) {
-        this.type = "&0seller_type=" + typeVal;
+        this.type = "&body_type=" + typeVal;
       }
       if (yearVal != null && yearVal != '' && yearVal.length >= 0) {
         this.year = "&year=" + yearVal;
@@ -242,9 +248,10 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
       if (zipVal != null && zipVal != '' && zipVal.length >= 0) {
         this.zip = "&zip=" + zipVal;
       }
+     
       if (this.type != '' || this.year != '' || this.make != '' || this.vin != '' || this.trim != '' || this.vehicle != '' || this.state != '' || this.zip != '' || this.model != '') {
 
-        let search_link = this.apiService.inventory_url + this.type + this.year + this.make + this.vin + this.trim + this.vehicle + this.state + this.zip + this.model;
+        let search_link = this.apiService.inventory_url + this.type + this.year + this.make + this.vin + this.trim + this.vehicle + this.state + this.zip + this.model+ '&rows=50';
 
         this.http.get(search_link).subscribe((res: any) => {
           this.search = res.listings;
@@ -263,6 +270,51 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
 
 
     }
+
+  }
+  searchAutoComplete(event: any, field: string) {
+
+    let input: string = '';
+    let inputField: string = '';
+    let makeInput: string = '';
+    let modelInput: string = '';
+    let yearInput: string = '';
+    let body_typeInput: string = '';
+    if (event.target.value != null && event.target.value != '' && event.target.value.length >= 0) {
+      input = "&input=" + event.target.value;
+    }
+    if (field != null && field != '' && field.length >= 0) {
+      inputField = "&field=" + field;
+    }
+
+    if ( input !='' || inputField != ''  || this.type != '' || this.year != '' || this.make != '' || this.vin != '' || this.trim != '' || this.vehicle != '' || this.state != '' || this.zip != '' || this.model != '') {
+    let search_url: string = this.apiService.inventory_auto_complete_url+ inputField + input + this.type + this.make +"&country=US&ignore_case=true&term_counts=false&sort_by=index";
+
+    this.http.get(search_url).subscribe((res: any) => {
+     
+      if (field == 'make') {
+        this.make_list = res.terms; 
+        console.log(field, this.make_list);
+      }
+      if (field == 'model') {
+        this.model_list = res.terms; 
+        console.log(field); 
+      }
+      if (field == 'body_type') {
+        this.type_list = res.terms; 
+        console.log(field, this.type_list); 
+      }
+      if (field == 'trim') {
+        this.trim_list = res.terms; 
+        console.log(field, this.trim_list); 
+      }
+      if (field == 'vehicle_type') {
+        this.vehicle_list = res.terms; 
+        console.log(field, this.vehicle_list); 
+      }
+
+    });
+  }
 
   }
 

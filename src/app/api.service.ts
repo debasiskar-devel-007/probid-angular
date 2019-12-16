@@ -18,6 +18,7 @@ export class ApiService {
   public base64encode =  environment["base64encode"];
   public uploadsslurl: any= environment["download_url"];
   public inventory_url: string = environment["inventory_url"] + environment["inventory_url_api"];
+  public inventory_auto_complete_url: string = environment["inventory__auto_completeurl"] + environment["inventory_url_api"];
   public share_link : string = environment["share_link"];
 
   public fileimgsslurl: any;

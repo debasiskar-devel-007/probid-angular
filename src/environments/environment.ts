@@ -11,7 +11,8 @@ export const environment = {
   nodesslurl : 'https://9ozbyvv5v0.execute-api.us-east-1.amazonaws.com/production/api/',
   download_url : 'https://api.influxhostserver.com/download',
   inventory_url : 'https://marketcheck-prod.apigee.net/v1/search?api_key=',
-  inventory_url_api : 'cvM3TCVUGOVYBWD3MwNMA94vATwBTvGt',
+  inventory__auto_completeurl : 'https://marketcheck-prod.apigee.net/v1/search/auto-complete?api_key=', 
+  inventory_url_api : 'ctRzPBraFwh1kuRmlsguqp1Ip6sDUHPM',
   share_link : 'http://localhost:4200/',
 };
 
