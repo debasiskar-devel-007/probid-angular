@@ -301,3 +301,12 @@ padding: 10px;
 .select-customer{width: 100%;}
 
 /*----enb of koushik css---*/
+
+.adm_inner_banner .adm_inner_title.mat-card-title {
+  font-size: 48px !important;
+  color: #fff !important;
+  font-family: "HelveticaBold";
+  text-transform: uppercase !important;
+  text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+  background-color: transparent !important;
+}
