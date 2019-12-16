@@ -201,6 +201,10 @@ const routes: Routes = [
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }},
 
 
+  { path: 'save-search-admin', component: SaveSearchComponent ,
+  resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: 'save_favorite_view', condition: {} }, endpoint: 'datalist' }},
+
   { path: 'save-search-castomer', component: SaveSearchComponent ,
   resolve: { inventory_search: ResolveService },
   data: { requestcondition: { source: 'save_favorite_view', condition: {} }, endpoint: 'datalist' }},
@@ -391,6 +395,12 @@ const routes: Routes = [
   { path: 'my-appointment-user', component: MyAppointmentComponent },
   { path: 'book-an-appointment-user', component: BookAnAppointmentComponent },
 
+
+  { path: 'advance-inventory-search-admin', component: AdvanceInventorySearchBackendComponent,
+  resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
+  },
+
   { path: 'advance-inventory-search-customer', component: AdvanceInventorySearchBackendComponent,
   resolve: { inventory_search: ResolveService },
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
@@ -401,6 +411,11 @@ const routes: Routes = [
   },
 
   { path: 'basic-inventory-search-customer', component: BasicInventorySearchBackendComponent ,
+  resolve: { inventory_search: ResolveService },
+  data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
+},
+
+  { path: 'basic-inventory-search-admin', component: BasicInventorySearchBackendComponent ,
   resolve: { inventory_search: ResolveService },
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
 },
