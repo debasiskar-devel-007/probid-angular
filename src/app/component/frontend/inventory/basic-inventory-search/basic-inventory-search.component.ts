@@ -151,8 +151,6 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
 
 
 
-
-
   ngOnInit() {
 
     
@@ -349,8 +347,26 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     }
   }
 
-  showimg(img: any){
+  showimg(img: any, i:any, j:any){
+    console.log('+++',img,i, j)
+
     this.modalImg = img;
+    console.log('====',this.modalImg)
+    console.log('>>>',i)
+
+  
+    console.log('>>>++>>>',i)
+
+    // for(let a in i){
+    //   for(let b in j){
+    //     a=b;
+    //     a=a+1;
+    //    console.log('aaaaaaaaaa',a)
+    //   }
+    // }
+
+   
+
   }
 
 
