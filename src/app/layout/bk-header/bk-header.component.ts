@@ -60,7 +60,7 @@ export class BkHeaderComponent implements OnInit {
   toggleRightSidenav() {
     this.toggleActive = !this.toggleActive;
     this.sidenav.toggle();
-    console.log('Clicked');
+    // console.log('Clicked');
     
     
     
@@ -68,7 +68,7 @@ export class BkHeaderComponent implements OnInit {
    logout() {
     this.cookieService.deleteAll();
     this.router.navigateByUrl('/');
-    console.log("logout");
+    // console.log("logout");
    }
    getrepdetails() {
     // const link = this.ApiService.nodesslurl + 'getrecvalues?token=' + this.cookie.get('jwtToken');
@@ -125,16 +125,16 @@ export class BkHeaderComponent implements OnInit {
   // }
 
    gotoHome(){
-     console.log('ok')
+    //  console.log('ok')
      this.router.navigateByUrl('/home');
    }
 
   ngOnInit() {
     if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
       this.userCookies = JSON.parse(this.cookieService.get('user_details'));
-      console.log(this.userCookies);
+      // console.log(this.userCookies);
       this.user_full_name = this.userCookies.firstname + ' '+ this.userCookies.lastname ;
-      console.log('>>>>',this.user_full_name)
+      // console.log('>>>>',this.user_full_name)
       // this.userid = this.userCookies._id;    
       }
   }

@@ -65,6 +65,13 @@ public btn_text:any="Submit"
 
     // salesrep list 
 
+    // this.activatedRouter.data.forEach((res)=>{
+    //   let result:any
+    //   result=res
+    //   this.salesrepList=result.salesreplist.res
+    //   console.log('**>>>>>>>>>', this.salesrepList)
+    // })
+
     let data:any;
     data={
       source:'user_view',
@@ -113,11 +120,6 @@ public btn_text:any="Submit"
 
   /**Submit function */
   addcustomerFormSubmit() {
-    console.log('hit')
-    if (this.userType != null && this.userType != '') {
-      this.addcustomerForm.value.salesrep = this.userDetails._id;
-    }
-
     for (let x in this.addcustomerForm.controls) {
       this.addcustomerForm.controls[x].markAsTouched();
     }
@@ -131,7 +133,6 @@ public btn_text:any="Submit"
           delete this.addcustomerForm.value.conpass;
 
         }
-        //console.log(this.addcustomerForm.value);
 
         /**Api service for insert form */
 

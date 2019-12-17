@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
         {
           "type": "salesrep",
           "routerNav": "rep-dashboard"
-        }
+        },
       ]
     }
 

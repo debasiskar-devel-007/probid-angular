@@ -343,7 +343,7 @@ getDatalistForResolve(requestdata: any) {
       'Authorization': this.cookieService.get('jwtToken')
     })
   };
-  console.log(requestdata)
+  // console.log(requestdata)
   
   var result = this._http.post(this.serverUrlDemo + requestdata.endpoint, JSON.stringify(requestdata.requestcondition), httpOptions).pipe(map(res => res));
   return result;

@@ -401,8 +401,8 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     }
   }
 
-  showimg(img: any, i:any, j:any){
-    console.log('+++',img,i, j)
+  showimg(i:any, j:any){
+    console.log('+++',i, j)
     this.indexCount = i;
     this.indexCountForImg = j;
   }
