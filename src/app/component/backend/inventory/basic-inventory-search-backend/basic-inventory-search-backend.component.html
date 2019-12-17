@@ -181,11 +181,11 @@
                       <h1  (click)="rsvpSend(item)">RSVP</h1>
                       <button (click)="favorite(item)"><i class="material-icons"> favorite </i> ADD</button>
                       <span >
-                      <mat-form-field *ngIf="user_details.type == 'salesrep'" class="select-customer">
-
+                      <mat-form-field *ngIf="user_details.type == 'salesrep'" class="select-customer" >
                         <mat-label>Select Customer</mat-label>
-                        <mat-select [(ngModel)]="customer_id" >
-                          <mat-option *ngFor="let item of customerList" [value]="item._id">
+
+                        <mat-select [(ngModel)]="customer_id">
+                          <mat-option  *ngFor="let item of customerList" [value]="item._id">
                             {{item.firstname}}
                           </mat-option>
                         </mat-select>
@@ -194,7 +194,8 @@
                       <span class="errormsg" *ngIf="errorMsg != null && errorMsg != ''" [ngClass]="customer_id !='' ? 'test':'errormsg'" >{{errorMsg}}</span>
                     </span>
 
-            
+                
+                     
 
                     </mat-card-content>
                     <mat-card-content class="rrblock1 currentbidprice">

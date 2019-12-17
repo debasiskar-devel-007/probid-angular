@@ -319,7 +319,10 @@ export class BasicInventorySearchBackendComponent implements OnInit {
     }
    
   }
-
+  // customerForRsvp(val: any, index: any){
+  //   this.customer_msg = val;
+  //   this.valIndex = index;
+  // }
 
   rsvpSend(item: any) {
 
@@ -345,9 +348,8 @@ if (this.customer_id != null && this.customer_id != '') {
           this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
             console.log(res);
             if(res.status == "success"){
-              this.customer_id='';
-              this.errorMsg='';
-              
+             
+             
 
               this.snackBar.open('RSVP Added Successfully','Ok',{
                 duration:4000
