@@ -444,7 +444,7 @@ data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-se
   { path: 'my-account', component: MyAccountComponent },
   { path: 'add-salesrep', component: AddSalesrepComponent },
   { path: 'editsalesrep/:_id', component: AddSalesrepComponent },
-  {path:'add-customer',component:AddCustomerComponent},
+  {path:'add-customer',component:AddCustomerComponent,},
   {path:'editcustomer/:_id',component:AddCustomerComponent},
 
   {path:'add-birddog',component:AddBirddogComponent},

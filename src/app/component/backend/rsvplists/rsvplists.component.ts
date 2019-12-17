@@ -14,7 +14,7 @@ public ststus: number;
 
   ngOnInit() {
     this.activatedRoute.data.forEach((data:any) => {
-      console.log(data)
+      // console.log(data)
       this.rsvp_list = data.rsvp.res;
     })
   }

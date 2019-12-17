@@ -276,10 +276,6 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
 
     let input: string = '';
     let inputField: string = '';
-    let makeInput: string = '';
-    let modelInput: string = '';
-    let yearInput: string = '';
-    let body_typeInput: string = '';
     if (event.target.value != null && event.target.value != '' && event.target.value.length >= 0) {
       input = "&input=" + event.target.value;
     }
@@ -287,7 +283,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
       inputField = "&field=" + field;
     }
 
-    if ( input !='' || inputField != ''  || this.type != '' || this.year != '' || this.make != '' || this.vin != '' || this.trim != '' || this.vehicle != '' || this.state != '' || this.zip != '' || this.model != '') {
+    if (inputField != '' && ( input !='' || this.type != '' || this.year != '' || this.make != '' || this.vin != '' || this.trim != '' || this.vehicle != '' || this.state != '' || this.zip != '' || this.model != '')) {
     let search_url: string = this.apiService.inventory_auto_complete_url+ inputField + input + this.type + this.make +"&country=US&ignore_case=true&term_counts=false&sort_by=index";
 
     this.http.get(search_url).subscribe((res: any) => {
@@ -405,26 +401,11 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     }
   }
 
-  showimg(img: any, i:any, j:any){
-    console.log('+++',img,i, j)
-
-    // this.modalImg = img;
+  showimg(i:any, j:any){
+    console.log('+++',i, j)
     this.indexCount = i;
     this.indexCountForImg = j;
-    console.log('====',this.modalImg)
-    console.log('>>>',i)
-
-  
-    console.log('>>>++>>>',i)
-
-
-   
-
   }
-
-
- 
-
 }
 
 
