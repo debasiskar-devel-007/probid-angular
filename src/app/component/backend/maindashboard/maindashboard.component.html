@@ -1,8 +1,78 @@
 <div class="adminwrappercls">
   <app-header></app-header>
       <div class="main-content-wrap">
-        <mat-card class="generalcls blog" style="padding: 0 !important;">  
-            <img src="../../../../assets/images/adm-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+          <mat-card style="padding: 0 !important;">
+            <mat-card-content class="adm_inner_banner adminbannerdashnboard">
+                <mat-card-title class="adm_inner_title"><span>Welcome to</span> ProBid Auto</mat-card-title>
+                <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </mat-card-content>
+            <mat-card-content class="bred_cram_wrapper">
+                <a mat-list-item routerLinkActive="active activebread"> Dashboard </a>
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="generalcls" style="padding: 0 !important;">  
+            <!-- <img src="../../../../assets/images/adm-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+            <span class="adm_dashboard_block1">
+                <span class="adm_dashboard_block1_left">
+                    <span class="block1totalreviewwrapper">
+                        <mat-card-content class="block1totalreview">
+                            <span class="block1_single orangecolor">
+                                <span class="block1_single_content">
+                                    <h2>200</h2>
+                                    <p>Customers</p>
+                                </span>
+                                <button mat-button>view all</button>
+                                <span class="block1_single_icon">
+                                    <img src="../../../../assets/images/adm-dashboard-b1-icon1.png">
+                                </span>
+                            </span>
+                            <span class="block1_single bluecolor">
+                                <span class="block1_single_content">
+                                    <h2>105</h2>
+                                    <p>Salesrep</p>
+                                </span>
+                                <button mat-button>view all</button>
+                                <span class="block1_single_icon">
+                                    <img src="../../../../assets/images/adm-dashboard-b1-icon2.png">                                
+                                </span>
+                            </span>
+                            <span class="block1_single greencolor">
+                                <span class="block1_single_content">
+                                    <h2>133</h2>
+                                    <p>Affiliate</p>
+                                </span>
+                                <button mat-button>view all</button>
+                                <span class="block1_single_icon">
+                                    <img src="../../../../assets/images/adm-dashboard-b1-icon3.png">
+                                </span>
+                            </span>
+                        </mat-card-content>
+                    </span>
+                    <span class="block1socialadvo">
+                        <mat-card-title class="sectionheader">Social Advo Banners</mat-card-title>
+                        <mat-list role="list" class="flexbox4column">
+                            <mat-list-item role="listitem" class="block1socialadvosingle" *ngFor="let socialadvo of socialAdvLists; let i = index">
+                                <span class="topblock">
+                                    {{socialadvo.site}}
+                                </span>
+                                <span class="bottomblock">
+                                    <h2>{{socialadvo.title_name}}</h2>
+                                    <mat-list role="list" class="sociallistdashboard">
+                                        <mat-list-item role="listitem">SOCIAL 1</mat-list-item>
+                                        <mat-list-item role="listitem">SOCIAL 2</mat-list-item>
+                                        <mat-list-item role="listitem">SOCIAL 3</mat-list-item>
+                                    </mat-list>
+                                </span>
+                            </mat-list-item>
+                          </mat-list>
+                    </span>
+                </span>
+                <span class="adm_dashboard_block1_right">
+
+                </span>
+            </span>
+            
+
             <img src="../../../../assets/images/adm-dashboard-img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
             <img src="../../../../assets/images/adm-dashboard-img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
             <img src="../../../../assets/images/adm-dashboard-img4.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
