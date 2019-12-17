@@ -198,6 +198,10 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
 
 
 
+.block1socialadvo .mat-list .mat-list-item .mat-list-item-content{padding: 0 !important;}
+.adm_dashboard_block2 .mat-list .mat-list-item .mat-list-item-content{padding: 0 !important;}
+.flexbox1column .rsvplistsingle .mat-list-item-content{padding: 0 !important;}
+
 @media screen and (max-width: 1600px){
   .owl-carousel .owl-nav button.owl-prev {
       position: absolute;
