@@ -94,6 +94,11 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   public isFavorite: number = 0;
   public customerList: any = '';
   public customur_id: any = '';
+  public trim_list: any;
+  public vehicle_list: any;
+  public indexCount: number;
+  public indexCountForImg: number;
+
 
 
   constructor(
@@ -143,6 +148,48 @@ export class BasicInventorySearchBackendComponent implements OnInit {
       this.type_list = this.inventory_search_list.result.manage_type;
       this.year_list = this.inventory_search_list.result.manage_year;
     })
+      }
+
+      searchAutoComplete(event: any, field: string) {
+
+        let input: string = '';
+        let inputField: string = '';
+        if (event.target.value != null && event.target.value != '' && event.target.value.length >= 0) {
+          input = "&input=" + event.target.value;
+        }
+        if (field != null && field != '' && field.length >= 0) {
+          inputField = "&field=" + field;
+        }
+    
+        if (inputField != '' && ( input !='' || this.type != '' || this.year != '' || this.make != '' || this.vin != '' || this.trim != '' || this.vehicle != '' || this.state != '' || this.zip != '' || this.model != '')) {
+        let search_url: string = this.apiService.inventory_auto_complete_url+ inputField + input + this.type + this.make +"&country=US&ignore_case=true&term_counts=false&sort_by=index";
+    
+        this.http.get(search_url).subscribe((res: any) => {
+         
+          if (field == 'make') {
+            this.make_list = res.terms; 
+            console.log(field, this.make_list);
+          }
+          if (field == 'model') {
+            this.model_list = res.terms; 
+            console.log(field); 
+          }
+          if (field == 'body_type') {
+            this.type_list = res.terms; 
+            console.log(field, this.type_list); 
+          }
+          if (field == 'trim') {
+            this.trim_list = res.terms; 
+            console.log(field, this.trim_list); 
+          }
+          if (field == 'vehicle_type') {
+            this.vehicle_list = res.terms; 
+            console.log(field, this.vehicle_list); 
+          }
+    
+        });
+      }
+    
       }
 
       getStateList() {
@@ -294,8 +341,10 @@ export class BasicInventorySearchBackendComponent implements OnInit {
 
   }
 
-  showimg(img: any){
-    this.modalImg = img;
+  showimg(img: any, i:any, j:any){
+    console.log('+++',img,i, j)
+    this.indexCount = i;
+    this.indexCountForImg = j;
   }
 
 }
