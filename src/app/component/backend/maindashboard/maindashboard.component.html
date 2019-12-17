@@ -52,44 +52,159 @@
                         <mat-card-title class="sectionheader">Social Advo Banners</mat-card-title>
                         <mat-list role="list" class="flexbox4column">
                             <mat-list-item role="listitem" class="block1socialadvosingle" *ngFor="let socialadvo of socialAdvLists; let i = index">
-                                <span class="topblock">
-                                    {{socialadvo.site}}
-                                </span>
-                                <span class="bottomblock">
-                                    <h2>{{socialadvo.title_name}}</h2>
-                                    <span class="blogsociallists">
-                                        <a class="sociallink fa fb">
-                                          <fa name="facebook" class="fa-facebook"></fa>
-                                        </a>
-                                        <a class="sociallink fa twi">
-                                          <fa name="twitter" class="fa-twitter"></fa>
-                                        </a>
-                                        <a class="sociallink fa pin">
-                                          <fa name="pinterest" class="fa-pinterest"></fa>
-                                        </a>
-                                        <a class="sociallink fa lin">
-                                          <fa name="linkedin" class="fa-linkedin"></fa>
-                                        </a>
-                                        <a class="sociallink fa env">
-                                          <fa name="envelope" class="fa-envelope"></fa>
-                                        </a>
-                                        <a class="sociallink fa share">
-                                          <fa name="share" class="fa-share"></fa>
-                                        </a>
+                                <span class="block1socialadvosingleinner">
+                                    <span class="topblock">
+                                        <img src="{{socialadvo.image_URL}}">  
                                       </span>
-                                </span>
+                                      <span class="bottomblock">
+                                          <h2>{{socialadvo.title_name}}</h2>
+                                          <span class="blogsociallists">
+                                              <a class="sociallink fa fb">
+                                                <fa name="facebook" class="fa-facebook"></fa>
+                                              </a>
+                                              <a class="sociallink fa twi">
+                                                <fa name="twitter" class="fa-twitter"></fa>
+                                              </a>
+                                              <a class="sociallink fa tbl">
+                                                <fa name="tumblr" class="fa-tumblr"></fa>
+                                              </a>
+                                              <a class="sociallink fa lin">
+                                                <fa name="linkedin" class="fa-linkedin"></fa>
+                                              </a>
+                                              <a class="sociallink fa share">
+                                                <fa name="share" class="fa-share"></fa>
+                                              </a>
+                                            </span>
+                                      </span>
+                                </span>                                
                             </mat-list-item>
-                          </mat-list>
+                        </mat-list>
+                        <span class="btnwrappercls">
+                            <button mat-button class="btnblue">Know More</button>
+                        </span>
                     </span>
                 </span>
                 <span class="adm_dashboard_block1_right">
-
+                    <mat-card>
+                        <mat-card-title class="sectionheader">Current RSVP</mat-card-title>
+                        <mat-list role="list" class="flexbox1column">
+                            <mat-list-item role="listitem" class="rsvplistsingle" *ngFor="let item of rsvp_list | slice:0:indexval1; let i = index">
+                                <span class="rsvplistsingleinner">
+                                    <span class="rsvplistsingleleft">
+                                        <span class="rsvpliststop">
+                                          <span class="rsvplistimgwrapper">
+                                              <img *ngIf="item.media.photo_links[0] != null" [src]="item.media.photo_links[0]">
+                                              <img class="defaultimg" *ngIf="item.media.photo_links[0] == null" src="assets/images/no-image-default.jpg">
+                                          </span>                        
+                                        </span>
+                                        <span class="rsvplistsbottom">
+                                          <h2>{{item.heading}}</h2>
+                                          <span class="rsvplistsbottombtm">
+                                           <span>Status</span>
+                                           <span *ngIf="item.status == 2" class="btnactive">Rejected <span class="colorred"></span></span>
+                                           <span *ngIf="item.status == 0" class="btnactive">Pending <span class="coloryellow"></span></span>
+                                           <span *ngIf="item.status == 1" class="btnactive">Accepted <span class="colorgreen"></span></span>
+                                          </span>
+                                        </span>
+                                    </span>
+                                    <span class="rsvplistsingleright">
+                                        <span class="rsvplisttypecontent">
+                                          <h2>User</h2>
+                                          <span class="rsvplisttypecontentinfo">
+                                            <span class="rsvplisttypeimgwrapper">
+                                              <img src="../../../../assets/images/imguser.jpg">
+                                            </span>
+                                            <span class="listscontent">
+                                               <mat-list>
+                                                 <mat-list-item><span class="labelcls">Name:</span> <span>{{item.added_for_fullname}}</span> </mat-list-item>
+                                                 <mat-list-item><span class="labelcls">Email ID:</span> <span>{{item.added_for_email}}</span> </mat-list-item>
+                                                 <!-- <mat-list-item><span class="labelcls">Phone:</span> <span>{{item.added_for_phone}}</span> </mat-list-item> -->
+                                               </mat-list>
+                                               
+                                            </span>
+                                          </span>
+                                          <!-- <span class="rsvplisttypebottom">
+                                            <span>Qualified for Finance: <span class="redcls">NO</span></span>
+                                            <span>Job Ticket related to this car: <span class="greencls">[1]</span></span>
+                                          </span>             -->
+                                        </span>
+                                        <span class="rsvplisttypecontent">
+                                            <h2>Salesrep</h2>
+                                            <span class="rsvplisttypecontentinfo">
+                                                <span class="rsvplisttypeimgwrapper">
+                                                  <img src="../../../../assets/images/imgsalesrep.jpg">
+                                                </span>
+                                                <span class="listscontent">
+                                                   <mat-list>
+                                                     <mat-list-item><span>Name:</span> <span>{{item.added_by_fullname}}</span> </mat-list-item>
+                                                     <mat-list-item><span>Email ID:</span> <span>{{item.added_by_email}}</span> </mat-list-item>
+                                                     <!-- <mat-list-item><span>Phone:</span> <span>{{item.added_by_phone}}</span> </mat-list-item> -->
+                                                   </mat-list>                                       
+                                                  
+                                                </span>
+                                              </span>
+                                              <!-- <span class="rsvplisttypebottom">
+                                                <span>Commission: <span class="redcls">NO</span></span>
+                                                <span> 
+                                                  <button mat-button class="btnblue greenbtn" *ngIf="item.status == 0 || item.status == 2" (click)="changeStatus(item, 1)">Accepted</button>
+                                                  <button mat-button class="btnblue yellowbtn" *ngIf="item.status == 1 || item.status == 2" (click)="changeStatus(item, 0)">Pending</button>
+                                                  <button mat-button class="btnblue redbtn" *ngIf="item.status == 0 || item.status == 1" (click)="changeStatus(item, 2)">Rejected</button>
+                                                  <button mat-button class="btnblue">Know More</button>
+                                                </span>                                   
+                                              </span> -->
+                                        </span>                            
+                                    </span>
+                                </span>                       
+                            </mat-list-item>
+                            
+                        </mat-list>
+                        <span class="btnwrappercls">
+                            <button mat-button class="btnblue">Know More</button>
+                        </span>
+                        
+                    </mat-card>
                 </span>
             </span>
             
 
-            <img src="../../../../assets/images/adm-dashboard-img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
-            <img src="../../../../assets/images/adm-dashboard-img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+            <!-- <img src="../../../../assets/images/adm-dashboard-img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+
+            <span class="adm_dashboard_block2">
+                <mat-card-title class="sectionheader">Save Search</mat-card-title>
+                <mat-list role="list" class="flexbox4column" *ngIf="search != null && search.length>=0">
+                    <mat-list-item role="listitem" class="block1socialadvosingle" *ngFor="let item of search">
+                        <span class="block1socialadvosingleinner">
+                            <span class="topblock">
+                                <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null && modalImg == ''" [src]="item.media.photo_links[0]">
+                                <img *ngIf="modalImg != ''" [src]="modalImg">
+                                <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
+                              </span>
+                              <span class="middleblock">
+                                <span class="pricecls" *ngIf="item.price != null">
+                                    ${{item.price}}
+                                </span>
+                                <span class="titlecls">
+                                  <span *ngIf="item.heading != null">{{item.heading}}</span>
+                                  <span></span>
+                                </span>
+                              </span>
+                              <span class="bottomblockss">                                  
+                                <mat-list *ngIf="item.build != null">
+                                    <mat-list-item class="pa_blockfootertext"> <strong>Interior Color</strong> Black</mat-list-item>                                        
+                                    <mat-list-item class="pa_blockfootertext" *ngIf="item.build.drivetrain != null"> <strong>Drive Train</strong> {{item.build.drivetrain}}</mat-list-item>                                  
+                                   
+                                    <mat-list-item class="pa_blockfootertext" *ngIf="item.build.body_type != null"> <strong>Type</strong> {{item.build.body_type}}</mat-list-item>
+                                  </mat-list>
+                              </span>
+                        </span>                                
+                    </mat-list-item>
+                </mat-list>
+                <span class="btnwrappercls">
+                    <button mat-button class="btnblue">Know More</button>
+                </span>
+            </span>
+
+            <!-- <img src="../../../../assets/images/adm-dashboard-img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
             <img src="../../../../assets/images/adm-dashboard-img4.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
             <img src="../../../../assets/images/adm-dashboard-img5.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
         </mat-card>

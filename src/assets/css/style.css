@@ -681,6 +681,7 @@ display:block !important;
 
 .fa-facebook i{display: none;}
 .fa-twitter i{display: none;}
+.fa-tumblr i{display: none;}
 .fa-pinterest i{display: none;}
 .fa-linkedin i{display: none;}
 .fa-envelope i{display: none;}
@@ -688,6 +689,7 @@ display:block !important;
 
 .sociallink.fb fa{background-color: #5170b1; }
 .sociallink.twi fa{background-color: #1bbef7; }
+.sociallink.tbl fa{background-color: #34526f; }
 .sociallink.pin fa{background-color: #c64348; }
 .sociallink.lin fa{background-color: #1786b1; }
 .sociallink.env fa{background-color: #70787a; }

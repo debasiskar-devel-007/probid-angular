@@ -300,7 +300,9 @@ const routes: Routes = [
   /**Backend Routing**/
   // {path: 'customer-dashboard', component:DashboardComponent, canActivate:[AuthGuard]},       // Useing for canActive
   { path: 'customer-dashboard', component: DashboardComponent },
-  { path: 'admin-dashboard', component: MaindashboardComponent,canActivate: [AuthGuard] },
+  // { path: 'admin-dashboard', component: MaindashboardComponent,canActivate: [AuthGuard] },
+  { path: 'admin-dashboard', component: MaindashboardComponent,canActivate: [AuthGuard] , resolve: { rsvp: ResolveService },
+  data: { requestcondition: { source: 'send_rsvp_view', condition: {} }, endpoint: 'datalist' } },
   { path: 'bk-leftdiv', component: BkLeftdivComponent },
   { path: 'testimonial/add', component: AddeditTestimonialComponent,canActivate: [AuthGuard] },
   {
