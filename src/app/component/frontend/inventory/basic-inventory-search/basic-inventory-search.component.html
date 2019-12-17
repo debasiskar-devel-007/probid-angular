@@ -149,7 +149,6 @@
           <mat-list-item class="rightcontentrow" *ngFor="let item of search; let i= index;">
             <mat-card-content class="col-1-3">
               <span class="as_imgwrapper">
-
                   <span *ngIf="indexCount == i && indexCountForImg != null;then content else other_content"></span>    
                   <ng-template #content>
                     <img [src]="item.media.photo_links[indexCountForImg]">
@@ -161,21 +160,11 @@
               </span>
               <span class="as_sm_imgmainwrapper">
                   <owl-carousel [options]="carouselOptions" [items]="TestimonialListArray" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-                      <div class="sm-imgwrapper" *ngFor="let img of item.media.photo_links; let j= index">
-                          <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
-                          <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="img" (click)="showimg(i, j)">
-                      </div>
-              
-                    </owl-carousel>
-                    
-              
-
-                <!-- <span class="as_sm_imgmainwrapperinner">
-                    <span class="sm-imgwrapper" *ngFor="let img of item.media.photo_links">
-                      <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="img" (click)="showimg(img)">
-                      <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg"></span>
-                    </span>
-                </span>               -->
+                    <div class="sm-imgwrapper" *ngFor="let img of item.media.photo_links; let j= index">
+                        <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
+                        <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="img" (click)="showimg(i, j)">
+                    </div>
+                  </owl-carousel>
                 </span>
             </mat-card-content>
             <mat-card-content class="col-1-7">
