@@ -144,7 +144,7 @@
                     <owl-carousel [options]="carouselOptions" [items]="TestimonialListArray" [carouselClasses]="['owl-theme', 'row', 'sliding']">
                       <div class="sm-imgwrapper" *ngFor="let img of item.media.photo_links; let j= index">
                           <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
-                          <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="img" (click)="showimg(i, j)">
+                          <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="img" (click)="showimg(i,j)">
                       </div>
                     </owl-carousel>
                   </span>
@@ -177,16 +177,25 @@
                   </span>
                   <span class="sub-col-4">
                     <mat-card-content class="rrblock1" *ngIf="user_details != null && user_details.type != 'admin'">
-                      <h1 (click)="rsvpSend(item)">RSVP</h1>
+
+                      <h1  (click)="rsvpSend(item)">RSVP</h1>
                       <button (click)="favorite(item)"><i class="material-icons"> favorite </i> ADD</button>
+                      <span >
                       <mat-form-field *ngIf="user_details.type == 'salesrep'" class="select-customer">
+
                         <mat-label>Select Customer</mat-label>
-                        <mat-select [(ngModel)]="customur_id">
+                        <mat-select [(ngModel)]="customer_id" >
                           <mat-option *ngFor="let item of customerList" [value]="item._id">
-                            {{item.fullname}}
+                            {{item.firstname}}
                           </mat-option>
                         </mat-select>
+                        
                       </mat-form-field>
+                      <span class="errormsg" *ngIf="errorMsg != null && errorMsg != ''" [ngClass]="customer_id !='' ? 'test':'errormsg'" >{{errorMsg}}</span>
+                    </span>
+
+            
+
                     </mat-card-content>
                     <mat-card-content class="rrblock1 currentbidprice">
                       <span class="text-wrapper" *ngIf="item.price != null">

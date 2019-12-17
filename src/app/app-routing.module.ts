@@ -434,10 +434,11 @@ data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-se
   { path: 'my-appointment-rep', component: MyAppointmentComponent },
   { path: 'book-an-appointment-rep', component: BookAnAppointmentComponent },
   { path: 'customer-list-rep', component: CustomerListComponent,resolve: { customerlist: ResolveService },
-  data: { requestcondition: { source: 'user', condition: {"type": "customer" }},endpoint: 'datalist',canActivate: [AuthGuard] }},
+  data: { requestcondition: { source: 'user', condition: {"type": "customer", "salesrep":"user_id" }},endpoint: 'datalist',canActivate: [AuthGuard] }},
 
   { path: 'social-advo-rep', component: SocialAdvoComponent },
 
+  
 
   { path: 'communication', component: CommunicationComponent },
   { path: 'training-center-rep', component: TrainingCenterComponent },

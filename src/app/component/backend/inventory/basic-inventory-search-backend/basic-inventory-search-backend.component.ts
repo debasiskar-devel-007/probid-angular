@@ -6,6 +6,7 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 export interface DialogData {
   errorMsg: string;
@@ -93,11 +94,12 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   public modalImg: string = '';
   public isFavorite: number = 0;
   public customerList: any = '';
-  public customur_id: any = '';
+  public customer_id: any = '';
   public trim_list: any;
   public vehicle_list: any;
   public indexCount: number;
   public indexCountForImg: number;
+  public indexForCustomer:number;
 
 
 
@@ -109,7 +111,8 @@ export class BasicInventorySearchBackendComponent implements OnInit {
     private readonly meta: MetaService,
     public dialog: MatDialog,
     public cookieService: CookieService,
-    public router: Router
+    public router: Router,
+    public snackBar:MatSnackBar
   ) {
 
     
@@ -124,12 +127,13 @@ export class BasicInventorySearchBackendComponent implements OnInit {
         endpoint: 'datalist',
         source: 'user',
       condition: {
-        "salesrep":this.user_id
+        "salesrep":this.user_id,
+        "type":"customer"
       }
       }
       this.apiService.getDatalist(data).subscribe((res:any)=>{
         this.customerList = res.res;
-        console.log(this.customerList);
+        console.log('++++++++++++++',this.customerList);
       });
 
     }
@@ -143,9 +147,10 @@ export class BasicInventorySearchBackendComponent implements OnInit {
       ngOnInit() {
       this.activatedRoute.data.forEach((data) => {
       this.inventory_search_list = data.inventory_search
-      this.make_list = this.inventory_search_list.result.manage_make;
-      this.model_list = this.inventory_search_list.result.manage_model;
-      this.type_list = this.inventory_search_list.result.manage_type;
+      // this.make_list = this.inventory_search_list.result.manage_make;
+      // console.log('$$$$>>>',this.make_list)
+      // this.model_list = this.inventory_search_list.result.manage_model;
+      // this.type_list = this.inventory_search_list.result.manage_type;
       this.year_list = this.inventory_search_list.result.manage_year;
     })
       }
@@ -317,32 +322,48 @@ export class BasicInventorySearchBackendComponent implements OnInit {
 
 
   rsvpSend(item: any) {
-    console.log('rsvpSend',item)
-    let endpoint: any = "addorupdatedata";
-    item.added_by = this.user_id;
-    item.status = 0;
-    if (this.user_details.type == 'salesrep') {
-      item.added_for = this.customur_id;
-      } else {
-        item.added_for = this.user_id;
-      }
-    let card_data:any = {
-      card_data: item
+
+    console.log('rsvpSend>>',item)
+    
+if (this.customer_id != null && this.customer_id != '') {
+        let endpoint: any = "addorupdatedata";
+        item.added_by = this.user_id;
+        item.status = 0;
+        if (this.user_details.type == 'salesrep') {
+          item.added_for = this.customer_id;
+          } else {
+            item.added_for = this.user_id;
+          }
+        let card_data:any = {
+          card_data: item
+        }
+        let data: any = {
+          data: card_data,
+          source: "send_for_rsvp",
+        };
+        console.log(data)
+          this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
+            console.log(res);
+            if(res.status == "success"){
+              this.customer_id='';
+              this.errorMsg='';
+              
+
+              this.snackBar.open('RSVP Added Successfully','Ok',{
+                duration:4000
+              })
+
+             
+            }
+          });
+    } else {
+      this.errorMsg = "Please select Customer name";
     }
-    let data: any = {
-      data: card_data,
-      source: "send_for_rsvp",
-    };
-    console.log(data)
-      this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
-        console.log(res);
-        (res.status == "success")
-      });
 
   }
 
-  showimg(img: any, i:any, j:any){
-    console.log('+++',img,i, j)
+  showimg(i:any, j:any){
+    console.log('+++',i, j)
     this.indexCount = i;
     this.indexCountForImg = j;
   }
