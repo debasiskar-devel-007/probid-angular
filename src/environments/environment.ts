@@ -12,11 +12,7 @@ export const environment = {
   download_url : 'https://api.influxhostserver.com/download',
   inventory_url : 'https://marketcheck-prod.apigee.net/v1/search?api_key=',
   inventory__auto_completeurl : 'https://marketcheck-prod.apigee.net/v1/search/auto-complete?api_key=', 
-<<<<<<< HEAD
   inventory_url_api : 'Ptp2PGDCtp9H3mEmu3oALjKf4rpUaVyY',
-=======
-  inventory_url_api : 'kk2zCR8AKNeMfeRfwdUZXXrp2KuxnNsw',
->>>>>>> 602eebfb9f06af3763852d45010c95f038daf4dc
   share_link : 'http://localhost:4200/',
 };
 

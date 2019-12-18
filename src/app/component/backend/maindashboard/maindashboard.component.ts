@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { HttpClient } from '@angular/common/http';
-import { MetaService } from '@ngx-meta/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 
 @Component({
@@ -12,15 +11,21 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
   styleUrls: ['./maindashboard.component.css']
 })
 export class MaindashboardComponent implements OnInit {
+
+  displayedColumns = ['position', 'name', 'weight', 'symbol'];
+  // dataSource = ELEMENT_DATA;
+
 public userCookies: any;
 public user_full_name: any = '';
 
 socialAdvLists: socialAdvos[];
 public rsvp_list: any = '';
+public saveSearch_list: any = '';
 public ststus: number;
 
  
-public indexval1:any=2;
+public rsvpIndex:any=2;
+public saveSearchIndex:any=10;
 
 
 
@@ -47,6 +52,8 @@ public errorMsg: string = '';
   public isFavorite: number = 0;
   public customerList: any = '';
   public customur_id: any = '';
+  public crsvplist:any ='';
+  public count:any ='';
 
 
 
@@ -64,99 +71,39 @@ public errorMsg: string = '';
     ];
 
 
-    if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
-      this.user_details = JSON.parse(this.cookieService.get('user_details'));
-      this.user_id = this.user_details._id;
-      console.log(this.user_id);
-      
-      if(this.user_details.type == "salesrep") {
-        let data: any = {
-          endpoint: 'datalist',
-          source: 'type_customer_view',
-          condition: {
-            "id":  this.user_id
-          }
-        }
-        this.apiService.getDatalist(data).subscribe((res:any)=>{
-          this.customerList = res.res;
-          console.log(this.customerList);
-        });
-    
-      }
-    }
-
-    // console.log(this.cookieService.getAll());
-    // this.userCookies = JSON.parse(this.cookieService.get('user_details'));
-
-    // console.log(this.userCookies.firstname);
-    // this.user_full_name = this.userCookies.firstname +' '+this.userCookies.lastname;
-    // console.log(this.user_full_name);
-
+    const ELEMENT_DATA: PeriodicElement[] = [
+      {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
+      {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
+      {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+      {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
+      {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
+      {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
+      {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
+      {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
+      {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
+      {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+    ];
     
    }
 
   ngOnInit() {
     this.activatedRoute.data.forEach((data:any) => {
-      // console.log(data)
-      this.rsvp_list = data.rsvp.res;
-      // this.rsvp_list1 = rsvp_list.dasbor.res;
+      // this.crsvplist = data.fordashboard.result.save_search;
+
+      this.rsvp_list = data.rsvp.result.currentRsvp;
+
+      this.saveSearch_list = data.rsvp.result.save_search;
+      this.count = data.rsvp.result;
+
+      console.log('dvfdgfhg', this.saveSearch_list)
     })
 
-    this.activatedRoute.data.forEach((data) => {
-      console.log(data)
-      this.search = data.inventory_search.res;
-    });
-
+   
 
   }
 
-  changeStatus(item: any, val: any) {
-    console.log('rsvpSend status',item, val)
-    let endpoint: any = "addorupdatedata";
-    item.status = val;
-    let card_data:any = {
-      card_data: item,
-      id:item._id
-    }
-    let data: any = {
-      data: card_data,
-      source: "send_for_rsvp",
-    };
-      this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
-        console.log(res);
-        (res.status == "success");
-        this.getdata();
-      });
-  }
 
 
-  getdata() {
-    let data: any = {
-      endpoint: 'datalist',
-      source: 'send_rsvp_view',
-      // condition: {
-      //   "id":  this.user_id
-      // }
-    }
-    this.apiService.getDatalist(data).subscribe((res:any)=>{
-      this.rsvp_list = res.res;
-      console.log(this.rsvp_list);
-    });
-  }
-
-
-  
-  // getData(){
-  //   let data: any = {
-  //     endpoint: 'datalist',
-  //     source: 'save_favorite_view'
-  //   }
-  //   this.apiService.getDatalist(data).subscribe((res:any)=>{
-  //     this.search = res.res;
-  //     this.loader = false;
-  //   })
-  // }
-  
 
 }
 
@@ -164,4 +111,11 @@ export class socialAdvos {
   Id: String;
   title_name: String;
   image_URL: String;
+}
+
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
 }
