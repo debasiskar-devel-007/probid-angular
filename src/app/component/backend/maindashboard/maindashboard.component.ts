@@ -4,6 +4,88 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { HttpClient } from '@angular/common/http';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
+
+
+
+const UA_DATA: UpcomingAppoinement[] = [
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img1.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img2.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img3.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img4.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img5.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img6.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img7.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img8.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img9.jpg'},
+];
+
+
+const JobTicket_DATA: JobTicket[] = [
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+];
+
+
+
+const Reports_DATA: Reports[] = [
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'complete'},
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'Incomplete'},
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'Incomplete'},
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'Incomplete'},
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'Incomplete'},
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'Incomplete'},
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'Incomplete'},
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'Incomplete'},
+];
+
+
+
+export class socialAdvos {
+  Id: String;
+  title_name: String;
+  image_URL: String;
+}
+
+export interface UpcomingAppoinement {
+  name: string;
+  phoneNumber: string;
+  date: string;
+  repName: string;
+  action: string;
+  image_URL: string;
+}
+
+export interface JobTicket {
+  ticket: string;
+  repName: string;
+  title: string;
+  category: string;
+  status: string;
+  action: string;
+}
+
+
+export interface Reports {
+  date_joined: string;
+  name: string;
+  email: string;
+  phoneNumber: string;
+  trainingProgress: string;
+  date_completed: string;
+  status: string;
+}
 
 @Component({
   selector: 'app-maindashboard',
@@ -12,13 +94,16 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 })
 export class MaindashboardComponent implements OnInit {
 
-  displayedColumns = ['position', 'name', 'weight', 'symbol'];
-  // dataSource = ELEMENT_DATA;
 
+  
+
+
+
+// public static: any; 
 public userCookies: any;
 public user_full_name: any = '';
 
-socialAdvLists: socialAdvos[];
+
 public rsvp_list: any = '';
 public saveSearch_list: any = '';
 public ststus: number;
@@ -56,6 +141,28 @@ public errorMsg: string = '';
   public count:any ='';
 
 
+  socialAdvLists: socialAdvos[];
+
+
+  
+
+  
+  UAColumns: string[] = ['name', 'phoneNumber', 'date', 'repName', 'action'];
+  upcomingAppoinementDataSource = new MatTableDataSource<UpcomingAppoinement>(UA_DATA);
+  @ViewChild(MatPaginator, {}) uaPaginator: MatPaginator;
+
+
+
+  JTColumns: string[] = ['ticket', 'repName', 'title', 'category', 'status', 'action'];
+  jobTicketDataSource = new MatTableDataSource<JobTicket>(JobTicket_DATA);
+  @ViewChild(MatPaginator, {}) jtPaginator: MatPaginator;
+
+
+  ReportColumns: string[] = ['date_joined', 'name', 'email', 'phoneNumber', 'trainingProgress', 'date_completed', 'status'];
+  reportsDataSource = new MatTableDataSource<Reports>(Reports_DATA);
+  @ViewChild(MatPaginator, {}) reportPaginator: MatPaginator;
+
+
 
   constructor(public cookieService: CookieService, public activatedRoute: ActivatedRoute, public apiService: ApiService, public http: HttpClient, public dialog: MatDialog) {
     
@@ -71,18 +178,7 @@ public errorMsg: string = '';
     ];
 
 
-    const ELEMENT_DATA: PeriodicElement[] = [
-      {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-      {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-      {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-      {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-      {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-      {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-      {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-      {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-      {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-      {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-    ];
+  
     
    }
 
@@ -98,24 +194,15 @@ public errorMsg: string = '';
       console.log('dvfdgfhg', this.saveSearch_list)
     })
 
+
+    this.upcomingAppoinementDataSource.paginator = this.uaPaginator;
+
+    this.jobTicketDataSource.paginator = this.jtPaginator;
+
+    this.reportsDataSource.paginator = this.reportPaginator;
    
 
   }
 
-
-
-
 }
 
-export class socialAdvos {
-  Id: String;
-  title_name: String;
-  image_URL: String;
-}
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
