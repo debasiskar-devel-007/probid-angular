@@ -1,6 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatDialogRef, MAT_DIALOG_DATA, MatDialog} from "@angular/material";
+
+export interface DialogData {
+  data: any;
+  msg:any;
+} 
+
 
 @Component({
   selector: 'app-rsvplists',
@@ -10,7 +18,8 @@ import { ApiService } from 'src/app/api.service';
 export class RsvplistsComponent implements OnInit {
 public rsvp_list: any = '';
 public ststus: number;
-  constructor(public activatedRoute: ActivatedRoute, public apiService: ApiService) { }
+public message:any="Are You Sure..!"
+  constructor(public activatedRoute: ActivatedRoute, public apiService: ApiService,public dialog: MatDialog,public snack:MatSnackBar) { }
 
   ngOnInit() {
     this.activatedRoute.data.forEach((data:any) => {
@@ -47,8 +56,63 @@ public ststus: number;
     }
     this.apiService.getDatalist(data).subscribe((res:any)=>{
       this.rsvp_list = res.res;
-      console.log(this.rsvp_list);
+      console.log('>>>>',this.rsvp_list);
     });
   }
 
+
+  //delete rsvp record
+
+
+  deleteRsvp(item:any,index:any){
+    console.log('delete hit',item,index)
+    const dialogRef = this.dialog.open(DeleteModalComponent, {
+      width: '250px',
+      data:this.message
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result)
+      
+        if(result=='yes'){
+          let data:any;
+            data={
+            "source":"send_for_rsvp",
+            id:item._id
+            }
+            this.apiService.CustomRequest(data,'deletesingledata').subscribe((res)=>{
+              let result:any;
+              result=res;
+              console.log('success',result)
+              
+              if(result.status=='success'){
+                this.rsvp_list.splice(index,index+1);
+                this.snack.open('Record Deleted Successfully..!','Ok',{duration:4000})
+                
+              }
+            })
+        }
+    });
+
+    // this.openDialog(this.message)
+    
+
+  }
+
+
+
+}
+
+
+
+@Component({
+  selector:'app-deleteModal',
+  templateUrl:'./deleteModal.html'
+})
+export class DeleteModalComponent {
+  constructor( public dialogRef: MatDialogRef<DeleteModalComponent>,
+               @Inject(MAT_DIALOG_DATA) public data: DialogData){
+
+  }
 }
