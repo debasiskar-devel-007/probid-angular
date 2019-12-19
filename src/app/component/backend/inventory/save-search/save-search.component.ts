@@ -33,7 +33,7 @@ export class SaveSearchComponent implements OnInit {
   public message:any="Are you sure you want to delete this?";
   public indexCountForImg:any;
   public indexCount:any;
-
+  public customer_id: any = '';
   carouselOptions = {
     margin: 5,
     nav: true,
@@ -142,14 +142,15 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   if(this.user_details.type == "salesrep") {
     let data: any = {
       endpoint: 'datalist',
-      source: 'type_customer_view',
+      source: 'user',
       condition: {
-        "id":  this.user_id
+        "salesrep":this.user_id,
+        "type":"customer"
       }
     }
     this.apiService.getDatalist(data).subscribe((res:any)=>{
       this.customerList = res.res;
-      console.log(this.customerList);
+      console.log('.>>>>>>>',this.customerList);
     });
 
   }
@@ -211,29 +212,79 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   
   }
 
+  // rsvpSend(item: any) {
+  //   console.log('rsvp send',this.customur_id);
+  //   console.log('rsvp send',item);
+  //   if (this.customer_id != null && this.customer_id != '') {
+  //   let endpoint: any = "addorupdatedata";
+  //   if (this.user_details.type == 'salesrep') {
+  //   item.added_for = this.customur_id;
+  //   }
+  //   item.added_by = this.user_id;
+  //   item.status = 0;
+  //   let card_data:any = {
+  //     card_data: item
+  //   }
+  //   let data: any = {
+  //     data: card_data,
+  //     source: "send_for_rsvp",
+  //   };
+  //   console.log(data)
+  //     this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
+  //       console.log(res);
+  //       (res.status == "success")
+  //     });
+  //   } else{
+  //     this.errorMsg = "Please select Customer name";
+
+  //   }
+
+  // }
+
   rsvpSend(item: any) {
-    console.log('rsvp send',this.customur_id);
-    console.log('rsvp send',item);
-    let endpoint: any = "addorupdatedata";
-    if (this.user_details.type == 'salesrep') {
-    item.added_for = this.customur_id;
+
+    console.log('rsvpSend>>',item)
+    
+if (this.customer_id != null && this.customer_id != '') {
+  
+        let endpoint: any = "addorupdatedata";
+        item.added_by = this.user_id;
+        item.status = 0;
+        if (this.user_details.type == 'salesrep') {
+          item.added_for = this.customer_id;
+          } else {
+            item.added_for = this.user_id;
+          }
+        let card_data:any = {
+          card_data: item
+        }
+        let data: any = {
+          data: card_data,
+          source: "send_for_rsvp",
+        };
+        console.log(data)
+          this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
+            console.log(res);
+            if(res.status == "success"){
+             
+             
+
+              this.snack.open('RSVP Added Successfully','Ok',{
+                duration:4000
+              })
+
+             
+            }
+          });
+    } 
+    else {
+      this.errorMsg = "Please select Customer name";
     }
-    item.added_by = this.user_id;
-    item.status = 0;
-    let card_data:any = {
-      card_data: item
-    }
-    let data: any = {
-      data: card_data,
-      source: "send_for_rsvp",
-    };
-    console.log(data)
-      this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
-        console.log(res);
-        (res.status == "success")
-      });
 
   }
+
+
+
 
   showimg(i: any,j:any){
     // this.modalImg = img;

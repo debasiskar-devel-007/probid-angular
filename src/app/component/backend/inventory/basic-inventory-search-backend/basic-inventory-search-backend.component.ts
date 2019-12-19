@@ -100,7 +100,7 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   public indexCount: number;
   public indexCountForImg: number;
   public indexForCustomer:number;
-
+  public spinnerval: any = 0;
 
 
   constructor(
@@ -114,6 +114,7 @@ export class BasicInventorySearchBackendComponent implements OnInit {
     public router: Router,
     public snackBar:MatSnackBar
   ) {
+    this.spinnerval=0;
 
     
     if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
@@ -221,8 +222,10 @@ export class BasicInventorySearchBackendComponent implements OnInit {
 
     
   inventoryCustomerSearch() {
+   
+    
     if (this.inventoryCustomerForm.valid) {
-
+     
       let yearVal = this.inventoryCustomerForm.value.year;
       let typeVal = this.inventoryCustomerForm.value.type;
       let makeVal = this.inventoryCustomerForm.value.make;
@@ -262,13 +265,22 @@ export class BasicInventorySearchBackendComponent implements OnInit {
       }
       if (this.type != '' || this.year != '' || this.make != '' || this.vin != '' || this.trim != '' || this.vehicle != '' || this.state != '' || this.zip != '' || this.model != '') {
 
+        this.spinnerval=1;
+
+
         let search_link = this.apiService.inventory_url + this.type + this.year + this.make + this.vin + this.trim + this.vehicle + this.state + this.zip + this.model;
 
         this.http.get(search_link).subscribe((res: any) => {
-          this.search = res.listings;
+          
+            this.search = res.listings;
+        
+          
           console.log('search list',this.search)
+         
 
         })
+        this.spinnerval=0;
+       
       } 
       // else {
       //   this.errorMsg = "Please select at least one field";
@@ -280,7 +292,7 @@ export class BasicInventorySearchBackendComponent implements OnInit {
 
       // }
 
-
+      
     }
 
   }
@@ -315,7 +327,7 @@ export class BasicInventorySearchBackendComponent implements OnInit {
         this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
           console.log(res);
           if(res.status == "success"){
-            this.snackBar.open('RSVP Added Successfully..!','Ok',{duration:4000})
+            this.snackBar.open('RSVP Saved Into Your Favorite..!','Ok',{duration:4000})
           }
         });
     }
