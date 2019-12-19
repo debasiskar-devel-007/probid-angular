@@ -173,32 +173,59 @@
                   </owl-carousel>
                 
               </span>
-              <span class="sub-col-4">
-                <mat-card-content class="rrblock1" *ngIf="user_details != null && user_details.type != 'admin'">
-                  <h1 class="btnrsvp" (click)="rsvpSend(item)">RSVP</h1>
-                  <button (click)="favorite(item)"><i class="material-icons"> favorite </i> ADD</button>
-                  <mat-form-field *ngIf="user_details != null && user_details.type == 'salesrep'"
-                    class="select-customer">
-                    <mat-label>Select Customer</mat-label>
-                    <mat-select [(ngModel)]="customur_id">
-                      <mat-option *ngFor="let item of customerList" [value]="item._id">
-                        {{item.fullname}}
-                      </mat-option>
-                    </mat-select>
-                    <!-- <mat-error
-                    *ngIf="">
-                    City field can not be blank</mat-error> -->
-                  </mat-form-field>
-                </mat-card-content>
-                <mat-card-content class="rrblock1 currentbidprice">
-                  <span class="text-wrapper" *ngIf="item.price != null">
-                    <p>Current Bid Price: </p>
-                    <h5>${{item.price}}</h5>
-                    <h6 *ngIf="item.build.engine != null"><strong>Engine Type</strong>
-                      <span>{{item.build.engine}}</span></h6>
-                  </span>
-                </mat-card-content>
               
+            </mat-card-content>
+            <mat-card-content class="col-1-7">
+              <span class="subrighrwrapper">
+                <span class="sub-col-6">
+                  <span class="text-wrapper">
+                    <h2 *ngIf="item.heading != null">{{item.heading}}</h2>
+                    <h3 *ngIf="item.vin != null">VIN: {{item.vin}}</h3>
+
+                    <p *ngIf="item.build.cylinders != null">{{item.build.cylinders}} Cylinders </p>
+                    <p *ngIf="item.build.vehicle_type != null">Vehicle Type: {{item.build.vehicle_type}}</p>
+                    <p *ngIf="item.build.transmission != null">Transmission: {{item.build.transmission}}</p>
+                    <p *ngIf="item.build.fuel_type != null"> Fuel: {{item.build.fuel_type}}</p>
+
+                    <label id="example-radio-group-label">Pick your favorite season</label>
+                    <br>
+                    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                      [(ngModel)]="favoriteSeason">
+                      <mat-checkbox class="red"></mat-checkbox>
+                      <mat-checkbox class="black"></mat-checkbox>
+                      <mat-checkbox class="blue"></mat-checkbox>
+                      <mat-checkbox class="white"></mat-checkbox>
+                    </mat-radio-group>
+
+                    <p *ngIf="item.build.body_type != null">Body Type: {{item.build.body_type}}</p>
+                  </span>
+                </span>
+                <span class="sub-col-4">
+                  <mat-card-content class="rrblock1" *ngIf="user_details != null && user_details.type != 'admin'">
+                    <h1 class="btnrsvp" (click)="rsvpSend(item)">RSVP</h1>
+                    <button (click)="favorite(item)"><i class="material-icons"> favorite </i> ADD</button>
+                    <mat-form-field *ngIf="user_details != null && user_details.type == 'salesrep'"
+                      class="select-customer">
+                      <mat-label>Select Customer</mat-label>
+                      <mat-select [(ngModel)]="customur_id">
+                        <mat-option *ngFor="let item of customerList" [value]="item._id">
+                          {{item.fullname}}
+                        </mat-option>
+                      </mat-select>
+                      <!-- <mat-error
+                      *ngIf="">
+                      City field can not be blank</mat-error> -->
+                    </mat-form-field>
+                  </mat-card-content>
+                  <mat-card-content class="rrblock1 currentbidprice">
+                    <span class="text-wrapper" *ngIf="item.price != null">
+                      <p>Current Bid Price: </p>
+                      <h5>${{item.price}}</h5>
+                      <h6 *ngIf="item.build.engine != null"><strong>Engine Type</strong>
+                        <span>{{item.build.engine}}</span></h6>
+                    </span>
+                  </mat-card-content>
+                </span>
             </span>
           </mat-card-content>
           <span class="pa_blockfooter">

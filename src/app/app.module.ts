@@ -56,13 +56,15 @@ import { SalesrepSignupComponent } from './component/frontend/salesrep-signup/sa
 import { CustomerSignupComponent,customerSignUpsuccessDialog } from './component/frontend/customer-signup/customer-signup.component';
 
 import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
-import { SaveSearchComponent } from './component/backend/inventory/save-search/save-search.component';
+
+import { InventoryDetailComponent } from './component/frontend/inventory-detail/inventory-detail.component';
 
 /**End Frontend Component**/
 
 
 /**Backend Component**/
 import { SidenavService } from './../app/services/sidenav.service';
+import { SaveSearchComponent } from './component/backend/inventory/save-search/save-search.component';
 import { DashboardComponent } from './component/backend/dashboard/dashboard.component';
 import { BkHeaderComponent } from './layout/bk-header/bk-header.component';
 import { BkFooterComponent } from './layout/bk-footer/bk-footer.component';
@@ -181,6 +183,7 @@ import { ListingSubscriptionComponent } from './component/backend/newsletterlist
 import { ListingSubcategoryComponent } from './component/backend/newsletterlists/listing-subcategory/listing-subcategory.component';
 
 
+
 //****** for video Modal*********//
 
 @NgModule({
@@ -296,6 +299,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
     ListingSubscriptionComponent,
     ListingSubcategoryComponent,
     SaveSearchComponent,
+    InventoryDetailComponent,
     // errorDialogbackend,
   ],
   imports: [

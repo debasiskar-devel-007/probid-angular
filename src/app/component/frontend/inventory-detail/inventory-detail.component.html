@@ -1,0 +1,43 @@
+<app-header></app-header>
+<mat-card class="innerpagebanner inventorydetailbg">
+  <span class="mainwrappercontent">
+    <mat-card-content>
+      <h1>Inventory Details</h1>
+    </mat-card-content>
+  </span>
+  <img [src]="blog_img" class="blogheaderimg">
+  <span class="blogheaderimgbg"></span>
+</mat-card>
+<mat-card class="innerpagetitle">
+  <span class="mainwrappercontent">
+    <mat-card-content class="bred_cram_wrapper">
+      <mat-list class="bred_cram_wrapper_list">
+        <mat-list-item routerLinkActive="active">
+          <a [routerLink]="'/home'"> home </a>
+          <span class="breadcrumb__divider" aria-hidden="true">›</span>
+        </mat-list-item>
+        <mat-list-item routerLinkActive="active">
+          <a [routerLink]="'/bloglist'"> Blog list </a>
+          <span class="breadcrumb__divider" aria-hidden="true">›</span>
+        </mat-list-item>
+        <mat-list-item routerLinkActive="active activebread">
+          <a [routerLink]="'/blogdetail'"> Blog Details </a>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </span>
+</mat-card>
+
+<mat-card class="ptb-40 generalcls inventorydetail">
+  <span class="mainwrappercontent">
+  
+
+    <p>
+      inventory-detail works!
+    </p>
+    
+  </span> 
+</mat-card> 
+
+
+<app-footer></app-footer>
