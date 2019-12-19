@@ -94,16 +94,14 @@ public message:any="Are you sure you want to delete this?"
             })
         }
     });
-
-    // this.openDialog(this.message)
-    
-
   }
 
 
 
 }
 
+
+//component for delete modal
 
 
 @Component({
