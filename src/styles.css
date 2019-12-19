@@ -202,9 +202,22 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
 .adm_dashboard_block2 .mat-list .mat-list-item .mat-list-item-content{padding: 0 !important; height: 100%;}
 .flexbox1column .rsvplistsingle .mat-list-item-content{padding: 0 !important;    height: 100%;}
 
-.flexbox2column > .listsingle  > .mat-list-item-content{padding: 0 !important; flex-wrap: wrap;    height: 100%;}
+.flexbox2column > .mat-list-item  > .mat-list-item-content{padding: 0 !important; width: 100%; height: 100%;}
 
-.flexbox4column > .single_thumb_wrapper > .mat-list-item-content{height: 100%!important; padding: 0 !important;}
+.adm_dashboard_block3 .flexbox2column > .mat-list-item  > .mat-list-item-content{padding: 0 !important; width: 100%; height: 100%;  flex-wrap: wrap}
+
+.flexbox1column > .mat-list-item  > .mat-list-item-content{padding: 0 !important; width: 100%; height: 100%;}
+
+.flexbox4columnthumb > .single_thumb_wrapper > .mat-list-item-content{height: 100%!important; padding: 0 !important;}
+.flexbox4column > .mat-list-item > .mat-list-item-content{height: 100%!important; padding: 0 !important; width: 100%;}
+
+
+
+
+/* .flexbox2column > .mat-list-item > .mat-list-item-content{
+  width: 100%;  
+  padding: 0;
+} */
 
 @media screen and (max-width: 1600px){
   .owl-carousel .owl-nav button.owl-prev {
