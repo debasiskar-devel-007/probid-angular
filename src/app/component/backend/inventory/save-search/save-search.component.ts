@@ -9,10 +9,17 @@ import { CookieService } from 'ngx-cookie-service';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 
 export interface DialogData {
   errorMsg: string;
 }
+
+export interface DialogData {
+  data: any;
+  msg:any;
+} 
 
 @Component({
   selector: 'app-save-search',
@@ -23,6 +30,9 @@ export class SaveSearchComponent implements OnInit {
 
   public MediaListArray: any = [];
   public loader: boolean = false;
+  public message:any="Are you sure you want to delete this?";
+  public indexCountForImg:any;
+  public indexCount:any;
 
   carouselOptions = {
     margin: 5,
@@ -98,6 +108,9 @@ export class SaveSearchComponent implements OnInit {
   public isFavorite: number = 0;
   public customerList: any = '';
   public customur_id: any = '';
+
+
+
   constructor(public fb: FormBuilder,
     public apiService: ApiService,
     public activatedRoute: ActivatedRoute,
@@ -105,7 +118,10 @@ export class SaveSearchComponent implements OnInit {
     private readonly meta: MetaService,
     public dialog: MatDialog,
     public cookieService: CookieService,
-    public router: Router) {
+    public router: Router,public snack:MatSnackBar) 
+    
+    
+    {
     this.meta.setTitle('ProBid Auto - Inventory');
     this.meta.setTag('og:description', 'Locate the Pre-Owned Car of your desire at the ProBid Auto Inventory using Basic, as well as Advanced, Search Parameters to make your Car Search easy and convenient, while also saving you loads of time, effort and money');
     this.meta.setTag('twitter:description', 'Locate the Pre-Owned Car of your desire at the ProBid Auto Inventory using Basic, as well as Advanced, Search Parameters to make your Car Search easy and convenient, while also saving you loads of time, effort and money');
@@ -154,20 +170,30 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     console.log('/login'+this.router.url)
   }
 
-  getData(){
-    let data: any = {
-      endpoint: 'datalist',
-      source: 'save_favorite_view'
-    }
-    this.apiService.getDatalist(data).subscribe((res:any)=>{
-      this.search = res.res;
-      this.loader = false;
-    })
-  }
+  // getData(){
+  //   let data: any = {
+  //     endpoint: 'datalist',
+  //     source: 'save_favorite_view'
+  //   }
+  //   this.apiService.getDatalist(data).subscribe((res:any)=>{
+  //     this.search = res.res;
+  //     this.loader = false;
+  //   })
+  // }
 
 
-  unFavorite(item: any) {
-    console.log('this is favorite ',item);
+  unFavorite(item: any,index:any) {
+    console.log('this is favorite ',item,index);
+    const dialogRef = this.dialog.open(RemoveModalComponent, {
+      width: '250px',
+      data:this.message
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result)
+      
+        if(result=='yes'){
     let data: any = {
       id:item._id,
       source: 'save_favorite'
@@ -175,10 +201,14 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     this.apiService.deleteSingleData1(data).subscribe((res: any)=>{
       console.log(res);
       if (res.status == 'success') {
-        this.loader = true;
-        this.getData();
+        this.search.splice(index,index+1);
+        this.snack.open('Record Removed Successfully..!','Ok',{duration:4000})
+        
       }
     })
+  }
+})
+  
   }
 
   rsvpSend(item: any) {
@@ -205,8 +235,31 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
 
   }
 
-  showimg(img: any){
-    this.modalImg = img;
+  showimg(i: any,j:any){
+    // this.modalImg = img;
+    console.log('>>>>',i,j)
+    this.indexCount = i;
+    this.indexCountForImg = j;
+
   }
 
 }
+
+
+
+//modal component for delete RSVP
+
+
+@Component({
+  selector:'app-removeModal',
+  templateUrl:'./removeModal.html'
+})
+export class RemoveModalComponent {
+  constructor( public dialogRef: MatDialogRef<RemoveModalComponent>,
+               @Inject(MAT_DIALOG_DATA) public data: DialogData){
+
+  }
+}
+
+
+

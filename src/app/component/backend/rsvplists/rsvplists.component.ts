@@ -26,6 +26,8 @@ public message:any="Are you sure you want to delete this?"
       // console.log(data)
       this.rsvp_list = data.rsvp.res;
     })
+
+    this.getdata();
   }
   changeStatus(item: any, val: any) {
     console.log('rsvpSend status',item, val)
@@ -101,7 +103,7 @@ public message:any="Are you sure you want to delete this?"
 }
 
 
-//component for delete modal
+//modal component for delete
 
 
 @Component({

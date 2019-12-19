@@ -314,7 +314,9 @@ export class BasicInventorySearchBackendComponent implements OnInit {
       console.log(data)
         this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
           console.log(res);
-          (res.status == "success")
+          if(res.status == "success"){
+            this.snackBar.open('RSVP Added Successfully..!','Ok',{duration:4000})
+          }
         });
     }
    

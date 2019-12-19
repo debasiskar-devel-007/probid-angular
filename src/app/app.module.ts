@@ -64,7 +64,7 @@ import { InventoryDetailComponent } from './component/frontend/inventory-detail/
 
 /**Backend Component**/
 import { SidenavService } from './../app/services/sidenav.service';
-import { SaveSearchComponent } from './component/backend/inventory/save-search/save-search.component';
+import { SaveSearchComponent, RemoveModalComponent } from './component/backend/inventory/save-search/save-search.component';
 import { DashboardComponent } from './component/backend/dashboard/dashboard.component';
 import { BkHeaderComponent } from './layout/bk-header/bk-header.component';
 import { BkFooterComponent } from './layout/bk-footer/bk-footer.component';
@@ -301,6 +301,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
     ListingSubcategoryComponent,
     SaveSearchComponent,
     InventoryDetailComponent,
+    RemoveModalComponent
     // errorDialogbackend,
   ],
   imports: [
@@ -342,7 +343,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent,DeleteModalRsvpComponent]
+  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent,DeleteModalRsvpComponent,RemoveModalComponent]
   // errorDialogbackend
 })
 export class AppModule { }

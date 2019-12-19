@@ -1,12 +1,14 @@
 import { Component, OnInit, ViewChild ,Inject} from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute ,Router} from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { HttpClient } from '@angular/common/http';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
+
 
 
 export interface DialogData {
@@ -171,7 +173,7 @@ public errorMsg: string = '';
 
 
 
-  constructor(public cookieService: CookieService, public activatedRoute: ActivatedRoute, public apiService: ApiService, public http: HttpClient, public dialog: MatDialog,public snack:MatSnackBar) {
+  constructor(public cookieService: CookieService, public activatedRoute: ActivatedRoute, public apiService: ApiService, public http: HttpClient, public dialog: MatDialog,public snack:MatSnackBar,public router:Router) {
     
 
     this.socialAdvLists = [{ Id: '1001', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/adm-socialadvo-img1.jpg' },
@@ -212,7 +214,7 @@ public errorMsg: string = '';
 
   }
 
-  deleteRsvp(item:any,index:any){
+  deleteAny(item:any,index:any,flag:string){
     console.log('>>>>',item,index)
     const dialogRef = this.dialog.open(DeleteModalRsvpComponent, {
       width: '250px',
@@ -225,21 +227,40 @@ public errorMsg: string = '';
       
         if(result=='yes'){
           let data:any;
-            data={
-            "source":"send_for_rsvp",
-            id:item._id
+            if(flag=='rsvp'){
+              data={
+                "source":"send_for_rsvp",
+                id:item._id
+                }
+                this.apiService.CustomRequest(data,'deletesingledata').subscribe((res)=>{
+                  let result:any;
+                  result=res;
+                  console.log('success',result)
+                  
+                  if(result.status=='success'){
+                    this.rsvp_list.splice(index,index+1);
+                    this.snack.open('Record Deleted Successfully..!','Ok',{duration:4000})
+                    
+                  }
+                })
+            } 
+           else {
+              data={
+                "source":"save_favorite",
+                id:item._id
+                }
+                this.apiService.CustomRequest(data,'deletesingledata').subscribe((res)=>{
+                  let result:any;
+                  result=res;
+                  console.log('success',result)
+                  
+                  if(result.status=='success'){
+                    this.saveSearch_list.splice(index,index+1);
+                    this.snack.open('Record Deleted Successfully..!','Ok',{duration:4000})
+                    
+                  }
+                })
             }
-            this.apiService.CustomRequest(data,'deletesingledata').subscribe((res)=>{
-              let result:any;
-              result=res;
-              console.log('success',result)
-              
-              if(result.status=='success'){
-                this.rsvp_list.splice(index,index+1);
-                this.snack.open('Record Deleted Successfully..!','Ok',{duration:4000})
-                
-              }
-            })
         }
     });
   }
