@@ -24,7 +24,7 @@
               </span>
               <span class="rsvplistwrapper">
                 <span class="rsvplists">                  
-                  <span class="rsvplistsingle" *ngFor="let item of rsvp_list">
+                  <span class="rsvplistsingle" *ngFor="let item of rsvp_list ; let i=index">
                     <span class="rsvplistsingleinner">
                         <span class="rsvplistsingleleft">
                             <span class="rsvpliststop">
@@ -44,7 +44,10 @@
                             </span>
                           </span>
                           <span class="rsvplistsingleright">
-                            <span class="rsvplisttypecontent">
+                            <span class="rsvplisttypecontent">  
+                              <span (click)="deleteRsvp(item,i)"><i class="material-icons">
+                                delete
+                                </i></span>
                               <h2>User</h2>
                               <span class="rsvplisttypecontentinfo">
                                 <span class="rsvplisttypeimgwrapper">

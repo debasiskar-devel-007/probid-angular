@@ -107,7 +107,7 @@ import { ManageCommissionComponent } from './component/backend/manage-commission
 import { NewsletterlistsComponent } from './component/backend/newsletterlists/newsletterlists.component';
 import { SalesReportComponent } from './component/backend/sales-report/sales-report.component';
 import { SalesreplistsComponent } from './component/backend/salesreplists/salesreplists.component';
-import { RsvplistsComponent } from './component/backend/rsvplists/rsvplists.component';
+import { RsvplistsComponent, DeleteModalComponent } from './component/backend/rsvplists/rsvplists.component';
 import { ManageTrainingComponent } from './component/backend/manage-training/manage-training.component';
 
 
@@ -281,7 +281,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
     VideoModalComponent,
     AddCustomerComponent,
     AddBirddogComponent,
-
+    DeleteModalComponent,
     NewslatterDialogComponent,
     NewslattersuccessDialogComponent,
     errorDialog,
@@ -341,7 +341,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,]
+  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent]
   // errorDialogbackend
 })
 export class AppModule { }
