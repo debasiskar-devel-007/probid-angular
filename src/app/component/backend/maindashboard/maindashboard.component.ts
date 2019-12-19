@@ -1,10 +1,91 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { HttpClient } from '@angular/common/http';
-import { MetaService } from '@ngx-meta/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
+
+
+
+const UA_DATA: UpcomingAppoinement[] = [
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img1.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img2.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img3.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img4.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img5.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img6.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img7.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img8.jpg'},
+  {name: 'Lorem I psum is', phoneNumber: '0000 000 000' , date: '26-11-2019 16:50', repName: 'Lorem I psum', action: 'Manage', image_URL: '../../../../assets/images/adm-UA-img9.jpg'},
+];
+
+
+const JobTicket_DATA: JobTicket[] = [
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+  {ticket: '123456', title: 'Lorem I psum is' , category: 'Lorem', status:'active', repName: 'Lorem I psum', action: 'Manage'},
+];
+
+
+
+const Reports_DATA: Reports[] = [
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'complete'},
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'Incomplete'},
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'Incomplete'},
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'Incomplete'},
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'Incomplete'},
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'Incomplete'},
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'Incomplete'},
+  {date_joined: '11-09-2019', name: 'Lorem Ipsum' , email: 'LoremIpsumis@gmail.com', phoneNumber:'1234567890', trainingProgress: '56 %', date_completed: '02-12-2019', status:'Incomplete'},
+];
+
+
+
+export class socialAdvos {
+  Id: String;
+  title_name: String;
+  image_URL: String;
+}
+
+export interface UpcomingAppoinement {
+  name: string;
+  phoneNumber: string;
+  date: string;
+  repName: string;
+  action: string;
+  image_URL: string;
+}
+
+export interface JobTicket {
+  ticket: string;
+  repName: string;
+  title: string;
+  category: string;
+  status: string;
+  action: string;
+}
+
+
+export interface Reports {
+  date_joined: string;
+  name: string;
+  email: string;
+  phoneNumber: string;
+  trainingProgress: string;
+  date_completed: string;
+  status: string;
+}
 
 @Component({
   selector: 'app-maindashboard',
@@ -12,15 +93,24 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
   styleUrls: ['./maindashboard.component.css']
 })
 export class MaindashboardComponent implements OnInit {
+
+
+  
+
+
+
+// public static: any; 
 public userCookies: any;
 public user_full_name: any = '';
 
-socialAdvLists: socialAdvos[];
+
 public rsvp_list: any = '';
+public saveSearch_list: any = '';
 public ststus: number;
 
  
-public indexval1:any=2;
+public rsvpIndex:any=2;
+public saveSearchIndex:any=10;
 
 
 
@@ -47,6 +137,30 @@ public errorMsg: string = '';
   public isFavorite: number = 0;
   public customerList: any = '';
   public customur_id: any = '';
+  public crsvplist:any ='';
+  public count:any ='';
+
+
+  socialAdvLists: socialAdvos[];
+
+
+  
+
+  
+  UAColumns: string[] = ['name', 'phoneNumber', 'date', 'repName', 'action'];
+  upcomingAppoinementDataSource = new MatTableDataSource<UpcomingAppoinement>(UA_DATA);
+  @ViewChild(MatPaginator, {}) uaPaginator: MatPaginator;
+
+
+
+  JTColumns: string[] = ['ticket', 'repName', 'title', 'category', 'status', 'action'];
+  jobTicketDataSource = new MatTableDataSource<JobTicket>(JobTicket_DATA);
+  @ViewChild(MatPaginator, {}) jtPaginator: MatPaginator;
+
+
+  ReportColumns: string[] = ['date_joined', 'name', 'email', 'phoneNumber', 'trainingProgress', 'date_completed', 'status'];
+  reportsDataSource = new MatTableDataSource<Reports>(Reports_DATA);
+  @ViewChild(MatPaginator, {}) reportPaginator: MatPaginator;
 
 
 
@@ -64,104 +178,31 @@ public errorMsg: string = '';
     ];
 
 
-    if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
-      this.user_details = JSON.parse(this.cookieService.get('user_details'));
-      this.user_id = this.user_details._id;
-      console.log(this.user_id);
-      
-      if(this.user_details.type == "salesrep") {
-        let data: any = {
-          endpoint: 'datalist',
-          source: 'type_customer_view',
-          condition: {
-            "id":  this.user_id
-          }
-        }
-        this.apiService.getDatalist(data).subscribe((res:any)=>{
-          this.customerList = res.res;
-          console.log(this.customerList);
-        });
-    
-      }
-    }
-
-    // console.log(this.cookieService.getAll());
-    // this.userCookies = JSON.parse(this.cookieService.get('user_details'));
-
-    // console.log(this.userCookies.firstname);
-    // this.user_full_name = this.userCookies.firstname +' '+this.userCookies.lastname;
-    // console.log(this.user_full_name);
-
+  
     
    }
 
   ngOnInit() {
     this.activatedRoute.data.forEach((data:any) => {
-      // console.log(data)
-      this.rsvp_list = data.rsvp.res;
-      // this.rsvp_list1 = rsvp_list.dasbor.res;
+      // this.crsvplist = data.fordashboard.result.save_search;
+
+      this.rsvp_list = data.rsvp.result.currentRsvp;
+
+      this.saveSearch_list = data.rsvp.result.save_search;
+      this.count = data.rsvp.result;
+
+      console.log('dvfdgfhg', this.saveSearch_list)
     })
 
-    this.activatedRoute.data.forEach((data) => {
-      console.log(data)
-      this.search = data.inventory_search.res;
-    });
 
+    this.upcomingAppoinementDataSource.paginator = this.uaPaginator;
+
+    this.jobTicketDataSource.paginator = this.jtPaginator;
+
+    this.reportsDataSource.paginator = this.reportPaginator;
+   
 
   }
-
-  changeStatus(item: any, val: any) {
-    console.log('rsvpSend status',item, val)
-    let endpoint: any = "addorupdatedata";
-    item.status = val;
-    let card_data:any = {
-      card_data: item,
-      id:item._id
-    }
-    let data: any = {
-      data: card_data,
-      source: "send_for_rsvp",
-    };
-      this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
-        console.log(res);
-        (res.status == "success");
-        this.getdata();
-      });
-  }
-
-
-  getdata() {
-    let data: any = {
-      endpoint: 'datalist',
-      source: 'send_rsvp_view',
-      // condition: {
-      //   "id":  this.user_id
-      // }
-    }
-    this.apiService.getDatalist(data).subscribe((res:any)=>{
-      this.rsvp_list = res.res;
-      console.log(this.rsvp_list);
-    });
-  }
-
-
-  
-  // getData(){
-  //   let data: any = {
-  //     endpoint: 'datalist',
-  //     source: 'save_favorite_view'
-  //   }
-  //   this.apiService.getDatalist(data).subscribe((res:any)=>{
-  //     this.search = res.res;
-  //     this.loader = false;
-  //   })
-  // }
-  
 
 }
 
-export class socialAdvos {
-  Id: String;
-  title_name: String;
-  image_URL: String;
-}

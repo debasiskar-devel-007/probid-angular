@@ -12,36 +12,36 @@
         </mat-card>
         <mat-card class="generalcls" style="padding: 0 !important;">  
             <!-- <img src="../../../../assets/images/adm-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
-            <span class="adm_dashboard_block1">
+            <mat-card-content class="adm_dashboard_block1">
                 <span class="adm_dashboard_block1_left">
                     <span class="block1totalreviewwrapper">
                         <mat-card-content class="block1totalreview">
                             <span class="block1_single orangecolor">
                                 <span class="block1_single_content">
-                                    <h2>200</h2>
+                                    <h2>{{count.customer_count}}</h2>
                                     <p>Customers</p>
                                 </span>
-                                <button mat-button>view all</button>
+                                <button mat-button [routerLink]="['/customer-list-admin']">view all</button>
                                 <span class="block1_single_icon">
                                     <img src="../../../../assets/images/adm-dashboard-b1-icon1.png">
                                 </span>
                             </span>
                             <span class="block1_single bluecolor">
                                 <span class="block1_single_content">
-                                    <h2>105</h2>
+                                    <h2>{{count.salesrep_count}}</h2>
                                     <p>Salesrep</p>
                                 </span>
-                                <button mat-button>view all</button>
+                                <button mat-button [routerLink]="['/salesrep-list-admin']">view all</button>
                                 <span class="block1_single_icon">
                                     <img src="../../../../assets/images/adm-dashboard-b1-icon2.png">                                
                                 </span>
                             </span>
                             <span class="block1_single greencolor">
                                 <span class="block1_single_content">
-                                    <h2>133</h2>
-                                    <p>Affiliate</p>
+                                    <h2>{{count.birddog_count}}</h2>
+                                    <p>Birddogs</p>
                                 </span>
-                                <button mat-button>view all</button>
+                                <button mat-button [routerLink]="['/birddog-list']">view all</button>
                                 <span class="block1_single_icon">
                                     <img src="../../../../assets/images/adm-dashboard-b1-icon3.png">
                                 </span>
@@ -80,7 +80,7 @@
                             </mat-list-item>
                         </mat-list>
                         <span class="btnwrappercls">
-                            <button mat-button class="btnblue">Know More</button>
+                            <button mat-button class="btnblue" [routerLink]="['/social-advo-admin']">View All</button>
                         </span>
                     </span>
                 </span>
@@ -88,7 +88,7 @@
                     <mat-card>
                         <mat-card-title class="sectionheader">Current RSVP</mat-card-title>
                         <mat-list role="list" class="flexbox1column">
-                            <mat-list-item role="listitem" class="rsvplistsingle" *ngFor="let item of rsvp_list | slice:0:indexval1; let i = index">
+                            <mat-list-item role="listitem" class="rsvplistsingle" *ngFor="let item of rsvp_list | slice:0:rsvpIndex; let i = index">
                                 <span class="rsvplistsingleinner">
                                     <span class="rsvplistsingleleft">
                                         <span class="rsvpliststop">
@@ -149,7 +149,7 @@
                                                   <button mat-button class="btnblue greenbtn" *ngIf="item.status == 0 || item.status == 2" (click)="changeStatus(item, 1)">Accepted</button>
                                                   <button mat-button class="btnblue yellowbtn" *ngIf="item.status == 1 || item.status == 2" (click)="changeStatus(item, 0)">Pending</button>
                                                   <button mat-button class="btnblue redbtn" *ngIf="item.status == 0 || item.status == 1" (click)="changeStatus(item, 2)">Rejected</button>
-                                                  <button mat-button class="btnblue">Know More</button>
+                                                  <button mat-button class="btnblue">View All</button>
                                                 </span>                                   
                                               </span> -->
                                         </span>                            
@@ -159,54 +159,310 @@
                             
                         </mat-list>
                         <span class="btnwrappercls">
-                            <button mat-button class="btnblue">Know More</button>
+                            <button mat-button class="btnblue" [routerLink]="['/save-search-admin']">View All</button>
                         </span>
                         
                     </mat-card>
                 </span>
-            </span>
+            </mat-card-content>
             
 
             <!-- <img src="../../../../assets/images/adm-dashboard-img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
 
-            <span class="adm_dashboard_block2">
+            <mat-card-content class="adm_dashboard_block2">
                 <mat-card-title class="sectionheader">Save Search</mat-card-title>
-                <mat-list role="list" class="flexbox4column" *ngIf="search != null && search.length>=0">
-                    <mat-list-item role="listitem" class="block1socialadvosingle" *ngFor="let item of search">
+                <mat-list role="list" class="flexbox5column">
+                    <mat-list-item role="listitem" class="block1socialadvosingle" *ngFor="let item of saveSearch_list | slice:0:saveSearchIndex; let i = index">
                         <span class="block1socialadvosingleinner">
                             <span class="topblock">
-                                <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null && modalImg == ''" [src]="item.media.photo_links[0]">
-                                <img *ngIf="modalImg != ''" [src]="modalImg">
-                                <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
+                                <span class="rsvplistimgwrapper">
+                                    <img *ngIf="item.card_data.media.photo_links != null && item.card_data.media.photo_links[0] !=null && modalImg == ''" [src]="item.card_data.media.photo_links[0]">
+                                    <img *ngIf="modalImg != ''" [src]="modalImg">
+                                    <img *ngIf="item.card_data.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
+                                </span>
                               </span>
                               <span class="middleblock">
-                                <span class="pricecls" *ngIf="item.price != null">
-                                    ${{item.price}}
+                                <span class="pricecls" *ngIf="item.card_data.price != null">
+                                    ${{item.card_data.price}}
                                 </span>
                                 <span class="titlecls">
-                                  <span *ngIf="item.heading != null">{{item.heading}}</span>
+                                  <span *ngIf="item.card_data.heading != null">{{item.card_data.heading}}</span>
                                   <span></span>
                                 </span>
                               </span>
                               <span class="bottomblockss">                                  
-                                <mat-list *ngIf="item.build != null">
-                                    <mat-list-item class="pa_blockfootertext"> <strong>Interior Color</strong> Black</mat-list-item>                                        
-                                    <mat-list-item class="pa_blockfootertext" *ngIf="item.build.drivetrain != null"> <strong>Drive Train</strong> {{item.build.drivetrain}}</mat-list-item>                                  
+                                <mat-list *ngIf="item.card_data.build != null">
+                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/milesicon.png"></strong> {{item.card_data.miles}}</mat-list-item>                                        
+                                    <mat-list-item class="pa_blockfootertext" *ngIf="item.card_data.build.drivetrain != null"> <strong><img src="../../../../assets/images/drivetrainicon.png"></strong> {{item.card_data.build.drivetrain}}</mat-list-item>                                  
                                    
-                                    <mat-list-item class="pa_blockfootertext" *ngIf="item.build.body_type != null"> <strong>Type</strong> {{item.build.body_type}}</mat-list-item>
+                                    <mat-list-item class="pa_blockfootertext" *ngIf="item.card_data.build.transmission != null"> <strong><img src="../../../../assets/images/bodytypeicon.png"></strong> {{item.card_data.build.transmission}}</mat-list-item>
                                   </mat-list>
                               </span>
                         </span>                                
                     </mat-list-item>
                 </mat-list>
                 <span class="btnwrappercls">
-                    <button mat-button class="btnblue">Know More</button>
+                    <button mat-button class="btnblue" [routerLink]="['/save-search-admin']">View All</button>
                 </span>
-            </span>
+            </mat-card-content>
+            
 
             <!-- <img src="../../../../assets/images/adm-dashboard-img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
-            <img src="../../../../assets/images/adm-dashboard-img4.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
-            <img src="../../../../assets/images/adm-dashboard-img5.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+
+
+            <mat-card-content class="adm_dashboard_block3">
+                <mat-list class="flexbox2column">
+                    <mat-list-item class="listsingle">
+                        <span class="adm_dashboard_block3_inner">
+                            <h2>Upcoming appointment</h2>
+                            <div class="mat-elevation-z8">
+                                <div class="tablediv">
+                                    <table mat-table [dataSource]="upcomingAppoinementDataSource">
+
+                                        <!-- Position Column -->
+                                        <ng-container matColumnDef="name">
+                                          <th mat-header-cell *matHeaderCellDef> Name </th>
+                                          <td mat-cell *matCellDef="let element"><span class="namewrapper"> <span class="image_URL_wrapper"><img src="{{element.image_URL}}"></span> <span class="nametxt">{{element.name}}</span> </span></td>
+                                        </ng-container>
+                                    
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="phoneNumber">
+                                          <th mat-header-cell *matHeaderCellDef>  Phone Number </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+                                        </ng-container>
+                                    
+                                        <!-- Weight Column -->
+                                        <ng-container matColumnDef="date">
+                                          <th mat-header-cell *matHeaderCellDef> Date </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                                        </ng-container>
+                                    
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="repName">
+                                          <th mat-header-cell *matHeaderCellDef> Rep Name </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.repName}} </td>
+                                        </ng-container>
+
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="action">
+                                            <th mat-header-cell *matHeaderCellDef> Action </th>
+                                            <td mat-cell *matCellDef="let element"> <a class="btnorange"> {{element.action}}</a> </td>
+                                          </ng-container>
+                                    
+                                        <tr mat-header-row *matHeaderRowDef="UAColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: UAColumns;"></tr>
+                                    </table>
+                                    
+                                      <mat-paginator [pageSizeOptions]="[4, 10, 20]" showFirstLastButtons></mat-paginator>
+                                </div>                               
+                            </div>                           
+                        </span>
+                        <span class="btnwrappercls">
+                            <button mat-button class="btnblue" [routerLink]="['/my-appointment-admin']">View All</button>
+                        </span>
+                    </mat-list-item>
+                    <mat-list-item class="listsingle">
+                        <span class="adm_dashboard_block3_inner">
+                            <h2>Job ticket</h2>
+                            <div class="mat-elevation-z8">
+                                <div class="tablediv">
+                                    <table mat-table [dataSource]="jobTicketDataSource">
+
+                                        <!-- Position Column -->
+                                        <ng-container matColumnDef="ticket">
+                                          <th mat-header-cell *matHeaderCellDef> TICKET# </th>
+                                          <td mat-cell *matCellDef="let element">{{element.ticket}}</td>
+                                        </ng-container>
+                                    
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="repName">
+                                          <th mat-header-cell *matHeaderCellDef> REP NAME </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.repName}} </td>
+                                        </ng-container>
+                                    
+                                        <!-- Weight Column -->
+                                        <ng-container matColumnDef="title">
+                                          <th mat-header-cell *matHeaderCellDef> TITLE </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+                                        </ng-container>
+                                    
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="category">
+                                          <th mat-header-cell *matHeaderCellDef> CATEGORY </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+                                        </ng-container>
+
+                                         <!-- Symbol Column -->
+                                         <ng-container matColumnDef="status">
+                                            <th mat-header-cell *matHeaderCellDef> STATUS </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                                          </ng-container>
+
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="action">
+                                            <th mat-header-cell *matHeaderCellDef> Action </th>
+                                            <td mat-cell *matCellDef="let element"> <a class="btnorange"> {{element.action}}</a> </td>
+                                          </ng-container>
+                                    
+                                        <tr mat-header-row *matHeaderRowDef="JTColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: JTColumns;"></tr>
+                                    </table>
+                                    
+                                      <mat-paginator [pageSizeOptions]="[7, 12, 22]" showFirstLastButtons></mat-paginator>
+                                </div>
+                            </div>                           
+                        </span>                        
+                        <span class="btnwrappercls">
+                            <button mat-button class="btnblue" [routerLink]="['/job-ticket']">View All</button>
+                        </span>
+                    </mat-list-item>
+                </mat-list>               
+            </mat-card-content>
+
+            <!-- <img src="../../../../assets/images/adm-dashboard-img4.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+
+
+            <mat-card-content class="adm_dashboard_block4">
+                <mat-card-title class="sectionheader">Report</mat-card-title>
+                <span class="adm_dashboard_block4_inner">
+                    <mat-tab-group class="tabwrapper">
+                        <mat-tab>
+                            <ng-template mat-tab-label>
+                                <h2>Training</h2>                
+                            </ng-template>          
+                          <ng-template matTabContent>    
+                            <div class="mat-elevation-z8">
+                                <div class="tablediv">
+                                    <table mat-table [dataSource]="reportsDataSource">
+        
+                                        <!-- Position Column -->
+                                        <ng-container matColumnDef="date_joined">
+                                          <th mat-header-cell *matHeaderCellDef> date joined </th>
+                                          <td mat-cell *matCellDef="let element">{{element.date_joined}}</td>
+                                        </ng-container>
+                                    
+                                        <!-- Name Column -->
+                                        <ng-container matColumnDef="name">
+                                          <th mat-header-cell *matHeaderCellDef>  Full Name </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                                        </ng-container>
+                                    
+                                        <!-- Weight Column -->
+                                        <ng-container matColumnDef="email">
+                                          <th mat-header-cell *matHeaderCellDef> Email </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                                        </ng-container>
+                                    
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="phoneNumber">
+                                          <th mat-header-cell *matHeaderCellDef> phone Number </th>
+                                          <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+                                        </ng-container>
+        
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="trainingProgress">
+                                            <th mat-header-cell *matHeaderCellDef>  Training Progress </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.trainingProgress}} </td>
+                                        </ng-container>
+        
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="date_completed">
+                                            <th mat-header-cell *matHeaderCellDef> Date Completed </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.date_completed}} </td>
+                                          </ng-container>                                
+        
+                                        <!-- Symbol Column -->
+                                        <ng-container matColumnDef="status">
+                                            <th mat-header-cell *matHeaderCellDef> Status </th>
+                                            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                                          </ng-container>
+                                    
+                                        <tr mat-header-row *matHeaderRowDef="ReportColumns"></tr>
+                                        <tr mat-row *matRowDef="let row; columns: ReportColumns;"></tr>
+                                    </table>
+                                    
+                                      <mat-paginator [pageSizeOptions]="[4, 10, 20]" showFirstLastButtons></mat-paginator>
+                                </div>                               
+                            </div>  
+                            <span class="btnwrappercls">
+                                <button mat-button class="btnblue" [routerLink]="['/training-report']">View All</button>
+                              </span>
+                          </ng-template>
+                         
+                        </mat-tab>
+                        <mat-tab>            
+                            <ng-template mat-tab-label>
+                              <h2>Commission</h2>
+                            </ng-template>           
+                            <ng-template matTabContent>
+                                <div class="mat-elevation-z8">
+                                    <div class="tablediv">
+                                        <table mat-table [dataSource]="reportsDataSource">
+            
+                                            <!-- Position Column -->
+                                            <ng-container matColumnDef="date_joined">
+                                              <th mat-header-cell *matHeaderCellDef> date joined </th>
+                                              <td mat-cell *matCellDef="let element">{{element.date_joined}}</td>
+                                            </ng-container>
+                                        
+                                            <!-- Name Column -->
+                                            <ng-container matColumnDef="name">
+                                              <th mat-header-cell *matHeaderCellDef>  Full Name </th>
+                                              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                                            </ng-container>
+                                        
+                                            <!-- Weight Column -->
+                                            <ng-container matColumnDef="email">
+                                              <th mat-header-cell *matHeaderCellDef> Email </th>
+                                              <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                                            </ng-container>
+                                        
+                                            <!-- Symbol Column -->
+                                            <ng-container matColumnDef="phoneNumber">
+                                              <th mat-header-cell *matHeaderCellDef> phone Number </th>
+                                              <td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
+                                            </ng-container>
+            
+                                            <!-- Symbol Column -->
+                                            <ng-container matColumnDef="trainingProgress">
+                                                <th mat-header-cell *matHeaderCellDef>  Training Progress </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.trainingProgress}} </td>
+                                            </ng-container>
+            
+                                            <!-- Symbol Column -->
+                                            <ng-container matColumnDef="date_completed">
+                                                <th mat-header-cell *matHeaderCellDef> Date Completed </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.date_completed}} </td>
+                                              </ng-container>                                
+            
+                                            <!-- Symbol Column -->
+                                            <ng-container matColumnDef="status">
+                                                <th mat-header-cell *matHeaderCellDef> Status </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                                              </ng-container>
+                                        
+                                            <tr mat-header-row *matHeaderRowDef="ReportColumns"></tr>
+                                            <tr mat-row *matRowDef="let row; columns: ReportColumns;"></tr>
+                                        </table>
+                                        
+                                          <mat-paginator [pageSizeOptions]="[4, 10, 20]" showFirstLastButtons></mat-paginator>
+                                    </div>                               
+                                </div>  
+                                <span class="btnwrappercls">
+                                    <button mat-button class="btnblue" [routerLink]="['/commission-report']">View All</button>
+                                </span>
+                            </ng-template>
+                            
+                        </mat-tab>
+                                
+                     </mat-tab-group> 
+                    
+                                            
+                </span>
+                
+            </mat-card-content>
+
+            <!-- <img src="../../../../assets/images/adm-dashboard-img5.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
         </mat-card>
           <!-- <mat-card class="dashboard_block1">
 

@@ -462,6 +462,9 @@ app-bk-leftdiv{position: relative; z-index: 999;}
 .setting_formblock_btngroup button:nth-of-type(2){ background: #e03621; margin-left: 10px;}
 
 
+.subrighrwrapper .sub-col-6 .mat-radio-group{margin: 0 !important;}
+
+
 @media only screen and (max-width: 1199px) {
 
 .setting_formblock label {
