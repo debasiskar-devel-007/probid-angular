@@ -204,6 +204,8 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
 
 .flexbox2column > .listsingle  > .mat-list-item-content{padding: 0 !important; flex-wrap: wrap;    height: 100%;}
 
+.flexbox4column > .single_thumb_wrapper > .mat-list-item-content{height: 100%!important; padding: 0 !important;}
+
 @media screen and (max-width: 1600px){
   .owl-carousel .owl-nav button.owl-prev {
       position: absolute;
