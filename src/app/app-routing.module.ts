@@ -349,18 +349,23 @@ const routes: Routes = [
   { path: 'manage-commission', component: ManageCommissionComponent },
   // { path: 'newsletter-list', component: NewsletterlistsComponent },
   { path: 'sales-report', component: SalesReportComponent },
+  
   { path: 'salesrep-list-admin', component: SalesreplistsComponent,resolve: { salesreplist: ResolveService },
   data: { requestcondition: { source: 'user_view', condition: {"type": "salesrep"} },endpoint: 'datalist',canActivate: [AuthGuard]} },
 
   { path: 'rsvp-admin', component: RsvplistsComponent ,
   resolve: { rsvp: ResolveService },
   data: { requestcondition: { source: 'send_rsvp_view', condition: {} }, endpoint: 'datalist' }},
+
   { path: 'rsvp-salesrep', component: RsvplistsComponent,
   resolve: { rsvp: ResolveService },
-  data: { requestcondition: { source: 'send_rsvp_view', condition: {} }, endpoint: 'datalist' }},
+  data: { requestcondition: { source: 'send_rsvp_view', condition: {"salesrep":"user_id"} }, 
+  endpoint: 'datalist' }},
+
   { path: 'rsvp-customer', component: RsvplistsComponent ,
   resolve: { rsvp: ResolveService },
   data: { requestcondition: { source: 'send_rsvp_view', condition: {} }, endpoint: 'datalist' }},
+
   // { path: 'manage-training1', component: ManageTrainingComponent },
   { path: 'manage-lessons', component: ManageLessonsComponent },
   { path: 'training-center', component: TrainingCenterComponent },
