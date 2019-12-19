@@ -609,7 +609,9 @@
 .flexbox4column > .mat-list-item:nth-last-child(4) {
   border-bottom: 0px solid #97a9ac;
 } 
-
+.flexbox4column > .mat-list-item:nth-child(4n){
+  border-right: 0px solid #97a9ac;
+}
 
 .inventorydetailsimilarv h1.btnrsvp {
   font-family: 'HelveticaBold';
