@@ -76,7 +76,7 @@ import { AddeditTestimonialComponent } from './component/backend/TestimonialApp/
 // import { ServicelibModule } from 'servicelib';
 // import { FileUploadModule } from 'dist/file-upload';
 import { BkLeftdivComponent } from './layout/bk-leftdiv/bk-leftdiv.component';
-import { MaindashboardComponent } from './component/backend/maindashboard/maindashboard.component';
+import { MaindashboardComponent, DeleteModalRsvpComponent } from './component/backend/maindashboard/maindashboard.component';
 import { UserManagementComponent } from './component/backend/user-management/user-management.component';
 import { RepdashboardComponent } from './component/backend/repdashboard/repdashboard.component';
 
@@ -286,6 +286,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
     NewslattersuccessDialogComponent,
     errorDialog,
     loginBeforeDialog,
+    DeleteModalRsvpComponent,
 
 
     AddEditNewsletterComponent,
@@ -341,7 +342,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
   providers: [CookieService, AuthGuard, ApiService, SidenavService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent]
+  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent,DeleteModalRsvpComponent]
   // errorDialogbackend
 })
 export class AppModule { }
