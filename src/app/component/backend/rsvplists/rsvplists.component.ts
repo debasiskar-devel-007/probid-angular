@@ -18,7 +18,7 @@ export interface DialogData {
 export class RsvplistsComponent implements OnInit {
 public rsvp_list: any = '';
 public ststus: number;
-public message:any="Are You Sure..!"
+public message:any="Are you sure you want to delete this?"
   constructor(public activatedRoute: ActivatedRoute, public apiService: ApiService,public dialog: MatDialog,public snack:MatSnackBar) { }
 
   ngOnInit() {
