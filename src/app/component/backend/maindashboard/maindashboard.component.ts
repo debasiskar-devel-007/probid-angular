@@ -185,6 +185,7 @@ public errorMsg: string = '';
   ngOnInit() {
     this.activatedRoute.data.forEach((data:any) => {
       // this.crsvplist = data.fordashboard.result.save_search;
+      console.log('dash-data',data)
 
       this.rsvp_list = data.rsvp.result.currentRsvp;
 
