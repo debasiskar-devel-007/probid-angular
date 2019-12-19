@@ -204,7 +204,7 @@
                   <mat-card-content class="rrblock1" *ngIf="user_details != null && user_details.type != 'admin'">
                     <h1 class="btnrsvp" (click)="rsvpSend(item)">RSVP</h1>
                     <button (click)="favorite(item)"><i class="material-icons"> favorite </i> ADD</button>
-                    <mat-form-field *ngIf="user_details != null && user_details.type == 'salesrep'"
+                    <!-- <mat-form-field *ngIf="user_details != null && user_details.type == 'salesrep'"
                       class="select-customer">
                       <mat-label>Select Customer</mat-label>
                       <mat-select [(ngModel)]="customur_id">
@@ -212,10 +212,10 @@
                           {{item.fullname}}
                         </mat-option>
                       </mat-select>
-                      <!-- <mat-error
+                     <mat-error
                       *ngIf="">
-                      City field can not be blank</mat-error> -->
-                    </mat-form-field>
+                      City field can not be blank</mat-error>
+                    </mat-form-field> -->
                   </mat-card-content>
                   <mat-card-content class="rrblock1 currentbidprice">
                     <span class="text-wrapper" *ngIf="item.price != null">
