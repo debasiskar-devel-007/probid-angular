@@ -1,0 +1,277 @@
+.rep-dashboard-banner{background:url(../../../../assets/images/repdashboardbannerbg.jpg) no-repeat center center !important; display: block; position: relative;     background-size: cover;}
+.rep-dashboard-banner-inner{
+    width: 48%;
+    padding: 10px;
+    display: block;
+    height: 100%;
+}
+
+.generalcls .titleadmin{
+    margin: 0;
+    padding: 0;
+    font-family:'HelveticaBold';
+    font-size:48px!important;
+    line-height:normal!important;
+    text-transform:capitalize;margin:0;padding:0;margin-bottom:18px;margin-top:25px;color:#343c5c;white-space:normal!important;
+    position: relative;
+}
+
+.generalcls .titleadmin:after{
+    content: '';
+    background: #12c3e3;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 190px;
+    display: block;
+    height: 2px;
+}
+
+.rep-dashboard-banner-inner h3{
+       font-family: 'Helvetica-Regular';
+    font-size: 30px!important;
+    line-height: 32px!important;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 18px;
+    color: #f15b46;
+    white-space: normal!important;
+    position: relative;
+}
+
+.rep-dashboard-banner-inner p{
+    margin: 0;
+    padding: 0;
+    font-family:'Helvetica-Regular';
+    font-size:15px!important;
+    line-height:25px!important;
+    margin:0;padding:0;margin-bottom:18px;color:#222222;white-space:normal!important;
+    position: relative;
+}
+
+
+
+
+.flexbox2column {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .flexbox2column > .listsingle  {
+    box-sizing: border-box;
+    margin-top: 0px;
+    width: calc(1/2*100% - (1 - 1/2)*52px);
+    height: auto;
+    height: auto;
+  }
+
+  .flexbox2column > .listsingle:last-child{
+    padding: 20px;
+  }
+
+  .sharelinkright{
+    background-color: #dde2e5;
+  }
+  
+  .flexbox2column > .listsingle:last-child{
+    margin-bottom: 0px !important;
+  }
+
+  .sharelinklists {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 0;
+  }
+
+  .sharelinklists > .mat-list-item  {
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: calc(1/1*100% - (1 - 1/1)*2px);
+    height: auto;
+    padding: 11px;
+    background-color: #ffffff;
+    border: 2px solid #dedddd;
+    height: auto;
+  }
+  
+  .sharelinklists > .mat-list-item:last-child{
+    margin-bottom: 0px !important;
+  }
+
+.sharelinklistsingle span{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 0;
+  }
+
+  .sharelinkimgwrapper{
+    width: 180px;
+    height: 167px;
+    position: relative;
+    display: block !important;
+    background: #333;
+  }
+
+  .sharelinkimgwrapper img{
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,-50%);
+    width: 100% !important;
+    cursor: pointer;
+    -o-object-fit: cover;
+    object-fit: cover;
+    padding: 10px;
+  }
+
+  .sharelinkcontent{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 0;
+    margin-left: 10px;
+  }
+  .sharelinkcontent h2{
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family:'Helvetica-Regular';
+    font-size:24px!important;
+    line-height:normal!important;
+    text-transform:capitalize;margin:0;padding:0;margin-bottom:18px;margin-top:25px;color:#f15b46;white-space:normal!important;
+    position: relative;
+    display: flex;
+    flex: 1 1 100%;
+  }
+
+  .sharelinkcontent p{
+    display: flex;
+    flex: 1 1 100%;
+  }
+
+  .sharelinkcontent .sociallinks{
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1 1 100%;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    padding: 15px;
+    background-image: linear-gradient(to right, rgba(245,242,242,1), rgba(245,242,242,0));
+    margin: 0 !important;
+    align-items: center;
+  }
+
+  .sharelinkcontent .sociallinks > .sociallink  {
+    margin-right: 6px;
+    margin-bottom: 0px;
+  }
+  
+  .sharelinklistsingle:nth-child(1){
+    background-image: url(../../../../assets/images/slsingleimg.png);
+    background-position: right 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .sharelinklistsingle:nth-child(2){
+    background-image: url(../../../../assets/images/slsingleimg2.png);
+    background-position: right 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .blogsociallists fa {
+    padding: 6px 6px;
+    color: #fff;
+    font-size: 24px;
+    width: 32px;
+    height: 32px;
+    display: block;
+    overflow: hidden;
+}
+
+
+.sharelinkrighttop{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 0;
+    height: auto !important;
+}
+
+
+.sharelinkrighttop > span h3{
+    margin: 0;
+    padding: 0;
+    font-family:'Helvetica-Regular';
+    font-size:36px!important;
+    line-height:normal!important;
+    color:#e64631;
+    text-transform: uppercase;
+}
+
+
+.sharelinkrighttop > span  {
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: calc(1/2*100% - (1 - 1/2)*5px);
+    height: auto;
+    padding: 11px;
+    height: auto;
+  }
+
+  .sharelinkrightmiddle{      
+    position: relative;
+    display: block !important;
+    background: #32393f;
+    color: #fffefe;
+    margin: 0;
+    padding: 0;
+    font-family:'Helvetica-Regular';
+    font-size:36px!important;
+    line-height:normal!important;
+    text-transform: uppercase;
+    height: auto!important;
+  }
+
+
+  .sharelinkrightbottom{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 0;
+    height: auto!important;
+}
+
+  .sharelinkrightbottom > span  {
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    width: calc(1/2*100% - (1 - 1/2)*2px);
+    height: auto;
+    padding: 11px;
+    height: auto !important;
+  }
+
+  .sharelinkrightbottom{      
+    position: relative;
+    display: block !important;
+    background: #494949;
+    color: #fffefe;
+    margin: 0;
+    padding: 0;
+    font-family:'Helvetica-Regular';
+    font-size:30px!important;
+    line-height:normal!important;
+    text-transform: uppercase;
+    height: auto !important;
+    margin-top: auto;
+  }

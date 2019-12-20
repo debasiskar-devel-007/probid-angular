@@ -211,8 +211,7 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
 .flexbox4columnthumb > .single_thumb_wrapper > .mat-list-item-content{height: 100%!important; padding: 0 !important;}
 .flexbox4column > .mat-list-item > .mat-list-item-content{height: 100%!important; padding: 0 !important; width: 100%;}
 
-
-
+.sharelinklistsingle .mat-list-item-content{height: 100%!important; padding: 0 !important; width: 100%;}
 
 /* .flexbox2column > .mat-list-item > .mat-list-item-content{
   width: 100%;  
