@@ -17,14 +17,16 @@ export interface DialogData {
 })
 export class RsvplistsComponent implements OnInit {
 public rsvp_list: any = '';
+public indexval:any=4;
 public ststus: number;
 public message:any="Are you sure you want to delete this?"
   constructor(public activatedRoute: ActivatedRoute, public apiService: ApiService,public dialog: MatDialog,public snack:MatSnackBar) { }
 
   ngOnInit() {
     this.activatedRoute.data.forEach((data:any) => {
-      // console.log(data)
+      console.log(data)
       this.rsvp_list = data.rsvp.res;
+      console.log('rsvp>>',this.rsvp_list)
     })
 
     this.getdata();
@@ -98,10 +100,11 @@ public message:any="Are you sure you want to delete this?"
     });
   }
 
-
-
+  loadMoreRsvp(){
+    console.log('hitt');
+    this.indexval=this.indexval+2;
+  }
 }
-
 
 //modal component for delete
 

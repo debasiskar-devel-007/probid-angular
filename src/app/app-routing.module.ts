@@ -219,7 +219,10 @@ const routes: Routes = [
   { path: 'pre-owned', component: PreOwnedComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'blog-category', component: BlogCategoryComponent },
-  { path: 'inventory-detail', component: InventoryDetailComponent },
+  { path: 'inventory-detail/:id', component: InventoryDetailComponent,
+  resolve: { inventory_details: ResolveService },
+  data: { requestcondition: { source: 'save_favorite', condition: {_id_object:'id'} }, endpoint: 'datalist' }
+  },
 
 
 // ___________________BLOG MANAGEMENT_________________

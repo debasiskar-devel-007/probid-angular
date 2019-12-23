@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-inventory-detail',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InventoryDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(public activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
+    this.activatedRoute.data.forEach((res)=>{
+      let result:any
+      result=res.inventory_details.res;
+      console.log('inventory_details >>',result)
+
+    })
+   
   }
 
 }

@@ -140,7 +140,7 @@
         </span>
         <span class="mainwrappercontent">
           <mat-list class="rightcontent" *ngIf="search != null && search.length>=0">
-            <mat-list-item class="rightcontentrow" *ngFor="let item of search; let i= index;">
+            <mat-list-item class="rightcontentrow" *ngFor="let item of search |  slice:0:indexval; let i= index;">
               <mat-card-content class="col-1-3">
                 <span class="as_imgwrapper">
                     <span *ngIf="indexCount == i && indexCountForImg != null;then content else other_content"></span>    
@@ -155,7 +155,7 @@
                 <span class="as_sm_imgmainwrapper">
                     <owl-carousel [options]="carouselOptions" [items]="TestimonialListArray" [carouselClasses]="['owl-theme', 'row', 'sliding']">
                       <div class="sm-imgwrapper" *ngFor="let img of item.media.photo_links; let j= index">
-                          <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
+                          <img *ngIf="item.media.photo_links == null" src="../../../../../assets/images/default_car_img.jpeg">
                           <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="img" (click)="showimg(i,j)">
                       </div>
                     </owl-carousel>
@@ -196,18 +196,19 @@
                       <mat-form-field *ngIf="user_details.type == 'salesrep'" class="select-customer" >
                         <mat-label>Select Customer</mat-label>
 
-                        <mat-select [(ngModel)]="customer_id">
-                          <mat-option  *ngFor="let item of customerList" [value]="item._id">
+                        <mat-select [(ngModel)]="item.customer_id">
+                          <mat-option *ngFor="let item of customerList" [value]="item._id">
                             {{item.firstname}}
                           </mat-option>
                         </mat-select>
+                        </mat-form-field>
                         
-                      </mat-form-field>
-                      <span class="errormsg" *ngIf="errorMsg != null && errorMsg != ''" [ngClass]="customer_id !='' ? 'test':'errormsg'" >{{errorMsg}}</span>
-                    </span>
+                      <div>
+                        <span class="errormsg" *ngIf=" errorMsg !=null ||  errorMsg != ''"     [ngClass]="item.customer_id =='' ? 'errormsg':'test'" >{{errorMsg}}</span>
+                      </div>
+                      </span>
 
-                
-
+              
                     </mat-card-content>
                     <mat-card-content class="rrblock1 currentbidprice">
                       <span class="text-wrapper" *ngIf="item.price != null">
@@ -241,6 +242,10 @@
         </span>
       </span>
     </mat-card>
+    <div>
+      <button mat-flat-button color="primary" type="button" *ngIf="search !=null && indexval < search.length" (click)="loadMoreSearchResult() " >Load More</button>
+    </div>
+
   </div>
 </div>
 
