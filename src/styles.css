@@ -218,6 +218,15 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
   padding: 0;
 } */
 
+.sharelinkrightbottom .mat-list-item-content{
+  width: 100%;  
+  padding: 0px!important;
+}
+
+
+
+
+
 @media screen and (max-width: 1600px){
   .owl-carousel .owl-nav button.owl-prev {
       position: absolute;
