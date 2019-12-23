@@ -1,11 +1,95 @@
 <div class="adminwrappercls">
     <app-header></app-header>
     <div class="main-content-wrap">
-            <mat-card class="generalcls blog" style="padding: 0 !important;">
+            <mat-card class="generalcls" style="padding: 0 !important;">
                 <button (click)="copyInputMessage(userinput)" value="click to copy" >Share Link for Castomer Sign Up</button>
                 <input matInput type="text" value="{{apiService.share_link}}customer-signup/{{userid}}" #userinput>
                 
-                <img src="../../../../assets/images/rep-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
+                <!-- <img src="../../../../assets/images/rep-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
+
+                <mat-card-content class="rep-dashboard-banner">
+                    <span class="rep-dashboard-banner-inner">
+                        <h1 class="titleadmin">Welcome to Probid Auto</h1>
+                        <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <br><br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <mat-button class="btnblue">Lean More</mat-button>
+                    </span>                    
+                </mat-card-content>
+
+                <mat-card-content class="rep-dashboard-block1">
+                    <span class="rep-dashboard-block1-inner">
+                        <h1 class="titleadmin">Sharelink</h1>     
+                        <span class="flexbox2column">
+                            <span class="listsingle">
+                                <mat-list class="sharelinklists">
+                                    <mat-list-item class="sharelinklistsingle">
+                                        <span>
+                                            <span class="sharelinkimgwrapper">
+                                                <img src="../../../../assets/images/logomain.png">
+                                            </span>
+                                            <span class="sharelinkcontent">
+                                                <h2>ProBid Auto Customer share link</h2>
+                                                <p><mat-button>Grab URL</mat-button>  https://www.probidauto.com/</p>
+                                                <span class="blogsociallists">
+                                                    <a class="sociallink fa fb">
+                                                        <fa name="facebook" class="fa-facebook"></fa>
+                                                      </a>
+                                                      <a class="sociallink fa twi">
+                                                        <fa name="twitter" class="fa-twitter"></fa>
+                                                      </a>
+                                                      <a class="sociallink fa lin">
+                                                        <fa name="linkedin" class="fa-linkedin"></fa>
+                                                      </a>
+                                                      <a class="sociallink fa env">
+                                                        <fa name="envelope" class="fa-envelope"></fa>
+                                                      </a>
+                                                      <a class="sociallink fa share">
+                                                        <fa name="share" class="fa-share"></fa>
+                                                      </a>
+                                                </span>
+                                            </span>
+                                        </span>                                      
+                                    </mat-list-item>
+                                    <mat-list-item class="sharelinklistsingle">
+                                        <span>
+                                            <span class="sharelinkimgwrapper">
+                                                <img src="../../../../assets/images/logomain.png">
+                                            </span>
+                                            <span class="sharelinkcontent">
+                                                <h2>ProBid Auto Dealer share link</h2>
+                                                <p><mat-button>Grab URL</mat-button>  https://www.probidauto.com/</p>
+                                                <span class="blogsociallists">
+                                                    <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
+                                                    <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
+                                                    <a class="sociallink fa pin"><fa name="pinterest" class="fa-pinterest"></fa></a>
+                                                    <a class="sociallink fa lin"><fa name="linkedin" class="fa-linkedin"></fa></a>
+                                                    <a class="sociallink fa env"><fa name="envelope" class="fa-envelope"></fa></a>
+                                                    <a class="sociallink fa share"><fa name="share" class="fa-share"></fa></a>
+                                                  </span>
+                                            </span>
+                                        </span>
+                                    </mat-list-item>
+                                </mat-list>
+                            </span>
+                            <span class="listsingle sharelinkright">
+                                <mat-list class="sharelinkrightlists">
+                                    <mat-list-item class="sharelinkrighttop">
+                                        <span><h3>YOU HAVE COMPLETED 13 / 26 LESSONS</h3></span>
+                                        <span></span>
+                                    </mat-list-item>
+                                    <mat-list-item class="sharelinkrightmiddle">
+                                        Traning center
+                                    </mat-list-item>
+                                    <mat-list-item class="sharelinkrightbottom">
+                                        <span>LAST LESSON:<br>LESSON/WEEK 5</span>
+                                        <span>NEXT LESSON: <br>LESSON/WEEK 5</span>
+                                    </mat-list-item>
+                                </mat-list>
+                            </span>
+                        </span>                  
+                    </span>                    
+                </mat-card-content>
+
                 <img src="../../../../assets/images/rep-dashboard-img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
                 <img src="../../../../assets/images/rep-dashboard-img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">
                 <img src="../../../../assets/images/rep-dashboard-img4.jpg" style="width: 100%; display: block; margin: 0; padding: 0;">

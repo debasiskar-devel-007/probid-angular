@@ -351,7 +351,7 @@ float: left;}
 .breadcrumb li a:hover { background: #b5bdbf; }
 .breadcrumb li a:hover:after { border-left-color: #b5bdbf !important; }  
 
-app-bk-leftdiv{position: relative; z-index: 999;}
+app-bk-leftdiv{position: relative; z-index: 999; display: none;}
 
 
 
