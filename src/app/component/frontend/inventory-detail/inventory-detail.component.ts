@@ -8,6 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class InventoryDetailComponent implements OnInit {
 
+  public data:any;
+
   constructor(public activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
@@ -15,6 +17,14 @@ export class InventoryDetailComponent implements OnInit {
       let result:any
       result=res.inventory_details.res;
       console.log('inventory_details >>',result)
+
+      this.data=result[0].card_data
+
+      console.log('card_data',this.data)
+
+
+
+
 
     })
    
