@@ -836,3 +836,16 @@
 
 
 
+.flexbox4column .titleadmin{
+    font-family: 'Helvetica-Regular';
+    font-size: 24px!important;
+    line-height: normal!important;
+    text-transform: capitalize;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 18px;
+    margin-top: 0px;
+    color: #343c5c;
+    white-space: normal!important;
+    position: relative;
+}
