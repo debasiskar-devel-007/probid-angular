@@ -217,6 +217,19 @@ display: flex;
 width: 98%;
 padding-left: 2%;
 }
+
+.subrighrwrapper h2 span{
+  font-family: 'Helvetica-Normal';
+  font-size: 16px;
+  margin: 0;
+  font-weight: normal;
+  text-transform: capitalize;
+  color: #0dbce7;
+  line-height: normal;
+  cursor: pointer;
+}
+
+
 .sub-col-6{width: 60%;}
 .sub-col-4{width: 40%;}
 .text-wrapper h1{font-family: 'HelveticaBold'; font-size: 36px; margin: 0; text-transform: uppercase;  padding-bottom: 15px;}
@@ -314,3 +327,4 @@ padding: 10px;
 .test{
   display: none;
 }
+
