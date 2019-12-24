@@ -224,6 +224,8 @@ const routes: Routes = [
   data: { requestcondition: { source: 'save_favorite', condition: {_id_object:'id'} }, endpoint: 'datalist' }
   },
 
+  { path: 'inventory-detail', component: InventoryDetailComponent},
+
 
 // ___________________BLOG MANAGEMENT_________________
 // =======================================================

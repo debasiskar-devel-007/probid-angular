@@ -183,7 +183,6 @@ import { ListingSubscriptionComponent } from './component/backend/newsletterlist
 import { ListingSubcategoryComponent } from './component/backend/newsletterlists/listing-subcategory/listing-subcategory.component';
 
 
-
 //****** for video Modal*********//
 
 @NgModule({
@@ -340,7 +339,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
     
     // SharetoolsModule
   ],
-  providers: [CookieService, AuthGuard, ApiService, SidenavService],
+  providers: [CookieService, AuthGuard, ApiService, SidenavService,BasicInventorySearchBackendComponent],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent,DeleteModalRsvpComponent,RemoveModalComponent]

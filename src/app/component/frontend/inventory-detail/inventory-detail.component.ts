@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import {BasicInventorySearchBackendComponent} from '../../backend/inventory/basic-inventory-search-backend/basic-inventory-search-backend.component';
 
 
 @Component({
@@ -66,7 +67,7 @@ export class InventoryDetailComponent implements OnInit {
   public indexVal:any=4;
   public makeName:any;
 
-  constructor(public activatedRoute:ActivatedRoute,public apiService:ApiService) { }
+  constructor(public activatedRoute:ActivatedRoute,public apiService:ApiService ,public observableData:BasicInventorySearchBackendComponent) { }
 
   ngOnInit() {
     this.activatedRoute.data.forEach((res)=>{
@@ -84,6 +85,13 @@ export class InventoryDetailComponent implements OnInit {
 
     })
     this.saveSearch()
+
+    //for obserable data
+    // const data=this.observableData.dataObserve;
+    // this.data.subscribe(res=>{
+    //   console.log('observ>>',res)
+    // })
+    
    
   }
 
@@ -99,9 +107,9 @@ export class InventoryDetailComponent implements OnInit {
   saveSearch(){
     let data: any = {
       source: 'save_favorite',
-      condition:{
-        "make":this.makeName
-      }
+      // condition:{
+      //   "card_data.build.make":this.makeName
+      // }
     }
     this.apiService.getDataForDatalist(data).subscribe((res: any)=>{
       console.log('save >>',res.res);
@@ -109,6 +117,7 @@ export class InventoryDetailComponent implements OnInit {
       this.saveList=res.res;
   });
 }
+
 
 
 

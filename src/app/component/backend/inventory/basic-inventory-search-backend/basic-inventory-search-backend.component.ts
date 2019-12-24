@@ -7,7 +7,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import {MatSnackBar} from '@angular/material/snack-bar';
-
+import { Observable, Subject, Subscription ,Observer} from 'rxjs';
+import { map } from 'rxjs/operators';
 export interface DialogData {
   errorMsg: string;
 }
@@ -22,6 +23,7 @@ export interface DialogData {
 export class BasicInventorySearchBackendComponent implements OnInit {
 
   public MediaListArray: any = [];
+  public carData:Subscription;
 
   carouselOptions = {
     margin: 5,
@@ -113,7 +115,8 @@ export class BasicInventorySearchBackendComponent implements OnInit {
     public dialog: MatDialog,
     public cookieService: CookieService,
     public router: Router,
-    public snackBar:MatSnackBar
+    public snackBar:MatSnackBar,
+   
   ) {
     this.spinnerval=0;
 
@@ -393,5 +396,23 @@ export class BasicInventorySearchBackendComponent implements OnInit {
     this.indexval=this.indexval+2;
 
   }
+//for observeable
+  // dataObserve(item:any){
+  //   console.log('data_item >>',item)
+
+  //   const observeable=new Observable(item)
+  //   console.log('$$>>>>>',observeable)
+    
+
+  //     setTimeout(() => {
+  //     //   // observer.next(item);
+  //       this.router.navigateByUrl('/inventory-detail')
+  //     }, 2000);
+   
+    
+  //   // console.log('$$>>>>>',observeable)
+  //   return observeable;
+  
+  // }
 
 }
