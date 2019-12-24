@@ -31,10 +31,11 @@
 <mat-card class="ptb-40 generalcls inventorydetail">
   <span class="mainwrappercontent">
     <span>
-      <mat-card-title class="headinginfo">{{data.heading}}</mat-card-title>      
+      <mat-card-title class="headinginfo">{{data.heading}}</mat-card-title>
       <mat-card-content>
         <span class="inventorydetailblock">
           <span class="inventorydetailblockleft">
+
            
               <span class="big_imagewrapper" >
 
@@ -62,6 +63,31 @@
                   </div>
                 </owl-carousel>
                   <!-- <mat-list-item class="single_thumb_wrapper">
+
+
+            <span class="big_imagewrapper">
+
+              <img *ngIf="data.media.photo_links == null" src="../../../../assets/images/no-image-default.jpg">
+
+              <img [src]="data.media.photo_links[0]">
+
+              <span *ngIf="indexImg !=null && indexImg != ''"><img [src]="data.media.photo_links[indexImg]"></span>
+
+            </span>
+
+            <span class="thumb_imgwrapper">
+              <mat-list class="flexbox4columnthumb">
+                <mat-list-item class="single_thumb_wrapper" *ngFor="let item of data.media.photo_links ; let i=index ">
+                  <span class="single_thumb_imagewrapper">
+                    <img [src]="item" (click)="showImage(item,i)">
+
+                    <img *ngIf="data.media.photo_links == null" src="../../../../../assets/images/default_car_img.jpeg">
+
+                  </span>
+                </mat-list-item>
+
+                <mat-list-item class="single_thumb_wrapper">
+
                     <span class="single_thumb_imagewrapper">
                       <img src="../../../../assets/images/no-image-default.jpg">
                     </span>
@@ -96,9 +122,11 @@
                       <img src="../../../../assets/images/no-image-default.jpg">
                     </span>
                   </mat-list-item> -->
+
                  
                 </span>
               </span>
+
           </span>
           <span class="inventorydetailblockright">
             <span class="inventorydetailtop">
@@ -107,8 +135,14 @@
                   <mat-list>
                     <mat-list-item><span>VIN :</span> {{data.vin}} </mat-list-item>
                     <mat-list-item class="clsprice"><span>Price :</span> {{data.price}}</mat-list-item>
-                    <mat-list-item><span>Odometer :</span> 143310 mi</mat-list-item>
-                   </mat-list>
+
+                    <mat-list-item>
+                      <span>Odometer :</span> <span *ngIf="data.miles != null && data.miles !=''">{{data.miles}}
+                        mi</span>
+                      <span *ngIf="data.miles == null || data.miles ==''">N/A</span>
+                    </mat-list-item>
+                    <!-- <mat-list-item *ngIf="data.miles == '' && data.miles == null "><span>Odometer :</span>N/A</mat-list-item> -->
+                  </mat-list>
                 </span>
                 <span class="topinnerinforight">
                   <h1 class="btnrsvp">RSVP</h1>
@@ -126,95 +160,96 @@
               </span>
             </span>
             <span class="inventorydetailmiddle detaillistcls">
-                <span class="singlecolumn">
-                  <mat-card-title class="headerlists">Features</mat-card-title>
-                  <mat-list class="flexbox2column">
-                    <mat-list-item>
-                      <label>id : </label>
-                      <span>{{data.id}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Drivetrain : </label>
-                      <span>{{data.build.drivetrain}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Year : </label>
-                      <span>{{data.build.year}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Fuel Type : </label>
-                      <span>{{data.build.fuel_type}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Make : </label>
-                      <span>{{data.build.make}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Exterior Color : </label>
-                      <span>{{data.exterior_color}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Model : </label>
-                      <span>{{data.build.model }}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Interior Color : </label>
-                      <span>{{data.interior_color}}</span>
-                    </mat-list-item>
-  
-                    <mat-list-item>
-                      <label>Trim : </label>
-                      <span>{{data.build.trim}}</span>
-                    </mat-list-item>
-  
-                    <mat-list-item>
-                      <label>Engine : </label>
-                      <span>{{data.build.engine}}</span>
-                    </mat-list-item>
-  
-                    <mat-list-item>
-                      <label>Body Type : </label>
-                      <span>{{data.build.body_type}}</span>
-                    </mat-list-item>
-  
-                    <mat-list-item>
-                      <label>Engine Size : </label>
-                      <span>{{data.build.engine_size}}</span>
-                    </mat-list-item>
-  
-                    <mat-list-item>
-                      <label>Body Subtype : </label>
-                      <span>unknown</span>
-                    </mat-list-item>
-  
-                    <mat-list-item>
-                      <label>Engine Block : </label>
-                      <span>{{data.build.engine_block}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Vehicle Type : </label>
-                      <span>{{data.build.cylinders}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Doors : </label>
-                      <span>{{data.build.doors}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Transmission : </label>
-                      <span>{{data.build.transmission}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Cylinders : </label>
-                      <span>{{data.build.cylinders}}</span>
-                    </mat-list-item>
-                  </mat-list>
-                </span>
-                
+              <span class="singlecolumn">
+                <mat-card-title class="headerlists">Features</mat-card-title>
+                <mat-list class="flexbox2column">
+                  <mat-list-item>
+                    <label>id : </label>
+                    <span>{{data.id}}</span>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <label>Drivetrain : </label>
+                    <span>{{data.build.drivetrain}}</span>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <label>Year : </label>
+                    <span>{{data.build.year}}</span>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <label>Fuel Type : </label>
+                    <span>{{data.build.fuel_type}}</span>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <label>Make : </label>
+                    <span>{{data.build.make}}</span>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <label>Exterior Color : </label>
+                    <span>{{data.exterior_color}}</span>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <label>Model : </label>
+                    <span>{{data.build.model }}</span>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <label>Interior Color : </label>
+                    <span>{{data.interior_color}}</span>
+                  </mat-list-item>
+
+                  <mat-list-item>
+                    <label>Trim : </label>
+                    <span>{{data.build.trim}}</span>
+                  </mat-list-item>
+
+                  <mat-list-item>
+                    <label>Engine : </label>
+                    <span>{{data.build.engine}}</span>
+                  </mat-list-item>
+
+                  <mat-list-item>
+                    <label>Body Type : </label>
+                    <span>{{data.build.body_type}}</span>
+                  </mat-list-item>
+
+                  <mat-list-item>
+                    <label>Engine Size : </label>
+                    <span>{{data.build.engine_size}}</span>
+                  </mat-list-item>
+
+                  <mat-list-item>
+                    <label>Body Subtype : </label>
+                    <span *ngIf="data.build.body_subtype != null && data.build.body_subtype != ''">{{data.build.body_subtype}}</span>
+                    <span *ngIf="data.build.body_subtype == null || data.build.body_subtype == ''">N/A</span>
+                  </mat-list-item>
+
+                  <mat-list-item>
+                    <label>Engine Block : </label>
+                    <span>{{data.build.engine_block}}</span>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <label>Vehicle Type : </label>
+                    <span>{{data.build.cylinders}}</span>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <label>Doors : </label>
+                    <span>{{data.build.doors}}</span>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <label>Transmission : </label>
+                    <span>{{data.build.transmission}}</span>
+                  </mat-list-item>
+                  <mat-list-item>
+                    <label>Cylinders : </label>
+                    <span>{{data.build.cylinders}}</span>
+                  </mat-list-item>
+                </mat-list>
+              </span>
+
             </span>
             <span class="inventorydetailbottom detaillistcls">
               <span class="doublecolumn">
                 <span>
-                  <mat-card-title  class="headerlists">SELLER INFORMATION</mat-card-title>
+                  <mat-card-title class="headerlists">SELLER INFORMATION</mat-card-title>
                   <mat-list class="flexbox1column">
                     <mat-list-item>
                       <label>Seller Type : </label>
@@ -231,28 +266,34 @@
                   </mat-list>
                 </span>
                 <span>
-                  <mat-card-title  class="headerlists">financing options</mat-card-title>
+                  <mat-card-title class="headerlists">financing options</mat-card-title>
                   <mat-list class="flexbox1column">
                     <mat-list-item>
                       <label>Loan Term : </label>
-                      <span *ngIf="data.financing_options== null || data.financing_options[0].loan_term == null">N/A</span>
+                      <span
+                        *ngIf="data.financing_options== null || data.financing_options[0].loan_term == null">N/A</span>
 
-                      <span *ngIf="data.financing_options!= null && data.financing_options[0].loan_term != null">{{data.financing_options[0].loan_term}}</span>
+                      <span
+                        *ngIf="data.financing_options!= null && data.financing_options[0].loan_term != null">{{data.financing_options[0].loan_term}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Loan Annual Percentage Rate : </label>
-                      <span *ngIf="data.financing_options == null || data.financing_options[0].loan_apr == null">N/A</span>
+                      <span
+                        *ngIf="data.financing_options == null || data.financing_options[0].loan_apr == null">N/A</span>
 
-                      <span *ngIf="data.financing_options!= null && data.financing_options[0].loan_apr != null">{{data.financing_options[0].loan_apr}}</span>
+                      <span
+                        *ngIf="data.financing_options!= null && data.financing_options[0].loan_apr != null">{{data.financing_options[0].loan_apr}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Down payment : </label>
-                      <span *ngIf="data.financing_options == null || data.financing_options[0].down_payment  == null">N/A</span>
+                      <span
+                        *ngIf="data.financing_options == null || data.financing_options[0].down_payment  == null">N/A</span>
 
-                      <span *ngIf="data.financing_options!= null && data.financing_options[0].down_payment != null">{{data.financing_options[0].down_payment}}</span>
+                      <span
+                        *ngIf="data.financing_options!= null && data.financing_options[0].down_payment != null">{{data.financing_options[0].down_payment}}</span>
                     </mat-list-item>
                   </mat-list>
-                </span>                  
+                </span>
               </span>
             </span>
           </span>
@@ -267,7 +308,7 @@
               <mat-list class="flexbox4column">
                 <mat-list-item>
                   <label>Seller id : </label>
-                  <span>unknown</span>
+                  <span>{{data.dealer.id}}</span>
                 </mat-list-item>
                 <mat-list-item>
                   <label>Dealer Type : </label>
@@ -323,7 +364,7 @@
       <mat-card-content class="adm_dashboard_block2 inventorydetailsimilarv">
         <mat-card-title class="sectionheader">Similar Vehicles</mat-card-title>
         <mat-list role="list" class="flexbox4columnsv">
-            <mat-list-item role="listitem" class="block1socialadvosingle">
+          <!-- <mat-list-item role="listitem" class="block1socialadvosingle">
                 <span class="block1socialadvosingleinner">
                     <span class="topblock">
                         <span class="rsvplistimgwrapper">                           
@@ -350,37 +391,46 @@
                           </mat-list>
                       </span>
                 </span>                                
-            </mat-list-item>
-            <mat-list-item role="listitem" class="block1socialadvosingle">
-              <span class="block1socialadvosingleinner">
-                  <span class="topblock">
-                      <span class="rsvplistimgwrapper">                           
-                          <img src="../../../../assets/images/adm-socialadvo-img2.jpg">
-                      </span>
-                    </span>
+            </mat-list-item> -->
+          <mat-list-item role="listitem" class="block1socialadvosingle"
+            *ngFor="let item of saveList | slice:0:indexVal">
+            <span class="block1socialadvosingleinner">
+              <span class="topblock">
+                <span class="rsvplistimgwrapper">
+                  <img [src]="item.card_data.media.photo_links[0]">
+                  <img *ngIf="item.card_data.media.photo_links == null" src="../../../../assets/images/adm-socialadvo-img2.jpg">
 
+                </span>
+              </span>
+              <span class="middleblock">
+                <h2>{{item.card_data.heading}}</h2>
+                <span class="pricecls">
+                  $ {{item.card_data.price}}
+                </span>
+                <span class="titlecls">
+                  <h1 class="btnrsvp">RSVP</h1>
+                </span>
+              </span>
+              <span class="bottomblockss">
+                <mat-list>
+                  <mat-list-item class="pa_blockfootertext">
+                    <strong><img src="../../../../assets/images/milesicon.png">
+                    </strong><span
+                      *ngIf="item.card_data.miles !=null && item.card_data.miles != ''">{{item.card_data.miles}}</span>
+                    <span *ngIf="item.card_data.miles ==null || item.card_data.miles == ''">N/A</span>
+                  </mat-list-item>
 
-                    <span class="middleblock">   
-
-                      <h2>BMW 535I, NAVI, LEATHER,  ABS</h2>
-
-                      <span class="pricecls">
-                          $ 45 000
-                      </span>
-                      <span class="titlecls">
-                        <h1 class="btnrsvp">RSVP</h1>
-                      </span>
-                    </span>
-                    <span class="bottomblockss">                                  
-                      <mat-list>
-                          <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/milesicon.png"></strong> 108926</mat-list-item>                                        
-                          <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/drivetrainicon.png"></strong> 4WD</mat-list-item> 
-                          <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/bodytypeicon.png"></strong> Manual</mat-list-item>
-                        </mat-list>
-                    </span>
-              </span>                                
-                </mat-list-item>
-                <mat-list-item role="listitem" class="block1socialadvosingle">
+                  <mat-list-item class="pa_blockfootertext"> <strong><img
+                        src="../../../../assets/images/drivetrainicon.png"></strong> {{item.card_data.build.drivetrain}}
+                  </mat-list-item>
+                  <mat-list-item class="pa_blockfootertext"> <strong><img
+                        src="../../../../assets/images/bodytypeicon.png"></strong>{{item.card_data.build.transmission}}
+                  </mat-list-item>
+                </mat-list>
+              </span>
+            </span>
+          </mat-list-item>
+          <!-- <mat-list-item role="listitem" class="block1socialadvosingle">
                   <span class="block1socialadvosingleinner">
                       <span class="topblock">
                           <span class="rsvplistimgwrapper">                           
@@ -433,17 +483,17 @@
                           </mat-list>
                       </span>
                 </span>                                
-            </mat-list-item>
-            
+            </mat-list-item> -->
+
         </mat-list>
         <span class="btnwrappercls">
-            <mat-button mat-button class="btnblue" [routerLink]="['/save-search-admin']">View All</mat-button>
+          <mat-button mat-button class="btnblue" [routerLink]="['/save-search-admin']">View All</mat-button>
         </span>
-    </mat-card-content>
+      </mat-card-content>
 
     </span>
-  </span> 
-</mat-card> 
+  </span>
+</mat-card>
 
 
 <app-footer></app-footer>

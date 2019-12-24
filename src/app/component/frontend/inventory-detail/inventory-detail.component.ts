@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
+
 
 @Component({
   selector: 'app-inventory-detail',
@@ -11,6 +13,7 @@ export class InventoryDetailComponent implements OnInit {
   public data:any;
   public indexImg:any;
   public item:any;
+
   carouselOptions = {
     margin: 5,
     nav: true,
@@ -59,7 +62,10 @@ export class InventoryDetailComponent implements OnInit {
     }
   }
 
-  constructor(public activatedRoute:ActivatedRoute) { }
+  public saveList:any;
+  public indexVal:any=4;
+
+  constructor(public activatedRoute:ActivatedRoute,public apiService:ApiService) { }
 
   ngOnInit() {
     this.activatedRoute.data.forEach((res)=>{
@@ -73,6 +79,7 @@ export class InventoryDetailComponent implements OnInit {
       console.log('card_data',this.data)
 
     })
+    this.saveSearch()
    
   }
 
@@ -82,5 +89,20 @@ export class InventoryDetailComponent implements OnInit {
     this.indexImg=i
 
   }
+
+  //datalist for save search
+
+  saveSearch(){
+    let data: any = {
+      source: 'save_favorite'
+    }
+    this.apiService.getDataForDatalist(data).subscribe((res: any)=>{
+      console.log('save >>',res.res);
+
+      this.saveList=res.res;
+  });
+}
+
+
 
 }
