@@ -31,26 +31,31 @@
 <mat-card class="ptb-40 generalcls inventorydetail">
   <span class="mainwrappercontent">
     <span>
-      <mat-card-title class="headinginfo">2017 ACURA RDX TECH PKG</mat-card-title>      
+      <mat-card-title class="headinginfo">{{data.heading}}</mat-card-title>      
       <mat-card-content>
         <span class="inventorydetailblock">
           <span class="inventorydetailblockleft">
-              <span class="big_imagewrapper">
-                  <img src="../../../../assets/images/inventory-big-img1.jpg">
+           
+              <span class="big_imagewrapper" >
+               
+                  <img [src]="data.media.photo_links[0]">
+               
+                  <img [src]="data.media.photo_links[indexImg]">
               </span>
+              <!-- <span class="big_imagewrapper" >
+                <img [src]="data.media.photo_links[0]">
+            </span> -->
               <span class="thumb_imgwrapper">
                 <mat-list class="flexbox4columnthumb">
-                  <mat-list-item class="single_thumb_wrapper">
+                  <mat-list-item class="single_thumb_wrapper" *ngFor="let item of data.media.photo_links ; let i=index ">
                     <span class="single_thumb_imagewrapper">
-                      <img src="../../../../assets/images/inventory-big-img1.jpg">
+                      <img [src]="item" (click)="showImage(item,i)">
+                      <!-- <p>{{item}}</p> -->
+                      <!-- <img src="../../../../assets/images/no-image-default.jpg"> -->
                     </span>
                   </mat-list-item>
-                  <mat-list-item class="single_thumb_wrapper">
-                    <span class="single_thumb_imagewrapper">
-                      <img src="../../../../assets/images/no-image-default.jpg">
-                    </span>
-                  </mat-list-item>
-                  <mat-list-item class="single_thumb_wrapper">
+
+                  <!-- <mat-list-item class="single_thumb_wrapper">
                     <span class="single_thumb_imagewrapper">
                       <img src="../../../../assets/images/no-image-default.jpg">
                     </span>
@@ -80,7 +85,13 @@
                       <img src="../../../../assets/images/no-image-default.jpg">
                     </span>
                   </mat-list-item>
-                 </mat-list>
+                  <mat-list-item class="single_thumb_wrapper">
+                    <span class="single_thumb_imagewrapper">
+                      <img src="../../../../assets/images/no-image-default.jpg">
+                    </span>
+                  </mat-list-item> -->
+                 
+                </mat-list>
               </span>
           </span>
           <span class="inventorydetailblockright">
@@ -88,8 +99,8 @@
               <span class="inventorydetailtopinner">
                 <span class="topinnerinfoleft">
                   <mat-list>
-                    <mat-list-item><span>VIN :</span> 1FTWW3BR7AEA93187 </mat-list-item>
-                    <mat-list-item class="clsprice"><span>Price :</span> 24987</mat-list-item>
+                    <mat-list-item><span>VIN :</span> {{data.vin}} </mat-list-item>
+                    <mat-list-item class="clsprice"><span>Price :</span> {{data.price}}</mat-list-item>
                     <mat-list-item><span>Odometer :</span> 143310 mi</mat-list-item>
                    </mat-list>
                 </span>
@@ -105,81 +116,81 @@
                   <mat-list class="flexbox2column">
                     <mat-list-item>
                       <label>id : </label>
-                      <span>1FTWW3BR7AEA93187-2d993255-03bb</span>
+                      <span>{{data.id}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Drivetrain : </label>
-                      <span>RWD</span>
+                      <span>{{data.build.drivetrain}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Year : </label>
-                      <span>2010</span>
+                      <span>{{data.build.year}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Fuel Type : </label>
-                      <span>Unleaded</span>
+                      <span>{{data.build.fuel_type}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Make : </label>
-                      <span>Ford</span>
+                      <span>{{data.build.make}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Exterior Color : </label>
-                      <span>Black</span>
+                      <span>{{data.exterior_color}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Model : </label>
-                      <span>F-150</span>
+                      <span>{{data.build.model }}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Interior Color : </label>
-                      <span>EBONY</span>
+                      <span>{{data.interior_color}}</span>
                     </mat-list-item>
   
                     <mat-list-item>
                       <label>Trim : </label>
-                      <span>XLT</span>
+                      <span>{{data.build.trim}}</span>
                     </mat-list-item>
   
                     <mat-list-item>
                       <label>Engine : </label>
-                      <span>4.6L V8</span>
+                      <span>{{data.build.engine}}</span>
                     </mat-list-item>
   
                     <mat-list-item>
                       <label>Body Type : </label>
-                      <span>Pickup</span>
+                      <span>{{data.build.body_type}}</span>
                     </mat-list-item>
   
                     <mat-list-item>
                       <label>Engine Size : </label>
-                      <span>4.6</span>
+                      <span>{{data.build.engine_size}}</span>
                     </mat-list-item>
   
                     <mat-list-item>
                       <label>Body Subtype : </label>
-                      <span>Extended</span>
+                      <span>unknown</span>
                     </mat-list-item>
   
                     <mat-list-item>
                       <label>Engine Block : </label>
-                      <span>V</span>
+                      <span>{{data.build.engine_block}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Vehicle Type : </label>
-                      <span>Truck</span>
+                      <span>{{data.build.cylinders}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Doors : </label>
-                      <span>4</span>
+                      <span>{{data.build.doors}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Transmission : </label>
-                      <span>Automatic</span>
+                      <span>{{data.build.transmission}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Cylinders : </label>
-                      <span>8</span>
+                      <span>{{data.build.cylinders}}</span>
                     </mat-list-item>
                   </mat-list>
                 </span>
@@ -192,15 +203,15 @@
                   <mat-list class="flexbox1column">
                     <mat-list-item>
                       <label>Seller Type : </label>
-                      <span>1FTWW3BR7AEA93187-2d993255-03bb</span>
+                      <span>{{data.seller_type}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Year : </label>
-                      <span>2010</span>
+                      <span>{{data.build.year}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Make : </label>
-                      <span>Ford</span>
+                      <span>{{data.build.make}}</span>
                     </mat-list-item>
                   </mat-list>
                 </span>
@@ -209,15 +220,15 @@
                   <mat-list class="flexbox1column">
                     <mat-list-item>
                       <label>Loan Term : </label>
-                      <span>72</span>
+                      <span>{{data.financing_options[0].loan_term}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Loan Annual Percentage Rate : </label>
-                      <span>5.9%</span>
+                      <span>{{data.financing_options[0].loan_apr}}</span>
                     </mat-list-item>
                     <mat-list-item>
                       <label>Down payment : </label>
-                      <span>20</span>
+                      <span>{{data.financing_options[0].down_payment}}</span>
                     </mat-list-item>
                   </mat-list>
                 </span>                  
@@ -235,50 +246,50 @@
               <mat-list class="flexbox4column">
                 <mat-list-item>
                   <label>Seller id : </label>
-                  <span>1081250</span>
+                  <span>unknown</span>
                 </mat-list-item>
                 <mat-list-item>
                   <label>Dealer Type : </label>
-                  <span>Franchise</span>
+                  <span>{{data.dealer.dealer_type}}</span>
                 </mat-list-item>
                 <mat-list-item>
                   <label>State : </label>
-                  <span>IL</span>
+                  <span>{{data.dealer.state}}</span>
                 </mat-list-item>
                 <mat-list-item>
                   <label>Longitude : </label>
-                  <span>88.1611</span>
+                  <span>{{data.dealer.longitude}}</span>
                 </mat-list-item>
                 <mat-list-item>
                   <label>Website : </label>
-                  <span>Penningtonford.com</span>
+                  <span>{{data.dealer.website}}</span>
                 </mat-list-item>
                 <mat-list-item>
                   <label>Street : </label>
-                  <span>807 S. Van Buren</span>
+                  <span>{{data.dealer.street}}</span>
                 </mat-list-item>
                 <mat-list-item>
                   <label>Country : </label>
-                  <span>US</span>
+                  <span>{{data.dealer.country}}</span>
                 </mat-list-item>
                 <mat-list-item>
                   <label>Zip : </label>
-                  <span>62448</span>
+                  <span>{{data.dealer.zip}}</span>
                 </mat-list-item>
 
                 <mat-list-item>
                   <label>Name : </label>
-                  <span>Pennington Ford</span>
+                  <span>{{data.dealer.name}}</span>
                 </mat-list-item>
 
                 <mat-list-item>
                   <label>City : </label>
-                  <span>Newton</span>
+                  <span>{{data.dealer.city}}</span>
                 </mat-list-item>
 
                 <mat-list-item>
                   <label>Latitude : </label>
-                  <span>38.9814</span>
+                  <span>{{data.dealer.latitude}}</span>
                 </mat-list-item>
 
               </mat-list>

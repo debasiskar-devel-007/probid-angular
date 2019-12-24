@@ -71,7 +71,8 @@ export class BasicInventorySearchBackendComponent implements OnInit {
     }
   }
 
-  public errorMsg: string = '';
+  public errorMsg: any='Please select Customer name';
+  public indexval:any=4;
   public inventoryCustomerForm: FormGroup;
   public stateList: any;
   public inventory_search_list: any;
@@ -342,7 +343,7 @@ export class BasicInventorySearchBackendComponent implements OnInit {
 
     console.log('rsvpSend>>',item)
     
-if (this.customer_id != null && this.customer_id != '') {
+    if (item.customer_id != '' && item.customer_id != null ) {
         let endpoint: any = "addorupdatedata";
         item.added_by = this.user_id;
         item.status = 0;
@@ -372,8 +373,12 @@ if (this.customer_id != null && this.customer_id != '') {
              
             }
           });
-    } else {
-      this.errorMsg = "Please select Customer name";
+    } else{
+
+      item.customer_id=''
+      this.errorMsg;
+      console.log(this.errorMsg)
+
     }
 
   }
@@ -382,6 +387,11 @@ if (this.customer_id != null && this.customer_id != '') {
     console.log('+++',i, j)
     this.indexCount = i;
     this.indexCountForImg = j;
+  }
+
+  loadMoreSearchResult(){
+    this.indexval=this.indexval+2;
+
   }
 
 }

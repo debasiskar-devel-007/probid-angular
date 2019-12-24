@@ -84,7 +84,8 @@ export class SaveSearchComponent implements OnInit {
 
 
 
-  public errorMsg: string = '';
+  public errorMsg: any='Please select Customer name';
+  public indexval:any=4;
   public inventoryCustomerForm: FormGroup;
   public stateList: any;
   public inventory_search_list: any;
@@ -107,7 +108,7 @@ export class SaveSearchComponent implements OnInit {
   public modalImg: string = '';
   public isFavorite: number = 0;
   public customerList: any = '';
-  public customur_id: any = '';
+  // public customur_id: any = '';
 
 
 
@@ -163,6 +164,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     this.activatedRoute.data.forEach((data) => {
       console.log(data)
       this.search = data.inventory_search.res;
+      console.log('search>>',this.search)
     });
   }
 
@@ -241,17 +243,18 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
 
   // }
 
-  rsvpSend(item: any) {
-
-    console.log('rsvpSend>>',item)
+  rsvpSend(item: any,i:any) {
     
-if (this.customer_id != null && this.customer_id != '') {
-  
+
+    console.log('rsvpSend>>',item,i)
+
+
+  if (item.customer_id != '' && item.customer_id != null ) {
         let endpoint: any = "addorupdatedata";
         item.added_by = this.user_id;
         item.status = 0;
         if (this.user_details.type == 'salesrep') {
-          item.added_for = this.customer_id;
+          item.added_for = item.customer_id;
           } else {
             item.added_for = this.user_id;
           }
@@ -266,23 +269,36 @@ if (this.customer_id != null && this.customer_id != '') {
           this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
             console.log(res);
             if(res.status == "success"){
-             
-             
 
               this.snack.open('RSVP Added Successfully','Ok',{
                 duration:4000
               })
+              
+              let data: any = {
+                id:item._id,
+                source: 'save_favorite'
+              }
+              this.apiService.deleteSingleData1(data).subscribe((res: any)=>{
+                console.log(res);
+                if (res.status == 'success') {
+                  this.search.splice(i,i+1);
+                }
+              })
+
 
              
             }
           });
     } 
-    else {
-      this.errorMsg = "Please select Customer name";
+    else{
+
+      item.customer_id=''
+      this.errorMsg;
+      console.log(this.errorMsg)
+
     }
 
   }
-
 
 
 
@@ -292,6 +308,15 @@ if (this.customer_id != null && this.customer_id != '') {
     this.indexCount = i;
     this.indexCountForImg = j;
 
+  }
+
+  loadMoreSaveSearch(){
+    this.indexval=this.indexval+2;
+  }
+
+  inventoryDetails(val:any){
+    console.log('details>>',val)
+    this.router.navigateByUrl('/inventory-detail/'+val);
   }
 
 }

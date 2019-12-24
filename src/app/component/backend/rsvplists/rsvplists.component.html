@@ -24,7 +24,7 @@
               </span>
               <span class="rsvplistwrapper">
                 <span class="rsvplists">                  
-                  <span class="rsvplistsingle" *ngFor="let item of rsvp_list ; let i=index">
+                  <span class="rsvplistsingle" *ngFor="let item of rsvp_list | slice:0:indexval ; let i=index">
                     <span class="rsvplistsingleinner">
                         <span class="rsvplistsingleleft">
                             <span class="rsvpliststop">
@@ -104,6 +104,10 @@
               </span>  
             </span>  
         </mat-card>
+      <div>
+        <button mat-flat-button color="primary" type="button" *ngIf="rsvp_list !=null && indexval < rsvp_list.length" (click)="loadMoreRsvp() " >Load More</button>
+      </div>
+
       </div>
   </div>
 <app-footer></app-footer>
