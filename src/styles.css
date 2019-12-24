@@ -223,7 +223,12 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
   padding: 0px!important;
 }
 
-
+.customerinfotopcontent .mat-list-item .mat-list-item-content{
+  flex-wrap: wrap;
+}
+.customerinfobottomimagelists .listsingle .mat-list-item-content{
+  padding: 0 !important;
+}
 
 
 

@@ -577,8 +577,17 @@ span.smltxt{
 
 
 .customerinfotopcontent .mat-list-item .mat-list-item-content span{
-  display: block;
+  display: block !important;
+  width: 100%;
 }
+
+.customerinfotopcontent .mat-list-item:nth-child(1) .mat-list-item-content span{
+  width: auto;
+  display: flex;
+  font-weight: 700;
+  color:#2e353b !important;
+}
+
 
 
 @media only screen and (max-width: 1199px) {
