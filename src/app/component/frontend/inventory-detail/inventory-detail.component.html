@@ -49,15 +49,18 @@
                 <img [src]="data.media.photo_links[0]">
             </span> -->
               <span class="thumb_imgwrapper">
-                <mat-list class="flexbox4columnthumb">
-                  <mat-list-item class="single_thumb_wrapper" *ngFor="let item of data.media.photo_links ; let i=index ">
+                <span class="flexbox4columnthumb">
+                  <owl-carousel [options]="carouselOptions" [items]="TestimonialListArray" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+                  
+                  <div class="single_thumb_wrapper" *ngFor="let item of data.media.photo_links ; let i=index ">
                     <span class="single_thumb_imagewrapper">
                       <img [src]="item" (click)="showImage(item,i)">
                       <!-- <p>{{item}}</p> -->
                       <!-- <img src="../../../../assets/images/no-image-default.jpg"> -->
                     </span>
-                  </mat-list-item>
-
+                  </div>
+                </owl-carousel>
                   <!-- <mat-list-item class="single_thumb_wrapper">
                     <span class="single_thumb_imagewrapper">
                       <img src="../../../../assets/images/no-image-default.jpg">
@@ -94,7 +97,7 @@
                     </span>
                   </mat-list-item> -->
                  
-                </mat-list>
+                </span>
               </span>
           </span>
           <span class="inventorydetailblockright">
@@ -109,7 +112,16 @@
                 </span>
                 <span class="topinnerinforight">
                   <h1 class="btnrsvp">RSVP</h1>
-                  <mat-button><i class="material-icons"> favorite </i> ADD</mat-button>
+                  <!-- <mat-button><i class="material-icons"> favorite </i> ADD</mat-button> -->
+                  <mat-form-field class="select-customer">
+                    <mat-label>Select Customer</mat-label>
+                    <mat-select>
+                      <mat-option>
+                        customer
+                      </mat-option>
+                    </mat-select>
+
+                  </mat-form-field>
                 </span>
               </span>
             </span>
