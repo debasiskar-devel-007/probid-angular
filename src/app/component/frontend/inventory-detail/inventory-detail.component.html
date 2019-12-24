@@ -38,22 +38,21 @@
            
               span class="big_imagewrapper" >
 
-                <img *ngIf="data.media.photo_links[0] == null" src="../../../../assets/images/no-image-default.jpg">
+                <img *ngIf="data.media.photo_links == null" src="../../../../assets/images/no-image-default.jpg">
                 
                   <img [src]="data.media.photo_links[0]">
                
               <img [src]="data.media.photo_links[indexImg]">
               </span>
-              <!-- <span class="big_imagewrapper" >
-                <img [src]="data.media.photo_links[0]">
-            </span> -->
+             
               <span class="thumb_imgwrapper">
                 <mat-list class="flexbox4columnthumb">
                   <mat-list-item class="single_thumb_wrapper" *ngFor="let item of data.media.photo_links ; let i=index ">
                     <span class="single_thumb_imagewrapper">
                       <img [src]="item" (click)="showImage(item,i)">
-                      <!-- <p>{{item}}</p> -->
-                      <!-- <img src="../../../../assets/images/no-image-default.jpg"> -->
+
+                      <img *ngIf="data.media.photo_links == null"  src="../../../../../assets/images/default_car_img.jpeg">
+                     
                     </span>
                   </mat-list-item>
 
@@ -171,7 +170,7 @@
   
                     <mat-list-item>
                       <label>Body Subtype : </label>
-                      <span>unknown</span>
+                      <span>N/A</span>
                     </mat-list-item>
   
                     <mat-list-item>
@@ -254,7 +253,7 @@
               <mat-list class="flexbox4column">
                 <mat-list-item>
                   <label>Seller id : </label>
-                  <span>unknown</span>
+                  <span>N/A</span>
                 </mat-list-item>
                 <mat-list-item>
                   <label>Dealer Type : </label>
