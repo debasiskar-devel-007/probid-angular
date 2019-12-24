@@ -234,6 +234,7 @@
   align-items: stretch;
   margin-top: 0;
   height: 82%;
+  width: 100%;
 }
 
 .flexbox1column > .mat-list-item  {
