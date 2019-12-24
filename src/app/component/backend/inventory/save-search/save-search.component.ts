@@ -302,7 +302,6 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
 
 
 
-
   showimg(i: any,j:any){
     // this.modalImg = img;
     console.log('>>>>',i,j)

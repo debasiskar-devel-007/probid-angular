@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class InventoryDetailComponent implements OnInit {
 
   public data:any;
+  public indexImg:any;
 
   constructor(public activatedRoute:ActivatedRoute) { }
 
@@ -22,12 +23,14 @@ export class InventoryDetailComponent implements OnInit {
 
       console.log('card_data',this.data)
 
-
-
-
-
     })
    
+  }
+
+  showImage(item:any,i:any){
+    console.log('>>>',item,i)
+    this.indexImg=i
+
   }
 
 }
