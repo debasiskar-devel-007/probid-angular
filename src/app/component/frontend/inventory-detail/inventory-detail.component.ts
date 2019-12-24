@@ -10,6 +10,7 @@ export class InventoryDetailComponent implements OnInit {
 
   public data:any;
   public indexImg:any;
+  public item:any;
 
   constructor(public activatedRoute:ActivatedRoute) { }
 
@@ -19,7 +20,8 @@ export class InventoryDetailComponent implements OnInit {
       result=res.inventory_details.res;
       console.log('inventory_details >>',result)
 
-      this.data=result[0].card_data
+      this.data=result[0].card_data;
+      // this.item=this.data.financing_options;
 
       console.log('card_data',this.data)
 
@@ -27,6 +29,7 @@ export class InventoryDetailComponent implements OnInit {
    
   }
 
+  //show details
   showImage(item:any,i:any){
     console.log('>>>',item,i)
     this.indexImg=i
