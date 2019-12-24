@@ -15,6 +15,7 @@ export class InventoryDetailComponent implements OnInit {
   public item:any;
   public saveList:any;
   public indexVal:any=4;
+  public makeName:any;
 
   constructor(public activatedRoute:ActivatedRoute,public apiService:ApiService) { }
 
@@ -28,6 +29,9 @@ export class InventoryDetailComponent implements OnInit {
       // this.item=this.data.financing_options;
 
       console.log('card_data',this.data)
+
+      this.makeName=this.data.build.make;
+      console.log('makeName >>',this.makeName)
 
     })
     this.saveSearch()
@@ -45,7 +49,10 @@ export class InventoryDetailComponent implements OnInit {
 
   saveSearch(){
     let data: any = {
-      source: 'save_favorite'
+      source: 'save_favorite',
+      condition:{
+        "make":this.makeName
+      }
     }
     this.apiService.getDataForDatalist(data).subscribe((res: any)=>{
       console.log('save >>',res.res);
