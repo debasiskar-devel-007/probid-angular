@@ -44,7 +44,7 @@ public message:any="Are you sure you want to delete this?"
       source: "send_for_rsvp",
     };
       this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
-        console.log(res);
+        // console.log(res);
         (res.status == "success");
         this.getdata();
       });
