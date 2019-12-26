@@ -319,16 +319,27 @@ getDatalist(requestdata: any) {
 
 
 }
-getDatalistWithToken(requestdata: any, newdata: any){
+getDatalistWithToken(requestdata: any, endpoint: any){
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': newdata.token
+        'Content-Type': 'application/json'
       })
     };
-    var result = this._http.post(this.serverUrlDemo + requestdata.endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
+    var result = this._http.post(this.serverUrlDemo + endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
     return result;
 }
+
+// postDataWithoutToken(endpoint:any, data:any) {
+//   const httpOptions = {
+//     headers: new HttpHeaders({
+//       'Content-Type':  'application/json'
+//     })
+//   };
+//   //console.log('endpoint');
+//   //console.log(endpoint);
+//   var result = this._http.post(this.serverUrl+endpoint, JSON.stringify(data), httpOptions).pipe(map(res => res));
+//   return result;
+// }
 
 getTempToken() {
   var result = this._http.get(this.serverUrlDemo + 'gettemptoken').pipe(map(res => res));
@@ -488,6 +499,9 @@ postdata(requestdata: any) {
     var result = this._http.post(this.serverUrlDemo + 'deletesingledata', JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
     return result;
   }
+
+ 
+
 
 }
 

@@ -10,6 +10,7 @@ import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { isGeneratedFile } from '@angular/compiler/src/aot/util';
 
 
 export interface DialogData {
@@ -139,6 +140,8 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   this.user_details = JSON.parse(this.cookieService.get('user_details'));
   this.user_id = this.user_details._id;
   console.log(this.user_id);
+  console.log(this.user_details)
+  console.log('>>',this.user_details.type)
   
   if(this.user_details.type == "salesrep") {
     let data: any = {
@@ -248,6 +251,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
 
     console.log('rsvpSend>>',item,i)
 
+ 
 
   if (item.customer_id != '' && item.customer_id != null ) {
         let endpoint: any = "addorupdatedata";
