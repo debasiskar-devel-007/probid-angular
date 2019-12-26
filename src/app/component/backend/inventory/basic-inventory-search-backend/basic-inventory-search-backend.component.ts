@@ -345,7 +345,9 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   rsvpSend(item: any) {
 
     console.log('rsvpSend>>',item)
-    
+
+    let userType=this.user_details.type
+console.log('>>>>++>>',userType)    
     if (item.customer_id != '' && item.customer_id != null ) {
         let endpoint: any = "addorupdatedata";
         item.added_by = this.user_id;
@@ -376,7 +378,10 @@ export class BasicInventorySearchBackendComponent implements OnInit {
              
             }
           });
-    } else{
+    } 
+    
+    else{
+      
 
       item.customer_id=''
       this.errorMsg;
@@ -398,22 +403,22 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   }
 
 // for observeable
-  public dataObserve(item:any){
-    console.log('data_item >>',item)
+  // public dataObserve(item:any){
+  //   console.log('data_item >>',item)
 
-    const observeable=new Observable(item)
-    console.log('$$>>>>>',observeable)
+  //   const observeable=new Observable(item)
+  //   console.log('$$>>>>>',observeable)
     
 
-      setTimeout(() => {
-        // observer.next(item);
-        this.router.navigateByUrl('/inventory-detail')
-      }, 2000);
+  //     setTimeout(() => {
+  //       // observer.next(item);
+  //       this.router.navigateByUrl('/inventory-detail')
+  //     }, 2000);
    
     
-    // console.log('$$>>>>>',observeable)
-    return observeable;
+  //   // console.log('$$>>>>>',observeable)
+  //   return observeable;
   
-  }
+  // }
 
 }

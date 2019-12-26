@@ -91,8 +91,10 @@ export class InventoryDetailComponent implements OnInit {
     // this.data.subscribe(res=>{
     //   console.log('observ>>',res)
     // })
+
+    // this.observableData
     
-   
+  
   }
 
   //show details

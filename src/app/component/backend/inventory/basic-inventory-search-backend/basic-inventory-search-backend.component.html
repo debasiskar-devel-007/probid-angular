@@ -204,7 +204,7 @@
                         </mat-form-field>
                         
                       <div>
-                        <span class="errormsg" *ngIf=" errorMsg !=null ||  errorMsg != ''"     [ngClass]="item.customer_id =='' ? 'errormsg':'test'" >{{errorMsg}}</span>
+                        <span class="errormsg" *ngIf=" errorMsg !=null ||  errorMsg != '' && userType != 'customer' "     [ngClass]="item.customer_id =='' ? 'errormsg':'test'" >{{errorMsg}}</span>
                       </div>
                       </span>
 

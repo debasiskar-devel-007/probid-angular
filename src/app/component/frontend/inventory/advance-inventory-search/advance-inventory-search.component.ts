@@ -172,8 +172,6 @@ export class AdvanceInventorySearchComponent implements OnInit {
         // });
 
       }
-
-
     }
 
   }
