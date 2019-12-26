@@ -90,6 +90,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .tablediv .listingtestimonial .searchbar {padding-right: 236px; margin-top: -11px;}
 .tablediv .searchbar .mat-form-field{margin: 0 2px;}
 .mat-form-field-appearance-legacy .mat-form-field-infix{padding: 1em !important; background: #fff;margin-bottom: 10px;}
+.topinnerinforight .mat-form-field-appearance-legacy .mat-form-field-infix{margin-bottom: 0px;}
 .contact-form .mat-form-field-appearance-legacy .mat-form-field-infix {background: #eee;}
 
 .newslettermain .mat-form-field-appearance-legacy .mat-form-field-infix {margin-bottom: 0;}
@@ -244,6 +245,49 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
 
 .rep-dashboard-block5 .flexbox5column.mat-list-base .mat-list-item .mat-list-item-content{
   padding: 0 !important;
+}
+
+
+
+.flexbox4columnthumb .owl-carousel .owl-nav button.owl-prev {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  margin: 0;
+}
+.flexbox4columnthumb .owl-carousel .owl-nav button.owl-next {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  margin: 0;
+}
+
+.flexbox4columnthumb .owl-carousel .owl-nav button.owl-prev, .flexbox4columnthumb .owl-carousel .owl-nav button.owl-next {
+  width: 40px !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+  background: #333 !important;
+}
+
+.flexbox4columnthumb .owl-carousel .owl-nav button .nav-btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.flexbox4columnthumb .owl-theme .owl-nav {
+  margin-top: 0 !important;
+}
+
+.flexbox4columnthumb .owl-carousel.owl-loaded {
+  display: block;
+  padding: 0px 0px;
+}
+
+.rep-dashboard-block6 .mat-list .mat-list-item .mat-list-item-content {
+  padding: 0 !important;
+  height: 100%;
 }
 
 @media screen and (max-width: 1600px){

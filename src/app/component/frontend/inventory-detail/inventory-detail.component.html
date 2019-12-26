@@ -195,55 +195,111 @@
             </span>
 
 
-            <span class="inventorydetailbottom detaillistcls">
+            <span class="inventorydetailbottom detaillistcls inventorydetailuser">
+
+              <!-- For Admin -->
               <span class="flexcolumn ">
                 <span>
                   <mat-card-title class="headerlists">User</mat-card-title>
-                  <!-- <mat-list class="flexbox1column">
-                    <mat-list-item>
-                      <label>Seller Type : </label>
-                      <span>{{data.seller_type}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Year : </label>
-                      <span>{{data.build.year}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Make : </label>
-                      <span>{{data.build.make}}</span>
-                    </mat-list-item>
-                  </mat-list> -->
+                  <span class="rsvplisttypecontentinfowrapper">
+                    <span class="rsvplisttypecontentinfo">
+                      <span class="rsvplisttypeimgwrapper">
+                        <img src="../../../../assets/images/imguser.jpg">
+                      </span>
+                      <span class="listscontent">
+                        <mat-list>
+                          <mat-list-item><span class="labelcls">Name:</span> <span>Lorem Ipsum</span> </mat-list-item>
+                          <mat-list-item><span class="labelcls">Email ID:</span> <span>Lorem Ipsum.1256@gmail.com</span> </mat-list-item>                                              
+                          <mat-list-item><span class="labelcls">Phone:</span> <span>1234567890</span> </mat-list-item>                                              
+                        </mat-list>
+                        
+                      </span>
+                    </span>
+                    <span class="rsvplisttypebottom">
+                      <span>Qualified for Finance: <span class="redcls">NO</span></span>
+                      <span>Job Ticket related to this car: <span class="greencls">[1]</span></span>
+                    </span>
+                  </span>
                 </span>
                 <span>
                   <mat-card-title class="headerlists">Salesrep</mat-card-title>
-                  <!-- <mat-list class="flexbox1column">
-                    <mat-list-item>
-                      <label>Loan Term : </label>
-                      <span
-                        *ngIf="data.financing_options== null || data.financing_options[0].loan_term == null">N/A</span>
-
-                      <span
-                        *ngIf="data.financing_options!= null && data.financing_options[0].loan_term != null">{{data.financing_options[0].loan_term}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Loan Annual Percentage Rate : </label>
-                      <span
-                        *ngIf="data.financing_options == null || data.financing_options[0].loan_apr == null">N/A</span>
-
-                      <span
-                        *ngIf="data.financing_options!= null && data.financing_options[0].loan_apr != null">{{data.financing_options[0].loan_apr}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Down payment : </label>
-                      <span
-                        *ngIf="data.financing_options == null || data.financing_options[0].down_payment  == null">N/A</span>
-
-                      <span
-                        *ngIf="data.financing_options!= null && data.financing_options[0].down_payment != null">{{data.financing_options[0].down_payment}}</span>
-                    </mat-list-item>
-                  </mat-list> -->
+                  <span class="rsvplisttypecontentinfowrapper">
+                    <span class="rsvplisttypecontentinfo">
+                      <span class="rsvplisttypeimgwrapper">
+                        <img src="../../../../assets/images/imguser.jpg">
+                      </span>
+                      <span class="listscontent">
+                        <mat-list>
+                          <mat-list-item><span class="labelcls">Name:</span> <span>Lorem Ipsum</span> </mat-list-item>
+                          <mat-list-item><span class="labelcls">Email ID:</span> <span>Lorem Ipsum.1256@gmail.com</span> </mat-list-item>                                              
+                          <mat-list-item><span class="labelcls">Phone:</span> <span>1234567890</span> </mat-list-item>                                                     
+                        </mat-list>                       
+                      </span>
+                    </span>
+                    <span class="rsvplisttypebottom">
+                      <span>Commission: <span class="redcls">NO</span></span>
+                    </span>
+                  </span>
                 </span>
               </span>
+              <!-- For End Admin -->
+
+               <!-- For Sales Rep -->
+
+              <!-- <span class="flexcolumn ">
+                <span>
+                  <mat-card-title class="headerlists">User</mat-card-title>
+                  <span class="rsvplisttypecontentinfowrapper">
+                    <span class="rsvplisttypecontentinfo">
+                      <span class="rsvplisttypeimgwrapper">
+                        <img src="../../../../assets/images/imguser.jpg">
+                      </span>
+                      <span class="listscontent">
+                        <mat-list>
+                          <mat-list-item><span class="labelcls">Name:</span> <span>Lorem Ipsum</span> </mat-list-item>
+                          <mat-list-item><span class="labelcls">Email ID:</span> <span>Lorem Ipsum.1256@gmail.com</span> </mat-list-item>                                              
+                          <mat-list-item><span class="labelcls">Phone:</span> <span>1234567890</span> </mat-list-item>                                              
+                        </mat-list>
+                        
+                      </span>
+                    </span>
+                    <span class="rsvplisttypebottom">
+                      <span>Qualified for Finance: <span class="redcls">NO</span></span>
+                      <span>Job Ticket related to this car: <span class="greencls">[1]</span></span>
+                    </span>
+                  </span>
+                </span>                                
+              </span> -->
+              
+              <!-- For End Sales Rep -->
+
+              <!-- For Customer -->
+
+              <!-- <span class="flexcolumn ">               
+                <span>
+                  <mat-card-title class="headerlists">Salesrep</mat-card-title>
+                  <span class="rsvplisttypecontentinfowrapper">
+                    <span class="rsvplisttypecontentinfo">
+                      <span class="rsvplisttypeimgwrapper">
+                        <img src="../../../../assets/images/imguser.jpg">
+                      </span>
+                      <span class="listscontent">
+                        <mat-list>
+                          <mat-list-item><span class="labelcls">Name:</span> <span>Lorem Ipsum</span> </mat-list-item>
+                          <mat-list-item><span class="labelcls">Email ID:</span> <span>Lorem Ipsum.1256@gmail.com</span> </mat-list-item>                                              
+                          <mat-list-item><span class="labelcls">Phone:</span> <span>1234567890</span> </mat-list-item>                                                     
+                        </mat-list>                       
+                      </span>
+                    </span>
+                    <span class="rsvplisttypebottom">
+                      <span>Commission: <span class="redcls">NO</span></span>
+                    </span>
+                  </span>
+                </span>
+              </span> -->
+              
+              <!-- For End Customer -->
+
             </span>
 
 
