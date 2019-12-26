@@ -967,6 +967,8 @@
   background-color: #dde2e5;
 }
 
+
+
 .rep-dashboard-block5 .flexbox5column > .mat-list-item > .mat-list-item-content{
     padding: 0 !important;
 }
@@ -1083,4 +1085,21 @@
   position: absolute;
   top:0;
   right: 0;
+}
+
+.rep-dashboard-block5 .block1socialadvosingleinner .topblock{
+  width: 100%;
+  height: 178px;
+  display: block;
+  position: relative;
+  overflow:hidden;
+}
+
+.rep-dashboard-block5 .block1socialadvosingleinner .topblock .rsvplistimgwrapper{
+  width: 100%;
+  height: 100%;
+}
+
+.rep-dashboard-block5 .block1socialadvosingleinner .topblock .rsvplistimgwrapper img{
+  width: auto; height: 100% !important; width: auto; height: auto; position: absolute; top: 0; left: 50%;-webkit-transform: translate(-50%,0); -moz-transform: translate(-50%,0); -ms-transform: translate(-50%,0); -o-transform: translate(-50%,0); transform: translate(-50%,0); width: 100%; cursor: pointer; object-fit: cover;
 }

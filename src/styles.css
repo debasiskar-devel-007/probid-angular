@@ -242,6 +242,9 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
   margin-top: 0;
 }
 
+.rep-dashboard-block5 .flexbox5column.mat-list-base .mat-list-item .mat-list-item-content{
+  padding: 0 !important;
+}
 
 @media screen and (max-width: 1600px){
   .owl-carousel .owl-nav button.owl-prev {

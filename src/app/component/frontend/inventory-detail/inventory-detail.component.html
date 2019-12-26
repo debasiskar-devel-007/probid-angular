@@ -51,7 +51,7 @@
             </span> -->
               <span class="thumb_imgwrapper">
                 <span class="flexbox4columnthumb">
-                  <owl-carousel [options]="carouselOptions" [items]="TestimonialListArray" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                  <owl-carousel [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
 
                   
                   <div class="single_thumb_wrapper" *ngFor="let item of data.media.photo_links ; let i=index ">
@@ -157,6 +157,21 @@
 
                   </mat-form-field>
                 </span>
+
+                <!-- <span class="topinnerinforight" >
+                  <h1 class="btnrsvp">Remove</h1>
+                 <mat-button><i class="material-icons"> favorite </i> ADD</mat-button>
+                  <mat-form-field class="select-customer">
+                    <mat-label>Change Status</mat-label>
+                    <mat-select>
+                      <mat-option>
+                        Active
+                      </mat-option>
+                    </mat-select>
+
+                  </mat-form-field>
+                </span> -->
+
               </span>
             </span>
             <span class="inventorydetailmiddle detaillistcls">
