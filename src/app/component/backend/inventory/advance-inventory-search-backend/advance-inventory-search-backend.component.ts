@@ -81,7 +81,8 @@ export class AdvanceInventorySearchBackendComponent implements OnInit {
   public state = '';
   public zip = '';
   public search = '';
-
+  public indexCountForImg:any;
+  public indexCount:any;
 
   constructor(public fb: FormBuilder,
     public apiService: ApiService,
@@ -273,6 +274,13 @@ export class AdvanceInventorySearchBackendComponent implements OnInit {
     }
 
 
+  }
+
+  showimg(i:any,j:any){
+    console.log('>>',i,j)
+
+    this.indexCount=i;
+    this.indexCountForImg=j
   }
 
 }
