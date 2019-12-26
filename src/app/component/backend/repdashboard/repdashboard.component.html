@@ -5,8 +5,6 @@
                 <button (click)="copyInputMessage(userinput)" value="click to copy" >Share Link for Castomer Sign Up</button>
                 <input matInput type="text" value="{{apiService.share_link}}customer-signup/{{userid}}" #userinput>
                 
-                <!-- <img src="../../../../assets/images/rep-dashboard-img1.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
-
                 <mat-card-content class="rep-dashboard-banner">
                     <span class="rep-dashboard-banner-inner">
                         <h1 class="titleadmin">Welcome to Probid Auto</h1>
@@ -362,7 +360,6 @@
                     </span>                    
                 </mat-card-content>
 
-                <!-- <img src="../../../../assets/images/rep-dashboard-img2.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
                 <mat-card-content class="rep-dashboard-block3">
                     <span class="rep-dashboard-block3-inner">
                         <h1 class="titleadmin">RSVP <mat-button class="btnblue">view all</mat-button></h1>     
@@ -544,197 +541,44 @@
                     </span>                    
                 </mat-card-content>
 
-                <!-- <img src="../../../../assets/images/rep-dashboard-img3.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
-                <!-- <img src="../../../../assets/images/rep-dashboard-img4.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
-
-                <mat-card-content class="rep-dashboard-block4">
-                    <span class="rep-dashboard-block4-inner">
-                        <h1 class="titleadmin">Inventory</h1>     
-                        <span class="flexbox4column">
-                            <h1 class="titleadmin"> <span>Limited Time <span>Inventory</span></span> <mat-button class="btnblue">view all</mat-button></h1> 
-                            <span class="repdashboardblock4single">
-                                <span class="block1socialadvosingleinner">
-                                    <span class="topblock">
-                                        <span class="rsvplistimgwrapper">
-                                            <img src="../../../../assets/images/rep-dashblock4-img1.jpg">
-                                        </span>
+                <mat-card-content class="rep-dashboard-block6">
+                    <h1 class="titleadmin">Save Search <mat-button class="btnblue" [routerLink]="['/save-search-admin']">View All</mat-button></h1> 
+                    <mat-list role="list" class="flexbox5column">
+                        <mat-list-item role="listitem" class="block1socialadvosingle" *ngFor="let item of saveSearch_list | slice:0:saveSearchIndex; let i = index">
+    
+                          
+                          <span (click)="deleteAny(item,i,save_search)" class="deletecls"><i class="material-icons">delete</i></span>
+    
+                            <span class="block1socialadvosingleinner">
+                                <span class="topblock">
+                                    <span class="rsvplistimgwrapper">
+                                        <img *ngIf="item.card_data.media.photo_links != null && item.card_data.media.photo_links[0] !=null && modalImg == ''" [src]="item.card_data.media.photo_links[0]">
+                                        <img *ngIf="modalImg != ''" [src]="modalImg">
+                                        <img *ngIf="item.card_data.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
                                     </span>
-                                    <span class="middleblock">    
-                                        <h2>TOYOTA CAMRY XSE 2016</h2>    
-                                        <span>
-                                            <span class="pricecls">$ 25 000</span>
-                                            <span class="rsvplistsbottombtm">
-                                                <mat-list>
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/milesicon.png"></strong> 100</mat-list-item>                                        
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/drivetrainicon.png"></strong> 50</mat-list-item> 
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/bodytypeicon.png"></strong> Automatic</mat-list-item>
-                                                </mat-list>
-                                            </span>                                            
-                                        </span>                                
+                                  </span>
+                                  <span class="middleblock">
+                                    <span class="pricecls" *ngIf="item.card_data.price != null">
+                                        ${{item.card_data.price}}
                                     </span>
-                                </span>
-                            </span>
-                            <span class="repdashboardblock4single">
-                                <span class="block1socialadvosingleinner">
-                                    <span class="topblock">
-                                        <span class="rsvplistimgwrapper">
-                                            <img src="../../../../assets/images/rep-dashblock4-img1.jpg">
-                                        </span>
+                                    <span class="titlecls">
+                                      <span *ngIf="item.card_data.heading != null">{{item.card_data.heading}}</span>
+                                      <span></span>
                                     </span>
-                                    <span class="middleblock">  
-                                        <h2>TOYOTA CAMRY XSE 2016</h2>   
-                                        <span>
-                                            <span class="pricecls">$ 25 000</span>
-                                            <span class="rsvplistsbottombtm">
-                                                <mat-list>
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/milesicon.png"></strong> 100</mat-list-item>                                        
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/drivetrainicon.png"></strong> 50</mat-list-item> 
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/bodytypeicon.png"></strong> Automatic</mat-list-item>
-                                                </mat-list>
-                                            </span>                                            
-                                        </span>                               
-                                    </span>
-                                </span>
-                            </span>
-                            <span class="repdashboardblock4single">
-                                <span class="block1socialadvosingleinner">
-                                    <span class="topblock">
-                                        <span class="rsvplistimgwrapper">
-                                            <img src="../../../../assets/images/rep-dashblock4-img1.jpg">
-                                        </span>
-                                    </span>
-                                    <span class="middleblock">  
-                                        <h2>TOYOTA CAMRY XSE 2016</h2>   
-                                        <span>
-                                            <span class="pricecls">$ 25 000</span>
-                                            <span class="rsvplistsbottombtm">
-                                                <mat-list>
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/milesicon.png"></strong> 100</mat-list-item>                                        
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/drivetrainicon.png"></strong> 50</mat-list-item> 
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/bodytypeicon.png"></strong> Automatic</mat-list-item>
-                                                </mat-list>
-                                            </span>                                            
-                                        </span>                                   
-                                    </span>
-                                </span>
-                            </span>
-                            <span class="repdashboardblock4single">
-                                <span class="block1socialadvosingleinner">
-                                    <span class="topblock">
-                                        <span class="rsvplistimgwrapper">
-                                            <img src="../../../../assets/images/rep-dashblock4-img1.jpg">
-                                        </span>
-                                    </span>
-                                    <span class="middleblock"> 
-                                        <h2>TOYOTA CAMRY XSE 2016</h2>      
-                                        <span>
-                                            <span class="pricecls">$ 25 000</span>
-                                            <span class="rsvplistsbottombtm">
-                                                <mat-list>
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/milesicon.png"></strong> 100</mat-list-item>                                        
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/drivetrainicon.png"></strong> 50</mat-list-item> 
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/bodytypeicon.png"></strong> Automatic</mat-list-item>
-                                                </mat-list>
-                                            </span>                                            
-                                        </span>                              
-                                    </span>
-                                </span>
-                            </span>
-                        </span>   
-                        <span class="flexbox4column">
-                            <h1 class="titleadmin"> <span>Standard <span>Inventory</span></span> <mat-button class="btnblue">view all</mat-button></h1> 
-                            <span class="repdashboardblock4single">
-                                <span class="block1socialadvosingleinner">
-                                    <span class="topblock">
-                                        <span class="rsvplistimgwrapper">
-                                            <img src="../../../../assets/images/rep-dashblock4-img1.jpg">
-                                        </span>
-                                    </span>
-                                    <span class="middleblock">
-                                        <h2>TOYOTA CAMRY XSE 2016</h2>     
-                                        <span>
-                                            <span class="pricecls">$ 25 000</span>
-                                            <span class="rsvplistsbottombtm">
-                                                <mat-list>
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/milesicon.png"></strong> 100</mat-list-item>                                        
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/drivetrainicon.png"></strong> 50</mat-list-item> 
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/bodytypeicon.png"></strong> Automatic</mat-list-item>
-                                                </mat-list>
-                                            </span>                                            
-                                        </span>                               
-                                    </span>
-                                </span>
-                            </span>
-                            <span class="repdashboardblock4single">
-                                <span class="block1socialadvosingleinner">
-                                    <span class="topblock">
-                                        <span class="rsvplistimgwrapper">
-                                            <img src="../../../../assets/images/rep-dashblock4-img1.jpg">
-                                        </span>
-                                    </span>
-                                    <span class="middleblock">
-                                        <h2>TOYOTA CAMRY XSE 2016</h2>  
-                                        <span>
-                                            <span class="pricecls">$ 25 000</span>
-                                            <span class="rsvplistsbottombtm">
-                                                <mat-list>
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/milesicon.png"></strong> 100</mat-list-item>                                        
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/drivetrainicon.png"></strong> 50</mat-list-item> 
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/bodytypeicon.png"></strong> Automatic</mat-list-item>
-                                                </mat-list>
-                                            </span>                                            
-                                        </span>                                      
-                                    </span>
-                                </span>
-                            </span>
-                            <span class="repdashboardblock4single">
-                                <span class="block1socialadvosingleinner">
-                                    <span class="topblock">
-                                        <span class="rsvplistimgwrapper">
-                                            <img src="../../../../assets/images/rep-dashblock4-img1.jpg">
-                                        </span>
-                                    </span>
-                                    <span class="middleblock">  
-                                        <h2>TOYOTA CAMRY XSE 2016</h2>  
-                                        <span>
-                                            <span class="pricecls">$ 25 000</span>
-                                            <span class="rsvplistsbottombtm">
-                                                <mat-list>
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/milesicon.png"></strong> 100</mat-list-item>                                        
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/drivetrainicon.png"></strong> 50</mat-list-item> 
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/bodytypeicon.png"></strong> Automatic</mat-list-item>
-                                                </mat-list>
-                                            </span>                                            
-                                        </span>                                    
-                                    </span>
-                                </span>
-                            </span>
-                            <span class="repdashboardblock4single">
-                                <span class="block1socialadvosingleinner">
-                                    <span class="topblock">
-                                        <span class="rsvplistimgwrapper">
-                                            <img src="../../../../assets/images/rep-dashblock4-img1.jpg">
-                                        </span>
-                                    </span>
-                                    <span class="middleblock">  
-                                        <h2>TOYOTA CAMRY XSE 2016</h2>  
-                                        <span>
-                                            <span class="pricecls">$ 25 000</span>
-                                            <span class="rsvplistsbottombtm">
-                                                <mat-list>
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/milesicon.png"></strong> 100</mat-list-item>                                        
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/drivetrainicon.png"></strong> 50</mat-list-item> 
-                                                    <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/bodytypeicon.png"></strong> Automatic</mat-list-item>
-                                                </mat-list>
-                                            </span>                                            
-                                        </span>                                    
-                                    </span>
-                                </span>
-                            </span>
-                        </span>               
-                    </span>                    
+                                  </span>
+                                  <span class="bottomblockss">                                  
+                                    <mat-list *ngIf="item.card_data.build != null">
+                                        <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/milesicon.png"></strong> {{item.card_data.miles}}</mat-list-item>                                        
+                                        <mat-list-item class="pa_blockfootertext" *ngIf="item.card_data.build.drivetrain != null"> <strong><img src="../../../../assets/images/drivetrainicon.png"></strong> {{item.card_data.build.drivetrain}}</mat-list-item>                                  
+                                       
+                                        <mat-list-item class="pa_blockfootertext" *ngIf="item.card_data.build.transmission != null"> <strong><img src="../../../../assets/images/bodytypeicon.png"></strong> {{item.card_data.build.transmission}}</mat-list-item>
+                                      </mat-list>
+                                  </span>
+                            </span>                                
+                        </mat-list-item>
+                    </mat-list>
+                    
                 </mat-card-content>
-
 
                 <mat-card-content class="rep-dashboard-block5">
                     <span class="rep-dashboard-block5-inner">
@@ -1163,7 +1007,6 @@
                     </span>                    
                 </mat-card-content>
 
-                <!-- <img src="../../../../assets/images/rep-dashboard-img5.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"> -->
             </mat-card>
     </div>
 </div>

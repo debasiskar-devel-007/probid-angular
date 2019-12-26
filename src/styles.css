@@ -284,7 +284,10 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
   padding: 0px 0px;
 }
 
-
+.rep-dashboard-block6 .mat-list .mat-list-item .mat-list-item-content {
+  padding: 0 !important;
+  height: 100%;
+}
 
 @media screen and (max-width: 1600px){
   .owl-carousel .owl-nav button.owl-prev {
