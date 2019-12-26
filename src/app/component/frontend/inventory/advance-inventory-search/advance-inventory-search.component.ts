@@ -83,6 +83,9 @@ export class AdvanceInventorySearchComponent implements OnInit {
   public zip = '';
   public search = '';
 
+  public indexCountForImg:any;
+  public indexCount:any;
+
   constructor(public fb: FormBuilder,
     public apiService: ApiService,
     public activatedRoute: ActivatedRoute,
@@ -264,6 +267,13 @@ export class AdvanceInventorySearchComponent implements OnInit {
     });
   }
 
+  }
+
+  showimg(i:any,j:any){
+    console.log('>>',i,j)
+
+    this.indexCount=i;
+    this.indexCountForImg=j
   }
 
 

@@ -353,7 +353,8 @@ console.log('>>>>++>>',userType)
         item.added_by = this.user_id;
         item.status = 0;
         if (this.user_details.type == 'salesrep') {
-          item.added_for = this.customer_id;
+          item.added_for = item.customer_id;
+          console.log('added_for >>',item.added_for);
           } else {
             item.added_for = this.user_id;
           }
@@ -382,7 +383,6 @@ console.log('>>>>++>>',userType)
     
     else{
       
-
       item.customer_id=''
       this.errorMsg;
       console.log(this.errorMsg)
