@@ -239,12 +239,17 @@
               </span>
             </mat-list-item>
           </mat-list>
+
+          <div style="display: block; text-align: right; ">
+            <mat-button type="button" class="btnblue" *ngIf="search !=null && indexval < search.length" (click)="loadMoreSearchResult() " >Load More</mat-button>
+          </div>
+
         </span>
       </span>
     </mat-card>
-    <div>
+    <!-- <div>
       <button mat-flat-button color="primary" type="button" *ngIf="search !=null && indexval < search.length" (click)="loadMoreSearchResult() " >Load More</button>
-    </div>
+    </div> -->
 
   </div>
 </div>
