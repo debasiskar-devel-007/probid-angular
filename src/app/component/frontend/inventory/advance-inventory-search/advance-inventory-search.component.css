@@ -299,6 +299,7 @@
 
 .inventorysearch .formblock form {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .inventorysearch .formblock form .section1{width: 100%;}
