@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, ChangeDetectionStrategy } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
 import { ApiService } from 'src/app/api.service';
@@ -18,7 +18,8 @@ export interface DialogData {
 @Component({
   selector: 'app-basic-inventory-search',
   templateUrl: './basic-inventory-search.component.html',
-  styleUrls: ['./basic-inventory-search.component.css']
+  styleUrls: ['./basic-inventory-search.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BasicInventorySearchComponent implements OnInit {
 
@@ -82,7 +83,6 @@ export class BasicInventorySearchComponent implements OnInit {
   public type_list: [];
   public model_list: [];
   public year_list: [];
-  public vehicle_list: [];
   public trim_list: [];
   public type: string = '';
   public year: string = '';
@@ -251,7 +251,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
      
       if (this.type != '' || this.year != '' || this.make != '' || this.vin != '' || this.trim != '' || this.vehicle != '' || this.state != '' || this.zip != '' || this.model != '') {
 
-        let search_link = this.apiService.inventory_url + this.type + this.year + this.make + this.vin + this.trim + this.vehicle + this.state + this.zip + this.model+ '&rows=5';
+        let search_link = this.apiService.inventory_url + this.type + this.year + this.make + this.vin + this.trim + this.vehicle + this.state + this.zip + this.model+ '&rows=50';
 
         this.http.get(search_link).subscribe((res: any) => {
           this.search = res.listings;
@@ -303,10 +303,6 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
       if (field == 'trim') {
         this.trim_list = res.terms; 
         console.log(field, this.trim_list); 
-      }
-      if (field == 'vehicle_type') {
-        this.vehicle_list = res.terms; 
-        console.log(field, this.vehicle_list); 
       }
 
     });

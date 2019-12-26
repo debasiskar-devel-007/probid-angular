@@ -56,7 +56,7 @@
                     </mat-option>
                   </mat-autocomplete>
                 </mat-form-field>
-              </span>
+              </span> 
               <span>
                 <h4>Type:</h4>
                 <mat-form-field>
@@ -74,14 +74,10 @@
               <span>
                 <h4>Vehicle Type:</h4>
                 <mat-form-field>
-                  <input type="text" (keyup)="searchAutoComplete($event, 'vehicle_type')"
-                    placeholder="Pick one vehicle type" aria-label="Number" matInput formControlName="vehicle"
-                    [matAutocomplete]="autovehicle">
-                  <mat-autocomplete #autovehicle="matAutocomplete">
-                    <mat-option *ngFor="let option of vehicle_list" [value]="option">
-                      {{option}}
-                    </mat-option>
-                  </mat-autocomplete>
+                  <mat-select formControlName="vehicle" placeholder="Pick one Vehicle">
+                    <mat-option value='Car'>Car</mat-option>
+                    <mat-option value='Truck'>Truck</mat-option>
+                  </mat-select>
                 </mat-form-field>
               </span>
               <span>
@@ -134,8 +130,6 @@
                   <input matInput formControlName="zip" type="ZIP" placeholder="ZIP">
                 </mat-form-field>
               </span>
-
-
 
             </span>
             <span class="buttonslist">
