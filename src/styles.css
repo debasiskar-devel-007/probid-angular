@@ -90,6 +90,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .tablediv .listingtestimonial .searchbar {padding-right: 236px; margin-top: -11px;}
 .tablediv .searchbar .mat-form-field{margin: 0 2px;}
 .mat-form-field-appearance-legacy .mat-form-field-infix{padding: 1em !important; background: #fff;margin-bottom: 10px;}
+.topinnerinforight .mat-form-field-appearance-legacy .mat-form-field-infix{margin-bottom: 0px;}
 .contact-form .mat-form-field-appearance-legacy .mat-form-field-infix {background: #eee;}
 
 .newslettermain .mat-form-field-appearance-legacy .mat-form-field-infix {margin-bottom: 0;}
