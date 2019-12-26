@@ -396,23 +396,24 @@ export class BasicInventorySearchBackendComponent implements OnInit {
     this.indexval=this.indexval+2;
 
   }
-//for observeable
-  // dataObserve(item:any){
-  //   console.log('data_item >>',item)
 
-  //   const observeable=new Observable(item)
-  //   console.log('$$>>>>>',observeable)
+// for observeable
+  public dataObserve(item:any){
+    console.log('data_item >>',item)
+
+    const observeable=new Observable(item)
+    console.log('$$>>>>>',observeable)
     
 
-  //     setTimeout(() => {
-  //     //   // observer.next(item);
-  //       this.router.navigateByUrl('/inventory-detail')
-  //     }, 2000);
+      setTimeout(() => {
+        // observer.next(item);
+        this.router.navigateByUrl('/inventory-detail')
+      }, 2000);
    
     
-  //   // console.log('$$>>>>>',observeable)
-  //   return observeable;
+    // console.log('$$>>>>>',observeable)
+    return observeable;
   
-  // }
+  }
 
 }
