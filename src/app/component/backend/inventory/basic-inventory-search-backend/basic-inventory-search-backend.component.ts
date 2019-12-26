@@ -348,6 +348,7 @@ export class BasicInventorySearchBackendComponent implements OnInit {
 
     let userType=this.user_details.type
 console.log('>>>>++>>',userType)    
+
     if (item.customer_id != '' && item.customer_id != null ) {
         let endpoint: any = "addorupdatedata";
         item.added_by = this.user_id;

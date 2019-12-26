@@ -4,6 +4,11 @@ import { ApiService } from 'src/app/api.service';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MetaService } from '@ngx-meta/core';
+import { validateConfig } from '@angular/router/src/config';
+import {CookieService} from 'ngx-cookie-service';
+
+
+
 export interface DialogData {
  
 }
@@ -20,7 +25,12 @@ export class CustomerSignupComponent implements OnInit {
   public cityList: any;
   public term_msg: any = '';
   public rep_id: string = '';
-  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,private readonly meta: MetaService) {
+  public salesrepList:any;
+
+
+
+
+  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,private readonly meta: MetaService,public cookieService:CookieService ) {
     this.activatedRouter.params.subscribe(params=>{
       console.log('++++++',params['id']);
       if (params['id'] != '' || params['id'] != null) {
@@ -42,6 +52,7 @@ export class CustomerSignupComponent implements OnInit {
       password: [null, Validators.required],
       conpass: [null, Validators.required],
       check: [false, Validators.required],
+      salesrep:['',Validators.required],
       type: ["customer"],
       status:0
     }, {
@@ -75,6 +86,26 @@ export class CustomerSignupComponent implements OnInit {
 
 
   ngOnInit() {
+
+    //for salesrep list
+    let data:any;
+    data={
+      source:'user_view',
+      condition: {"type": "salesrep"}
+      
+    }
+
+    this.apiservice.getDatalistWithToken(data,'datalistwithouttoken').subscribe((res)=>{
+      let result:any;
+      result=res;
+      console.log('>>>>>>>>>>',result.res)
+      this.salesrepList=result.res
+      console.log('>>>>>>>>>>', this.salesrepList)
+
+
+    })
+
+
   }
   /**Miss Match password check function */
   machpassword(passwordkye: string, confirmpasswordkye: string) {
@@ -166,6 +197,7 @@ export class CustomerSignupComponent implements OnInit {
             address:data.res[0].address,
             check: [false, Validators.required],
             type:data.res[0].type,
+            salesrep:data.res[0].salesrep
           })
         });
     }

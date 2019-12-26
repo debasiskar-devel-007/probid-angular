@@ -92,7 +92,7 @@
                     </span>
                     <span class="sub-col-4">
                       <mat-card-content class="rrblock1">
-                        <h1 (click)='rsvpSend(item,i)'>RSVP</h1>
+                        <h1 (click)='rsvpSend(item,i)'  *ngIf="user_details.type != 'admin' " >RSVP</h1>
                         <button (click)="unFavorite(item,i)"><i class="material-icons" > delete </i> Remove</button>
                         <span>
                         <mat-form-field *ngIf="user_details.type == 'salesrep'" class="select-customer">

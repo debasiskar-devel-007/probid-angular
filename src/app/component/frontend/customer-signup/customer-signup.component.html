@@ -118,6 +118,19 @@
                             *ngIf="!customerSignUpForm.controls['state'].valid && customerSignUpForm.controls['state'].errors.required && customerSignUpForm.controls['state'].touched">
                             State field can not be blank</mat-error>
                       </mat-form-field>
+
+                      <mat-form-field>
+                        <mat-label>Assign SalesRep</mat-label>
+                        <mat-select formControlName="salesrep" (blur)="inputUntouched('salesrep')">
+                          <mat-option *ngFor="let rep of salesrepList" [value]="rep._id">
+                            {{rep.fullname}}
+                          </mat-option>
+                        </mat-select>
+                        <mat-error
+                            *ngIf="!customerSignUpForm.controls['salesrep'].valid && customerSignUpForm.controls['salesrep'].errors.required && customerSignUpForm.controls['salesrep'].touched">
+                            salesrep field can not be blank</mat-error>
+                      </mat-form-field>
+
                       <span class="bottompart">
                           <!-- [checked]="myModel" -->
                           <mat-checkbox formControlName="check" class="example-margin">
