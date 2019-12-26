@@ -780,6 +780,7 @@
   display: -webkit-box;
   display: flex;
   margin: 5px;
+  width: 100%;
 }
 
 .rep-dashboard-block4 .flexbox4column .middleblock > span .pricecls{
@@ -790,10 +791,11 @@
     font-size: 22px !important;
     text-transform: uppercase;
     -webkit-box-flex: 1;
-    width: 38%;
+    width: 30%;
     border-radius: 0px;
     text-align: center;
     height: 100% !important;
+    margin-right: 2%;
 }
 
 
@@ -908,6 +910,7 @@
 
 .rep-dashboard-block4 .rsvplistsbottombtm{
   background-color: #465157;
+  width: 68%;
 }
 
 .rep-dashboard-block4 .rsvplistsbottombtm .mat-list-base{
@@ -918,7 +921,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     -webkit-box-pack: justify;
-    justify-content: space-between;
+    justify-content: center;
     -webkit-box-align: center;
     align-items: center;
     width: 100%;
@@ -979,8 +982,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-top: auto;
-  margin-bottom: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .rep-dashboard-block5 .middleblock > span {
@@ -1102,4 +1105,28 @@
 
 .rep-dashboard-block5 .block1socialadvosingleinner .topblock .rsvplistimgwrapper img{
   width: auto; height: 100% !important; width: auto; height: auto; position: absolute; top: 0; left: 50%;-webkit-transform: translate(-50%,0); -moz-transform: translate(-50%,0); -ms-transform: translate(-50%,0); -o-transform: translate(-50%,0); transform: translate(-50%,0); width: 100%; cursor: pointer; object-fit: cover;
+}
+
+.rep-dashboard-block5-header-bg{
+  background-color: #dde2e5;
+    padding: 10px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    justify-content: flex-end;
+}
+
+.rep-dashboard-block5 .mat-tab-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: -48px !important;
+}
+
+.mat-tab-header {
+  margin: 0 auto;
+  width: 98%;
 }
