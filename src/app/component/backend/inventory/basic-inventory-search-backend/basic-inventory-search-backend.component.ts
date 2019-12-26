@@ -9,6 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Observable, Subject, Subscription ,Observer} from 'rxjs';
 import { map } from 'rxjs/operators';
+
 export interface DialogData {
   errorMsg: string;
 }

@@ -177,7 +177,7 @@
                 <!-- end Search Result -->    
 
                 <!-- Save Search DETAILS -->    
-                <span class="topinnerinforight" >
+                <span class="topinnerinforight"  >
                   <h1 class="btnrsvp">RSVP</h1>
                   <mat-button class="btnredcls">Remove</mat-button>
                   <mat-form-field class="select-customer">
@@ -197,9 +197,9 @@
 
             <span class="inventorydetailbottom detaillistcls inventorydetailuser">
 
-              <!-- For Admin -->
-              <span class="flexcolumn ">
-                <span>
+              <!-- For Admin ,salesrep,customer-->
+              <span class="flexcolumn " >
+                <span *ngIf="user_details.type == 'admin' || user_details.type == 'salesrep' ">
                   <mat-card-title class="headerlists">User</mat-card-title>
                   <span class="rsvplisttypecontentinfowrapper">
                     <span class="rsvplisttypecontentinfo">
@@ -221,7 +221,7 @@
                     </span>
                   </span>
                 </span>
-                <span>
+                <span *ngIf="user_details.type == 'admin' || user_details.type == 'customer' ">
                   <mat-card-title class="headerlists">Salesrep</mat-card-title>
                   <span class="rsvplisttypecontentinfowrapper">
                     <span class="rsvplisttypecontentinfo">
@@ -246,7 +246,7 @@
 
                <!-- For Sales Rep -->
 
-              <!-- <span class="flexcolumn ">
+              <!-- <span class="flexcolumn " *ngIf="user_details.type == 'salesrep'">
                 <span>
                   <mat-card-title class="headerlists">User</mat-card-title>
                   <span class="rsvplisttypecontentinfowrapper">
@@ -270,12 +270,12 @@
                   </span>
                 </span>                                
               </span> -->
-              
+               
               <!-- For End Sales Rep -->
 
               <!-- For Customer -->
 
-              <!-- <span class="flexcolumn ">               
+             <!-- <span class="flexcolumn " *ngIf="user_details.type == 'customer'">               
                 <span>
                   <mat-card-title class="headerlists">Salesrep</mat-card-title>
                   <span class="rsvplisttypecontentinfowrapper">
@@ -514,6 +514,7 @@
       <mat-card-content class="adm_dashboard_block2 inventorydetailsimilarv">
         <mat-card-title class="sectionheader">Similar Vehicles</mat-card-title>
         <mat-list role="list" class="flexbox4columnsv">
+
           <!-- <mat-list-item role="listitem" class="block1socialadvosingle">
                 <span class="block1socialadvosingleinner">
                     <span class="topblock">

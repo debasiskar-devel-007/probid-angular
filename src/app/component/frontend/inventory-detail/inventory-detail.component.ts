@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import {BasicInventorySearchBackendComponent} from '../../backend/inventory/basic-inventory-search-backend/basic-inventory-search-backend.component';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Component({
@@ -66,10 +67,23 @@ export class InventoryDetailComponent implements OnInit {
   public saveList:any;
   public indexVal:any=4;
   public makeName:any;
+  public user_details:any;
+  public user_id:any;
 
-  constructor(public activatedRoute:ActivatedRoute,public apiService:ApiService ,public observableData:BasicInventorySearchBackendComponent) { }
+  constructor(public activatedRoute:ActivatedRoute,public apiService:ApiService ,public observableData:BasicInventorySearchBackendComponent,public cookieService:CookieService) {
+
+
+    if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
+      this.user_details = JSON.parse(this.cookieService.get('user_details'));
+      this.user_id = this.user_details._id;
+      console.log(this.user_id);
+      console.log('type>>',this.user_details.type)
+    }
+   }
 
   ngOnInit() {
+
+
     this.activatedRoute.data.forEach((res)=>{
       let result:any
       result=res.inventory_details.res;

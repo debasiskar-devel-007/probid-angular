@@ -97,7 +97,7 @@
                         <span>
                         <mat-form-field *ngIf="user_details.type == 'salesrep'" class="select-customer">
                           <mat-label>Select Customer</mat-label>
-                          <mat-select [(ngModel)]="item.customer_id">
+                          <mat-select [(ngModel)]="item.customer_id" >
                             <mat-option *ngFor="let item of customerList" [value]="item._id">
                               {{item.firstname}}
                             </mat-option>
@@ -105,7 +105,7 @@
 
                         </mat-form-field>
                         <div>
-                        <span class="errormsg" *ngIf=" errorMsg !=null ||  errorMsg != ''"     [ngClass]="item.customer_id =='' ? 'errormsg':'test'" >{{errorMsg}}</span>
+                        <span class="errormsg" *ngIf=" errorMsg !=null &&  errorMsg != '' && user_details.type == 'salesrep' "     [ngClass]="item.customer_id =='' ? 'errormsg':'test'" >{{errorMsg}}</span>
                       </div>
 
                       </span>
