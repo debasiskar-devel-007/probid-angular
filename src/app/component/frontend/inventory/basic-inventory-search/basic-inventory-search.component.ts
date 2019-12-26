@@ -346,7 +346,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     else{
       console.log(this.cookieService.get('favorite_car'))
       let endpoint: any = "addorupdatedata";
-      item.user_id = this.user_id;
+      item.added_by = this.user_id;
       let card_data:any = {
         card_data: item
       }

@@ -162,6 +162,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   }
 
   ngOnInit() {
+    this.getData();
 
     //for make,model,year,type drop down list
     this.activatedRoute.data.forEach((data) => {
@@ -176,16 +177,18 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     console.log('/login'+this.router.url)
   }
 
-  // getData(){
-  //   let data: any = {
-  //     endpoint: 'datalist',
-  //     source: 'save_favorite_view'
-  //   }
-  //   this.apiService.getDatalist(data).subscribe((res:any)=>{
-  //     this.search = res.res;
-  //     this.loader = false;
-  //   })
-  // }
+  getData(){
+    let data: any = {
+      endpoint: 'datalist',
+      source: 'save_favorite_view',
+      condition: {
+        "added_by":this.user_id
+      }
+    }
+    this.apiService.getDatalist(data).subscribe((res:any)=>{
+      console.log(res);
+    })
+  }
 
 
   unFavorite(item: any,index:any) {
