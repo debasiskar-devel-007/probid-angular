@@ -6,6 +6,7 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { InventoryDetailComponent } from '../../inventory-detail/inventory-detail.component';
 
 export interface DialogData {
   errorMsg: string;
@@ -109,6 +110,7 @@ export class BasicInventorySearchComponent implements OnInit {
 
   constructor(public fb: FormBuilder,
     public apiService: ApiService,
+    public InventoryDetailComponent: InventoryDetailComponent,
     public activatedRoute: ActivatedRoute,
     public http: HttpClient,
     private readonly meta: MetaService,
@@ -162,8 +164,6 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
 
 
   ngOnInit() {
-    
-    console.log(this.apiService.inventory_url)
 
     //for make,model,year,type drop down list
     this.activatedRoute.data.forEach((data) => {
@@ -256,7 +256,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
         this.http.get(search_link).subscribe((res: any) => {
           this.search = res.listings;
           console.log('search list',this.search)
-
+            console.log(this.search);
         })
       } else {
         this.errorMsg = "Please select at least one field";
@@ -272,6 +272,16 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     }
 
   }
+
+  showDetails(search: any){
+    console.log('test')
+    this.InventoryDetailComponent.clearServerUrl();
+    setTimeout(() => {
+      this.InventoryDetailComponent.setServerUrl(search);
+    }, 50);
+  }
+
+
   searchAutoComplete(event: any, field: string) {
 
     let input: string = '';

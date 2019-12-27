@@ -556,7 +556,7 @@ max-width: 400px;
 }
 .pa_blockfootertext strong{display: block; width: 100%; text-align: center;}
 .pa_blockfooterlogo img{max-width: 100%;}
-.pa_blockfooterlogo{width: auto; background: #222222;padding: 5px !important;}
+.pa_blockfooterlogo{width: 100%; background: #222222;padding: 5px !important;}
 .favorite{color: red;}
 
 
