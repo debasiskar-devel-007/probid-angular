@@ -199,9 +199,7 @@ flex-wrap: wrap;
 flex-direction: column;
 }
 
-.inventorysearch button{margin-right: 1%; margin-top: 1%;    background: #1cb7eb;
-  border-radius: 0px;
-  text-transform: capitalize;}
+.inventorysearch button{margin-right: 1%; margin-top: 1%;    background: #1cb7eb; border-radius: 0px; text-transform: capitalize;}
   .buttonslist{text-align: right;    display: inherit !important;}
 
 .example-card {

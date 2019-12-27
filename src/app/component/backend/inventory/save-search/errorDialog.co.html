@@ -1,14 +1,15 @@
-<div class="modalnewcls">
-    <div class="modalnewclsinner">
-        <div class="logowrapperouter">
-            <span class="logowrapper">
+<div class="generalmodalcls">
+    <div class="modal-content">
+          <div class="logowrapperouter">
+              <div class="logowrapper">
                 <img src="../../../../../assets/images/logomain.png">
-            </span>
-        </div>
-        <h1 mat-dialog-title>{{data.errorMsg}}</h1>
-        <div mat-dialog-actions>
+              </div>
+          </div>       
+          <div mat-dialog-content>
+            <h1 mat-dialog-title>{{data.errorMsg}}</h1>
+          </div>
+          <mat-dialog-actions>
             <button mat-button (click)="onNoClick()">No Thanks</button>
-        </div>
+          </mat-dialog-actions>
+      </div>
     </div>
-</div>
-
