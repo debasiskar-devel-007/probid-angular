@@ -405,22 +405,22 @@ console.log('>>>>++>>',userType)
   }
 
 // for observeable
-  // public dataObserve(item:any){
-  //   console.log('data_item >>',item)
+  dataObserve(item:any){
+    console.log('data_item >>',item)
 
-  //   const observeable=new Observable(item)
-  //   console.log('$$>>>>>',observeable)
+    const observeable=new Observable(item)
+    console.log('$$>>>>>',observeable)
     
 
-  //     setTimeout(() => {
-  //       // observer.next(item);
-  //       this.router.navigateByUrl('/inventory-detail')
-  //     }, 2000);
+      setTimeout(() => {
+        // observer.next(item);
+        this.router.navigateByUrl('/inventory-detail')
+      }, 2000);
    
     
-  //   // console.log('$$>>>>>',observeable)
-  //   return observeable;
+    // console.log('$$>>>>>',observeable)
+    return observeable;
   
-  // }
+  }
 
 }

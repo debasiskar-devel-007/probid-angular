@@ -104,6 +104,12 @@ public message:any="Are you sure you want to delete this?"
     console.log('hitt');
     this.indexval=this.indexval+2;
   }
+
+  rsvpViewDetails(val:any){
+    console.log('>>>',val)
+
+
+  }
 }
 
 //modal component for delete

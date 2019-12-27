@@ -57,7 +57,7 @@ import { CustomerSignupComponent,customerSignUpsuccessDialog } from './component
 
 import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
 
-import { InventoryDetailComponent } from './component/frontend/inventory-detail/inventory-detail.component';
+import { InventoryDetailComponent, RemoveRsvpComponent } from './component/frontend/inventory-detail/inventory-detail.component';
 
 /**End Frontend Component**/
 
@@ -300,7 +300,8 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
     ListingSubcategoryComponent,
     SaveSearchComponent,
     InventoryDetailComponent,
-    RemoveModalComponent
+    RemoveModalComponent,
+    RemoveRsvpComponent
     // errorDialogbackend,
   ],
   imports: [
@@ -342,7 +343,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
   providers: [CookieService, AuthGuard, ApiService, SidenavService,BasicInventorySearchBackendComponent],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent,DeleteModalRsvpComponent,RemoveModalComponent]
+  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent,DeleteModalRsvpComponent,RemoveModalComponent,RemoveRsvpComponent]
   // errorDialogbackend
 })
 export class AppModule { }
