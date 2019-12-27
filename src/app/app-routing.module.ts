@@ -364,7 +364,7 @@ const routes: Routes = [
 
   { path: 'rsvp-salesrep', component: RsvplistsComponent,
   resolve: { rsvp: ResolveService },
-  data: { requestcondition: { source: 'send_rsvp_view', condition: {"salesrep":"user_id"} }, 
+  data: { requestcondition: { source: 'send_rsvp_view', condition: {"added_by_object":"user_id"} }, 
   endpoint: 'datalist' }},
 
   { path: 'rsvp-customer', component: RsvplistsComponent ,
