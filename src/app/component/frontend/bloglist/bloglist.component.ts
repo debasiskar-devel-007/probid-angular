@@ -116,10 +116,10 @@ export class BloglistfrontendComponent implements OnInit {
 
      let url:any;
      url="https://www.youtube.com/embed/";
-      console.log('video url....>',url+val);
+      // console.log('video url....>',url+val);
       this.safeSrc =  this.sanitizer.bypassSecurityTrustResourceUrl(url + val);
       
-      console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
+      // console.log('>>>>>>>>>>>>>>>>>>',this.safeSrc)
       const dialogRef = this.dialog.open(CommonVideoModalComponent, {
         panelClass:['modal-md','success-modal'],
        

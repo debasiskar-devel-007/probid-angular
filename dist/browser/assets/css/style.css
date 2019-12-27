@@ -518,16 +518,14 @@ display:block !important;
 .activemenu a{color:#fff!important;}
 .mat-menu-content a.mat-menu-item{color:#fdfdfd!important;text-transform:uppercase;padding: 4px 10px; border-top: 1px solid #333;}
 .mat-menu-content a.mat-menu-item:hover{color:#fff!important;text-transform:uppercase;padding: 4px 10px; border-top: 1px solid #333;}
-.logomodalwrapper{width:480px;margin:0 auto;display:block;background:#ddd4d4;padding:10px;}
-.logomodalwrapper .logomodal{width:90%;margin:0 auto;display:block;}
-.logomodalwrapper .logomodal img{max-width:100%;}
-.logomodalwrapper h2{color:#fc563f;font-size:32px;font-weight:600;line-height:24px;letter-spacing:1.92px;text-transform:uppercase;text-align:center;margin-top:20px;}
+
+
+
+
 
 .footertopwrapper .mat-list-item .mat-list-item-content {padding: 0 !important;}
 .mat-form-field-appearance-legacy .mat-form-field-wrapper {width: 100% !important;}
 
-.modal-dialog .modal-content{background-color: #22282c; display: block; height: 100%;}
-.modal-dialog .modal-content img{max-width: 100%;}
 
 .rateingdiv{width: 100%; display: block;}
 .rateingdiv .fa{margin: 5px 15px 5px 0px; font-size: 20px;}
@@ -623,9 +621,6 @@ display:block !important;
     .bottom_blog .item_wrapper .item { width: 100%; margin: 1%; }
 }
 
-@media screen and (max-width: 480px){
-	.logomodalwrapper{width: 90%; margin: 0 auto; display: block;	}
-}
 
 .probidhomeblock1.mat-card .mat-tab-header{width: 1340px; margin: 0 auto; display: block;}
 .probidhomeblock1.mat-card {padding: 0 !important;}
@@ -730,10 +725,6 @@ display:block !important;
     100% { transform: rotate(360deg); }
 }
 
-.modalouter_body { width: 100%; height: 100vh;  position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.2); z-index: 9;}
-.modalouter_wrapper {width: 300vh; height: 100vh; display: table-cell; text-align: right; vertical-align: middle;  position: relative; z-index: 9999;}
-.modalouter_wrapper .modalouter_wrapper_inner {width: 790px; margin: 0 auto; margin-bottom: 20px; display: block;    position: relative;}
-.newslettermain .mat-form-field-appearance-legacy .mat-form-field-wrapper {width: 100% !important; padding-bottom: 0px !important;}
 
 .aboutusblock1content {display: flex !important; justify-content: space-between; align-items: stretch;background-color: #dfeff7; padding:9px;}
 .aboutusblock1content span {flex: 1 1 50%;}
@@ -1017,7 +1008,7 @@ display:block !important;
 .smartbidtop p span.span1{color: #fb4a32;font-size: 30px;font-family: 'HelveticaBold'; }
 .smartbidtop p span.span2{color: #ff4281;font-size: 24px;font-family: 'HelveticaBold'; }
 .iconsmart{max-width:88px; height: 88px; margin-left: auto;margin-right: auto; line-height: 88px;margin-bottom: 20px;}
-.smartbidbottom{}
+
 .smartbidbottom p{text-align: justify;font-family: 'Helvetica-Normal'; color: #333; margin-top: 15px;}
 .smartbidbottom h4{color:#3c5459; width:100%; font-family: 'Helvetica-Normal';text-transform: capitalize; font-size: 18px; vertical-align: baseline; display: inline-block;}
 .smartbidbottom h4 span{color:#00a2c1; font-family: 'HelveticaBold'; font-size: 28px; text-transform: uppercase; vertical-align: baseline; display: inline-block;}
@@ -1251,10 +1242,6 @@ a.associate_new_con6_link:hover{color: #fff;}
 /*-----------------amitava 04/12/2019 start-----------------------*/
 
 
-.modal-sm {
-    width: auto!important;
-}
-
 .newslettermain form{ display: block; width: 100%;}
 
 
@@ -1297,71 +1284,6 @@ a.associate_new_con6_link:hover{color: #fff;}
 }
 
 
-.newsletter_modal {
-    width: 480px;
-    border: 2px solid #fb4a32;
-    border-radius: 5px!important;
-    padding: 15px!important; display: block!important;
-}
-
-.newsletter_modal h2 {
-    display: block;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    font-size: 30px;
-    color: #fb4a32;
-    font-family: HelveticaBold;
-}
-
-.newsletter_modal h3 {
-    display: block;
-    text-align: center;
-    margin: 0;
-    padding: 10px 0 15px;
-    font-size: 18px;
-    color: #111;
-    font-family: Helvetica-Normal;
-    font-weight: 400;
-}
-
-.newsletter_modal .mat-form-field-appearance-legacy .mat-form-field-infix {
-    width: auto;
-    padding: 0px 15px!important;
-    height: 36px!important;
-    background: #e1e0e6!important;
-    margin: 5px 0; height: 50px!important;
-}
-
-.newsletter_modal .mat-form-field-appearance-legacy .mat-form-field-infix input{height:50px!important;}
-
-.newsletter_modal .mat-form-field{ display: block!important;}
-
-.newsletter_modal .mat-form-field-flex{ display: block!important;  border: none!important; padding: 0px!important;}
-
-.newsletter_modal button {
-    color: #fff;
-    background: #fb4a32!important;
-
-    font-size: 24px;
-    line-height: normal;
-    width: auto!important;
-    height: auto!important;
-    font-family: HelveticaBold;
-    text-transform: uppercase;
-    border-radius: 5px;
-    padding: 14px 15px 8px!important;
-    margin-top: 10px!important;
-}
-
-.newsletter_modal h4{ display: block; text-align: center; margin: 0; padding:10px 0 0px 0; font-size: 22px; color: #111;  font-family: 'Helvetica-Normal'; font-weight: normal;}
-
-.newsletter_modalsuccess{ padding-top: 25px!important; padding-bottom: 25px!important;}
-@media(max-width:540px) {
-
-    .newsletter_modal {
-        width:auto;}
-}
 
 
 @media(max-width:420px) {
