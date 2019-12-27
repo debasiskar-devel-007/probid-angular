@@ -350,6 +350,8 @@ export class BasicInventorySearchBackendComponent implements OnInit {
     let userType=this.user_details.type
 console.log('>>>>++>>',userType)    
 
+if (this.user_details.type == 'salesrep') {
+
     if (item.customer_id != '' && item.customer_id != null ) {
         let endpoint: any = "addorupdatedata";
         item.added_by = this.user_id;
@@ -372,11 +374,15 @@ console.log('>>>>++>>',userType)
             console.log(res);
             if(res.status == "success"){
              
-             
-
               this.snackBar.open('RSVP Added Successfully','Ok',{
                 duration:4000
               })
+              if(this.user_details.type == 'salesrep'){
+                this.router.navigateByUrl('/rsvp-salesrep');
+              }
+              if(this.user_details.type == 'customer'){
+                this.router.navigateByUrl('/rsvp-customer');
+              }
 
              
             }
@@ -390,6 +396,57 @@ console.log('>>>>++>>',userType)
       console.log(this.errorMsg)
 
     }
+  }
+  if(this.user_details.type =='customer'){
+      
+    let endpoint: any = "addorupdatedata";
+    item.added_by = this.user_id;
+    item.status = 0;
+    
+    item.added_for = this.user_id;
+
+      let card_data:any = {
+        card_data: item
+      }
+      let data: any = {
+        data: card_data,
+        source: "send_for_rsvp",
+      };
+      console.log(data)
+        this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
+          console.log(res);
+          if(res.status == "success"){
+
+            this.snackBar.open('RSVP Added Successfully','Ok',{
+              duration:4000
+            })
+
+            if(this.user_details.type == 'salesrep'){
+              this.router.navigateByUrl('/rsvp-salesrep');
+            }
+            if(this.user_details.type == 'customer'){
+              this.router.navigateByUrl('/rsvp-customer');
+            }
+
+            let data: any = {
+              id:item._id,
+              source: 'save_favorite'
+            }
+            this.apiService.deleteSingleData1(data).subscribe((res: any)=>{
+              console.log(res);
+              if (res.status == 'success') {
+                // this.search.splice(i,i+1);
+                console.log('success');
+                
+              }
+            })
+
+
+          }
+        })
+
+  }
+
 
   }
 
