@@ -310,10 +310,10 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   if(this.user_details.type =='customer'){
       
     let endpoint: any = "addorupdatedata";
-      item.added_by = this.user_id;
+      item.added_by = this.user_details.salesrep;
       item.status = 0;
     
-      item.added_for = this.user_details.salesrep;
+      item.added_for = this.user_id;
 
       let card_data:any = {
         card_data: item

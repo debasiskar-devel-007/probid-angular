@@ -178,7 +178,7 @@ export class InventoryDetailComponent implements OnInit {
 
       if (this.customer_id != '' && this.customer_id != null) {
         let endpoint: any = "addorupdatedata";
-        //  result.added_by = this.user_id;
+         itemData.added_by = this.user_id;
         itemData.status = 0;
         // if (this.user_details.type == 'salesrep') {
         itemData.added_for = this.customer_id;
@@ -238,7 +238,7 @@ export class InventoryDetailComponent implements OnInit {
     if(this.user_details.type =='customer'){
       
       let endpoint: any = "addorupdatedata";
-      itemData.added_by = this.user_id;
+      itemData.added_by = this.user_details.salesrep;
       itemData.status = 0;
       
       itemData.added_for = this.user_id;
