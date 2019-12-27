@@ -196,11 +196,11 @@ export class InventoryDetailComponent implements OnInit {
         let endpoint: any = "addorupdatedata";
         //  result.added_by = this.user_id;
         itemData.status = 0;
-        if (this.user_details.type == 'salesrep') {
+        // if (this.user_details.type == 'salesrep') {
         itemData.added_for = this.customer_id;
-        } else {
-        itemData.added_for = this.user_id;
-        }
+        // } else {
+        // itemData.added_for = this.user_id;
+        // }
         let card_data: any = {
           card_data: itemData
         }
@@ -215,8 +215,16 @@ export class InventoryDetailComponent implements OnInit {
 
 
             this.snack.open('RSVP Added Successfully', 'Ok', {
-              duration: 4000
+              duration: 2000
             })
+            this.router.navigateByUrl('/rsvp-salesrep');
+
+            // if(this.user_details.type == 'salesrep'){
+            //   this.router.navigateByUrl('/rsvp-salesrep');
+            // }
+            // if(this.user_details.type == 'customer'){
+            //   this.router.navigateByUrl('/rsvp-customer');
+            // }
 
             let data: any = {
               id: val,
@@ -264,15 +272,16 @@ export class InventoryDetailComponent implements OnInit {
             if(res.status == "success"){
   
               this.snack.open('RSVP Added Successfully','Ok',{
-                duration:4000
+                duration:2000
               })
+              this.router.navigateByUrl('/rsvp-customer');
 
-              if(this.user_details.type == 'salesrep'){
-                this.router.navigateByUrl('/rsvp-salesrep');
-              }
-              if(this.user_details.type == 'customer'){
-                this.router.navigateByUrl('/rsvp-customer');
-              }
+              // if(this.user_details.type == 'salesrep'){
+              //   this.router.navigateByUrl('/rsvp-salesrep');
+              // }
+              // if(this.user_details.type == 'customer'){
+              //   this.router.navigateByUrl('/rsvp-customer');
+              // }
 
               let data: any = {
                 id:val,
@@ -315,7 +324,7 @@ export class InventoryDetailComponent implements OnInit {
       console.log(res);
       if (res.status == 'success') {
         // this.search.splice(index,index+1);
-        this.snack.open('Record Removed Successfully..!','',{duration:2000})
+        this.snack.open('Record Removed Successfully..!','Ok',{duration:2000})
 
 
         if(this.user_details.type == 'admin'){
