@@ -23,7 +23,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-form-field-label.ng-star-inserted {display: none !important}
 .mat-form-field-infix {border: 0 !important}
 
-.mat-dialog-container {padding: 0 !important;}
 
 .mat-focused .mat-form-field-label.ng-star-inserted.mat-empty.mat-form-field-empty {display: none !important}
 .mat-form-field-label.ng-star-inserted.mat-empty.mat-form-field-empty {display: block !important}
@@ -38,21 +37,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .carousel > button .mat-icon{color:#fff !important;}
 
 .mat-card{ background:white!important;}
-.mat-dialog-container{padding: 10px !important;border-radius: 0;overflow: hidden !important;}
-.mat-dialog-container .mat-dialog-title{background-color: #4f4f4f; border: 0px; padding: .35em; color: #ffffff;}
-.mat-dialog-container .mat-card {transition: none !important;display: flex; position: relative; padding: 5px; border-radius: 0px; align-items: center;}
-.mat-dialog-container .mat-card .mat-card-header{white-space: normal; word-break: break-word;}
-.mat-dialog-container .mat-card .mat-card-content{white-space: normal; word-break: break-word;}
-.mat-dialog-container .mat-card-header .mat-card-title {margin-bottom: 0; font-size: 16px;}
-.mat-dialog-container .mat-dialog-actions { margin-bottom: 0px; justify-content: center;}
-.mat-dialog-container .mat-dialog-actions button{display: inline-block; height: auto; background: #f7462e; font-size: 18px; color: #fff!important; text-transform: uppercase; font-family: 'HelveticaBold'; text-decoration: none!important; line-height: normal; text-align: center; margin: 0 auto; white-space: normal; margin-top: 10px;; padding: 12px 10px;border-radius: 0px !important;}
 
 .cdk-global-overlay-wrapper {align-items: center !important;}
 .cdk-global-overlay-wrapper .mat-bottom-sheet-container bottom-sheet .mat-nav-list{display:flex; padding-top:0 !important;}
 .mat-bottom-sheet-container bottom-sheet .mat-nav-list .mat-list-item {display: inline-block; height: auto; background: #cc3333; font-size: 18px; color: #fff!important;text-transform: uppercase; font-family: 'Ralewaybold'; text-decoration: none!important; line-height: normal; text-align: center; margin: 5px; white-space: normal; padding: 12px 10px;border-radius: 0px !important;}  
 .mat-bottom-sheet-container bottom-sheet .mat-nav-list{text-align: center;}
-.mat-dialog-container .mat-card-header .mat-card-title{margin-bottom: 0;font-size: 16px;font-weight: 600;}
-.mat-dialog-content {padding: 0 24px !important; box-shadow: none !important;}
+
 .mat-form-field {margin: 0 10px;}
 .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {background-color: #e0361f;}
 .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot {color: #fff; border: none; padding: 10px !important;font: inherit;}
@@ -289,6 +279,172 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
   padding: 0 !important;
   height: 100%;
 }
+
+
+
+
+
+
+
+/******Dialog CSS********/
+/* .mat-dialog-content {padding: 0 !important;}
+.modalttitlewrapper{background-color:#22282c; display: block;  padding: 50px; height: 100%;    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;}
+.mat-dialog-content .add-dialog .mat-dialog-title{background-color:#4f4f4f;border:0;padding:.35em;color:#fff}
+.modalttitlewrapper .mat-dialog-content .mat-form-field{width: 100%;}
+.mat-dialog-title.modalttitle {margin: 0 0 0px; display: block; background: #0ac5fc; padding: 20px; text-align: center;text-transform: uppercase;font-family: "HelveticaBold";color:#fff;font-size: 24px!important; border-top-left-radius: 15px; border-top-right-radius: 15px;}
+.modalouter_wrapper_inner input.mat-input-element, .modalouter_wrapper_inner textarea.mat-input-element, .modalouter_wrapper_inner .mat-select {outline: none; font-size: 1em; color: #000; padding: .6em; margin: 0; width: 100%; border: none; -webkit-appearance: none; display: block; background: #b3f3f6; border-radius: 5px; padding: 15px 10px; color: #333;
+border: 1px solid #fff; box-sizing: border-box;}
+
+.generalmodal {padding: 0 !important; border-top-left-radius: 15px; border-top-right-radius: 15px; position:relative;}
+.modal-content {position: relative; background-color: #fff; -webkit-background-clip: padding-box; background-clip: padding-box; border: 1px solid #999; border: 1px solid rgba(0,0,0,.2); border-radius: 15px; outline: 0; box-shadow: 0 3px 9px rgba(0,0,0,.5);}
+.modal-content{border-radius: 15px; overflow: hidden;}
+
+.generalmodal .mat-dialog-title{background-color:#4f4f4f;border:0;padding:.35em;color:#fff; border-radius:0 !important;}
+.generalmodal .mat-dialog-title.modalttitle {margin: 0 0 0px; display: block; background: #0ac5fc; padding: 20px; text-align: center; text-transform: uppercase; font-family: "HelveticaBold";  color:#fff; font-size: 24px!important;}
+.generalmodal .modalttitlewrapper .mat-form-field{width: 100%;}
+.generalmodal .modalcontentwrapper{background-color:#22282c; display: block;  padding: 50px; height: 100%; padding-bottom: 100px;}
+.generalmodal .modalcontentwrapper .form_floating_div .formlabel label{color:#fff;}
+.generalmodal .checkboxclass {width: 35px;}
+.generalmodal input, .generalmodal textarea, .generalmodal select {outline: none;font-size: 1em; margin: 0; width: 100%; border: none !important;display: block;background: #ffffff;
+border-radius: 5px !important;color: #333 !important; border: 1px solid #fff !important; box-sizing: border-box;}
+.generalmodal .btn_submit {width: 100%; position: absolute;bottom: 0;height: 50px;background-color: #FFF;}
+.generalmodal .btn_submit button {width: 50%;height: 50px;line-height: 50px; text-align: center; float: left; background-color: #EEE; color: #4d5c6e; transition: 0.3s;text-transform: uppercase;font-weight: bold;}
+.generalmodal .btn_submit button:nth-of-type(2) {float: right; color: #FFF; background-color: #f7462e;}
+
+.mat-dialog-container{padding: 10px !important;border-radius: 0;overflow: hidden !important;}
+.mat-dialog-container .mat-dialog-title{background-color: #4f4f4f; border: 0px; padding: .35em; color: #ffffff;}
+.mat-dialog-container .mat-card {transition: none !important;display: flex; position: relative; padding: 5px; border-radius: 0px; align-items: center;}
+.mat-dialog-container .mat-card .mat-card-header{white-space: normal; word-break: break-word;}
+.mat-dialog-container .mat-card .mat-card-content{white-space: normal; word-break: break-word;}
+.mat-dialog-container .mat-card-header .mat-card-title {margin-bottom: 0; font-size: 16px;}
+.mat-dialog-container .mat-dialog-actions { margin-bottom: 0px; justify-content: center;}
+.mat-dialog-container .mat-dialog-actions button{display: inline-block; height: auto; background: #f7462e; font-size: 18px; color: #fff!important; text-transform: uppercase; font-family: 'HelveticaBold'; text-decoration: none!important; line-height: normal; text-align: center; margin: 0 auto; white-space: normal; margin-top: 10px;; padding: 12px 10px;border-radius: 0px !important;}
+
+
+.mat-dialog-container {padding: 0 !important;}
+.mat-dialog-container .mat-card-header .mat-card-title{margin-bottom: 0;font-size: 16px;font-weight: 600;}
+.mat-dialog-content {padding: 0 24px !important; box-shadow: none !important;}
+
+.mat-dialog-content{padding:10px!important;border-radius:0;overflow:hidden!important; overflow-y: scroll !important;}
+.mat-dialog-content .mat-dialog-title{background-color:#4f4f4f;border:0;padding:.35em;color:#fff}
+.mat-dialog-content .mat-card{transition:none!important;display:flex!important;position:relative;padding:5px;border-radius:0;align-items:center}
+.mat-dialog-content .mat-card .mat-card-header{white-space:normal;word-break:break-word}
+.mat-dialog-content .mat-card .mat-card-content{white-space:normal;word-break:break-word}
+.mat-dialog-content .mat-card-header .mat-card-title{margin-bottom:0;font-size:16px}
+.mat-dialog-content .mat-dialog-actions{margin-bottom:0;justify-content:center}
+.mat-dialog-content .mat-dialog-actions button{display:inline-block;height:auto;background:#c33;font-size:18px;color:#fff!important;text-transform:uppercase;font-family:'Ralewaybold';text-decoration:none!important;line-height:normal;text-align:center;margin:0 auto;white-space:normal;margin-top:10px;padding:12px 10px;border-radius:0!important}
+.mat-dialog-container .mat-dialog-actions button{display:inline-block;height:auto;background:#c33;font-size:18px;color:#fff!important;text-transform:uppercase;font-family:'Ralewaybold';text-decoration:none!important;line-height:normal;text-align:center;margin:0 auto;white-space:normal;margin-top:10px;padding:12px 10px;border-radius:0!important}
+.mat-dialog-container .mat-card-header .mat-card-title{margin-bottom:0;font-size:16px;font-weight:600}
+.mat-dialog-content{padding:0 24px!important;box-shadow:none!important; max-height: 100%;}
+.mat-form-field{margin:0 10px}
+
+
+
+.logomodalwrapper{width:480px;margin:0 auto;display:block;background:#ddd4d4;padding:10px;}
+.logomodalwrapper .logomodal{width:90%;margin:0 auto;display:block;}
+.logomodalwrapper .logomodal img{max-width:100%;}
+.logomodalwrapper h2{color:#fc563f;font-size:32px;font-weight:600;line-height:24px;letter-spacing:1.92px;text-transform:uppercase;text-align:center;margin-top:20px;}
+
+.modal-dialog .modal-content{background-color: #22282c; display: block; height: 100%;}
+.modal-dialog .modal-content img{max-width: 100%;}
+
+.modalouter_body { width: 100%; height: 100vh;  position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.2); z-index: 9;}
+.modalouter_wrapper {width: 300vh; height: 100vh; display: table-cell; text-align: right; vertical-align: middle;  position: relative; z-index: 9999;}
+.modalouter_wrapper .modalouter_wrapper_inner {width: 790px; margin: 0 auto; margin-bottom: 20px; display: block;    position: relative;}
+.newslettermain .mat-form-field-appearance-legacy .mat-form-field-wrapper {width: 100% !important; padding-bottom: 0px !important;}
+
+
+.newsletter_modal {
+  width: 480px;
+  border: 2px solid #fb4a32;
+  border-radius: 5px!important;
+  padding: 15px!important; display: block!important;
+}
+
+.newsletter_modal h2 {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  color: #fb4a32;
+  font-family: HelveticaBold;
+}
+
+.newsletter_modal h3 {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0 15px;
+  font-size: 18px;
+  color: #111;
+  font-family: Helvetica-Normal;
+  font-weight: 400;
+}
+
+.newsletter_modal .mat-form-field-appearance-legacy .mat-form-field-infix {
+  width: auto;
+  padding: 0px 15px!important;
+  height: 36px!important;
+  background: #e1e0e6!important;
+  margin: 5px 0; height: 50px!important;
+}
+
+.newsletter_modal .mat-form-field-appearance-legacy .mat-form-field-infix input{height:50px!important;}
+
+.newsletter_modal .mat-form-field{ display: block!important;}
+
+.newsletter_modal .mat-form-field-flex{ display: block!important;  border: none!important; padding: 0px!important;}
+
+.newsletter_modal button {
+  color: #fff;
+  background: #fb4a32!important;
+
+  font-size: 24px;
+  line-height: normal;
+  width: auto!important;
+  height: auto!important;
+  font-family: HelveticaBold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 14px 15px 8px!important;
+  margin-top: 10px!important;
+}
+
+.newsletter_modal h4{ display: block; text-align: center; margin: 0; padding:10px 0 0px 0; font-size: 22px; color: #111;  font-family: 'Helvetica-Normal'; font-weight: normal;}
+
+.newsletter_modalsuccess{ padding-top: 25px!important; padding-bottom: 25px!important;}
+
+
+.modal-sm {
+  width: auto!important;
+} */
+
+/* 
+.mat-dialog-container .mat-dialog-actions button{display:inline-block;height:auto;background:#c33;font-size:18px;color:#fff!important;text-transform:uppercase;font-family:'Ralewaybold';text-decoration:none!important;line-height:normal;text-align:center;margin:0 auto;white-space:normal;margin-top:10px;padding:12px 10px;border-radius:0!important}
+.mat-dialog-container .mat-card-header .mat-card-title{margin-bottom:0;font-size:16px;font-weight:600}
+.mat-dialog-content{padding:0 24px!important;box-shadow:none!important; max-height: 100%;} */
+
+
+/******Dialog CSS Ends********/
+
+
+
+
+
+
+
+@media(max-width:540px) {
+
+  .newsletter_modal {
+      width:auto;}
+}
+
+@media screen and (max-width: 480px){
+	.logomodalwrapper{width: 90%; margin: 0 auto; display: block;	}
+}
+
 
 @media screen and (max-width: 1600px){
   .owl-carousel .owl-nav button.owl-prev {
