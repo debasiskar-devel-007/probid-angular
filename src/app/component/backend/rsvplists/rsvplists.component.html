@@ -45,9 +45,8 @@
                           </span>
                           <span class="rsvplistsingleright">
                             <span class="rsvplisttypecontent">  
-                              <span (click)="deleteRsvp(item,i)"><i class="material-icons">
-                                delete
-                                </i></span>
+                              <span class="deletecls" (click)="deleteRsvp(item,i)"><i class="material-icons">delete</i></span>
+                            
                               <h2>User</h2>
                               <span class="rsvplisttypecontentinfo">
                                 <span class="rsvplisttypeimgwrapper">
@@ -104,9 +103,9 @@
               </span>  
             </span>  
         </mat-card>
-      <div>
-        <button mat-flat-button color="primary" type="button" *ngIf="rsvp_list !=null && indexval < rsvp_list.length" (click)="loadMoreRsvp() " >Load More</button>
-      </div>
+        <div>
+          <button mat-flat-button class="btnblue" type="button" *ngIf="rsvp_list !=null && indexval < rsvp_list.length" (click)="loadMoreRsvp() " >Load More</button>
+        </div>
 
       </div>
   </div>
