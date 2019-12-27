@@ -98,7 +98,7 @@
         <!-- end gallery section -->
 
         <!-- start video section -->
-        <mat-list class="photogallerylists">
+        <mat-list class="photogallerylists" *ngIf="blog[0].credentials[0].video_url != ''">
           <mat-list-item class="writer_image">
             <span class="writer_image_wrapper">
               <div *ngFor="let vurl of blog[0].credentials">

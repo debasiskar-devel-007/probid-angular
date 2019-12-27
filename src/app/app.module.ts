@@ -340,7 +340,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
     
     // SharetoolsModule
   ],
-  providers: [CookieService, AuthGuard, ApiService, SidenavService,BasicInventorySearchBackendComponent],
+  providers: [CookieService, AuthGuard, ApiService, SidenavService,BasicInventorySearchBackendComponent,InventoryDetailComponent],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent,DeleteModalRsvpComponent,RemoveModalComponent,RemoveRsvpComponent]
