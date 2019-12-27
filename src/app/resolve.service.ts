@@ -60,6 +60,8 @@ export class ResolveService implements Resolve<any> {
             // console.log(requestData.condition)
             if(route.url[0].path == 'blogdetail') {
                 route.data.requestcondition.condition._id_object = route.params['id'] ;
+                delete route.data.requestcondition.condition.id
+
             }
             if(route.url[0].path == 'inventory-detail') {
                 route.data.requestcondition.condition._id_object = route.params['id'] ;
