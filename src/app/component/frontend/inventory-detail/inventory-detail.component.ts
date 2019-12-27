@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import {BasicInventorySearchBackendComponent} from '../../backend/inventory/basic-inventory-search-backend/basic-inventory-search-backend.component';
 import { CookieService } from 'ngx-cookie-service';
+import { Observable, Subject, Subscription } from 'rxjs';
 
 
 @Component({
@@ -70,6 +71,9 @@ export class InventoryDetailComponent implements OnInit {
   public user_details:any;
   public user_id:any;
 
+  private subjectForServerUrl = new Subject<any>();
+
+
   constructor(public activatedRoute:ActivatedRoute,public apiService:ApiService ,public observableData:BasicInventorySearchBackendComponent,public cookieService:CookieService) {
 
 
@@ -80,6 +84,17 @@ export class InventoryDetailComponent implements OnInit {
       console.log('type>>',this.user_details.type)
     }
    }
+
+  setServerUrl(value: any) {
+    this.subjectForServerUrl.next(value);
+  }
+  public clearServerUrl() {
+    this.subjectForServerUrl.next(null);
+  }
+  public getServerUrl(): Observable<any> {
+    console.log('=====+++----____',this.subjectForServerUrl.asObservable());
+    return this.subjectForServerUrl.asObservable();
+  }
 
   ngOnInit() {
 

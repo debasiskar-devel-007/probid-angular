@@ -51,19 +51,13 @@ public tokenVal: any;
     var data: any = {};
     
     data = {
-      source:"blogs_view",
-      endpoint: "datalist"
+      source:"blogs_view"
     }
-    this.apiService.getTempToken().subscribe((res:any)=>{
-      
-      if(res.status == 'success') {
-        this.apiService.getDatalistWithToken(data, res).subscribe((res2:any)=>{
+    this.apiService.getDatalistWithToken(data, "datalistwithouttoken").subscribe((res:any)=>{
 
-          this.blogList = res2.res;
-          console.log(this.blogList)
+      this.blogList = res.res;
+      console.log(this.blogList)
 
-        });
-      }
     });
   }
 
