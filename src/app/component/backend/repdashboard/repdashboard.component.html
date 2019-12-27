@@ -2,8 +2,8 @@
     <app-header></app-header>
     <div class="main-content-wrap">
             <mat-card class="generalcls" style="padding: 0 !important;">
-                <button (click)="copyInputMessage(userinput)" value="click to copy" >Share Link for Castomer Sign Up</button>
-                <input matInput type="text" value="{{apiService.share_link}}customer-signup/{{userid}}" #userinput>
+                <!-- <button  >Share Link for Castomer Sign Up</button> -->
+               
                 
                 <mat-card-content class="rep-dashboard-banner">
                     <span class="rep-dashboard-banner-inner">
@@ -27,7 +27,7 @@
                                             </span>
                                             <span class="sharelinkcontent">
                                                 <h2>ProBid Auto Customer share link</h2>
-                                                <p><mat-button>Grab URL</mat-button>  https://www.probidauto.com/</p>
+                                                <p><button (click)="copyInputMessage(userinput)" value="click to copy">Grab URL</button>   <input matInput type="text" value="{{apiService.share_link}}customer-signup/{{userid}}" #userinput></p>
                                                 <span class="blogsociallists">
                                                     <a class="sociallink fa fb">
                                                         <fa name="facebook" class="fa-facebook"></fa>
@@ -55,7 +55,7 @@
                                             </span>
                                             <span class="sharelinkcontent">
                                                 <h2>ProBid Auto Dealer share link</h2>
-                                                <p><mat-button>Grab URL</mat-button>  https://www.probidauto.com/</p>
+                                                <p><button>Grab URL</button>  https://www.probidauto.com/</p>
                                                 <span class="blogsociallists">
                                                     <a class="sociallink fa fb"><fa name="facebook" class="fa-facebook"></fa></a>
                                                     <a class="sociallink fa twi"><fa name="twitter" class="fa-twitter"></fa></a>
