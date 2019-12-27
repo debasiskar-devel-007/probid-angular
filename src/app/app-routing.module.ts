@@ -28,7 +28,7 @@ import { SearchListViewComponent } from './component/frontend/search-list-view/s
 import { BlogCategoryComponent } from './component/frontend/blog-category/blog-category.component';
 import { SalesrepSignupComponent } from './component/frontend/salesrep-signup/salesrep-signup.component';
 import { CustomerSignupComponent } from './component/frontend/customer-signup/customer-signup.component';
-import { InventoryDetailComponent } from './component/frontend/inventory-detail/inventory-detail.component';
+import { InventoryDetailComponent } from './component/backend/inventory-detail/inventory-detail.component';
 
 /**End Frontend Routing**/
 
@@ -306,7 +306,8 @@ const routes: Routes = [
 
   /**Backend Routing**/
   // {path: 'customer-dashboard', component:DashboardComponent, canActivate:[AuthGuard]},       // Useing for canActive
-  { path: 'customer-dashboard', component: DashboardComponent },
+  { path: 'customer-dashboard', component: DashboardComponent ,canActivate: [AuthGuard] , resolve: {rsvp: ResolveService },
+  data: { requestcondition: { source: '', condition: {} }, endpoint: 'for-dashboard' }},
   // { path: 'admin-dashboard', component: MaindashboardComponent,canActivate: [AuthGuard] },
   { path: 'admin-dashboard', component: MaindashboardComponent,canActivate: [AuthGuard] , resolve: {rsvp: ResolveService },
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'for-dashboard' } },
@@ -364,7 +365,7 @@ const routes: Routes = [
 
   { path: 'rsvp-salesrep', component: RsvplistsComponent,
   resolve: { rsvp: ResolveService },
-  data: { requestcondition: { source: 'send_rsvp_view', condition: {"salesrep":"user_id"} }, 
+  data: { requestcondition: { source: 'send_rsvp_view', condition: {"added_by_object":"user_id"} }, 
   endpoint: 'datalist' }},
 
   { path: 'rsvp-customer', component: RsvplistsComponent ,

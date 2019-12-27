@@ -57,7 +57,7 @@ import { CustomerSignupComponent,customerSignUpsuccessDialog } from './component
 
 import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
 
-import { InventoryDetailComponent, RemoveRsvpComponent } from './component/frontend/inventory-detail/inventory-detail.component';
+import { InventoryDetailComponent, RemoveRsvpComponent } from './component/backend/inventory-detail/inventory-detail.component';
 
 /**End Frontend Component**/
 

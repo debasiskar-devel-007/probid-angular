@@ -6,7 +6,6 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-import { InventoryDetailComponent } from '../../inventory-detail/inventory-detail.component';
 
 export interface DialogData {
   errorMsg: string;
@@ -110,7 +109,6 @@ export class BasicInventorySearchComponent implements OnInit {
 
   constructor(public fb: FormBuilder,
     public apiService: ApiService,
-    public InventoryDetailComponent: InventoryDetailComponent,
     public activatedRoute: ActivatedRoute,
     public http: HttpClient,
     private readonly meta: MetaService,
@@ -273,13 +271,6 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
 
   }
 
-  showDetails(search: any){
-    console.log('test')
-    this.InventoryDetailComponent.clearServerUrl();
-    setTimeout(() => {
-      this.InventoryDetailComponent.setServerUrl(search);
-    }, 50);
-  }
 
 
   searchAutoComplete(event: any, field: string) {
