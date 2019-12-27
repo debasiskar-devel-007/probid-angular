@@ -1,7 +1,7 @@
 import { Component, OnInit,Inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
-import { BasicInventorySearchBackendComponent } from '../../backend/inventory/basic-inventory-search-backend/basic-inventory-search-backend.component';
+import { BasicInventorySearchBackendComponent } from '../inventory/basic-inventory-search-backend/basic-inventory-search-backend.component';
 import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';

@@ -6,7 +6,7 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-import { InventoryDetailComponent } from '../../inventory-detail/inventory-detail.component';
+import { InventoryDetailComponent } from '../../../backend/inventory-detail/inventory-detail.component';
 
 export interface DialogData {
   errorMsg: string;
