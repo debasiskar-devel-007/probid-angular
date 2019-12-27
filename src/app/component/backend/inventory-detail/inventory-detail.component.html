@@ -1,11 +1,10 @@
-<app-header></app-header>
+<!-- <app-header></app-header>
 <mat-card class="innerpagebanner inventorydetailbg">
   <span class="mainwrappercontent">
     <mat-card-content>
       <h1>Inventory Details</h1>
     </mat-card-content>
   </span>
-  <!-- <img  class="blogheaderimg"> -->
   <span class="blogheaderimgbg"></span>
 </mat-card>
 <mat-card class="innerpagetitle">
@@ -16,17 +15,30 @@
           <a [routerLink]="'/home'"> home </a>
           <span class="breadcrumb__divider" aria-hidden="true">›</span>
         </mat-list-item>
-        <!-- <mat-list-item routerLinkActive="active">
-          <a [routerLink]="'/inventory'"> inventory list </a>
-          <span class="breadcrumb__divider" aria-hidden="true">›</span>
-        </mat-list-item> -->
         <mat-list-item routerLinkActive="active activebread">
           <a [routerLink]="'/inventory-detail'"> Inventory Details </a>
         </mat-list-item>
       </mat-list>
     </mat-card-content>
   </span>
-</mat-card>
+</mat-card> -->
+
+
+<div class="adminwrappercls">
+  <app-header></app-header>
+  <div class="main-content-wrap">
+    <mat-card-content class="adm_inner_banner">
+      <mat-card-title class="adm_inner_title">Inventory Details</mat-card-title>
+      <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </mat-card-content>
+    <mat-card-content class="bred_cram_wrapper">
+        <a mat-list-item routerLinkActive="active"> Dashboard </a>
+        <a mat-list-item routerLinkActive="active activebread"> Inventory Details</a>
+    </mat-card-content>
+
+  <div *ngIf="spinnerval==1">
+    <mat-spinner></mat-spinner>
+  </div>
 
 <mat-card class="ptb-40 generalcls inventorydetail">
   <span class="mainwrappercontent">
@@ -649,5 +661,9 @@
   </span>
 </mat-card>
 
+
+
+</div>
+</div>
 
 <app-footer></app-footer>
