@@ -22,12 +22,13 @@ i{font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line
 .mat-menu-content{padding:0!important;border-radius:0!important;background-color:#fff;color:#fff}
 .userwrapper{width:36px;height:36px;border-radius:50%;min-width:inherit;line-height:36px}
 
+.mat-card{background:#fff!important}
 .cdk-global-overlay-wrapper{align-items:center!important}
 .cdk-global-overlay-wrapper .mat-bottom-sheet-container bottom-sheet .mat-nav-list{display:flex;padding-top:0!important}
 .mat-bottom-sheet-container bottom-sheet .mat-nav-list .mat-list-item{display:inline-block;height:auto;background:#c33;font-size:18px;color:#fff!important;text-transform:uppercase;font-family:'Ralewaybold';text-decoration:none!important;line-height:normal;text-align:center;margin:5px;white-space:normal;padding:12px 10px;border-radius:0!important}
 .mat-bottom-sheet-container bottom-sheet .mat-nav-list{text-align:center}
-.mat-card{background:#fff!important}
 
+.mat-form-field{margin:0 10px}
 .form_floating_div{width:100%;}
 admin-add-categories .mat-form-field-appearance-legacy .mat-form-field-infix {
   padding: 1em !important;
@@ -170,10 +171,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32393f', end
 .footerbg .mat-card{background: #dde2e5 !important;}
 .footerblock.mat-card{background: #dde2e5 !important;}
 .searchblock .mat-form-field-appearance-legacy .mat-form-field-wrapper {padding-bottom: 0;line-height: 60px;}
-addcategory-dialog .mat-dialog-actions {padding: 8px 0;display: flex; flex-wrap: wrap; min-height: 52px;align-items: center; margin-bottom: 0; justify-content: flex-end;}
-addcategory-dialog .mat-dialog-content{ margin: 0 !important;}
-.mat-dialog-container addcategory-dialog .mat-dialog-actions button {margin: 0 5px !important;}
-.mat-dialog-container addcategory-dialog .mat-dialog-actions button:first-child{margin-left:0 !important;}
+
 
 
 .adminbtnred, .adminbtnred:hover { display: inline-block !important; height: auto;  background: #cc3333 !important; font-size: 18px; color: #fff!important; text-transform: uppercase;
@@ -288,6 +286,9 @@ text-transform: uppercase!important; font-family: 'Ralewaybold'; text-decoration
 .searchblock span{display: flex; align-items: center; position: relative; z-index: 99;}
 .searchblock .searchblockwrapper {display: flex; align-items: stretch; justify-content: space-between; flex-direction: row;}
 .searchblock span h2{font-family: "Helvetica-Normal"; color:#373b3d; font-size: 24px!important;margin: 0;}
+
+
+
 
 
 .inner_search_wrapper input{ outline: none; font-size: 1em;margin: 0; border: none !important; display: block; background: #ffffff; border-radius: 0px !important; color: #333 !important; border: 1px solid #fff !important; box-sizing: border-box; height: 40px; margin-right: 10px; padding: 10px; width:auto; min-width: 270px;}
