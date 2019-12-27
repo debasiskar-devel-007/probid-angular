@@ -144,8 +144,8 @@
                   </mat-list>
                 </span>
 
-                <!-- RSVP DETAILS -->       
-                <!-- <span class="topinnerinforight">
+                <!-- RSVP DETAILS for admin -->       
+                <!-- <span class="topinnerinforight" *ngIf="user_details.type == 'admin'" >
                   <h1 class="btnredcls">Reject</h1>
                   <h1 class="btngreencls">Accept</h1>
                   <h1 class="btnorangecls">Pending</h1>
@@ -161,11 +161,11 @@
                 </span> -->
                 <!-- END RSVP DETAILS -->
 
-                <!-- Search Result -->    
+                <!-- Search Result  customer-->    
                 <!-- <span class="topinnerinforight" >
-                  <h1 class="btnrsvp">RSVP</h1>
-                  <mat-button><i class="material-icons"> favorite </i> ADD</mat-button>
-                  <mat-form-field class="select-customer">
+                  <h1 *ngIf="user_details.type == 'customer' || user_details.type == 'salesrep'" class="btnrsvp">RSVP</h1>
+                  <mat-button *ngIf="user_details.type == 'customer'"><i class="material-icons"> favorite </i> ADD</mat-button>
+                  <mat-form-field class="select-customer" ngIf="user_details.type == 'salesrep'">
                     <mat-label>Select Customer</mat-label>
                     <mat-select>
                       <mat-option>
@@ -176,18 +176,21 @@
                 </span> -->
                 <!-- end Search Result -->    
 
-                <!-- Save Search DETAILS -->    
-                <span class="topinnerinforight"  >
-                  <h1 class="btnrsvp">RSVP</h1>
-                  <mat-button class="btnredcls">Remove</mat-button>
-                  <mat-form-field class="select-customer">
-                    <mat-label>Select Customer</mat-label>
-                    <mat-select>
-                      <mat-option>
-                        customer
+                <!-- Save Search DETAILS for salesrep-->    
+                <span class="topinnerinforight"   >
+                  <h1  class="btnrsvp" *ngIf="user_details.type == 'customer' || user_details.type == 'salesrep'" (click)="addRsvp(itemVal,data)">RSVP</h1>
+                  <mat-button class="btnredcls" (click)="removeRsvp(itemVal,data)">Remove</mat-button>
+                  <mat-form-field class="select-customer" *ngIf="user_details.type == 'salesrep'">
+                    <mat-label >Select Customer</mat-label>
+                    <mat-select [(ngModel)]="customer_id">
+                      <mat-option *ngFor="let item of customerList" [value]="item._id">
+                        {{item.firstname}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
+                  <div>
+                    <span class="errormsg" *ngIf=" errorMsg !=null &&  errorMsg != '' && user_details.type == 'salesrep' "     [ngClass]="customer_id =='' ? 'errormsg':'test'" >{{errorMsg}}</span>
+                  </div>
                 </span>
                 <!-- end Save Search DETAILS -->   
 
@@ -198,7 +201,7 @@
             <span class="inventorydetailbottom detaillistcls inventorydetailuser">
 
               <!-- For Admin ,salesrep,customer-->
-              <span class="flexcolumn " >
+              <!-- <span class="flexcolumn " >
                 <span *ngIf="user_details.type == 'admin' || user_details.type == 'salesrep' ">
                   <mat-card-title class="headerlists">User</mat-card-title>
                   <span class="rsvplisttypecontentinfowrapper">
@@ -241,7 +244,7 @@
                     </span>
                   </span>
                 </span>
-              </span>
+              </span> -->
               <!-- For End Admin -->
 
                <!-- For Sales Rep -->

@@ -260,11 +260,11 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
         let endpoint: any = "addorupdatedata";
         item.added_by = this.user_id;
         item.status = 0;
-        if (this.user_details.type == 'salesrep') {
+        // if (this.user_details.type == 'salesrep') {
           item.added_for = item.customer_id;
-          } else {
-            item.added_for = this.user_id;
-          }
+          // } else {
+          //   item.added_for = this.user_id;
+          // }
         let card_data:any = {
           card_data: item
         }
@@ -313,7 +313,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
       item.added_by = this.user_id;
       item.status = 0;
     
-      item.added_for = this.user_id;
+      item.added_for = this.user_details.salesrep;
 
       let card_data:any = {
         card_data: item

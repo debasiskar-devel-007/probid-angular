@@ -426,6 +426,55 @@ border-radius: 5px !important;color: #333 !important; border: 1px solid #fff !im
 .mat-dialog-container .mat-card-header .mat-card-title{margin-bottom:0;font-size:16px;font-weight:600}
 .mat-dialog-content{padding:0 24px!important;box-shadow:none!important; max-height: 100%;} */
 
+/* addcategory-dialog .mat-dialog-actions {padding: 8px 0;display: flex; flex-wrap: wrap; min-height: 52px;align-items: center; margin-bottom: 0; justify-content: flex-end;}
+addcategory-dialog .mat-dialog-content{ margin: 0 !important;}
+.mat-dialog-container addcategory-dialog .mat-dialog-actions button {margin: 0 5px !important;}
+.mat-dialog-container addcategory-dialog .mat-dialog-actions button:first-child{margin-left:0 !important;} */
+
+
+/* 
+.modalnewcls{padding: 10px; background-color: #fff; display: block;}
+.modalnewclsinner{padding: 20px; background-color: #f6f6f6; display: block;}
+.logowrapperouter{background-color: #151519; padding: 15px;}
+.logowrapper{text-align: center;}
+
+.mat-dialog-content {padding: 0 !important;}
+.modalttitlewrapper{background-color:#22282c; display: block;  padding: 50px; height: 100%;    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;}
+.mat-dialog-content .add-dialog .mat-dialog-title{background-color:#4f4f4f;border:0;padding:.35em;color:#fff}
+.modalttitlewrapper .mat-dialog-content .mat-form-field{width: 100%;}
+.mat-dialog-title.modalttitle {margin: 0 0 0px; display: block; background: #0ac5fc; padding: 20px; text-align: center;text-transform: uppercase;font-family: "HelveticaBold";color:#fff;font-size: 24px!important; border-top-left-radius: 15px; border-top-right-radius: 15px;}
+.modalouter_wrapper_inner input.mat-input-element, .modalouter_wrapper_inner textarea.mat-input-element, .modalouter_wrapper_inner .mat-select {outline: none; font-size: 1em; color: #000; padding: .6em; margin: 0; width: 100%; border: none; -webkit-appearance: none; display: block; background: #b3f3f6; border-radius: 5px; padding: 15px 10px; color: #333;
+border: 1px solid #fff; box-sizing: border-box;}
+
+.generalmodal {padding: 0 !important; border-top-left-radius: 15px; border-top-right-radius: 15px; position:relative;}
+.modal-content {position: relative; background-color: #fff; -webkit-background-clip: padding-box; background-clip: padding-box; border: 1px solid #999; border: 1px solid rgba(0,0,0,.2); border-radius: 15px; outline: 0; box-shadow: 0 3px 9px rgba(0,0,0,.5);}
+.modal-content{border-radius: 15px; overflow: hidden;}
+
+.generalmodal .mat-dialog-title{background-color:#4f4f4f;border:0;padding:.35em;color:#fff; border-radius:0 !important;}
+.generalmodal .mat-dialog-title.modalttitle {margin: 0 0 0px; display: block; background: #0ac5fc; padding: 20px; text-align: center; text-transform: uppercase; font-family: "HelveticaBold";  color:#fff; font-size: 24px!important;}
+.generalmodal .modalttitlewrapper .mat-form-field{width: 100%;}
+.generalmodal .modalcontentwrapper{background-color:#22282c; display: block;  padding: 50px; height: 100%; padding-bottom: 100px;}
+.generalmodal .modalcontentwrapper .form_floating_div .formlabel label{color:#fff;}
+.generalmodal .checkboxclass {width: 35px;}
+.generalmodal input, .generalmodal textarea, .generalmodal select {outline: none;font-size: 1em; margin: 0; width: 100%; border: none !important;display: block;background: #ffffff;
+border-radius: 5px !important;color: #333 !important; border: 1px solid #fff !important; box-sizing: border-box;}
+.generalmodal .btn_submit {width: 100%; position: absolute;bottom: 0;height: 50px;background-color: #FFF;}
+.generalmodal .btn_submit button {width: 50%;height: 50px;line-height: 50px; text-align: center; float: left; background-color: #EEE; color: #4d5c6e; transition: 0.3s;text-transform: uppercase;font-weight: bold;}
+.generalmodal .btn_submit button:nth-of-type(2) {float: right; color: #FFF; background-color: #f7462e;} */
+
+
+/* 
+.mat-dialog-content{padding:10px!important;border-radius:0;overflow:hidden!important; overflow-y: scroll !important;}
+.mat-dialog-content .mat-dialog-title{background-color:#4f4f4f;border:0;padding:.35em;color:#fff}
+.mat-dialog-content .mat-card{transition:none!important;display:flex!important;position:relative;padding:5px;border-radius:0;align-items:center}
+.mat-dialog-content .mat-card .mat-card-header{white-space:normal;word-break:break-word}
+.mat-dialog-content .mat-card .mat-card-content{white-space:normal;word-break:break-word}
+.mat-dialog-content .mat-card-header .mat-card-title{margin-bottom:0;font-size:16px}
+.mat-dialog-content .mat-dialog-actions{margin-bottom:0;justify-content:center}
+.mat-dialog-content .mat-dialog-actions button{display:inline-block;height:auto;background:#c33;font-size:18px;color:#fff!important;text-transform:uppercase;font-family:'Ralewaybold';text-decoration:none!important;line-height:normal;text-align:center;margin:0 auto;white-space:normal;margin-top:10px;padding:12px 10px;border-radius:0!important} */
+
+
 
 /******Dialog CSS Ends********/
 
@@ -434,6 +483,134 @@ border-radius: 5px !important;color: #333 !important; border: 1px solid #fff !im
 
 
 
+
+
+/*******NEW DIALOG CSS***************/
+.success-modal{min-width: 450px;max-width: 96%;margin: 0 auto;width: 600px !important;}
+#cdk-overlay-4 .mat-dialog-container, #cdk-overlay-0 .mat-dialog-container, #cdk-overlay-1 .mat-dialog-container, #cdk-overlay-2 .mat-dialog-container, #cdk-overlay-3 .mat-dialog-container{min-width: 450px;max-width: 96%;margin: 0 auto;width: 600px !important;}
+
+/* .cdk-overlay-pane{min-width: 450px;max-width: 96%;margin: 0 auto;width: 600px !important;} */
+
+/* .cdk-overlay-pane{min-width: 450px;max-width: 96%;margin: 0 auto;width: 600px !important;} */
+
+.cdk-global-scrollblock{top:0 !important;}
+.cdk-overlay-dark-backdrop {background: rgba(0,0,0,.60);}
+.generalmodalcls .videoWrapper {position: relative;	padding-bottom: 56.25%; /* 16:9 */padding-top: 25px;	height: 0;}
+.generalmodalcls .videoWrapper iframe,.generalmodalcls .videoWrapper object, .generalmodalcls .videoWrapper embed {position: absolute;top: 0;left: 0;width: 100%;
+	height: 100%;}
+.success-modal .mat-dialog-container{padding: 10px !important; border-radius: 0 !important;overflow: hidden !important;position: relative;display: -ms-flexbox;
+  display: flex;-ms-flex-direction: column;flex-direction: column; width: 100%; pointer-events: auto; background-color: #fff; background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);border-radius: .3rem;outline: 0;}
+.generalmodalcls .mat-dialog-content{ margin: 0 !important; padding: 0 !important;}
+.generalmodalcls .modal-content {background: #f9f9f9;position: relative;z-index: 20;border-radius: 0;color: #000;box-shadow: none;position: relative;  -ms-flex: 1 1 auto; flex: 1 1 auto;padding: 15px;-moz-box-shadow:    inset 0 0 10px #000000;-webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow: inset 0 0 10px #000000;}
+.mat-dialog-container {width: 100%;box-shadow: 0 3px 7px rgba(0,0,0,.25);box-sizing: border-box;transition: all .4s ease-in-out; -moz-transition: all .4s ease-in-out; -webkit-transition: all .4s ease-in-out;padding: 10px !important; border-radius: 0 !important; height: inherit !important;    margin-top: 20px;
+  margin-bottom: 20px} 
+
+ .mat-dialog-actions{display: -ms-flexbox; display: flex;-ms-flex-align: center;align-items: center;-ms-flex-pack: end;justify-content: flex-end;
+  padding: 0;}
+ .generalmodalcls .mat-dialog-actions {padding: 8px 0; display: flex; flex-wrap: wrap; min-height: 52px; align-items: center; margin-bottom: 0;
+  justify-content: center;}  
+.generalmodalcls .btnredcls {color: #fff; font-size: 30px; text-transform: uppercase; font-family: 'HelveticaBold'; text-decoration: none; display: inline-block;
+padding: 10px 15px 5px;border-radius: 0; background-color: #fb4a32;}
+.generalmodalcls .btnbluecls {color: #fff;font-size: 30px; text-transform: uppercase; font-family: 'HelveticaBold';text-decoration: none; display: inline-block;
+padding: 10px 15px 5px;border-radius: 0 !important;background-color: #12c3e4;}
+
+/* .generalmodalcls h2 {display: block; text-align: center; margin: 0; padding: 0; font-size: 30px; color: #000; font-family: HelveticaBold;} */
+
+
+.generalmodalcls .logowrapperouter{background-color: #151519; padding: 15px;margin-bottom: 15px;}
+.generalmodalcls .logowrapper{text-align: center; width: 350px; margin: 0 auto !important;}
+
+.generalmodalcls .infomodal{max-width: 96vw;}
+
+.generalmodalcls h2 {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  color: #fb4a32;
+  font-family: HelveticaBold;
+}
+
+.generalmodalcls p {
+  display: block;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #333;
+  font-family:'Helvetica-Normal';
+}
+
+.generalmodalcls h3 {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0 15px;
+  font-size: 18px;
+  color: #111;
+  font-family: Helvetica-Normal;
+  font-weight: 400;
+}
+
+.generalmodalcls .mat-form-field-appearance-legacy .mat-form-field-infix {
+  width: auto;
+  padding: 0px 15px!important;
+  height: 36px!important;
+  background: #e1e0e6!important;
+  margin: 5px 0; height: 50px!important;
+}
+
+.generalmodalcls .mat-form-field-appearance-legacy .mat-form-field-infix input{height:50px!important;}
+
+.generalmodalcls .mat-form-field{ display: block!important;}
+
+.generalmodalcls .mat-form-field-flex{ display: block!important;  border: none!important; padding: 0px!important;}
+
+/* .generalmodalcls button {
+  color: #fff;
+  background: #fb4a32!important;
+  font-size: 24px;
+  line-height: normal;
+  width: auto!important;
+  height: auto!important;
+  font-family: HelveticaBold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 14px 15px 8px!important;
+  margin-top: 10px!important;
+} */
+
+.generalmodalcls h4{ display: block; text-align: center; margin: 0; padding:10px 0 0px 0; font-size: 22px; color: #111;  font-family: 'Helvetica-Normal'; font-weight: normal;}
+
+.newsletter_modalsuccess{ padding-top: 25px!important; padding-bottom: 25px!important;}
+
+
+
+
+
+
+
+/********END NEW DIALOG CSS**************/
+
+@media(max-width:600px) {
+  .success-modal{
+    min-width: 450px;
+    max-width: 96%;
+    margin: 0 auto;
+    width: 96% !important;
+  }
+  .generalmodalcls .logowrapper {
+      text-align: center;
+      width: 100%;
+      margin: 0 auto !important;
+  }
+  .generalmodalcls h2 {
+    font-size: 20px;
+}
+}
 
 @media(max-width:540px) {
 
