@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatDialogRef, MAT_DIALOG_DATA, MatDialog} from "@angular/material";
+import { CookieService } from 'ngx-cookie-service';
 
 export interface DialogData {
   data: any;
@@ -19,8 +20,22 @@ export class RsvplistsComponent implements OnInit {
 public rsvp_list: any = '';
 public indexval:any=4;
 public ststus: number;
-public message:any="Are you sure you want to delete this?"
-  constructor(public activatedRoute: ActivatedRoute, public apiService: ApiService,public dialog: MatDialog,public snack:MatSnackBar) { }
+public message:any="Are you sure you want to delete this?";
+public userCookies: any;
+public userid: any;
+  constructor(
+    public activatedRoute: ActivatedRoute,
+    public apiService: ApiService,
+    public dialog: MatDialog,
+    public snack:MatSnackBar,
+    public cookieservice: CookieService) {
+
+      if (this.cookieservice.get('user_details') != undefined && this.cookieservice.get('user_details') != null && this.cookieservice.get('user_details') != '') {
+        this.userCookies = JSON.parse(this.cookieservice.get('user_details'));
+        this.userid = this.userCookies._id;
+        // console.log('>>>>',this.userid)   
+        }
+     }
 
   ngOnInit() {
     this.activatedRoute.data.forEach((data:any) => {
@@ -29,7 +44,7 @@ public message:any="Are you sure you want to delete this?"
       console.log('rsvp>>',this.rsvp_list)
     })
 
-    this.getdata();
+    // this.getdata();
   }
   changeStatus(item: any, val: any) {
     console.log('rsvpSend status',item, val)
@@ -54,9 +69,9 @@ public message:any="Are you sure you want to delete this?"
     let data: any = {
       endpoint: 'datalist',
       source: 'send_rsvp_view',
-      // condition: {
-      //   "id":  this.user_id
-      // }
+      condition: {
+        "added_by_object":  this.userid
+      }
     }
     this.apiService.getDatalist(data).subscribe((res:any)=>{
       this.rsvp_list = res.res;
