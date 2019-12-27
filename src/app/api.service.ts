@@ -58,7 +58,7 @@ export class ApiService {
   public subscriptionGetdataEndpoint: Subscription;
   public tokenVal: any;
   constructor(private _http: HttpClient, private cookieService :CookieService) {
-
+    console.log('++++++++',this.subjectForGetdataEndpointUrl);
 
       // this._http.get(this.serverUrlDemo + 'gettemptoken').subscribe((res: any)=>{
       //   this.tokenVal = res;
@@ -148,6 +148,7 @@ export class ApiService {
   public getServerUrl(): Observable<any> {
     return this.subjectForServerUrl.asObservable();
   }
+
 
   setaddEndpoint(value: any) {
     this.subjectForaddEndpointUrl.next(value);
