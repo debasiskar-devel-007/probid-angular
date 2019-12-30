@@ -67,6 +67,10 @@ export class ResolveService implements Resolve<any> {
                 route.data.requestcondition.condition._id_object = route.params['id'] ;
                 delete route.data.requestcondition.condition.id ;
             }
+            if(route.url[0].path == 'rsvp-detail') {
+                route.data.requestcondition.condition._id_object = route.params['id'] ;
+                delete route.data.requestcondition.condition.id ;
+            }
             if(route.url[0].path == 'rsvp-salesrep') {
                 route.data.requestcondition.condition.added_by_object = this.userid ;
             }

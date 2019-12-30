@@ -20,14 +20,13 @@ export class DashboardComponent implements OnInit {
 public user_full_name: any = '';
 
 
-public rsvp_list: any = '';
 public datalist: any = '';
+public saveSearchIndex:any=5;
+
+public rsvp_list: any = '';
 public ststus: number;
 
  
-public saveSearchIndex:any=5;
-
-
 public errorMsg: string = '';
   public stateList: any;
   
@@ -73,12 +72,8 @@ public errorMsg: string = '';
 
   ngOnInit() {
     this.activatedRoute.data.forEach((data:any) => {
-      // this.crsvplist = data.fordashboard.result.save_search;
       console.log('dash-data',data)
-
       this.datalist = data.rsvp.result;
-
-      // console.log('dvfdgfhg', this.saveSearch_list)
     })
   }
 

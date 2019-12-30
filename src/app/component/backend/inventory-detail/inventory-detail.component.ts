@@ -19,14 +19,7 @@ export interface DialogData {
 })
 export class InventoryDetailComponent implements OnInit {
 
-  public data: any;
-  public indexImg: any;
-  public item: any;
-  public itemVal: any;
-  public message:any="Are you sure you want to delete this?";
-
-
-  abc = {
+  carouselOptions = {
     margin: 5,
     nav: true,
     loop: true,
@@ -73,8 +66,13 @@ export class InventoryDetailComponent implements OnInit {
       }
     }
   }
-
-  public saveList: any;
+  public TestimonialListArray: any = [];
+  public data: any;
+  public indexImg: any;
+  public item: any;
+  public itemVal: any;
+  public message:any="Are you sure you want to delete this?";
+   public saveList: any;
   public indexVal: any = 4;
   public makeName: any;
   public user_details: any;
@@ -86,6 +84,7 @@ export class InventoryDetailComponent implements OnInit {
   constructor(public activatedRoute:ActivatedRoute,public apiService:ApiService ,public observableData:BasicInventorySearchBackendComponent,public cookieService:CookieService,public snack: MatSnackBar,public dialog:MatDialog,public router:Router) {
 
 
+
     if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
       this.user_details = JSON.parse(this.cookieService.get('user_details'));
       this.user_id = this.user_details._id;
@@ -95,14 +94,14 @@ export class InventoryDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-
-
+    
+    //   //for save search & rsvp
     this.activatedRoute.data.forEach((res) => {
       let result: any
       result = res.inventory_details.res;
       console.log('inventory_details >>', result)
 
-      this.data = result[0].card_data;
+      this.data = result[0];
       // this.item=this.data.financing_options;
 
       console.log('card_data', this.data)
@@ -112,21 +111,11 @@ export class InventoryDetailComponent implements OnInit {
 
       this.itemVal = result[0]._id;
       console.log('**>>', this.itemVal)
+    });
 
 
 
-    })
-    this.saveSearch()
-
-    //for obserable data
-    // const data=this.observableData.dataObserve;
-    // this.data.subscribe(res=>{
-    //   console.log('observ>>',res)
-    // })
-
-    // this.observableData
-
-
+    // this.saveSearch()
 
     if (this.user_details.type == "salesrep") {
       let data: any = {
@@ -144,6 +133,56 @@ export class InventoryDetailComponent implements OnInit {
 
     }
 
+    if(this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id'){
+      let data: any = {
+        source: 'send_rsvp_view',
+        condition:{
+          added_by_object:this.user_id
+        }
+      }
+      this.apiService.getDataForDatalist(data).subscribe((res: any) => {
+       
+        this.saveList = res.res;
+        console.log('rsvp >>',this.saveList);
+  
+      });
+      
+    } else {
+      let data: any = {
+        source: 'save_favorite_view',
+        condition:{
+          added_by:this.user_id
+        }
+      }
+      this.apiService.getDataForDatalist(data).subscribe((res: any) => {
+       
+        this.saveList = res.res;
+        console.log('save >>',this.saveList);
+  
+      });
+    }
+
+    if(this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id' && this.user_details.type== 'admin'){
+      let data: any = {
+        source: 'send_rsvp_view',
+      }
+      this.apiService.getDataForDatalist(data).subscribe((res: any) => {
+       
+        this.saveList = res.res;
+        console.log('rsvp >>',this.saveList);
+  
+      });
+      
+    }
+
+
+
+
+
+
+
+  
+
 
   }
 
@@ -155,19 +194,21 @@ export class InventoryDetailComponent implements OnInit {
   }
 
   //datalist for save search
-  saveSearch() {
-    let data: any = {
-      source: 'save_favorite',
-      // condition:{
-      //   added_by:this.user_id
-      // }
-    }
-    this.apiService.getDataForDatalist(data).subscribe((res: any) => {
-      console.log('save >>', res.res);
 
-      this.saveList = res.res;
-    });
-  }
+  // saveSearch() {
+  //   let data: any = {
+  //     source: 'save_favorite_view',
+  //     condition:{
+  //       added_by:this.user_id
+  //     }
+  //   }
+  //   this.apiService.getDataForDatalist(data).subscribe((res: any) => {
+     
+  //     this.saveList = res.res;
+  //     console.log('save >>',this.saveList);
+
+  //   });
+  // }
 
   //for rsvp send
   addRsvp(val: any, itemData: any) {
