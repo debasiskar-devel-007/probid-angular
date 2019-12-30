@@ -32,8 +32,8 @@
       <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
     </mat-card-content>
     <mat-card-content class="bred_cram_wrapper">
-        <a mat-list-item routerLinkActive="active"> Dashboard </a>
-        <a mat-list-item routerLinkActive="active activebread"> Inventory Details</a>
+        <a mat-list-item class="active"> Dashboard </a>
+        <a mat-list-item class="active activebread"> Inventory Details</a>
     </mat-card-content>
 
   <!-- <div *ngIf="spinnerval==1">
@@ -482,8 +482,9 @@
                 </span>
               </span>
               <span class="middleblock">
-                <h2>{{item.card_data.heading}}</h2>
+                <h2>{{item.card_data.heading}} </h2>
                 <!-- <span (click)="inventoryDetails(item._id)">View Details</span> -->
+                
                 
                 <span class="pricecls">
                   $ {{item.card_data.price}}
