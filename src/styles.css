@@ -271,8 +271,7 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
 }
 
 .flexbox4columnthumb .owl-carousel.owl-loaded {
-  display: flex;
-  overflow: hidden;
+  display: block;
   padding: 0px 0px;
 }
 

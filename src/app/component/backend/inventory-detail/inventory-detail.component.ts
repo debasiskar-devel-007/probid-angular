@@ -19,62 +19,14 @@ export interface DialogData {
 })
 export class InventoryDetailComponent implements OnInit {
 
+  public carouselOptions: any = '';
+  public TestimonialListArray: any = [];
   public data: any;
   public indexImg: any;
   public item: any;
   public itemVal: any;
   public message:any="Are you sure you want to delete this?";
-
-
-  abc = {
-    margin: 5,
-    nav: true,
-    loop: true,
-    navText: ["<div class='nav-btn prev-slide'><i class='material-icons'>keyboard_backspace</i></div>", "<div class='nav-btn next-slide'><i class='material-icons'>keyboard_backspace</i></div>"],
-    responsiveClass: true,
-    dots: false,
-    responsive: {
-      0: {
-        items: 3,
-        autoplay: false,
-        autoplayTimeout: 6000,
-        autoplayHoverPause: true,
-        center: true,
-        loop: true,
-        nav: true,
-      },
-      600: {
-        items: 4,
-        autoplay: false,
-        autoplayTimeout: 6000,
-        autoplayHoverPause: true,
-        center: true,
-        loop: true,
-        nav: true,
-      },
-      991: {
-        items: 5,
-        autoplay: false,
-        autoplayTimeout: 6000,
-        autoplayHoverPause: true,
-        center: true,
-        loop: true,
-        nav: true,
-      },
-      992: {
-        items: 8,
-        autoplay: false,
-        autoplayTimeout: 6000,
-        autoplayHoverPause: true,
-        center: true,
-        loop: true,
-        nav: true,
-        dot: false,
-      }
-    }
-  }
-
-  public saveList: any;
+   public saveList: any;
   public indexVal: any = 4;
   public makeName: any;
   public user_details: any;
@@ -84,6 +36,7 @@ export class InventoryDetailComponent implements OnInit {
   public errorMsg: any = 'Please Choose customer';
 
   constructor(public activatedRoute:ActivatedRoute,public apiService:ApiService ,public observableData:BasicInventorySearchBackendComponent,public cookieService:CookieService,public snack: MatSnackBar,public dialog:MatDialog,public router:Router) {
+
 
 
     if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
@@ -142,6 +95,59 @@ export class InventoryDetailComponent implements OnInit {
         console.log('.>>>>>>>', this.customerList);
       });
 
+    }
+
+
+
+
+
+
+    this.carouselOptions = {
+      margin: 5,
+      nav: true,
+      loop: true,
+      navText: ["<div class='nav-btn prev-slide'><i class='material-icons'>keyboard_backspace</i></div>", "<div class='nav-btn next-slide'><i class='material-icons'>keyboard_backspace</i></div>"],
+      responsiveClass: true,
+      dots: false,
+      responsive: {
+        0: {
+          items: 3,
+          autoplay: false,
+          autoplayTimeout: 6000,
+          autoplayHoverPause: true,
+          center: true,
+          loop: true,
+          nav: true,
+        },
+        600: {
+          items: 4,
+          autoplay: false,
+          autoplayTimeout: 6000,
+          autoplayHoverPause: true,
+          center: true,
+          loop: true,
+          nav: true,
+        },
+        991: {
+          items: 5,
+          autoplay: false,
+          autoplayTimeout: 6000,
+          autoplayHoverPause: true,
+          center: true,
+          loop: true,
+          nav: true,
+        },
+        992: {
+          items: 8,
+          autoplay: false,
+          autoplayTimeout: 6000,
+          autoplayHoverPause: true,
+          center: true,
+          loop: true,
+          nav: true,
+          dot: false,
+        }
+      }
     }
 
 
