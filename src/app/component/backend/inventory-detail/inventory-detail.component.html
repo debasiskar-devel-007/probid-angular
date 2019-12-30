@@ -32,45 +32,45 @@
       <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
     </mat-card-content>
     <mat-card-content class="bred_cram_wrapper">
-        <a mat-list-item routerLinkActive="active"> Dashboard </a>
-        <a mat-list-item routerLinkActive="active activebread"> Inventory Details</a>
+      <a mat-list-item routerLinkActive="active"> Dashboard </a>
+      <a mat-list-item routerLinkActive="active activebread"> Inventory Details</a>
     </mat-card-content>
 
-  <!-- <div *ngIf="spinnerval==1">
+    <!-- <div *ngIf="spinnerval==1">
     <mat-spinner></mat-spinner>
   </div> -->
 
-<mat-card class="ptb-40 generalcls inventorydetail">
-  <span class="mainwrappercontent">
-    <span>
-      <mat-card-title class="headinginfo">{{data.heading}}</mat-card-title>
-      <mat-card-content>
-        <span class="inventorydetailblock">
-          <span class="inventorydetailblockleft">
+    <mat-card class="ptb-40 generalcls inventorydetail">
+      <span class="mainwrappercontent">
+        <span>
+          <mat-card-title class="headinginfo">{{data.heading}}</mat-card-title>
+          <mat-card-content>
+            <span class="inventorydetailblock">
+              <span class="inventorydetailblockleft">
 
-           
-              <span class="big_imagewrapper" >
 
-                <img *ngIf="data.media.photo_links[0] == null" src="../../../../assets/images/no-image-default.jpg">
-                
+                <span class="big_imagewrapper">
+
+                  <img *ngIf="data.media.photo_links[0] == null" src="../../../../assets/images/no-image-default.jpg">
+
                   <img [src]="data.media.photo_links[0]">
-               
+
                   <span *ngIf="indexImg !=null && indexImg != ''"><img [src]="data.media.photo_links[indexImg]"></span>
-             
-              </span>
-              <!-- <span class="big_imagewrapper" >
+
+                </span>
+                <!-- <span class="big_imagewrapper" >
                 <img [src]="data.media.photo_links[0]">
             </span> -->
-              <span class="thumb_imgwrapper">
-                <span class="flexbox4columnthumb">
-                  <owl-carousel [options]="abc" [carouselClasses]="['owl-theme', 'row', 'sliding']">                  
-                    <span class="single_thumb_wrapper" *ngFor="let item of data.media.photo_links ; let i=index ">
-                      <span class="single_thumb_imagewrapper">
-                        <img [src]="item" (click)="showImage(item,i)">
+                <span class="thumb_imgwrapper">
+                  <span class="flexbox4columnthumb">
+                    <owl-carousel [options]="abc" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                      <span class="single_thumb_wrapper" *ngFor="let item of data.media.photo_links ; let i=index ">
+                        <span class="single_thumb_imagewrapper">
+                          <img [src]="item" (click)="showImage(item,i)">
+                        </span>
                       </span>
-                    </span>
-                  </owl-carousel>
-                  <!-- <mat-list-item class="single_thumb_wrapper">
+                    </owl-carousel>
+                    <!-- <mat-list-item class="single_thumb_wrapper">
 
 
             <span class="big_imagewrapper">
@@ -131,29 +131,29 @@
                     </span>
                   </mat-list-item> -->
 
+                  </span>
                 </span>
+
               </span>
+              <span class="inventorydetailblockright">
+                <span class="inventorydetailtop">
+                  <span class="inventorydetailtopinner">
+                    <span class="topinnerinfoleft">
+                      <mat-list>
+                        <mat-list-item><span>VIN :</span> {{data.vin}} </mat-list-item>
+                        <mat-list-item class="clsprice"><span>Price :</span> {{data.price}}</mat-list-item>
 
-          </span>
-          <span class="inventorydetailblockright">
-            <span class="inventorydetailtop">
-              <span class="inventorydetailtopinner">
-                <span class="topinnerinfoleft">
-                  <mat-list>
-                    <mat-list-item><span>VIN :</span> {{data.vin}} </mat-list-item>
-                    <mat-list-item class="clsprice"><span>Price :</span> {{data.price}}</mat-list-item>
+                        <mat-list-item>
+                          <span>Odometer :</span> <span *ngIf="data.miles != null && data.miles !=''">{{data.miles}}
+                            mi</span>
+                          <span *ngIf="data.miles == null || data.miles ==''">N/A</span>
+                        </mat-list-item>
+                        <!-- <mat-list-item *ngIf="data.miles == '' && data.miles == null "><span>Odometer :</span>N/A</mat-list-item> -->
+                      </mat-list>
+                    </span>
 
-                    <mat-list-item>
-                      <span>Odometer :</span> <span *ngIf="data.miles != null && data.miles !=''">{{data.miles}}
-                        mi</span>
-                      <span *ngIf="data.miles == null || data.miles ==''">N/A</span>
-                    </mat-list-item>
-                    <!-- <mat-list-item *ngIf="data.miles == '' && data.miles == null "><span>Odometer :</span>N/A</mat-list-item> -->
-                  </mat-list>
-                </span>
-
-                <!-- RSVP DETAILS for admin -->       
-                <!-- <span class="topinnerinforight" *ngIf="user_details.type == 'admin'" >
+                    <!-- RSVP DETAILS for admin -->
+                    <!-- <span class="topinnerinforight" *ngIf="user_details.type == 'admin'" >
                   <h1 class="btnredcls">Reject</h1>
                   <h1 class="btngreencls">Accept</h1>
                   <h1 class="btnorangecls">Pending</h1>
@@ -167,10 +167,10 @@
                     </mat-select>
                   </mat-form-field>
                 </span> -->
-                <!-- END RSVP DETAILS -->
+                    <!-- END RSVP DETAILS -->
 
-                <!-- Search Result  customer-->    
-                <!-- <span class="topinnerinforight" >
+                    <!-- Search Result  customer-->
+                    <!-- <span class="topinnerinforight" >
                   <h1 *ngIf="user_details.type == 'customer' || user_details.type == 'salesrep'" class="btnrsvp">RSVP</h1>
                   <mat-button *ngIf="user_details.type == 'customer'"><i class="material-icons"> favorite </i> ADD</mat-button>
                   <mat-form-field class="select-customer" ngIf="user_details.type == 'salesrep'">
@@ -182,34 +182,37 @@
                     </mat-select>
                   </mat-form-field>
                 </span> -->
-                <!-- end Search Result -->    
+                    <!-- end Search Result -->
 
-                <!-- Save Search DETAILS for salesrep-->    
-                <span class="topinnerinforight"   >
-                  <h1  class="btnrsvp" *ngIf="user_details.type == 'customer' || user_details.type == 'salesrep'" (click)="addRsvp(itemVal,data)">RSVP</h1>
-                  <mat-button class="btnredcls" (click)="removeRsvp(itemVal,data)">Remove</mat-button>
-                  <mat-form-field class="select-customer" *ngIf="user_details.type == 'salesrep'">
-                    <mat-label >Select Customer</mat-label>
-                    <mat-select [(ngModel)]="customer_id">
-                      <mat-option *ngFor="let item of customerList" [value]="item._id">
-                        {{item.firstname}}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                  <div>
-                    <span class="errormsg" *ngIf=" errorMsg !=null &&  errorMsg != '' && user_details.type == 'salesrep' "     [ngClass]="customer_id =='' ? 'errormsg':'test'" >{{errorMsg}}</span>
-                  </div>
+                    <!-- Save Search DETAILS for salesrep-->
+                    <span class="topinnerinforight">
+                      <h1 class="btnrsvp" *ngIf="user_details.type == 'customer' || user_details.type == 'salesrep'"
+                        (click)="addRsvp(itemVal,data)">RSVP</h1>
+                      <mat-button class="btnredcls" (click)="removeRsvp(itemVal,data)">Remove</mat-button>
+                      <mat-form-field class="select-customer" *ngIf="user_details.type == 'salesrep'">
+                        <mat-label>Select Customer</mat-label>
+                        <mat-select [(ngModel)]="customer_id">
+                          <mat-option *ngFor="let item of customerList" [value]="item._id">
+                            {{item.firstname}}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <div>
+                        <span class="errormsg"
+                          *ngIf=" errorMsg !=null &&  errorMsg != '' && user_details.type == 'salesrep' "
+                          [ngClass]="customer_id =='' ? 'errormsg':'test'">{{errorMsg}}</span>
+                      </div>
+                    </span>
+                    <!-- end Save Search DETAILS -->
+
+                  </span>
                 </span>
-                <!-- end Save Search DETAILS -->   
-
-              </span>
-            </span>
 
 
-            <span class="inventorydetailbottom detaillistcls inventorydetailuser">
+                <span class="inventorydetailbottom detaillistcls inventorydetailuser">
 
-              <!-- For Admin ,salesrep,customer-->
-              <!-- <span class="flexcolumn " >
+                  <!-- For Admin ,salesrep,customer-->
+                  <!-- <span class="flexcolumn " >
                 <span *ngIf="user_details.type == 'admin' || user_details.type == 'salesrep' ">
                   <mat-card-title class="headerlists">User</mat-card-title>
                   <span class="rsvplisttypecontentinfowrapper">
@@ -253,11 +256,11 @@
                   </span>
                 </span>
               </span> -->
-              <!-- For End Admin -->
+                  <!-- For End Admin -->
 
-               <!-- For Sales Rep -->
+                  <!-- For Sales Rep -->
 
-              <!-- <span class="flexcolumn " *ngIf="user_details.type == 'salesrep'">
+                  <!-- <span class="flexcolumn " *ngIf="user_details.type == 'salesrep'">
                 <span>
                   <mat-card-title class="headerlists">User</mat-card-title>
                   <span class="rsvplisttypecontentinfowrapper">
@@ -281,12 +284,12 @@
                   </span>
                 </span>                                
               </span> -->
-               
-              <!-- For End Sales Rep -->
 
-              <!-- For Customer -->
+                  <!-- For End Sales Rep -->
 
-             <!-- <span class="flexcolumn " *ngIf="user_details.type == 'customer'">               
+                  <!-- For Customer -->
+
+                  <!-- <span class="flexcolumn " *ngIf="user_details.type == 'customer'">               
                 <span>
                   <mat-card-title class="headerlists">Salesrep</mat-card-title>
                   <span class="rsvplisttypecontentinfowrapper">
@@ -308,225 +311,226 @@
                   </span>
                 </span>
               </span> -->
-              
-              <!-- For End Customer -->
 
+                  <!-- For End Customer -->
+
+                </span>
+
+
+
+
+                <span class="inventorydetailmiddle detaillistcls">
+                  <span class="flexcolumn">
+                    <span>
+                      <mat-card-title class="headerlists">Features</mat-card-title>
+                      <mat-list class="flexbox2column">
+                        <mat-list-item>
+                          <label>id : </label>
+                          <span>{{data.id}}</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                          <label>Drivetrain : </label>
+                          <span>{{data.build.drivetrain}}</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                          <label>Year : </label>
+                          <span>{{data.build.year}}</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                          <label>Fuel Type : </label>
+                          <span>{{data.build.fuel_type}}</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                          <label>Make : </label>
+                          <span>{{data.build.make}}</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                          <label>Exterior Color : </label>
+                          <span>{{data.exterior_color}}</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                          <label>Model : </label>
+                          <span>{{data.build.model }}</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                          <label>Interior Color : </label>
+                          <span>{{data.interior_color}}</span>
+                        </mat-list-item>
+
+                        <mat-list-item>
+                          <label>Trim : </label>
+                          <span>{{data.build.trim}}</span>
+                        </mat-list-item>
+
+                        <mat-list-item>
+                          <label>Engine : </label>
+                          <span>{{data.build.engine}}</span>
+                        </mat-list-item>
+
+                        <mat-list-item>
+                          <label>Body Type : </label>
+                          <span>{{data.build.body_type}}</span>
+                        </mat-list-item>
+
+                        <mat-list-item>
+                          <label>Engine Size : </label>
+                          <span>{{data.build.engine_size}}</span>
+                        </mat-list-item>
+
+                        <mat-list-item>
+                          <label>Body Subtype : </label>
+                          <span
+                            *ngIf="data.build.body_subtype != null && data.build.body_subtype != ''">{{data.build.body_subtype}}</span>
+                          <span *ngIf="data.build.body_subtype == null || data.build.body_subtype == ''">N/A</span>
+                        </mat-list-item>
+
+                        <mat-list-item>
+                          <label>Engine Block : </label>
+                          <span>{{data.build.engine_block}}</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                          <label>Vehicle Type : </label>
+                          <span>{{data.build.cylinders}}</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                          <label>Doors : </label>
+                          <span>{{data.build.doors}}</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                          <label>Transmission : </label>
+                          <span>{{data.build.transmission}}</span>
+                        </mat-list-item>
+                        <mat-list-item>
+                          <label>Cylinders : </label>
+                          <span>{{data.build.cylinders}}</span>
+                        </mat-list-item>
+                      </mat-list>
+                    </span>
+                  </span>
+                </span>
+
+              </span>
             </span>
+          </mat-card-content>
 
+          <mat-card-content>
+            <span class="dealerinfowrapper">
 
+              <span class="detaillistcls">
+                <span class="flexcolumn">
+                  <span>
+                    <mat-card-title class="headerlists">SELLER INFORMATION</mat-card-title>
+                    <mat-list class="flexbox1column">
+                      <mat-list-item>
+                        <label>Seller Type : </label>
+                        <span>{{data.seller_type}}</span>
+                      </mat-list-item>
+                      <mat-list-item>
+                        <label>Year : </label>
+                        <span>{{data.build.year}}</span>
+                      </mat-list-item>
+                      <mat-list-item>
+                        <label>Make : </label>
+                        <span>{{data.build.make}}</span>
+                      </mat-list-item>
+                    </mat-list>
+                  </span>
+                  <span>
+                    <mat-card-title class="headerlists">financing options</mat-card-title>
+                    <mat-list class="flexbox1column">
+                      <mat-list-item>
+                        <label>Loan Term : </label>
+                        <span
+                          *ngIf="data.financing_options== null || data.financing_options[0].loan_term == null">N/A</span>
 
+                        <span
+                          *ngIf="data.financing_options!= null && data.financing_options[0].loan_term != null">{{data.financing_options[0].loan_term}}</span>
+                      </mat-list-item>
+                      <mat-list-item>
+                        <label>Loan Annual Percentage Rate : </label>
+                        <span
+                          *ngIf="data.financing_options == null || data.financing_options[0].loan_apr == null">N/A</span>
 
-            <span class="inventorydetailmiddle detaillistcls">
-              <span class="flexcolumn">
-                <span>
-                  <mat-card-title class="headerlists">Features</mat-card-title>
-                  <mat-list class="flexbox2column">
-                    <mat-list-item>
-                      <label>id : </label>
-                      <span>{{data.id}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Drivetrain : </label>
-                      <span>{{data.build.drivetrain}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Year : </label>
-                      <span>{{data.build.year}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Fuel Type : </label>
-                      <span>{{data.build.fuel_type}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Make : </label>
-                      <span>{{data.build.make}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Exterior Color : </label>
-                      <span>{{data.exterior_color}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Model : </label>
-                      <span>{{data.build.model }}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Interior Color : </label>
-                      <span>{{data.interior_color}}</span>
-                    </mat-list-item>
+                        <span
+                          *ngIf="data.financing_options!= null && data.financing_options[0].loan_apr != null">{{data.financing_options[0].loan_apr}}</span>
+                      </mat-list-item>
+                      <mat-list-item>
+                        <label>Down payment : </label>
+                        <span
+                          *ngIf="data.financing_options == null || data.financing_options[0].down_payment  == null">N/A</span>
 
-                    <mat-list-item>
-                      <label>Trim : </label>
-                      <span>{{data.build.trim}}</span>
-                    </mat-list-item>
+                        <span
+                          *ngIf="data.financing_options!= null && data.financing_options[0].down_payment != null">{{data.financing_options[0].down_payment}}</span>
+                      </mat-list-item>
+                    </mat-list>
+                  </span>
+                </span>
+              </span>
 
+              <span class="detaillistcls">
+                <span class="singlecolumn">
+                  <mat-card-title class="headerlists">Dealer information</mat-card-title>
+                  <mat-list class="flexbox4column">
                     <mat-list-item>
-                      <label>Engine : </label>
-                      <span>{{data.build.engine}}</span>
+                      <label>Seller id : </label>
+                      <span>{{data.dealer.id}}</span>
                     </mat-list-item>
-
                     <mat-list-item>
-                      <label>Body Type : </label>
-                      <span>{{data.build.body_type}}</span>
+                      <label>Dealer Type : </label>
+                      <span>{{data.dealer.dealer_type}}</span>
                     </mat-list-item>
-
                     <mat-list-item>
-                      <label>Engine Size : </label>
-                      <span>{{data.build.engine_size}}</span>
+                      <label>State : </label>
+                      <span>{{data.dealer.state}}</span>
                     </mat-list-item>
-
                     <mat-list-item>
-                      <label>Body Subtype : </label>
-                      <span *ngIf="data.build.body_subtype != null && data.build.body_subtype != ''">{{data.build.body_subtype}}</span>
-                      <span *ngIf="data.build.body_subtype == null || data.build.body_subtype == ''">N/A</span>
+                      <label>Longitude : </label>
+                      <span>{{data.dealer.longitude}}</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                      <label>Website : </label>
+                      <span>{{data.dealer.website}}</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                      <label>Street : </label>
+                      <span>{{data.dealer.street}}</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                      <label>Country : </label>
+                      <span>{{data.dealer.country}}</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                      <label>Zip : </label>
+                      <span>{{data.dealer.zip}}</span>
                     </mat-list-item>
 
                     <mat-list-item>
-                      <label>Engine Block : </label>
-                      <span>{{data.build.engine_block}}</span>
+                      <label>Name : </label>
+                      <span>{{data.dealer.name}}</span>
                     </mat-list-item>
+
                     <mat-list-item>
-                      <label>Vehicle Type : </label>
-                      <span>{{data.build.cylinders}}</span>
+                      <label>City : </label>
+                      <span>{{data.dealer.city}}</span>
                     </mat-list-item>
+
                     <mat-list-item>
-                      <label>Doors : </label>
-                      <span>{{data.build.doors}}</span>
+                      <label>Latitude : </label>
+                      <span>{{data.dealer.latitude}}</span>
                     </mat-list-item>
-                    <mat-list-item>
-                      <label>Transmission : </label>
-                      <span>{{data.build.transmission}}</span>
-                    </mat-list-item>
-                    <mat-list-item>
-                      <label>Cylinders : </label>
-                      <span>{{data.build.cylinders}}</span>
-                    </mat-list-item>
+
                   </mat-list>
                 </span>
               </span>
             </span>
-            
-          </span>
-        </span>
-      </mat-card-content>
-
-      <mat-card-content>
-        <span class="dealerinfowrapper">
-
-          <span class="detaillistcls">
-            <span class="flexcolumn">
-              <span>
-                <mat-card-title class="headerlists">SELLER INFORMATION</mat-card-title>
-                <mat-list class="flexbox1column">
-                  <mat-list-item>
-                    <label>Seller Type : </label>
-                    <span>{{data.seller_type}}</span>
-                  </mat-list-item>
-                  <mat-list-item>
-                    <label>Year : </label>
-                    <span>{{data.build.year}}</span>
-                  </mat-list-item>
-                  <mat-list-item>
-                    <label>Make : </label>
-                    <span>{{data.build.make}}</span>
-                  </mat-list-item>
-                </mat-list>
-              </span>
-              <span>
-                <mat-card-title class="headerlists">financing options</mat-card-title>
-                <mat-list class="flexbox1column">
-                  <mat-list-item>
-                    <label>Loan Term : </label>
-                    <span
-                      *ngIf="data.financing_options== null || data.financing_options[0].loan_term == null">N/A</span>
-
-                    <span
-                      *ngIf="data.financing_options!= null && data.financing_options[0].loan_term != null">{{data.financing_options[0].loan_term}}</span>
-                  </mat-list-item>
-                  <mat-list-item>
-                    <label>Loan Annual Percentage Rate : </label>
-                    <span
-                      *ngIf="data.financing_options == null || data.financing_options[0].loan_apr == null">N/A</span>
-
-                    <span
-                      *ngIf="data.financing_options!= null && data.financing_options[0].loan_apr != null">{{data.financing_options[0].loan_apr}}</span>
-                  </mat-list-item>
-                  <mat-list-item>
-                    <label>Down payment : </label>
-                    <span
-                      *ngIf="data.financing_options == null || data.financing_options[0].down_payment  == null">N/A</span>
-
-                    <span
-                      *ngIf="data.financing_options!= null && data.financing_options[0].down_payment != null">{{data.financing_options[0].down_payment}}</span>
-                  </mat-list-item>
-                </mat-list>
-              </span>
-            </span>
-          </span>
-
-          <span class="detaillistcls">
-            <span class="singlecolumn">
-              <mat-card-title class="headerlists">Dealer information</mat-card-title>
-              <mat-list class="flexbox4column">
-                <mat-list-item>
-                  <label>Seller id : </label>
-                  <span>{{data.dealer.id}}</span>
-                </mat-list-item>
-                <mat-list-item>
-                  <label>Dealer Type : </label>
-                  <span>{{data.dealer.dealer_type}}</span>
-                </mat-list-item>
-                <mat-list-item>
-                  <label>State : </label>
-                  <span>{{data.dealer.state}}</span>
-                </mat-list-item>
-                <mat-list-item>
-                  <label>Longitude : </label>
-                  <span>{{data.dealer.longitude}}</span>
-                </mat-list-item>
-                <mat-list-item>
-                  <label>Website : </label>
-                  <span>{{data.dealer.website}}</span>
-                </mat-list-item>
-                <mat-list-item>
-                  <label>Street : </label>
-                  <span>{{data.dealer.street}}</span>
-                </mat-list-item>
-                <mat-list-item>
-                  <label>Country : </label>
-                  <span>{{data.dealer.country}}</span>
-                </mat-list-item>
-                <mat-list-item>
-                  <label>Zip : </label>
-                  <span>{{data.dealer.zip}}</span>
-                </mat-list-item>
-
-                <mat-list-item>
-                  <label>Name : </label>
-                  <span>{{data.dealer.name}}</span>
-                </mat-list-item>
-
-                <mat-list-item>
-                  <label>City : </label>
-                  <span>{{data.dealer.city}}</span>
-                </mat-list-item>
-
-                <mat-list-item>
-                  <label>Latitude : </label>
-                  <span>{{data.dealer.latitude}}</span>
-                </mat-list-item>
-
-              </mat-list>
-            </span>
-          </span>
-        </span>
-      </mat-card-content>
+          </mat-card-content>
 
 
-      <mat-card-content class="adm_dashboard_block2 inventorydetailsimilarv">
-        <mat-card-title class="sectionheader">Similar Vehicles</mat-card-title>
-        <mat-list role="list" class="flexbox4columnsv">
+          <mat-card-content class="adm_dashboard_block2 inventorydetailsimilarv">
+            <mat-card-title class="sectionheader">Similar Vehicles</mat-card-title>
+            <mat-list role="list" class="flexbox4columnsv">
 
-          <!-- <mat-list-item role="listitem" class="block1socialadvosingle">
+              <!-- <mat-list-item role="listitem" class="block1socialadvosingle">
                 <span class="block1socialadvosingleinner">
                     <span class="topblock">
                         <span class="rsvplistimgwrapper">                           
@@ -554,29 +558,31 @@
                       </span>
                 </span>                                
             </mat-list-item> -->
-          <mat-list-item role="listitem" class="block1socialadvosingle"
-            *ngFor="let item of saveList | slice:0:indexVal">
-            <span class="block1socialadvosingleinner">
-              <span class="topblock">
-                <span class="rsvplistimgwrapper">
-                  <img [src]="item.card_data.media.photo_links[0]">
-                  <img *ngIf="item.card_data.media.photo_links == null" src="../../../../assets/images/adm-socialadvo-img2.jpg">
+              <mat-list-item role="listitem" class="block1socialadvosingle"
+                *ngFor="let item of saveList | slice:0:indexVal">
+                <span class="block1socialadvosingleinner">
+                  <span class="topblock">
+                    <span class="rsvplistimgwrapper">
+                      <img [src]="item.media.photo_links[0]">
+                      <img *ngIf="item.media.photo_links == null"
+                        src="../../../../assets/images/adm-socialadvo-img2.jpg">
 
-                </span>
-              </span>
-              <span class="middleblock">
-                <h2>{{item.card_data.heading}} <span (click)="inventoryDetails(item._id)">View Details</span></h2>
-                
-                <span class="pricecls">
-                  $ {{item.card_data.price}}
-                </span>
-                <span class="titlecls">
-                  <!-- <h1 class="btnrsvp">RSVP</h1> -->
-                  <h1  class="btnrsvp" *ngIf="user_details.type == 'customer' || user_details.type == 'salesrep'" (click)="inventoryDetails(item._id)">RSVP</h1>
-                </span>
+                    </span>
+                  </span>
+                  <span class="middleblock">
+                    <h2>{{item.heading}} <span style="color:#33d6ff" (click)="inventoryDetails(item._id)"><b>View Details</b></span></h2>
 
-                <!-- for rsvp, remove,and select custometr -->
-                <!-- <span class="topinnerinforight"   >
+                    <span class="pricecls">
+                      $ {{item.price}}
+                    </span>
+                    <span class="titlecls">
+                      <!-- <h1 class="btnrsvp">RSVP</h1> -->
+                      <h1 class="btnrsvp" *ngIf="user_details.type == 'customer' || user_details.type == 'salesrep'"
+                        (click)="inventoryDetails(item._id)">RSVP</h1>
+                    </span>
+
+                    <!-- for rsvp, remove,and select custometr -->
+                    <!-- <span class="topinnerinforight"   >
                   <h1  class="btnrsvp" *ngIf="user_details.type == 'customer' || user_details.type == 'salesrep'" (click)="addRsvp(itemVal,data)">RSVP</h1>
                   <mat-button class="btnredcls" (click)="removeRsvp(itemVal,data)">Remove</mat-button> 
                   <mat-form-field class="select-customer" *ngIf="user_details.type == 'salesrep'">
@@ -594,27 +600,26 @@
 
 
 
-              </span>
-              <span class="bottomblockss">
-                <mat-list>
-                  <mat-list-item class="pa_blockfootertext">
-                    <strong><img src="../../../../assets/images/milesicon.png">
-                    </strong><span
-                      *ngIf="item.card_data.miles !=null && item.card_data.miles != ''">{{item.card_data.miles}}</span>
-                    <span *ngIf="item.card_data.miles ==null || item.card_data.miles == ''">N/A</span>
-                  </mat-list-item>
+                  </span>
+                  <span class="bottomblockss">
+                  <mat-list>
+                     <mat-list-item class="pa_blockfootertext">
+                      <strong><img src="../../../../assets/images/milesicon.png">
+                   </strong><span *ngIf="item.miles !=null && item.miles != ''">{{item.miles}}</span>
+                        <span *ngIf="item.miles ==null || item.miles == ''">N/A</span>
+                      </mat-list-item>
 
-                  <mat-list-item class="pa_blockfootertext"> <strong><img
-                        src="../../../../assets/images/drivetrainicon.png"></strong> {{item.card_data.build.drivetrain}}
-                  </mat-list-item>
-                  <mat-list-item class="pa_blockfootertext"> <strong><img
-                        src="../../../../assets/images/bodytypeicon.png"></strong>{{item.card_data.build.transmission}}
-                  </mat-list-item>
-                </mat-list>
-              </span>
-            </span>
-          </mat-list-item>
-          <!-- <mat-list-item role="listitem" class="block1socialadvosingle">
+                      <mat-list-item class="pa_blockfootertext"> <strong><img
+                            src="../../../../assets/images/drivetrainicon.png"></strong> {{item.build.drivetrain}}
+                      </mat-list-item>
+                      <mat-list-item class="pa_blockfootertext"> <strong><img
+                            src="../../../../assets/images/bodytypeicon.png"></strong>{{item.build.transmission}}
+                      </mat-list-item>
+                    </mat-list>
+                  </span>
+                </span>
+              </mat-list-item>
+              <!-- <mat-list-item role="listitem" class="block1socialadvosingle">
                   <span class="block1socialadvosingleinner">
                       <span class="topblock">
                           <span class="rsvplistimgwrapper">                           
@@ -669,19 +674,19 @@
                 </span>                                
             </mat-list-item> -->
 
-        </mat-list>
-        <span class="btnwrappercls">
-          <mat-button mat-button class="btnblue" [routerLink]="['/save-search-admin']">View All</mat-button>
+            </mat-list>
+            <span class="btnwrappercls">
+              <mat-button mat-button class="btnblue" [routerLink]="['/save-search-admin']">View All</mat-button>
+            </span>
+          </mat-card-content>
+
         </span>
-      </mat-card-content>
-
-    </span>
-  </span>
-</mat-card>
+      </span>
+    </mat-card>
 
 
 
-</div>
+  </div>
 </div>
 
 <app-footer></app-footer>

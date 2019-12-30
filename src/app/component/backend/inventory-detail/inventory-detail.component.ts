@@ -157,15 +157,16 @@ export class InventoryDetailComponent implements OnInit {
   //datalist for save search
   saveSearch() {
     let data: any = {
-      source: 'save_favorite',
-      // condition:{
-      //   added_by:this.user_id
-      // }
+      source: 'save_favorite_view',
+      condition:{
+        added_by:this.user_id
+      }
     }
     this.apiService.getDataForDatalist(data).subscribe((res: any) => {
-      console.log('save >>', res.res);
-
+     
       this.saveList = res.res;
+      console.log('save >>',this.saveList);
+
     });
   }
 
