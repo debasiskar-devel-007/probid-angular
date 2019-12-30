@@ -27,21 +27,27 @@
 <div class="adminwrappercls">
     <app-header></app-header>
     <div class="main-content-wrap">
-            <mat-card class="generalcls" style="padding: 0 !important;">
-                <!-- <button  >Share Link for Castomer Sign Up</button> -->
-               
-                
-                <mat-card-content class="rep-dashboard-banner">
-                    <span class="rep-dashboard-banner-inner">
-                        <h1 class="titleadmin">Welcome to Probid Auto</h1>
-                        <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <br><br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        <mat-button class="btnblue">Lean More</mat-button>
-                    </span>                    
-                </mat-card-content>
+      <mat-card class="generalcls" style="padding: 0 !important;">
+        <mat-card-content class="customer-dashboard-banner">
+          <span class="customer-dashboard-banner-inner">
+              <h1 class="titleadmin">Welcome to Probid Auto</h1>
+              <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <br><br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <mat-button class="btnblue">Lean More</mat-button>
+          </span>                    
+        </mat-card-content>
 
-                <mat-card-content class="rep-dashboard-block3">
-                    <span class="rep-dashboard-block3-inner">
+        <mat-card-content class="customer-dashboard-block1">
+          <span class="customer-dashboard-block1-inner">
+            <h1 class="titleadmin">Rep’s Information</h1> 
+            <span class="repinfowrapper">
+              
+            </span>         
+          </span>                    
+        </mat-card-content>
+
+        <mat-card-content class="customer-dashboard-block2">
+          <span class="customer-dashboard-block2-inner">
                         <h1 class="titleadmin">RSVP <mat-button class="btnblue">view all</mat-button></h1>     
                         <mat-list role="list" class="flexbox1column">
                             <mat-list-item role="listitem" class="rsvplistsingle">
@@ -218,50 +224,11 @@
                               </mat-list-item>
                             
                         </mat-list>                 
-                    </span>                    
-                </mat-card-content>
-
-                <mat-card-content class="rep-dashboard-block6">
-                    <h1 class="titleadmin">Save Search <mat-button class="btnblue" [routerLink]="['/save-search-admin']">View All</mat-button></h1> 
-                    <mat-list role="list" class="flexbox5column">
-                        <mat-list-item role="listitem" class="block1socialadvosingle" *ngFor="let item of saveSearch_list | slice:0:saveSearchIndex; let i = index">
-    
-                          
-                          <span (click)="deleteAny(item,i,save_search)" class="deletecls"><i class="material-icons">delete</i></span>
-    
-                            <span class="block1socialadvosingleinner">
-                                <span class="topblock">
-                                    <span class="rsvplistimgwrapper">
-                                        <img *ngIf="item.card_data.media.photo_links != null && item.card_data.media.photo_links[0] !=null && modalImg == ''" [src]="item.card_data.media.photo_links[0]">
-                                        <img *ngIf="modalImg != ''" [src]="modalImg">
-                                        <img *ngIf="item.card_data.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
-                                    </span>
-                                  </span>
-                                  <span class="middleblock">
-                                    <span class="pricecls" *ngIf="item.card_data.price != null">
-                                        ${{item.card_data.price}}
-                                    </span>
-                                    <span class="titlecls">
-                                      <span *ngIf="item.card_data.heading != null">{{item.card_data.heading}}</span>
-                                      <span></span>
-                                    </span>
-                                  </span>
-                                  <span class="bottomblockss">                                  
-                                    <mat-list *ngIf="item.card_data.build != null">
-                                        <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/milesicon.png"></strong> {{item.card_data.miles}}</mat-list-item>                                        
-                                        <mat-list-item class="pa_blockfootertext" *ngIf="item.card_data.build.drivetrain != null"> <strong><img src="../../../../assets/images/drivetrainicon.png"></strong> {{item.card_data.build.drivetrain}}</mat-list-item>                                  
-                                       
-                                        <mat-list-item class="pa_blockfootertext" *ngIf="item.card_data.build.transmission != null"> <strong><img src="../../../../assets/images/bodytypeicon.png"></strong> {{item.card_data.build.transmission}}</mat-list-item>
-                                      </mat-list>
-                                  </span>
-                            </span>                                
-                        </mat-list-item>
-                    </mat-list>
-                    
-                </mat-card-content>
+          </span>                    
+        </mat-card-content>
 
 
-            </mat-card>
+      </mat-card>
     </div>
 </div>
 <app-footer></app-footer>

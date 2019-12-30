@@ -1,4 +1,11 @@
-.rep-dashboard-banner{background:url(../../../../assets/images/repdashboardbannerbg.jpg) no-repeat center center !important; display: block; position: relative;     background-size: cover;}
+.rep-dashboard-banner{
+  background:url(../../../../assets/images/repdashboardbannerbg.jpg) no-repeat center center !important;
+  display: flex;
+  position: relative;
+  background-size: cover;
+  min-height: 570px;
+  align-items: center;
+}
 .rep-dashboard-banner-inner{
     width: 48%;
     padding: 10px;
@@ -472,7 +479,7 @@
 
 .rep-dashboard-block3 .flexbox1column .rsvplistsingleleft .rsvpliststop {
   -webkit-box-flex: 1;
-  flex: 1 1 35%;
+  flex: 1 1 30%;
   display: -webkit-box;
   display: flex;
   -webkit-box-align: stretch;
@@ -483,7 +490,7 @@
 
 .rep-dashboard-block3 .flexbox1column .rsvplistsingleleft .rsvplistsbottom  {
   -webkit-box-flex: 1;
-  flex: 1 1 65%;
+  flex: 1 1 70%;
   display: -webkit-box;
   display: flex;
   -webkit-box-align: stretch;
@@ -497,7 +504,7 @@
 
 .rep-dashboard-block3 .flexbox1column .rsvplistimgwrapper{
   height: 124px;
-  width: 90%;
+  width: 100%;
   overflow: hidden;
   display: block;
   position: relative;
