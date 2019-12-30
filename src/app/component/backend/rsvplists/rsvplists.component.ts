@@ -1,9 +1,10 @@
 import { Component, OnInit,Inject} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute ,Router} from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatDialogRef, MAT_DIALOG_DATA, MatDialog} from "@angular/material";
 import { CookieService } from 'ngx-cookie-service';
+
 
 export interface DialogData {
   data: any;
@@ -28,7 +29,8 @@ public userid: any;
     public apiService: ApiService,
     public dialog: MatDialog,
     public snack:MatSnackBar,
-    public cookieservice: CookieService) {
+    public cookieservice: CookieService,
+    public rouer:Router) {
 
       if (this.cookieservice.get('user_details') != undefined && this.cookieservice.get('user_details') != null && this.cookieservice.get('user_details') != '') {
         this.userCookies = JSON.parse(this.cookieservice.get('user_details'));
@@ -122,8 +124,14 @@ public userid: any;
 
   rsvpViewDetails(val:any){
     console.log('>>>',val)
+    
 
 
+  }
+
+  rsvpDetail(val:any){
+    console.log('hit',val)
+    this.rouer.navigateByUrl('/rsvp-detail/'+val);
   }
 }
 

@@ -19,7 +19,53 @@ export interface DialogData {
 })
 export class InventoryDetailComponent implements OnInit {
 
-  public carouselOptions: any = '';
+  carouselOptions = {
+    margin: 5,
+    nav: true,
+    loop: true,
+    navText: ["<div class='nav-btn prev-slide'><i class='material-icons'>keyboard_backspace</i></div>", "<div class='nav-btn next-slide'><i class='material-icons'>keyboard_backspace</i></div>"],
+    responsiveClass: true,
+    dots: false,
+    responsive: {
+      0: {
+        items: 3,
+        autoplay: false,
+        autoplayTimeout: 6000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
+        nav: true,
+      },
+      600: {
+        items: 4,
+        autoplay: false,
+        autoplayTimeout: 6000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
+        nav: true,
+      },
+      991: {
+        items: 5,
+        autoplay: false,
+        autoplayTimeout: 6000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
+        nav: true,
+      },
+      992: {
+        items: 8,
+        autoplay: false,
+        autoplayTimeout: 6000,
+        autoplayHoverPause: true,
+        center: true,
+        loop: true,
+        nav: true,
+        dot: false,
+      }
+    }
+  }
   public TestimonialListArray: any = [];
   public data: any;
   public indexImg: any;
@@ -48,14 +94,14 @@ export class InventoryDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-
-
+    
+    //   //for save search & rsvp
     this.activatedRoute.data.forEach((res) => {
       let result: any
       result = res.inventory_details.res;
       console.log('inventory_details >>', result)
 
-      this.data = result[0].card_data;
+      this.data = result[0];
       // this.item=this.data.financing_options;
 
       console.log('card_data', this.data)
@@ -65,21 +111,11 @@ export class InventoryDetailComponent implements OnInit {
 
       this.itemVal = result[0]._id;
       console.log('**>>', this.itemVal)
+    });
 
 
 
-    })
-    this.saveSearch()
-
-    //for obserable data
-    // const data=this.observableData.dataObserve;
-    // this.data.subscribe(res=>{
-    //   console.log('observ>>',res)
-    // })
-
-    // this.observableData
-
-
+    // this.saveSearch()
 
     if (this.user_details.type == "salesrep") {
       let data: any = {
@@ -97,58 +133,44 @@ export class InventoryDetailComponent implements OnInit {
 
     }
 
-
-
-
-
-
-    this.carouselOptions = {
-      margin: 5,
-      nav: true,
-      loop: true,
-      navText: ["<div class='nav-btn prev-slide'><i class='material-icons'>keyboard_backspace</i></div>", "<div class='nav-btn next-slide'><i class='material-icons'>keyboard_backspace</i></div>"],
-      responsiveClass: true,
-      dots: false,
-      responsive: {
-        0: {
-          items: 3,
-          autoplay: false,
-          autoplayTimeout: 6000,
-          autoplayHoverPause: true,
-          center: true,
-          loop: true,
-          nav: true,
-        },
-        600: {
-          items: 4,
-          autoplay: false,
-          autoplayTimeout: 6000,
-          autoplayHoverPause: true,
-          center: true,
-          loop: true,
-          nav: true,
-        },
-        991: {
-          items: 5,
-          autoplay: false,
-          autoplayTimeout: 6000,
-          autoplayHoverPause: true,
-          center: true,
-          loop: true,
-          nav: true,
-        },
-        992: {
-          items: 8,
-          autoplay: false,
-          autoplayTimeout: 6000,
-          autoplayHoverPause: true,
-          center: true,
-          loop: true,
-          nav: true,
-          dot: false,
+    if(this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id'){
+      let data: any = {
+        source: 'send_rsvp_view',
+        condition:{
+          added_by:this.user_id
         }
       }
+      this.apiService.getDataForDatalist(data).subscribe((res: any) => {
+       
+        this.saveList = res.res;
+        console.log('rsvp >>',this.saveList);
+  
+      });
+      
+    } else {
+      let data: any = {
+        source: 'save_favorite_view',
+        condition:{
+          added_by:this.user_id
+        }
+      }
+      this.apiService.getDataForDatalist(data).subscribe((res: any) => {
+       
+        this.saveList = res.res;
+        console.log('save >>',this.saveList);
+  
+      });
     }
+
+
+
+
+
+
+
+
+
+  
 
 
   }
@@ -161,19 +183,21 @@ export class InventoryDetailComponent implements OnInit {
   }
 
   //datalist for save search
-  saveSearch() {
-    let data: any = {
-      source: 'save_favorite',
-      // condition:{
-      //   added_by:this.user_id
-      // }
-    }
-    this.apiService.getDataForDatalist(data).subscribe((res: any) => {
-      console.log('save >>', res.res);
 
-      this.saveList = res.res;
-    });
-  }
+  // saveSearch() {
+  //   let data: any = {
+  //     source: 'save_favorite_view',
+  //     condition:{
+  //       added_by:this.user_id
+  //     }
+  //   }
+  //   this.apiService.getDataForDatalist(data).subscribe((res: any) => {
+     
+  //     this.saveList = res.res;
+  //     console.log('save >>',this.saveList);
+
+  //   });
+  // }
 
   //for rsvp send
   addRsvp(val: any, itemData: any) {
