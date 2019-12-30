@@ -747,7 +747,55 @@
   display: flex;
 }
 
-.repinfowrapper{
+.customer-dashboard-block1 .rsvplisttypecontentinfo {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
   padding: 20px;
+  background-color: #d4d4d4;
 }
 
+.customer-dashboard-block1 .rsvplisttypeimgwrapper {
+  width: 155px;
+  height: 175px;
+  position: relative;
+  display: block;
+}
+
+.customer-dashboard-block1 .rsvplisttypeimgwrapper img{
+  width: auto;
+  height: 100% !important;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  width: 100%;
+  cursor: pointer;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.customer-dashboard-block1 .listscontent{
+  padding: 1px;
+  margin-left: 11px;
+  flex: 1 1 86%;
+  position: relative;
+  background-color: #ffffff;
+}
+.customer-dashboard-block1 .listscontent .mat-list-base{
+  padding-top: 0;
+}
+.customer-dashboard-block1 .listscontent .mat-list-base .mat-list-item{
+  height: auto;
+  margin-top: 2px;
+}
+.customer-dashboard-block1 .listscontent .mat-list-base .mat-list-item:first-child{margin-top: 0px;}
