@@ -569,14 +569,35 @@
                 </span>
               </span>
               <span class="middleblock">
-                <h2>{{item.card_data.heading}}</h2>
-                <h4><span  (click)="inventoryDetails(item._id)">View Details</span></h4>
+                <h2>{{item.card_data.heading}} <span (click)="inventoryDetails(item._id)">View Details</span></h2>
+                
                 <span class="pricecls">
                   $ {{item.card_data.price}}
                 </span>
                 <span class="titlecls">
-                  <h1 class="btnrsvp">RSVP</h1>
+                  <!-- <h1 class="btnrsvp">RSVP</h1> -->
+                  <h1  class="btnrsvp" *ngIf="user_details.type == 'customer' || user_details.type == 'salesrep'" (click)="inventoryDetails(item._id)">RSVP</h1>
                 </span>
+
+                <!-- for rsvp, remove,and select custometr -->
+                <!-- <span class="topinnerinforight"   >
+                  <h1  class="btnrsvp" *ngIf="user_details.type == 'customer' || user_details.type == 'salesrep'" (click)="addRsvp(itemVal,data)">RSVP</h1>
+                  <mat-button class="btnredcls" (click)="removeRsvp(itemVal,data)">Remove</mat-button> 
+                  <mat-form-field class="select-customer" *ngIf="user_details.type == 'salesrep'">
+                    <mat-label >Select Customer</mat-label>
+                    <mat-select [(ngModel)]="customer_id">
+                      <mat-option *ngFor="let item of customerList" [value]="item._id">
+                        {{item.firstname}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <div>
+                    <span class="errormsg" *ngIf=" errorMsg !=null &&  errorMsg != '' && user_details.type == 'salesrep' "     [ngClass]="customer_id =='' ? 'errormsg':'test'" >{{errorMsg}}</span>
+                  </div>
+                </span> -->
+
+
+
               </span>
               <span class="bottomblockss">
                 <mat-list>
