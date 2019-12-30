@@ -20,14 +20,14 @@ export class DashboardComponent implements OnInit {
 public user_full_name: any = '';
 
 
+public datalist: any = '';
+public saveSearchIndex:any=5;
+
 public rsvp_list: any = '';
 public saveSearch_list: any = '';
 public ststus: number;
 
  
-public saveSearchIndex:any=5;
-
-
 public errorMsg: string = '';
   public stateList: any;
   public inventory_search_list: any;
