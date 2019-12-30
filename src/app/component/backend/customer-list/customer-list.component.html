@@ -24,7 +24,7 @@
               [apiurl]="apiService.serverUrlDemo" 
               [deleteendpoint]="deleteendpoint" 
               [updateendpoint]="updateendpoint" 
-              [jwttoken]="apiService.accesstoken" 
+              [jwttoken]="this.cookieService.get('jwtToken')" 
               [editroute]="editroute"
               [sourcedata]="tablename"  
               [statusarr]="statusarray" 
