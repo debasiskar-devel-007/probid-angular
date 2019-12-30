@@ -63,17 +63,13 @@
             </span> -->
               <span class="thumb_imgwrapper">
                 <span class="flexbox4columnthumb">
-                  <owl-carousel [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-
-                  
-                  <div class="single_thumb_wrapper" *ngFor="let item of data.media.photo_links ; let i=index ">
-                    <span class="single_thumb_imagewrapper">
-                      <img [src]="item" (click)="showImage(item,i)">
-                      <!-- <p>{{item}}</p> -->
-                      <!-- <img src="../../../../assets/images/no-image-default.jpg"> -->
+                  <owl-carousel [options]="abc" [carouselClasses]="['owl-theme', 'row', 'sliding']">                  
+                    <span class="single_thumb_wrapper" *ngFor="let item of data.media.photo_links ; let i=index ">
+                      <span class="single_thumb_imagewrapper">
+                        <img [src]="item" (click)="showImage(item,i)">
+                      </span>
                     </span>
-                  </div>
-                </owl-carousel>
+                  </owl-carousel>
                   <!-- <mat-list-item class="single_thumb_wrapper">
 
 

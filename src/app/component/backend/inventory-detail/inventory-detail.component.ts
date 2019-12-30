@@ -26,7 +26,7 @@ export class InventoryDetailComponent implements OnInit {
   public message:any="Are you sure you want to delete this?";
 
 
-  carouselOptions = {
+  abc = {
     margin: 5,
     nav: true,
     loop: true,
