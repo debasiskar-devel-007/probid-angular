@@ -254,7 +254,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .rep-dashboard-block2 .flexbox4column > .listsingle  {
@@ -265,10 +265,12 @@
   height: auto;
   background-color: #c2c9cd;
   padding: 20px;
+  margin-right: 20px;
 }
 
 .rep-dashboard-block2 .flexbox4column > .listsingle:last-child{
   padding: 20px;
+  margin-right: 0px !important;
 }
 
 
