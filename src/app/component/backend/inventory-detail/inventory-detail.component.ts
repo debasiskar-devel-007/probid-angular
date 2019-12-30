@@ -69,7 +69,7 @@ export class InventoryDetailComponent implements OnInit {
 
 
 
-    this.saveSearch()
+    // this.saveSearch()
 
     if (this.user_details.type == "salesrep") {
       let data: any = {
@@ -87,8 +87,47 @@ export class InventoryDetailComponent implements OnInit {
 
     }
 
+    if(this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id'){
+      let data: any = {
+        source: 'send_rsvp_view',
+        condition:{
+          added_by_object:this.user_id
+        }
+      }
+      this.apiService.getDataForDatalist(data).subscribe((res: any) => {
+       
+        this.saveList = res.res;
+        console.log('rsvp >>',this.saveList);
+  
+      });
+      
+    } else {
+      let data: any = {
+        source: 'save_favorite_view',
+        condition:{
+          added_by:this.user_id
+        }
+      }
+      this.apiService.getDataForDatalist(data).subscribe((res: any) => {
+       
+        this.saveList = res.res;
+        console.log('save >>',this.saveList);
+  
+      });
+    }
 
-
+    if(this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id' && this.user_details.type== 'admin'){
+      let data: any = {
+        source: 'send_rsvp_view',
+      }
+      this.apiService.getDataForDatalist(data).subscribe((res: any) => {
+       
+        this.saveList = res.res;
+        console.log('rsvp >>',this.saveList);
+  
+      });
+      
+    }
 
 
 
@@ -151,20 +190,21 @@ export class InventoryDetailComponent implements OnInit {
   }
 
   //datalist for save search
-  saveSearch() {
-    let data: any = {
-      source: 'save_favorite_view',
-      condition:{
-        added_by:this.user_id
-      }
-    }
-    this.apiService.getDataForDatalist(data).subscribe((res: any) => {
-     
-      this.saveList = res.res;
-      console.log('save >>',this.saveList);
 
-    });
-  }
+  // saveSearch() {
+  //   let data: any = {
+  //     source: 'save_favorite_view',
+  //     condition:{
+  //       added_by:this.user_id
+  //     }
+  //   }
+  //   this.apiService.getDataForDatalist(data).subscribe((res: any) => {
+     
+  //     this.saveList = res.res;
+  //     console.log('save >>',this.saveList);
+
+  //   });
+  // }
 
   //for rsvp send
   addRsvp(val: any, itemData: any) {
