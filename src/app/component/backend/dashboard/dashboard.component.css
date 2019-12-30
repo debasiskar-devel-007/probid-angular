@@ -742,5 +742,12 @@
 
 
 
+.customer-dashboard-block1 .titleadmin{  
+  justify-content: space-between;
+  display: flex;
+}
 
+.repinfowrapper{
+  padding: 20px;
+}
 
