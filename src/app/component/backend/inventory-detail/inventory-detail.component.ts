@@ -26,7 +26,7 @@ export class InventoryDetailComponent implements OnInit {
   public message:any="Are you sure you want to delete this?";
 
 
-  carouselOptions = {
+  abc = {
     margin: 5,
     nav: true,
     loop: true,
@@ -332,6 +332,8 @@ export class InventoryDetailComponent implements OnInit {
 //for details
   inventoryDetails(val){
 console.log('id>>',val)
+this.router.navigateByUrl('/inventory-detail/'+val)
+
   }
 
 }
