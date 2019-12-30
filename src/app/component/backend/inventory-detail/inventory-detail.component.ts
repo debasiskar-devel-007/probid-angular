@@ -329,6 +329,10 @@ export class InventoryDetailComponent implements OnInit {
 })
 
   }
+//for details
+  inventoryDetails(val){
+console.log('id>>',val)
+  }
 
 }
 

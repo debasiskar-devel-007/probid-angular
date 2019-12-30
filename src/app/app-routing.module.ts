@@ -370,7 +370,7 @@ const routes: Routes = [
 
   { path: 'rsvp-customer', component: RsvplistsComponent ,
   resolve: { rsvp: ResolveService },
-  data: { requestcondition: { source: 'send_rsvp_view', condition: {} }, endpoint: 'datalist' }},
+  data: { requestcondition: { source: 'send_rsvp_view', condition: {"added_for_object":"user_id"} }, endpoint: 'datalist' }},
 
   // { path: 'manage-training1', component: ManageTrainingComponent },
   { path: 'manage-lessons', component: ManageLessonsComponent },
