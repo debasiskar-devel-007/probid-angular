@@ -76,6 +76,9 @@ export class ResolveService implements Resolve<any> {
             if (route.url[0].path == 'save-search-admin' || route.url[0].path == 'save-search-castomer' || route.url[0].path == 'save-search-rep') {
                 route.data.requestcondition.condition.added_by = this.userid ;
             }
+            if(route.url[0].path == 'rep-dashboard') {
+                route.data.requestcondition.id = this.userid ;
+            }
 
 
 
