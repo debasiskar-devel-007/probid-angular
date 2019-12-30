@@ -95,14 +95,14 @@ export class InventoryDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-
-
+    
+    //   //for save search & rsvp
     this.activatedRoute.data.forEach((res) => {
       let result: any
       result = res.inventory_details.res;
       console.log('inventory_details >>', result)
 
-      this.data = result[0].card_data;
+      this.data = result[0];
       // this.item=this.data.financing_options;
 
       console.log('card_data', this.data)
@@ -112,21 +112,11 @@ export class InventoryDetailComponent implements OnInit {
 
       this.itemVal = result[0]._id;
       console.log('**>>', this.itemVal)
+    });
 
 
 
-    })
     this.saveSearch()
-
-    //for obserable data
-    // const data=this.observableData.dataObserve;
-    // this.data.subscribe(res=>{
-    //   console.log('observ>>',res)
-    // })
-
-    // this.observableData
-
-
 
     if (this.user_details.type == "salesrep") {
       let data: any = {
