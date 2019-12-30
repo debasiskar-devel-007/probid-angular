@@ -339,7 +339,7 @@ app-bk-leftdiv{position: relative; z-index: 999; display: none;}
 
 
     .bred_cram_wrapper{ background: #DDE2E5; display: flex!important;  padding: 8px; align-items: stretch; }
-  .bred_cram_wrapper a.active{
+  .bred_cram_wrapper a{ background: #b5bdbf;
     background: #b5bdbf;
     display: flex!important;
     color: #252525;
@@ -352,7 +352,6 @@ app-bk-leftdiv{position: relative; z-index: 999; display: none;}
     text-transform: capitalize;
     font-family: "Helvetica-Normal";
   }
-
   .activebread{
     background: #fff!important;
     color: #000!important;
@@ -362,7 +361,7 @@ app-bk-leftdiv{position: relative; z-index: 999; display: none;}
     content: '';
     width: 15px;
     height: 100%;
-    background: #fff !important;
+    background: #B5BDBF;
     display: inline-block;
     position: absolute;
     top: 0;
@@ -373,7 +372,7 @@ app-bk-leftdiv{position: relative; z-index: 999; display: none;}
     content: '';
     width: 15px;
     height: 100%;
-    background: #FFFFFF !important;
+    background: #FFFFFF;
     display: inline-block;
     position: absolute;
     right: -15px;
