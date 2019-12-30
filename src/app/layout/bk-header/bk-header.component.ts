@@ -65,6 +65,9 @@ export class BkHeaderComponent implements OnInit {
     
     
    }
+   open(val){
+     
+   }
    logout() {
     this.cookieService.deleteAll();
     this.router.navigateByUrl('/');
