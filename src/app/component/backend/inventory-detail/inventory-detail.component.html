@@ -47,93 +47,25 @@
           <mat-card-content>
             <span class="inventorydetailblock">
               <span class="inventorydetailblockleft">
-
-
-                <span class="big_imagewrapper">
-
+                <span class="big_imagewrapper" >
                   <img *ngIf="data.media.photo_links[0] == null" src="../../../../assets/images/no-image-default.jpg">
-
-                  <img [src]="data.media.photo_links[0]">
-
-                  <span *ngIf="indexImg !=null && indexImg != ''"><img [src]="data.media.photo_links[indexImg]"></span>
-
+                    <img [src]="data.media.photo_links[0]">
+                    <span *ngIf="indexImg !=null && indexImg != ''"><img [src]="data.media.photo_links[indexImg]"></span>
                 </span>
                 <!-- <span class="big_imagewrapper" >
-                <img [src]="data.media.photo_links[0]">
-            </span> -->
+                  <img [src]="data.media.photo_links[0]">
+              </span> -->
                 <span class="thumb_imgwrapper">
                   <span class="flexbox4columnthumb">
-                    <owl-carousel [options]="abc" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                    <owl-carousel [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
                       <span class="single_thumb_wrapper" *ngFor="let item of data.media.photo_links ; let i=index ">
                         <span class="single_thumb_imagewrapper">
                           <img [src]="item" (click)="showImage(item,i)">
                         </span>
                       </span>
                     </owl-carousel>
-                    <!-- <mat-list-item class="single_thumb_wrapper">
-
-
-            <span class="big_imagewrapper">
-
-              <img *ngIf="data.media.photo_links == null" src="../../../../assets/images/no-image-default.jpg">
-
-              <img [src]="data.media.photo_links[0]">
-
-              <span *ngIf="indexImg !=null && indexImg != ''"><img [src]="data.media.photo_links[indexImg]"></span>
-
-            </span>
-
-            <span class="thumb_imgwrapper">
-              <mat-list class="flexbox4columnthumb">
-                <mat-list-item class="single_thumb_wrapper" *ngFor="let item of data.media.photo_links ; let i=index ">
-                  <span class="single_thumb_imagewrapper">
-                    <img [src]="item" (click)="showImage(item,i)">
-
-                    <img *ngIf="data.media.photo_links == null" src="../../../../../assets/images/default_car_img.jpeg">
-
-                  </span>
-                </mat-list-item>
-
-                <mat-list-item class="single_thumb_wrapper">
-
-                    <span class="single_thumb_imagewrapper">
-                      <img src="../../../../assets/images/no-image-default.jpg">
-                    </span>
-                  </mat-list-item>
-                  <mat-list-item class="single_thumb_wrapper">
-                    <span class="single_thumb_imagewrapper">
-                      <img src="../../../../assets/images/no-image-default.jpg">
-                    </span>
-                  </mat-list-item>
-                  <mat-list-item class="single_thumb_wrapper">
-                    <span class="single_thumb_imagewrapper">
-                      <img src="../../../../assets/images/no-image-default.jpg">
-                    </span>
-                  </mat-list-item>
-                  <mat-list-item class="single_thumb_wrapper">
-                    <span class="single_thumb_imagewrapper">
-                      <img src="../../../../assets/images/no-image-default.jpg">
-                    </span>
-                  </mat-list-item>
-                  <mat-list-item class="single_thumb_wrapper">
-                    <span class="single_thumb_imagewrapper">
-                      <img src="../../../../assets/images/no-image-default.jpg">
-                    </span>
-                  </mat-list-item>
-                  <mat-list-item class="single_thumb_wrapper">
-                    <span class="single_thumb_imagewrapper">
-                      <img src="../../../../assets/images/no-image-default.jpg">
-                    </span>
-                  </mat-list-item>
-                  <mat-list-item class="single_thumb_wrapper">
-                    <span class="single_thumb_imagewrapper">
-                      <img src="../../../../assets/images/no-image-default.jpg">
-                    </span>
-                  </mat-list-item> -->
-
                   </span>
                 </span>
-
               </span>
               <span class="inventorydetailblockright">
                 <span class="inventorydetailtop">
@@ -572,7 +504,7 @@
                     </span>
                   </span>
                   <span class="middleblock">
-                    <h2>{{item.heading}} <span style="color:#33d6ff" (click)="inventoryDetails(item._id)" ><b>View Details</b></span></h2>
+                    <h2>{{item.heading}} <span (click)="inventoryDetails(item._id)">View Details</span></h2>
 
                     <span class="pricecls">
                       $ {{item.price}}
