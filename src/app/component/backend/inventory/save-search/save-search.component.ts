@@ -259,6 +259,8 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   if (item.customer_id != '' && item.customer_id != null ) {
         let endpoint: any = "addorupdatedata";
         item.added_by = this.user_id;
+        item.added_by_salesrep = 1;
+
         item.status = 0;
         // if (this.user_details.type == 'salesrep') {
           item.added_for = item.customer_id;

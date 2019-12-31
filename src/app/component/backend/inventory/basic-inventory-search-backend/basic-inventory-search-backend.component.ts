@@ -315,6 +315,8 @@ export class BasicInventorySearchBackendComponent implements OnInit {
 
 
   favorite(item: any) {
+
+
     console.log('this is favorite ')
     if (this.user_id  == '') {
       this.cookieService.set('favorite_car', item);
@@ -338,10 +340,9 @@ export class BasicInventorySearchBackendComponent implements OnInit {
         this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
           console.log(res);
           if(res.status == "success"){
-            this.addItemValue=0;
-            this.val_Id = item.id;
-          
 
+            item.addedToFavourite = 1;
+            
             this.snackBar.open('RSVP Saved Into Your Favorite..!','Ok',{duration:4000})
           }
         });
@@ -368,6 +369,7 @@ if (this.user_details.type == 'salesrep') {
         item.status = 0;
         if (this.user_details.type == 'salesrep') {
           item.added_for = item.customer_id;
+          item.added_by_salesrep = 1;
           console.log('added_for >>',item.added_for);
           } else {
             item.added_for = this.user_id;
@@ -383,8 +385,10 @@ if (this.user_details.type == 'salesrep') {
           this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
             console.log(res);
             if(res.status == "success"){
-              this.rsvpItemValue=0;
-              this.itemId=item.id
+
+              item.rsvpSend = 1
+              // this.rsvpItemValue=0;
+              // this.itemId=item.id
               this.snackBar.open('RSVP Added Successfully','Ok',{
                 duration:4000
               })            
@@ -420,8 +424,11 @@ if (this.user_details.type == 'salesrep') {
           console.log(res);
           if(res.status == "success"){
 
-            this.rsvpItemValue=0;
-            this.itemId=item.id
+
+            item.rsvpSend = 1
+
+            // this.rsvpItemValue=0;
+            // this.itemId=item.id
 
             this.snackBar.open('RSVP Added Successfully','Ok',{
               duration:4000
