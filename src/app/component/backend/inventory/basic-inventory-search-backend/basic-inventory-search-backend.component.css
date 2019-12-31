@@ -305,7 +305,7 @@ flex-direction: column;
   font-size: 18px;
   font-family: 'Helvetica'; 
 }
-.rrblock1 h1{
+.rrblock1 span button{
   font-family: 'HelveticaBold'; 
   font-size: 36px; text-transform: uppercase;
   text-align: center;

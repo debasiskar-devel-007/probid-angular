@@ -199,9 +199,9 @@
                   <span class="sub-col-4">
                     <mat-card-content class="rrblock1">
                       <span >
-                      <h1 *ngIf="user_details != null && user_details.type != 'admin'" 
+                      <button *ngIf="user_details != null && user_details.type != 'admin'" 
                          (click)="rsvpSend(item)"
-                        >RSVP</h1>
+                        >RSVP</button>
                       </span>
                       <button (click)="favorite(item)"
                         [ngClass]="addItemValue==0 && item.id == valId ? ' disabled':'test'">
