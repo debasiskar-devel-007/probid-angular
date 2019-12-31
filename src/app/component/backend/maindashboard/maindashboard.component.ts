@@ -151,7 +151,6 @@ public errorMsg: string = '';
 
 
   socialAdvLists: socialAdvos[];
-  socialAdvLists:any=8;
 
   
 
