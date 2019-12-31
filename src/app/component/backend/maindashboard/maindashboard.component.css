@@ -728,7 +728,7 @@
   box-shadow: -5px 3px 18px 0px rgba(168,168,168,1);
   position: relative;
   overflow: hidden;
-  margin: 0.3%;
+  margin: .5%;
   -webkit-box-align: stretch;
   align-items: stretch;
   height: auto;
