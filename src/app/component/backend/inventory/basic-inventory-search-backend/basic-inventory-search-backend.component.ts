@@ -105,6 +105,7 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   public indexCountForImg: number;
   public indexForCustomer:number;
   public spinnerval: any = 0;
+  public addItemValue:any=1;
 
 
   constructor(
@@ -308,6 +309,8 @@ export class BasicInventorySearchBackendComponent implements OnInit {
     console.log('/login'+this.router.url)
   }
 
+
+
   favorite(item: any) {
     console.log('this is favorite ')
     if (this.user_id  == '') {
@@ -332,6 +335,9 @@ export class BasicInventorySearchBackendComponent implements OnInit {
         this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
           console.log(res);
           if(res.status == "success"){
+            // this.addItemValue=0;
+            // this.router.navigateByUrl('/save-search-castomer');
+
             this.snackBar.open('RSVP Saved Into Your Favorite..!','Ok',{duration:4000})
           }
         });
@@ -373,16 +379,20 @@ if (this.user_details.type == 'salesrep') {
           this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
             console.log(res);
             if(res.status == "success"){
+
+             
              
               this.snackBar.open('RSVP Added Successfully','Ok',{
                 duration:4000
               })
-              if(this.user_details.type == 'salesrep'){
-                this.router.navigateByUrl('/rsvp-salesrep');
-              }
-              if(this.user_details.type == 'customer'){
-                this.router.navigateByUrl('/rsvp-customer');
-              }
+              this.router.navigateByUrl('/rsvp-salesrep');
+              
+              // if(this.user_details.type == 'salesrep'){
+              //   this.router.navigateByUrl('/rsvp-salesrep');
+              // }
+              // if(this.user_details.type == 'customer'){
+              //   this.router.navigateByUrl('/rsvp-customer');
+              // }
 
              
             }
@@ -420,14 +430,16 @@ if (this.user_details.type == 'salesrep') {
             this.snackBar.open('RSVP Added Successfully','Ok',{
               duration:4000
             })
+            this.router.navigateByUrl('/rsvp-customer');
 
-            if(this.user_details.type == 'salesrep'){
-              this.router.navigateByUrl('/rsvp-salesrep');
-            }
-            if(this.user_details.type == 'customer'){
-              this.router.navigateByUrl('/rsvp-customer');
-            }
+            // if(this.user_details.type == 'salesrep'){
+            //   this.router.navigateByUrl('/rsvp-salesrep');
+            // }
+            // if(this.user_details.type == 'customer'){
+            //   this.router.navigateByUrl('/rsvp-customer');
+            // }
 
+            //for delete data from save_favorite
             let data: any = {
               id:item._id,
               source: 'save_favorite'

@@ -191,7 +191,9 @@
                     <mat-card-content class="rrblock1" >
 
                       <h1 *ngIf="user_details != null && user_details.type != 'admin'"  (click)="rsvpSend(item)">RSVP</h1>
-                      <button (click)="favorite(item)"><i class="material-icons"> favorite </i> ADD</button>
+                      
+                      <button (click)="favorite(item)" disabled ><i class="material-icons" > favorite </i> ADD</button>
+                    
                       <span >
                       <mat-form-field *ngIf="user_details.type == 'salesrep' && user_details.type != 'admin' " class="select-customer" >
                         <mat-label>Select Customer</mat-label>

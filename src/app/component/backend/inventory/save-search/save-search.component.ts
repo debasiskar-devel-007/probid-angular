@@ -139,9 +139,9 @@ export class SaveSearchComponent implements OnInit {
 if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
   this.user_details = JSON.parse(this.cookieService.get('user_details'));
   this.user_id = this.user_details._id;
-  console.log(this.user_id);
-  console.log(this.user_details)
-  console.log('>>',this.user_details.type)
+  // console.log(this.user_id);
+  // console.log(this.user_details)
+  // console.log('>>',this.user_details.type)
   
   if(this.user_details.type == "salesrep") {
     let data: any = {
@@ -154,7 +154,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     }
     this.apiService.getDatalist(data).subscribe((res:any)=>{
       this.customerList = res.res;
-      console.log('.>>>>>>>',this.customerList);
+      // console.log('.>>>>>>>',this.customerList);
     });
 
   }
@@ -166,15 +166,15 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
 
     //for make,model,year,type drop down list
     this.activatedRoute.data.forEach((data) => {
-      console.log(data)
+      // console.log(data)
       this.search = data.inventory_search.res;
-      console.log('search>>',this.search)
+      // console.log('search>>',this.search)
     });
   }
 
   gotologin(){
     this.router.navigateByUrl('/login'+this.router.url)
-    console.log('/login'+this.router.url)
+    // console.log('/login'+this.router.url)
   }
 
   getData(){
@@ -186,13 +186,13 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
       }
     }
     this.apiService.getDatalist(data).subscribe((res:any)=>{
-      console.log(res);
+      // console.log(res);
     })
   }
 
 
   unFavorite(item: any,index:any) {
-    console.log('this is favorite ',item,index);
+    // console.log('this is favorite ',item,index);
     const dialogRef = this.dialog.open(RemoveModalComponent, {
       width: '250px',
       data:this.message
@@ -200,7 +200,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result)
+      // console.log(result)
       
         if(result=='yes'){
     let data: any = {
@@ -208,7 +208,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
       source: 'save_favorite'
     }
     this.apiService.deleteSingleData1(data).subscribe((res: any)=>{
-      console.log(res);
+      // console.log(res);
       if (res.status == 'success') {
         this.search.splice(index,index+1);
         this.snack.open('Record Removed Successfully..!','Ok',{duration:4000})
@@ -252,7 +252,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   rsvpSend(item: any,i:any) {
     
 
-    console.log('rsvpSend>>',item,i)
+    // console.log('rsvpSend>>',item,i)
 
  if(this.user_details.type =='salesrep'){
 
@@ -272,9 +272,9 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
           data: card_data,
           source: "send_for_rsvp",
         };
-        console.log(data)
+        // console.log(data)
           this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
-            console.log(res);
+            // console.log(res);
             if(res.status == "success"){
 
               this.snack.open('RSVP Added Successfully','Ok',{
@@ -286,7 +286,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
                 source: 'save_favorite'
               }
               this.apiService.deleteSingleData1(data).subscribe((res: any)=>{
-                console.log(res);
+                // console.log(res);
                 if (res.status == 'success') {
                   this.search.splice(i,i+1);
                 }
@@ -301,7 +301,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
 
       item.customer_id=''
       this.errorMsg;
-      console.log(this.errorMsg)
+      // console.log(this.errorMsg)
 
     }
 
@@ -322,9 +322,9 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
         data: card_data,
         source: "send_for_rsvp",
       };
-      console.log(data)
+      // console.log(data)
         this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
-          console.log(res);
+          // console.log(res);
           if(res.status == "success"){
 
             this.snack.open('RSVP Added Successfully','Ok',{
@@ -335,7 +335,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
               source: 'save_favorite'
             }
             this.apiService.deleteSingleData1(data).subscribe((res: any)=>{
-              console.log(res);
+              // console.log(res);
               if (res.status == 'success') {
                 this.search.splice(i,i+1);
               }
@@ -351,7 +351,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
 
   showimg(i: any,j:any){
     // this.modalImg = img;
-    console.log('>>>>',i,j)
+    // console.log('>>>>',i,j)
     this.indexCount = i;
     this.indexCountForImg = j;
 
@@ -362,7 +362,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   }
 
   inventoryDetails(val:any){
-    console.log('details>>',val)
+    // console.log('details>>',val)
     this.router.navigateByUrl('/inventory-detail/'+val);
   }
 

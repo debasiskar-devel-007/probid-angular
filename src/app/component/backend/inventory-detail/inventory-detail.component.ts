@@ -88,8 +88,8 @@ export class InventoryDetailComponent implements OnInit {
     if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
       this.user_details = JSON.parse(this.cookieService.get('user_details'));
       this.user_id = this.user_details._id;
-      console.log(this.user_id);
-      console.log('type>>', this.user_details.type)
+      // console.log(this.user_id);
+      // console.log('type>>', this.user_details.type)
     }
   }
 
@@ -99,18 +99,18 @@ export class InventoryDetailComponent implements OnInit {
     this.activatedRoute.data.forEach((res) => {
       let result: any
       result = res.inventory_details.res;
-      console.log('inventory_details >>', result)
+      // console.log('inventory_details >>', result)
 
       this.data = result[0];
       // this.item=this.data.financing_options;
 
-      console.log('card_data', this.data)
+      // console.log('card_data', this.data)
 
       this.makeName = this.data.build.make;
-      console.log('makeName >>', this.makeName)
+      // console.log('makeName >>', this.makeName)
 
       this.itemVal = result[0]._id;
-      console.log('**>>', this.itemVal)
+      // console.log('**>>', this.itemVal)
     });
 
 
@@ -128,7 +128,7 @@ export class InventoryDetailComponent implements OnInit {
       }
       this.apiService.getDatalist(data).subscribe((res: any) => {
         this.customerList = res.res;
-        console.log('.>>>>>>>', this.customerList);
+        // console.log('.>>>>>>>', this.customerList);
       });
 
     }
@@ -143,7 +143,7 @@ export class InventoryDetailComponent implements OnInit {
       this.apiService.getDataForDatalist(data).subscribe((res: any) => {
 
         this.saveList = res.res;
-        console.log('rsvp >>', this.saveList);
+        // console.log('rsvp >>', this.saveList);
 
       });
 
@@ -157,7 +157,7 @@ export class InventoryDetailComponent implements OnInit {
       this.apiService.getDataForDatalist(data).subscribe((res: any) => {
 
         this.saveList = res.res;
-        console.log('save >>', this.saveList);
+        // console.log('save >>', this.saveList);
 
       });
     }
@@ -169,7 +169,7 @@ export class InventoryDetailComponent implements OnInit {
       this.apiService.getDataForDatalist(data).subscribe((res: any) => {
 
         this.saveList = res.res;
-        console.log('rsvp >>', this.saveList);
+        // console.log('rsvp >>', this.saveList);
 
       });
 
@@ -188,7 +188,7 @@ export class InventoryDetailComponent implements OnInit {
 
   //show details
   showImage(item: any, i: any) {
-    console.log('>>>', item, i)
+    // console.log('>>>', item, i)
     this.indexImg = i
 
   }
@@ -212,7 +212,7 @@ export class InventoryDetailComponent implements OnInit {
 
   //for rsvp send
   addRsvp(val: any, itemData: any) {
-    console.log('val-rsvp', val, itemData)
+    // console.log('val-rsvp', val, itemData)
 
 
     if (this.user_details.type == 'salesrep') {
@@ -233,9 +233,9 @@ export class InventoryDetailComponent implements OnInit {
           data: card_data,
           source: "send_for_rsvp",
         };
-        console.log(data)
+        // console.log(data)
         this.apiService.CustomRequest(data, endpoint).subscribe((res: any) => {
-          console.log(res);
+          // console.log(res);
           if (res.status == "success") {
 
 
@@ -256,10 +256,10 @@ export class InventoryDetailComponent implements OnInit {
               source: 'save_favorite'
             }
             this.apiService.deleteSingleData1(data).subscribe((res: any) => {
-              console.log(res);
+              // console.log(res);
               if (res.status == 'success') {
                 // this.search.splice(i,i+1);
-                console.log('success')
+                // console.log('success')
               }
             })
 
@@ -270,7 +270,7 @@ export class InventoryDetailComponent implements OnInit {
 
         this.customer_id = ''
         this.errorMsg;
-        console.log(this.errorMsg)
+        // console.log(this.errorMsg)
 
       }
 
@@ -291,9 +291,9 @@ export class InventoryDetailComponent implements OnInit {
         data: card_data,
         source: "send_for_rsvp",
       };
-      console.log(data)
+      // console.log(data)
       this.apiService.CustomRequest(data, endpoint).subscribe((res: any) => {
-        console.log(res);
+        // console.log(res);
         if (res.status == "success") {
 
           this.snack.open('RSVP Added Successfully', 'Ok', {
@@ -313,10 +313,10 @@ export class InventoryDetailComponent implements OnInit {
             source: 'save_favorite'
           }
           this.apiService.deleteSingleData1(data).subscribe((res: any) => {
-            console.log(res);
+            // console.log(res);
             if (res.status == 'success') {
               // this.search.splice(i,i+1);
-              console.log('success');
+              // console.log('success');
 
             }
           })
@@ -330,7 +330,7 @@ export class InventoryDetailComponent implements OnInit {
   }
 
   removeRsvp(val: any, item: any) {
-    console.log('remove-rsvp', val, item)
+    // console.log('remove-rsvp', val, item)
     const dialogRef = this.dialog.open(RemoveRsvpComponent, {
       width: '250px',
       data: this.message
@@ -338,7 +338,7 @@ export class InventoryDetailComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result)
+      // console.log(result)
 
       if (result == 'yes') {
         let data: any = {
@@ -346,7 +346,7 @@ export class InventoryDetailComponent implements OnInit {
           source: 'save_favorite'
         }
         this.apiService.deleteSingleData1(data).subscribe((res: any) => {
-          console.log(res);
+          // console.log(res);
           if (res.status == 'success') {
             // this.search.splice(index,index+1);
             this.snack.open('Record Removed Successfully..!', 'Ok', { duration: 2000 })
@@ -372,7 +372,7 @@ export class InventoryDetailComponent implements OnInit {
   }
   //for details
   inventoryDetails(val) {
-    console.log('id>>', val)
+    // console.log('id>>', val)
     if (this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id') {
       this.router.navigateByUrl('/rsvp-detail/' + val)
     }
@@ -385,7 +385,7 @@ export class InventoryDetailComponent implements OnInit {
   }
 
   viewAll() {
-    console.log('hit')
+    // console.log('hit')
     // for admin 
 
     if (this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id'

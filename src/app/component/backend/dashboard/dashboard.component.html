@@ -63,8 +63,9 @@
           <span class="customer-dashboard-block2-inner">
                         <h1 class="titleadmin">RSVP <mat-button class="btnblue">view all</mat-button></h1>     
                         <mat-list role="list" class="flexbox1column">
-                            <mat-list-item role="listitem" class="rsvplistsingle" *ngFor="let item of datalist.rsvp_list">
-                              <span class="deletecls"><i class="material-icons">delete</i></span>
+                            <mat-list-item role="listitem" class="rsvplistsingle"
+                             *ngFor="let item of datalist.rsvp_list | slice:0:indexval; let i=index">
+                              <span class="deletecls"><i class="material-icons" (click)="deleteRsvp(item,i)">delete</i></span>
                                 <span class="rsvplistsingleinner">                                    
                                     <span class="rsvplistsingleleft">
                                         <span class="rsvpliststop">
@@ -129,31 +130,34 @@
         <mat-card-content class="rep-dashboard-block6">
           <h1 class="titleadmin">Save Search <mat-button class="btnblue" [routerLink]="['/save-search-admin']">View All</mat-button></h1> 
           <mat-list role="list" class="flexbox5column">
-              <mat-list-item role="listitem" class="block1socialadvosingle">
+              <mat-list-item role="listitem" class="block1socialadvosingle" 
+              *ngFor="let item of datalist.save_search | slice:0:indexvalue; let i=index">
 
                 
-                <span class="deletecls"><i class="material-icons">delete</i></span>
+                <span class="deletecls"><i class="material-icons" 
+                  (click)='deleteSaveSearch(item,i)'>delete</i></span>
 
                   <span class="block1socialadvosingleinner">
                       <span class="topblock">
                           <span class="rsvplistimgwrapper">
-                              <img  src="../../assets/images/default_car_img.jpeg">
+                              <img  [src]="item.media.photo_links[0]">
+                             
                           </span>
                         </span>
                         <span class="middleblock">
                           <span class="pricecls">
-                             $1000
+                             ${{item.price}}
                           </span>
                           <span class="titlecls">
-                            <span>Lorem Ipsum</span>
+                            <span>{{item.heading}}</span>
                           </span>
                         </span>
                         <span class="bottomblockss">                                  
                           <mat-list>
                               <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/milesicon.png"></strong> 11</mat-list-item>                                        
-                              <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/drivetrainicon.png"></strong>drivetrain</mat-list-item>                                  
+                              <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/drivetrainicon.png"></strong>{{item.build.drivetrain}}</mat-list-item>                                  
                              
-                              <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/bodytypeicon.png"></strong>transmission</mat-list-item>
+                              <mat-list-item class="pa_blockfootertext"> <strong><img src="../../../../assets/images/bodytypeicon.png"></strong>{{item.build.transmission}}</mat-list-item>
                             </mat-list>
                         </span>
                   </span>                                
