@@ -440,18 +440,18 @@ if (this.user_details.type == 'salesrep') {
             // }
 
             //for delete data from save_favorite
-            let data: any = {
-              id:item._id,
-              source: 'save_favorite'
-            }
-            this.apiService.deleteSingleData1(data).subscribe((res: any)=>{
-              console.log(res);
-              if (res.status == 'success') {
-                // this.search.splice(i,i+1);
-                console.log('success');
+            // let data: any = {
+            //   id:item._id,
+            //   source: 'save_favorite'
+            // }
+            // this.apiService.deleteSingleData1(data).subscribe((res: any)=>{
+            //   console.log(res);
+            //   if (res.status == 'success') {
+            //     // this.search.splice(i,i+1);
+            //     console.log('success');
                 
-              }
-            })
+            //   }
+            // })
 
 
           }
