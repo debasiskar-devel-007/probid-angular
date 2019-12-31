@@ -83,9 +83,10 @@ export class ResolveService implements Resolve<any> {
             if(route.url[0].path == 'rep-dashboard') {
                 route.data.requestcondition.id = this.userid ;
             }
-
-
-
+            if(route.url[0].path == 'customer-dashboard') {
+                route.data.requestcondition.id = this.userid ;
+                route.data.requestcondition.salesrep = this.userCookies.salesrep;
+            }
             return new Promise((resolve) => {
                 // console.log('route.data',route.data, this.userid);
                 this._apiService.getDatalistForResolve(route.data).subscribe(api_object =>{

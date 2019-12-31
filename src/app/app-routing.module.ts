@@ -310,8 +310,8 @@ const routes: Routes = [
 
   /**Backend Routing**/
   // {path: 'customer-dashboard', component:DashboardComponent, canActivate:[AuthGuard]},       // Useing for canActive
-  { path: 'customer-dashboard', component: DashboardComponent ,canActivate: [AuthGuard] , resolve: {rsvp: ResolveService },
-  data: { requestcondition: { source: '', condition: {} }, endpoint: 'for-dashboard' }},
+  { path: 'customer-dashboard', component: DashboardComponent , canActivate: [AuthGuard] , resolve: {rsvp: ResolveService },
+  data: { requestcondition: { source: '', condition: {} }, endpoint: 'for-customer-dashboard' }},
   // { path: 'admin-dashboard', component: MaindashboardComponent,canActivate: [AuthGuard] },
   { path: 'admin-dashboard', component: MaindashboardComponent,canActivate: [AuthGuard] , resolve: {rsvp: ResolveService },
   data: { requestcondition: { source: '', condition: {} }, endpoint: 'for-dashboard' } },

@@ -24,36 +24,11 @@ public datalist: any = '';
 public saveSearchIndex:any=5;
 
 public rsvp_list: any = '';
-public saveSearch_list: any = '';
 public ststus: number;
 
  
 public errorMsg: string = '';
   public stateList: any;
-  public inventory_search_list: any;
-  public make_list: any;
-  public type_list: any;
-  public model_list: any;
-  public year_list: any;
-  public type: string = '';
-  public year: string = '';
-  public make: string = '';
-  public model: string = '';
-  public vin: string = '';
-  public trim: string = '';
-  public vehicle: string = '';
-  public state: string = '';
-  public zip: string = '';
-  public search: any;
-  public user_details:any;
-  public user_id: string = '';
-  public modalImg: string = '';
-  public isFavorite: number = 0;
-  public customerList: any = '';
-  public customur_id: any = '';
-  public crsvplist:any ='';
-  public count:any ='';
-
   
 
   public formTitle: any = "Contact Us Listing Page";
@@ -97,12 +72,8 @@ public errorMsg: string = '';
 
   ngOnInit() {
     this.activatedRoute.data.forEach((data:any) => {
-      // this.crsvplist = data.fordashboard.result.save_search;
-      // console.log('dash-data',data)
-
-      this.saveSearch_list = data.rsvp.result.save_search;
-
-      // console.log('dvfdgfhg', this.saveSearch_list)
+      console.log('dash-data',data)
+      this.datalist = data.rsvp.result;
     })
   }
 
