@@ -48,7 +48,7 @@
                             </span>
                         </mat-card-content>
                     </span>
-                    <span class="block1socialadvo">
+                    <!-- <span class="block1socialadvo">
                         <mat-card-title class="sectionheader">Social Advo Banners</mat-card-title>
                         <mat-list role="list" class="flexbox4column">
                             <mat-list-item role="listitem" class="block1socialadvosingle" *ngFor="let socialadvo of socialAdvLists; let i = index">
@@ -82,7 +82,19 @@
                         <span class="btnwrappercls">
                             <button mat-button class="btnblue" [routerLink]="['/social-advo-admin']">View All</button>
                         </span>
-                    </span>
+                    </span> -->
+
+                    <span class="block1socialadvo">
+                      <mat-card-title class="sectionheader">Social Advo Banners</mat-card-title>
+                      <mat-list role="list" class="flexbox4column">
+                          <mat-list-item role="listitem" class="block1socialadvosingle" *ngFor="let socialadvo of socialAdvLists; let i = index">                           
+                              <img src="{{socialadvo.image_URL}}">                                                             
+                          </mat-list-item>
+                      </mat-list>
+                      <span class="btnwrappercls">
+                          <button mat-button class="btnblue" [routerLink]="['/social-advo-admin']">View All</button>
+                      </span>
+                  </span>
                 </span>
                 <span class="adm_dashboard_block1_right">
                     <mat-card>
@@ -143,8 +155,7 @@
                                                      <mat-list-item><span>Name:</span> <span>{{item.added_by_fullname}}</span> </mat-list-item>
                                                      <mat-list-item><span>Email ID:</span> <span>{{item.added_by_email}}</span> </mat-list-item>
                                                      <!-- <mat-list-item><span>Phone:</span> <span>{{item.added_by_phone}}</span> </mat-list-item> -->
-                                                   </mat-list>                                       
-                                                  
+                                                   </mat-list>  
                                                 </span>
                                               </span>
                                               <!-- <span class="rsvplisttypebottom">

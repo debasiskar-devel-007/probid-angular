@@ -703,3 +703,54 @@
   -o-object-fit: cover;
   object-fit: cover;
 }
+
+
+
+
+.block1socialadvo .flexbox4column{    
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+}
+
+.block1socialadvo .flexbox4column > .mat-list-item {
+  box-sizing: border-box;
+  width: 24%;
+  display: -webkit-box;
+  display: flex;
+  padding: 0px;
+  background-color: #fff;
+  box-shadow: -5px 3px 18px 0px rgba(168,168,168,1);
+  position: relative;
+  overflow: hidden;
+  margin: 0.3%;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  height: auto;
+}
+
+.block1socialadvo .flexbox4column .mat-list-item .mat-list-item-content {
+padding: 0 !important;
+height: 100% !important;
+width: 100%;
+}
+
+.block1socialadvo .flexbox4column .mat-list-item .mat-list-item-content {
+height: 100% !important;
+width: 100%;
+padding: 0;
+}
+
+.block1socialadvo .flexbox4column .mat-list-item img {
+height: 100% !important;
+width: 100%;
+height: auto;
+max-width: 100%;
+-o-object-fit: cover;
+object-fit: cover;
+}
