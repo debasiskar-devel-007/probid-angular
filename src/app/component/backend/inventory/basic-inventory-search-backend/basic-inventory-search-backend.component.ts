@@ -106,7 +106,7 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   public indexForCustomer:number;
   public spinnerval: any = 0;
   public addItemValue:any=1;
-  public valId: any = '';
+  public val_Id: any = '';
   public rsvpItemValue:any=1;
   public itemId:any='';
 
@@ -339,7 +339,7 @@ export class BasicInventorySearchBackendComponent implements OnInit {
           console.log(res);
           if(res.status == "success"){
             this.addItemValue=0;
-            this.valId = item.id;
+            this.val_Id = item.id;
           
 
             this.snackBar.open('RSVP Saved Into Your Favorite..!','Ok',{duration:4000})
