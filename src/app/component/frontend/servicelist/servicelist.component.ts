@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute,Router} from '@angular/router';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from '../../../api.service';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { MetaService } from '@ngx-meta/core';
 @Component({

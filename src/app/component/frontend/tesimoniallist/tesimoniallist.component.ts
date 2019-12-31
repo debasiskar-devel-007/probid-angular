@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment'; // add this 1 of 4
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from '../../../api.service';
 import { MetaService } from '@ngx-meta/core';
 @Component({
   selector: 'app-tesimoniallist',
