@@ -65,7 +65,7 @@ import { InventoryDetailComponent, RemoveRsvpComponent } from './component/backe
 /**Backend Component**/
 import { SidenavService } from './../app/services/sidenav.service';
 import { SaveSearchComponent, RemoveModalComponent } from './component/backend/inventory/save-search/save-search.component';
-import { DashboardComponent } from './component/backend/dashboard/dashboard.component';
+import { DashboardComponent, RemoveRSvpModalComponent } from './component/backend/dashboard/dashboard.component';
 import { BkHeaderComponent } from './layout/bk-header/bk-header.component';
 import { BkFooterComponent } from './layout/bk-footer/bk-footer.component';
 
@@ -302,8 +302,9 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
     InventoryDetailComponent,
     RemoveModalComponent,
     RemoveRsvpComponent,
-    RemoveDialogComponent
+    RemoveDialogComponent,
     // errorDialogbackend,
+    RemoveRSvpModalComponent
   ],
   imports: [
     NewsTitleModule,
@@ -344,7 +345,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
   providers: [CookieService, AuthGuard, ApiService, SidenavService,BasicInventorySearchBackendComponent,InventoryDetailComponent],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent,DeleteModalRsvpComponent,RemoveModalComponent,RemoveRsvpComponent,RemoveDialogComponent]
+  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent,DeleteModalRsvpComponent,RemoveModalComponent,RemoveRsvpComponent,RemoveDialogComponent,RemoveModalComponent,RemoveRSvpModalComponent]
   // errorDialogbackend
 })
 export class AppModule { }

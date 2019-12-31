@@ -8,18 +8,18 @@
       <p class="adm_inner_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
     </mat-card-content>
     <mat-card-content class="bred_cram_wrapper">
-        <a mat-list-item routerLinkActive="active"> Dashboard </a>
-        <a mat-list-item routerLinkActive="active activebread"> Basic inventory search</a>
+      <a mat-list-item routerLinkActive="active"> Dashboard </a>
+      <a mat-list-item routerLinkActive="active activebread"> Basic inventory search</a>
     </mat-card-content>
 
-  <div *ngIf="spinnerval==1">
-    <mat-spinner></mat-spinner>
-  </div>
+    <div *ngIf="spinnerval==1">
+      <mat-spinner></mat-spinner>
+    </div>
 
 
     <mat-card class="ptb-35 generalcls inventorysearch" style="padding: 0 !important;">
-      
-      
+
+
       <span class="formblockwrapper">
         <span class="mainwrappercontent">
           <span class="formblock">
@@ -30,35 +30,39 @@
                   <span>
                     <h4>Make:</h4>
                     <mat-form-field>
-                      <input type="text" (keyup)="searchAutoComplete($event, 'make')" placeholder="Pick one make" aria-label="Number" matInput formControlName="make" [matAutocomplete]="auto">
+                      <input type="text" (keyup)="searchAutoComplete($event, 'make')" placeholder="Pick one make"
+                        aria-label="Number" matInput formControlName="make" [matAutocomplete]="auto">
                       <mat-autocomplete #auto="matAutocomplete">
                         <mat-option *ngFor="let option of make_list" [value]="option">
                           {{option}}
                         </mat-option>
-                    </mat-autocomplete>
-                  </mat-form-field>
+                      </mat-autocomplete>
+                    </mat-form-field>
                   </span>
                   <span>
                     <h4>Model:</h4>
                     <mat-form-field>
-                      <input type="text" (keyup)="searchAutoComplete($event, 'model')" placeholder="Pick one make" aria-label="Number" matInput formControlName="model" [matAutocomplete]="automodel">
+                      <input type="text" (keyup)="searchAutoComplete($event, 'model')" placeholder="Pick one make"
+                        aria-label="Number" matInput formControlName="model" [matAutocomplete]="automodel">
                       <mat-autocomplete #automodel="matAutocomplete">
                         <mat-option *ngFor="let option of model_list" [value]="option">
                           {{option}}
                         </mat-option>
-                    </mat-autocomplete>
-                  </mat-form-field>
+                      </mat-autocomplete>
+                    </mat-form-field>
                   </span>
                   <span>
                     <h4>Type:</h4>
                     <mat-form-field>
-                      <input type="text" (keyup)="searchAutoComplete($event, 'body_type')" placeholder="Pick one body type" aria-label="Number" matInput formControlName="type" [matAutocomplete]="autotype">
+                      <input type="text" (keyup)="searchAutoComplete($event, 'body_type')"
+                        placeholder="Pick one body type" aria-label="Number" matInput formControlName="type"
+                        [matAutocomplete]="autotype">
                       <mat-autocomplete #autotype="matAutocomplete">
                         <mat-option *ngFor="let option of type_list" [value]="option">
                           {{option}}
                         </mat-option>
-                    </mat-autocomplete>
-                  </mat-form-field>
+                      </mat-autocomplete>
+                    </mat-form-field>
                   </span>
                 </span>
                 <span>
@@ -76,7 +80,7 @@
                           {{option}}
                         </mat-option>
                     </mat-autocomplete> -->
-                  </mat-form-field>
+                    </mat-form-field>
                   </span>
                   <span>
                     <h4>Year:</h4>
@@ -91,13 +95,14 @@
                   <span>
                     <h4>Trim:</h4>
                     <mat-form-field>
-                      <input type="text" (keyup)="searchAutoComplete($event, 'trim')" placeholder="Pick one trim" aria-label="Number" matInput formControlName="trim" [matAutocomplete]="autotrim">
+                      <input type="text" (keyup)="searchAutoComplete($event, 'trim')" placeholder="Pick one trim"
+                        aria-label="Number" matInput formControlName="trim" [matAutocomplete]="autotrim">
                       <mat-autocomplete #autotrim="matAutocomplete">
                         <mat-option *ngFor="let option of trim_list" [value]="option">
                           {{option}}
                         </mat-option>
-                    </mat-autocomplete>
-                  </mat-form-field>
+                      </mat-autocomplete>
+                    </mat-form-field>
                   </span>
 
                 </span>
@@ -131,7 +136,8 @@
                 </span>
                 <span class="buttonslist">
                   <button mat-raised-button color="primary" type="submit"> Search</button>
-                  <button mat-raised-button color="primary" type="button" (click)="inventoryCustomerForm.reset()"> Reset</button>
+                  <button mat-raised-button color="primary" type="button" (click)="inventoryCustomerForm.reset()">
+                    Reset</button>
                 </span>
               </span>
 
@@ -143,23 +149,26 @@
             <mat-list-item class="rightcontentrow" *ngFor="let item of search |  slice:0:indexval; let i= index;">
               <mat-card-content class="col-1-3">
                 <span class="as_imgwrapper">
-                    <span *ngIf="indexCount == i && indexCountForImg != null;then content else other_content"></span>    
-                    <ng-template #content>
-                      <img [src]="item.media.photo_links[indexCountForImg]">
-                    </ng-template>
-                    <ng-template #other_content>
-                      <img [src]="item.media.photo_links[0]">
-                    </ng-template>
-                    <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
+                  <span *ngIf="indexCount == i && indexCountForImg != null;then content else other_content"></span>
+                  <ng-template #content>
+                    <img [src]="item.media.photo_links[indexCountForImg]">
+                  </ng-template>
+                  <ng-template #other_content>
+                    <img [src]="item.media.photo_links[0]">
+                  </ng-template>
+                  <img *ngIf="item.media.photo_links == null" src="../../assets/images/default_car_img.jpeg">
                 </span>
                 <span class="as_sm_imgmainwrapper">
-                    <owl-carousel [options]="carouselOptions" [items]="TestimonialListArray" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-                      <div class="sm-imgwrapper" *ngFor="let img of item.media.photo_links; let j= index">
-                          <img *ngIf="item.media.photo_links == null" src="../../../../../assets/images/default_car_img.jpeg">
-                          <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="img" (click)="showimg(i,j)">
-                      </div>
-                    </owl-carousel>
-                  </span>
+                  <owl-carousel [options]="carouselOptions" [items]="TestimonialListArray"
+                    [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                    <div class="sm-imgwrapper" *ngFor="let img of item.media.photo_links; let j= index">
+                      <img *ngIf="item.media.photo_links == null"
+                        src="../../../../../assets/images/default_car_img.jpeg">
+                      <img *ngIf="item.media.photo_links != null && item.media.photo_links[0] !=null" [src]="img"
+                        (click)="showimg(i,j)">
+                    </div>
+                  </owl-carousel>
+                </span>
               </mat-card-content>
 
               <mat-card-content class="col-1-7">
@@ -188,33 +197,42 @@
                     </span>
                   </span>
                   <span class="sub-col-4">
-                    <mat-card-content class="rrblock1" >
-
-                      <h1 *ngIf="user_details != null && user_details.type != 'admin'"  (click)="rsvpSend(item)">RSVP</h1>
-                      <button (click)="favorite(item)"><i class="material-icons"> favorite </i> ADD</button>
+                    <mat-card-content class="rrblock1">
                       <span >
-                      <mat-form-field *ngIf="user_details.type == 'salesrep' && user_details.type != 'admin' " class="select-customer" >
-                        <mat-label>Select Customer</mat-label>
+                      <h1 *ngIf="user_details != null && user_details.type != 'admin'" 
+                         (click)="rsvpSend(item)"
+                        >RSVP</h1>
+                      </span>
+                      <button (click)="favorite(item)"
+                        [ngClass]="addItemValue==0 && item.id == valId ? ' disabled':'test'">
+                        <i class="material-icons"> favorite </i> ADD</button>
 
-                        <mat-select [(ngModel)]="item.customer_id">
-                          <mat-option *ngFor="let item of customerList" [value]="item._id">
-                            {{item.firstname}}
-                          </mat-option>
-                        </mat-select>
+                      <span>
+                        <mat-form-field *ngIf="user_details.type == 'salesrep' && user_details.type != 'admin' "
+                          class="select-customer">
+                          <mat-label>Select Customer</mat-label>
+
+                          <mat-select [(ngModel)]="item.customer_id">
+                            <mat-option *ngFor="let item of customerList" [value]="item._id">
+                              {{item.firstname}}
+                            </mat-option>
+                          </mat-select>
                         </mat-form-field>
-                        
-                      <div *ngIf="user_details.type == 'salesrep' && user_details.type != 'admin' ">
-                        <span class="errormsg" *ngIf=" errorMsg !=null ||  errorMsg != ''"     [ngClass]="item.customer_id =='' ? 'errormsg':'test'" >{{errorMsg}}</span>
-                      </div>
+
+                        <div *ngIf="user_details.type == 'salesrep' && user_details.type != 'admin' ">
+                          <span class="errormsg" *ngIf=" errorMsg !=null ||  errorMsg != ''"
+                            [ngClass]="item.customer_id =='' ? 'errormsg':'test'">{{errorMsg}}</span>
+                        </div>
                       </span>
 
-              
+
                     </mat-card-content>
                     <mat-card-content class="rrblock1 currentbidprice">
                       <span class="text-wrapper" *ngIf="item.price != null">
                         <p>Current Bid Price: </p>
                         <h5>${{item.price}}</h5>
-                        <h6 *ngIf="item.build.engine != null"><strong>Engine Type</strong> <span>{{item.build.engine}}</span></h6>
+                        <h6 *ngIf="item.build.engine != null"><strong>Engine Type</strong>
+                          <span>{{item.build.engine}}</span></h6>
                       </span>
                     </mat-card-content>
                   </span>
@@ -241,7 +259,8 @@
           </mat-list>
 
           <div style="display: block; text-align: right; ">
-            <mat-button type="button" class="btnblue" *ngIf="search !=null && indexval < search.length" (click)="loadMoreSearchResult() " >Load More</mat-button>
+            <mat-button type="button" class="btnblue" *ngIf="search !=null && indexval < search.length"
+              (click)="loadMoreSearchResult() ">Load More</mat-button>
           </div>
 
         </span>
