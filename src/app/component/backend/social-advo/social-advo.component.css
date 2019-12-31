@@ -151,6 +151,15 @@
   }
 
 
+  .sharecontentinfo .btnshare .fa {
+    padding: 4px 8px;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 0;
+    text-decoration: none;
+    height: 100%;
+}
+
   .btnsharecls{
     background: -moz-linear-gradient(270deg, rgba(53,54,55,1) 0%, rgba(33,34,34,1) 100%); /* ff3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(53,54,55,1)), color-stop(100%, rgba(33,34,34,1))); /* safari4+,chrome */
@@ -162,10 +171,17 @@
     color:#fff;
   }
 
-  .btnremove{
-    background:#ff0000;
-    color:#fff;
-  }
+  .sharecontentinfo .btnremove {
+    background: #ff0000;
+    color: #fff;
+    min-width: 20px !important;
+    height: auto;
+    line-height: normal;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 0;
+}
 
   .fa:hover {
     opacity: 0.7;
@@ -290,8 +306,8 @@
 .sharecontent{
   display: -webkit-box;
     display: flex;
-    -webkit-box-align: stretch;
-    align-items: stretch;
+    -webkit-box-align: center;
+    align-items: center;
     -webkit-box-pack: justify;
     justify-content: space-between;
     -webkit-box-orient: horizontal;
@@ -301,7 +317,8 @@
 
 .sharecontentimgwrapper{
   width: 76px;
-  height: 82px;
+  height: 66px;
+  overflow:hiden;
   position: relative;
   display: block;
 }
@@ -322,10 +339,13 @@
   -webkit-box-flex: 1;
   flex: 1 1 86%;
   position: relative;
+      display: flex;
+    align-items: center;
 }
 
 .sharecontentinfo .mat-list-base {
   padding-top: 0;
+  width: 88%;
 }
 
 .sharecontentinfo .mat-list-base .mat-list-item{
