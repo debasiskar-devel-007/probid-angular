@@ -107,6 +107,8 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   public spinnerval: any = 0;
   public addItemValue:any=1;
   public valId: any = '';
+  public rsvpItemValue:any=1;
+  public itemId:any='';
 
 
   constructor(
@@ -381,9 +383,8 @@ if (this.user_details.type == 'salesrep') {
           this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
             console.log(res);
             if(res.status == "success"){
-
-              this.addItemValue=0;
-              this.valId = item.id;
+              this.rsvpItemValue=0;
+              this.itemId=item.id
               this.snackBar.open('RSVP Added Successfully','Ok',{
                 duration:4000
               })            
@@ -418,6 +419,9 @@ if (this.user_details.type == 'salesrep') {
         this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
           console.log(res);
           if(res.status == "success"){
+
+            this.rsvpItemValue=0;
+            this.itemId=item.id
 
             this.snackBar.open('RSVP Added Successfully','Ok',{
               duration:4000

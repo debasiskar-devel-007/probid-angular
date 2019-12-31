@@ -198,11 +198,13 @@
                   </span>
                   <span class="sub-col-4">
                     <mat-card-content class="rrblock1">
-                      <span >
-                      <button *ngIf="user_details != null && user_details.type != 'admin'" 
+
+                      <span *ngIf="user_details != null && user_details.type != 'admin'" >
+                      <button  [ngClass]="rsvpItemValue==0 && item.id == itemId ? ' disabled':'test'"
                          (click)="rsvpSend(item)"
                         >RSVP</button>
                       </span>
+
                       <button (click)="favorite(item)"
                         [ngClass]="addItemValue==0 && item.id == valId ? ' disabled':'test'">
                         <i class="material-icons"> favorite </i> ADD</button>
