@@ -335,7 +335,7 @@ export class BasicInventorySearchBackendComponent implements OnInit {
         this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
           console.log(res);
           if(res.status == "success"){
-            // this.addItemValue=0;
+            this.addItemValue=0;
             // this.router.navigateByUrl('/save-search-castomer');
 
             this.snackBar.open('RSVP Saved Into Your Favorite..!','Ok',{duration:4000})
@@ -385,8 +385,8 @@ if (this.user_details.type == 'salesrep') {
               this.snackBar.open('RSVP Added Successfully','Ok',{
                 duration:4000
               })
-              this.router.navigateByUrl('/rsvp-salesrep');
-              
+              // this.router.navigateByUrl('/rsvp-salesrep');
+
               // if(this.user_details.type == 'salesrep'){
               //   this.router.navigateByUrl('/rsvp-salesrep');
               // }
@@ -430,7 +430,7 @@ if (this.user_details.type == 'salesrep') {
             this.snackBar.open('RSVP Added Successfully','Ok',{
               duration:4000
             })
-            this.router.navigateByUrl('/rsvp-customer');
+            // this.router.navigateByUrl('/rsvp-customer');
 
             // if(this.user_details.type == 'salesrep'){
             //   this.router.navigateByUrl('/rsvp-salesrep');
