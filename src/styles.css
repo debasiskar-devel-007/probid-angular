@@ -289,6 +289,13 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
 
 .owl-theme .owl-dots{display: none;}
 
+.socialadvolistwarpper .mat-list .mat-list-item .mat-list-item-content{
+  height: 100% !important;
+  width: 100%;
+  padding: 0;
+}
+
+
 
 /******Dialog CSS********/
 /* .mat-dialog-content {padding: 0 !important;}
