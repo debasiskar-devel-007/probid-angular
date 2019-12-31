@@ -295,6 +295,9 @@ ckeditor{margin-bottom: 9px !important; display: inline-block; width: 100%;}
   padding: 0;
 }
 
+button[disabled], html input[disabled]{
+  opacity:0.3;
+}
 
 
 /******Dialog CSS********/
