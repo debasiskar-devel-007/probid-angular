@@ -106,6 +106,7 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   public indexForCustomer:number;
   public spinnerval: any = 0;
   public addItemValue:any=1;
+  public valId: any = '';
 
 
   constructor(
@@ -336,7 +337,8 @@ export class BasicInventorySearchBackendComponent implements OnInit {
           console.log(res);
           if(res.status == "success"){
             this.addItemValue=0;
-            // this.router.navigateByUrl('/save-search-castomer');
+            this.valId = item.id;
+          
 
             this.snackBar.open('RSVP Saved Into Your Favorite..!','Ok',{duration:4000})
           }
@@ -380,21 +382,11 @@ if (this.user_details.type == 'salesrep') {
             console.log(res);
             if(res.status == "success"){
 
-             
-             
+              this.addItemValue=0;
+              this.valId = item.id;
               this.snackBar.open('RSVP Added Successfully','Ok',{
                 duration:4000
-              })
-              // this.router.navigateByUrl('/rsvp-salesrep');
-
-              // if(this.user_details.type == 'salesrep'){
-              //   this.router.navigateByUrl('/rsvp-salesrep');
-              // }
-              // if(this.user_details.type == 'customer'){
-              //   this.router.navigateByUrl('/rsvp-customer');
-              // }
-
-             
+              })            
             }
           });
     } 
@@ -474,22 +466,22 @@ if (this.user_details.type == 'salesrep') {
   }
 
 // for observeable
-  dataObserve(item:any){
-    console.log('data_item >>',item)
+  // dataObserve(item:any){
+  //   console.log('data_item >>',item)
 
-    const observeable=new Observable(item)
-    console.log('$$>>>>>',observeable)
+  //   const observeable=new Observable(item)
+  //   console.log('$$>>>>>',observeable)
     
 
-      setTimeout(() => {
-        // observer.next(item);
-        this.router.navigateByUrl('/inventory-detail')
-      }, 2000);
+  //     setTimeout(() => {
+  //       // observer.next(item);
+  //       this.router.navigateByUrl('/inventory-detail')
+  //     }, 2000);
    
     
-    // console.log('$$>>>>>',observeable)
-    return observeable;
+  //   // console.log('$$>>>>>',observeable)
+  //   return observeable;
   
-  }
+  // }
 
 }
