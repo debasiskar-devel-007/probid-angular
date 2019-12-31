@@ -624,6 +624,7 @@
   margin: 0px;
     margin-top: 10px;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 .flexbox1column > .mat-list-item:nth-last-child(1) {
@@ -836,4 +837,18 @@
   text-transform: uppercase !important;
   text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
   background-color: transparent !important;
+}
+
+
+.inventorydetailsimilarv .middleblock h2 span {
+  font-family: 'Helvetica-Normal';
+  font-size: 16px;
+  margin: 0;
+  font-weight: normal;
+  text-transform: capitalize;
+  color: #0dbce7;
+  line-height: normal;
+  cursor: pointer;
+  width: 100%;
+  display: block;
 }
