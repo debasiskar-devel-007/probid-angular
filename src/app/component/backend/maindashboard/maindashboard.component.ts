@@ -221,7 +221,7 @@ public errorMsg: string = '';
       this.saveSearch_list = data.rsvp.result.save_search;
       this.count = data.rsvp.result;
 
-      console.log('dvfdgfhg', this.saveSearch_list)
+      console.log('dvfdgfhg', this.count)
     })
 
 
