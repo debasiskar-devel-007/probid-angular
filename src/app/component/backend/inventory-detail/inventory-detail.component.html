@@ -72,7 +72,10 @@
                     <span class="topinnerinfoleft">
                       <mat-list>
                         <mat-list-item><span>VIN :</span> {{data.vin}} </mat-list-item>
-                        <mat-list-item class="clsprice"><span>Price :</span> {{data.price}}</mat-list-item>
+                        <mat-list-item class="clsprice">
+                          <span>Price :</span><span *ngIf="data.price != null || data.price !=''" >{{data.price}}</span> 
+                          <span *ngIf="data.price == null || data.price ==''">N/A</span>
+                        </mat-list-item>
 
                         <mat-list-item>
                           <span>Odometer :</span> <span *ngIf="data.miles != null && data.miles !=''">{{data.miles}}
@@ -505,9 +508,10 @@
                   <span class="middleblock">
                     <h2>{{item.heading}} <span (click)="inventoryDetails(item._id)">View Details</span></h2>
 
-                    <span class="pricecls">
-                      $ {{item.price}}
-                    </span>
+                    <span class="pricecls" > 
+                      $ {{item.price}}</span>
+                     
+
                     <span class="titlecls">
                       <!-- <h1 class="btnrsvp">RSVP</h1> -->
                       <h1 class="btnrsvp" *ngIf="user_details.type == 'customer' || user_details.type == 'salesrep'"
