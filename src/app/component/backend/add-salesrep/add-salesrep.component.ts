@@ -15,37 +15,7 @@ export class AddSalesrepComponent implements OnInit {
   public header_text: any = "Add Salesrep"
   public btn_text: any = "Submit"
 
-  public timeZoneList:any=[
-    {
-      "name":"Central Standard Time",
-      "value":"CST"
-    },
-    {
-      "name":"Mountain Standard Time(GMT-07:00)",
-      "value":"MST(GMT-07:00)" 
-    },
-    {
-      "name":"Mountain StandardT ime (GMT-06:00)",
-      "value":"MST(GMT-06:00)" 
-    },
-    {
-      "name":"Pacific Standard Time",
-      "value":"PST" 
-    },
-    {
-      "name":"Alaska Standard Time",
-      "value":"AST" 
-    },
-    {
-      "name":"Hawaii-Aleutian Standard Time",
-      "value":"HST" 
-    },
-    {
-      "name":"Eastern Standard Time",
-      "value":"EST" 
-    }
-
-  ]
+  public timezone:any;
 
 
   @ViewChild(FormGroupDirective) formDirective: FormGroupDirective;
@@ -66,6 +36,7 @@ export class AddSalesrepComponent implements OnInit {
         username: [null, Validators.required],
         companyname: ['', Validators.required],
         timezone:['',Validators.required],
+        webiner:['',Validators.required],
         type: ["salesrep"],
         status: 1
 
@@ -87,6 +58,7 @@ export class AddSalesrepComponent implements OnInit {
         username: [null, Validators.required],
         companyname: ['', Validators.required],
         timezone:['',Validators.required],
+        webiner:['',Validators.required],
 
         type: ["salesrep"],
         status: 1
@@ -101,6 +73,7 @@ export class AddSalesrepComponent implements OnInit {
 
     this.getStateList();
     this.getCityList();
+    this.getTimezone();
     this.editsalesrepprofile();
   }
 
@@ -127,6 +100,7 @@ export class AddSalesrepComponent implements OnInit {
       this.stateList = result;
     })
   }
+
   getCityList() {
     this.apiservice.getJsonObject('assets/data/usa-cities.json').subscribe((res) => {
       let result: any = {};
@@ -134,6 +108,15 @@ export class AddSalesrepComponent implements OnInit {
       this.cityList = result;
     })
   }
+
+  getTimezone() {
+    this.apiservice.getJsonObject('assets/data/timezone.json').subscribe((res) => {
+      let result: any = {};
+      result = res;
+      this.timezone = result;
+    })
+  }
+
   /**Submit function */
   addsalesrepFormSubmit() {
     for (let x in this.addsalesrepForm.controls) {
@@ -191,7 +174,8 @@ export class AddSalesrepComponent implements OnInit {
           username: data.res[0].username,
           type: data.res[0].type,
           companyname: data.res[0].companyname,
-          timezone:data.res[0].timezone
+          timezone:data.res[0].timezone,
+          webiner:data.res[0].webiner
 
         })
       });

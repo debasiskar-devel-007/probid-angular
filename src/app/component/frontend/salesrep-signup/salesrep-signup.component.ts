@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular
 import { ApiService } from '../../../api.service';
 import { MetaService } from '@ngx-meta/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 
 export interface DialogData {
@@ -25,7 +25,7 @@ export class SalesrepSignupComponent implements OnInit {
   public timezone: any;
   public term_msg: any;
   public message:any='Submitted Successfully'
-  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,private readonly meta: MetaService,public cookieService:CookieService ) {
+  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,private readonly meta: MetaService,public cookieService:CookieService ,public router:Router) {
 
     this.meta.setTitle('ProBid Auto - Sales Rep SignUp');
     this.meta.setTag('og:description', 'Sales Reps can Sign Up to create their account with the ProBid Auto Back-office and make massive commissions by helping customers locate and buy the best Pre-Owned vehicles of their desires.');
@@ -59,7 +59,7 @@ export class SalesrepSignupComponent implements OnInit {
       timezone: [null],
       check: [false, Validators.required],
       type: ["salesrep"],
-      status:1
+      status:0
     }, {
       validator: this.machpassword('password', 'conpass')
     });
@@ -107,6 +107,22 @@ export class SalesrepSignupComponent implements OnInit {
     })
   }
 
+  openModal(){
+   const dialogRef= this.dialog.open(salesSignUpModalComponent, {
+      width: '250px',
+      data:this.message
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result)
+      if(result == 'ok'){
+
+      this.router.navigateByUrl('/login')
+
+      }
+
+    });
+  }
+
 
   /**Sales Ref Submit function */
   salesSignUpFormSubmit() {
@@ -128,10 +144,7 @@ export class SalesrepSignupComponent implements OnInit {
         var data = { "source": "user", "data": this.salesSignUpForm.value }
         this.apiservice.CustomRequest(data, 'addorupdatedatawithouttoken').subscribe((data: any) => {
           if (data.status == 'success') {
-            this.dialog.open(salesSignUpModalComponent, {
-              width: '250px',
-              data:this.message
-            });
+           this.openModal();
             this.formDirective.resetForm();
           }
           // console.log(data);
@@ -168,8 +181,8 @@ export class salesSignUpModalComponent {
     public dialogRef: MatDialogRef<salesSignUpModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
+  // onNoClick(): void {
+  //   this.dialogRef.close();
+  // }
 
 }

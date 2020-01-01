@@ -138,25 +138,27 @@
             <mat-form-field>
               <mat-label>Select Time Zone</mat-label>
               <mat-select formControlName="timezone" (blur)="inputBlur('timezone')">
-                  <mat-option *ngFor="let zone of timeZoneList" [value]="zone.value">{{zone.name}}
+                  <mat-option *ngFor="let time of timezone" [value]="time.value">
+                    {{time.value}}
                   </mat-option>
               </mat-select>
-              <mat-error
+              <!-- <mat-error
               *ngIf="!addsalesrepForm.controls['timezone'].valid && addsalesrepForm.controls['timezone'].errors.required && addsalesrepForm.controls['timezone'].touched ">
-              timezone field can not be blank</mat-error>
+              timezone field can not be blank</mat-error> -->
           </mat-form-field>
 
-          <!-- <mat-form-field>
+          <mat-form-field>
             <mat-label>Select Webiner</mat-label>
-            <mat-select formControlName="timeZone" (blur)="inputBlur('timeZone')">
-                <mat-option *ngFor="let zone of timeZoneList" [value]="zone.value">{{zone.name}}
-                </mat-option>
+            <mat-select formControlName="webiner">
+              <mat-option *ngFor="let state of stateList" [value]="state.abbreviation">
+                {{state.name}}
+              </mat-option>
             </mat-select>
-            <mat-error
-            *ngIf="!addsalesrepForm.controls['timeZone'].valid && addsalesrepForm.controls['timeZone'].errors.required && addsalesrepForm.controls['timeZone'].touched ">
-            timeZone field can not be blank</mat-error>
-        </mat-form-field> -->
-             
+            <!-- <mat-error
+              *ngIf="!addsalesrepForm.controls['webiner'].valid && addsalesrepForm.controls['webiner'].errors.required && addsalesrepForm.controls['webiner'].touched ">
+              webiner field can not be blank</mat-error> -->
+          </mat-form-field>
+         
 
             <span class="bottompart">
               <button mat-raised-button class="btn-lg">{{btn_text}}</button>
