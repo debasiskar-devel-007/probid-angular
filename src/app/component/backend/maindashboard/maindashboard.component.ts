@@ -59,11 +59,18 @@ const Reports_DATA: Reports[] = [
 
 
 
-export class socialAdvos {
+export class socialFacebookAdvos {
   Id: String;
   title_name: String;
   image_URL: String;
 }
+
+export class socialLinkedinAdvos {
+  Id: String;
+  title_name: String;
+  image_URL: String;
+}
+
 
 export interface UpcomingAppoinement {
   name: string;
@@ -119,7 +126,9 @@ public ststus: number;
  
 public rsvpIndex:any=2;
 public saveSearchIndex:any=10;
-public socialadvoIndex:any=8;
+
+public socialadvoFBIndex:any=6;
+public socialadvoLDIndex:any=6;
 
 
 
@@ -150,7 +159,8 @@ public errorMsg: string = '';
   public count:any ='';
 
 
-  socialAdvLists: socialAdvos[];
+  socialAdvFacebookLists: socialFacebookAdvos[];
+  socialAdvLinkedinLists: socialLinkedinAdvos[];
 
   
 
@@ -175,17 +185,26 @@ public errorMsg: string = '';
   constructor(public cookieService: CookieService, public activatedRoute: ActivatedRoute, public apiService: ApiService, public http: HttpClient, public dialog: MatDialog,public snack:MatSnackBar,public router:Router) {
     
 
-    this.socialAdvLists = [{ Id: '1001', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/facebookbanner-img1.jpg' },
+    this.socialAdvFacebookLists = [{ Id: '1001', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/facebookbanner-img1.jpg' },
     { Id: '1002', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/facebookbanner-img2.jpg' },
     { Id: '1003', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/facebookbanner-img3.jpg' },
     { Id: '1004', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/facebookbanner-img4.jpg' },
     { Id: '1005', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/facebookbanner-img5.jpg' },
     { Id: '1006', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/facebookbanner-img6.jpg' },
+    { Id: '1006', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/facebookbanner-img7.jpg' },
+    { Id: '1006', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/facebookbanner-img8.jpg' },
+    ];
+
+
+    this.socialAdvLinkedinLists = [
     { Id: '1007', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/linkedinbanner-img1.jpg' },
     { Id: '1008', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/linkedinbanner-img2.jpg' },
     { Id: '1008', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/linkedinbanner-img3.jpg' },
     { Id: '1008', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/linkedinbanner-img4.jpg' },
+    { Id: '1008', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/linkedinbanner-img5.jpg' },
+    { Id: '1008', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/linkedinbanner-img6.jpg' },
     ];
+
 
 
   

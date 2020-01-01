@@ -720,7 +720,7 @@
 
 .block1socialadvo .flexbox4column > .mat-list-item {
   box-sizing: border-box;
-  width: 24%;
+  width: 16%;
   display: -webkit-box;
   display: flex;
   padding: 0px;
@@ -728,10 +728,20 @@
   box-shadow: -5px 3px 18px 0px rgba(168,168,168,1);
   position: relative;
   overflow: hidden;
-  margin: .5%;
+  margin: 0.3%;
   -webkit-box-align: stretch;
   align-items: stretch;
   height: auto;
+}
+
+.generalcls .block1socialadvo h2{
+  color: #333;
+  margin: 10px 20px 0px;
+  font-size: 20px !important;
+}
+
+.generalcls .block1socialadvo .btnwrappercls{
+  margin-top: 8px;
 }
 
 .block1socialadvo .flexbox4column .mat-list-item .mat-list-item-content {
