@@ -193,6 +193,7 @@ public errorMsg: string = '';
     { Id: '1006', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/facebookbanner-img6.jpg' },
     { Id: '1006', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/facebookbanner-img7.jpg' },
     { Id: '1006', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/facebookbanner-img8.jpg' },
+    { Id: '1006', title_name: 'BMW 535I, NAVI, LEATHER, ABS', image_URL: '../../../../assets/images/facebookbanner-img9.jpg' },
     ];
 
 
