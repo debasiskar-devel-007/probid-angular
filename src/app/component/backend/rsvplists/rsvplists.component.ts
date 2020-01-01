@@ -109,7 +109,7 @@ public userid: any;
               
               if(result.status=='success'){
                 this.rsvp_list.splice(index,index+1);
-                this.snack.open('Record Deleted Successfully..!','Ok',{duration:4000})
+                this.snack.open('Record Deleted Successfully..!','Ok',{duration:2000})
                 
               }
             })

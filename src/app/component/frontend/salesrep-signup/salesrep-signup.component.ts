@@ -48,7 +48,7 @@ export class SalesrepSignupComponent implements OnInit {
       webiner: [null],
       timezone: [null],
       check: [false, Validators.required],
-      type: ["rep"],
+      type: ["salesrep"],
       status:1
     }, {
       validator: this.machpassword('password', 'conpass')
