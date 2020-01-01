@@ -78,7 +78,7 @@
 
   .socialadvolistwarpper .mat-list .mat-list-item:hover .postblock{
   display: block;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
   left: 0;
@@ -161,14 +161,9 @@
 }
 
   .btnsharecls{
-    background: -moz-linear-gradient(270deg, rgba(53,54,55,1) 0%, rgba(33,34,34,1) 100%); /* ff3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(53,54,55,1)), color-stop(100%, rgba(33,34,34,1))); /* safari4+,chrome */
-    background: -webkit-linear-gradient(270deg, rgba(53,54,55,1) 0%, rgba(33,34,34,1) 100%); /* safari5.1+,chrome10+ */
-    background: -o-linear-gradient(270deg, rgba(53,54,55,1) 0%, rgba(33,34,34,1) 100%); /* opera 11.10+ */
-    background: -ms-linear-gradient(270deg, rgba(53,54,55,1) 0%, rgba(33,34,34,1) 100%); /* ie10+ */
-    background: linear-gradient(180deg, rgba(53,54,55,1) 0%, rgba(33,34,34,1) 100%); /* w3c */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#353637', endColorstr='#212222',GradientType=0 ); /* ie6-9 */  
+    background-color: #12c3e3;
     color:#fff;
+    border-radius: 0;
   }
 
   .sharecontentinfo .btnremove {
