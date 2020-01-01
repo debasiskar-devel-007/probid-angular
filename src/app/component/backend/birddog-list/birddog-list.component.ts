@@ -9,7 +9,7 @@ import { ApiService } from '../../../api.service';
 })
 export class BirddogListComponent implements OnInit {
   
-  statusarray: any = [{val: 1, name: 'Active'}, {val: 2, name: 'Inactive'}, {val: 0, name: 'Pending'}]; 
+  statusarray: any = [{val: 1, name: 'Active'}, {val: 0, name: 'Pending'}, {val: 2, name: 'Inactive'}]; 
   
 
   public birdDogList: any = [];
