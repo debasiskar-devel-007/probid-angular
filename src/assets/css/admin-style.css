@@ -352,6 +352,7 @@ app-bk-leftdiv{position: relative; z-index: 999; display: none;}
     text-transform: capitalize;
     font-family: "Helvetica-Normal";
   }
+
   .activebread{
     background: #fff!important;
     color: #000!important;
