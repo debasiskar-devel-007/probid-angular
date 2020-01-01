@@ -211,7 +211,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
       // console.log(res);
       if (res.status == 'success') {
         this.search.splice(index,index+1);
-        this.snack.open('Record Removed Successfully..!','Ok',{duration:4000})
+        this.snack.open('Record Removed Successfully..!','Ok',{duration:2000})
         
       }
     })
@@ -280,7 +280,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
             if(res.status == "success"){
 
               this.snack.open('RSVP Added Successfully','Ok',{
-                duration:4000
+                duration:2000
               })
               
               let data: any = {
@@ -330,7 +330,7 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
           if(res.status == "success"){
 
             this.snack.open('RSVP Added Successfully','Ok',{
-              duration:4000
+              duration:2000
             })
             let data: any = {
               id:item._id,

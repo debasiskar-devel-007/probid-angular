@@ -339,7 +339,7 @@ export class BasicInventorySearchBackendComponent implements OnInit {
 
             item.addedToFavourite = 1;
             
-            this.snackBar.open('RSVP Saved Into Your Favorite..!','Ok',{duration:4000})
+            this.snackBar.open('RSVP Saved Into Your Favorite..!','Ok',{duration:2000})
           }
         });
     }
@@ -385,7 +385,7 @@ if (this.user_details.type == 'salesrep') {
               item.rsvpSend = 1
               
               this.snackBar.open('RSVP Added Successfully','Ok',{
-                duration:4000
+                duration:2000
               })            
             }
           });
@@ -424,7 +424,7 @@ if (this.user_details.type == 'salesrep') {
 
 
             this.snackBar.open('RSVP Added Successfully','Ok',{
-              duration:4000
+              duration:2000
             })
             
 
