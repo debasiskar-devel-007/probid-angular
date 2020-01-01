@@ -52,11 +52,11 @@
             </mat-form-field>
 
             <mat-form-field>
-              <input matInput type="text" placeholder="UserName" formControlName="username"
+              <input matInput type="text" placeholder="User Name" formControlName="username"
                 (blur)="inputUntouched('username')">
               <mat-error
                 *ngIf="!addsalesrepForm.controls['username'].valid && addsalesrepForm.controls['username'].errors.required && addsalesrepForm.controls['username'].touched">
-                UserName field can not be blank</mat-error>
+                User Name field can not be blank</mat-error>
             </mat-form-field>
 
             <mat-form-field>
@@ -134,6 +134,29 @@
                 *ngIf="!addsalesrepForm.controls['state'].valid && addsalesrepForm.controls['state'].errors.required && addsalesrepForm.controls['state'].touched">
                 State field can not be blank</mat-error>
             </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Select Time Zone</mat-label>
+              <mat-select formControlName="timezone" (blur)="inputBlur('timezone')">
+                  <mat-option *ngFor="let zone of timeZoneList" [value]="zone.value">{{zone.name}}
+                  </mat-option>
+              </mat-select>
+              <mat-error
+              *ngIf="!addsalesrepForm.controls['timezone'].valid && addsalesrepForm.controls['timezone'].errors.required && addsalesrepForm.controls['timezone'].touched ">
+              timezone field can not be blank</mat-error>
+          </mat-form-field>
+
+          <!-- <mat-form-field>
+            <mat-label>Select Webiner</mat-label>
+            <mat-select formControlName="timeZone" (blur)="inputBlur('timeZone')">
+                <mat-option *ngFor="let zone of timeZoneList" [value]="zone.value">{{zone.name}}
+                </mat-option>
+            </mat-select>
+            <mat-error
+            *ngIf="!addsalesrepForm.controls['timeZone'].valid && addsalesrepForm.controls['timeZone'].errors.required && addsalesrepForm.controls['timeZone'].touched ">
+            timeZone field can not be blank</mat-error>
+        </mat-form-field> -->
+             
 
             <span class="bottompart">
               <button mat-raised-button class="btn-lg">{{btn_text}}</button>
