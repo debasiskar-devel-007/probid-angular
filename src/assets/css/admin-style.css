@@ -270,7 +270,8 @@ text-transform: uppercase!important; font-family: 'Ralewaybold'; text-decoration
 .formfilterdiv .container{width: 100%;}
 
 .tablediv{margin-top: -73px;}
-.tablediv .searchbar {padding-right: 173px;flex-direction: row-reverse; justify-content: inherit !important;}
+.tablediv .searchbar {padding-right: 173px;-webkit-box-orient: horizontal;-webkit-box-direction: reverse;flex-direction: row-reverse;-webkit-box-pack: inherit !important;
+  justify-content: inherit !important;margin-top: 0px;margin-bottom: 23px; z-index: 9;}
 .tablediv .searchbar .mat-form-field{z-index: 99; position: relative;}
 .tablediv .mat-form-field-flex {align-items: stretch;}
 .tablediv table td span .material-icons{color: #4f5051 !important;}
@@ -285,6 +286,22 @@ text-transform: uppercase!important; font-family: 'Ralewaybold'; text-decoration
 .searchblock span{display: flex; align-items: center; position: relative; z-index: 99;}
 .searchblock .searchblockwrapper {display: flex; align-items: stretch; justify-content: space-between; flex-direction: row;}
 .searchblock span h2{font-family: "Helvetica-Normal"; color:#373b3d; font-size: 24px!important;margin: 0;}
+
+
+.tablediv .searchbar .mat-form-field .mat-form-field-infix{margin-bottom: 0;}
+/* .bloglists .tablediv {margin-top: -73px;} */
+
+.tablediv .searchbar .mat-form-field .mat-form-field-prefix, .tablediv .searchbar .mat-form-field .mat-form-field-suffix {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.bloglists .tablediv .searchbar {padding-right: 200px;}
+.blogcatlists .tablediv .searchbar {padding-right: 252px;}
+
+.tablediv table td.mat-column-Actions{width: 98px;}	
+.tablediv table th.mat-column-date_added{width: 114px;}
 
 
 
