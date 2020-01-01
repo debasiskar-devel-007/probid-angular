@@ -71,9 +71,9 @@ public userid: any;
     let data: any = {
       endpoint: 'datalist',
       source: 'send_rsvp_view',
-      condition: {
-        "added_by_object":  this.userid
-      }
+      // condition: {
+      //   "added_by_object":  this.userid
+      // }
     }
     this.apiService.getDatalist(data).subscribe((res:any)=>{
       this.rsvp_list = res.res;
