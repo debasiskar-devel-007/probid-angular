@@ -54,8 +54,8 @@ import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.comp
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
 import { BlogCategoryComponent } from './component/frontend/blog-category/blog-category.component';
 
-import { SalesrepSignupComponent } from './component/frontend/salesrep-signup/salesrep-signup.component';
-import { CustomerSignupComponent,customerSignUpsuccessDialog } from './component/frontend/customer-signup/customer-signup.component';
+import { SalesrepSignupComponent, salesSignUpModalComponent } from './component/frontend/salesrep-signup/salesrep-signup.component';
+import { CustomerSignupComponent, customerSignUpsuccessDialog } from './component/frontend/customer-signup/customer-signup.component';
 
 import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
 
@@ -306,7 +306,8 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
     RemoveRsvpComponent,
     RemoveDialogComponent,
     // errorDialogbackend,
-    RemoveRSvpModalComponent
+    RemoveRSvpModalComponent,
+    salesSignUpModalComponent
   ],
   imports: [
     FacebookModule.forRoot(),
@@ -348,7 +349,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
   providers: [CookieService, AuthGuard, ApiService, SidenavService,BasicInventorySearchBackendComponent,InventoryDetailComponent],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent,DeleteModalRsvpComponent,RemoveModalComponent,RemoveRsvpComponent,RemoveDialogComponent,RemoveModalComponent,RemoveRSvpModalComponent]
+  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent,DeleteModalRsvpComponent,RemoveModalComponent,RemoveRsvpComponent,RemoveDialogComponent,RemoveModalComponent,RemoveRSvpModalComponent, salesSignUpModalComponent]
   // errorDialogbackend
 })
 export class AppModule { }
