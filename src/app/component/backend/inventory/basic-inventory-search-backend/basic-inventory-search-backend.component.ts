@@ -1,14 +1,13 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from '../../../../api.service';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Observable, Subject, Subscription ,Observer} from 'rxjs';
-import { map } from 'rxjs/operators';
 
 export interface DialogData {
   errorMsg: string;
@@ -105,10 +104,7 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   public indexCountForImg: number;
   public indexForCustomer:number;
   public spinnerval: any = 0;
-  public addItemValue:any=1;
-  public val_Id: any = '';
-  public rsvpItemValue:any=1;
-  public itemId:any='';
+ 
 
 
   constructor(
@@ -315,6 +311,8 @@ export class BasicInventorySearchBackendComponent implements OnInit {
 
 
   favorite(item: any) {
+
+
     console.log('this is favorite ')
     if (this.user_id  == '') {
       this.cookieService.set('favorite_car', item);
@@ -338,10 +336,9 @@ export class BasicInventorySearchBackendComponent implements OnInit {
         this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
           console.log(res);
           if(res.status == "success"){
-            this.addItemValue=0;
-            this.val_Id = item.id;
-          
 
+            item.addedToFavourite = 1;
+            
             this.snackBar.open('RSVP Saved Into Your Favorite..!','Ok',{duration:4000})
           }
         });
@@ -368,6 +365,7 @@ if (this.user_details.type == 'salesrep') {
         item.status = 0;
         if (this.user_details.type == 'salesrep') {
           item.added_for = item.customer_id;
+          item.added_by_salesrep = 1;
           console.log('added_for >>',item.added_for);
           } else {
             item.added_for = this.user_id;
@@ -383,8 +381,9 @@ if (this.user_details.type == 'salesrep') {
           this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
             console.log(res);
             if(res.status == "success"){
-              this.rsvpItemValue=0;
-              this.itemId=item.id
+
+              item.rsvpSend = 1
+              
               this.snackBar.open('RSVP Added Successfully','Ok',{
                 duration:4000
               })            
@@ -403,7 +402,7 @@ if (this.user_details.type == 'salesrep') {
   if(this.user_details.type =='customer'){
       
     let endpoint: any = "addorupdatedata";
-    item.added_by = this.user_id;
+    item.added_by = this.user_details.salesrep;
     item.status = 0;
     
     item.added_for = this.user_id;
@@ -420,34 +419,14 @@ if (this.user_details.type == 'salesrep') {
           console.log(res);
           if(res.status == "success"){
 
-            this.rsvpItemValue=0;
-            this.itemId=item.id
+
+            item.rsvpSend = 1
+
 
             this.snackBar.open('RSVP Added Successfully','Ok',{
               duration:4000
             })
-            // this.router.navigateByUrl('/rsvp-customer');
-
-            // if(this.user_details.type == 'salesrep'){
-            //   this.router.navigateByUrl('/rsvp-salesrep');
-            // }
-            // if(this.user_details.type == 'customer'){
-            //   this.router.navigateByUrl('/rsvp-customer');
-            // }
-
-            //for delete data from save_favorite
-            // let data: any = {
-            //   id:item._id,
-            //   source: 'save_favorite'
-            // }
-            // this.apiService.deleteSingleData1(data).subscribe((res: any)=>{
-            //   console.log(res);
-            //   if (res.status == 'success') {
-            //     // this.search.splice(i,i+1);
-            //     console.log('success');
-                
-            //   }
-            // })
+            
 
 
           }

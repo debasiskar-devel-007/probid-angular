@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from '../../../../api.service';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -259,6 +259,8 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   if (item.customer_id != '' && item.customer_id != null ) {
         let endpoint: any = "addorupdatedata";
         item.added_by = this.user_id;
+        item.added_by_salesrep = 1;
+
         item.status = 0;
         // if (this.user_details.type == 'salesrep') {
           item.added_for = item.customer_id;

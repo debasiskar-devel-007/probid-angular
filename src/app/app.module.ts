@@ -3,6 +3,8 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/cor
 
 import { FormsModule, ReactiveFormsModule  }   from '@angular/forms'
 
+import { FacebookModule } from 'ngx-facebook';
+
 import {DemoMaterialModule} from "../material-module";
 import { DragScrollModule } from 'ngx-drag-scroll';
 import { AppRoutingModule } from './app-routing.module';
@@ -93,7 +95,7 @@ import { FileUploadModule } from 'file-upload-lib-influxiq';
 import { LoginModule } from 'login-lib-influxiq';
 import { BlogModule } from 'blog-lib-influxiq';
 import { NewsTitleModule } from 'news-title-lib-influxiq';
-import { ContactusModule } from 'contactus';
+import { ContactusModule } from 'contactus-lib-influxiq';
 
 import { BlogManagementComponent } from './component/backend/blog-management/blog-management.component';
 import { CommissionReportComponent } from './component/backend/commission-report/commission-report.component';
@@ -307,6 +309,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
     RemoveRSvpModalComponent
   ],
   imports: [
+    FacebookModule.forRoot(),
     NewsTitleModule,
     // TrainingModule,
     BlogModule,

@@ -6,7 +6,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from '../../api.service';
 import { HttpClient } from '@angular/common/http';
 import { WINDOW } from '@ng-toolkit/universal';
 

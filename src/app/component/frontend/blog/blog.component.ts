@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from '../../../api.service';
 import * as moment from 'moment';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';

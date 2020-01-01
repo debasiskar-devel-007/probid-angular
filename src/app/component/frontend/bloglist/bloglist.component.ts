@@ -1,8 +1,7 @@
 import { Component, OnInit,Inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { ApiService } from 'src/app/api.service';
-import { IfStmt } from '@angular/compiler';
+import { ApiService } from '../../../api.service';
 import {MatDialogRef, MAT_DIALOG_DATA, MatDialog} from "@angular/material";
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { MetaService } from '@ngx-meta/core';
