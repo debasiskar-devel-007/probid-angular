@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from '../../../api.service';
 
 @Component({
   selector: 'app-reset-password',

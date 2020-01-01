@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from '../../../../api.service';
 @Component({
   selector: 'app-add-edit-blogs',
   templateUrl: './add-edit-blogs.component.html',

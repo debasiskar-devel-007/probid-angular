@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from '../../../../api.service';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';

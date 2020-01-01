@@ -1,8 +1,7 @@
 import { Component, OnInit,Inject} from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { ActivatedRoute ,Router} from '@angular/router';
-import { ApiService } from 'src/app/api.service';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../../../api.service';
 // import { MatDialog } from '@angular/material';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';

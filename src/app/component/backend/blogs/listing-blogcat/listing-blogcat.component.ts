@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from '../../../../api.service';
 
 @Component({
   selector: 'app-listing-blogcat',

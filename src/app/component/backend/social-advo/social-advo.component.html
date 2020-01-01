@@ -17,26 +17,26 @@
               <span class="socialadvolistwarpper">
                 <span class="btnsharewrapper">
                   <span class="socialmediaheader">
-                    <span class="sharecontent">
+                    <span class="sharecontent"  *ngIf="profile != '' && profile != null">
                       <span class="sharecontentimgwrapper">
-                        <img src="../../../../assets/images/imguser.jpg">
+                        <img [src]="profile.picture.data.url">
                       </span>
                       <span class="sharecontentinfo">
                         <mat-list role="list">
                           <mat-list-item role="listitem">
                             <span class="labelcls">Name:</span>
-                            <span>tt tt</span>
+                            <span>{{profile.name}}</span>
                           </mat-list-item>
                           <mat-list-item role="listitem">
                             <span class="labelcls">Email:</span>
-                            <span>abc@gmail.com</span>
+                            <span>{{profile.email}}</span>
                           </mat-list-item>
                         </mat-list>
-                        <button mat-button class="btnshare btnsharecls txtwhite btnremove"><i class="fa fa-remove"></i></button>
+                        <button mat-button class="btnshare btnsharecls txtwhite btnremove" (click)="logoutWithFacebook()"><i class="fa fa-remove"></i></button>
                       </span>
                     </span>  
                     <span class="btnsharewrapper">
-                      <button mat-button class="btnshare btnsharecls txtwhite"><i class="fa fa-facebook"></i> <span><sub>add</sub>Facebook<sup>now</sup></span></button>
+                      <button mat-button class="btnshare btnsharecls txtwhite" (click)="login()"><i class="fa fa-facebook"></i> <span><sub>add</sub>Facebook<sup>now</sup></span></button>
                     </span> 
                   </span> 
                 </span>
@@ -46,23 +46,38 @@
                     <mat-list-item role="listitem">
                       <img src="../../../../assets/images/facebookbanner-img1.jpg">
                       <span class="postblock">
-                        <button mat-button class="btnshare btnsharecls txtwhite"><span>Post</span></button>
+                        <button mat-button class="btnshare btnsharecls txtwhite"  (click)="share('facebookbanner-img1.jpg')"><span>Post</span></button>
                       </span>  
                     </mat-list-item>
                     <mat-list-item role="listitem">
-                      <img src="../../../../assets/images/facebookbanner-img2.jpg">                      
+                      <img src="../../../../assets/images/facebookbanner-img2.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite" (click)="share('facebookbanner-img2.jpg')"><span>Post</span></button>
+                      </span>                      
                     </mat-list-item>
                     <mat-list-item role="listitem">
                       <img src="../../../../assets/images/facebookbanner-img3.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite" (click)="share('facebookbanner-img3.jpg')"><span>Post</span></button>
+                      </span>
                     </mat-list-item>
                     <mat-list-item role="listitem"> 
                       <img src="../../../../assets/images/facebookbanner-img4.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite" (click)="share('facebookbanner-img4.jpg')"><span>Post</span></button>
+                      </span>
                     </mat-list-item>
                     <mat-list-item role="listitem"> 
                       <img src="../../../../assets/images/facebookbanner-img5.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite" (click)="share('facebookbanner-img5.jpg')"><span>Post</span></button>
+                      </span>
                     </mat-list-item>
                     <mat-list-item role="listitem"> 
                       <img src="../../../../assets/images/facebookbanner-img6.jpg">
+                      <span class="postblock">
+                        <button mat-button class="btnshare btnsharecls txtwhite" (click)="share('facebookbanner-img6.jpg')"><span>Post</span></button>
+                      </span>
                     </mat-list-item>
                   </mat-list>
                   <span class="loadmorewarpper">
@@ -73,17 +88,17 @@
                   <span class="socialmediaheader">
                     <span class="sharecontent">
                       <span class="sharecontentimgwrapper">
-                        <img src="../../../../assets/images/imguser.jpg">
+                        <img  src="../../../../assets/images/imguser.jpg">
                       </span>
                       <span class="sharecontentinfo">
                         <mat-list role="list">
                           <mat-list-item role="listitem">
                             <span class="labelcls">Name:</span>
-                            <span>tt tt</span>
+                            <span>sda</span>
                           </mat-list-item>
                           <mat-list-item role="listitem">
                             <span class="labelcls">Email:</span>
-                            <span>abc@gmail.com</span>
+                            <span>sf</span>
                           </mat-list-item>
                         </mat-list>
                         <button mat-button class="btnshare btnsharecls txtwhite btnremove"><i class="fa fa-remove"></i></button>
@@ -134,8 +149,6 @@
                 </span>
               </span>  
           </span>
-          <!-- <span *ngIf=" router.url === '/social-advo-rep' "><img src="../../../../assets/images/socialadvoworks-admindashboard-repimg.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"></span>
-          <span *ngIf=" router.url === '/social-advo-admin' "><img src="../../../../assets/images/socialadvoworks-admindashboard-adminimg.jpg" style="width: 100%; display: block; margin: 0; padding: 0;"></span> -->
         </mat-card>
       </div>
   </div>

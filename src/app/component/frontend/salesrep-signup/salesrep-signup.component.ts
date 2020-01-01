@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from '../../../api.service';
 import { MetaService } from '@ngx-meta/core';
 @Component({
   selector: 'app-salesrep-signup',

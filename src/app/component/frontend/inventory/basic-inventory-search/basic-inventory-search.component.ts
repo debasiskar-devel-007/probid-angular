@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject, ChangeDetectionStrategy } from '@angular/core';
 import { MetaService } from '@ngx-meta/core';
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from '../../../../api.service';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -74,6 +74,7 @@ export class BasicInventorySearchComponent implements OnInit {
   }
 
 
+  public indexval:any=10;
   public loginMsg: string ='';
   public errorMsg: string = '';
   public inventoryCustomerForm: FormGroup;
@@ -403,6 +404,12 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     this.indexCount = i;
     this.indexCountForImg = j;
   }
+
+  loadMoreSearchResult(){
+    this.indexval=this.indexval+5;
+  }
+
+
 }
 
 

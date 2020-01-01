@@ -91,7 +91,8 @@
   .inventorysearch .formblockwrapper .mainwrappercontent{
       position: relative;
       z-index: 99;
-      }
+      margin-bottom: 20px;
+  }
   
   .inventorysearch .example-container > .section1 > mat-form-field {
     box-sizing: border-box;

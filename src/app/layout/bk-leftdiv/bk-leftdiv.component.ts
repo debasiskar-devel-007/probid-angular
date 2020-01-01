@@ -1,5 +1,5 @@
 import { Component, OnInit,  ViewChild } from '@angular/core';
-import { SidenavService } from 'src/app/services/sidenav.service';
+import { SidenavService } from '../../services/sidenav.service';
 import { MatSidenav } from '@angular/material';
 import { CookieService } from 'ngx-cookie-service';
 

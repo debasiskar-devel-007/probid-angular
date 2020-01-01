@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from '../../../api.service';
 import { FormBuilder, FormGroup, FormControl, Validators, FormGroupDirective } from '@angular/forms';
 @Component({
   selector: 'app-add-admin-categories',
