@@ -14,6 +14,7 @@ export const environment = {
   inventory__auto_completeurl : 'https://marketcheck-prod.apigee.net/v1/search/auto-complete?api_key=', 
   inventory_url_api : 'XbXdzXVQKzczQH5xHZmgTJ0rBhigADov',
   share_link : 'http://localhost:4200/',
+  Meta_image_url : 'https://dev.probidauto.com/',
 };
 
 /*
