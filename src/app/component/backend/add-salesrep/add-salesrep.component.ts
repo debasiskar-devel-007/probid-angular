@@ -18,25 +18,48 @@ public btn_text:any="Submit"
   constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService,public fb: FormBuilder,public dialog: MatDialog,public router:Router) {
 
       /**genarate Add-salesrep form */
-    this.addsalesrepForm = this.fb.group({
-      id:null,
-      email: [null, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
-      firstname: [null, Validators.required],
-      lastname: [null, Validators.required],
-      phone: [null, Validators.compose([Validators.required, Validators.pattern(/^0|[1-9]\d*$/)])],
-      zip: [null, Validators.required],
-      city: [null, Validators.required],
-      state: [null, Validators.required],
-      address: [null, Validators.required],
-      password: [null, Validators.required],
-      conpass: [null, Validators.required],
-      username:[null,Validators.required],
-      companyname:['',Validators.required],
-      type: ["salesrep"],
-      status:1
-    }, {
-      validator: this.machpassword('password', 'conpass')
-    });
+      if(router.url != '/add-salesrep'){
+        this.addsalesrepForm = this.fb.group({
+          id:null,
+          email: [null, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
+          firstname: [null, Validators.required],
+          lastname: [null, Validators.required],
+          phone: [null, Validators.compose([Validators.required, Validators.pattern(/^0|[1-9]\d*$/)])],
+          zip: [null, Validators.required],
+          city: [null, Validators.required],
+          state: [null, Validators.required],
+          address: [null, Validators.required],
+          username:[null,Validators.required],
+          companyname:['',Validators.required],
+          type: ["salesrep"],
+          status:1
+        })
+
+      } else {
+        this.addsalesrepForm = this.fb.group({
+          id:null,
+          email: [null, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
+          firstname: [null, Validators.required],
+          lastname: [null, Validators.required],
+          phone: [null, Validators.compose([Validators.required, Validators.pattern(/^0|[1-9]\d*$/)])],
+          zip: [null, Validators.required],
+          city: [null, Validators.required],
+          state: [null, Validators.required],
+          address: [null, Validators.required],
+          password: [null, Validators.required],
+          conpass: [null, Validators.required],
+          username:[null,Validators.required],
+          companyname:['',Validators.required],
+          type: ["salesrep"],
+          status:1
+        },
+  {
+    validator: this.machpassword('password', 'conpass')
+
+  });
+}
+     
+
 
     this.getStateList();
     this.getCityList();
@@ -128,8 +151,6 @@ editsalesrepprofile(){
             city:data.res[0].city,
             state:data.res[0].state,
             address:data.res[0].address,
-            password: data.res[0].password,
-            conpass: data.res[0].password,
             username:data.res[0].username,
             type:data.res[0].type,
             companyname:data.res[0].companyname

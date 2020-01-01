@@ -77,7 +77,7 @@
                     Sales Reference field can not be blank</mat-error>
                 </mat-form-field>
             
-                <mat-form-field *ngIf="addbirddogForm.controls['id'].value==null">
+                <mat-form-field *ngIf="router.url == '/add-birddog'">
                   <input matInput placeholder="Password" type="password" formControlName="password"
                     (blur)="inputUntouched('password')">
                   <mat-error
@@ -85,7 +85,7 @@
                     Password field can not be blank</mat-error>
                 </mat-form-field>
             
-                <mat-form-field *ngIf="addbirddogForm.controls['id'].value==null">
+                <mat-form-field *ngIf="router.url == '/add-birddog'">
                   <input matInput placeholder="Confirm Password" type="password" formControlName="conpass"
                     (blur)="inputUntouched('conpass')">
                   <mat-error

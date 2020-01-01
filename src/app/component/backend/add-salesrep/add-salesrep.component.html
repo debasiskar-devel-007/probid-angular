@@ -68,7 +68,6 @@
             </mat-form-field>
 
 
-
             <mat-form-field>
               <input matInput type="text" placeholder="Phone Number" formControlName="phone"
                 (blur)="inputUntouched('phone')">
@@ -77,7 +76,7 @@
                 Phone Number field can not be blank</mat-error>
             </mat-form-field>
 
-            <mat-form-field *ngIf="addsalesrepForm.controls['id'].value==null">
+            <mat-form-field *ngIf="router.url == '/add-salesrep'">
               <input matInput placeholder="Password" type="password" formControlName="password"
                 (blur)="inputUntouched('password')">
               <mat-error
@@ -85,7 +84,7 @@
                 Password field can not be blank</mat-error>
             </mat-form-field>
 
-            <mat-form-field *ngIf="addsalesrepForm.controls['id'].value==null">
+            <mat-form-field *ngIf="router.url == '/add-salesrep'">
               <input matInput placeholder="Confirm Password" type="password" formControlName="conpass"
                 (blur)="inputUntouched('conpass')">
               <mat-error
