@@ -4,6 +4,7 @@ import { ApiService } from '../../../api.service';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { routerNgProbeToken } from '@angular/router/src/router_module';
  
 @Component({
   selector: 'app-add-birddog',
@@ -18,27 +19,50 @@ public cityList: any;
 public header_text:any="Add Birddog"
 public btn_text:any="Submit"
 @ViewChild(FormGroupDirective) formDirective: FormGroupDirective;
-constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,public rout:Router,public cookieService:CookieService) { 
+constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,public router:Router,public cookieService:CookieService) { 
     /**genarate Add-birddog form */
-    this.addbirddogForm = this.fb.group({
-      id:null,
-      email: [null, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
-      firstname: [null, Validators.required],
-      lastname: [null, Validators.required],
-      phone: [null, Validators.compose([Validators.required, Validators.pattern(/^0|[1-9]\d*$/)])],
-      zip: [null, Validators.required],
-      city: [null, Validators.required],
-      state: [null, Validators.required],
-      address: [null, Validators.required],
-      password: [null, Validators.required],
-      conpass: [null, Validators.required],
-      assign_salesrep:[null,Validators.required],
-      username:[null,Validators.required],
-      type: ["birddog"],
-      status:1
-    }, {
+
+    if(router.url != '/add-birddog'){
+
+      this.addbirddogForm = this.fb.group({
+        id:null,
+        email: [null, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
+        firstname: [null, Validators.required],
+        lastname: [null, Validators.required],
+        phone: [null, Validators.compose([Validators.required, Validators.pattern(/^0|[1-9]\d*$/)])],
+        zip: [null, Validators.required],
+        city: [null, Validators.required],
+        state: [null, Validators.required],
+        address: [null, Validators.required],
+        assign_salesrep:[null,Validators.required],
+        username:[null,Validators.required],
+        type: ["birddog"],
+        status:1
+      })
+
+    } else {
+      this.addbirddogForm = this.fb.group({
+        id:null,
+        email: [null, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
+        firstname: [null, Validators.required],
+        lastname: [null, Validators.required],
+        phone: [null, Validators.compose([Validators.required, Validators.pattern(/^0|[1-9]\d*$/)])],
+        zip: [null, Validators.required],
+        city: [null, Validators.required],
+        state: [null, Validators.required],
+        address: [null, Validators.required],
+        password: [null, Validators.required],
+        conpass: [null, Validators.required],
+        assign_salesrep:[null,Validators.required],
+        username:[null,Validators.required],
+        type: ["birddog"],
+        status:1
+      },
+      {
       validator: this.machpassword('password', 'conpass')
     });
+
+    }
 
     this.getStateList();
     this.getCityList();
@@ -118,11 +142,11 @@ addbirddogFormSubmit(){
         if (data.status == 'success' && data.update==1) {
          console.log("Update birddog Successfully");
           this.formDirective.resetForm();
-          this.rout.navigateByUrl('/birddog-list');
+          this.router.navigateByUrl('/birddog-list');
         }else{
           console.log("Add birddog Successfully");
           this.formDirective.resetForm();
-          this.rout.navigateByUrl('/birddog-list');
+          this.router.navigateByUrl('/birddog-list');
         }
         
       })
@@ -149,8 +173,6 @@ editBirddogProfile(){
           city:data.res[0].city,
           state:data.res[0].state,
           address:data.res[0].address,
-          password: data.res[0].password,
-          conpass: data.res[0].password,
           type:data.res[0].type,
           assign_salesrep:data.res[0].assign_salesrep,
           username:data.res[0].username

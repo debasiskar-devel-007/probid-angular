@@ -52,11 +52,11 @@
             </mat-form-field>
 
             <mat-form-field>
-              <input matInput type="text" placeholder="UserName" formControlName="username"
+              <input matInput type="text" placeholder="User Name" formControlName="username"
                 (blur)="inputUntouched('username')">
               <mat-error
                 *ngIf="!addsalesrepForm.controls['username'].valid && addsalesrepForm.controls['username'].errors.required && addsalesrepForm.controls['username'].touched">
-                UserName field can not be blank</mat-error>
+                User Name field can not be blank</mat-error>
             </mat-form-field>
 
             <mat-form-field>
@@ -68,7 +68,6 @@
             </mat-form-field>
 
 
-
             <mat-form-field>
               <input matInput type="text" placeholder="Phone Number" formControlName="phone"
                 (blur)="inputUntouched('phone')">
@@ -77,7 +76,7 @@
                 Phone Number field can not be blank</mat-error>
             </mat-form-field>
 
-            <mat-form-field *ngIf="addsalesrepForm.controls['id'].value==null">
+            <mat-form-field *ngIf="router.url == '/add-salesrep'">
               <input matInput placeholder="Password" type="password" formControlName="password"
                 (blur)="inputUntouched('password')">
               <mat-error
@@ -85,7 +84,7 @@
                 Password field can not be blank</mat-error>
             </mat-form-field>
 
-            <mat-form-field *ngIf="addsalesrepForm.controls['id'].value==null">
+            <mat-form-field *ngIf="router.url == '/add-salesrep'">
               <input matInput placeholder="Confirm Password" type="password" formControlName="conpass"
                 (blur)="inputUntouched('conpass')">
               <mat-error
@@ -135,6 +134,31 @@
                 *ngIf="!addsalesrepForm.controls['state'].valid && addsalesrepForm.controls['state'].errors.required && addsalesrepForm.controls['state'].touched">
                 State field can not be blank</mat-error>
             </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Select Time Zone</mat-label>
+              <mat-select formControlName="timezone" (blur)="inputBlur('timezone')">
+                  <mat-option *ngFor="let time of timezone" [value]="time.value">
+                    {{time.value}}
+                  </mat-option>
+              </mat-select>
+              <!-- <mat-error
+              *ngIf="!addsalesrepForm.controls['timezone'].valid && addsalesrepForm.controls['timezone'].errors.required && addsalesrepForm.controls['timezone'].touched ">
+              timezone field can not be blank</mat-error> -->
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Select Webiner</mat-label>
+            <mat-select formControlName="webiner">
+              <mat-option *ngFor="let state of stateList" [value]="state.abbreviation">
+                {{state.name}}
+              </mat-option>
+            </mat-select>
+            <!-- <mat-error
+              *ngIf="!addsalesrepForm.controls['webiner'].valid && addsalesrepForm.controls['webiner'].errors.required && addsalesrepForm.controls['webiner'].touched ">
+              webiner field can not be blank</mat-error> -->
+          </mat-form-field>
+         
 
             <span class="bottompart">
               <button mat-raised-button class="btn-lg">{{btn_text}}</button>

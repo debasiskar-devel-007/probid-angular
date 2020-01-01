@@ -26,11 +26,12 @@ export class CustomerSignupComponent implements OnInit {
   public term_msg: any = '';
   public rep_id: string = '';
   public salesrepList:any;
+  public message:any='Submitted Successfully'
 
 
 
 
-  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,private readonly meta: MetaService,public cookieService:CookieService ) {
+  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,private readonly meta: MetaService,public cookieService:CookieService,public router:Router ) {
     this.activatedRouter.params.subscribe(params=>{
       console.log('++++++',params['id']);
       if (params['id'] != '' || params['id'] != null) {
@@ -135,6 +136,24 @@ export class CustomerSignupComponent implements OnInit {
     })
   }
 
+
+  openModal(){
+    const dialogRef= this.dialog.open(customerSignUpsuccessDialog, {
+       width: '250px',
+       data:this.message
+     });
+     dialogRef.afterClosed().subscribe(result => {
+       console.log(result)
+       if(result == 'ok'){
+ 
+       this.router.navigateByUrl('/login')
+ 
+       }
+ 
+     });
+   }
+
+
   /**Submit function */
   customerSignUpFormSubmit() {
 
@@ -165,9 +184,7 @@ export class CustomerSignupComponent implements OnInit {
         var data = { "source": "user", "data": formdata }
         this.apiservice.CustomRequest(data, 'addorupdatedatawithouttoken').subscribe((data: any) => {
           if (data.status == 'success') {
-            this.dialog.open(customerSignUpsuccessDialog, {
-              width: '250px',
-            });
+            this.openModal();
             this.formDirective.resetForm();
           }
           // console.log(data);
