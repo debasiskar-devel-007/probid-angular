@@ -119,6 +119,7 @@ public ststus: number;
  
 public rsvpIndex:any=2;
 public saveSearchIndex:any=10;
+public socialadvoIndex:any=8;
 
 
 
@@ -264,6 +265,13 @@ public errorMsg: string = '';
         }
     });
   }
+
+
+  // loadMoreSearchResult(){
+  //   this.socialadvoIndex=this.socialadvoIndex+2;
+  // }
+
+
   }
 
 

@@ -87,7 +87,7 @@
                     <span class="block1socialadvo">
                       <mat-card-title class="sectionheader">Social Advo Banners</mat-card-title>
                       <mat-list role="list" class="flexbox4column">
-                          <mat-list-item role="listitem" class="block1socialadvosingle" *ngFor="let socialadvo of socialAdvLists; let i = index">                           
+                          <mat-list-item role="listitem" class="block1socialadvosingle" *ngFor="let socialadvo of socialAdvLists | slice:0:socialadvoIndex; let i = index">                           
                               <img src="{{socialadvo.image_URL}}">                                                             
                           </mat-list-item>
                       </mat-list>
