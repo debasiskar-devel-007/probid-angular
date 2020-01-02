@@ -74,6 +74,7 @@ export class BasicInventorySearchComponent implements OnInit {
   }
 
 
+  public indexval:any=10;
   public loginMsg: string ='';
   public errorMsg: string = '';
   public inventoryCustomerForm: FormGroup;
@@ -403,6 +404,12 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
     this.indexCount = i;
     this.indexCountForImg = j;
   }
+
+  loadMoreSearchResult(){
+    this.indexval=this.indexval+5;
+  }
+
+
 }
 
 

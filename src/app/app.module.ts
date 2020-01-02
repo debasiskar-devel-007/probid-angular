@@ -55,8 +55,8 @@ import { PreOwnedComponent } from './component/frontend/pre-owned/pre-owned.comp
 import { AboutusComponent } from './component/frontend/aboutus/aboutus.component';
 import { BlogCategoryComponent } from './component/frontend/blog-category/blog-category.component';
 
-import { SalesrepSignupComponent } from './component/frontend/salesrep-signup/salesrep-signup.component';
-import { CustomerSignupComponent,customerSignUpsuccessDialog } from './component/frontend/customer-signup/customer-signup.component';
+import { SalesrepSignupComponent, salesSignUpModalComponent } from './component/frontend/salesrep-signup/salesrep-signup.component';
+import { CustomerSignupComponent, customerSignUpsuccessDialog } from './component/frontend/customer-signup/customer-signup.component';
 
 import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
 
@@ -110,7 +110,7 @@ import { ManageCommissionComponent } from './component/backend/manage-commission
 import { NewsletterlistsComponent } from './component/backend/newsletterlists/newsletterlists.component';
 import { SalesReportComponent } from './component/backend/sales-report/sales-report.component';
 import { SalesreplistsComponent } from './component/backend/salesreplists/salesreplists.component';
-import { RsvplistsComponent, DeleteModalComponent } from './component/backend/rsvplists/rsvplists.component';
+import { RsvplistsComponent, DeleteModalComponent, askForconfirmationModalComponent } from './component/backend/rsvplists/rsvplists.component';
 import { ManageTrainingComponent } from './component/backend/manage-training/manage-training.component';
 
 
@@ -184,6 +184,7 @@ import { LisitngTestemailappComponent } from './component/backend/newsletterlist
 import { ListingSenderappComponent } from './component/backend/newsletterlists/listing-senderapp/listing-senderapp.component';
 import { ListingSubscriptionComponent } from './component/backend/newsletterlists/listing-subscription/listing-subscription.component';
 import { ListingSubcategoryComponent } from './component/backend/newsletterlists/listing-subcategory/listing-subcategory.component';
+import { AskForConfirmationComponent } from './component/backend/ask-for-confirmation/ask-for-confirmation.component';
 
 
 //****** for video Modal*********//
@@ -307,7 +308,10 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
     RemoveRsvpComponent,
     RemoveDialogComponent,
     // errorDialogbackend,
-    RemoveRSvpModalComponent
+    RemoveRSvpModalComponent,
+    salesSignUpModalComponent,
+    askForconfirmationModalComponent,
+    AskForConfirmationComponent
   ],
   imports: [
     FacebookModule.forRoot(),
@@ -349,7 +353,7 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
   providers: [CookieService, AuthGuard, ApiService, SidenavService,BasicInventorySearchBackendComponent,InventoryDetailComponent],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent,DeleteModalRsvpComponent,RemoveModalComponent,RemoveRsvpComponent,RemoveDialogComponent,RemoveModalComponent,RemoveRSvpModalComponent]
+  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent,DeleteModalRsvpComponent,RemoveModalComponent,RemoveRsvpComponent,RemoveDialogComponent,RemoveModalComponent,RemoveRSvpModalComponent, salesSignUpModalComponent, askForconfirmationModalComponent]
   // errorDialogbackend
 })
 export class AppModule { }

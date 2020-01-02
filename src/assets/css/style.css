@@ -65,20 +65,20 @@ a{cursor:pointer;outline:none}
 .txtbluecolor{font-family:'Helvetica-Normal';font-size:18px;line-height:25px!important;display:block;margin:0;padding:0;margin-bottom:25px;margin-top:29px;color:#0060fe}
 .ptb-77.mat-card{padding-top:57px!important;padding-bottom:73px!important;box-shadow:none!important}
 .ptb-35.mat-card{padding-top:35px;padding-bottom:35px;box-shadow:none!important}
-.btnblueround{display:inline-block;background:#00c0ff;font-size:18px;color:#fff!important;text-transform:uppercase;font-family:'HelveticaBold';text-decoration:none!important;line-height:normal;text-align:center;margin:0;margin-top:20px;margin-bottom:20px;border-radius:50px;padding:2px 25px}
+.btnblueround{display:inline-block;background:#00c0ff;font-size:18px;color:#fff!important;text-transform:uppercase;font-family:'HelveticaBold';text-decoration:none!important;line-height:normal;text-align:center;margin:0;margin-top:20px;margin-bottom:20px;border-radius:50px;padding:2px 25px; cursor: pointer;}
 
 /* .btnblue{display: inline-block !important; background: url('../images/doublearrowicon.png') no-repeat right 10px center #00c0ff !important; background-size: 12px !important; font-size: 16px !important; color: #fff!important; text-transform: uppercase; font-family: 'HelveticaBold' !important; text-decoration: none!important; line-height: normal !important; text-align: center !important;margin: 0; margin-top: 0; margin-bottom: 0; border-radius: 5px; margin-top: 10px !important;text-decoration:none!important;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);padding: 14px 30px 10px 10px !important;} */
-.btnblue{display: inline-block !important; background: #00c0ff !important; font-size: 16px !important; color: #fff!important; text-transform: uppercase; font-family: 'HelveticaBold' !important; text-decoration: none!important; line-height: normal !important; text-align: center !important;margin: 0; margin-top: 0; margin-bottom: 0; border-radius: 5px; margin-top: 10px !important;text-decoration:none!important;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);padding: 14px 18px 10px !important;}
+.btnblue{display: inline-block !important; background: #00c0ff !important; font-size: 16px !important; color: #fff!important; text-transform: uppercase; font-family: 'HelveticaBold' !important; text-decoration: none!important; line-height: normal !important; text-align: center !important;margin: 0; margin-top: 0; margin-bottom: 0; border-radius: 5px; margin-top: 10px !important;text-decoration:none!important;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);padding: 14px 18px 10px !important; cursor: pointer;}
 
 .btnyellow{display: inline-block !important; background: #fcd503 !important; font-size: 16px !important; color: #fff!important; text-transform: uppercase; font-family: 'HelveticaBold' !important; text-decoration: none!important; line-height: normal !important; text-align: center !important;
-text-decoration:none!important;	margin: 0; margin-top: 0; margin-bottom: 0; border-radius: 5px; padding: 14px 18px 10px !important; margin-top: 10px !important;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);}
+text-decoration:none!important;	margin: 0; margin-top: 0; margin-bottom: 0; border-radius: 5px; padding: 14px 18px 10px !important; margin-top: 10px !important;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); cursor: pointer;}
 .btnorange{display: inline-block !important; background: #f7462e !important; font-size: 15px !important; color: #fff!important; text-transform: uppercase; font-family: 'HelveticaBold' !important; text-decoration: none!important; line-height: normal !important; text-align: center !important;
-text-decoration:none!important;	margin: 0; margin-top: 0; margin-bottom: 0; border-radius: 5px; padding: 14px 10px 10px !important; margin-top: 10px !important;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);}
+text-decoration:none!important;	margin: 0; margin-top: 0; margin-bottom: 0; border-radius: 5px; padding: 14px 10px 10px !important; margin-top: 10px !important;box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); cursor: pointer;}
     
 
 .overlaybg{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.7);z-index:9}
 .overlaybg1{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.7);z-index:9}
-.btnformgray{display:inline-block;background:-moz-linear-gradient(270deg,rgba(195,198,205,1) 0%,rgba(106,114,134,1) 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(195,198,205,1)),color-stop(100%,rgba(106,114,134,1)));background:-webkit-linear-gradient(270deg,rgba(195,198,205,1) 0%,rgba(106,114,134,1) 100%);background:-o-linear-gradient(270deg,rgba(195,198,205,1) 0%,rgba(106,114,134,1) 100%);background:-ms-linear-gradient(270deg,rgba(195,198,205,1) 0%,rgba(106,114,134,1) 100%);background:linear-gradient(180deg,rgba(195,198,205,1) 0%,rgba(106,114,134,1) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c3c6cd',endColorstr='#6a7286',GradientType=0);font-size:24px;color:#222!important;text-transform:capitalize;font-family:'HelveticaBold';text-decoration:none!important;line-height:51px;text-align:center;margin:0;border-radius:0}
+.btnformgray{display:inline-block;background:-moz-linear-gradient(270deg,rgba(195,198,205,1) 0%,rgba(106,114,134,1) 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,rgba(195,198,205,1)),color-stop(100%,rgba(106,114,134,1)));background:-webkit-linear-gradient(270deg,rgba(195,198,205,1) 0%,rgba(106,114,134,1) 100%);background:-o-linear-gradient(270deg,rgba(195,198,205,1) 0%,rgba(106,114,134,1) 100%);background:-ms-linear-gradient(270deg,rgba(195,198,205,1) 0%,rgba(106,114,134,1) 100%);background:linear-gradient(180deg,rgba(195,198,205,1) 0%,rgba(106,114,134,1) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c3c6cd',endColorstr='#6a7286',GradientType=0);font-size:24px;color:#222!important;text-transform:capitalize;font-family:'HelveticaBold';text-decoration:none!important;line-height:51px;text-align:center;margin:0;border-radius:0;  cursor: pointer;}
 .socialmediaicons .fa{color:#f9fafb;opacity:.8}
 .socialmediaicons2{margin-top:15px}
 .socialmediaicons2 .fa{padding:10px;font-size:15px;width:36px;border-radius:50%;text-decoration:none;margin:5px 7px;height:36px;background:#708694}
@@ -887,6 +887,13 @@ display:block !important;
     margin: 0 auto;
     text-align: center;
 }
+
+.bottompart mat-label{
+    display: block;
+    color:#f44336;
+}
+
+
 .formhome .mat-form-field {display: block;}
 
 .formhome .mat-form-field {

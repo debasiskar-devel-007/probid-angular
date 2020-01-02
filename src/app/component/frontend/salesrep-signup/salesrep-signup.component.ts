@@ -1,9 +1,16 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
 import { ApiService } from '../../../api.service';
 import { MetaService } from '@ngx-meta/core';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { ActivatedRoute } from '@angular/router';
+
+export interface DialogData {
+  data:any
+ 
+}
+
 @Component({
   selector: 'app-salesrep-signup',
   templateUrl: './salesrep-signup.component.html',
@@ -17,9 +24,9 @@ export class SalesrepSignupComponent implements OnInit {
   public cityList: any;
   public timezone: any;
   public term_msg: any;
-  constructor(public apiservice: ApiService, public fb: FormBuilder,private readonly meta: MetaService, public cookieService: CookieService, public route: ActivatedRoute) {
-    let _id = route.params['id'];
-    console.log(_id)
+  public message:any='Submitted Successfully'
+  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,private readonly meta: MetaService,public cookieService:CookieService ,public router:Router) {
+
     this.meta.setTitle('ProBid Auto - Sales Rep SignUp');
     this.meta.setTag('og:description', 'Sales Reps can Sign Up to create their account with the ProBid Auto Back-office and make massive commissions by helping customers locate and buy the best Pre-Owned vehicles of their desires.');
     this.meta.setTag('twitter:description', 'Sales Reps can Sign Up to create their account with the ProBid Auto Back-office and make massive commissions by helping customers locate and buy the best Pre-Owned vehicles of their desires.');    
@@ -56,8 +63,8 @@ export class SalesrepSignupComponent implements OnInit {
       webiner: [null],
       timezone: [null],
       check: [false, Validators.required],
-      type: ["rep"],
-      status:1
+      type: ["salesrep"],
+      status:0
     }, {
       validator: this.machpassword('password', 'conpass')
     });
@@ -105,11 +112,28 @@ export class SalesrepSignupComponent implements OnInit {
     })
   }
 
+  openModal(){
+   const dialogRef= this.dialog.open(salesSignUpModalComponent, {
+      width: '250px',
+      data:this.message
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result)
+      if(result == 'ok'){
+
+      this.router.navigateByUrl('/login')
+
+      }
+
+    });
+  }
+
+
   /**Sales Ref Submit function */
   salesSignUpFormSubmit() {
-    for (let x in this.salesSignUpForm.controls) {
-      this.salesSignUpForm.controls[x].markAsTouched();
-    }
+      for (let x in this.salesSignUpForm.controls) {
+        this.salesSignUpForm.controls[x].markAsTouched();
+      }
 
 
     if (this.salesSignUpForm.valid) {
@@ -121,15 +145,14 @@ export class SalesrepSignupComponent implements OnInit {
           delete this.salesSignUpForm.value.check;
         }
         /**Api service for insert form */
+        
         var data = { "source": "user", "data": this.salesSignUpForm.value }
-        this.apiservice.CustomRequest(data, 'addorupdatedata').subscribe((data: any) => {
-          console.log(data);
+        this.apiservice.CustomRequest(data, 'addorupdatedatawithouttoken').subscribe((data: any) => {
           if (data.status == 'success') {
-           // console.log('success');
+           this.openModal();
             this.formDirective.resetForm();
-          } else {
-            console.log('Opps');
           }
+          // console.log(data);
         })
         // console.log(this.salesSignUpForm.value);
       }
@@ -149,4 +172,22 @@ export class SalesrepSignupComponent implements OnInit {
     document.querySelector('.signupformdiv').scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
   
+}
+
+
+/**success Modal */
+@Component({
+  selector: 'app-success',
+   templateUrl: './success.html',
+})
+export class salesSignUpModalComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<salesSignUpModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  // onNoClick(): void {
+  //   this.dialogRef.close();
+  // }
+
 }

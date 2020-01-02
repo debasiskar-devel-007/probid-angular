@@ -26,10 +26,10 @@ export class CustomerSignupComponent implements OnInit {
   public rep_id: string = '';
   public salesrepList:any;
   public img: string ='';
+  public message:string='Submitted Successfully'
 
 
-
-  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,private readonly meta: MetaService,public cookieService:CookieService ) {
+  constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,private readonly meta: MetaService,public cookieService:CookieService, public router: Router ) {
 
     this.meta.setTitle('ProBid Auto - Sales Rep SignUp');
     this.meta.setTag('og:description', 'Sales Reps can Sign Up to create their account with the ProBid Auto Back-office and make massive commissions by helping customers locate and buy the best Pre-Owned vehicles of their desires.');
@@ -86,21 +86,6 @@ export class CustomerSignupComponent implements OnInit {
     this.getStateList();
     this.getCityList();
     this.editcustomerprofile();
-
-
-
-    this.meta.setTitle('ProBid Auto - Customer Sign Up');
-    this.meta.setTag('og:description', 'Buyers can Sign Up and create their account with the ProBid Auto Back-office to search for and buy the best Pre-Owned Cars of their choice at competitive prices unmatched anywhere else.');
-    this.meta.setTag('twitter:description', 'Buyers can Sign Up and create their account with the ProBid Auto Back-office to search for and buy the best Pre-Owned Cars of their choice at competitive prices unmatched anywhere else.');
-    
-    this.meta.setTag('og:keyword', 'ProBid Auto Customer SignUp, Sign Up With ProBid Auto, Join ProBid Auto');
-    this.meta.setTag('twitter:keyword', 'ProBid Auto Customer SignUp, Sign Up With ProBid Auto, Join ProBid Auto');
-
-    this.meta.setTag('og:title', 'ProBid Auto - Customer Sign Up');
-    this.meta.setTag('twitter:title', 'ProBid Auto - Customer Sign Up');
-    this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:image', '../../assets/images/logomain.png');
-    this.meta.setTag('twitter:image', '../../assets/images/logomain.png');
    
   }
 
@@ -155,6 +140,24 @@ export class CustomerSignupComponent implements OnInit {
     })
   }
 
+
+  openModal(){
+    const dialogRef= this.dialog.open(customerSignUpsuccessDialog, {
+       width: '250px',
+       data:this.message
+     });
+     dialogRef.afterClosed().subscribe(result => {
+       console.log(result)
+       if(result == 'ok'){
+ 
+       this.router.navigateByUrl('/login')
+ 
+       }
+ 
+     });
+   }
+
+
   /**Submit function */
   customerSignUpFormSubmit() {
 
@@ -185,9 +188,7 @@ export class CustomerSignupComponent implements OnInit {
         var data = { "source": "user", "data": formdata }
         this.apiservice.CustomRequest(data, 'addorupdatedatawithouttoken').subscribe((data: any) => {
           if (data.status == 'success') {
-            this.dialog.open(customerSignUpsuccessDialog, {
-              width: '250px',
-            });
+            this.openModal();
             this.formDirective.resetForm();
           }
           // console.log(data);

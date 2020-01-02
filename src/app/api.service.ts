@@ -20,6 +20,7 @@ export class ApiService {
   public inventory_url: string = environment["inventory_url"] + environment["inventory_url_api"];
   public inventory_auto_complete_url: string = environment["inventory__auto_completeurl"] + environment["inventory_url_api"];
   public share_link : string = environment["share_link"];
+  public Meta_image_url : string = environment["Meta_image_url"];
 
   public fileimgsslurl: any;
 

@@ -114,6 +114,7 @@ import { LisitngTestemailappComponent } from './component/backend/newsletterlist
 import { ListingSenderappComponent } from './component/backend/newsletterlists/listing-senderapp/listing-senderapp.component';
 import { ListingSubscriptionComponent } from './component/backend/newsletterlists/listing-subscription/listing-subscription.component';
 import { ListingSubcategoryComponent } from './component/backend/newsletterlists/listing-subcategory/listing-subcategory.component';
+import { AskForConfirmationComponent } from './component/backend/ask-for-confirmation/ask-for-confirmation.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -123,6 +124,7 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
   { path: 'login/:id', component: LoginComponent },
+  { path: 'tests', component: AskForConfirmationComponent },
 
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },

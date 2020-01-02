@@ -23,7 +23,8 @@
       <!-- for admin add  -->
       <div>
 
-          <form [formGroup]="addcustomerForm"  (ngSubmit)="addcustomerFormSubmit()"> 
+
+          <form [formGroup]="addcustomerForm" > 
 
               <mat-form-field>
                 <input matInput type="text" placeholder="First Name" formControlName="firstname" (blur)="inputUntouched('firstname')">
@@ -56,14 +57,14 @@
                   Phone Number field can not be blank</mat-error>
               </mat-form-field>
               
-              <mat-form-field *ngIf="addcustomerForm.controls['id'].value==null">
+              <mat-form-field *ngIf="router.url == '/add-customer'">
                 <input matInput placeholder="Password" type="password" formControlName="password" (blur)="inputUntouched('password')">
                 <mat-error
                   *ngIf="!addcustomerForm.controls['password'].valid && addcustomerForm.controls['password'].errors.required && addcustomerForm.controls['password'].touched">
                   Password field can not be blank</mat-error> 
               </mat-form-field>
       
-              <mat-form-field *ngIf="addcustomerForm.controls['id'].value==null">
+              <mat-form-field *ngIf="router.url == '/add-customer'">
               <input matInput placeholder="Confirm Password" type="password" formControlName="conpass" (blur)="inputUntouched('conpass')">
               <mat-error  *ngIf="!addcustomerForm.controls['conpass'].valid && addcustomerForm.controls['conpass'].errors.required && addcustomerForm.controls['conpass'].touched">
                   Confirm Password field can not be blank</mat-error>
@@ -126,7 +127,8 @@
                 
       
                 <span class="bottompart">           
-                    <button mat-raised-button class="btn-lg">{{btn_text}}</button> 
+                    <button mat-raised-button class="btn-lg" type="button'" 
+                     (click)="addcustomerFormSubmit()">{{btn_text}}</button> 
                 </span>
             </form>
       

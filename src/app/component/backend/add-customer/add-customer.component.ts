@@ -30,7 +30,26 @@ public btn_text:any="Submit"
 
     
     /**genarate Add-customer form */
-    
+
+    if(router.url != '/add-customer')
+    {
+
+      this.addcustomerForm = this.fb.group({
+        id:null,
+        email: [null, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
+        firstname: [null, Validators.required],
+        lastname: [null, Validators.required],
+        phone: [null, Validators.compose([Validators.required, Validators.pattern(/^0|[1-9]\d*$/)])],
+        zip: [null, Validators.required],
+        city: [null, Validators.required],
+        state: [null, Validators.required],
+        address: [null, Validators.required],
+        salesrep:['', Validators.required],
+        type: ["customer"],
+        status:1
+      })
+
+    } else {
       this.addcustomerForm = this.fb.group({
         id:null,
         email: [null, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
@@ -46,10 +65,14 @@ public btn_text:any="Submit"
         salesrep:['', Validators.required],
         type: ["customer"],
         status:1
-      }, {
+      },
+      {
         validator: this.machpassword('password', 'conpass')
       });
 
+    }
+    
+      
       if(this.userType == 'salesrep'){
         this.addcustomerForm.controls['salesrep'].patchValue(this.userDetails._id)
 
@@ -142,11 +165,11 @@ public btn_text:any="Submit"
           if (data.status == 'success' && data.update==1) {
           //  console.log("Update customer Successfully");
           //   this.formDirective.resetForm();
-          this.router.navigateByUrl('/customer-list-rep');
+          this.router.navigateByUrl('/customer-list-admin');
           }else{
             console.log("Add customer Successfully");
             this.formDirective.resetForm();
-            this.router.navigateByUrl('/customer-list-rep');
+            this.router.navigateByUrl('/customer-list-admin');
           }
           
         })
@@ -173,8 +196,6 @@ public btn_text:any="Submit"
             city:data.res[0].city,
             state:data.res[0].state,
             address:data.res[0].address,
-            password: data.res[0].password,
-            conpass: data.res[0].password,
             type:data.res[0].type,
             salesrep:data.res[0].salesrep
           })

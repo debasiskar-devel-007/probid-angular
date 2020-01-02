@@ -63,7 +63,7 @@ export class AdvanceInventorySearchComponent implements OnInit {
 
 
 
-
+  public indexval:any=10;
   public advanceInventoryCustomerForm: FormGroup;
   public stateList: any;
   public inventory_search_list: any;
@@ -274,6 +274,11 @@ export class AdvanceInventorySearchComponent implements OnInit {
 
     this.indexCount=i;
     this.indexCountForImg=j
+  }
+
+
+  loadMoreSearchResult(){
+    this.indexval=this.indexval+5;
   }
 
 

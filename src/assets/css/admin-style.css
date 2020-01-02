@@ -174,8 +174,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32393f', end
 
 
 
-.adminbtnred, .adminbtnred:hover { display: inline-block !important; height: auto;  background: #cc3333 !important; font-size: 18px; color: #fff!important; text-transform: uppercase;
-font-family: 'Ralewaybold'; text-decoration: none!important; line-height: normal; text-align: center;  margin: 0 auto; white-space: normal; margin-top: 0px; padding: 12px 10px;
+.adminbtnred, .adminbtnred:hover { display: inline-block !important; height: auto;  background: #cc3333 !important; font-size: 18px; color: #fff!important; text-transform: uppercase; cursor: pointer; font-family: 'Ralewaybold'; text-decoration: none!important; line-height: normal; text-align: center;  margin: 0 auto; white-space: normal; margin-top: 0px; padding: 12px 10px;
 border-radius: 0px !important;}
 .adminbtnred span{text-transform: uppercase !important; color: #fff!important; margin-left: 0px !important;}
 
@@ -199,7 +198,7 @@ border-radius: 0px !important;}
 .tablediv .btnedit, .tablediv .btndelete, .tablediv .btnedit:hover, .tablediv .btndelete:hover{padding: 6px 5px !important; text-align: center; display: -webkit-box; display: -moz-box;
  display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-box-orient: horizontal; -moz-box-orient: horizontal; -webkit-box-direction: normal; -moz-box-direction: normal;
  -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; align-items: center; justify-content: center; font-size: 12px; margin: 2px !important; color:#fff !important;
- margin: 0px 0px 5px 0px !important;}
+ margin: 0px 0px 5px 0px !important; cursor: pointer;}
 .tablediv .btnedit span, .tablediv .btndelete span{padding-left: 5px;}
 .tablediv .btnedit:last-child, .tablediv .btndelete:last-child{margin-bottom: 0px !important;}
 .tablediv .btndelete, .tablediv .btndelete:hover{background: rgba(227,75,75,1); background: -moz-linear-gradient(top, rgba(227,75,75,1) 0%, rgba(181,33,33,1) 100%); background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(227,75,75,1)), color-stop(100%, rgba(181,33,33,1)));
@@ -271,7 +270,8 @@ text-transform: uppercase!important; font-family: 'Ralewaybold'; text-decoration
 .formfilterdiv .container{width: 100%;}
 
 .tablediv{margin-top: -73px;}
-.tablediv .searchbar {padding-right: 173px;flex-direction: row-reverse; justify-content: inherit !important;}
+.tablediv .searchbar {padding-right: 173px;-webkit-box-orient: horizontal;-webkit-box-direction: reverse;flex-direction: row-reverse;-webkit-box-pack: inherit !important;
+  justify-content: inherit !important;margin-top: 0px;margin-bottom: 23px; z-index: 9;}
 .tablediv .searchbar .mat-form-field{z-index: 99; position: relative;}
 .tablediv .mat-form-field-flex {align-items: stretch;}
 .tablediv table td span .material-icons{color: #4f5051 !important;}
@@ -281,11 +281,27 @@ text-transform: uppercase!important; font-family: 'Ralewaybold'; text-decoration
 .tablediv.trainingtablediv table {margin-top: 27px;}
 
 .searchblock{margin: 0; padding: 0; position: relative;width: 100%; display: block;}
-.searchblock .btnorange{min-width: 100%; border-radius: 0px; padding: 9px 8px 7px !important; margin: 0 !important; display: flex !important; align-items: center;}
+.searchblock .btnorange{min-width: 100%; border-radius: 0px; padding: 9px 8px 7px !important; margin: 0 !important; display: flex !important; align-items: center; cursor: pointer;}
 .searchblock{background: #dde2e5 !important; padding: 10px 10px 10px 22px !important;width: 100% !important; display: block; margin:0 auto !important;}
 .searchblock span{display: flex; align-items: center; position: relative; z-index: 99;}
 .searchblock .searchblockwrapper {display: flex; align-items: stretch; justify-content: space-between; flex-direction: row;}
 .searchblock span h2{font-family: "Helvetica-Normal"; color:#373b3d; font-size: 24px!important;margin: 0;}
+
+
+.tablediv .searchbar .mat-form-field .mat-form-field-infix{margin-bottom: 0;}
+/* .bloglists .tablediv {margin-top: -73px;} */
+
+.tablediv .searchbar .mat-form-field .mat-form-field-prefix, .tablediv .searchbar .mat-form-field .mat-form-field-suffix {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.bloglists .tablediv .searchbar {padding-right: 200px;}
+.blogcatlists .tablediv .searchbar {padding-right: 252px;}
+
+.tablediv table td.mat-column-Actions{width: 98px;}	
+.tablediv table th.mat-column-date_added{width: 114px;}
 
 
 
@@ -352,6 +368,7 @@ app-bk-leftdiv{position: relative; z-index: 999; display: none;}
     text-transform: capitalize;
     font-family: "Helvetica-Normal";
   }
+
   .activebread{
     background: #fff!important;
     color: #000!important;

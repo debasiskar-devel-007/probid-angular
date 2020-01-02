@@ -18,7 +18,7 @@ export class CustomerListComponent implements OnInit {
     this.userDetails = JSON.parse(this.cookieService.get('user_details'));
     this.userType=this.userDetails.type;
   }
-  public statusarray: any = [{val: 1, name: 'Active'}, {val: 2, name: 'Inactive'}, {val: 0, name: 'Pending'}]; 
+  public statusarray: any = [{val: 1, name: 'Active'}, {val: 0, name: 'Pending'}, {val: 2, name: 'Inactive'}]; 
 
   pendingmodelapplicationarray: any = [];
   pendingmodelapplicationarray_skip: any = ['_id','type','city','state','password','zip','salesrep_id','created_at','id','salesrep','updated_at'];
@@ -51,6 +51,7 @@ export class CustomerListComponent implements OnInit {
 
     this.activatedRoute.data.forEach(data=>{   
       this.pendingmodelapplicationarray=data.customerlist.res;
+      console.log('data>>',this.pendingmodelapplicationarray);
     })
 
    

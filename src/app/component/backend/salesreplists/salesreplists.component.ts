@@ -7,7 +7,7 @@ import { ApiService } from '../../../api.service';
   styleUrls: ['./salesreplists.component.css']
 })
 export class SalesreplistsComponent implements OnInit {
-    statusarray: any = [{val: 1, name: 'Active'}, {val: 2, name: 'Inactive'}, {val: 0, name: 'pending'}]; 
+    statusarray: any = [{val: 1, name: 'Active'}, {val: 0, name: 'pending'}, {val: 2, name: 'Inactive'}]; 
 
     pendingmodelapplicationarray: any = [];
   pendingmodelapplicationarray_skip: any = ['_id','password','timezone','webiner','username','zip','created_at','type','state','city','salesrep_id','salesrep_fullname'];

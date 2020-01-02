@@ -11,6 +11,9 @@ import { CookieService } from 'ngx-cookie-service';
 export class SocialAdvoComponent implements OnInit {
   public userCookies: any;
   public profile: any = '';
+  public allImg : any = [
+    'facebookbanner-img1.jpg'
+  ]
   constructor(public router: Router, private fb: FacebookService, public cookieService: CookieService) {
 
     this.userCookies = JSON.parse(this.cookieService.get('user_details'));
@@ -29,29 +32,31 @@ export class SocialAdvoComponent implements OnInit {
   login() {
     this.fb.login()
       .then((res: LoginResponse) => {
-        console.log('Logged in', res);
+       
         this.getProfile();
       })
-      .catch(this.handleError);
+      .catch();
   }
   
     getLoginStatus() {
     this.fb.getLoginStatus()
       .then((res: any)=>{
-        console.log(res);
+       
         this.getProfile();
       })
-      .catch(console.error.bind(console));
+      .catch();
   }
 
   getProfile() {
     this.fb.api('me/?fields=id,name,email,picture')
       .then((res: any) => {
-        console.log('Got the users friends', res);
+       
         this.profile = res;
         
       })
-      .catch((error: any) => console.error(error));
+      .catch((error: any) => {
+
+      });
   }
     /**
    * Get the users friends
@@ -66,7 +71,7 @@ export class SocialAdvoComponent implements OnInit {
   
   logoutWithFacebook(): void {
 
-    this.fb.logout().then(() => console.log('Logged out!'));
+    this.fb.logout().then();
   }
 
   share(url: string) {
@@ -81,8 +86,10 @@ export class SocialAdvoComponent implements OnInit {
     };
    
     this.fb.ui(params)
-      .then((res: UIResponse) => console.log(res))
-      .catch((e: any) => console.error(e));
+      .then((res: UIResponse) =>{
+
+      })
+      .catch();
    
   }
 

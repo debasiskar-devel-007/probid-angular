@@ -4,6 +4,7 @@ import { ApiService } from '../../../api.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatDialogRef, MAT_DIALOG_DATA, MatDialog} from "@angular/material";
 import { CookieService } from 'ngx-cookie-service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 export interface DialogData {
@@ -71,9 +72,9 @@ public userid: any;
     let data: any = {
       endpoint: 'datalist',
       source: 'send_rsvp_view',
-      condition: {
-        "added_by_object":  this.userid
-      }
+      // condition: {
+      //   "added_by_object":  this.userid
+      // }
     }
     this.apiService.getDatalist(data).subscribe((res:any)=>{
       this.rsvp_list = res.res;
@@ -81,6 +82,16 @@ public userid: any;
     });
   }
 
+  openModale(){
+    const dialogRef = this.dialog.open(askForconfirmationModalComponent, {
+      width: '250px',
+      data:this.message
+
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
+  }
 
   //delete rsvp record
 
@@ -109,7 +120,7 @@ public userid: any;
               
               if(result.status=='success'){
                 this.rsvp_list.splice(index,index+1);
-                this.snack.open('Record Deleted Successfully..!','Ok',{duration:4000})
+                this.snack.open('Record Deleted Successfully..!','Ok',{duration:2000})
                 
               }
             })
@@ -147,4 +158,26 @@ export class DeleteModalComponent {
                @Inject(MAT_DIALOG_DATA) public data: DialogData){
 
   }
+}
+
+
+@Component({
+  selector:'app-askForconfirmationModal',
+  templateUrl:'./askForconfirmationModal.html'
+})
+export class askForconfirmationModalComponent {
+  public editorconfig: any = [];
+public askForConfirmation: FormGroup;
+  constructor( public dialogRef: MatDialogRef<askForconfirmationModalComponent>,
+               @Inject(MAT_DIALOG_DATA) public data: DialogData, public fb:FormBuilder){
+                this.editorconfig.extraAllowedContent = '*[class](*),span;ul;li;table;td;style;*[id];*(*);*{*}';
+                this.askForConfirmation = this.fb.group({
+                  topPart: ['']
+                }) 
+
+  }
+  askForConfirmationSubmit(){
+    console.log(this.askForConfirmation.value )
+  }
+
 }
