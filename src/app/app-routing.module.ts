@@ -231,6 +231,8 @@ const routes: Routes = [
    endpoint: 'datalist' }
   },
 
+  {path:'search-detail',component:InventoryDetailComponent},
+
 // ___________________BLOG MANAGEMENT_________________
 // =======================================================
 

@@ -80,7 +80,8 @@ export class InventoryDetailComponent implements OnInit {
   public customerList: any;
   public customer_id: any;
   public errorMsg: any = 'Please Choose customer';
-
+  public carData: any;
+  public addedCar:any='';
   constructor(public activatedRoute: ActivatedRoute, public apiService: ApiService, public observableData: BasicInventorySearchBackendComponent, public cookieService: CookieService, public snack: MatSnackBar, public dialog: MatDialog, public router: Router) {
 
 
@@ -90,30 +91,41 @@ export class InventoryDetailComponent implements OnInit {
       this.user_id = this.user_details._id;
       // console.log(this.user_id);
       // console.log('type>>', this.user_details.type)
+
+
     }
   }
 
   ngOnInit() {
 
+    if (this.router.url == '/search-detail') {
+      this.data = JSON.parse(this.cookieService.get('car_Data'));
+      console.log('+++>>', this.data);
+    }
+
+
+
     //   //for save search & rsvp
-    this.activatedRoute.data.forEach((res) => {
-      let result: any
-      result = res.inventory_details.res;
-      // console.log('inventory_details >>', result)
+    if (this.router.url != '/search-detail') {
 
-      this.data = result[0];
-      // this.item=this.data.financing_options;
+      this.activatedRoute.data.forEach((res) => {
+        let result: any
+        result = res.inventory_details.res;
+        // console.log('inventory_details >>', result)
 
-      // console.log('card_data', this.data)
+        this.data = result[0];
+        // this.item=this.data.financing_options;
 
-      this.makeName = this.data.build.make;
-      // console.log('makeName >>', this.makeName)
+        // console.log('card_data', this.data)
 
-      this.itemVal = result[0]._id;
-      // console.log('**>>', this.itemVal)
-    });
+        this.makeName = this.data.build.make;
+        // console.log('makeName >>', this.makeName)
 
+        this.itemVal = result[0]._id;
+        // console.log('**>>', this.itemVal)
+      });
 
+    }
 
     // this.saveSearch()
 
@@ -330,7 +342,7 @@ export class InventoryDetailComponent implements OnInit {
   }
 
   removeRsvp(val: any, item: any) {
-    // console.log('remove-rsvp', val, item)
+    console.log('remove-rsvp', val, item)
     const dialogRef = this.dialog.open(RemoveRsvpComponent, {
       width: '250px',
       data: this.message
@@ -419,6 +431,43 @@ export class InventoryDetailComponent implements OnInit {
       && this.user_details.type == 'customer') {
       this.router.navigateByUrl('/save-search-castomer');
     }
+
+  }
+
+  //add car 
+
+  addCar(val: any, itemData: any) {
+    console.log('>>', val, itemData)
+
+    let endpoint: any = "addorupdatedata";
+    itemData.added_by = this.user_id;
+    let card_data: any = {
+      card_data: itemData
+    }
+    let data: any = {
+      data: card_data,
+      source: "save_favorite",
+    };
+    // console.log(data)
+    this.apiService.CustomRequest(data, endpoint).subscribe((res: any) => {
+      // console.log(res);
+      if (res.status == "success") {
+        this.snack.open('RSVP Saved Into Your Favorite..!', 'Ok', { duration: 2000 })
+
+        this.addedCar=res.res
+
+        // if (this.user_details.type == 'admin') {
+        //   this.router.navigateByUrl('/save-search-admin');
+        // }
+        // if (this.user_details.type == 'customer') {
+        //   this.router.navigateByUrl('/save-search-castomer');
+        // }
+        // if (this.user_details.type == 'salesrep') {
+        //   this.router.navigateByUrl('/save-search-rep');
+        // }
+
+      }
+    });
 
   }
 

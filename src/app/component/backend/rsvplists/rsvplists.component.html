@@ -37,9 +37,16 @@
                               <h2 (click)="rsvpDetail(item._id)">{{item.heading}}</h2>
                               <span class="rsvplistsbottombtm">
                                <span>Status</span>
-                               <span *ngIf="item.status == 2" class="btnactive">Rejected <span class="colorred"></span></span>
+
+                               
+                               <span *ngIf="item.status == 2  " class="btnactive">Reject <span class="colorred"></span></span>
+                                
+                               <span *ngIf="item.status == 1"  class="btnactive">Accept <span class="colorgreen"></span></span>
+                              
+
                                <span *ngIf="item.status == 0" class="btnactive">Pending <span class="coloryellow"></span></span>
-                               <span *ngIf="item.status == 1" class="btnactive">Accepted <span class="colorgreen"></span></span>
+                               
+
                               </span>
                             </span>
                           </span>
@@ -89,13 +96,16 @@
                                   <span class="rsvplisttypebottom">
                                     <span>Commission: <span class="redcls">NO</span></span>
                                     <span> 
+                                      <span *ngIf="userCookies.type == 'admin'">
                                       <button mat-button class="btnblue greenbtn"
                                        *ngIf="item.status == 0 || item.status == 2" 
-                                       (click)="changeStatus(item, 1)">Accepted</button>
+                                       (click)="changeStatus(item, 1)">Accept</button>
                                       <button mat-button class="btnblue yellowbtn" *ngIf="item.status == 1 || item.status == 2" 
                                       (click)="changeStatus(item, 0)">Pending</button>
                                       <button mat-button class="btnblue redbtn" 
-                                      *ngIf="item.status == 0 || item.status == 1" (click)="changeStatus(item, 2)">Rejected</button>
+                                      *ngIf="item.status == 0 || item.status == 1" (click)="changeStatus(item, 2)">Reject</button>
+
+                                    </span>
                                       <button mat-button class="btnblue" 
                                       (click)="rsvpDetail(item._id)">Know More</button>
                                     </span>                                   
