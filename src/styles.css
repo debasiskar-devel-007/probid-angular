@@ -36,6 +36,61 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-color: #91989b;}
 .carousel > button .mat-icon{color:#fff !important;}
 
+
+
+.homebanner .carousel-slide {
+  width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    position: relative !important;
+    padding-bottom: 0 !important;
+}
+
+
+.homebanner.mat-card .mat-card-content {
+  position: relative !important;
+  width: 100%;
+  height: 100% !important;
+  margin: 0;
+  padding: 0;
+}
+.carousel-slide{
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-slide-content{
+  position: relative!important;
+  width: 100%!important;
+  height: 100%!important;
+  margin: 0;
+  padding: 0;
+}
+.carousel-slide-content img{
+  height: 100% !important;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100% !important;
+  width: auto;
+  height: auto;
+}
+
+.carousel-indicators {
+  display: block !important;
+  position: relative !important;
+  bottom: 0 !important;
+  z-index: 1;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  outline: 0;
+}
+
+
+
 .mat-card{ background:white!important;}
 
 .cdk-global-overlay-wrapper {align-items: center !important;}
