@@ -442,7 +442,9 @@ const routes: Routes = [
 resolve: { inventory_search: ResolveService },
 data: { requestcondition: { source: '', condition: {} }, endpoint: 'inventory-search' }
 },
-  { path: 'mysalesrep', component: MysalesrepComponent },
+  { path: 'mysalesrep', component: MysalesrepComponent ,
+  resolve: { rsvp: ResolveService },
+  data: { requestcondition: { source: 'send_rsvp_view', condition: {"added_for_object":"user_id"} }, endpoint: 'datalist' } },
   // { path:'contact-us-dashboard', component:ContactUsDashboardComponent,  resolve: { serviceList: ResolveService },
   // data: { requestcondition: { source: 'contactusForm', condition: {} }, endpoint: 'datalist'}},
   /**************** Rep Management *****************/

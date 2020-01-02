@@ -9,7 +9,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-item:stretch;
+  align-items:stretch;
 }
 
 .rsvplists > span {
@@ -19,9 +19,9 @@
   width: calc(1/2*100% - (1 - 1/2)*10px);
   margin-top:10px;
   padding:10px;
-  -webkit-box-shadow: -5px 3px 18px 0px rgba(168,168,168,1);
-  -moz-box-shadow: -5px 3px 18px 0px rgba(168,168,168,1);
-  box-shadow: -5px 3px 18px 0px rgba(168,168,168,1);
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(168,168,168,0.5);
+  -moz-box-shadow: 0px 1px 4px 0px rgba(168,168,168,0.5);
+  box-shadow: 0px 1px 4px 0px rgba(168,168,168,0.5);
 }
 .rsvplistsingleinner{
   display: flex;
