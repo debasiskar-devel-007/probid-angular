@@ -53,7 +53,7 @@ export class TesimoniallistComponent implements OnInit {
 
   showMoreFunc() {
     this.indexval = this.indexval + 3;
-    console.log(this.indexval);
+    // console.log(this.indexval);
   }
 
   showmore(index:any) {
@@ -61,10 +61,10 @@ export class TesimoniallistComponent implements OnInit {
   }
 
   showaudio() {
-    console.log('showaudio function is wirking')
+    // console.log('showaudio function is wirking')
   }
 
   showvideo() {
-    console.log('showvideo function is wirking')
+    // console.log('showvideo function is wirking')
   }
 }

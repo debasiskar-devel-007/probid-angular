@@ -132,6 +132,7 @@ const routes: Routes = [
   { path: 'customer-signup', component: CustomerSignupComponent },
 
   { path: 'customer-signup/:id', component: CustomerSignupComponent },
+  { path: 'customer-signup/:img/:id', component: CustomerSignupComponent },
   { path: 'home', component: HomeComponent },
   { path: 'contactus', component: ContactusComponent },
   {

@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
 import { ApiService } from '../../../api.service';
 import { MetaService } from '@ngx-meta/core';
+import { CookieService } from 'ngx-cookie-service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-salesrep-signup',
   templateUrl: './salesrep-signup.component.html',
@@ -15,8 +17,9 @@ export class SalesrepSignupComponent implements OnInit {
   public cityList: any;
   public timezone: any;
   public term_msg: any;
-  constructor(public apiservice: ApiService, public fb: FormBuilder,private readonly meta: MetaService) {
-
+  constructor(public apiservice: ApiService, public fb: FormBuilder,private readonly meta: MetaService, public cookieService: CookieService, public route: ActivatedRoute) {
+    let _id = route.params['id'];
+    console.log(_id)
     this.meta.setTitle('ProBid Auto - Sales Rep SignUp');
     this.meta.setTag('og:description', 'Sales Reps can Sign Up to create their account with the ProBid Auto Back-office and make massive commissions by helping customers locate and buy the best Pre-Owned vehicles of their desires.');
     this.meta.setTag('twitter:description', 'Sales Reps can Sign Up to create their account with the ProBid Auto Back-office and make massive commissions by helping customers locate and buy the best Pre-Owned vehicles of their desires.');    
@@ -25,8 +28,13 @@ export class SalesrepSignupComponent implements OnInit {
     this.meta.setTag('og:title', 'ProBid Auto - Sales Rep SignUp');
     this.meta.setTag('twitter:title', 'ProBid Auto - Sales Rep SignUp');
     this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:image', '../../assets/images/logomain.png');
-    this.meta.setTag('twitter:image', '../../assets/images/logomain.png');
+    if (this.cookieService.get('shareIngUrl') != null) {
+      this.meta.setTag('og:image', this.cookieService.get('shareIngUrl'));
+    } else {
+      this.meta.setTag('og:image', 'https://dev.probidauto.com/assets/images/logomain.png');
+    }
+    
+    this.meta.setTag('twitter:image', 'https://dev.probidauto.com/assets/images/logomain.png');
 
 
 

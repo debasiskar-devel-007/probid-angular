@@ -72,7 +72,7 @@ export class TesimonialComponent implements OnInit {
     }
       this.apiService.getDatalistWithToken(data, "datalistwithouttoken" ).subscribe((res:any)=>{
       this.TestimonialListArray = res.res;
-      console.log(this.TestimonialListArray)
+      // console.log(this.TestimonialListArray)
     });
   }
 

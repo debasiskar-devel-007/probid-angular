@@ -8,7 +8,6 @@ import { MetaService } from '@ngx-meta/core';
 
 export interface DialogData {
   data: any;
-  
 } 
 
 @Component({
@@ -67,7 +66,7 @@ export class BloglistfrontendComponent implements OnInit {
 
 //***********blog list view in blog detail************//
   blogdetail(val:any){
-    console.log(val)
+    // console.log(val)
     this.router.navigateByUrl('/blogdetail/' +val)
   }
   
@@ -78,13 +77,13 @@ export class BloglistfrontendComponent implements OnInit {
 
     this.activatedRoute.data.forEach((data: any) => {
       this.blogList = data;
-       console.log('>>>>>>>>>>>>>>',this.blogList)
+      //  console.log('>>>>>>>>>>>>>>',this.blogList)
 
     })
     
    //****total blog list****//
           this.bloglisting = this.blogList.blogCatList.blogs
-          console.log('---------------',this.bloglisting)
+          // console.log('---------------',this.bloglisting)
           
 
 
@@ -152,7 +151,7 @@ export class BloglistfrontendComponent implements OnInit {
 
     //**blog view from blog category list**//
     openblog(val:any){
-      console.log(val)
+      // console.log(val)
     }
 }
 

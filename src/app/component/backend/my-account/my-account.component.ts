@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from '../../../api.service';
 @Component({
   selector: 'app-my-account',
   templateUrl: './my-account.component.html',

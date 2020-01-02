@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule  }   from '@angular/forms'
 
 import { FacebookModule } from 'ngx-facebook';
 
+
 import {DemoMaterialModule} from "../material-module";
 import { DragScrollModule } from 'ngx-drag-scroll';
 import { AppRoutingModule } from './app-routing.module';
@@ -89,12 +90,12 @@ import { RepdashboardComponent, RemoveDialogComponent } from './component/backen
 // import { FileUploadModule } from 'file-upload';
 // import { ContactusModule } from 'contactus';
 
-import { ServicelibModule } from 'service-lib-influxiq';
-import { TestimonialModule } from 'testimonial-lib-influxiq';
+// import { ServicelibModule } from 'service-lib-influxiq';
+// import { TestimonialModule } from 'testimonial-lib-influxiq';
 import { FileUploadModule } from 'file-upload-lib-influxiq';
 import { LoginModule } from 'login-lib-influxiq';
-import { BlogModule } from 'blog-lib-influxiq';
-import { NewsTitleModule } from 'news-title-lib-influxiq';
+// import { BlogModule } from 'blog-lib-influxiq';
+// import { NewsTitleModule } from 'news-title-lib-influxiq';
 import { ContactusModule } from 'contactus-lib-influxiq';
 
 import { BlogManagementComponent } from './component/backend/blog-management/blog-management.component';
@@ -310,9 +311,9 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
   ],
   imports: [
     FacebookModule.forRoot(),
-    NewsTitleModule,
+    // NewsTitleModule,
     // TrainingModule,
-    BlogModule,
+    // BlogModule,
     FileUploadModule,
     NgxUploaderModule,
     AngularFontAwesomeModule,
@@ -326,8 +327,8 @@ import { ListingSubcategoryComponent } from './component/backend/newsletterlists
     HttpClientModule,
     NgtUniversalModule,
     LoginModule,
-    TestimonialModule,
-    ServicelibModule,
+    // TestimonialModule,
+    // ServicelibModule,
     ContactusModule,
     AppRoutingModule,MetaModule.forRoot(), BrowserAnimationsModule,
     ListingModule,

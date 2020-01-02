@@ -4,7 +4,6 @@ import { ApiService } from '../../../api.service';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MetaService } from '@ngx-meta/core';
-import { validateConfig } from '@angular/router/src/config';
 import {CookieService} from 'ngx-cookie-service';
 
 
@@ -26,17 +25,38 @@ export class CustomerSignupComponent implements OnInit {
   public term_msg: any = '';
   public rep_id: string = '';
   public salesrepList:any;
-
+  public img: string ='';
 
 
 
   constructor(public activatedRouter:ActivatedRoute, public apiservice: ApiService, public fb: FormBuilder,public dialog: MatDialog,private readonly meta: MetaService,public cookieService:CookieService ) {
+
+    this.meta.setTitle('ProBid Auto - Sales Rep SignUp');
+    this.meta.setTag('og:description', 'Sales Reps can Sign Up to create their account with the ProBid Auto Back-office and make massive commissions by helping customers locate and buy the best Pre-Owned vehicles of their desires.');
+    this.meta.setTag('twitter:description', 'Sales Reps can Sign Up to create their account with the ProBid Auto Back-office and make massive commissions by helping customers locate and buy the best Pre-Owned vehicles of their desires.');    
+    this.meta.setTag('og:keyword', 'ProBid Auto Sales Rep SignUp, Sign Up With ProBid Auto, Join ProBid Auto');
+    this.meta.setTag('twitter:keyword', 'ProBid Auto Sales Rep SignUp, Sign Up With ProBid Auto, Join ProBid Auto');
+    this.meta.setTag('og:title', 'ProBid Auto - Sales Rep SignUp');
+    this.meta.setTag('twitter:title', 'ProBid Auto - Sales Rep SignUp');
+    this.meta.setTag('og:type', 'website');
+    
+    this.meta.setTag('twitter:image', 'https://dev.probidauto.com/assets/images/logomain.png');
+
+
+
     this.activatedRouter.params.subscribe(params=>{
       console.log('++++++',params['id']);
       if (params['id'] != '' || params['id'] != null) {
         this.rep_id = params['id'];
+        console.log(params['img'])
+       this.img = params['img']
       }
     });
+    if (this.img != '') {
+      this.meta.setTag('og:image', 'https://dev.probidauto.com/assets/images/'+this.img);
+    } else {
+      this.meta.setTag('og:image', 'https://dev.probidauto.com/assets/images/logomain.png');
+    }
     
     /**genarate customer-signUp form */
     this.customerSignUpForm = this.fb.group({

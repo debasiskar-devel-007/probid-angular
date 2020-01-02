@@ -35,13 +35,13 @@ public tokenVal: any;
 
 
   blogdetail(val:any){
-    console.log(val)
+    // console.log(val)
     this.router.navigateByUrl('/blogdetail/' +val)
   }
   
   showMoreFunc(){
     this.indexval = this.indexval + 3;   
-    console.log(this.indexval);
+    // console.log(this.indexval);
   }
 
   ngOnInit() {
@@ -56,7 +56,7 @@ public tokenVal: any;
     this.apiService.getDatalistWithToken(data, "datalistwithouttoken").subscribe((res:any)=>{
 
       this.blogList = res.res;
-      console.log(this.blogList)
+      // console.log(this.blogList)
 
     });
   }
