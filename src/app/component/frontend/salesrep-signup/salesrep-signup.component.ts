@@ -35,8 +35,13 @@ export class SalesrepSignupComponent implements OnInit {
     this.meta.setTag('og:title', 'ProBid Auto - Sales Rep SignUp');
     this.meta.setTag('twitter:title', 'ProBid Auto - Sales Rep SignUp');
     this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:image', '../../assets/images/logomain.png');
-    this.meta.setTag('twitter:image', '../../assets/images/logomain.png');
+    if (this.cookieService.get('shareIngUrl') != null) {
+      this.meta.setTag('og:image', this.cookieService.get('shareIngUrl'));
+    } else {
+      this.meta.setTag('og:image', 'https://dev.probidauto.com/assets/images/logomain.png');
+    }
+    
+    this.meta.setTag('twitter:image', 'https://dev.probidauto.com/assets/images/logomain.png');
 
 
 
@@ -126,9 +131,9 @@ export class SalesrepSignupComponent implements OnInit {
 
   /**Sales Ref Submit function */
   salesSignUpFormSubmit() {
-    for (let x in this.salesSignUpForm.controls) {
-      this.salesSignUpForm.controls[x].markAsTouched();
-    }
+      for (let x in this.salesSignUpForm.controls) {
+        this.salesSignUpForm.controls[x].markAsTouched();
+      }
 
 
     if (this.salesSignUpForm.valid) {

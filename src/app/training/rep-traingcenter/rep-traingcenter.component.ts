@@ -8,7 +8,7 @@ import { AccordionConfig } from 'ngx-bootstrap/accordion';
 import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
 import {CarouselConfig} from "ngx-bootstrap";
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
-import { ApiService } from 'src/app/api.service';
+import { ApiService } from '../../api.service';
 
 declare var $:any;
 export function getAccordionConfig(): AccordionConfig {

@@ -6,8 +6,7 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Observable, Subject, Subscription, Observer } from 'rxjs';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 export interface DialogData {
   errorMsg: string;
@@ -23,7 +22,6 @@ export interface DialogData {
 export class BasicInventorySearchBackendComponent implements OnInit {
 
   public MediaListArray: any = [];
-  public carData: Subscription;
 
   carouselOptions = {
     margin: 5,

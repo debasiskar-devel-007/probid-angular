@@ -331,7 +331,8 @@
 .homemain .mat-nav-list span.menuwrapper {display: inline-block; width: 100%}
 .homemain .mat-list-item:before {display: none}
 .vpheaderwrapper .mat-toolbar-row, .vpheaderwrapper .mat-toolbar-single-row {display: inline-block;width: 100%;}
-.topmenuiconlogo {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;width: 100%;align-items: center;}
+.topmenuiconlogo {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;width: 100%;align-items: center;
+  padding-bottom: 10px;}
 .homemain mat-nav-list span.logowrapper {display: none;}
 .vpheaderwrapper .homemain .mat-nav-list {width: 100%;align-items: center;display: inline-block !important;}
 .vpheaderwrapper .mat-toolbar-row, .mat-toolbar-single-row {height: auto;padding: 10px 0px 0px !important;}
@@ -353,6 +354,8 @@
 @media only screen and (max-width: 600px) {
   .rightsidelinks .iconimg {width: 45px; height: auto;}
   .rightsidelinks {width: 45px;}
+  .carousel > button:last-of-type {right: 0;}
+  .carousel > button:first-of-type {left: 0;}
 }
 
 @media screen and (max-width:540px) {  
@@ -360,4 +363,5 @@
   .langblock select{color: #fff;margin-bottom: 0px;display: inline-block;margin-top: 10px}
   .headertopwrapper.mat-card-content{display: flex;align-items: center;justify-content: center;margin-bottom: 0;flex-wrap: wrap}
   .topcontactinfoblock .mat-list{display: flex;justify-content: center;align-items: center;padding-top: 0;flex-wrap: wrap}
+  .carousalinfo h1 {font-size: 32px!important;}
 }

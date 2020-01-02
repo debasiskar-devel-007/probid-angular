@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject} from '@angular/core';
 import {ActivatedRoute,Router} from '@angular/router';
- import{CookieService} from 'ngx-cookie-service';
- import { ApiService } from '../../../api.service';
+import{CookieService} from 'ngx-cookie-service';
+import { ApiService } from '../../../api.service';
 import {MatDialogRef, MAT_DIALOG_DATA, MatDialog} from "@angular/material";
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { MetaService } from '@ngx-meta/core';
@@ -67,10 +67,10 @@ export class BlogdetailComponent implements OnInit {
 
     this.activatedRoute.data.forEach((data: any) =>{
       this.blog = data.blogCatList.res;
-       console.log('+++++++++++++++++>>>>>>>>>>>>>>',this.blog)
+      //  console.log('+++++++++++++++++>>>>>>>>>>>>>>',this.blog)
       //  this.blog_img=this.blog[0].blogs_image[0].basepath+this.blog[0].blogs_image[0].image;
        this.blog_img=this.blog[0].profile_picture;
-       console.log(this.blog_img)
+      //  console.log(this.blog_img)
       })
   
      /**api service for blog_catagory by uttam */
@@ -103,7 +103,7 @@ export class BlogdetailComponent implements OnInit {
          this.apiService.getDatalistWithToken(datacatcount, "datalistwithouttoken").subscribe((res:any)=>{
  
            this.blogcategorycount = res.resc;
-           console.log(this.blogcategorycount);
+          //  console.log(this.blogcategorycount);
            this.blogcategory = res.res;
  
          });
@@ -121,7 +121,7 @@ export class BlogdetailComponent implements OnInit {
            this.apiService.getDatalistWithToken(datacatsearch, "datalistwithouttoken").subscribe((res:any)=>{
    
              this.blogcategorysearch = res.res;
-             console.log(this.blogcategorysearch)
+            //  console.log(this.blogcategorysearch)
    
            });
       

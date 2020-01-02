@@ -4,6 +4,7 @@ import { ApiService } from '../../../api.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatDialogRef, MAT_DIALOG_DATA, MatDialog} from "@angular/material";
 import { CookieService } from 'ngx-cookie-service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 export interface DialogData {
@@ -81,6 +82,16 @@ public userid: any;
     });
   }
 
+  openModale(){
+    const dialogRef = this.dialog.open(askForconfirmationModalComponent, {
+      width: '250px',
+      data:this.message
+
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
+  }
 
   //delete rsvp record
 
@@ -147,4 +158,26 @@ export class DeleteModalComponent {
                @Inject(MAT_DIALOG_DATA) public data: DialogData){
 
   }
+}
+
+
+@Component({
+  selector:'app-askForconfirmationModal',
+  templateUrl:'./askForconfirmationModal.html'
+})
+export class askForconfirmationModalComponent {
+  public editorconfig: any = [];
+public askForConfirmation: FormGroup;
+  constructor( public dialogRef: MatDialogRef<askForconfirmationModalComponent>,
+               @Inject(MAT_DIALOG_DATA) public data: DialogData, public fb:FormBuilder){
+                this.editorconfig.extraAllowedContent = '*[class](*),span;ul;li;table;td;style;*[id];*(*);*{*}';
+                this.askForConfirmation = this.fb.group({
+                  topPart: ['']
+                }) 
+
+  }
+  askForConfirmationSubmit(){
+    console.log(this.askForConfirmation.value )
+  }
+
 }

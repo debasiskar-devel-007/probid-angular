@@ -59,14 +59,14 @@ export class ApiService {
   public subscriptionGetdataEndpoint: Subscription;
   public tokenVal: any;
   constructor(private _http: HttpClient, private cookieService :CookieService) {
-    console.log('++++++++',this.subjectForGetdataEndpointUrl);
+    // console.log('++++++++',this.subjectForGetdataEndpointUrl);
 
-      // this._http.get(this.serverUrlDemo + 'gettemptoken').subscribe((res: any)=>{
-      //   this.tokenVal = res;
-      //   console.log('token')
-      //   console.log(this.tokenVal)
-      //   console.log(this.tokenVal.token.length)
-      // });
+      this._http.get(this.serverUrlDemo + 'gettemptoken').subscribe((res: any)=>{
+        this.tokenVal = res;
+        // console.log('token')
+        // console.log(this.tokenVal)
+        // console.log(this.tokenVal.token.length)
+      });
 
       this.fileimgsslurl = 'http://api.nexgentesting.com/';
 
@@ -235,7 +235,7 @@ postDatawithoutToken(endpoint:any, data:any) {
     })
   };
   console.log('endpoint');
-  console.log(endpoint);
+  // console.log(endpoint);
   var result = this._http.post(this.serverUrlDemo+endpoint, JSON.stringify(data), httpOptions).pipe(map(res => res));
   return result;
 }
@@ -368,7 +368,7 @@ getDatalistForResolve(requestdata: any) {
 
 
   addLogin(requestdata: any) {
-    console.log('in addLogin apiservice');
+    // console.log('in addLogin apiservice');
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -376,7 +376,7 @@ getDatalistForResolve(requestdata: any) {
       })
     };
 
-    console.log(this.serverUrl,requestdata);
+    // console.log(this.serverUrl,requestdata);
     var result = this._http.post(this.serverUrl + this.addendpointUrl, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
     return result;
   }
@@ -392,7 +392,7 @@ forgetPassword(requestdata: any) {
     })
   };
 
-  console.log(this.serverUrl,requestdata);
+  // console.log(this.serverUrl,requestdata);
   var result = this._http.post(this.serverUrl + this.addendpointUrl, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
   return result;
 }
