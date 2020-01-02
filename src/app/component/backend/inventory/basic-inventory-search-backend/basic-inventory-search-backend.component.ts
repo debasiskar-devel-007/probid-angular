@@ -103,7 +103,7 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   public indexForCustomer: number;
   public spinnerval: any = 0;
   public car_data: any;
-  public cardata:string='';
+  // public cardata:string='';
 
 
 
@@ -151,6 +151,13 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    // console.log("<>>",this.cookieService.get('car_Data'))
+    // if (this.cookieService.get('car_Data') != null || this.cookieService.get('car_Data') != '' ) {
+    //   this.cookieService.delete('car_Data');
+    //   console.log("<>>",this.cookieService.get('car_Data'))
+     
+    // } 
 
 
     this.activatedRoute.data.forEach((data) => {
@@ -476,36 +483,25 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   //view data for search list
 
   viewDetails(val:any) {
-    console.log(val)
-
-    this.cardata=JSON.stringify(val);
-    this.cookieService.set('car_Data', this.cardata);
-    
-    if (this.cookieService.get('car_Data') != null || this.cookieService.get('car_Data') != '' ) {
-      // this.cookieService.delete('car_Data');
-      // setTimeout(() => {
-        this.cookieService.set('car_Data', this.cardata);
-      // }, 500);
-      // console.log(this.cookieService.get('car_Data'))
-      // this.cookieService.set('car_Data', carData);
-    } 
-    else {
-      this.cookieService.set('car_Data', this.cardata);
-    }
    
-    // console.log('<<<>>>',typeof  this.carData)
+    console.log(val)
+    let cardata:string;
+    console.log(cardata)
 
-  //  this.car_data=JSON.stringify(this.cookieService.set('car_Data', val));
+    cardata=JSON.stringify(val);
+    console.log(cardata)
 
-    // this.car_data=JSON.parse(this.cookieService.get('')
-    // console.log(JSON.parse(this.cookieService.get('car_Data')));
-    setTimeout(() => {
-      this.router.navigateByUrl('/search-detail');
-    }, 1000);
+    if(this.cookieService.get('car_data') !='' || this.cookieService.get('car_data') !=null ){
 
-
+      this.car_data= this.cookieService.set('car_data',cardata);
 
   
+      console.log('<<<>>>', JSON.parse(this.cookieService.get('car_data')))
+      setTimeout(() => {
+        // this.router.navigateByUrl('/search-detail');
+      }, 1500);
+    }
+
 
   }
 

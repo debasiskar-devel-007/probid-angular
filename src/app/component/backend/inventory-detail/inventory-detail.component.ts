@@ -99,7 +99,7 @@ export class InventoryDetailComponent implements OnInit {
   ngOnInit() {
 
     if (this.router.url == '/search-detail') {
-      this.data = JSON.parse(this.cookieService.get('car_Data'));
+      this.data = JSON.parse(this.cookieService.get('car_data'));
       console.log('+++>>', this.data);
     }
 
@@ -375,6 +375,37 @@ export class InventoryDetailComponent implements OnInit {
             }
 
 
+
+          }
+        })
+      }
+    })
+
+  }
+
+  //remove for search data
+  removeAddSave(val:any,item:any){
+    console.log('++>>',val,item)
+    // console.log('remove-rsvp', val, item)
+    const dialogRef = this.dialog.open(RemoveRsvpComponent, {
+      width: '250px',
+      data: this.message
+
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // console.log(result)
+
+      if (result == 'yes') {
+        let data: any = {
+          id: val,
+          source: 'save_favorite'
+        }
+        this.apiService.deleteSingleData1(data).subscribe((res: any) => {
+          // console.log(res);
+          if (res.status == 'success') {
+            // this.search.splice(index,index+1);
+            this.snack.open('Record Removed Successfully..!', 'Ok', { duration: 2000 })
 
           }
         })
