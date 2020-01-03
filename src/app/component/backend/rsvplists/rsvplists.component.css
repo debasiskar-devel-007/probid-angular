@@ -60,7 +60,7 @@ border: 1px solid #d6d6d6;
 
 .rsvplistimgwrapper img{
     /* height: 100% !important; -o-object-fit: cover; object-fit: cover; width: 100% !important; width: auto; height: auto; */
-    height: auto !important;
+    /* height: auto !important;
     -o-object-fit: cover;
     object-fit: cover;
     width: 100% !important;
@@ -69,7 +69,13 @@ border: 1px solid #d6d6d6;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+    height: 100% !important;
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100% !important;
+    width: auto;
+    height: auto;
 }
 
 .rsvplistsbottom{
@@ -176,10 +182,11 @@ border: 1px solid #d6d6d6;
 
 .listscontent .mat-list .mat-list-item .labelcls{color:#8f979b; margin-right: 6px;}
 
-.rsvplisttypebottom .btnblue{padding: 10px 5px 5px !important; border-radius: 0 !important; background:#1cb7eb;font-family: "Helvetica-Normal";font-size: 16px; margin-top: 0px !important;margin-left: 5px;}
+.rsvplisttypebottom .btnblue{padding: 7px 5px 5px !important; border-radius: 0 !important; background:#1cb7eb;font-family: "Helvetica-Normal" !important;font-size: 14px !important; margin-top: 0px !important;margin-left: 3px;}
 .rsvplisttypebottom .btnblue.redbtn{background:#ff0000 !important;}
 .rsvplisttypebottom .btnblue.yellowbtn{background:#f99118 !important;}
 .rsvplisttypebottom .btnblue.greenbtn{background:#54aa0f !important;}
+.rsvplisttypebottom .btnblue.whitebtn{background:#a6a6a6 !important;}
 
 .colorred{display: block; background-color: #ff0000; width: 15px; height: 15px; border-radius: 100%; margin-left: 5px;}
 .coloryellow{display: block; background-color: #f99118; width: 15px; height: 15px; border-radius: 100%; margin-left: 5px;}
