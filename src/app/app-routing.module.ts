@@ -260,16 +260,7 @@ const routes: Routes = [
 },
 {
   path: 'blog-category/edit/:_id',
-  component: AddEditBlogcatComponent,
-
-  resolve: { blogCatList: ResolveService },
-  data: {
-    requestcondition: {
-      source: 'blog_category',
-      condition: {}
-    },
-    endpoint: 'datalist'
-  },
+  component: AddEditBlogcatComponent
 },
 // -----------------------------------------------
 
@@ -365,7 +356,11 @@ const routes: Routes = [
     data: { requestcondition: { source: 'services', condition: {} }, endpoint: 'datalist' ,canActivate: [AuthGuard]}
   },
 
-  { path: 'blog-management', component: BlogManagementComponent },
+  { path: 'blog-management', component: BlogManagementComponent,
+  resolve: {blogList: ResolveService },
+  data: { requestcondition: { source: 'blogs_view', condition: {} },endpoint: 'datalist',canActivate: [AuthGuard]}
+ },
+
   { path: 'commission-report', component: CommissionReportComponent },
   { path: 'inventory-list', component: InventorySearchComponent },
   { path: 'manage-availability', component: ManageAvailabilityComponent },
