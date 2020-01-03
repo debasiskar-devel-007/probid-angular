@@ -2,7 +2,7 @@
 <div class="generalmodalcls">
   <div class="modal-content">
     <div class="emailwrapper">
-      <form class="" [formGroup]="askForConfirmation"  (ngSubmit)="askForConfirmationSubmit()">
+      <form class="" [formGroup]="askForConfirmation" >
           <!-- <div class="logowrapperouter">
               <div class="logowrapper">
                   <img src="../../assets/images/logomain.png">
@@ -62,8 +62,10 @@
           </div>
           <mat-dialog-actions >
             <button class="btnredcls" mat-button mat-dialog-close="no" cdkFocusInitial>Cancel</button>
-            <button class="btnbluecls" mat-button mat-dialog-close="yes" (click)="askForConfirmationSubmit()" cdkFocusInitial>Confirm</button>
-            <button class="btnbluecls" mat-button mat-dialog-close="yes" (click)="askForConfirmationSubmit()" cdkFocusInitial>Preview</button>
+            <button class="btnbluecls" mat-button mat-dialog-close="yes" 
+            (click)="askForConfirmationSubmit()" cdkFocusInitial>Confirm</button>
+            <button class="btnbluecls" mat-button mat-dialog-close="yes" 
+            (click)="askForConfirmationSubmit()" cdkFocusInitial>Preview</button>
           </mat-dialog-actions>
       </form>      
     </div>

@@ -88,14 +88,29 @@ public userid: any;
       data:this.message
 
     });
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result:any) => {
       console.log(result);
-    });
+      // if(result == 'yes' ){
+
+      // let endpoint: any = "addorupdatedata";
+    
+      //   let data: any = {
+      //     data: result.topPart,
+      //     source: "ask_for_confirmation",
+      //   };
+      //     this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
+      //       (res.status == "success");
+      //       console.log(res)
+      //     });
+      //   } else {
+      //     console.log('No..!')
+      //   }
+
+        });
   }
 
+
   //delete rsvp record
-
-
   deleteRsvp(item:any,index:any){
     console.log('delete hit',item,index)
     const dialogRef = this.dialog.open(DeleteModalComponent, {
@@ -169,15 +184,28 @@ export class askForconfirmationModalComponent {
   public editorconfig: any = [];
 public askForConfirmation: FormGroup;
   constructor( public dialogRef: MatDialogRef<askForconfirmationModalComponent>,
-               @Inject(MAT_DIALOG_DATA) public data: DialogData, public fb:FormBuilder){
+               @Inject(MAT_DIALOG_DATA) public data: DialogData, public fb:FormBuilder, public apiService: ApiService){
                 this.editorconfig.extraAllowedContent = '*[class](*),span;ul;li;table;td;style;*[id];*(*);*{*}';
                 this.askForConfirmation = this.fb.group({
                   topPart: ['']
                 }) 
 
   }
-  askForConfirmationSubmit(){
+ public askForConfirmationSubmit(){
     console.log(this.askForConfirmation.value )
-  }
+    this.dialogRef.close(this.askForConfirmation.value);
+
+    let endpoint: any = "addorupdatedata";
+    
+    let data: any = {
+
+      data: this.askForConfirmation.value,
+      source: "ask_for_confirmation",
+    };
+      this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
+        (res.status == "success");
+        console.log(res)
+      });
+    }
 
 }
