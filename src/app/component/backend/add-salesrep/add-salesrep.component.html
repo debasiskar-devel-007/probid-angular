@@ -137,7 +137,7 @@
 
             <mat-form-field>
               <mat-label>Select Time Zone</mat-label>
-              <mat-select formControlName="timezone" (blur)="inputBlur('timezone')">
+              <mat-select formControlName="timezone" (blur)="inputUntouched('timezone')">
                   <mat-option *ngFor="let time of timezone" [value]="time.value">
                     {{time.value}}
                   </mat-option>

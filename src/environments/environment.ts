@@ -12,7 +12,7 @@ export const environment = {
   download_url : 'https://api.influxhostserver.com/download',
   inventory_url : 'https://marketcheck-prod.apigee.net/v1/search?api_key=',
   inventory__auto_completeurl : 'https://marketcheck-prod.apigee.net/v1/search/auto-complete?api_key=', 
-  inventory_url_api : 'XbXdzXVQKzczQH5xHZmgTJ0rBhigADov',
+  inventory_url_api : 'taxnzBN9vwYPwC5LZ85rPGhGIKHKQGGA',
   share_link : 'http://localhost:4200/',
   Meta_image_url : 'https://dev.probidauto.com/',
 };

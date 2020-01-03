@@ -4,6 +4,7 @@ import { ApiService } from '../../../api.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatDialogRef, MAT_DIALOG_DATA, MatDialog} from "@angular/material";
 import { CookieService } from 'ngx-cookie-service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 export interface DialogData {
@@ -35,15 +36,15 @@ public userid: any;
       if (this.cookieservice.get('user_details') != undefined && this.cookieservice.get('user_details') != null && this.cookieservice.get('user_details') != '') {
         this.userCookies = JSON.parse(this.cookieservice.get('user_details'));
         this.userid = this.userCookies._id;
-        // console.log('>>>>',this.userid)   
+        // console.log('>>>>',this.userCookies)   
         }
      }
 
   ngOnInit() {
     this.activatedRoute.data.forEach((data:any) => {
-      console.log(data)
+      // console.log(data)
       this.rsvp_list = data.rsvp.res;
-      console.log('rsvp>>',this.rsvp_list)
+      // console.log('rsvp>>',this.rsvp_list)
     })
 
     // this.getdata();
@@ -63,7 +64,7 @@ public userid: any;
       this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
         // console.log(res);
         (res.status == "success");
-        this.getdata();
+        // this.getdata();
       });
   }
   
@@ -77,10 +78,20 @@ public userid: any;
     }
     this.apiService.getDatalist(data).subscribe((res:any)=>{
       this.rsvp_list = res.res;
-      console.log('>>>>',this.rsvp_list);
+      // console.log('>>>>',this.rsvp_list);
     });
   }
 
+  openModale(){
+    const dialogRef = this.dialog.open(askForconfirmationModalComponent, {
+      width: '250px',
+      data:this.message
+
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
+  }
 
   //delete rsvp record
 
@@ -94,7 +105,7 @@ public userid: any;
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result)
+      // console.log(result)
       
         if(result=='yes'){
           let data:any;
@@ -105,7 +116,7 @@ public userid: any;
             this.apiService.CustomRequest(data,'deletesingledata').subscribe((res)=>{
               let result:any;
               result=res;
-              console.log('success',result)
+              // console.log('success',result)
               
               if(result.status=='success'){
                 this.rsvp_list.splice(index,index+1);
@@ -118,12 +129,12 @@ public userid: any;
   }
 
   loadMoreRsvp(){
-    console.log('hitt');
+    // console.log('hitt');
     this.indexval=this.indexval+2;
   }
 
   rsvpViewDetails(val:any){
-    console.log('>>>',val)
+    // console.log('>>>',val)
     
 
 
@@ -147,4 +158,26 @@ export class DeleteModalComponent {
                @Inject(MAT_DIALOG_DATA) public data: DialogData){
 
   }
+}
+
+
+@Component({
+  selector:'app-askForconfirmationModal',
+  templateUrl:'./askForconfirmationModal.html'
+})
+export class askForconfirmationModalComponent {
+  public editorconfig: any = [];
+public askForConfirmation: FormGroup;
+  constructor( public dialogRef: MatDialogRef<askForconfirmationModalComponent>,
+               @Inject(MAT_DIALOG_DATA) public data: DialogData, public fb:FormBuilder){
+                this.editorconfig.extraAllowedContent = '*[class](*),span;ul;li;table;td;style;*[id];*(*);*{*}';
+                this.askForConfirmation = this.fb.group({
+                  topPart: ['']
+                }) 
+
+  }
+  askForConfirmationSubmit(){
+    console.log(this.askForConfirmation.value )
+  }
+
 }

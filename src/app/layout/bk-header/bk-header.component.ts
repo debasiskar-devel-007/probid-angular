@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { ApiService } from '../../api.service';
 import { HttpClient } from '@angular/common/http';
-import { WINDOW } from '@ng-toolkit/universal';
+// import { WINDOW } from '@ng-toolkit/universal';
 
 @Component({
   selector: 'app-bk-header',
@@ -49,7 +49,7 @@ export class BkHeaderComponent implements OnInit {
       public dialog: MatDialog,
        public router: Router,
         public Header: HeaderComponent,
-    @Inject(WINDOW) private window: Window,
+    // @Inject(WINDOW) public window: Window,
       private ApiService: ApiService,
        private _http: HttpClient
     ) {

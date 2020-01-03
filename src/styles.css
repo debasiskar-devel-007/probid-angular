@@ -78,17 +78,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   height: auto;
 }
 
-.carousel-indicators {
-  display: block !important;
-  position: relative !important;
-  bottom: 0 !important;
-  z-index: 1;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  outline: 0;
-}
-
 
 
 .mat-card{ background:white!important;}

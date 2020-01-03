@@ -58,6 +58,7 @@
 import 'zone.js/dist/zone';  // Included with Angular CLI.
 
 
+// const Buffer = require('safer-buffer').Buffer
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */

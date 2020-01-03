@@ -120,9 +120,18 @@
 
                     <!-- Save Search DETAILS for salesrep-->
                     <span class="topinnerinforight" *ngIf="activatedRoute.snapshot.routeConfig.path != 'rsvp-detail/:id'" >
-                      <h1 class="btnrsvp" *ngIf="user_details.type == 'customer' || user_details.type == 'salesrep'"
+                      <h1 class="btnrsvp" *ngIf="user_details.type == 'customer' || user_details.type == 'salesrep' "
                         (click)="addRsvp(itemVal,data)">RSVP</h1>
-                      <mat-button class="btnredcls" (click)="removeRsvp(itemVal,data)">Remove</mat-button>
+
+                        <!-- <span > -->
+                      <mat-button class="btnredcls" (click)="removeRsvp(itemVal,data)" 
+                      *ngIf="addedCar != '' && addedCar !=null"  >Remove</mat-button>
+
+                      <mat-button class="btngreencls" (click)="addCar(itemVal,data)" 
+                        *ngIf="addedCar == ''"    >Add</mat-button>
+                    <!-- </span> -->
+                    
+
                       <mat-form-field class="select-customer" *ngIf="user_details.type == 'salesrep'">
                         <mat-label>Select Customer</mat-label>
                         <mat-select [(ngModel)]="customer_id">
@@ -462,7 +471,7 @@
           </mat-card-content>
 
 
-          <mat-card-content class="adm_dashboard_block2 inventorydetailsimilarv">
+          <mat-card-content class="adm_dashboard_block2 inventorydetailsimilarv" *ngIf="router.url != '/search-detail'">
             <mat-card-title class="sectionheader">Similar Vehicles</mat-card-title>
             <mat-list role="list" class="flexbox4columnsv">
 

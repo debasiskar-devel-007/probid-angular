@@ -114,6 +114,7 @@ import { LisitngTestemailappComponent } from './component/backend/newsletterlist
 import { ListingSenderappComponent } from './component/backend/newsletterlists/listing-senderapp/listing-senderapp.component';
 import { ListingSubscriptionComponent } from './component/backend/newsletterlists/listing-subscription/listing-subscription.component';
 import { ListingSubcategoryComponent } from './component/backend/newsletterlists/listing-subcategory/listing-subcategory.component';
+import { AskForConfirmationComponent } from './component/backend/ask-for-confirmation/ask-for-confirmation.component';
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -123,6 +124,7 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
   { path: 'login/:id', component: LoginComponent },
+  { path: 'tests', component: AskForConfirmationComponent },
 
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
@@ -132,6 +134,7 @@ const routes: Routes = [
   { path: 'customer-signup', component: CustomerSignupComponent },
 
   { path: 'customer-signup/:id', component: CustomerSignupComponent },
+  { path: 'customer-signup/:img/:id', component: CustomerSignupComponent },
   { path: 'home', component: HomeComponent },
   { path: 'contactus', component: ContactusComponent },
   {
@@ -230,6 +233,8 @@ const routes: Routes = [
   data: { requestcondition: { source: 'send_rsvp_view', condition: {_id_object:'id'} },
    endpoint: 'datalist' }
   },
+
+  {path:'search-detail',component:InventoryDetailComponent},
 
 // ___________________BLOG MANAGEMENT_________________
 // =======================================================
