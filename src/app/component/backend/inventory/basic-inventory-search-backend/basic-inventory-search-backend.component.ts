@@ -152,9 +152,10 @@ export class BasicInventorySearchBackendComponent implements OnInit {
 
   ngOnInit() {
 
-    // console.log("<>>",this.cookieService.get('car_Data'))
+    // console.log("<>>",JSON.parse(this.cookieService.get('car_data')))
+    // this.cookieService.delete('car_data')
     // if (this.cookieService.get('car_Data') != null || this.cookieService.get('car_Data') != '' ) {
-    //   this.cookieService.delete('car_Data');
+      this.cookieService.delete('car_Data');
     //   console.log("<>>",this.cookieService.get('car_Data'))
      
     // } 
@@ -484,22 +485,19 @@ export class BasicInventorySearchBackendComponent implements OnInit {
 
   viewDetails(val:any) {
    
-    console.log(val)
     let cardata:string;
-    console.log(cardata)
 
     cardata=JSON.stringify(val);
-    console.log(cardata)
+    // console.log(cardata)
 
     if(this.cookieService.get('car_data') !='' || this.cookieService.get('car_data') !=null ){
 
-      this.car_data= this.cookieService.set('car_data',cardata);
-
-  
-      console.log('<<<>>>', JSON.parse(this.cookieService.get('car_data')))
+        this.cookieService.set('car_data',JSON.stringify(val));
       setTimeout(() => {
-        // this.router.navigateByUrl('/search-detail');
+        this.router.navigateByUrl('/search-detail');
       }, 1500);
+    } else {
+      this.cookieService.set('car_data',JSON.stringify(val));
     }
 
 
