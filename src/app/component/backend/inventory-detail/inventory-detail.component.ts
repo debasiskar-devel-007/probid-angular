@@ -5,6 +5,8 @@ import { BasicInventorySearchBackendComponent } from '../inventory/basic-invento
 import { CookieService } from 'ngx-cookie-service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import { Observable, Subject, Subscription } from 'rxjs';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 export interface DialogData {
@@ -80,8 +82,7 @@ export class InventoryDetailComponent implements OnInit {
   public errorMsg: any = 'Please Choose customer';
   public carData: any;
   public addedCar: any = '';
-  constructor(public activatedRoute: ActivatedRoute, public apiService: ApiService, public observableData: BasicInventorySearchBackendComponent, public cookieService: CookieService, public snack: MatSnackBar, public dialog: MatDialog, public router: Router) {
-
+  constructor(public activatedRoute: ActivatedRoute, public apiService: ApiService, public catItemByObservable: BasicInventorySearchBackendComponent, public cookieService: CookieService, public snack: MatSnackBar, public dialog: MatDialog, public router: Router) {
 
 
     if (this.cookieService.get('user_details') != undefined && this.cookieService.get('user_details') != null && this.cookieService.get('user_details') != '') {
@@ -90,11 +91,20 @@ export class InventoryDetailComponent implements OnInit {
       // console.log(this.user_id);
       // console.log('type>>', this.user_details.type)
 
-
     }
   }
 
   ngOnInit() {
+
+    if(this.router.url == '/search-detail' ){
+      console.log('hello')
+
+      this.catItemByObservable.viewDetails('item').subscribe((res:any)=>{
+        console.log('>>>>>??',res);
+        this.data=res;
+      })
+
+    }
 
     //   //for save search & rsvp
     if (this.router.url != '/search-detail') {

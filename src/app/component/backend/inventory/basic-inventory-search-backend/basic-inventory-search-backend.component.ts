@@ -7,12 +7,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Observable, Subject, Subscription,Subscriber } from 'rxjs';
 
 export interface DialogData {
   errorMsg: string;
 }
-
-
 
 @Component({
   selector: 'app-basic-inventory-search-backend',
@@ -103,9 +102,8 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   public indexForCustomer: number;
   public spinnerval: any = 0;
   public car_data: any;
-  // public cardata:string='';
-
-
+ 
+  // public carItem=new Subject<any>();
 
   constructor(
     public fb: FormBuilder,
@@ -457,50 +455,70 @@ export class BasicInventorySearchBackendComponent implements OnInit {
     this.indexCountForImg = j;
   }
 
+
   loadMoreSearchResult() {
     this.indexval = this.indexval + 2;
 
   }
 
   // for observeable
-  // dataObserve(item:any){
-  //   console.log('data_item >>',item)
+  public viewDetails(item:any):any {
+    console.log('data_item >>',item)
 
-  //   const observeable=new Observable(item)
-  //   console.log('$$>>>>>',observeable)
+    var carData=item;
+
+    console.log('carData >>',carData)
+
+    // let observable=new Observable(item)
+    // console.log('$$>>>>>',observable)
+
+    //   setTimeout(() => {
+    //     // observer.next(item);
+    //     // this.router.navigateByUrl('/search-detail')
+    //   }, 2000);
 
 
-  //     setTimeout(() => {
-  //       // observer.next(item);
-  //       this.router.navigateByUrl('/inventory-detail')
-  //     }, 2000);
+    // // console.log('$$>>>>>',observeable)
+    // // return observeable;
 
+   
+      const carItem = new Observable(observer => {
+             setTimeout(() => {
+                 observer.next(carData);
+                 
+             }, 1000);
+            
+      });
+      
+      setTimeout(() => {
+        // this.router.navigateByUrl('/search-detail')
+      }, 500);
+ 
+      return carItem;
+  
 
-  //   // console.log('$$>>>>>',observeable)
-  //   return observeable;
-
-  // }
+  }
 
   //view data for search list
 
-  viewDetails(val:any) {
-   
-    let cardata:string;
+  // viewDetails(val:any) {
 
-    cardata=JSON.stringify(val);
-    // console.log(cardata)
+    // let cardata:string;
 
-    if(this.cookieService.get('car_data') !='' || this.cookieService.get('car_data') !=null ){
+    // cardata=JSON.stringify(val);
+    // // console.log(cardata)
 
-        this.cookieService.set('car_data',JSON.stringify(val));
-      setTimeout(() => {
-        this.router.navigateByUrl('/search-detail');
-      }, 1500);
-    } else {
-      this.cookieService.set('car_data',JSON.stringify(val));
-    }
+    // if(this.cookieService.get('car_data') !='' || this.cookieService.get('car_data') !=null ){
+
+    //     this.cookieService.set('car_data',JSON.stringify(val));
+    //   setTimeout(() => {
+    //     this.router.navigateByUrl('/search-detail');
+    //   }, 1500);
+    // } else {
+    //   this.cookieService.set('car_data',JSON.stringify(val));
+    // }
 
 
-  }
+  // }
 
 }

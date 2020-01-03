@@ -82,29 +82,40 @@ public userid: any;
     });
   }
 
-  openModale(){
+  openModale(data:any){
+    console.log(data)
     const dialogRef = this.dialog.open(askForconfirmationModalComponent, {
       width: '250px',
-      data:this.message
+      data:data
 
     });
     dialogRef.afterClosed().subscribe((result:any) => {
       console.log(result);
-      // if(result == 'yes' ){
 
-      // let endpoint: any = "addorupdatedata";
+      let carData:any={
+        vehicle:data.heading,
+        salesrep:data.added_by_fullname,
+        customer:data.added_for_fullname,
+        salesrep_email:data.added_by_email,
+        customer_email:data.added_for_email,
+        topPart:'hello'
+      }
+
+      if(result == 'yes' ){
+
+      let endpoint: any = "addorupdatedata";
     
-      //   let data: any = {
-      //     data: result.topPart,
-      //     source: "ask_for_confirmation",
-      //   };
-      //     this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
-      //       (res.status == "success");
-      //       console.log(res)
-      //     });
-      //   } else {
-      //     console.log('No..!')
-      //   }
+        let data: any = {
+          data: carData,
+          source: "ask_for_confirmation",
+        };
+          this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
+            (res.status == "success");
+            console.log(res)
+          });
+        } else {
+          console.log('No..!')
+        }
 
         });
   }
@@ -152,7 +163,6 @@ public userid: any;
     // console.log('>>>',val)
     
 
-
   }
 
   rsvpDetail(val:any){
@@ -182,30 +192,43 @@ export class DeleteModalComponent {
 })
 export class askForconfirmationModalComponent {
   public editorconfig: any = [];
-public askForConfirmation: FormGroup;
+// public askForConfirmation: FormGroup;
   constructor( public dialogRef: MatDialogRef<askForconfirmationModalComponent>,
                @Inject(MAT_DIALOG_DATA) public data: DialogData, public fb:FormBuilder, public apiService: ApiService){
+
+                 console.log('@@>>',data)
+                 
                 this.editorconfig.extraAllowedContent = '*[class](*),span;ul;li;table;td;style;*[id];*(*);*{*}';
-                this.askForConfirmation = this.fb.group({
-                  topPart: ['']
-                }) 
+                // this.askForConfirmation = this.fb.group({
+                //   topPart: [''],
+                  
+                // }) 
 
   }
- public askForConfirmationSubmit(){
-    console.log(this.askForConfirmation.value )
-    this.dialogRef.close(this.askForConfirmation.value);
 
-    let endpoint: any = "addorupdatedata";
+
+//  public askForConfirmationSubmit(){
+//     console.log(this.askForConfirmation.value )
+//     this.dialogRef.close(this.askForConfirmation.value);
+
+//     let endpoint: any = "addorupdatedata";
+
+//     let carData:any={
+
+//       // vehicle:
+
+//     }
+
     
-    let data: any = {
-
-      data: this.askForConfirmation.value,
-      source: "ask_for_confirmation",
-    };
-      this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
-        (res.status == "success");
-        console.log(res)
-      });
-    }
+//     let data: any = {
+//       // item :carData,
+//       data: this.askForConfirmation.value,
+//       source: "ask_for_confirmation",
+//     };
+//       this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
+//         (res.status == "success");
+//         console.log(res)
+//       });
+//     }
 
 }

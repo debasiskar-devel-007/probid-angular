@@ -2,7 +2,7 @@
 <div class="generalmodalcls">
   <div class="modal-content">
     <div class="emailwrapper">
-      <form class="" [formGroup]="askForConfirmation" >
+      <form class="" >
           <!-- <div class="logowrapperouter">
               <div class="logowrapper">
                   <img src="../../assets/images/logomain.png">
@@ -16,15 +16,15 @@
             <div style="width: auto; background: #222222; padding: 15px;">
               <img src="https://www.probidautomotive.com/wp-content/themes/probidnewtheme/images/logo.png" style="display: block; margin: 15px auto;">
                 <h1 style="border-top: solid 1px #4c4c4c; margin: 30px 0 0 0; padding: 30px 0 15px 0; text-align: center; font-family: Arial; font-size: 22px;   color: #fafbf7;"> Vehicle Details for Accepted RSVP For 
-                  <span style="color: #f04d24;">[Vehicle Name]</span> Sent By Sales Rep 
-                  <span style="color: #f04d24;">[Sales Rep Name]</span>
+                  <span style="color: #f04d24;">{{data.heading}}</span> Sent By Sales Rep 
+                  <span style="color: #f04d24;">{{data.added_by_fullname}}</span>
                 </h1>
               </div>
               <div style="width: auto; background: #fafbf7; padding: 15px;">
                 <div style="border: solid 1px #ccceca; padding:15px 15px; font-family: Arial; font-size: 16px; color: #222; line-height: 24px;">
                   <div style="display: block; margin-bottom: 25px;">Hey 
-                    <span style="color: #f04d24;">[Customer Name]</span> / 
-                    <span style="color: #f04d24;">[Sales Rep Name]</span>,
+                    <span style="color: #f04d24;">{{data.added_for_fullname}}</span> / 
+                    <span style="color: #f04d24;">{{data.added_by_fullname}}</span>,
                     <br/>
                     <br/>
                 We have received an RSVP from you for the following vehicle:
@@ -34,9 +34,9 @@
           
           
                         The RSVP for the 
-                    <strong style="color: #f04d24; display: inline-block;">[Vehicle Name]</strong>, sent by Sales Rep 
-                    <strong style="color: #f04d24; display: inline-block;">[Sales Rep Name]</strong> for 
-                    <strong style="color: #f04d24; display: inline-block;">[Customer Name]</strong> has been accepted. Based on desired specifications, we have located the vehicle detailed below.
+                    <strong style="color: #f04d24; display: inline-block;">{{data.heading}}</strong>, sent by Sales Rep 
+                    <strong style="color: #f04d24; display: inline-block;">{{data.added_by_fullname}}</strong> for 
+                    <strong style="color: #f04d24; display: inline-block;">{{data.added_for_fullname}}</strong> has been accepted. Based on desired specifications, we have located the vehicle detailed below.
                     <br/>
                     <br/>
                     <strong style="color: #ff0167; font-size: 22px;">Thank You.</strong>
@@ -57,15 +57,16 @@
             
            
             <mat-card-content class="">
-              <ck-editor formControlName="topPart" [config]="editorconfig"></ck-editor>
+              <ck-editor [(ngModel)]="topPart" name="topPart" [config]="editorconfig"></ck-editor>
             </mat-card-content>
           </div>
           <mat-dialog-actions >
             <button class="btnredcls" mat-button mat-dialog-close="no" cdkFocusInitial>Cancel</button>
             <button class="btnbluecls" mat-button mat-dialog-close="yes" 
-            (click)="askForConfirmationSubmit()" cdkFocusInitial>Confirm</button>
-            <button class="btnbluecls" mat-button mat-dialog-close="yes" 
-            (click)="askForConfirmationSubmit()" cdkFocusInitial>Preview</button>
+            
+            cdkFocusInitial>Confirm</button>
+            <!-- <button class="btnbluecls" mat-button [mat-dialog-close]="data.topPart" 
+             cdkFocusInitial>Preview</button> -->
           </mat-dialog-actions>
       </form>      
     </div>

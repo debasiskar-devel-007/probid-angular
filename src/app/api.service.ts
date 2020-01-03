@@ -24,8 +24,8 @@ export class ApiService {
 
   public fileimgsslurl: any;
 
-
-
+ 
+ 
   public lengthis;
   public percentageis;
   public inprogress;
@@ -239,6 +239,7 @@ postDatawithoutToken(endpoint:any, data:any) {
   var result = this._http.post(this.serverUrlDemo+endpoint, JSON.stringify(data), httpOptions).pipe(map(res => res));
   return result;
 }
+
 
 
   addData(requestdata: any) {
@@ -513,6 +514,8 @@ postdata(requestdata: any) {
     var result = this._http.post(this.serverUrlDemo + 'deletesingledata', JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
     return result;
   }
+
+
 
  
 
