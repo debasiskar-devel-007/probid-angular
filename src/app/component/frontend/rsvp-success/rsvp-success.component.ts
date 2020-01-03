@@ -16,21 +16,21 @@ export class RsvpSuccessComponent implements OnInit {
 
   public getDataUrl: any = {
     endpoint: 'datalist',
-    source: 'contactusForm'
+    source: ''
   };
   public datalist: any = '';
 
   constructor(private readonly meta: MetaService, public ApiService: ApiService, public cookieService: CookieService, public activatedRoute: ActivatedRoute, public apiService: ApiService, public http: HttpClient, public dialog: MatDialog, public snack: MatSnackBar, public router: Router) {
 
-    this.meta.setTitle('ProBid Auto - Who We Are');
+    this.meta.setTitle('ProBid Auto - RSVP Success');
     this.meta.setTag('og:description', 'Revolutionizing the Online Auto Industry, ProBid Auto has re-invented the art of Buying and Selling Pre-Owned Vehicles Online, making it easier and more convenient for buyers to get the cars of their choices.');
     this.meta.setTag('twitter:description', 'Revolutionizing the Online Auto Industry, ProBid Auto has re-invented the art of Buying and Selling Pre-Owned Vehicles Online, making it easier and more convenient for buyers to get the cars of their choices.');
 
     this.meta.setTag('og:keyword', 'ProBid Auto, Buying Pre-Owned Vehicles Online, Selling Pre-Owned Vehicles Online');
     this.meta.setTag('twitter:keyword', 'ProBid Auto, Buying Pre-Owned Vehicles Online, Selling Pre-Owned Vehicles Online');
 
-    this.meta.setTag('og:title', 'ProBid Auto - Who We Are');
-    this.meta.setTag('twitter:title', 'ProBid Auto - Who We Are');
+    this.meta.setTag('og:title', 'ProBid Auto - RSVP Success');
+    this.meta.setTag('twitter:title', 'ProBid Auto - RSVP Success');
     this.meta.setTag('og:type', 'website');
     this.meta.setTag('og:image', '../../assets/images/logomain.png');
     this.meta.setTag('twitter:image', '../../assets/images/logomain.png');
