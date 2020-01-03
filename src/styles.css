@@ -769,6 +769,33 @@ padding: 10px 15px 5px;border-radius: 0 !important;background-color: #12c3e4;}
 
 
 
+.myaccount .mat-tab-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.myaccount .mat-tab-labels {
+  display: flex;
+  flex-direction: column;
+}
+
+.myaccount .mat-ink-bar {
+  position: absolute;
+  right: 0 !important;
+  height: 100%;
+  transition: .5s cubic-bezier(.35,0,.25,1);
+  top: 0;
+  width: 1px !important;
+}
+
+.myaccount .mat-ink-bar[style]{  
+  right: 0 !important;
+}
+
+.myaccount .mat-tab-body-wrapper {
+  width: 100%;
+}
+
 @media(max-width:600px) {
   .success-modal{
     min-width: 450px;

@@ -8,6 +8,7 @@ import { ApiService } from '../../../api.service';
   styleUrls: ['./my-account.component.css']
 })
 export class MyAccountComponent implements OnInit {
+  public index: number;
   public UpdateForm: FormGroup;
   public state_usss: any = [
     {
