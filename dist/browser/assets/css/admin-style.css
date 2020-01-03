@@ -39,16 +39,16 @@ admin-add-categories .mat-form-field-appearance-legacy .mat-form-field-infix {
   justify-content: space-between;
 }
 
-.admcls .mat-card{padding:0!important;border-radius:0!important;box-shadow:none}
-.admcls .header{position:fixed;width:100%;height:63px;box-shadow:0 1px 15px rgba(0,0,0,0.04),0 1px 6px rgba(0,0,0,0.04);display:flex;align-items:stretch;flex-wrap:wrap;justify-content:space-between;background:#fafafa;z-index:100}
+.admcls .mat-card{padding:0!important;border-radius:0!important;box-shadow: none}
+.admcls .header{position:fixed;width:100%;height:63px;box-shadow: 0px 1px 4px 0px rgba(168,168,168,0.5);display:flex;align-items:stretch;flex-wrap:wrap;justify-content:space-between;background:#fafafa;z-index:100}
 .admcls .header .toolbar-row{padding:0!important; overflow: hidden;}
 .admcls .header .toolbar-row .logo{width:234px;background:#222;padding: 22px;display:flex;align-items:center}
 .admcls .header .toolbar-row .logo img{max-width:100%}
-.admcls .leftSidenav{position:fixed;top:63px!important;height:calc(100vh - 80px);background:url(../images/leftbody_bg.jpg) repeat center center;box-shadow:0 4px 20px 1px rgba(0,0,0,0.06),0 1px 4px rgba(0,0,0,0.08);left:0!important;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;-o-transition:all 1s ease;-ms-transition:all 1s ease;transition:all 1s ease;overflow-y:scroll;height:100%}
+.admcls .leftSidenav{position:fixed;top:63px!important;height:calc(100vh - 80px);background:url(../images/leftbody_bg.jpg) repeat center center;box-shadow: 0px 1px 4px 0px rgba(168,168,168,0.5);left:0!important;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;-o-transition:all 1s ease;-ms-transition:all 1s ease;transition:all 1s ease;overflow-y:scroll;height:100%}
 .admcls .leftSidenav.open{left:0}
 .admcls .leftSidenav{left:calc(-120px - 20px);z-index:90;transition:all .24s ease-in-out}
 .admcls .sidebar-left-secondary.open{left:0}
-.admcls .sidebar-left-secondary{left:calc(-220px - 20px);z-index:89;width:220px;padding:.75rem 0;background:#fff;position:fixed;top:63px!important;height:calc(100vh - 80px);background:#f3f3f3;left:75px;box-shadow:0 4px 20px 1px rgba(0,0,0,0.06),0 1px 4px rgba(0,0,0,0.08)}
+.admcls .sidebar-left-secondary{left:calc(-220px - 20px);z-index:89;width:220px;padding:.75rem 0;background:#fff;position:fixed;top:63px!important;height:calc(100vh - 80px);background:#f3f3f3;left:75px;box-shadow: 0px 1px 4px 0px rgba(168,168,168,0.5);}
 .admcls .leftSidenav.open{left:0;-webkit-transition:all 1s ease;-moz-transition:all 1s ease;-o-transition:all 1s ease;-ms-transition:all 1s ease;transition:all 1s ease}
 .admcls .leftSidenav .logo{display:none}
 .admcls .leftSidenav .navigation-left{list-style:none;text-align:center;width:75px;height:100%;margin:0;padding:0}
@@ -83,7 +83,7 @@ admin-add-categories .mat-form-field-appearance-legacy .mat-form-field-infix {
 .admcls .leftSidenav-secondary li.nav-item>div>.childNav{max-height:0;overflow:hidden;background:#fff;transition:all .4s ease-in-out}
 .admcls .leftSidenav-secondary li.nav-item>div>.childNav li.nav-item a{padding:12px 12px 12px 50px}
 
-.admcls .header .toolbar-row .topmenuicon{width:36px;background:#f9f9f9;padding:22px 8px;display:flex;align-items:center;box-shadow:7px 0 24px -11px rgba(50,50,50,0.44);flex-wrap:wrap;justify-content:center}
+.admcls .header .toolbar-row .topmenuicon{width:36px;background:#f9f9f9;padding:22px 8px;display:flex;align-items:center;box-shadow: 0px 1px 4px 0px rgba(168,168,168,0.5);flex-wrap:wrap;justify-content:center}
 .admcls .header .toolbar-row .topmenuicon.active .leftSidenav{left:0}
 .admcls .header .toolbar-row .topmenuicon div{width:100%;height:1px;background:#47404f;margin:3px 0}
 .admcls .header .header-part-right{display:flex;align-items:center}
@@ -109,20 +109,20 @@ admin-add-categories .mat-form-field-appearance-legacy .mat-form-field-infix {
 .topmenulist .navigation-left a{color:#46464d;font-family:'Helvetica-Regular';font-size:14px;text-transform:capitalize;padding:0px 10px;}
 .topmenulist .navigation-left a:hover{background:#12c3e3;padding:0px 10px;color:#fff}
 
-.dashboard_block1{border:none!important;background:#fff url(../images/ami_amin_block1bg1.jpg) no-repeat right top!important;margin:0!important;outline:none!important;box-shadow:none!important;padding:48px!important}
-.dashboard_block1 mat-card-content{border:none!important;outline:none!important;box-shadow:none!important;width:890px;height:460px;display:table-cell;vertical-align:middle}
+.dashboard_block1{border:none!important;background:#fff url(../images/ami_amin_block1bg1.jpg) no-repeat right top!important;margin:0!important;outline:none!important;box-shadow: none!important;padding:48px!important}
+.dashboard_block1 mat-card-content{border:none!important;outline:none!important;box-shadow: none!important;width:890px;height:460px;display:table-cell;vertical-align:middle}
 .dashboard_block1 mat-card-content h3{font-size:30px;color:#f15b46;margin:0;padding:15px 0}
 .dashboard_block1 mat-card-content p{margin:0;padding:0;font-size:15px;color:#222;line-height:24px}
-.dashboard_block1 mat-card-content button{background:#38cde8;width:138px;height:46px;display:block;margin:25px 0 0;box-shadow:none;border:none;border-radius:5px;font-size:15px;color:#fff}
+.dashboard_block1 mat-card-content button{background:#38cde8;width:138px;height:46px;display:block;margin:25px 0 0;box-shadow: none!important;border:none;border-radius:5px;font-size:15px;color:#fff}
 
-.dashboard_block2{border: none!important; background:#fff url("../images/ami_amin_blockbg1.png") no-repeat right center!important; margin: 0!important; outline: none!important; box-shadow:none!important; padding: 0px!important; }
-.dashboard_block2 mat-card-content{ border: none!important; outline: none!important; box-shadow:none!important; background: url("../images/ami_amin_blockcon2.png") no-repeat left top!important; min-height: 480px; padding: 48px!important; padding-top: 0px!important;}
+.dashboard_block2{border: none!important; background:#fff url("../images/ami_amin_blockbg1.png") no-repeat right center!important; margin: 0!important; outline: none!important; box-shadow: none!important; padding: 0px!important; }
+.dashboard_block2 mat-card-content{ border: none!important; outline: none!important; box-shadow: none!important; background: url("../images/ami_amin_blockcon2.png") no-repeat left top!important; min-height: 480px; padding: 48px!important; padding-top: 0px!important;}
 .dashboard_block2 mat-card-content h2{ font-size: 40px; color: #343c5c; margin: 0; padding: 0;}
 .dashboard_block2 mat-card-content h2:after{ content: ''; display: block; width: 360px; height: 2px; background: #12c3e3;}
-.dashboard_block2 mat-card-subtitle{ border: none!important; outline: none!important; box-shadow:none!important; margin: 0px!important; padding: 0px!important; padding-left: 890px!important; padding-top: 20px!important;}
-.dashboard_block2_img{ background: #d4d4d4; width: 280px; height: 280px; padding: 18px; display: block; box-shadow: 0 0 5px #ccc; float: left;}
-.dashboard_block2_img img{ width: 100%; border: solid 1px #fff; box-shadow: 0 0 5px #ccc;}
-.dashboard_block2_text{ display: block; width: 540px; height: 280px; padding: 18px; background: #d4d4d4; box-shadow: 0 0 5px #ccc; float: right;}
+.dashboard_block2 mat-card-subtitle{ border: none!important; outline: none!important; box-shadow: none!important; margin: 0px!important; padding: 0px!important; padding-left: 890px!important; padding-top: 20px!important;}
+.dashboard_block2_img{ background: #d4d4d4; width: 280px; height: 280px; padding: 18px; display: block; box-shadow: 0px 1px 4px 0px rgba(168,168,168,0.5);float: left;}
+.dashboard_block2_img img{ width: 100%; border: solid 1px #fff; box-shadow: 0px 1px 4px 0px rgba(168,168,168,0.5);}
+.dashboard_block2_text{ display: block; width: 540px; height: 280px; padding: 18px; background: #d4d4d4; box-shadow: 0px 1px 4px 0px rgba(168,168,168,0.5); float: right;}
 .dashboard_block2_text ul{ margin: 0; padding: 0px;}
 .dashboard_block2_text ul li{ list-style: none; display: table; height: 60px; margin-top: 14px; background: #bdc3c6; width: 100%;}
 .dashboard_block2_text ul li:nth-of-type(1){ margin-top: 0px;}
@@ -132,8 +132,8 @@ admin-add-categories .mat-form-field-appearance-legacy .mat-form-field-infix {
 .dashboard_block2_text ul li label:nth-of-type(1) span{ color: #495158; font-weight: normal;}
 .dashboard_block2_text ul li label:nth-of-type(2) span{ padding-left: 50px;}
 
-.dashboard_block3{border: none!important; background: url("../images/ami_amin_blockbg2.png") no-repeat left center!important; margin: 0!important; outline: none!important; box-shadow:none!important; padding: 48px!important; padding-top: 0px!important; margin-top: -60px!important;}
-.dashboard_block3 h2{ font-size: 40px; color: #343c5c; margin: 0; padding: 0; display: inline-block; float: left;}
+.dashboard_block3{border: none!important; background: url("../images/ami_amin_blockbg2.png") no-repeat left center!important; margin: 0!important; outline: none!important; box-shadow: none!important; padding: 48px!important; padding-top: 0px!important; margin-top: -60px!important;}
+.dashboard_block3 h2{ font-size: 40px; color: #343c5c; margin: 0; padding: 0; display: inline-block;}
 .dashboard_block3 h2:after{ content: ''; display: block; width: 130px; height: 2px; background: #12c3e3;}
 .dashboard_block3 .viewlalalbtn3{ background: #38cde8; width: 138px; height: 46px; display: block; margin: 0; box-shadow: none; border: none; border-radius: 5px; font-size: 15px; color: #ffffff; float: right;}
 .dashboard_block3 mat-card-subtitle{ width: 23.25%; float: left; margin: 20px 1% 0 0; background: #bdc3c6; padding: 0.5%!important; }
@@ -153,8 +153,8 @@ background: -ms-linear-gradient(left, rgba(50,57,63,1) 0%, rgba(76,84,90,1) 100%
 background: linear-gradient(to right, rgba(50,57,63,1) 0%, rgba(76,84,90,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32393f', endColorstr='#4c545a', GradientType=1 ); border-radius: 4px; text-align: center; line-height: 40px; text-align: center; border: none; font-size: 15px; color: #fff; padding: 0 30px;}
 
-.dashboard_block4{border: none!important; background: url("../images/ami_amin_blockbg1.png") no-repeat right center!important; margin: 0!important; outline: none!important; box-shadow:none!important; padding: 48px!important; padding-top: 0px!important; }
-.dashboard_block4 h2{ font-size: 40px; color: #343c5c; margin: 0; padding: 0; display: inline-block; float: left;}
+.dashboard_block4{border: none!important; background: url("../images/ami_amin_blockbg1.png") no-repeat right center!important; margin: 0!important; outline: none!important; box-shadow: none!important; padding: 48px!important; padding-top: 0px!important; }
+.dashboard_block4 h2{ font-size: 40px; color: #343c5c; margin: 0; padding: 0; display: inline-block;}
 .dashboard_block4 h2:after{ content: ''; display: block; width: 200px; height: 2px; background: #12c3e3;}
 .dashboard_block4 mat-card-subtitle .block3span3{display: block; float: none; margin-top:8px;}
 
@@ -352,6 +352,8 @@ app-bk-leftdiv{position: relative; z-index: 999; display: none;}
 
   
     .adm_inner_banner.adminbannerdashnboard {background: url("../images/admin-dashboard-banner-img.jpg") no-repeat center center !important; background-size: cover !important; padding: 100px 50px !important;}
+    
+    .adm_inner_banner.salesrepadmin {background: url("../images/salesrep-dashboard-banner-img.jpg") no-repeat center center !important; background-size: cover !important; padding: 50px 50px !important;}
 
 
     .bred_cram_wrapper{ background: #DDE2E5; display: flex!important;  padding: 8px; align-items: stretch; }

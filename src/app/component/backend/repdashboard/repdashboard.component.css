@@ -654,7 +654,7 @@
   width: calc(1/1*100% - (1 - 1/1)*10px);
   margin-top: 10px;
   padding: 0px 8px 8px;
-  box-shadow: -5px 3px 18px 0px rgba(168,168,168,1);
+  box-shadow: 0px 1px 4px 0px rgba(168,168,168,0.5);
   background-color: #fff;
   text-align: center;
 }
@@ -728,7 +728,7 @@
   padding: 20px !important;
   border-top: 5px solid #393f45;
   margin-top: 10px;
-  box-shadow: -5px 3px 18px 0px rgba(168,168,168,1);
+  box-shadow: 0px 1px 4px 0px rgba(168,168,168,0.5);
   background-color: #fff;
 }
 
@@ -772,7 +772,7 @@
   margin-bottom: 5px;
   padding: 2px;
   background: #dfe5e9;
-  box-shadow: -5px 3px 18px 0px rgba(168,168,168,1);
+  box-shadow: 0px 1px 4px 0px rgba(168,168,168,0.5);
 }
 
 .rep-dashboard-block4 .flexbox4column .topblock .rsvplistimgwrapper {
@@ -1185,7 +1185,7 @@
   margin-bottom: 5px;
   padding: 10px;
   background: #fff;
-  box-shadow: -5px 3px 18px 0px rgba(168,168,168,1);
+  box-shadow: 0px 1px 4px 0px rgba(168,168,168,0.5);
 }
 
 .rep-dashboard-block6 .topblock .rsvplistimgwrapper{

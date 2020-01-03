@@ -60,6 +60,8 @@ import { CustomerSignupComponent, customerSignUpsuccessDialog } from './componen
 
 import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
 
+import { RsvpSuccessComponent } from './component/frontend/rsvp-success/rsvp-success.component';
+
 import { InventoryDetailComponent, RemoveRsvpComponent } from './component/backend/inventory-detail/inventory-detail.component';
 
 /**End Frontend Component**/
@@ -143,7 +145,7 @@ import { SocialAdvoComponent } from './component/backend/social-advo/social-advo
 import { BookAnAppointmentComponent } from './component/backend/book-an-appointment/book-an-appointment.component';
 import { AdvanceInventorySearchBackendComponent } from './component/backend/inventory/advance-inventory-search-backend/advance-inventory-search-backend.component';
 import { BasicInventorySearchBackendComponent } from './component/backend/inventory/basic-inventory-search-backend/basic-inventory-search-backend.component';
-import { MysalesrepComponent } from './component/backend/mysalesrep/mysalesrep.component';
+import { MysalesrepComponent, RemoveSalesRepRSvpModalComponent } from './component/backend/mysalesrep/mysalesrep.component';
 import { CommunicationComponent } from './component/backend/communication/communication.component';
 import { AddAdminCategoriesComponent } from './component/backend/add-admin-categories/add-admin-categories.component';
 import { AdminManageCategoriesComponent, DialogModalOpenDialog } from './component/backend/admin-manage-categories/admin-manage-categories.component';
@@ -186,12 +188,14 @@ import { ListingSubscriptionComponent } from './component/backend/newsletterlist
 import { ListingSubcategoryComponent } from './component/backend/newsletterlists/listing-subcategory/listing-subcategory.component';
 import { AskForConfirmationComponent } from './component/backend/ask-for-confirmation/ask-for-confirmation.component';
 
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 //****** for video Modal*********//
 
 @NgModule({
   declarations: [
     BloglistfrontendComponent,
+    RsvpSuccessComponent,
     // BloglistComponent,
     // AddComponent,
     // AddeditBlogmanagementComponent,
@@ -310,10 +314,13 @@ import { AskForConfirmationComponent } from './component/backend/ask-for-confirm
     // errorDialogbackend,
     RemoveRSvpModalComponent,
     salesSignUpModalComponent,
+    RemoveSalesRepRSvpModalComponent,
     askForconfirmationModalComponent,
-    AskForConfirmationComponent
+    AskForConfirmationComponent,
   ],
   imports: [
+    HttpClientModule,
+    AngularSvgIconModule,
     FacebookModule.forRoot(),
     // NewsTitleModule,
     // TrainingModule,
@@ -328,7 +335,6 @@ import { AskForConfirmationComponent } from './component/backend/ask-for-confirm
     DemoMaterialModule,
     CommonModule,
     TransferHttpCacheModule,
-    HttpClientModule,
     NgtUniversalModule,
     LoginModule,
     // TestimonialModule,
@@ -353,8 +359,9 @@ import { AskForConfirmationComponent } from './component/backend/ask-for-confirm
   providers: [CookieService, AuthGuard, ApiService, SidenavService,BasicInventorySearchBackendComponent,InventoryDetailComponent],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent,DeleteModalRsvpComponent,RemoveModalComponent,RemoveRsvpComponent,RemoveDialogComponent,RemoveModalComponent,RemoveRSvpModalComponent, salesSignUpModalComponent, askForconfirmationModalComponent]
+  entryComponents: [CommonVideoModalComponent,VideoModalComponent, comingSoonDialog, customerSignUpsuccessDialog,DialogPrivacyDialog, DialogTermsDialog, DialogModalOpenDialog, NewslatterDialogComponent, NewslattersuccessDialogComponent,errorDialog,loginBeforeDialog,DeleteModalComponent,DeleteModalRsvpComponent,RemoveModalComponent,RemoveRsvpComponent,RemoveDialogComponent,RemoveModalComponent,RemoveRSvpModalComponent, salesSignUpModalComponent, RemoveSalesRepRSvpModalComponent, askForconfirmationModalComponent]
   // errorDialogbackend
 })
 export class AppModule { }
+
 

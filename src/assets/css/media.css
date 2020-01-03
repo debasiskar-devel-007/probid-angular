@@ -26,6 +26,18 @@
   }
 
   @media only screen and (max-width: 1199px) {
+    .carousel-indicators {
+      display: block !important;
+      position: relative !important;
+      bottom: 0 !important;
+      z-index: 1;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      outline: 0;
+    }
+    
+    
     .probidhomeblock1 .mat-list-base.lists .mat-list-item {width: 32%;}
 
   .aboutusblock2.mat-card {background-position: top right !important; background-size: 260%!important; padding: 10px; padding-top: 50% !important; background-color: #a1c4dc !important;}  
@@ -121,7 +133,7 @@
   .vpheaderwrapper .logowrappersml{display:block;flex:1 1 20%}
   .vpheaderwrapper .logowrappersml img{max-width:100%}
   .vpheaderwrapper .mat-drawer-container.mat-drawer-opened{background-color:transparent!important}
-  .vpheaderwrapper .mat-drawer{background-color:transparent;position:inherit;box-shadow:none!important}
+  .vpheaderwrapper .mat-drawer{background-color:transparent;position:inherit;box-shadow: none!important}
   .vpheaderwrapper .homemain .mat-sidenav .mat-nav-list{width:100%;display:inline-block!important;background-color:#3e3e40;padding-top:0}
   .vpheaderwrapper .mat-drawer-container.mat-drawer-opened{position:inherit;display:block!important}
   .vpheaderwrapper .mat-drawer-backdrop{position:inherit}

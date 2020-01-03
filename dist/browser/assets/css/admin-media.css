@@ -24,7 +24,7 @@
     .bloglists .tablediv .searchbar, .blogcatlists .tablediv .searchbar {padding-right: 9px !important; background: #70daee;}
     .tablediv .searchbar{padding-right: 9px !important; background: #70daee;}
     .mat-form-field-appearance-legacy .mat-form-field-wrapper {padding-bottom: 0 !important;}
-    .topmenulist{display: none;}
+    /* .topmenulist{display: none;} */
 }
 
 @media only screen and (max-width: 991px) {
@@ -66,7 +66,7 @@
 }
 
 @media only screen and (max-width: 1080px) {
-    .clearmenu{clear:both;overflow:hidden;background:none!important;border:none!important;box-shadow:none!important;margin:0!important;padding:0!important;border-radius:0!important;display:block!important}
+    .clearmenu{clear:both;overflow:hidden;background:none!important;border:none!important;box-shadow: none!important;margin:0!important;padding:0!important;border-radius:0!important;display:block!important}
     .topblock .mat-list{display:block;float:none;margin:22px auto;padding:0;clear:both;width:586px}
 }
    

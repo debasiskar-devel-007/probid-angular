@@ -121,7 +121,7 @@
   .vpheaderwrapper .logowrappersml{display:block;flex:1 1 20%}
   .vpheaderwrapper .logowrappersml img{max-width:100%}
   .vpheaderwrapper .mat-drawer-container.mat-drawer-opened{background-color:transparent!important}
-  .vpheaderwrapper .mat-drawer{background-color:transparent;position:inherit;box-shadow:none!important}
+  .vpheaderwrapper .mat-drawer{background-color:transparent;position:inherit;box-shadow: none!important}
   .vpheaderwrapper .homemain .mat-sidenav .mat-nav-list{width:100%;display:inline-block!important;background-color:#3e3e40;padding-top:0}
   .vpheaderwrapper .mat-drawer-container.mat-drawer-opened{position:inherit;display:block!important}
   .vpheaderwrapper .mat-drawer-backdrop{position:inherit}
