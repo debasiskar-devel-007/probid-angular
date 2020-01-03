@@ -69,8 +69,6 @@ export class InventoryDetailComponent implements OnInit {
   public TestimonialListArray: any = [];
   public data: any;
   public indexImg: any;
-  public item: any;
-  public itemVal: any;
   public message: any = "Are you sure you want to delete this?";
   public saveList: any;
   public indexVal: any = 4;
@@ -81,7 +79,7 @@ export class InventoryDetailComponent implements OnInit {
   public customer_id: any;
   public errorMsg: any = 'Please Choose customer';
   public carData: any;
-  public addedCar:any='';
+  public addedCar: any = '';
   constructor(public activatedRoute: ActivatedRoute, public apiService: ApiService, public observableData: BasicInventorySearchBackendComponent, public cookieService: CookieService, public snack: MatSnackBar, public dialog: MatDialog, public router: Router) {
 
 
@@ -98,36 +96,22 @@ export class InventoryDetailComponent implements OnInit {
 
   ngOnInit() {
 
-    if (this.router.url == '/search-detail') {
-      this.data = JSON.parse(this.cookieService.get('car_data'));
-      console.log('+++>>', this.data);
-    }
-
-
-
     //   //for save search & rsvp
     if (this.router.url != '/search-detail') {
 
       this.activatedRoute.data.forEach((res) => {
         let result: any
         result = res.inventory_details.res;
-        // console.log('inventory_details >>', result)
 
         this.data = result[0];
-        // this.item=this.data.financing_options;
 
-        // console.log('card_data', this.data)
+        // this.makeName = this.data.build.make;
 
-        this.makeName = this.data.build.make;
-        // console.log('makeName >>', this.makeName)
-
-        this.itemVal = result[0]._id;
-        // console.log('**>>', this.itemVal)
       });
 
     }
 
-    // this.saveSearch()
+    // customer list for rep
 
     if (this.user_details.type == "salesrep") {
       let data: any = {
@@ -140,11 +124,12 @@ export class InventoryDetailComponent implements OnInit {
       }
       this.apiService.getDatalist(data).subscribe((res: any) => {
         this.customerList = res.res;
-        // console.log('.>>>>>>>', this.customerList);
+
       });
 
     }
 
+    // rsvp data 
     if (this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id') {
       let data: any = {
         source: 'send_rsvp_view',
@@ -155,11 +140,13 @@ export class InventoryDetailComponent implements OnInit {
       this.apiService.getDataForDatalist(data).subscribe((res: any) => {
 
         this.saveList = res.res;
-        // console.log('rsvp >>', this.saveList);
+
 
       });
 
-    } else {
+    }
+    //save search data admin ,rep, customer
+    else {
       let data: any = {
         source: 'save_favorite_view',
         condition: {
@@ -169,30 +156,25 @@ export class InventoryDetailComponent implements OnInit {
       this.apiService.getDataForDatalist(data).subscribe((res: any) => {
 
         this.saveList = res.res;
-        // console.log('save >>', this.saveList);
+
 
       });
     }
 
-    if (this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id' && this.user_details.type == 'admin') {
+    //for admin rsvp
+    if (this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id'
+      && this.user_details.type == 'admin') {
       let data: any = {
         source: 'send_rsvp_view',
       }
       this.apiService.getDataForDatalist(data).subscribe((res: any) => {
 
         this.saveList = res.res;
-        // console.log('rsvp >>', this.saveList);
+
 
       });
 
     }
-
-
-
-
-
-
-
 
 
 
@@ -200,9 +182,7 @@ export class InventoryDetailComponent implements OnInit {
 
   //show details
   showImage(item: any, i: any) {
-    // console.log('>>>', item, i)
     this.indexImg = i
-
   }
 
   //datalist for save search
@@ -222,22 +202,22 @@ export class InventoryDetailComponent implements OnInit {
   //   });
   // }
 
+
+
   //for rsvp send
-  addRsvp(val: any, itemData: any) {
-    // console.log('val-rsvp', val, itemData)
+  addRsvp(itemData: any) {
+    console.log('val-rsvp', itemData)
 
-
+    //for rep rsvp
     if (this.user_details.type == 'salesrep') {
 
       if (this.customer_id != '' && this.customer_id != null) {
         let endpoint: any = "addorupdatedata";
         itemData.added_by = this.user_id;
         itemData.status = 0;
-        // if (this.user_details.type == 'salesrep') {
+
         itemData.added_for = this.customer_id;
-        // } else {
-        // itemData.added_for = this.user_id;
-        // }
+
         let card_data: any = {
           card_data: itemData
         }
@@ -245,9 +225,7 @@ export class InventoryDetailComponent implements OnInit {
           data: card_data,
           source: "send_for_rsvp",
         };
-        // console.log(data)
         this.apiService.CustomRequest(data, endpoint).subscribe((res: any) => {
-          // console.log(res);
           if (res.status == "success") {
 
 
@@ -256,22 +234,13 @@ export class InventoryDetailComponent implements OnInit {
             })
             this.router.navigateByUrl('/rsvp-salesrep');
 
-            // if(this.user_details.type == 'salesrep'){
-            //   this.router.navigateByUrl('/rsvp-salesrep');
-            // }
-            // if(this.user_details.type == 'customer'){
-            //   this.router.navigateByUrl('/rsvp-customer');
-            // }
-
             let data: any = {
-              id: val,
+              id: itemData._id,
               source: 'save_favorite'
             }
             this.apiService.deleteSingleData1(data).subscribe((res: any) => {
-              // console.log(res);
               if (res.status == 'success') {
-                // this.search.splice(i,i+1);
-                // console.log('success')
+                console.log('success')
               }
             })
 
@@ -282,11 +251,12 @@ export class InventoryDetailComponent implements OnInit {
 
         this.customer_id = ''
         this.errorMsg;
-        // console.log(this.errorMsg)
 
       }
 
     }
+
+    //for customer rsvp
 
     if (this.user_details.type == 'customer') {
 
@@ -303,9 +273,7 @@ export class InventoryDetailComponent implements OnInit {
         data: card_data,
         source: "send_for_rsvp",
       };
-      // console.log(data)
       this.apiService.CustomRequest(data, endpoint).subscribe((res: any) => {
-        // console.log(res);
         if (res.status == "success") {
 
           this.snack.open('RSVP Added Successfully', 'Ok', {
@@ -313,22 +281,12 @@ export class InventoryDetailComponent implements OnInit {
           })
           this.router.navigateByUrl('/rsvp-customer');
 
-          // if(this.user_details.type == 'salesrep'){
-          //   this.router.navigateByUrl('/rsvp-salesrep');
-          // }
-          // if(this.user_details.type == 'customer'){
-          //   this.router.navigateByUrl('/rsvp-customer');
-          // }
-
           let data: any = {
-            id: val,
+            id: itemData._id,
             source: 'save_favorite'
           }
           this.apiService.deleteSingleData1(data).subscribe((res: any) => {
-            // console.log(res);
             if (res.status == 'success') {
-              // this.search.splice(i,i+1);
-              // console.log('success');
 
             }
           })
@@ -340,9 +298,10 @@ export class InventoryDetailComponent implements OnInit {
     }
 
   }
+  //remove rsvp and save data
 
-  removeRsvp(val: any, item: any) {
-    console.log('remove-rsvp', val, item)
+  removeItem(val: any) {
+    console.log('remove-item', val)
     const dialogRef = this.dialog.open(RemoveRsvpComponent, {
       width: '250px',
       data: this.message
@@ -350,30 +309,61 @@ export class InventoryDetailComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // console.log(result)
+      let data: any ;
 
       if (result == 'yes') {
-        let data: any = {
-          id: val,
-          source: 'save_favorite'
+
+        if (this.activatedRoute.snapshot.routeConfig.path == 'inventory-detail/:id') {
+
+           data= {
+            id: val,
+            source: 'save_favorite'
+          }
+
         }
+        if (this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id') {
+
+          data = {
+            id: val,
+            source: 'send_for_rsvp'
+          }
+        }
+
         this.apiService.deleteSingleData1(data).subscribe((res: any) => {
-          // console.log(res);
           if (res.status == 'success') {
-            // this.search.splice(index,index+1);
+
             this.snack.open('Record Removed Successfully..!', 'Ok', { duration: 2000 })
 
 
-            if (this.user_details.type == 'admin') {
-              this.router.navigateByUrl('/save-search-admin')
-            }
-            if (this.user_details.type == 'salesrep') {
-              this.router.navigateByUrl('/save-search-rep')
-            }
-            if (this.user_details.type == 'customer') {
-              this.router.navigateByUrl('/save-search-castomer')
+            if (this.user_details.type == 'admin' &&
+              this.activatedRoute.snapshot.routeConfig.path == 'inventory-detail/:id') {
+              this.router.navigateByUrl('/save-search-admin');
             }
 
+            if (this.user_details.type == 'admin' &&
+              this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id') {
+              this.router.navigateByUrl('/rsvp-admin');
+            }
+
+            if (this.user_details.type == 'salesrep' &&
+              this.activatedRoute.snapshot.routeConfig.path == 'inventory-detail/:id') {
+              this.router.navigateByUrl('//save-search-rep');
+            }
+
+            if (this.user_details.type == 'salesrep' &&
+              this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id') {
+              this.router.navigateByUrl('/rsvp-salesrep');
+            }
+
+            if (this.user_details.type == 'customer' &&
+              this.activatedRoute.snapshot.routeConfig.path == 'inventory-detail/:id') {
+              this.router.navigateByUrl('/save-search-castomer');
+            }
+
+            if (this.user_details.type == 'customer' &&
+              this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id') {
+              this.router.navigateByUrl('/rsvp-customer');
+            }
 
 
           }
@@ -383,10 +373,9 @@ export class InventoryDetailComponent implements OnInit {
 
   }
 
-  //remove for search data
-  removeAddSave(val:any,item:any){
-    console.log('++>>',val,item)
-    // console.log('remove-rsvp', val, item)
+  //remove data for search-details page
+  removeAddSave(val: any, item: any) {
+    console.log('++>>', val, item)
     const dialogRef = this.dialog.open(RemoveRsvpComponent, {
       width: '250px',
       data: this.message
@@ -394,7 +383,6 @@ export class InventoryDetailComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // console.log(result)
 
       if (result == 'yes') {
         let data: any = {
@@ -402,9 +390,7 @@ export class InventoryDetailComponent implements OnInit {
           source: 'save_favorite'
         }
         this.apiService.deleteSingleData1(data).subscribe((res: any) => {
-          // console.log(res);
           if (res.status == 'success') {
-            // this.search.splice(index,index+1);
             this.snack.open('Record Removed Successfully..!', 'Ok', { duration: 2000 })
 
           }
@@ -413,7 +399,9 @@ export class InventoryDetailComponent implements OnInit {
     })
 
   }
-  //for details
+
+
+  //for details from similar vehical
   inventoryDetails(val) {
     // console.log('id>>', val)
     if (this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id') {
@@ -427,10 +415,9 @@ export class InventoryDetailComponent implements OnInit {
 
   }
 
+  //view all from similar vehical
   viewAll() {
-    // console.log('hit')
-    // for admin 
-
+    //for admin
     if (this.activatedRoute.snapshot.routeConfig.path == 'rsvp-detail/:id'
       && this.user_details.type == 'admin') {
       this.router.navigateByUrl('/rsvp-admin');
@@ -467,8 +454,8 @@ export class InventoryDetailComponent implements OnInit {
 
   //add car 
 
-  addCar(val: any, itemData: any) {
-    console.log('>>', val, itemData)
+  addCar(itemData: any) {
+    console.log('>>', itemData)
 
     let endpoint: any = "addorupdatedata";
     itemData.added_by = this.user_id;
@@ -485,7 +472,7 @@ export class InventoryDetailComponent implements OnInit {
       if (res.status == "success") {
         this.snack.open('RSVP Saved Into Your Favorite..!', 'Ok', { duration: 2000 })
 
-        this.addedCar=res.res
+        this.addedCar = res.res
 
         // if (this.user_details.type == 'admin') {
         //   this.router.navigateByUrl('/save-search-admin');

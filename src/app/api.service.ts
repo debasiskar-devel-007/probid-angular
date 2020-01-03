@@ -61,12 +61,12 @@ export class ApiService {
   constructor(private _http: HttpClient, private cookieService :CookieService) {
     // console.log('++++++++',this.subjectForGetdataEndpointUrl);
 
-      this._http.get(this.serverUrlDemo + 'gettemptoken').subscribe((res: any)=>{
-        this.tokenVal = res;
-        // console.log('token')
-        // console.log(this.tokenVal)
-        // console.log(this.tokenVal.token.length)
-      });
+      // this._http.get(this.serverUrlDemo + 'gettemptoken').subscribe((res: any)=>{
+      //   this.tokenVal = res;
+      //   // console.log('token')
+      //   // console.log(this.tokenVal)
+      //   // console.log(this.tokenVal.token.length)
+      // });
 
       this.fileimgsslurl = 'http://api.nexgentesting.com/';
 
@@ -463,6 +463,18 @@ forgetPassword(requestdata: any) {
     var result = this._http.get(path).pipe(map(res => res));
     return result;
 }
+
+
+getdata(requestdata: any, endpoint:any ) {
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+  var result = this._http.post(this.serverUrlDemo + endpoint, JSON.stringify(requestdata), httpOptions).pipe(map(res => res));
+  return result;
+}
+
 
 /**add postData */
 postdata(requestdata: any) {

@@ -90,19 +90,12 @@ export class BloglistfrontendComponent implements OnInit {
     /**api service for total blog_catagory by uttam */
    
           this.blogcategory =this.blogList.blogCatList.blog_category;
-          // console.log('++++++++++++++++++',this.blogcategory)
-
-
 
 
     /**api service for blog_catagory total count by uttam */
    
 
           this.blogcategorycount = this.blogList.blogCatList.blog_category.length;
-          // console.log('>>>>>>>>>>>>>>>>>',this.blogcategorycount)
-
-   
-   
     }
 
   /** end api service for blog_catagory total count by uttam */
@@ -145,6 +138,16 @@ export class BloglistfrontendComponent implements OnInit {
 //***********load more view blog *************//
     blogloadmore(){
       //console.log('load more')
+      // let data: any = {
+      //   "condition": {
+      //     "limit": 8,
+      //     "skip": 1
+      // }
+      // }
+      // this.apiService.getdata(data, 'blogdata').subscribe((res:any)=>{
+      //   console.log(res);
+      //   this.bloglisting = res.blogs;
+      // })
       this.indexval=this.indexval+2;
  
     }

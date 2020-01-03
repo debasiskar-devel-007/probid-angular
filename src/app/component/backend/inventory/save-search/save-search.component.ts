@@ -220,38 +220,9 @@ if (this.cookieService.get('user_details') != undefined && this.cookieService.ge
   
   }
 
-  // rsvpSend(item: any) {
-  //   console.log('rsvp send',this.customur_id);
-  //   console.log('rsvp send',item);
-  //   if (this.customer_id != null && this.customer_id != '') {
-  //   let endpoint: any = "addorupdatedata";
-  //   if (this.user_details.type == 'salesrep') {
-  //   item.added_for = this.customur_id;
-  //   }
-  //   item.added_by = this.user_id;
-  //   item.status = 0;
-  //   let card_data:any = {
-  //     card_data: item
-  //   }
-  //   let data: any = {
-  //     data: card_data,
-  //     source: "send_for_rsvp",
-  //   };
-  //   console.log(data)
-  //     this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
-  //       console.log(res);
-  //       (res.status == "success")
-  //     });
-  //   } else{
-  //     this.errorMsg = "Please select Customer name";
-
-  //   }
-
-  // }
 
   rsvpSend(item: any,i:any) {
     
-
     // console.log('rsvpSend>>',item,i)
 
  if(this.user_details.type =='salesrep'){
