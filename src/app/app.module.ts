@@ -60,6 +60,8 @@ import { CustomerSignupComponent, customerSignUpsuccessDialog } from './componen
 
 import { SearchListViewComponent } from './component/frontend/search-list-view/search-list-view.component';
 
+import { RsvpSuccessComponent } from './component/frontend/rsvp-success/rsvp-success.component';
+
 import { InventoryDetailComponent, RemoveRsvpComponent } from './component/backend/inventory-detail/inventory-detail.component';
 
 /**End Frontend Component**/
@@ -193,6 +195,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 @NgModule({
   declarations: [
     BloglistfrontendComponent,
+    RsvpSuccessComponent,
     // BloglistComponent,
     // AddComponent,
     // AddeditBlogmanagementComponent,
@@ -313,7 +316,7 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
     salesSignUpModalComponent,
     RemoveSalesRepRSvpModalComponent,
     askForconfirmationModalComponent,
-    AskForConfirmationComponent
+    AskForConfirmationComponent,
   ],
   imports: [
     HttpClientModule,

@@ -30,6 +30,8 @@ import { SalesrepSignupComponent } from './component/frontend/salesrep-signup/sa
 import { CustomerSignupComponent } from './component/frontend/customer-signup/customer-signup.component';
 import { InventoryDetailComponent } from './component/backend/inventory-detail/inventory-detail.component';
 
+import { RsvpSuccessComponent } from './component/frontend/rsvp-success/rsvp-success.component';
+
 /**End Frontend Routing**/
 
 /**Backend Routing**/
@@ -42,7 +44,6 @@ import { ListingServiceComponent } from './component/backend/ServiceApp/listing-
 import { ListingTestimonialComponent } from './component/backend/TestimonialApp/listing-testimonial/listing-testimonial.component';
 import { AddeditTestimonialComponent } from './component/backend/TestimonialApp/addedit-testimonial/addedit-testimonial.component';
 import { UserManagementComponent } from './component/backend/user-management/user-management.component';
-// import { ContactUsDashboardComponent } from './component/backend/contact-us-dashboard/contact-us-dashboard.component';
 
 import { RepdashboardComponent } from './component/backend/repdashboard/repdashboard.component';
 
@@ -115,6 +116,7 @@ import { ListingSenderappComponent } from './component/backend/newsletterlists/l
 import { ListingSubscriptionComponent } from './component/backend/newsletterlists/listing-subscription/listing-subscription.component';
 import { ListingSubcategoryComponent } from './component/backend/newsletterlists/listing-subcategory/listing-subcategory.component';
 import { AskForConfirmationComponent } from './component/backend/ask-for-confirmation/ask-for-confirmation.component';
+
 /**End Backend Routing**/
 
 const routes: Routes = [
@@ -306,10 +308,28 @@ const routes: Routes = [
   },
 // -------------------------------------------
 
-
-
-
   { path:'managequiz/:lessonid', component: ManagequizComponent},
+
+  { path:'rsvp-success-confirm', component: RsvpSuccessComponent,
+    resolve: { rsvp: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'rsvp_success_view',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    }, 
+  },
+  { path:'rsvp-success-decline', component: RsvpSuccessComponent,
+    resolve: { rsvp: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'rsvp_success_view',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    }, 
+  },
 
   /**End Frontend Routing**/
 
