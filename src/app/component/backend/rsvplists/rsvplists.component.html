@@ -70,7 +70,7 @@
                                <span *ngIf="item.status == 0" class="btnactive">Pending <span class="coloryellow"></span></span>
 
                                
-                               <span *ngIf="StatusData.status == 3" class="btnactive">Email Sended <span class="coloryellow"></span></span>
+                               <!-- <span *ngIf="StatusData.status == 3" class="btnactive">Email Sended <span class="coloryellow"></span></span> -->
                               
 
                               </span>
@@ -130,9 +130,9 @@
                                        (click)="changeStatus(item, 1)">Accept</button>
 
 
-                                      <button  *ngIf="item.status == 1 && StatusData.status !=3  " (click)="openModale(item)" mat-button class="btnblue whitebtn">Send Email To Customer</button>
+                                      <button  *ngIf="item.status == 1" (click)="openModale(item)" mat-button class="btnblue whitebtn">Send Email To Customer</button>
 
-                                       <!-- <button  *ngIf=" " mat-button class="btnblue whitebtn">Email Sended</button> -->
+                                       <!-- <button  *ngIf=" StatusData.status == 3" mat-button class="btnblue whitebtn">Email Sended</button> -->
 
                                       <!-- <button mat-button class="btnblue yellowbtn" *ngIf="item.status != 1 && item.status == 2" 
                                       (click)="changeStatus(item, 0)">Pending</button> -->
