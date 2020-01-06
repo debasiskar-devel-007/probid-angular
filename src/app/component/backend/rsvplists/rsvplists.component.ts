@@ -195,8 +195,14 @@ export class askForconfirmationModalComponent {
 // public askForConfirmation: FormGroup;
   constructor( public dialogRef: MatDialogRef<askForconfirmationModalComponent>,
                @Inject(MAT_DIALOG_DATA) public data: DialogData, public fb:FormBuilder, public apiService: ApiService){
-
+                // this.dialogRef.close(this.askForConfirmation.value);
                  console.log('@@>>',data)
+
+                 let caritem=data;
+
+                 console.log('$$>>',caritem)
+
+      
                  
                 this.editorconfig.extraAllowedContent = '*[class](*),span;ul;li;table;td;style;*[id];*(*);*{*}';
                 // this.askForConfirmation = this.fb.group({
@@ -209,7 +215,7 @@ export class askForconfirmationModalComponent {
 
 //  public askForConfirmationSubmit(){
 //     console.log(this.askForConfirmation.value )
-//     this.dialogRef.close(this.askForConfirmation.value);
+   
 
 //     let endpoint: any = "addorupdatedata";
 
