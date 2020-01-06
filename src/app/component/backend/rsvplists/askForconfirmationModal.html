@@ -2,7 +2,7 @@
 <div class="generalmodalcls">
   <div class="modal-content">
     <div class="emailwrapper">
-      <form class="" >
+      <!-- <form class=""> -->
           <!-- <div class="logowrapperouter">
               <div class="logowrapper">
                   <img src="../../assets/images/logomain.png">
@@ -52,23 +52,23 @@
                   </div>
                 </div>
               </div>
-              <div style="width: 100%; height: 5px; background: #222;"></div>
-
-            
-           
+             
+             
+              <div style="width: 100%; height: 5px; background: #222;">
+               
+              </div>
             <mat-card-content class="">
-              <ck-editor [(ngModel)]="topPart" name="topPart" [config]="editorconfig"></ck-editor>
+              <ck-editor [(ngModel)]="topPart" [config]="editorconfig"></ck-editor>
             </mat-card-content>
+
           </div>
           <mat-dialog-actions >
             <button class="btnredcls" mat-button mat-dialog-close="no" cdkFocusInitial>Cancel</button>
-            <button class="btnbluecls" mat-button mat-dialog-close="yes" 
-            
-            cdkFocusInitial>Confirm</button>
+            <button class="btnbluecls" mat-button (click)="submitform(topPart, 'yes')" cdkFocusInitial>Confirm</button>
             <!-- <button class="btnbluecls" mat-button [mat-dialog-close]="data.topPart" 
              cdkFocusInitial>Preview</button> -->
           </mat-dialog-actions>
-      </form>      
+      <!-- </form>       -->
     </div>
   </div>
 </div>

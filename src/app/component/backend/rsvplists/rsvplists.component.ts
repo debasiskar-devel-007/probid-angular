@@ -12,6 +12,14 @@ export interface DialogData {
   msg:any;
 } 
 
+export interface DialogData1 {
+  data: any;
+  topPart:any;
+  flag:any;
+  heading:string;
+  added_by_fullname: string;
+  added_for_fullname: string;
+} 
 
 @Component({
   selector: 'app-rsvplists',
@@ -25,6 +33,9 @@ public ststus: number;
 public message:any="Are you sure you want to delete this?";
 public userCookies: any;
 public userid: any;
+public topPart: any ='';
+public StatusData:any;
+
   constructor(
     public activatedRoute: ActivatedRoute,
     public apiService: ApiService,
@@ -48,6 +59,23 @@ public userid: any;
     })
 
     // this.getdata();
+
+    //for status
+
+    // let data:any
+    // data={
+    //   endpoint:'datalist',
+    //   source:"send_rsvp_view"
+    // }
+    // this.apiService.getDatalist(data).subscribe((resc)=>{
+    //   let result:any;
+    //   result=resc
+    //   this.StatusData=result.res
+    //   console.log( this.StatusData)
+
+    // })
+
+
   }
   changeStatus(item: any, val: any) {
     console.log('rsvpSend status',item, val)
@@ -78,7 +106,7 @@ public userid: any;
     }
     this.apiService.getDatalist(data).subscribe((res:any)=>{
       this.rsvp_list = res.res;
-      // console.log('>>>>',this.rsvp_list);
+      console.log('>>>>',this.rsvp_list);
     });
   }
 
@@ -90,28 +118,39 @@ public userid: any;
 
     });
     dialogRef.afterClosed().subscribe((result:any) => {
-      console.log(result);
+      // console.log(result);
 
       let carData:any={
-        vehicle:data.heading,
-        salesrep:data.added_by_fullname,
-        customer:data.added_for_fullname,
-        salesrep_email:data.added_by_email,
-        customer_email:data.added_for_email,
-        topPart:'hello'
+        vehicle: result.heading,
+        salesrep: result.added_by_fullname,
+        customer: result.added_for_fullname,
+        salesrep_email: result.added_by_email,
+        customer_email: result.added_for_email,
+        topPart: result.topPart,
+        status:3
       }
 
-      if(result == 'yes' ){
+      if(result.flag == 'yes' ){
 
-      let endpoint: any = "addorupdatedata";
+
+      let endpoint: any = "addorupdatedatawithouttoken";
+
+      
     
         let data: any = {
-          data: carData,
+          data: carData,  
           source: "ask_for_confirmation",
         };
           this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
-            (res.status == "success");
+            if(res.status == "success"){
+
+            
+
             console.log(res)
+            
+
+            }
+            
           });
         } else {
           console.log('No..!')
@@ -131,7 +170,6 @@ public userid: any;
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // console.log(result)
       
         if(result=='yes'){
           let data:any;
@@ -142,7 +180,6 @@ public userid: any;
             this.apiService.CustomRequest(data,'deletesingledata').subscribe((res)=>{
               let result:any;
               result=res;
-              // console.log('success',result)
               
               if(result.status=='success'){
                 this.rsvp_list.splice(index,index+1);
@@ -155,12 +192,11 @@ public userid: any;
   }
 
   loadMoreRsvp(){
-    // console.log('hitt');
     this.indexval=this.indexval+2;
   }
 
   rsvpViewDetails(val:any){
-    // console.log('>>>',val)
+    // console.log('>>>',val)null
     
 
   }
@@ -168,6 +204,31 @@ public userid: any;
   rsvpDetail(val:any){
     console.log('hit',val)
     this.rouer.navigateByUrl('/rsvp-detail/'+val);
+  }
+
+  selectOption(val:number){
+    console.log(val);
+    console.log(this.rsvp_list)
+
+
+let data:any;
+    data={
+      endpoint:'datalist',
+      source:"send_rsvp_view",
+      condition:{
+        "status":Number(val)
+            }
+       }
+       console.log(data)
+    this.apiService.getDatalist(data).subscribe((res)=>{
+      let result:any
+      result=res
+
+      this.rsvp_list=result.res;
+      console.log(this.rsvp_list)
+
+    })
+
   }
 }
 
@@ -192,49 +253,17 @@ export class DeleteModalComponent {
 })
 export class askForconfirmationModalComponent {
   public editorconfig: any = [];
-// public askForConfirmation: FormGroup;
+public topPart: any =''; 
+
   constructor( public dialogRef: MatDialogRef<askForconfirmationModalComponent>,
-               @Inject(MAT_DIALOG_DATA) public data: DialogData, public fb:FormBuilder, public apiService: ApiService){
-                // this.dialogRef.close(this.askForConfirmation.value);
-                 console.log('@@>>',data)
-
-                 let caritem=data;
-
-                 console.log('$$>>',caritem)
-
-      
-                 
-                this.editorconfig.extraAllowedContent = '*[class](*),span;ul;li;table;td;style;*[id];*(*);*{*}';
-                // this.askForConfirmation = this.fb.group({
-                //   topPart: [''],
-                  
-                // }) 
-
+               @Inject(MAT_DIALOG_DATA) public data: DialogData1, public fb:FormBuilder, public apiService: ApiService){
+               this.editorconfig.extraAllowedContent = '*[class](*),span;ul;li;table;td;style;*[id];*(*);*{*}';
   }
 
-
-//  public askForConfirmationSubmit(){
-//     console.log(this.askForConfirmation.value )
-   
-
-//     let endpoint: any = "addorupdatedata";
-
-//     let carData:any={
-
-//       // vehicle:
-
-//     }
-
-    
-//     let data: any = {
-//       // item :carData,
-//       data: this.askForConfirmation.value,
-//       source: "ask_for_confirmation",
-//     };
-//       this.apiService.CustomRequest(data, endpoint).subscribe((res:any) => {
-//         (res.status == "success");
-//         console.log(res)
-//       });
-//     }
-
+  submitform(val: any, flag: string){
+    // this.data.topPart = JSON.stringify(val);
+    this.data.topPart = val;
+    this.data.flag = flag;
+    this.dialogRef.close(this.data);
+  }
 }

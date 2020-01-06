@@ -20,6 +20,8 @@ export interface DialogData {
 })
 export class BasicInventorySearchBackendComponent implements OnInit {
 
+  public carData:any
+
   public MediaListArray: any = [];
 
   carouselOptions = {
@@ -102,6 +104,9 @@ export class BasicInventorySearchBackendComponent implements OnInit {
   public indexForCustomer: number;
   public spinnerval: any = 0;
   public car_data: any;
+
+//  public myMessage = new Subject<any>();
+
  
   // public carItem=new Subject<any>();
 
@@ -467,7 +472,10 @@ export class BasicInventorySearchBackendComponent implements OnInit {
 
     var carData=item;
 
-    console.log('carData >>',carData)
+    console.log('carData >>',carData);
+
+  //  this.router.navigateByUrl('/search-detail/',carData);
+
 
     // let observable=new Observable(item)
     // console.log('$$>>>>>',observable)
@@ -478,10 +486,9 @@ export class BasicInventorySearchBackendComponent implements OnInit {
     //   }, 2000);
 
 
-    // // console.log('$$>>>>>',observeable)
-    // // return observeable;
+    // console.log('$$>>>>>',observeable)
+    // return observeable;
 
-   
       const carItem = new Observable(observer => {
              setTimeout(() => {
                  observer.next(carData);
@@ -489,15 +496,27 @@ export class BasicInventorySearchBackendComponent implements OnInit {
              }, 1000);
             
       });
+
+      console.log('>>',carItem);
+      // this.myMessage.next(carData);
+
+
       
       setTimeout(() => {
-        // this.router.navigateByUrl('/search-detail')
+        // this.router.navigateByUrl('/search-detail');
       }, 500);
- 
-      return carItem;
-  
+
+      // return carItem;
+
+      
 
   }
+
+  // public getMessage(): Observable<string> {
+  //   return this.myMessage.asObservable();
+  // }
+
+
 
   //view data for search list
 

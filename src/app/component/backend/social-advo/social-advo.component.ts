@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FacebookService, LoginResponse, UIParams, UIResponse } from 'ngx-facebook';
 import { CookieService } from 'ngx-cookie-service';
+import { MetaService } from '@ngx-meta/core';
 
 @Component({
   selector: 'app-social-advo',
@@ -14,7 +15,19 @@ export class SocialAdvoComponent implements OnInit {
   public allImg : any = [
     'facebookbanner-img1.jpg'
   ]
-  constructor(public router: Router, private fb: FacebookService, public cookieService: CookieService) {
+  constructor(public router: Router, private readonly meta: MetaService, private fb: FacebookService, public cookieService: CookieService) {
+
+    this.meta.setTitle('ProBid Auto - Social Advo');
+    this.meta.setTag('og:description', 'ProBid Auto offers the easiest and the most convenient way for car buyers to get their desired cars, listing Used Cars for Sale from multiple dealerships and major Auction houses around the USA.');
+    this.meta.setTag('twitter:description', 'ProBid Auto offers the easiest and the most convenient way for car buyers to get their desired cars, listing Used Cars for Sale from multiple dealerships and major Auction houses around the USA.');
+    this.meta.setTag('og:keyword', 'ProBid Auto, Used Cars for Sale in USA, Buy Used Cars USA, Used Car Dealership the USA');
+    this.meta.setTag('twitter:keyword', 'ProBid Auto, Used Cars for Sale in USA, Buy Used Cars USA, Used Car Dealership the USA');
+    this.meta.setTag('og:title', 'ProBid Auto - Social Advo');
+    this.meta.setTag('twitter:title', 'ProBid Auto - Social Advo');
+    this.meta.setTag('og:type', 'website');
+    this.meta.setTag('og:image', 'https://dev.probidauto.com/assets/images/logomain.png');
+    this.meta.setTag('twitter:image', 'https://dev.probidauto.com/assets/images/logomain.png');
+
 
     this.userCookies = JSON.parse(this.cookieService.get('user_details'));
     fb.init({
