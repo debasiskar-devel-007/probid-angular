@@ -346,6 +346,57 @@ button.disabled, html input.disabled{
 }
 
 
+.searchblock.rsvpsearch .searchblockwrapper span mat-label{
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.searchblock.rsvpsearch .searchblockwrapper span .mat-form-field .mat-form-field-wrapper {
+  line-height: normal !important;
+}
+
+.searchblock.rsvpsearch .searchblockwrapper span .mat-form-field{
+  background-color: #333;
+    color: #fff;
+    padding: 5px 5px 7px;
+}
+
+.searchblock.rsvpsearch .searchblockwrapper span .mat-form-field-type-mat-native-select .mat-form-field-label-wrapper {
+  max-width: 0;
+}
+
+.searchblock.rsvpsearch .searchblockwrapper span .mat-form-field .mat-form-field-wrapper .mat-form-field-infix {
+  padding: 0px !important;
+  background: transparent;
+  margin-bottom: 0px;
+  display: flex;
+}
+.searchblock.rsvpsearch .searchblockwrapper span .mat-form-field .mat-form-field-wrapper  select.mat-input-element {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  background-color: #333;
+  display: -webkit-inline-box;
+  display: flex;
+  box-sizing: border-box;
+  padding: 5px;
+  top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.norecordfound h3{
+  font-family: 'Helvetica-Normal';
+color:#000;
+font-size: 20px !important;
+line-height: normal !important;
+text-transform: capitalize !important;
+display:block !important;  
+text-align: center;
+}
+
+
 /******Dialog CSS********/
 /* .mat-dialog-content {padding: 0 !important;}
 .modalttitlewrapper{background-color:#22282c; display: block;  padding: 50px; height: 100%;    border-bottom-left-radius: 15px;

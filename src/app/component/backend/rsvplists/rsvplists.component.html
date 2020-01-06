@@ -12,7 +12,7 @@
                   <a mat-list-item routerLinkActive="active"> Dashboard </a>
                   <a mat-list-item routerLinkActive="active activebread" [routerLink]="'/rsvp-admin'"> RSVP</a>
               </mat-card-content>                
-              <span class="searchblock">
+              <span class="searchblock rsvpsearch">
                 <span class="searchblockwrapper">
                   <span>
                     <h2>RSVP RESULT</h2>
@@ -20,25 +20,29 @@
                   <!-- <span>                        
                       <button mat-button class="btnorange sim-button"><i class="material-icons">add</i> Add New</button>               
                   </span>-->
+
+                  <span>
+                    <mat-label>Search By Status :</mat-label>
+                    <mat-form-field>
+                      <select matNativeControl (change)="selectOption($event.target.value)" >
+                        <option value=''>Select Status</option>
+                        <option value=0>Pending</option>
+                        <option value=1>Accept</option>
+                        <option value=2>Reject</option>  
+                        <option value=4>Decline</option>
+                        <option value=5>Confirm</option>
+                        <option value=3>Awaiting Confirmation</option>
+                      </select>
+                    </mat-form-field>
+                  </span>
                 </span>                    
               </span>
               <span class="rsvplistwrapper" >
 
-                <mat-form-field>
-                  <mat-label>Search By Status</mat-label>
-                  <select matNativeControl (change)="selectOption($event.target.value)" >
-                    <option   value=0>Pending</option>
-                    <option  value=1>Accept</option>
-                    <option  value=2>Reject</option>
-                    <option value=3>Send Mail</option>
-                    <option value=4>Decline</option>
-                    <option value=5>Confirm</option>
-                  </select>
-                </mat-form-field>
+               
 
-
-        <span *ngIf="rsvp_list.length ==0">
-          <h3 style="color: rgb(1, 19, 13);" >No Record Found</h3>
+        <span class="norecordfound" *ngIf="rsvp_list.length ==0">
+          <h3 >No Record Found</h3>
         </span>
 
 
@@ -65,9 +69,9 @@
 
                                <span *ngIf="item.status == 0" class="btnactive">Pending <span class="coloryellow"></span></span>
 
-                               <!-- <div >
-                               <span *ngIf=" " class="btnactive">Email Sended <span class="coloryellow"></span></span>
-                              </div> -->
+                               
+                               <span *ngIf="StatusData.status == 3" class="btnactive">Email Sended <span class="coloryellow"></span></span>
+                              
 
                               </span>
                             </span>
@@ -126,7 +130,7 @@
                                        (click)="changeStatus(item, 1)">Accept</button>
 
 
-                                       <button  *ngIf="item.status == 1 " (click)="openModale(item)" mat-button class="btnblue whitebtn">Send Email To Customer</button>
+                                      <button  *ngIf="item.status == 1 && StatusData.status !=3  " (click)="openModale(item)" mat-button class="btnblue whitebtn">Send Email To Customer</button>
 
                                        <!-- <button  *ngIf=" " mat-button class="btnblue whitebtn">Email Sended</button> -->
 

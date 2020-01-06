@@ -62,18 +62,18 @@ public StatusData:any;
 
     //for status
 
-    // let data:any
-    // data={
-    //   endpoint:'datalist',
-    //   source:"send_rsvp_view"
-    // }
-    // this.apiService.getDatalist(data).subscribe((resc)=>{
-    //   let result:any;
-    //   result=resc
-    //   this.StatusData=result.res
-    //   console.log( this.StatusData)
+    let data:any
+    data={
+      endpoint:'datalist',
+      source:"ask_for_confirmation"
+    }
+    this.apiService.getDatalist(data).subscribe((resc)=>{
+      let result:any;
+      result=resc
+      this.StatusData=result.res
+      console.log( '++>>>>',this.StatusData)
 
-    // })
+    })
 
 
   }
@@ -206,19 +206,30 @@ public StatusData:any;
     this.rouer.navigateByUrl('/rsvp-detail/'+val);
   }
 
-  selectOption(val:number){
+  selectOption(val:any){
     console.log(val);
     console.log(this.rsvp_list)
 
 
 let data:any;
+
+if (val !='') {
+       
     data={
       endpoint:'datalist',
       source:"send_rsvp_view",
+     
       condition:{
         "status":Number(val)
             }
        }
+      }
+      else{
+        data={
+        endpoint:'datalist',
+      source:"send_rsvp_view"
+        }
+      }
        console.log(data)
     this.apiService.getDatalist(data).subscribe((res)=>{
       let result:any
